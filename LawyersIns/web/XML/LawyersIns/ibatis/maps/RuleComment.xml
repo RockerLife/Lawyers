@@ -1,0 +1,50 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="RuleComment">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from RuleComment</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from RuleComment</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into RuleComment(
+          <dynamic prepend=" ">
+               <isNotEmpty property="RulePolicyId" prepend=",">RulePolicyId</isNotEmpty>
+               <isNotEmpty property="Comment" prepend=",">Comment</isNotEmpty>
+               <isNotEmpty property="ActionTakenBy" prepend=",">ActionTakenBy</isNotEmpty>
+               <isNotEmpty property="TimeStamp" prepend=",">TimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="RulePolicyId" prepend=",">#RulePolicyId#</isNotEmpty>
+               <isNotEmpty property="Comment" prepend=",">#Comment#</isNotEmpty>
+               <isNotEmpty property="ActionTakenBy" prepend=",">#ActionTakenBy#</isNotEmpty>
+               <isNotEmpty property="TimeStamp" prepend=",">#TimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="RuleCommnetId">SELECT IDENT_CURRENT('RuleComment') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select RuleCommnetId, RulePolicyId, Comment, ActionTakenBy, TimeStamp from RuleComment where RuleCommnetId = #RuleCommnetId#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update RuleComment set
+          <dynamic prepend=" ">
+               <isNotEmpty property="RulePolicyId" prepend=",">RulePolicyId = #RulePolicyId#</isNotEmpty>
+               <isEmpty property="RulePolicyId" prepend=",">RulePolicyId = null</isEmpty>
+               <isNotEmpty property="Comment" prepend=",">Comment = #Comment#</isNotEmpty>
+               <isEmpty property="Comment" prepend=",">Comment = null</isEmpty>
+               <isNotEmpty property="ActionTakenBy" prepend=",">ActionTakenBy = #ActionTakenBy#</isNotEmpty>
+               <isEmpty property="ActionTakenBy" prepend=",">ActionTakenBy = null</isEmpty>
+               <isNotEmpty property="TimeStamp" prepend=",">TimeStamp = #TimeStamp#</isNotEmpty>
+               <isEmpty property="TimeStamp" prepend=",">TimeStamp = null</isEmpty>
+          </dynamic>
+          where RuleCommnetId = #RuleCommnetId#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from RuleComment where RuleCommnetId = #RuleCommnetId#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from RuleComment</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from RuleComment</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select RuleCommnetId, RulePolicyId, Comment, ActionTakenBy, TimeStamp from RuleComment where RuleCommnetId = #RuleCommnetId#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select RuleCommnetId, RulePolicyId, Comment from RuleComment</select>
+     <parameterMap id="GetAllCommentList_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="RuleId" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="GetAllCommentList_p" parameterMap="GetAllCommentList_pMap" resultClass="java.util.HashMap">{ call GetAllCommentList_p(?,?)}</procedure>
+</sqlMap>
+

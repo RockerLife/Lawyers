@@ -1,0 +1,28 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="SOIType">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SOIType</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SOIType</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into SOIType(SOITypeKey
+          <isNotEmpty property="SOITypeDesc" prepend=",">SOITypeDesc</isNotEmpty>
+          ) values (#SOITypeKey:NUMERIC#
+          <isNotEmpty property="SOITypeDesc" prepend=",">#SOITypeDesc#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select SOITypeKey, SOITypeDesc from SOIType where SOITypeKey = #SOITypeKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update SOIType set
+          <dynamic prepend=" ">
+               <isNotEmpty property="SOITypeDesc" prepend=",">SOITypeDesc = #SOITypeDesc#</isNotEmpty>
+               <isEmpty property="SOITypeDesc" prepend=",">SOITypeDesc = null</isEmpty>
+          </dynamic>
+          where SOITypeKey = #SOITypeKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from SOIType where SOITypeKey = #SOITypeKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from SOIType</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from SOIType</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select SOITypeKey, SOITypeDesc from SOIType where SOITypeKey = #SOITypeKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select SOITypeKey, SOITypeDesc from SOIType</select>
+</sqlMap>
+

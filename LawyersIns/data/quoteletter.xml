@@ -1,0 +1,1223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response>
+	<coverage_freeform_2>
+		<data>
+			<OccuranceDeductible>2500</OccuranceDeductible>
+			<AggregateDeductible>2500</AggregateDeductible>
+			<IsDefenceExpense>N</IsDefenceExpense>
+			<CoverageKey>3</CoverageKey>
+			<TransactionSequence>27</TransactionSequence>
+			<LastUpdateUserID>1</LastUpdateUserID>
+			<MarketableProductKey>2</MarketableProductKey>
+			<PolicyKey>27</PolicyKey>
+			<CoverageSequence>27</CoverageSequence>
+			<DeductibleSequence>7</DeductibleSequence>
+			<OccuranceLimit>1,500,000</OccuranceLimit>
+			<LimitSequence>14</LimitSequence>
+			<AggregateLimit>750,000</AggregateLimit>
+			<LimitAmount>750,000/1,500,000</LimitAmount>
+			<DeductibleAmount>2,500</DeductibleAmount>
+			<IsClaimOptionType>PC</IsClaimOptionType>
+			<IsClaimExpensesType>DA</IsClaimExpensesType>
+		</data>
+	</coverage_freeform_2>
+	<AOP_CommentDesc_21></AOP_CommentDesc_21>
+	<AOP_CommentDesc_24>
+		the areas below that are included in your Commercial Business
+		practice: (Check all that apply)the areas below that are
+		included in your Commercial Business practice: (Check all that
+		apply)the areas below that are included in your Commercial
+		Business practice: (Check all that apply)the areas below that
+		are included in your Commercial Business practice: (Check all
+		that apply)the areas below that are included in your Commercial
+		Business practice: (Check all that apply)the areas below that
+		are inclu
+	</AOP_CommentDesc_24>
+	<AOTP_PercentageValue_3>1</AOTP_PercentageValue_3>
+	<AOP_PercentageValue_5>1</AOP_PercentageValue_5>
+	<aol_averageCaseSize>445314</aol_averageCaseSize>
+	<AOP_CommentDesc_3></AOP_CommentDesc_3>
+	<firmlawsuit_practice_list_01>
+		<data>
+			<IsFavOutInUnderMatter>Y</IsFavOutInUnderMatter>
+			<SuitFilesDateFees>10/15/2010</SuitFilesDateFees>
+			<DispositionOfFeeSuit>
+				Negotiated Settlement
+			</DispositionOfFeeSuit>
+			<DueDateFees>10/10/2010</DueDateFees>
+			<AmountOfFeesSued>$56,546,545,464</AmountOfFeesSued>
+			<IsAllegOfLegalMalPrac>Y</IsAllegOfLegalMalPrac>
+		</data>
+	</firmlawsuit_practice_list_01>
+	<title_freeform_01>
+		<data>
+			<IsTitleInsDeclineToAppl>Y</IsTitleInsDeclineToAppl>
+			<NumberOfTitleNonAttInFirm>
+				435435
+			</NumberOfTitleNonAttInFirm>
+			<TitleInsuranceCompany>
+				the areas below that are included in your Commercial
+				Business practice: (Check all that apply)the ar
+			</TitleInsuranceCompany>
+			<LastUpdateUserID>1</LastUpdateUserID>
+			<IsApplMaintEquityInTitle>Y</IsApplMaintEquityInTitle>
+			<NameAndReasonOfTitle>
+				the areas below that are included in your Commercial
+				Business practice: (Check all that apply)the areas below
+				that are included in your Commercial Business practice:
+				(Check all that apply)the areas be
+			</NameAndReasonOfTitle>
+			<PercentOfTitleFromComm>999</PercentOfTitleFromComm>
+			<NumberOfTitleAttNotInFirm>
+				8987978
+			</NumberOfTitleAttNotInFirm>
+			<IsTitleHaveProfLiabCoverage>Y</IsTitleHaveProfLiabCoverage>
+			<IsApplObtCertOfInsOfTitle>Y</IsApplObtCertOfInsOfTitle>
+			<IsFirmUseEngageLetterOfTitle>
+				Y
+			</IsFirmUseEngageLetterOfTitle>
+			<NumberOfRealEstTitleIns>99999999</NumberOfRealEstTitleIns>
+			<IsApplCovProfLiabPolicy>Y</IsApplCovProfLiabPolicy>
+			<PercentOfTitleFromAgri>999</PercentOfTitleFromAgri>
+			<NumberOfTitleAttInFirm>67667567</NumberOfTitleAttInFirm>
+			<NumberOfTitleIssued>99999999</NumberOfTitleIssued>
+			<PolicyKey>27</PolicyKey>
+			<PercentOfTitleFromOther_CommentDesc>
+				the areas below that are included in your Commercial
+				Business practice: (Check all that apply)the ar
+			</PercentOfTitleFromOther_CommentDesc>
+			<PercentOfTitleFromOther>999</PercentOfTitleFromOther>
+			<VersionSequence>27</VersionSequence>
+			<NumberOfTitleNonAttSubCont>
+				435345
+			</NumberOfTitleNonAttSubCont>
+			<PercentageOfEquityInt>543</PercentageOfEquityInt>
+			<PercentOfTitleFromResi>999</PercentOfTitleFromResi>
+			<IsTitleInsAgencyIssuePolicy>Y</IsTitleInsAgencyIssuePolicy>
+		</data>
+	</title_freeform_01>
+	<AOPRE_PercentageValue_16>84</AOPRE_PercentageValue_16>
+	<areas_corp_list_04>
+		<data>
+			<CCBKey>10</CCBKey>
+			<VersionSequence>27</VersionSequence>
+			<CCBCheckedValue>Y</CCBCheckedValue>
+			<CCBDesc>Construction Law</CCBDesc>
+			<PolicyKey>27</PolicyKey>
+		</data>
+		<data>
+			<CCBKey>11</CCBKey>
+			<VersionSequence>27</VersionSequence>
+			<CCBCheckedValue>Y</CCBCheckedValue>
+			<CCBDesc>Financing / Loans</CCBDesc>
+			<PolicyKey>27</PolicyKey>
+		</data>
+		<data>
+			<CCBKey>12</CCBKey>
+			<VersionSequence>27</VersionSequence>
+			<CCBCheckedValue>Y</CCBCheckedValue>
+			<CCBDesc>Other:</CCBDesc>
+			<CCBCommentDesc>
+				the areas below that are included in your Commercial
+				Business practice: (Check all that apply)the ar
+			</CCBCommentDesc>
+			<PolicyKey>27</PolicyKey>
+		</data>
+	</areas_corp_list_04>
+	<AOP_CommentDesc_4></AOP_CommentDesc_4>
+	<AOP_CommentDesc_17></AOP_CommentDesc_17>
+	<AOP_CommentDesc_1></AOP_CommentDesc_1>
+	<attorneys_financial_list_01>
+		<data>
+			<NatureOfCapOfServices>dsdasd</NatureOfCapOfServices>
+			<FinancialInstitutionKey>21</FinancialInstitutionKey>
+			<InstitutionName>dsdsd s s s</InstitutionName>
+			<DateEnded>10/29/2010</DateEnded>
+			<IsClient>N</IsClient>
+			<InstitutionState>New Hampshire</InstitutionState>
+			<LastUpdateTimeStamp>10/10/2010</LastUpdateTimeStamp>
+			<DateInitiated>10/09/2010</DateInitiated>
+			<LastUpdateUserID>1</LastUpdateUserID>
+			<PolicyKey>27</PolicyKey>
+			<DateOfInsolvency>10/12/2010</DateOfInsolvency>
+			<VersionSequence>27</VersionSequence>
+			<FirmMember>fdsfdfd df</FirmMember>
+		</data>
+	</attorneys_financial_list_01>
+	<AOP_PercentageValue_19>1</AOP_PercentageValue_19>
+	<AOP_CommentDesc_20></AOP_CommentDesc_20>
+	<AOP_PercentageValue_10>1</AOP_PercentageValue_10>
+	<AOPRE_PercentageValue_15>1</AOPRE_PercentageValue_15>
+	<realEstate_freeform_01>
+		<data>
+			<LargestPurchaseForResi>
+				$4,353,453,453
+			</LargestPurchaseForResi>
+			<IsFirmRequireInvestOfEnvRisks>
+				Y
+			</IsFirmRequireInvestOfEnvRisks>
+			<IsApplPerfEscowServices>Y</IsApplPerfEscowServices>
+			<IsApplRenderedRealPropMatters>
+				Y
+			</IsApplRenderedRealPropMatters>
+			<LasrgestPurchaseForComm>
+				$4,353,454,353
+			</LasrgestPurchaseForComm>
+			<ApproxNumberOfPurchaseForResi>
+				5345435
+			</ApproxNumberOfPurchaseForResi>
+			<ApproxNumberOfPurchaseForComm>
+				43534543
+			</ApproxNumberOfPurchaseForComm>
+		</data>
+	</realEstate_freeform_01>
+	<AOTP_CommentDesc_0></AOTP_CommentDesc_0>
+	<aol_percentageOfRevenue>100</aol_percentageOfRevenue>
+	<clients_environmental_list_01>
+		<data>
+			<VersionSequence>27</VersionSequence>
+			<FirmEnvClientsKey>27</FirmEnvClientsKey>
+			<EnvClientName>
+				the areas below that are included in your Commercial
+				Busines
+			</EnvClientName>
+			<LastUpdateTimeStamp>10/08/2010</LastUpdateTimeStamp>
+			<TypesOfWork>
+				the areas below that are included in your Commercial
+				Business practice: (Check all that apply)the ar
+			</TypesOfWork>
+			<PolicyKey>27</PolicyKey>
+		</data>
+	</clients_environmental_list_01>
+	<AOP_CommentDesc_10></AOP_CommentDesc_10>
+	<AccountKey>27</AccountKey>
+	<AOP_CommentDesc_22></AOP_CommentDesc_22>
+	<AOTP_CommentDesc_6></AOTP_CommentDesc_6>
+	<CoverageSequence>27</CoverageSequence>
+	<AOP_CommentDesc_23></AOP_CommentDesc_23>
+	<AOP_CommentDesc_2></AOP_CommentDesc_2>
+	<contractors_environmental_list_01></contractors_environmental_list_01>
+	<aotp_total>100</aotp_total>
+	<AOTP_CommentDesc_7></AOTP_CommentDesc_7>
+	<AOP_PercentageValue_15>1</AOP_PercentageValue_15>
+	<AOPRE_PercentageValue_2>1</AOPRE_PercentageValue_2>
+	<Amount_0>$999,999,999,999,999</Amount_0>
+	<AOP_CommentDesc_0></AOP_CommentDesc_0>
+	<services_willsEstate_list_04>
+		<data>
+			<VersionSequence>27</VersionSequence>
+			<WESDesc>Medical Planning</WESDesc>
+			<CheckedValue>Y</CheckedValue>
+			<PolicyKey>27</PolicyKey>
+			<WESKey>10</WESKey>
+		</data>
+		<data>
+			<VersionSequence>27</VersionSequence>
+			<WESDesc>Litigation</WESDesc>
+			<CheckedValue>Y</CheckedValue>
+			<PolicyKey>27</PolicyKey>
+			<WESKey>11</WESKey>
+		</data>
+		<data>
+			<VersionSequence>27</VersionSequence>
+			<WESDesc>Other:</WESDesc>
+			<CheckedValue>Y</CheckedValue>
+			<PolicyKey>27</PolicyKey>
+			<WESCommentDesc>
+				the areas below that are included in your Commercial
+				Business practice: (Check all that apply)the ar
+			</WESCommentDesc>
+			<WESKey>12</WESKey>
+		</data>
+	</services_willsEstate_list_04>
+	<AOPRE_PercentageValue_13>1</AOPRE_PercentageValue_13>
+	<AOTP_PercentageValue_1>1</AOTP_PercentageValue_1>
+	<aol_largestCaseSize>445314</aol_largestCaseSize>
+	<AOPRE_CommentDesc_15></AOPRE_CommentDesc_15>
+	<AOTP_CommentDesc_5></AOTP_CommentDesc_5>
+	<services_willsEstate_list_03>
+		<data>
+			<VersionSequence>27</VersionSequence>
+			<WESDesc>Taxation</WESDesc>
+			<CheckedValue>Y</CheckedValue>
+			<PolicyKey>27</PolicyKey>
+			<WESKey>7</WESKey>
+		</data>
+		<data>
+			<VersionSequence>27</VersionSequence>
+			<WESDesc>Asset Protection</WESDesc>
+			<CheckedValue>Y</CheckedValue>
+			<PolicyKey>27</PolicyKey>
+			<WESKey>8</WESKey>
+		</data>
+		<data>
+			<VersionSequence>27</VersionSequence>
+			<WESDesc>Guardianship</WESDesc>
+			<CheckedValue>Y</CheckedValue>
+			<PolicyKey>27</PolicyKey>
+			<WESKey>9</WESKey>
+		</data>
+	</services_willsEstate_list_03>
+	<attorneys_public_list_1>
+		<data>
+			<VersionSequence>27</VersionSequence>
+			<AttorneyName>
+				the areas below that are included in your Commercial
+				Busines
+			</AttorneyName>
+			<AttorneyInEntertainKey>21</AttorneyInEntertainKey>
+			<PercentageOfTimeDev>345</PercentageOfTimeDev>
+			<PolicyKey>27</PolicyKey>
+			<NumberOfYrsInSpec>5435</NumberOfYrsInSpec>
+		</data>
+	</attorneys_public_list_1>
+	<AOP_PercentageValue_0>1</AOP_PercentageValue_0>
+	<AOPRE_PercentageValue_14>1</AOPRE_PercentageValue_14>
+	<firmannual_practice_list_01>
+		<data>
+			<VersionSequence>27</VersionSequence>
+			<ServicesRendered>
+				54645645the areas below that are included in your
+				Commercial Business practice: (Check all that appl
+			</ServicesRendered>
+			<ClientNameForAnnlRevenue>
+				the areas below that are included in your Commercial
+				Busines
+			</ClientNameForAnnlRevenue>
+			<PercentageOfAnnlRevenue>563</PercentageOfAnnlRevenue>
+			<PolicyKey>27</PolicyKey>
+			<FirmAnnualRevenueKey>9</FirmAnnualRevenueKey>
+		</data>
+	</firmannual_practice_list_01>
+	<AOP_PercentageValue_4>1</AOP_PercentageValue_4>
+	<AOPRE_CommentDesc_6></AOPRE_CommentDesc_6>
+	<AOP_PercentageValue_21>1</AOP_PercentageValue_21>
+	<primaryloc_firm_list_01>
+		<data>
+			<FPLAddress>fgdfgdfg</FPLAddress>
+			<FPLCity>vgfgdsg</FPLCity>
+			<FirmPracticeLocationKey>32</FirmPracticeLocationKey>
+			<NumberOfAttorneys>45435345</NumberOfAttorneys>
+			<LastUpdateTimeStamp>10/10/2010</LastUpdateTimeStamp>
+			<LastUpdateUserID>1</LastUpdateUserID>
+			<PolicyKey>27</PolicyKey>
+			<FPLStateCode>Kansas</FPLStateCode>
+			<FPLZip4>3453</FPLZip4>
+			<NumberOfBillabeHours>453</NumberOfBillabeHours>
+			<FPLZip>43534</FPLZip>
+			<VersionSequence>27</VersionSequence>
+			<NumberOfOtherEmployees>3453454</NumberOfOtherEmployees>
+		</data>
+	</primaryloc_firm_list_01>
+	<claims_list_1>
+		<data>
+			<IsClaimReportedToInsComp>Y</IsClaimReportedToInsComp>
+			<TotalAmountPaid>$88,888,888,888,888</TotalAmountPaid>
+			<ClaimClosingDate>10/31/2010</ClaimClosingDate>
+			<IsClient>Y</IsClient>
+			<ClaimNotifiedDate>10/08/2010</ClaimNotifiedDate>
+			<NameOfInsComp>
+				Description of claim or potential claim Description of
+				claim
+			</NameOfInsComp>
+			<StepsTakenToPreventClaims>
+				Description of claim or potential claim Description of
+				claim or potential claim Description of claim or
+				potential claim Description of claim or potential claim
+				Description of claim or potential claim Description of
+				claim or potential claim Description of claim or
+				potential claim Description of claim or potential claim
+				Description of claim or potential claim Description of
+				claim or potential claim
+			</StepsTakenToPreventClaims>
+			<DateOfAllegedError>10/02/2010</DateOfAllegedError>
+			<CurrentStatus>
+				Description of claim or potential claim Descriptio
+			</CurrentStatus>
+			<NameOfPersonnelINClaim>
+				sdasd or potential claim
+			</NameOfPersonnelINClaim>
+			<DescOfClaim>
+				Description of claim or potential claim Description of
+				claim or potential claim Description of clai
+			</DescOfClaim>
+			<NameOfClaimant>claimant1</NameOfClaimant>
+			<InsurerLoss>$34,234,234</InsurerLoss>
+			<ClaimantLastDemand>$34,234,324,324</ClaimantLastDemand>
+			<DateReportedToInsComp>10/16/2010</DateReportedToInsComp>
+		</data>
+		<data>
+			<IsClaimReportedToInsComp>N</IsClaimReportedToInsComp>
+			<TotalAmountPaid>$999,999,999,999</TotalAmountPaid>
+			<ClaimClosingDate>10/28/2010</ClaimClosingDate>
+			<IsClient>Y</IsClient>
+			<ClaimNotifiedDate>10/22/2010</ClaimNotifiedDate>
+			<NameOfInsComp>
+				Description of claim or potential claim Description of
+				claim
+			</NameOfInsComp>
+			<StepsTakenToPreventClaims>
+				Description of claim or potential claim Description of
+				claim or potential claim Description of claim or
+				potential claim Description of claim or potential claim
+				Description of claim or potential claim Description of
+				claim or potential claim Description of claim or
+				potential claim
+			</StepsTakenToPreventClaims>
+			<DateOfAllegedError>10/22/2010</DateOfAllegedError>
+			<CurrentStatus>
+				Description of claim or potential claim Descriptio
+			</CurrentStatus>
+			<NameOfPersonnelINClaim>
+				Description of claim or potential claim Description of
+				claim
+			</NameOfPersonnelINClaim>
+			<DescOfClaim>
+				Description of claim or potential claim Description of
+				claim or potential claim Description of claim
+			</DescOfClaim>
+			<NameOfClaimant>
+				Description of claim or potential claim Description of
+				claim
+			</NameOfClaimant>
+			<InsurerLoss>$45,345</InsurerLoss>
+			<ClaimantLastDemand>$67,575,675,675</ClaimantLastDemand>
+			<DateReportedToInsComp>10/23/2010</DateReportedToInsComp>
+		</data>
+	</claims_list_1>
+	<personnel_practice_list_01>
+		<data>
+			<IsDirOffInsInForce>Y</IsDirOffInsInForce>
+			<NatureOfClientBusiness>
+				the areas below that are included in your Commercial
+				Busines
+			</NatureOfClientBusiness>
+			<PercentEquityInterest>453</PercentEquityInterest>
+			<FirmServices>
+				the areas below that are included in your Commercial
+				Busines
+			</FirmServices>
+			<LastUpdateTimeStamp>10/08/2010</LastUpdateTimeStamp>
+			<PositionHeld>
+				the areas below that are included in your Commercial
+				Busines
+			</PositionHeld>
+			<PolicyKey>27</PolicyKey>
+			<IsIndividualPerformServices>Y</IsIndividualPerformServices>
+			<VersionSequence>27</VersionSequence>
+			<FirmMember>
+				the areas below that are included in your Commercial
+				Busines
+			</FirmMember>
+			<FirmPersonnelServedKey>13</FirmPersonnelServedKey>
+			<EntityName>
+				the areas below that are included in your Commercial
+				Busines
+			</EntityName>
+		</data>
+	</personnel_practice_list_01>
+	<AOPRE_PercentageValue_12>1</AOPRE_PercentageValue_12>
+	<AOTP_PercentageValue_0>1</AOTP_PercentageValue_0>
+	<AOP_PercentageValue_18>1</AOP_PercentageValue_18>
+	<plaintiff_freeform_01>
+		<data>
+			<NumberOfInjuryHandleByAttorney>
+				435345
+			</NumberOfInjuryHandleByAttorney>
+			<IsApplAdvertiseByInternet>Y</IsApplAdvertiseByInternet>
+			<IsRefAggrementReferToApplRefersOut>
+				Y
+			</IsRefAggrementReferToApplRefersOut>
+			<IsApplAcceptCasesToStatuteOfLim>
+				Y
+			</IsApplAcceptCasesToStatuteOfLim>
+			<IsApplAdvertiseByTelevision>N</IsApplAdvertiseByTelevision>
+			<IsAppAcceptRefersFromOtherFirms>
+				Y
+			</IsAppAcceptRefersFromOtherFirms>
+			<IsSettlementAggrementsUsed>Y</IsSettlementAggrementsUsed>
+			<NumberOfInjuryCasesIn12Month>
+				435345
+			</NumberOfInjuryCasesIn12Month>
+			<IsApplAdvertiseByNewspaper>N</IsApplAdvertiseByNewspaper>
+			<LastUpdateUserID>1</LastUpdateUserID>
+			<IsApplAdvertiseByYellowpages>
+				Y
+			</IsApplAdvertiseByYellowpages>
+			<PolicyKey>27</PolicyKey>
+			<NumberOfSuppotedStaffToPlantiff>
+				5435
+			</NumberOfSuppotedStaffToPlantiff>
+			<IsRefAggrementReferToAppl>Y</IsRefAggrementReferToAppl>
+			<PerOfCasesReferToApplicant>4</PerOfCasesReferToApplicant>
+			<IsApplAdvertiseByMagazine>Y</IsApplAdvertiseByMagazine>
+			<PerOfCasesTriedToConclusion>
+				43
+			</PerOfCasesTriedToConclusion>
+			<VersionSequence>27</VersionSequence>
+			<IsApplAdvertiseByRadio>N</IsApplAdvertiseByRadio>
+			<IsAppConfirmCarryProfLiabIns>
+				Y
+			</IsAppConfirmCarryProfLiabIns>
+			<PerOfCasesBeforeTrail>454</PerOfCasesBeforeTrail>
+		</data>
+	</plaintiff_freeform_01>
+	<AddressKey>27</AddressKey>
+	<VersionSequence>27</VersionSequence>
+	<aop_total>100</aop_total>
+	<AOPRE_PercentageValue_11>1</AOPRE_PercentageValue_11>
+	<Amount_1>$999,999,999,999,999</Amount_1>
+	<AOP_PercentageValue_17>1</AOP_PercentageValue_17>
+	<policy_freeform_01>
+		<data>
+			<QuoteNumber>QN-0000027</QuoteNumber>
+			<Website>
+				the areas below that are included in your Commercial
+				Busines
+			</Website>
+			<AccountEmail>adsdasd@asa.com</AccountEmail>
+			<Address1>
+				the areas below that are included in your Commercial
+				Business practice: (Check all that apply)the ar
+			</Address1>
+			<Zip>45435</Zip>
+			<City>dfsdfdsf</City>
+			<StateDesc>Oregon</StateDesc>
+			<StateCode>OR</StateCode>
+			<ContactPerson>
+				the areas below that are included in your Commerci
+			</ContactPerson>
+			<WorkPhone>(453)45</WorkPhone>
+			<LicenseNumber>ny0001</LicenseNumber>
+			<PolicyEffectiveDate>06/12/1998</PolicyEffectiveDate>
+			<Address2>
+				the areas below that are included in your Commercial
+				Business practice: (Check all that apply)the ar
+			</Address2>
+			<ContactPhone>(342)423-4</ContactPhone>
+			<AccountName>
+				the areas below that are included in your Commercial
+				Busines
+			</AccountName>
+			<Zip4>5345</Zip4>
+		</data>
+	</policy_freeform_01>
+	<AOPRE_CommentDesc_11></AOPRE_CommentDesc_11>
+	<AOTP_PercentageValue_2>1</AOTP_PercentageValue_2>
+	<AOPRE_CommentDesc_7></AOPRE_CommentDesc_7>
+	<AOTP_CommentDesc_8>asdsa sfasdf dsf d</AOTP_CommentDesc_8>
+	<AOP_PercentageValue_3>1</AOP_PercentageValue_3>
+	<AOP_PercentageValue_20>1</AOP_PercentageValue_20>
+	<AOPRE_CommentDesc_12></AOPRE_CommentDesc_12>
+	<AOTP_CommentDesc_4></AOTP_CommentDesc_4>
+	<AOPRE_PercentageValue_1>1</AOPRE_PercentageValue_1>
+	<attorneys_firm_list_01>
+		<data>
+			<NumberOfYearsWithFirm>4353</NumberOfYearsWithFirm>
+			<AttorneyName>
+				the areas below that are included in your Commercial
+				Busines
+			</AttorneyName>
+			<NumberOfYearsInPractice>4534</NumberOfYearsInPractice>
+			<AttorneyPriorActDate>10/03/2010</AttorneyPriorActDate>
+			<LastUpdateTimeStamp>10/10/2010</LastUpdateTimeStamp>
+			<LastUpdateUserID>1</LastUpdateUserID>
+			<LicensedStates>Maryland</LicensedStates>
+			<PolicyKey>27</PolicyKey>
+			<AnnualWorkedHours>43534</AnnualWorkedHours>
+			<AttorneyDesg>Employee</AttorneyDesg>
+			<VersionSequence>27</VersionSequence>
+			<NumberOfYearsMalpracticeCov>
+				543
+			</NumberOfYearsMalpracticeCov>
+			<AttorneyKey>59</AttorneyKey>
+		</data>
+		<data>
+			<NumberOfYearsWithFirm>3423</NumberOfYearsWithFirm>
+			<AttorneyName>
+				sd sd s asd njn asnd sndn sdn n snd asd ndn adn ns sd
+			</AttorneyName>
+			<NumberOfYearsInPractice>3423</NumberOfYearsInPractice>
+			<AttorneyPriorActDate>10/17/2010</AttorneyPriorActDate>
+			<LastUpdateTimeStamp>10/10/2010</LastUpdateTimeStamp>
+			<LastUpdateUserID>1</LastUpdateUserID>
+			<LicensedStates>North Carolina</LicensedStates>
+			<PolicyKey>27</PolicyKey>
+			<AnnualWorkedHours>34234</AnnualWorkedHours>
+			<AttorneyDesg>Independent Contractor</AttorneyDesg>
+			<VersionSequence>27</VersionSequence>
+			<NumberOfYearsMalpracticeCov>
+				342
+			</NumberOfYearsMalpracticeCov>
+			<AttorneyKey>61</AttorneyKey>
+		</data>
+	</attorneys_firm_list_01>
+	<public_freeform_01>
+		<data>
+			<IsApplNagotiatePersonnelApp>N</IsApplNagotiatePersonnelApp>
+			<IsApplCoverageAcceptCompensation>
+				Y
+			</IsApplCoverageAcceptCompensation>
+			<IsApplCovSoughtServeAsManager>
+				N
+			</IsApplCovSoughtServeAsManager>
+			<IsApplCoverageAcceptPercForFees>
+				Y
+			</IsApplCoverageAcceptPercForFees>
+			<LastUpdateUserID>1</LastUpdateUserID>
+			<PolicyKey>27</PolicyKey>
+			<IsApplProvideInvestForEntertain>
+				N
+			</IsApplProvideInvestForEntertain>
+			<VersionSequence>27</VersionSequence>
+			<IsApplSoughtHaveAuthForEntertain>
+				N
+			</IsApplSoughtHaveAuthForEntertain>
+			<IsBusinessRelationWithApplEnt>
+				N
+			</IsBusinessRelationWithApplEnt>
+			<IsApplServedAsTrustee>N</IsApplServedAsTrustee>
+			<ApplCoverageAcceptDetails>
+				aol_plaintiff_list_01 aol_plaintiff_list_01
+				aol_plaintiff_list_01 c aol_plaintiff_list_01
+				aol_plaintiff_list_01 aol_plaintiff_list_01 c
+				aol_plaintiff_list_01 aol_plaintiff_list_01
+				aol_plaintiff_list_01 c aol_plaintiff_list_01
+				aol_plaintiff_list_01 aol_plaintiff_list_01 c
+				aol_plaintiff_list_01 aol_plaintiff_list_01
+				aol_plaintiff_list_01 c aol_plaintiff_list_01
+				aol_plaintiff_list_01 aol_plaintiff_list_01 c
+				aol_plaintiff_list_01 aol_plaintiff_list_01
+				aol_plaintiff_list_01 c aol_plaintiff_list_01 ao
+			</ApplCoverageAcceptDetails>
+		</data>
+	</public_freeform_01>
+	<AOPRE_PercentageValue_4>1</AOPRE_PercentageValue_4>
+	<AOTP_CommentDesc_1></AOTP_CommentDesc_1>
+	<attorneys_tax_list_01>
+		<data>
+			<AttorneyHaveTaxWorkKey>17</AttorneyHaveTaxWorkKey>
+			<VersionSequence>27</VersionSequence>
+			<LastUpdateTimeStamp>10/09/2010</LastUpdateTimeStamp>
+			<LastUpdateUserID>1</LastUpdateUserID>
+			<PercentOfTimeDevoted>546</PercentOfTimeDevoted>
+			<PolicyKey>27</PolicyKey>
+			<TaxAttorneyName>gdfgdfgdfg</TaxAttorneyName>
+			<IsCertifiedTax>Y</IsCertifiedTax>
+			<NumberOfYrOfTaxExp>564</NumberOfYrOfTaxExp>
+		</data>
+	</attorneys_tax_list_01>
+	<AOPRE_PercentageValue_10>1</AOPRE_PercentageValue_10>
+	<AOP_CommentDesc_9></AOP_CommentDesc_9>
+	<AOP_PercentageValue_22>1</AOP_PercentageValue_22>
+	<AOP_PercentageValue_6>1</AOP_PercentageValue_6>
+	<AOTP_CommentDesc_2></AOTP_CommentDesc_2>
+	<AOPRE_PercentageValue_3>1</AOPRE_PercentageValue_3>
+	<firm_freeform_01>
+		<data>
+			<IsTitlePage>Y</IsTitlePage>
+			<IsEnvironmentalPage>Y</IsEnvironmentalPage>
+			<IsEntertainmentPage>N</IsEntertainmentPage>
+			<IsFirmProvidedLegalServiceToSecurity>
+				Y
+			</IsFirmProvidedLegalServiceToSecurity>
+			<LastUpdateUserID>1</LastUpdateUserID>
+			<IsFirmPracticeInOtherState>Y</IsFirmPracticeInOtherState>
+			<IsCorporatePage>Y</IsCorporatePage>
+			<IsFirmHaveLawyersLiabilityInsurance>
+				Y
+			</IsFirmHaveLawyersLiabilityInsurance>
+			<IsPersonnelBeSubOfAnyInvest>Y</IsPersonnelBeSubOfAnyInvest>
+			<IsFirmHaveIndepDockets>Y</IsFirmHaveIndepDockets>
+			<IsPolicyExcludesCoverage>Y</IsPolicyExcludesCoverage>
+			<FirstReviewUserID>1</FirstReviewUserID>
+			<IsFirmRequireEngagementLetter>
+				Y
+			</IsFirmRequireEngagementLetter>
+			<AttorneyDeclineForProfLiabilityDates>
+				10/31/2010
+			</AttorneyDeclineForProfLiabilityDates>
+			<IsWillsEstatePage>Y</IsWillsEstatePage>
+			<IsTaxPage>Y</IsTaxPage>
+			<IsApplIntToFinanAssests>Y</IsApplIntToFinanAssests>
+			<IsFirmProvidedLegalServiceToInvClient>
+				Y
+			</IsFirmProvidedLegalServiceToInvClient>
+			<IsIntellectPropPage>N</IsIntellectPropPage>
+			<PolicyExcludeCoverageForAffiliatesDesc>
+				the areas below that are included in your Commercial
+				Business practice: (Check all that apply)the areas below
+				that are included in your Commercial Business practice:
+				(Check all that apply)the areas below that are included
+				in your Commercial Business practice: (Check all that
+				apply)the areas below that are included in your
+				Commercial Business practice: (Check all that apply)the
+				areas below that are included in your Commercial
+				Business practice: (Check all that apply)the areas below
+				that are inclu
+			</PolicyExcludeCoverageForAffiliatesDesc>
+			<PercentofApplAcctRcbl>675</PercentofApplAcctRcbl>
+			<IsFirmPersServedAsOfficerInJointVenture>
+				Y
+			</IsFirmPersServedAsOfficerInJointVenture>
+			<IsRealEstatePage>Y</IsRealEstatePage>
+			<IsPolicyProhibitAttorneyWithInvestment>
+				Y
+			</IsPolicyProhibitAttorneyWithInvestment>
+			<IsAopPage>Y</IsAopPage>
+			<IsNonEngagementLetterIssueToFirm>
+				Y
+			</IsNonEngagementLetterIssueToFirm>
+			<PersonnelBeSubOfAnyInvestDate>
+				10/17/2010
+			</PersonnelBeSubOfAnyInvestDate>
+			<ApplicantProvidesLegalServicesDesc>
+				the areas below that are included in your Commercial
+				Business practice: (Check all that apply)the areas below
+				that are included in your Commercial Business practice:
+				(Check all that apply)the areas below that are included
+				in your Commercial Business practice: (Check all that
+				apply)the areas below that are included in your
+				Commercial Business practice: (Check all that apply)the
+				areas below that are included in your Commercial
+				Business practice: (Check all that apply)the areas below
+				that are inclu
+			</ApplicantProvidesLegalServicesDesc>
+			<PersonnelBeSubOfAnyInvestDetails>
+				the areas below that are included in your Commercial
+				Business practice: (Check all that apply)the areas below
+				that are included in your Commercial Business practice:
+				(Check all that apply)the areas below that are included
+				in your Commercial Business practice: (Check all that
+				apply)the areas below that are included in your
+				Commercial Business practice: (Check all that apply)the
+				areas below that are included in your Commercial
+				Business practice: (Check all that apply)the areas below
+				that are inclu
+			</PersonnelBeSubOfAnyInvestDetails>
+			<IsFirmPage>Y</IsFirmPage>
+			<IsEmplRelativeToConfInfomation>
+				Y
+			</IsEmplRelativeToConfInfomation>
+			<IsFinancialInsPage>Y</IsFinancialInsPage>
+			<IsFirmHaveEquityIntGrtThan10>
+				Y
+			</IsFirmHaveEquityIntGrtThan10>
+			<IsFirmCoverageForPreceedorFirms>
+				Y
+			</IsFirmCoverageForPreceedorFirms>
+			<LastUpdateTimeStamp>10/10/2010</LastUpdateTimeStamp>
+			<IsPlaintiffPage>Y</IsPlaintiffPage>
+			<IsPolicyIncludeLateralHireCov>
+				Y
+			</IsPolicyIncludeLateralHireCov>
+			<IsAttorneyDeclineForProfLiability>
+				Y
+			</IsAttorneyDeclineForProfLiability>
+			<ContactPerson>
+				the areas below that are included in your Commerci
+			</ContactPerson>
+			<IsApplicantProvidesLegalServices>
+				Y
+			</IsApplicantProvidesLegalServices>
+			<IsAnyActOmmBecomeClaimAgntFirm>
+				N
+			</IsAnyActOmmBecomeClaimAgntFirm>
+			<IsFirmHaveClientMoreThan25PercentOfBilling>
+				Y
+			</IsFirmHaveClientMoreThan25PercentOfBilling>
+			<IsFirmProvidedLegalServiceToInvestment>
+				Y
+			</IsFirmProvidedLegalServiceToInvestment>
+			<IsLawyerProfLiabClaimAgntAppl>
+				N
+			</IsLawyerProfLiabClaimAgntAppl>
+			<IsFirmHaveProcForFormersClients>
+				Y
+			</IsFirmHaveProcForFormersClients>
+			<IsFirmInvolvedInClassActionCase>
+				Y
+			</IsFirmInvolvedInClassActionCase>
+			<IsFirmHaveClientInEntertainmentInd>
+				Y
+			</IsFirmHaveClientInEntertainmentInd>
+			<PolicyKey>27</PolicyKey>
+			<IsApplInitiatedLawsuitForFirm>
+				Y
+			</IsApplInitiatedLawsuitForFirm>
+			<YearOfFirmEstablished>4543</YearOfFirmEstablished>
+			<IsCoveragePage>Y</IsCoveragePage>
+			<IsFirmProvidedLegalServiceToMoney>
+				Y
+			</IsFirmProvidedLegalServiceToMoney>
+			<IsPracticePage>Y</IsPracticePage>
+			<AttorneyDeclineForProfLiabilityReasons>
+				the areas below that are included in your Commercial
+				Business practice: (Check all that apply)the areas below
+				that are included in your Commercial Business practice:
+				(Check all that apply)the areas below that are included
+				in your Commercial Business practice: (Check all that
+				apply)the areas below that are included in your
+				Commercial Business practice: (Check all that apply)the
+				areas below that are included in your Commercial
+				Business practice: (Check all that apply)the areas below
+				that are inclu
+			</AttorneyDeclineForProfLiabilityReasons>
+			<VersionSequence>27</VersionSequence>
+			<TotalNumOfNonAttorneyStaff>
+				6565
+			</TotalNumOfNonAttorneyStaff>
+			<IsFirmMergedWithOtherFirm>Y</IsFirmMergedWithOtherFirm>
+			<IsApplRestWithManagement>Y</IsApplRestWithManagement>
+			<IsAppOfficeSharedWithAttorney>
+				Y
+			</IsAppOfficeSharedWithAttorney>
+			<PerOfGrossBillingsUnderContract>
+				0
+			</PerOfGrossBillingsUnderContract>
+			<IsSecuritiesPage>N</IsSecuritiesPage>
+			<LicenseNumber>ny0001</LicenseNumber>
+			<ContactPhone>(342)423-4</ContactPhone>
+		</data>
+	</firm_freeform_01>
+	<areas_corp_list_01>
+		<data>
+			<CCBKey>1</CCBKey>
+			<VersionSequence>27</VersionSequence>
+			<CCBCheckedValue>Y</CCBCheckedValue>
+			<CCBDesc>Admiralty / Marine</CCBDesc>
+			<PolicyKey>27</PolicyKey>
+		</data>
+		<data>
+			<CCBKey>2</CCBKey>
+			<VersionSequence>27</VersionSequence>
+			<CCBCheckedValue>Y</CCBCheckedValue>
+			<CCBDesc>Communications</CCBDesc>
+			<PolicyKey>27</PolicyKey>
+		</data>
+		<data>
+			<CCBKey>3</CCBKey>
+			<VersionSequence>27</VersionSequence>
+			<CCBCheckedValue>Y</CCBCheckedValue>
+			<CCBDesc>Corporate Administration</CCBDesc>
+			<PolicyKey>27</PolicyKey>
+		</data>
+	</areas_corp_list_01>
+	<AOPRE_CommentDesc_0></AOPRE_CommentDesc_0>
+	<financial_freeform_01>
+		<data>
+			<IsApplHadEquityInterest>Y</IsApplHadEquityInterest>
+			<VersionSequence>27</VersionSequence>
+			<IsApplProvideServToCompliance>
+				Y
+			</IsApplProvideServToCompliance>
+			<IsFinanInstProvideAggrement>Y</IsFinanInstProvideAggrement>
+			<IsApplClientDeclaredInsolvent>
+				Y
+			</IsApplClientDeclaredInsolvent>
+			<LastUpdateUserID>1</LastUpdateUserID>
+			<InterestOrCommAmounts>
+				the areas below that are included in your Commercial
+				Business practice: (Check all that apply)the areas below
+				that are included in your Commercial Business practice:
+				(Check all that apply)the areas below that are included
+				in your Commercial Business practice: (Check all that
+				apply)the areas below that are included in your
+				Commercial Business practice: (Check all that apply)the
+				areas below that are included in your Commercial
+				Business practice: (Check all that apply)the areas below
+				that are inclu
+			</InterestOrCommAmounts>
+			<PolicyKey>27</PolicyKey>
+			<IsAppHaveKnwOfFidilityOff>Y</IsAppHaveKnwOfFidilityOff>
+			<IsApplPerformServiceToBankruptcy>
+				Y
+			</IsApplPerformServiceToBankruptcy>
+			<IsApplServedAsCEOCouncel>Y</IsApplServedAsCEOCouncel>
+		</data>
+	</financial_freeform_01>
+	<services_willsEstate_list_01>
+		<data>
+			<VersionSequence>27</VersionSequence>
+			<WESDesc>Preparation of Wills</WESDesc>
+			<CheckedValue>Y</CheckedValue>
+			<PolicyKey>27</PolicyKey>
+			<WESKey>1</WESKey>
+		</data>
+		<data>
+			<VersionSequence>27</VersionSequence>
+			<WESDesc>Estate Planning</WESDesc>
+			<CheckedValue>Y</CheckedValue>
+			<PolicyKey>27</PolicyKey>
+			<WESKey>2</WESKey>
+		</data>
+		<data>
+			<VersionSequence>27</VersionSequence>
+			<WESDesc>Probate</WESDesc>
+			<CheckedValue>Y</CheckedValue>
+			<PolicyKey>27</PolicyKey>
+			<WESKey>3</WESKey>
+		</data>
+	</services_willsEstate_list_01>
+	<prodecessor_list_1>
+		<data>
+			<NumberOfAttorneyAtApplFirm>
+				545345
+			</NumberOfAttorneyAtApplFirm>
+			<InsurerAtDissolution>
+				the areas below that
+			</InsurerAtDissolution>
+			<IsERPPurchased>Y</IsERPPurchased>
+			<TypeOfEntity>the areas below that</TypeOfEntity>
+			<FirmName>the areas below that</FirmName>
+			<LastUpdateTimeStamp>10/08/2010</LastUpdateTimeStamp>
+			<PolicyKey>27</PolicyKey>
+			<DateOfAcquisation>10/15/2010</DateOfAcquisation>
+			<ERPExpDate>10/15/2010</ERPExpDate>
+			<VersionSequence>27</VersionSequence>
+			<NumberOfAttorneyAtDiss>65465454</NumberOfAttorneyAtDiss>
+			<ProdecessorFirmKey>23</ProdecessorFirmKey>
+		</data>
+	</prodecessor_list_1>
+	<AOTP_CommentDesc_3></AOTP_CommentDesc_3>
+	<YearEndDate_0>12/2010</YearEndDate_0>
+	<AOP_CommentDesc_7></AOP_CommentDesc_7>
+	<AOPRE_CommentDesc_16>
+		the areas below that are included in your Commercial Business
+		practice: (Check all that apply)the ar
+	</AOPRE_CommentDesc_16>
+	<AOP_PercentageValue_16>1</AOP_PercentageValue_16>
+	<services_willsEstate_list_02>
+		<data>
+			<VersionSequence>27</VersionSequence>
+			<WESDesc>Trust Administration</WESDesc>
+			<CheckedValue>Y</CheckedValue>
+			<PolicyKey>27</PolicyKey>
+			<WESKey>4</WESKey>
+		</data>
+		<data>
+			<VersionSequence>27</VersionSequence>
+			<WESDesc>Corporation Formation</WESDesc>
+			<CheckedValue>Y</CheckedValue>
+			<PolicyKey>27</PolicyKey>
+			<WESKey>5</WESKey>
+		</data>
+		<data>
+			<VersionSequence>27</VersionSequence>
+			<WESDesc>Tax Opinions</WESDesc>
+			<CheckedValue>Y</CheckedValue>
+			<PolicyKey>27</PolicyKey>
+			<WESKey>6</WESKey>
+		</data>
+	</services_willsEstate_list_02>
+	<AOPRE_CommentDesc_13></AOPRE_CommentDesc_13>
+	<AOP_PercentageValue_1>1</AOP_PercentageValue_1>
+	<AOPRE_PercentageValue_5>1</AOPRE_PercentageValue_5>
+	<AOTP_PercentageValue_6>1</AOTP_PercentageValue_6>
+	<AOPRE_CommentDesc_9></AOPRE_CommentDesc_9>
+	<AOPRE_PercentageValue_8>1</AOPRE_PercentageValue_8>
+	<willsEstate_freeform_01>
+		<data>
+			<IsApplPolicyReviewBySecondAttorney>
+				N
+			</IsApplPolicyReviewBySecondAttorney>
+			<IsMemCertLegalSpecialist>N</IsMemCertLegalSpecialist>
+			<IsApplTaxInConjucWithTrustWork>
+				N
+			</IsApplTaxInConjucWithTrustWork>
+			<LastUpdateUserID>1</LastUpdateUserID>
+			<NumberOfEstateOver10Million>
+				99999999
+			</NumberOfEstateOver10Million>
+			<IsAttorneyServeAsExecutorTrustee>
+				Y
+			</IsAttorneyServeAsExecutorTrustee>
+			<PolicyKey>27</PolicyKey>
+			<NumberOfEstateOver1Million>
+				99999999
+			</NumberOfEstateOver1Million>
+			<VersionSequence>27</VersionSequence>
+			<ListOfAttWithNameServicesClient>
+				the areas below that are included in your Commercial
+				Business practice: (Check all that apply)the areas below
+				that are included in your Commercial Business practice:
+				(Check all that apply)the areas be
+			</ListOfAttWithNameServicesClient>
+			<IsApplProvideInvestAdviceToClient>
+				N
+			</IsApplProvideInvestAdviceToClient>
+			<NumberOfEstateOver5Million>
+				99999999
+			</NumberOfEstateOver5Million>
+		</data>
+	</willsEstate_freeform_01>
+	<aopre_total>100</aopre_total>
+	<AOPRE_CommentDesc_8></AOPRE_CommentDesc_8>
+	<AOP_PercentageValue_12>1</AOP_PercentageValue_12>
+	<AOTP_PercentageValue_8>92</AOTP_PercentageValue_8>
+	<AOPRE_PercentageValue_6>1</AOPRE_PercentageValue_6>
+	<clients_public_list_1>
+		<data>
+			<VersionSequence>27</VersionSequence>
+			<IsCurrentClient>N</IsCurrentClient>
+			<FieldOfEntertainment>
+				the areas below that are included in your Commercial
+				Business practice: (Check all that apply)the ar
+			</FieldOfEntertainment>
+			<TypeOfServices>
+				the areas below that are included in your Commercial
+				Business practice: (Check all that apply)the ar
+			</TypeOfServices>
+			<EnterSportsClientOfFirmKey>31</EnterSportsClientOfFirmKey>
+			<ToDate>10/23/2010</ToDate>
+			<PolicyKey>27</PolicyKey>
+			<ClientName>
+				the areas below that are included in your Commercial
+				Busines
+			</ClientName>
+			<FromDate>10/07/2010</FromDate>
+		</data>
+	</clients_public_list_1>
+	<AOP_PercentageValue_14>1</AOP_PercentageValue_14>
+	<AOP_CommentDesc_14></AOP_CommentDesc_14>
+	<areas_corp_list_03>
+		<data>
+			<CCBKey>7</CCBKey>
+			<VersionSequence>27</VersionSequence>
+			<CCBCheckedValue>Y</CCBCheckedValue>
+			<CCBDesc>Commercial Litigation</CCBDesc>
+			<PolicyKey>27</PolicyKey>
+		</data>
+		<data>
+			<CCBKey>8</CCBKey>
+			<VersionSequence>27</VersionSequence>
+			<CCBCheckedValue>Y</CCBCheckedValue>
+			<CCBDesc>Secured Transactions</CCBDesc>
+			<PolicyKey>27</PolicyKey>
+		</data>
+		<data>
+			<CCBKey>9</CCBKey>
+			<VersionSequence>27</VersionSequence>
+			<CCBCheckedValue>Y</CCBCheckedValue>
+			<CCBDesc>Labor Union Related</CCBDesc>
+			<PolicyKey>27</PolicyKey>
+		</data>
+	</areas_corp_list_03>
+	<AOPRE_PercentageValue_9>1</AOPRE_PercentageValue_9>
+	<inet_project_id>LawyersIns</inet_project_id>
+	<AOPRE_CommentDesc_2></AOPRE_CommentDesc_2>
+	<AOP_CommentDesc_13></AOP_CommentDesc_13>
+	<AOP_CommentDesc_19></AOP_CommentDesc_19>
+	<AOPRE_CommentDesc_14></AOPRE_CommentDesc_14>
+	<areas_corp_list_02>
+		<data>
+			<CCBKey>4</CCBKey>
+			<VersionSequence>27</VersionSequence>
+			<CCBCheckedValue>Y</CCBCheckedValue>
+			<CCBDesc>Business Transactions/ Advice</CCBDesc>
+			<PolicyKey>27</PolicyKey>
+		</data>
+		<data>
+			<CCBKey>5</CCBKey>
+			<VersionSequence>27</VersionSequence>
+			<CCBCheckedValue>Y</CCBCheckedValue>
+			<CCBDesc>Corporate Formation</CCBDesc>
+			<PolicyKey>27</PolicyKey>
+		</data>
+		<data>
+			<CCBKey>6</CCBKey>
+			<VersionSequence>27</VersionSequence>
+			<CCBCheckedValue>Y</CCBCheckedValue>
+			<CCBDesc>Collections / Repossession</CCBDesc>
+			<PolicyKey>27</PolicyKey>
+		</data>
+	</areas_corp_list_02>
+	<AOPRE_CommentDesc_5></AOPRE_CommentDesc_5>
+	<attorneys_plaintiff_list_01>
+		<data>
+			<PlaintiffAttorneyName>
+				the areas below that are included in your Commercial
+				Busines
+			</PlaintiffAttorneyName>
+			<VersionSequence>27</VersionSequence>
+			<AttorneyInPlaintiffKey>15</AttorneyInPlaintiffKey>
+			<PlaintiffPecOfTimeDev>543</PlaintiffPecOfTimeDev>
+			<PolicyKey>27</PolicyKey>
+			<PlaintiffYrsExp>345</PlaintiffYrsExp>
+		</data>
+	</attorneys_plaintiff_list_01>
+	<aol_plaintiff_list_01>
+		<data>
+			<LargestCaseSize>$435,345</LargestCaseSize>
+			<PercentageOfRevenue>50</PercentageOfRevenue>
+			<AOLDesc>a. Admiralty</AOLDesc>
+			<AverageCaseSize>$5,435</AverageCaseSize>
+		</data>
+		<data>
+			<LargestCaseSize>$345,345</LargestCaseSize>
+			<PercentageOfRevenue>0</PercentageOfRevenue>
+			<AOLDesc>b. Aviation</AOLDesc>
+			<AverageCaseSize>$435,345</AverageCaseSize>
+		</data>
+		<data>
+			<LargestCaseSize>$5,345</LargestCaseSize>
+			<PercentageOfRevenue>0</PercentageOfRevenue>
+			<AOLDesc>c. Asbestos</AOLDesc>
+			<AverageCaseSize>$4,534</AverageCaseSize>
+		</data>
+		<data>
+			<LargestCaseSize>0</LargestCaseSize>
+			<PercentageOfRevenue>0</PercentageOfRevenue>
+			<AOLDesc>d. Commercial</AOLDesc>
+			<AverageCaseSize>0</AverageCaseSize>
+		</data>
+		<data>
+			<LargestCaseSize>0</LargestCaseSize>
+			<PercentageOfRevenue>0</PercentageOfRevenue>
+			<AOLDesc>e. Medical Malpractice</AOLDesc>
+			<AverageCaseSize>0</AverageCaseSize>
+		</data>
+		<data>
+			<LargestCaseSize>0</LargestCaseSize>
+			<PercentageOfRevenue>0</PercentageOfRevenue>
+			<AOLDesc>
+				f. Other Personal Injury / Property Damage
+			</AOLDesc>
+			<AverageCaseSize>0</AverageCaseSize>
+		</data>
+		<data>
+			<LargestCaseSize>0</LargestCaseSize>
+			<PercentageOfRevenue>0</PercentageOfRevenue>
+			<AOLDesc>g. Pharmaceutical or Medical device</AOLDesc>
+			<AverageCaseSize>0</AverageCaseSize>
+		</data>
+		<data>
+			<LargestCaseSize>0</LargestCaseSize>
+			<PercentageOfRevenue>0</PercentageOfRevenue>
+			<AOLDesc>h. Products Liability</AOLDesc>
+			<AverageCaseSize>0</AverageCaseSize>
+		</data>
+		<data>
+			<LargestCaseSize>0</LargestCaseSize>
+			<PercentageOfRevenue>0</PercentageOfRevenue>
+			<AOLDesc>i. Professional Liability (non medical)</AOLDesc>
+			<AverageCaseSize>0</AverageCaseSize>
+		</data>
+		<data>
+			<LargestCaseSize>0</LargestCaseSize>
+			<PercentageOfRevenue>10</PercentageOfRevenue>
+			<AOLDesc>j. Tobacco</AOLDesc>
+			<AverageCaseSize>0</AverageCaseSize>
+		</data>
+		<data>
+			<LargestCaseSize>0</LargestCaseSize>
+			<PercentageOfRevenue>10</PercentageOfRevenue>
+			<AOLDesc>k. Toxic Tort</AOLDesc>
+			<AverageCaseSize>0</AverageCaseSize>
+		</data>
+		<data>
+			<LargestCaseSize>0</LargestCaseSize>
+			<PercentageOfRevenue>20</PercentageOfRevenue>
+			<AOLDesc>l. Worker's Compensation</AOLDesc>
+			<AverageCaseSize>0</AverageCaseSize>
+		</data>
+		<data>
+			<LargestCaseSize>0</LargestCaseSize>
+			<PercentageOfRevenue>10</PercentageOfRevenue>
+			<AOLDesc>m. Other(please describe)</AOLDesc>
+			<AOLCommentDesc>
+				dfsdf dfkjdshf hdfjhdfnjkdsfnjdsnfdserieu hhrwehruihd
+				jdsfddhjdsdhf uewuriweru dhdhfsd dfhsdf fdshf hdfhds
+				hsdfh jhsdf jsdfh hfjdfh ueruier xncv nbvn fhjdf
+				eiuehrjdf hfsdjfeuweiurh hs jsfd jhsd dhsf f
+			</AOLCommentDesc>
+			<AverageCaseSize>0</AverageCaseSize>
+		</data>
+	</aol_plaintiff_list_01>
+	<AOP_CommentDesc_16></AOP_CommentDesc_16>
+	<AOP_CommentDesc_18></AOP_CommentDesc_18>
+	<AOP_PercentageValue_23>1</AOP_PercentageValue_23>
+	<AOTP_PercentageValue_4>1</AOTP_PercentageValue_4>
+	<AOPRE_CommentDesc_4></AOPRE_CommentDesc_4>
+	<environmental_freeform_01>
+		<data>
+			<IsApplInterpretEnvCompAudits>
+				N
+			</IsApplInterpretEnvCompAudits>
+			<IsApplRecomEnvAudits>Y</IsApplRecomEnvAudits>
+			<IsApplRefOfEnvConsultant>Y</IsApplRefOfEnvConsultant>
+			<IsApplRenderEnvLaws>N</IsApplRenderEnvLaws>
+			<LastUpdateUserID>1</LastUpdateUserID>
+			<PolicyKey>27</PolicyKey>
+			<VersionSequence>27</VersionSequence>
+			<IsApplRenderLiabForCleanupExp>
+				Y
+			</IsApplRenderLiabForCleanupExp>
+			<IsClientFinedForViolatingStateFedLaws>
+				N
+			</IsClientFinedForViolatingStateFedLaws>
+			<IsClientsDiscloseEnvLiability>
+				N
+			</IsClientsDiscloseEnvLiability>
+			<IsCleintRespForEngagementRisks>
+				Y
+			</IsCleintRespForEngagementRisks>
+			<IsApplUseIndepContractor>N</IsApplUseIndepContractor>
+		</data>
+	</environmental_freeform_01>
+	<AOP_PercentageValue_9>1</AOP_PercentageValue_9>
+	<AOP_PercentageValue_13>1</AOP_PercentageValue_13>
+	<AOP_PercentageValue_24>76</AOP_PercentageValue_24>
+	<AOPRE_CommentDesc_3></AOPRE_CommentDesc_3>
+	<AOP_PercentageValue_8>1</AOP_PercentageValue_8>
+	<AOPRE_CommentDesc_10></AOPRE_CommentDesc_10>
+	<QuoteNumber>QN-0000027</QuoteNumber>
+	<AOTP_PercentageValue_7>1</AOTP_PercentageValue_7>
+	<AOP_CommentDesc_11></AOP_CommentDesc_11>
+	<AOP_PercentageValue_7>1</AOP_PercentageValue_7>
+	<AOP_CommentDesc_6></AOP_CommentDesc_6>
+	<coverage_freeform_1>
+		<data>
+			<ProInsPremium>$999,999,999,999,999</ProInsPremium>
+			<PriorActDatePross>10/30/2010</PriorActDatePross>
+			<IsProfDefenceExpense>Y</IsProfDefenceExpense>
+			<IsPerClaim>PC</IsPerClaim>
+			<LimitAmount>3,000,000/5,000,000</LimitAmount>
+			<IsClaimExpLiability>DR</IsClaimExpLiability>
+			<DeductibleAmount>3,000</DeductibleAmount>
+			<InsuranceCompanyNamePross>
+				the areas below that are included in your Commerci
+			</InsuranceCompanyNamePross>
+			<PolicyExpirationDatePross>
+				06/12/1998
+			</PolicyExpirationDatePross>
+		</data>
+	</coverage_freeform_1>
+	<attorneys_environmental_list_01>
+		<data>
+			<NumberOfYrOfEnvExp>534</NumberOfYrOfEnvExp>
+			<VersionSequence>27</VersionSequence>
+			<AttroneyEnvWorkKey>20</AttroneyEnvWorkKey>
+			<EnvAttorneyName>
+				the areas below that are included in your Commercial
+				Busines
+			</EnvAttorneyName>
+			<LastUpdateTimeStamp>10/08/2010</LastUpdateTimeStamp>
+			<PercentOfTimeDevoted>435</PercentOfTimeDevoted>
+			<PolicyKey>27</PolicyKey>
+		</data>
+	</attorneys_environmental_list_01>
+	<TransactionSequence>27</TransactionSequence>
+	<PolicyKey>27</PolicyKey>
+	<AOP_PercentageValue_11>1</AOP_PercentageValue_11>
+	<AOP_PercentageValue_2>1</AOP_PercentageValue_2>
+	<AOP_CommentDesc_5></AOP_CommentDesc_5>
+	<AOPRE_PercentageValue_7>1</AOPRE_PercentageValue_7>
+	<YearEndDate_1>12/2009</YearEndDate_1>
+	<AOP_CommentDesc_8></AOP_CommentDesc_8>
+	<AOP_CommentDesc_15></AOP_CommentDesc_15>
+	<AOTP_PercentageValue_5>1</AOTP_PercentageValue_5>
+	<AOPRE_PercentageValue_0>1</AOPRE_PercentageValue_0>
+	<AOP_CommentDesc_12></AOP_CommentDesc_12>
+	<AOPRE_CommentDesc_1></AOPRE_CommentDesc_1>
+</response>

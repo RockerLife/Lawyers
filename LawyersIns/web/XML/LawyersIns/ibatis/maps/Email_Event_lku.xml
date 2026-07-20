@@ -1,0 +1,50 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Email_Event_lku">
+     <select id="getAllEmailEventList" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select event_code,event_name from Email_Event_lku where RecordType != 'D'</select>
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Email_Event_lku</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Email_Event_lku</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into Email_Event_lku(
+          <dynamic prepend=" ">
+               <isNotEmpty property="event_name" prepend=",">event_name</isNotEmpty>
+               <isNotEmpty property="event_description" prepend=",">event_description</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="event_name" prepend=",">#event_name#</isNotEmpty>
+               <isNotEmpty property="event_description" prepend=",">#event_description#</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">#RecordType#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="EmailEventID">SELECT IDENT_CURRENT('Email_Event_lku') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EmailEventID, event_name, event_description, RecordType, LastUpdateUserID, LastUpdateTimeStamp from Email_Event_lku where EmailEventID = #EmailEventID#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update Email_Event_lku set
+          <dynamic prepend=" ">
+               <isNotEmpty property="event_name" prepend=",">event_name = #event_name#</isNotEmpty>
+               <isEmpty property="event_name" prepend=",">event_name = null</isEmpty>
+               <isNotEmpty property="event_description" prepend=",">event_description = #event_description#</isNotEmpty>
+               <isEmpty property="event_description" prepend=",">event_description = null</isEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType = #RecordType#</isNotEmpty>
+               <isEmpty property="RecordType" prepend=",">RecordType = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where EmailEventID = #EmailEventID#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from Email_Event_lku where EmailEventID = #EmailEventID#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from Email_Event_lku</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from Email_Event_lku</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EmailEventID, event_name, event_description, RecordType, LastUpdateUserID, LastUpdateTimeStamp from Email_Event_lku where EmailEventID = #EmailEventID#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EmailEventID, event_name, event_description, RecordType, LastUpdateUserID, LastUpdateTimeStamp from Email_Event_lku</select>
+</sqlMap>
+

@@ -1,0 +1,247 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Account">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Account</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Account</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into Account(
+          <dynamic prepend=" ">
+               <isNotEmpty property="AccountID" prepend=",">AccountID</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="AccountName" prepend=",">AccountName</isNotEmpty>
+               <isNotEmpty property="Website" prepend=",">Website</isNotEmpty>
+               <isNotEmpty property="AccountEmail" prepend=",">AccountEmail</isNotEmpty>
+               <isNotEmpty property="AccountVersion" prepend=",">AccountVersion</isNotEmpty>
+               <isNotEmpty property="LoginID" prepend=",">LoginID</isNotEmpty>
+               <isNotEmpty property="secondaryEmail" prepend=",">secondaryEmail</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="AccountID" prepend=",">#AccountID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="AccountName" prepend=",">#AccountName#</isNotEmpty>
+               <isNotEmpty property="Website" prepend=",">#Website#</isNotEmpty>
+               <isNotEmpty property="AccountEmail" prepend=",">#AccountEmail#</isNotEmpty>
+               <isNotEmpty property="AccountVersion" prepend=",">#AccountVersion#</isNotEmpty>
+               <isNotEmpty property="LoginID" prepend=",">#LoginID#</isNotEmpty>
+               <isNotEmpty property="secondaryEmail" prepend=",">#secondaryEmail#</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">#CreatedDate#</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">#CreatedBy#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="AccountKey">SELECT IDENT_CURRENT('Account') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AccountKey, AccountID, LastUpdateUserID, LastUpdateTimeStamp, AccountName, Website, AccountEmail, AccountVersion, LoginID, secondaryEmail, CreatedDate, CreatedBy from Account where AccountKey = #AccountKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update Account set
+          <dynamic prepend=" ">
+               <isNotEmpty property="AccountID" prepend=",">AccountID = #AccountID#</isNotEmpty>
+               <isEmpty property="AccountID" prepend=",">AccountID = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="AccountName" prepend=",">AccountName = #AccountName#</isNotEmpty>
+               <isEmpty property="AccountName" prepend=",">AccountName = null</isEmpty>
+               <isNotEmpty property="Website" prepend=",">Website = #Website#</isNotEmpty>
+               <isEmpty property="Website" prepend=",">Website = null</isEmpty>
+               <isNotEmpty property="AccountEmail" prepend=",">AccountEmail = #AccountEmail#</isNotEmpty>
+               <isEmpty property="AccountEmail" prepend=",">AccountEmail = null</isEmpty>
+               <isNotEmpty property="AccountVersion" prepend=",">AccountVersion = #AccountVersion#</isNotEmpty>
+               <isEmpty property="AccountVersion" prepend=",">AccountVersion = null</isEmpty>
+               <isNotEmpty property="LoginID" prepend=",">LoginID = #LoginID#</isNotEmpty>
+               <isEmpty property="LoginID" prepend=",">LoginID = null</isEmpty>
+               <isNotEmpty property="secondaryEmail" prepend=",">secondaryEmail = #secondaryEmail#</isNotEmpty>
+               <isEmpty property="secondaryEmail" prepend=",">secondaryEmail = null</isEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate = #CreatedDate#</isNotEmpty>
+               <isEmpty property="CreatedDate" prepend=",">CreatedDate = null</isEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy = #CreatedBy#</isNotEmpty>
+               <isEmpty property="CreatedBy" prepend=",">CreatedBy = null</isEmpty>
+          </dynamic>
+          where AccountKey = #AccountKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from Account where AccountKey = #AccountKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from Account</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from Account</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AccountKey, AccountID, LastUpdateUserID, LastUpdateTimeStamp, AccountName, Website, AccountEmail, AccountVersion, LoginID, secondaryEmail, CreatedDate, CreatedBy from Account where AccountKey = #AccountKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AccountKey, AccountID, LastUpdateUserID, LastUpdateTimeStamp, AccountName, Website, AccountEmail, AccountVersion, LoginID, secondaryEmail, CreatedDate, CreatedBy from Account</select>
+     <parameterMap id="SearchAccountForLawyers_Proc_FilterMap" class="java.util.HashMap">
+          <parameter property="AccountNamesearch" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StateCode_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StatusKey_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyEffectiveDate_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="QuoteNumber_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsQuickQuote_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsFullQuote_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyNumber_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyStatusDesc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="DueForRenewal_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="NumberOfDays_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyEffectiveDate_searchTo" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="litigationNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="ProducerCodefilter" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="EligibleFirstReviewerfilter" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProducerCode1" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PageSize" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PageNumber" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="SearchAppCreatedDateFrom" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="SearchAppCreatedDateTo" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="RenewalSupplementNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="PageSort" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="page_sort_type" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CompanyKey_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="role_id" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BankruptcySuppImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="SearchAccountForLawyers_Proc_Filter" parameterMap="SearchAccountForLawyers_Proc_FilterMap" resultClass="java.util.HashMap">{ call SearchAccountForLawyers_Proc_Filter(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="SearchLawyersHistory_ProcMap" class="java.util.HashMap">
+          <parameter property="AccountID_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProducerCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="role_id" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="SearchLawyersHistory_Proc" parameterMap="SearchLawyersHistory_ProcMap" resultClass="java.util.HashMap">{ call SearchLawyersHistory_Proc(?,?,?)}</procedure>
+     <parameterMap id="SearchAccountForLawyers_Proc_LostWorkqListMap" class="java.util.HashMap">
+          <parameter property="LostWQPolicyEffectiveDate_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsQuickQuote_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StatusKey_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsFullQuote_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LostWQPolicyEffectiveDate_searchTo" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="litigationNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PageSize" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PageNumber" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="RenewalSupplementNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="SearchAccountForLawyers_Proc_LostWorkqList" parameterMap="SearchAccountForLawyers_Proc_LostWorkqListMap" resultClass="java.util.HashMap">{ call SearchAccountForLawyers_Proc_LostWorkqList(?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="WorkqSearchAccountForLawyersLostWorkq_ProcMap" class="java.util.HashMap">
+          <parameter property="LostWQPolicyEffectiveDate_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LostWQPolicyEffectiveDate_searchTo" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="WorkqSearchAccountForLawyersLostWorkq_Proc" parameterMap="WorkqSearchAccountForLawyersLostWorkq_ProcMap" resultClass="java.util.HashMap">{ call WorkqSearchAccountForLawyersLostWorkq_Proc(?,?)}</procedure>
+     <parameterMap id="SearchLawyersIndicationHistory_ProcMap" class="java.util.HashMap">
+          <parameter property="PolicyKey_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="SearchLawyersIndicationHistory_Proc" parameterMap="SearchLawyersIndicationHistory_ProcMap" resultClass="java.util.HashMap">{ call SearchLawyersIndicationHistory_Proc(?)}</procedure>
+     <parameterMap id="WorkqSearchAccountForLawyers_ProcMap" class="java.util.HashMap">
+          <parameter property="AccountNamesearch" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="WQStateCode_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="WQStatusKey_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="WQPolicyEffectiveDate_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="WQQuoteNumberSearch" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="WQPolicyNumberSearch" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="WQIsRenewed_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="WQNumberOfDays_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="WQPolicyEffectiveDate_searchTo" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="litigationNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="ProducerCodefilter" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="role_id" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="WQEmailSearch" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="RenewalSupplementNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="WQCompany_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="WQIsBrokered_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="WQIsLostWorkQPolicy_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BankruptcySuppImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="WorkqSearchAccountForLawyers_Proc" parameterMap="WorkqSearchAccountForLawyers_ProcMap" resultClass="java.util.HashMap">{ call WorkqSearchAccountForLawyers_Proc(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="CopyPolicyDataLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="requotePolicyEffectiveDate" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="moduleName" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="CopyPolicyDataLW_p" parameterMap="CopyPolicyDataLW_pMap" resultClass="java.util.HashMap">{ call CopyPolicyDataLW_p(?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="RenewPolicy_NewLWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="RenewalSource" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="NevadaDoubleQuoteImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="RenewPolicy_NewLW" parameterMap="RenewPolicy_NewLWMap" resultClass="java.util.HashMap">{ call RenewPolicy_NewLW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="getAllRenewedPolicyMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="getAllRenewedPolicy" parameterMap="getAllRenewedPolicyMap" resultClass="java.util.HashMap">{ call getAllRenewedPolicyLawyers(?)}</procedure>
+     <parameterMap id="ConvertBrokerageToPLA_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="ConvertBrokerageToPLA_LW" parameterMap="ConvertBrokerageToPLA_LWMap" resultClass="java.util.HashMap">{ call ConvertBrokerageToPLA_LW(?,?)}</procedure>
+     <parameterMap id="GetPolicyDetailsForRenewalLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="GetPolicyDetailsForRenewalLW_p" parameterMap="GetPolicyDetailsForRenewalLW_pMap" resultClass="java.util.HashMap">{ call GetPolicyDetailsForRenewalLW_p(?)}</procedure>
+     <parameterMap id="SearchAccountWithSameEmailMap" class="java.util.HashMap">
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="SearchAccountWithSameEmail" parameterMap="SearchAccountWithSameEmailMap" resultClass="java.util.HashMap">{ call SearchAccountWithSameEmail(?)}</procedure>
+     <parameterMap id="ResetPasswordSecureOne_procMap" class="java.util.HashMap">
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LoginID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="ResetPasswordSecureOne_proc" parameterMap="ResetPasswordSecureOne_procMap" resultClass="java.util.HashMap">{ call ResetPasswordSecureOne_proc(?,?,?)}</procedure>
+     <parameterMap id="GetAccountHistoryLW_pMap" class="java.util.HashMap">
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="GetAccountHistoryLW_p" parameterMap="GetAccountHistoryLW_pMap" resultClass="java.util.HashMap">{ call GetAccountHistoryLW_p(?)}</procedure>
+     <parameterMap id="getExistingPolicyMap" class="java.util.HashMap">
+          <parameter property="AccountEmail" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="getExistingPolicy" parameterMap="getExistingPolicyMap" resultClass="java.util.HashMap">{ call getExistingPolicy(?)}</procedure>
+     <parameterMap id="StateSpecificRulesLawyers_procMap" class="java.util.HashMap">
+          <parameter property="RuleRequestType" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyKey_rule" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StateCode_rule" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="StateSpecificRulesLawyers_proc" parameterMap="StateSpecificRulesLawyers_procMap" resultClass="java.util.HashMap">{ call StateSpecificRulesLawyers_proc(?,?,?)}</procedure>
+     <parameterMap id="getInvoicedDataMap" class="java.util.HashMap">
+          <parameter property="PolicyKey_Invoice" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="getInvoicedData" parameterMap="getInvoicedDataMap" resultClass="java.util.HashMap">{ call InvoicedData_proc(?)}</procedure>
+     <parameterMap id="UpdateUserInfoMap" class="java.util.HashMap">
+          <parameter property="ProjectType_admin" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="QuoteNumber_admin" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="AccountName_admin" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Address1_admin" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Address2_admin" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="WorkPhone_admin" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="WorkExt_admin" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyExpirationDate_admin" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PriorActDatePross_admin" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="AccountEmail_admin" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProducerCode_admin" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="FirstReviewerId_admin" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="StateCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CountyDesc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="City" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Zip" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Zip4" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ContactPerson_admin" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="secondaryEmail" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="InsuranceCompanyNamePross_admin" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProInsPremium_admin" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UpdateUserInfo" parameterMap="UpdateUserInfoMap" resultClass="java.util.HashMap">{ call UpdateUserInfo(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="OffRiskLawyers_procMap" class="java.util.HashMap">
+          <parameter property="PolicyExpirationDate_From" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyExpirationDate_To" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="SubProducerStatus" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="OffRiskLawyers_proc" parameterMap="OffRiskLawyers_procMap" resultClass="java.util.HashMap">{ call OffRiskLawyers_proc(?,?,?)}</procedure>
+</sqlMap>
+

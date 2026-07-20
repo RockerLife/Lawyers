@@ -1,0 +1,44 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="CommentStatusLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from CommentStatusLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from CommentStatusLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into CommentStatusLW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="CommentCode" prepend=",">CommentCode</isNotEmpty>
+               <isNotEmpty property="CommentDescription" prepend=",">CommentDescription</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="CommentCode" prepend=",">#CommentCode#</isNotEmpty>
+               <isNotEmpty property="CommentDescription" prepend=",">#CommentDescription#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CommentCode, CommentDescription, LastUpdateUserID, LastUpdateTimeStamp from CommentStatusLW</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update CommentStatusLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="CommentCode" prepend=",">CommentCode = #CommentCode#</isNotEmpty>
+               <isEmpty property="CommentCode" prepend=",">CommentCode = null</isEmpty>
+               <isNotEmpty property="CommentDescription" prepend=",">CommentDescription = #CommentDescription#</isNotEmpty>
+               <isEmpty property="CommentDescription" prepend=",">CommentDescription = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from CommentStatusLW</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from CommentStatusLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from CommentStatusLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CommentCode, CommentDescription, LastUpdateUserID, LastUpdateTimeStamp from CommentStatusLW</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CommentCode, CommentDescription, LastUpdateUserID, LastUpdateTimeStamp from CommentStatusLW</select>
+     <select id="getAllCommentStatusList" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CommentCode, CommentDescription from CommentStatusLKU where isArchived='False'</select>
+</sqlMap>
+

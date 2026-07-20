@@ -1,0 +1,29 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="TrustTypeLKU">
+     <select id="getCancellationReason" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CANCELLATION_REASON_ID,CANCELLATION_REASON_DESC  from CANCELLATIONREASONLKU order by CANCELLATION_REASON_ID</select>
+     <select id="getCancellationType" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CANCELLATION_TYPE_ID,CANCELLATION_TYPE_DESC  from CANCELLATIONTYPELKU order by CANCELLATION_TYPE_ID</select>
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from TrustTypeLKU</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from TrustTypeLKU</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into TrustTypeLKU(
+          <dynamic prepend=" " />
+          ) values (
+          <dynamic prepend=" " />
+          )
+          <selectKey resultClass="int" keyProperty="id">SELECT IDENT_CURRENT('TrustTypeLKU') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select id from TrustTypeLKU where id = #id#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update TrustTypeLKU set
+          <dynamic prepend=" " />
+          where id = #id#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from TrustTypeLKU where id = #id#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from TrustTypeLKU</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from TrustTypeLKU</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select id from TrustTypeLKU where id = #id#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select id from TrustTypeLKU</select>
+     <select id="getTypeDesc" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select id,TrustsType from TrustTypeLKU order by id</select>
+</sqlMap>
+

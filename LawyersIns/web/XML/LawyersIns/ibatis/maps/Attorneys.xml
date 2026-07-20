@@ -1,0 +1,34 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Attorneys">
+     <parameterMap id="UpdateAttorneysForDeleteEndorsement_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="UpdateAttorneysForDeleteEndorsement_p" parameterMap="UpdateAttorneysForDeleteEndorsement_pMap">{ call UpdateAttorneysForDeleteEndorsement_p(?,?,?,?,?)}</procedure>
+     <parameterMap id="AttorneysEndorsement_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="endorsementEffectiveDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="TransactionTypeKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="isNonFinancialEndorsement" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isEnforcedPolicy" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="AttorneysEndorsement_p" parameterMap="AttorneysEndorsement_pMap">{ call AttorneysEndorsement_p(?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="InsertAttorniesData_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="addAttorneys" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertAttorniesData_p" parameterMap="InsertAttorniesData_pMap">{ call InsertAttorniesData_p(?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

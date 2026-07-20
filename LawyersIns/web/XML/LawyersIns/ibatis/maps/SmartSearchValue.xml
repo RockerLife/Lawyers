@@ -1,0 +1,53 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="SmartSearchValue">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SmartSearchValue</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SmartSearchValue</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into SmartSearchValue(
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPKey" prepend=",">AOPKey</isNotEmpty>
+               <isNotEmpty property="Percentage" prepend=",">Percentage</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="IsEdit" prepend=",">IsEdit</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPKey" prepend=",">#AOPKey#</isNotEmpty>
+               <isNotEmpty property="Percentage" prepend=",">#Percentage#</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="IsEdit" prepend=",">#IsEdit#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="SmartSearchID">SELECT IDENT_CURRENT('SmartSearchValue') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select SmartSearchID, AOPKey, Percentage, PolicyKey, LastUpdateUserID, LastUpdateTimeStamp, IsEdit from SmartSearchValue where SmartSearchID = #SmartSearchID#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update SmartSearchValue set
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPKey" prepend=",">AOPKey = #AOPKey#</isNotEmpty>
+               <isEmpty property="AOPKey" prepend=",">AOPKey = null</isEmpty>
+               <isNotEmpty property="Percentage" prepend=",">Percentage = #Percentage#</isNotEmpty>
+               <isEmpty property="Percentage" prepend=",">Percentage = null</isEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="IsEdit" prepend=",">IsEdit = #IsEdit#</isNotEmpty>
+               <isEmpty property="IsEdit" prepend=",">IsEdit = null</isEmpty>
+          </dynamic>
+          where SmartSearchID = #SmartSearchID#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from SmartSearchValue where SmartSearchID = #SmartSearchID#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from SmartSearchValue</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from SmartSearchValue</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select SmartSearchID, AOPKey, Percentage, PolicyKey, LastUpdateUserID, LastUpdateTimeStamp, IsEdit from SmartSearchValue where SmartSearchID = #SmartSearchID#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select SmartSearchID, AOPKey, Percentage, PolicyKey, LastUpdateUserID, LastUpdateTimeStamp, IsEdit from SmartSearchValue</select>
+</sqlMap>
+

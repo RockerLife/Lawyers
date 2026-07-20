@@ -1,0 +1,47 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Status">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Status</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Status</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into Status(
+          <dynamic prepend=" ">
+               <isNotEmpty property="StatusDesc" prepend=",">StatusDesc</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="StatusDesc" prepend=",">#StatusDesc#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="StatusKey">SELECT IDENT_CURRENT('Status') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey, StatusDesc from Status where StatusKey = #StatusKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update Status set
+          <dynamic prepend=" ">
+               <isNotEmpty property="StatusDesc" prepend=",">StatusDesc = #StatusDesc#</isNotEmpty>
+               <isEmpty property="StatusDesc" prepend=",">StatusDesc = null</isEmpty>
+          </dynamic>
+          where StatusKey = #StatusKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from Status where StatusKey = #StatusKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from Status</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from Status</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey, StatusDesc from Status where StatusKey = #StatusKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey, StatusDesc from Status</select>
+     <select id="underReviewStatus_IncompleteApp" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey,StatusDesc from Status where StatusKey IN (4,5) order by sequence</select>
+     <select id="Quoted_ApproveSubjective_Status" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey,StatusDesc from Status where StatusKey IN (2,9,4,5) order by sequence</select>
+     <select id="UWSubproducerQuoted_Status" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey,StatusDesc from Status where StatusKey IN (2,5) order by sequence</select>
+     <select id="underReviewStatus_CompleteApp" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey,StatusDesc from Status where StatusKey IN (4,5,9) order by sequence</select>
+     <select id="Accept_Status" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey,StatusDesc from Status where StatusKey IN (2,5) order by sequence</select>
+     <select id="UWSubproducer_Status" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey,StatusDesc from Status where StatusKey IN (4) order by sequence</select>
+     <select id="All_Status" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey,StatusDesc from Status where StatusKey IN (1,2,3,4,5,6,7,8,9,10) order by sequence</select>
+     <select id="UWReview_Status" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey,StatusDesc from Status where StatusKey IN (2,4) order by sequence</select>
+     <select id="Quoted_Approved_Status" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey,StatusDesc from Status where StatusKey IN (2,9,4,5,7) order by sequence</select>
+     <select id="DeclinedNotAccept_Status" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey,StatusDesc from Status where StatusKey IN (2) order by sequence</select>
+     <select id="UWCompleted_Status" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey,StatusDesc from Status where StatusKey IN (2,9,4) order by sequence</select>
+     <select id="BRStatusKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey,StatusDesc from Status order by sequence</select>
+     <select id="Status_searchdropdown" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey,StatusDesc from Status order by sequence</select>
+     <select id="All_AdminPanelStatus" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey,StatusDesc from Status order by sequence</select>
+</sqlMap>
+

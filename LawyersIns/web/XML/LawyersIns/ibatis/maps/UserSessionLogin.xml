@@ -1,0 +1,54 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="UserSessionLogin">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from UserSessionLogin</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from UserSessionLogin</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into UserSessionLogin(
+          <dynamic prepend=" ">
+               <isNotEmpty property="UserEmail" prepend=",">UserEmail</isNotEmpty>
+               <isNotEmpty property="UserLoginKey" prepend=",">UserLoginKey</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType</isNotEmpty>
+               <isNotEmpty property="LoginTimeStamp" prepend=",">LoginTimeStamp</isNotEmpty>
+               <isNotEmpty property="LogoutTimeStamp" prepend=",">LogoutTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="UserEmail" prepend=",">#UserEmail#</isNotEmpty>
+               <isNotEmpty property="UserLoginKey" prepend=",">#UserLoginKey#</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">#RecordType#</isNotEmpty>
+               <isNotEmpty property="LoginTimeStamp" prepend=",">#LoginTimeStamp#</isNotEmpty>
+               <isNotEmpty property="LogoutTimeStamp" prepend=",">#LogoutTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="UserLoginID">SELECT IDENT_CURRENT('UserSessionLogin') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select UserLoginID, UserEmail, UserLoginKey, RecordType, LoginTimeStamp, LogoutTimeStamp from UserSessionLogin where UserLoginID = #UserLoginID#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update UserSessionLogin set
+          <dynamic prepend=" ">
+               <isNotEmpty property="UserEmail" prepend=",">UserEmail = #UserEmail#</isNotEmpty>
+               <isEmpty property="UserEmail" prepend=",">UserEmail = null</isEmpty>
+               <isNotEmpty property="UserLoginKey" prepend=",">UserLoginKey = #UserLoginKey#</isNotEmpty>
+               <isEmpty property="UserLoginKey" prepend=",">UserLoginKey = null</isEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType = #RecordType#</isNotEmpty>
+               <isEmpty property="RecordType" prepend=",">RecordType = null</isEmpty>
+               <isNotEmpty property="LoginTimeStamp" prepend=",">LoginTimeStamp = #LoginTimeStamp#</isNotEmpty>
+               <isEmpty property="LoginTimeStamp" prepend=",">LoginTimeStamp = null</isEmpty>
+               <isNotEmpty property="LogoutTimeStamp" prepend=",">LogoutTimeStamp = #LogoutTimeStamp#</isNotEmpty>
+               <isEmpty property="LogoutTimeStamp" prepend=",">LogoutTimeStamp = null</isEmpty>
+          </dynamic>
+          where UserLoginID = #UserLoginID#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from UserSessionLogin where UserLoginID = #UserLoginID#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from UserSessionLogin</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from UserSessionLogin</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select UserLoginID, UserEmail, UserLoginKey, RecordType, LoginTimeStamp, LogoutTimeStamp from UserSessionLogin where UserLoginID = #UserLoginID#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select UserLoginID, UserEmail, UserLoginKey, RecordType, LoginTimeStamp, LogoutTimeStamp from UserSessionLogin</select>
+     <parameterMap id="ValidateUserLogin_pMap" class="java.util.HashMap">
+          <parameter property="UserLoginKey" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="UserEmail" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="ValidateUserLogin_p" parameterMap="ValidateUserLogin_pMap" resultClass="java.util.HashMap">{ call ValidateUserLogin_p(?,?)}</procedure>
+</sqlMap>
+

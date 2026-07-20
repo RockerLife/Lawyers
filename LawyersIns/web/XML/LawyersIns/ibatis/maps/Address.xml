@@ -1,0 +1,101 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Address">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Address</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Address where AddressTypeKey = #AddressTypeKey# and StateCode = #StateCode#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into Address(
+          <dynamic prepend=" ">
+               <isNotEmpty property="Address1" prepend=",">Address1</isNotEmpty>
+               <isNotEmpty property="Address2" prepend=",">Address2</isNotEmpty>
+               <isNotEmpty property="City" prepend=",">City</isNotEmpty>
+               <isNotEmpty property="Zip" prepend=",">Zip</isNotEmpty>
+               <isNotEmpty property="Zip4" prepend=",">Zip4</isNotEmpty>
+               <isNotEmpty property="HomePhone" prepend=",">HomePhone</isNotEmpty>
+               <isNotEmpty property="WorkPhone" prepend=",">WorkPhone</isNotEmpty>
+               <isNotEmpty property="WorkExt" prepend=",">WorkExt</isNotEmpty>
+               <isNotEmpty property="MobilePhone" prepend=",">MobilePhone</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="CountyDesc" prepend=",">CountyDesc</isNotEmpty>
+               <isNotEmpty property="CountryDesc" prepend=",">CountryDesc</isNotEmpty>
+               <isNotEmpty property="Street" prepend=",">Street</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy</isNotEmpty>
+               <isNotEmpty property="AddressTypeKey" prepend=",">AddressTypeKey</isNotEmpty>
+               <isNotEmpty property="StateCode" prepend=",">StateCode</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="Address1" prepend=",">#Address1#</isNotEmpty>
+               <isNotEmpty property="Address2" prepend=",">#Address2#</isNotEmpty>
+               <isNotEmpty property="City" prepend=",">#City#</isNotEmpty>
+               <isNotEmpty property="Zip" prepend=",">#Zip#</isNotEmpty>
+               <isNotEmpty property="Zip4" prepend=",">#Zip4#</isNotEmpty>
+               <isNotEmpty property="HomePhone" prepend=",">#HomePhone#</isNotEmpty>
+               <isNotEmpty property="WorkPhone" prepend=",">#WorkPhone#</isNotEmpty>
+               <isNotEmpty property="WorkExt" prepend=",">#WorkExt#</isNotEmpty>
+               <isNotEmpty property="MobilePhone" prepend=",">#MobilePhone#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="CountyDesc" prepend=",">#CountyDesc#</isNotEmpty>
+               <isNotEmpty property="CountryDesc" prepend=",">#CountryDesc#</isNotEmpty>
+               <isNotEmpty property="Street" prepend=",">#Street#</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">#CreatedDate#</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">#CreatedBy#</isNotEmpty>
+               <isNotEmpty property="AddressTypeKey" prepend=",">#AddressTypeKey#</isNotEmpty>
+               <isNotEmpty property="StateCode" prepend=",">#StateCode#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="AddressKey">SELECT IDENT_CURRENT('Address') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AddressKey, Address1, Address2, City, Zip, Zip4, HomePhone, WorkPhone, WorkExt, MobilePhone, LastUpdateUserID, LastUpdateTimeStamp, CountyDesc, CountryDesc, Street, CreatedDate, CreatedBy, AddressTypeKey, StateCode from Address where AddressKey = #AddressKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update Address set
+          <dynamic prepend=" ">
+               <isNotEmpty property="Address1" prepend=",">Address1 = #Address1#</isNotEmpty>
+               <isEmpty property="Address1" prepend=",">Address1 = null</isEmpty>
+               <isNotEmpty property="Address2" prepend=",">Address2 = #Address2#</isNotEmpty>
+               <isEmpty property="Address2" prepend=",">Address2 = null</isEmpty>
+               <isNotEmpty property="City" prepend=",">City = #City#</isNotEmpty>
+               <isEmpty property="City" prepend=",">City = null</isEmpty>
+               <isNotEmpty property="Zip" prepend=",">Zip = #Zip#</isNotEmpty>
+               <isEmpty property="Zip" prepend=",">Zip = null</isEmpty>
+               <isNotEmpty property="Zip4" prepend=",">Zip4 = #Zip4#</isNotEmpty>
+               <isEmpty property="Zip4" prepend=",">Zip4 = null</isEmpty>
+               <isNotEmpty property="HomePhone" prepend=",">HomePhone = #HomePhone#</isNotEmpty>
+               <isEmpty property="HomePhone" prepend=",">HomePhone = null</isEmpty>
+               <isNotEmpty property="WorkPhone" prepend=",">WorkPhone = #WorkPhone#</isNotEmpty>
+               <isEmpty property="WorkPhone" prepend=",">WorkPhone = null</isEmpty>
+               <isNotEmpty property="WorkExt" prepend=",">WorkExt = #WorkExt#</isNotEmpty>
+               <isEmpty property="WorkExt" prepend=",">WorkExt = null</isEmpty>
+               <isNotEmpty property="MobilePhone" prepend=",">MobilePhone = #MobilePhone#</isNotEmpty>
+               <isEmpty property="MobilePhone" prepend=",">MobilePhone = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="CountyDesc" prepend=",">CountyDesc = #CountyDesc#</isNotEmpty>
+               <isEmpty property="CountyDesc" prepend=",">CountyDesc = null</isEmpty>
+               <isNotEmpty property="CountryDesc" prepend=",">CountryDesc = #CountryDesc#</isNotEmpty>
+               <isEmpty property="CountryDesc" prepend=",">CountryDesc = null</isEmpty>
+               <isNotEmpty property="Street" prepend=",">Street = #Street#</isNotEmpty>
+               <isEmpty property="Street" prepend=",">Street = null</isEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate = #CreatedDate#</isNotEmpty>
+               <isEmpty property="CreatedDate" prepend=",">CreatedDate = null</isEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy = #CreatedBy#</isNotEmpty>
+               <isEmpty property="CreatedBy" prepend=",">CreatedBy = null</isEmpty>
+               <isNotEmpty property="AddressTypeKey" prepend=",">AddressTypeKey = #AddressTypeKey#</isNotEmpty>
+               <isEmpty property="AddressTypeKey" prepend=",">AddressTypeKey = null</isEmpty>
+               <isNotEmpty property="StateCode" prepend=",">StateCode = #StateCode#</isNotEmpty>
+               <isEmpty property="StateCode" prepend=",">StateCode = null</isEmpty>
+          </dynamic>
+          where AddressKey = #AddressKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from Address where AddressKey = #AddressKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from Address</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from Address where AddressTypeKey = #AddressTypeKey# and StateCode = #StateCode#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AddressKey, Address1, Address2, City, Zip, Zip4, HomePhone, WorkPhone, WorkExt, MobilePhone, LastUpdateUserID, LastUpdateTimeStamp, CountyDesc, CountryDesc, Street, CreatedDate, CreatedBy, AddressTypeKey, StateCode from Address where AddressKey = #AddressKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AddressKey, Address1, Address2, City, Zip, Zip4, HomePhone, WorkPhone, WorkExt, MobilePhone, LastUpdateUserID, LastUpdateTimeStamp, CountyDesc, CountryDesc, Street, CreatedDate, CreatedBy from Address where AddressTypeKey = #AddressTypeKey# and StateCode = #StateCode#</select>
+</sqlMap>
+

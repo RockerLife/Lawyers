@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>List</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<link rel="STYLESHEET" type="text/css" href="calendar/rich_calendar.css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js">
+	
+</script>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript">
+	function checks() {
+		document.getElementById("EffectiveDate").disabled = true;
+		alert(document.getElementById("EffectiveDate").style.readOnly);
+	}
+</script>
+
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/managetestharness.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" id="hs-script-loader" async defer
+	src="//js.hs-scripts.com/3334505.js"></script>
+
+<link href="css/TestStyleSheet1.css" rel="stylesheet" type="text/css" />
+<link href="css/TestStyleSheet2.css" rel="stylesheet" type="text/css" />
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="script/jquery.dataTables.min.js"></script>
+<!-- <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script> -->
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.print.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#Search_firm_list_01').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    } );
+} );</script>
+
+</head>
+
+<body>
+	<form name="myForm">
+		<div id="contextLinks"></div>
+		<table width="98%" border="0" align="center" cellspacing="0"
+			cellpadding="0">
+			<tr>
+				<td>
+					<div>
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td height="50">
+									<table width="98%" border="0" align="center" cellpadding="0"
+										cellspacing="0">
+										<tr>
+											<td valign="bottom"><img
+												src="image/logo_protexureaccountants1.png" width="325"
+												height="64" /></td>
+											<td align="right">
+												<table border="0" cellspacing="0" cellpadding="0">
+
+													<tr>
+														<td align="center" valign="bottom"
+															id="eval:LawyersRule.isShowUserLoginDetails">
+															<table id="workq_freeform_contextdata_555" Border="0"
+																cellpadding="0" cellspacing="0">
+																<tr>
+																	<td><label class="txt11BoldBlack"
+																		style="font-size: 10px">Welcome</label></td>
+																	<td align="right"><label name="AgentName"
+																		style="font-size: 10px" id="AgentName"
+																		class="txt11BoldBlack"></label> (<label
+																		name="UserRoleName" style="font-size: 10px"
+																		id="UserRoleName" class="txt11BoldBlack"></label>)&nbsp;&nbsp;
+																	</td>
+
+																</tr>
+															</table>
+														</td>
+														<td align="center" valign="bottom">
+															<table width="100%" border="0" cellspacing="0"
+																cellpadding="0">
+																<tr>
+																	<td colspan="2" align="center"><img
+																		src="img/backPortal1.jpg" width="20" height="22" /></td>
+																</tr>
+																<tr>
+																	<td nowrap="nowrap" class="topLink"><a
+																		href="javascript:submitform('workq.html','list.changepassword','','');"
+																		class="topLink">Change Password</a></td>
+																</tr>
+															</table>
+														</td>
+
+														<td align="center" valign="bottom" class="txtBold11Maroon">
+															&nbsp; |&nbsp;</td>
+														<td align="center">
+															<table width="100%" border="0" cellspacing="0"
+																cellpadding="0">
+																<tr>
+																	<td align="center"><img src="img/backPortal1.jpg"
+																		width="20" height="22" /></td>
+																</tr>
+																<tr>
+																	<td nowrap="nowrap" class="topLink"><a
+																		href="javascript:submitform('indexagent.html','list.homepage','','');"
+																		class="topLink">Back to Portal</a></td>
+																</tr>
+															</table>
+														</td>
+														<td align="center" valign="bottom" class="txtBold11Maroon">
+															&nbsp; |&nbsp;</td>
+														<td align="center" id="eval:LawyersRule.isAgentState">
+															<table width="100%" border="0" cellspacing="0"
+																cellpadding="0">
+																<tr>
+																	<td align="center"><img src="img/backWorkq1.jpg"
+																		width="20" height="22" /></td>
+																</tr>
+																<tr>
+																	<td nowrap="nowrap" class="topLink"><a
+																		href="javascript:submitform('workq.html','list.backtoworkq','','');"
+																		class="topLink">Back to workq</a></td>
+																</tr>
+															</table>
+														</td>
+														<td align="center" valign="bottom" class="txtBold11Maroon"
+															id="eval:LawyersRule.showBackToList">|</td>
+														<td align="center" id="eval:LawyersRule.showBackToList">
+															<table width="100%" border="0" cellspacing="0"
+																cellpadding="0">
+																<tr>
+																	<td align="center"><img src="img/backList1.jpg"
+																		width="20" height="22" /></td>
+																</tr>
+																<tr>
+																	<td class="topLink"><a
+																		href="javascript:submitform('list.html','list.backtolist','','');"
+																		class="topLink">Back to List</a></td>
+																</tr>
+															</table>
+														</td>
+
+														<td id="eval:LawyersRule.isComingFromBrokerageList"
+															align="center" valign="bottom" class="txtBold11Maroon">
+															&nbsp; |&nbsp;</td>
+														<td align="center" id="">
+															<div id="eval:LawyersRule.isComingFromBrokerageList">
+
+																<table
+																	id="eval:LawyersRule.hideBackToListOnSubProducerFormPage"
+																	width="100%" border="0" cellspacing="0" cellpadding="0">
+																	<tr>
+																		<td align="center"><img src="img/backList1.jpg"
+																			width="20" height="22" /></td>
+																	</tr>
+																	<tr>
+																		<td class="topLink"><a
+																			href="javascript:submitform('addEditBrokeragePolicyList.html','list.backtobrokeragePoliylist','','');"
+																			class="topLink">Back to Brokerage List</a></td>
+																	</tr>
+																</table>
+
+															</div>
+														</td>
+
+														<td id="eval:LawyersRule.isAgentStatelostworkq"
+															align="center" valign="bottom" class="txtBold11Maroon">
+															&nbsp; |&nbsp;</td>
+
+														<td align="center"
+															id="eval:LawyersRule.isAgentStatelostworkq">
+															<table width="100%" border="0" cellspacing="0"
+																cellpadding="0">
+																<tr>
+																	<td align="center"><img src="img/backWorkq1.jpg"
+																		width="20" height="22" /></td>
+																</tr>
+																<tr>
+																	<td nowrap="nowrap" class="topLink"><a
+																		href="javascript:submitform('lostWorkq.html','list.backtolostworkq','','');"
+																		class="topLink">Back to lostWorkq</a></td>
+																</tr>
+															</table>
+														</td>
+														<td align="center" valign="bottom" class="txtBold11Maroon">
+															&nbsp; &nbsp;</td>
+														<td align="center">
+															<table width="100%" border="0" cellspacing="0"
+																cellpadding="0">
+																<tr id="eval:LawyersRule.isAgent">
+																	<td align="center"></td>
+																</tr>
+																<tr id="eval:LawyersRule.isAgent">
+																	<td class="topLink"><a
+																		href="javascript:submitform('sessionList.html','list.showSessionList','','');"
+																		class="topLink"></a></td>
+
+																</tr>
+															</table>
+														</td>
+
+													</tr>
+
+
+												</table>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="15" class="redLeft"></td>
+											<td align="right" class="redCenter">
+												<table width="100%" border="0" cellspacing="0"
+													cellpadding="0">
+													<tr>
+														<td align="left"><img src="img/getting_coverage.jpg"
+															width="597" height="33" /></td>
+														<td align="right"><img src="img/call.jpg" width="289"
+															height="24" /></td>
+													</tr>
+												</table>
+											</td>
+											<td width="15" class="redRight"></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="15" class="grayLeft"><img src="img/space.gif"
+												width="15" height="1" /></td>
+											<td class="grayCenter">&nbsp;</td>
+											<td width="15" class="grayRight"><img
+												src="img/space.gif" width="15" height="1" /></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="15" class="grayRoundLeft"></td>
+											<td align="right" class="grayRepeat"><span
+												class="grayRoundRight">&nbsp;</span></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+
+
+							<tr>
+								<td align="right"></td>
+							</tr>
+
+						</table>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h2 id="eval:LawyersRule.isNotShowHistoryList"
+						class="questionHeading">List</h2>
+					<h2 id="eval:LawyersRule.isShowHistoryList" class="questionHeading">History
+						List</h2>
+				</td>
+
+
+			</tr>
+			<tr>
+				<td align="center" height="20"></td>
+			</tr>
+			<tr>
+				<td>
+					<div id="contentList" class="listPage">
+						<div id="ajax_sorting">
+							<table width="100%" border="0" align="center" cellpadding="0"
+								cellspacing="0">
+								<tr>
+									<td valign="top">
+										<div>
+											<table width="100%" border="0" align="center"
+												cellspacing="10" cellpadding="10">
+
+											</table>
+										</div>
+										<div>
+											<div id="eval:LawyersRule.isSearchListEmpty">
+												<table width="100%" border="0" align="center"
+													cellspacing="10" cellpadding="10">
+													<tr>
+														<td align="center" valign="middle" height="320">No
+															search result found.</td>
+													</tr>
+												</table>
+											</div>
+
+											<div id="eval:LawyersRule.isSearchListNotEmpty">
+												
+												<table id="Search_firm_list_01" class="display nowrap"
+															style="width: 100%">
+															<thead>
+																<tr id="Search_firm_list_header_01">
+																	<th id="block_field_QuoteNumber">Quote No.</th>
+																	<th id="block_field_AccountName">Firm Name</th>
+																	<th id="block_field_StateDesc">State</th>
+																	<th id="block_field_PolicyEffectiveDate">Age</th>
+																	<th id="block_field_StatusDesc">Status</th>
+																	<th id="actionLinkListPage_security">
+																											
+																											<span id="block_field_sendregistrationmail_row_link"></span>
+																											<span id="block_field_resetpassword_row_link"></span>
+																											<span id="block_field_firstreviewer_row_link"></span>
+																											<span id="block_field_changelostworkq_row_link"></span>
+																											<span id="block_field_brokeragePolicy_row_link"></span>
+																											<!-- 	<span id="block_field_copyData_row_link"></span> -->
+																											<span id="block_field_renewBrokeragePolicy_row_link"></span>
+																											</th>
+																</tr>
+															</thead>
+															<tbody >
+																<tr id="Search_firm_list_data_02">
+																	<td id="block_field_QuoteNumber"></td>
+																	<td id="block_field_AccountName"></td>
+																	<td id="block_field_StateDesc"></td>
+																	<td id="block_field_PolicyEffectiveDate"></td>
+																	<td id="block_field_StatusDesc"></td>
+																	<td nowrap="nowrap" id="actionLinkListPage_security">
+							                                    	<div id="" class="dropdown icon-dropdown">
+																	 <a class="dropdown-toggle" data-toggle="dropdown">Action
+																	  <span class="caret">&nbsp;</span></a>
+																	  <ul class="dropdown-menu">
+																	    <li>
+																	    	<span id="internalUsers_security">
+																	    	<span id="eval:LawyersRule.IsNotIssued">
+																	    	<span id="block_field_sendregistrationmail_row_link">
+																	    	<a
+																			href="javascript:submitform('list.html','list.sendregistrationmail','','');">
+																				<img src="img/mail.jpg"
+																				title="Mail" border="0" width="18px" /><span>Registration Email</span> </a>
+																			</span>
+																			</span></span>
+																	    </li>
+																	    <li>
+																	    	<span id="internalUsers_security">
+																	    	<span id="eval:LawyersRule.isNotCFOrInsured">
+																		  		<span id="block_field_resetpassword_row_link"><a
+																				href="javascript:submitform('resetPassword.html','list.goToResetPassword','','');">
+																				<img height="18px" width="18px" alt="Completed" title="Reset Password" 
+																				src="image/reset.png"><span>Reset Password</span> </a></span>
+																	    	</span></span>
+																	    </li>
+																	   <li>
+																	   <span>
+																	   	<span id="eval:LawyersRule.isInternalOrPartenerUser">
+																	   	<span id="block_field_firstreviewer_row_link">
+																	    	  <a
+																				href="javascript:rightclickmenu('changeFirstReviewer.html','changeFirstReviewer.updateReviewer','','','div_ajaxpostionpremium_freeform:SN');"> <img
+																					src="img/reviewer.png" title="Update First Reviewer"
+																					border="0" style="height: 16px; width: 18px;"/><span>Update First Reviewer</span>
+																			</a>
+																		</span>
+																		</span></span>
+																	    </li> 
+																	    
+																	     <li>
+																	   	<span id="internalUsers_security">
+																	     <span id="copyPolicyData_security">
+																	   		<span id="block_field_copyData_row_link">
+																	    	  <a
+																					href="javascript:submitform('FirmNewApp.html','list.copyPolicyData','','');">
+																					 <img src="img/copyDataImg.png" title="copy function"
+																					border="0" style="height: 16px; width: 18px;"/><span>Copy Policy Data</span>
+																			</a>
+																		</span>
+																		</span>
+																		</span>
+																	    </li> 
+																	     <li>
+																	    	<span id="internalUsers_security">
+																	     <span id="eval:LawyersRule.ShowlostWorkqButton">
+																	      	<span id="block_field_changelostworkq_row_link">
+																	    	  <a
+																				href="javascript:rightclickmenu('changelostworkq.html','changelostworkq.updatelostworkq','','','div_ajaxpostionpremium_freeform:SN');"> <img
+																					src="img/lost.png" title="Update lost workq"
+																					border="0" style="height: 16px; width: 18px;"/><span>Move to LostWorkq</span>
+																			</a>
+																		</span>
+																		</span></span>
+																	    </li> 
+																	     <li>
+																	     	<span id="internalUsers_security">
+																	     <span id="NewBrokerageLinkListPage_security">
+																	      	<span id="block_field_brokeragePolicy_row_link">
+																	    	  <a
+																				href="javascript:submitform('addEditBrokeragePolicy.html','list.createBrokerage','','','');"> <img
+																					src="img/lost.png" title="Update lost workq"
+																					border="0" style="height: 16px; width: 18px;"/><span>New Brokerage Policy</span>
+																			</a>
+																				</span>														</span>
+																		</span>
+																	    </li> 
+																	   
+																	    <li>
+																	    	<span id="internalUsers_security">
+																	     <span id="RenewBrokerageLinkListPage_security">
+																	      	<span id="block_field_renewBrokeragePolicy_row_link">
+																	    	  <a
+																				href="javascript:submitform('addEditBrokeragePolicy.html','list.renewAsBrokerage','','','');"> <img
+																					src="img/lost.png" title="Update lost workq"
+																					border="0" style="height: 16px; width: 18px;"/><span>Renew as Brokerage</span>
+																			</a>
+																		</span>
+																		</span>
+																		</span>
+																	    </li> 
+																	   
+																	  </ul>
+																	</div> 
+							                                    </td>
+				</tr>
+				
+			</tbody>
+		</table>
+		<div id="search_ajaxpostion_list_01">
+			<div id="div_ajaxpostionpremium_freeform:SN"></div>
+		</div>
+
+											</div>
+
+										</div>
+									</td>
+								</tr>
+							</table>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			</tr>
+			
+		</table>
+		<div class="calendar_widget" id="calendar_widget">
+			<iframe id="calendar_widget_iframe" name="calendar_widget_iframe"
+				src="calendar_widget.html" frameborder="0"></iframe>
+		</div>
+		<table id="list_freeform_contextdata_999">
+			<tr>
+				<td><input type="hidden" name="jsessionid" id="jsessionid" />
+					<input type="hidden" id="ajax_field_AccountID_search"
+					name="AccountID_search" /> <input type="hidden"
+					id="ajax_field_StatusKey_search" name="StatusKey_search" /> <input
+					type="hidden" id="ajax_field_AccountNamesearch"
+					name="AccountNamesearch" /> <input type="hidden"
+					id="ajax_field_PolicyEffectiveDate_search"
+					name="PolicyEffectiveDate_search" /> <input type="hidden"
+					id="ajax_field_PolicyEffectiveDate_searchTo"
+					name="PolicyEffectiveDate_searchTo" /> <input type="hidden"
+					id="ajax_field_StateCode_search" name="StateCode_search" /> <input
+					type="hidden" id="ajax_field_StatusKey_search"
+					name="StatusKey_search" /> <input type="hidden"
+					id="ajax_field_QuoteNumber_search" name="QuoteNumber_search" /> <input
+					type="hidden" id="ajax_field_PolicyNumber_search"
+					name="PolicyNumber_search" /> <input type="hidden"
+					id="ajax_field_NumberOfDays_search" name="NumberOfDays_search" /> <input
+					type="hidden" id="ajax_field_IsRenewed_search"
+					name="IsRenewed_search" /> <input type="hidden"
+					id="ajax_field_showhistorylist" name="showhistorylist" /> <input
+					type="hidden" name="ProducerCode" id="ProducerCode" /></td>
+			</tr>
+		</table>
+		<input type="hidden" name="divHideShow" id="divHideShow" value="" />
+		<input type="hidden" name="ctxmenuparam" value="" />
+
+			<!---------Footer Start---------->
+				<div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<!---------Footer End---------->
+	</form>
+</body>
+<script type="text/javascript" id="hs-script-loader" async defer
+	src="//js.hs-scripts.com/3334505.js"></script>
+<script type="text/javascript">
+	//loadList();
+	$(window).load(function() {
+ // executes when complete page is fully loaded, including all frames, objects and images
+	changeStatusColor();
+});
+</script>
+</html>

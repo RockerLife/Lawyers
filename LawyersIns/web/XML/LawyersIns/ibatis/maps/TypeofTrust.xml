@@ -1,0 +1,33 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="TypeofTrust">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from TypeofTrust</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from TypeofTrust</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into TypeofTrust(
+          <dynamic prepend=" ">
+               <isNotEmpty property="TypeofTrustDesc" prepend=",">TypeofTrustDesc</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="TypeofTrustDesc" prepend=",">#TypeofTrustDesc#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="TypeofTrustKey">SELECT IDENT_CURRENT('TypeofTrust') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select TypeofTrustKey, TypeofTrustDesc from TypeofTrust where TypeofTrustKey = #TypeofTrustKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update TypeofTrust set
+          <dynamic prepend=" ">
+               <isNotEmpty property="TypeofTrustDesc" prepend=",">TypeofTrustDesc = #TypeofTrustDesc#</isNotEmpty>
+               <isEmpty property="TypeofTrustDesc" prepend=",">TypeofTrustDesc = null</isEmpty>
+          </dynamic>
+          where TypeofTrustKey = #TypeofTrustKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from TypeofTrust where TypeofTrustKey = #TypeofTrustKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from TypeofTrust</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from TypeofTrust</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select TypeofTrustKey, TypeofTrustDesc from TypeofTrust where TypeofTrustKey = #TypeofTrustKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select TypeofTrustKey, TypeofTrustDesc from TypeofTrust</select>
+</sqlMap>
+

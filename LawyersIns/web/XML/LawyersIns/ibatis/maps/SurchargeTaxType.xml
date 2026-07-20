@@ -1,0 +1,33 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="SurchargeTaxType">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SurchargeTaxType</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SurchargeTaxType</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into SurchargeTaxType(
+          <dynamic prepend=" ">
+               <isNotEmpty property="SurchargeTaxTypeDesc" prepend=",">SurchargeTaxTypeDesc</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="SurchargeTaxTypeDesc" prepend=",">#SurchargeTaxTypeDesc#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="SurchargeTaxTypeKey">SELECT IDENT_CURRENT('SurchargeTaxType') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select SurchargeTaxTypeKey, SurchargeTaxTypeDesc from SurchargeTaxType where SurchargeTaxTypeKey = #SurchargeTaxTypeKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update SurchargeTaxType set
+          <dynamic prepend=" ">
+               <isNotEmpty property="SurchargeTaxTypeDesc" prepend=",">SurchargeTaxTypeDesc = #SurchargeTaxTypeDesc#</isNotEmpty>
+               <isEmpty property="SurchargeTaxTypeDesc" prepend=",">SurchargeTaxTypeDesc = null</isEmpty>
+          </dynamic>
+          where SurchargeTaxTypeKey = #SurchargeTaxTypeKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from SurchargeTaxType where SurchargeTaxTypeKey = #SurchargeTaxTypeKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from SurchargeTaxType</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from SurchargeTaxType</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select SurchargeTaxTypeKey, SurchargeTaxTypeDesc from SurchargeTaxType where SurchargeTaxTypeKey = #SurchargeTaxTypeKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select SurchargeTaxTypeKey, SurchargeTaxTypeDesc from SurchargeTaxType</select>
+</sqlMap>
+

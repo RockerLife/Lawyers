@@ -1,0 +1,57 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="depobject">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from depobject</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from depobject where metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into depobject(metaobjectno, structureno, metaobject, identifying
+          <isNotEmpty property="navigate" prepend=",">navigate</isNotEmpty>
+          <isNotEmpty property="description" prepend=",">description</isNotEmpty>
+          <isNotEmpty property="seq" prepend=",">seq</isNotEmpty>
+          <isNotEmpty property="developercomments" prepend=",">developercomments</isNotEmpty>
+          <isNotEmpty property="helptext" prepend=",">helptext</isNotEmpty>
+          <isNotEmpty property="tiptext" prepend=",">tiptext</isNotEmpty>
+          <isNotEmpty property="userdefineunittestcase" prepend=",">userdefineunittestcase</isNotEmpty>
+          ) values (#metaobjectno:NUMERIC#, #structureno:NUMERIC#, #metaobject#, #identifying#
+          <isNotEmpty property="navigate" prepend=",">#navigate#</isNotEmpty>
+          <isNotEmpty property="description" prepend=",">#description#</isNotEmpty>
+          <isNotEmpty property="seq" prepend=",">#seq#</isNotEmpty>
+          <isNotEmpty property="developercomments" prepend=",">#developercomments#</isNotEmpty>
+          <isNotEmpty property="helptext" prepend=",">#helptext#</isNotEmpty>
+          <isNotEmpty property="tiptext" prepend=",">#tiptext#</isNotEmpty>
+          <isNotEmpty property="userdefineunittestcase" prepend=",">#userdefineunittestcase#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="depobjectno">SELECT IDENT_CURRENT('depobject') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select depobjectno, metaobject, identifying, navigate, description, seq, developercomments, helptext, tiptext, userdefineunittestcase, metaobjectno, structureno from depobject where depobjectno = #depobjectno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update depobject set
+          <dynamic prepend=" ">
+               <isNotEmpty property="metaobject" prepend=",">metaobject = #metaobject#</isNotEmpty>
+               <isEmpty property="metaobject" prepend=",">metaobject = null</isEmpty>
+               <isNotEmpty property="identifying" prepend=",">identifying = #identifying#</isNotEmpty>
+               <isEmpty property="identifying" prepend=",">identifying = null</isEmpty>
+               <isNotEmpty property="navigate" prepend=",">navigate = #navigate#</isNotEmpty>
+               <isEmpty property="navigate" prepend=",">navigate = null</isEmpty>
+               <isNotEmpty property="description" prepend=",">description = #description#</isNotEmpty>
+               <isEmpty property="description" prepend=",">description = null</isEmpty>
+               <isNotEmpty property="seq" prepend=",">seq = #seq#</isNotEmpty>
+               <isEmpty property="seq" prepend=",">seq = null</isEmpty>
+               <isNotEmpty property="developercomments" prepend=",">developercomments = #developercomments#</isNotEmpty>
+               <isEmpty property="developercomments" prepend=",">developercomments = null</isEmpty>
+               <isNotEmpty property="helptext" prepend=",">helptext = #helptext#</isNotEmpty>
+               <isEmpty property="helptext" prepend=",">helptext = null</isEmpty>
+               <isNotEmpty property="tiptext" prepend=",">tiptext = #tiptext#</isNotEmpty>
+               <isEmpty property="tiptext" prepend=",">tiptext = null</isEmpty>
+               <isNotEmpty property="userdefineunittestcase" prepend=",">userdefineunittestcase = #userdefineunittestcase#</isNotEmpty>
+               <isEmpty property="userdefineunittestcase" prepend=",">userdefineunittestcase = null</isEmpty>
+          </dynamic>
+          where depobjectno = #depobjectno# and metaobjectno = #metaobjectno# and structureno = #structureno#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from depobject where depobjectno = #depobjectno# and metaobjectno = #metaobjectno# and structureno = #structureno#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from depobject</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from depobject where metaobjectno = #metaobjectno# and structureno = #structureno#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select depobjectno, metaobject, identifying, navigate, description, seq, developercomments, helptext, tiptext, userdefineunittestcase, metaobjectno, structureno from depobject where depobjectno = #depobjectno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select depobjectno, metaobjectno, structureno, metaobject, identifying, navigate, seq from depobject where metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+</sqlMap>
+

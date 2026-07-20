@@ -1,0 +1,266 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Name / Address / Dates Endorsements</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/jquery.treeview.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+<body onload="displayEmailMessage('ajax_field_isEmailSent');showHideNameChangeEndorsement('ajax_field_TypeOfEndorsement');">
+<form autocomplete="chrome-off">
+<div id="cover"/>
+<div id="popupsave2" >
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog" style="width: 450px;">
+		Modal content
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"/>
+			<h4 class="modal-title">Process Endorsement</h4>
+		  </div>
+		  <div class="modal-body" style="height: 64px;">
+			<p style="text-align: center; line-height: 25px;">Are you sure you want to generate certificate of insurance </p>
+		  </div>
+		  <div class="modal-footer">
+			<div class="floatRight">
+				<a class="ovalbutton" 
+				href="javascript:submitform('certificateInsurance.html','certificateInsurance.generateCertificate','','');" 
+				onclick="closePopUp('popupsave2');">Process Endorsement</a>
+				
+				<a class="ovalbutton" onclick="closePopUp('popupsave2');">Cancel</a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</div>
+<div id="popupsave3" style="dispaly:none;">
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog" style="width: 450px;" >
+		Modal content
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"/>
+			<h4 class="modal-title">Email Confirmation</h4>
+		  </div>
+		  <div class="modal-body" style="height: 64px;" id="CertificateIssuance_freeform_contextdata_6456">
+		  <span id="eval:LawyersRule.isCertificateEmailSent">
+			<p style="text-align: center; line-height: 25px;">The Certificate of Insurance has been emailed to  <label id="AccountEmail" name="AccountEmail"/> and can be viewed in the documents section. </p></span>
+			
+		  </div>
+		  <div class="modal-footer">
+			<div class="floatRight">
+				<a class="ovalbutton" 
+				href="javascript:submitform('Endorsement.html','certificateInsurance.back','','');"
+				onclick="closePopUp('popupsave3');">OK</a>
+				
+				
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</div>
+<!-- Bootstrap Core JavaScript -->
+
+<div class="container-fluid bootstrap-node-1">
+	  <div class="tableWidth"> 
+	   
+	      <div id="header">
+			<span id="#Include:headerEndorsement.html#"></span>
+	      </div>
+	  
+		
+		   <div id="contentSection">
+				
+				<div>
+			<h2 class="questionHeading">Certificate of Insurance</h2>
+		</div>
+				<div class="form row">
+					<div class="block-form">
+				<div class="freeFormDiv form-inline" id="certificateInsurance_freeform_contextdata_010">
+					<ul class="inlineBlock">
+						<li class="inlineBlock_1_fix ">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_CertificateRequestedDate" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth txtbold">
+											Requested Date :
+										</div>
+									</div>
+									<div class="freeFormListTd  iconsStyle2">
+										<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+										<input type="text" class="form-control datepicker"
+											id="ajax_field_CertificateRequestedDate" disabled
+											name="CertificateRequestedDate" onkeyup="applyDateFormat(this,event);" autocomplete="chrome-off"/> 
+									</div>
+								</div>
+							</div>
+						</li>
+						
+						<li class="inlineBlock_1_fix paddingTop20">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_CertificateHolderName" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth">
+											Certificate Holder Name :
+										</div>
+									</div>
+									<div >
+										<input class="full_width" type="text" id="ajax_field_CertificateHolderName" name="CertificateHolderName" autocomplete="chrome-off"/>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_1_fix">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_CertificateHolderAddress" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth">
+											Certificate Holder Address :
+										</div>
+									</div>
+									<div >
+										<input class="full_width" type="text" id="ajax_field_CertificateHolderAddress" name="CertificateHolderAddress" autocomplete="chrome-off" />
+									</div>
+									
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_2_fix">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_CertificateHolderState" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth">
+											State :
+										</div>
+									</div>
+									<div >
+										<select id="ajax_field_CertificateHolderState" name="CertificateHolderState" class="form-control" > 
+   											<option id=""></option>
+										</select>
+									</div>
+									
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_2_fix">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_CertificateHolderCity" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth">
+											City :
+										</div>
+									</div>
+									<div >
+										<input class="form-control" type="text" name="CertificateHolderCity" id="ajax_field_CertificateHolderCity" autocomplete="chrome-off"/>
+									</div>
+									
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_2_fix">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_CertificateHolderZip" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth">
+											Zip :
+										</div>
+									</div>
+									<div >
+										<input class="form-control" type="text" name="CertificateHolderZip" id="ajax_field_CertificateHolderZip" onkeydown="loadCertificateInsurance();" autocomplete="chrome-off"/>
+									</div>
+									
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+				<div class="buttons borderTop row">
+							<a class="btn back floatLeft" href="javascript:submitform('Endorsement.html','certificateInsurance.back','','');"> Back </a>
+							<div class="floatRight">
+								<a class="btn button1" onclick="formPreview();">Review Certificate</a>
+								
+								<a class="btn button1 btnVal2" onclick="showPopUp('popupsave2','500','400');">Create Certificate</a>
+								
+							</div>
+					</div>
+				</div>
+			<!---------Footer Start---------->
+						<div id="footer" class="footer">
+							<span id="#Include:footer.html#"></span>
+						</div>
+						<!---------Footer End---------->
+		
+					<table id="CertificateIssuance_freeform_contextdata_999">
+						<tr>
+							<td><input type="hidden" name="jsessionid" id="jsessionid" />
+								<input type="hidden" name="divHideShow" id="divHideShow" />
+								<input type="hidden" name="PolicyKey" id="PolicyKey" />
+								<input type="hidden" name="isEmailSent" id="ajax_field_isEmailSent" />
+								<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+								<input type="hidden" name="isEnforcedPolicy" id="isEnforcedPolicy" />
+								<input type="hidden" name="anyDecendentPolicy" id="anyDecendentPolicy" />
+								<input type="hidden" name="isExceptionalCase" id="isExceptionalCase" />
+								</td>
+						</tr>
+						
+					</table>
+		  </div>
+	</div>
+</div>
+</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

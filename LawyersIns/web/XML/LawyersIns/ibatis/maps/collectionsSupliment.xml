@@ -1,0 +1,18 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="collectionsSupliment">
+     <parameterMap id="SaveUpdateCollectionsSupliment_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="averageCases" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="consumerCollections" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="commercialollections" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="individualCollections" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="personnelToCollectDebts" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="servicesToPurchasers" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="claimsOrSuitsFDCPA" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="SaveUpdateCollectionsSupliment_p" parameterMap="SaveUpdateCollectionsSupliment_pMap">{ call SaveUpdateCollectionsSupliment_p(?,?,?,?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

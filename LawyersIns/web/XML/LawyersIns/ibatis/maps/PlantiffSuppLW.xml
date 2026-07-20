@@ -1,0 +1,128 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="PlantiffSuppLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PlantiffSuppLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PlantiffSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into PlantiffSuppLW(VersionSequence, PolicyKey
+          <isNotEmpty property="NumberOfAttorneyInPlantiffWork" prepend=",">NumberOfAttorneyInPlantiffWork</isNotEmpty>
+          <isNotEmpty property="PercentOfAttorneyTimeDevToPlantiff" prepend=",">PercentOfAttorneyTimeDevToPlantiff</isNotEmpty>
+          <isNotEmpty property="NumberOfSuppotedStaffToPlantiff" prepend=",">NumberOfSuppotedStaffToPlantiff</isNotEmpty>
+          <isNotEmpty property="NumberOfInjuryCasesIn12Month" prepend=",">NumberOfInjuryCasesIn12Month</isNotEmpty>
+          <isNotEmpty property="NumberOfInjuryHandleByAttorney" prepend=",">NumberOfInjuryHandleByAttorney</isNotEmpty>
+          <isNotEmpty property="IsApplAdvertiseByTelevision" prepend=",">IsApplAdvertiseByTelevision</isNotEmpty>
+          <isNotEmpty property="IsApplAdvertiseByRadio" prepend=",">IsApplAdvertiseByRadio</isNotEmpty>
+          <isNotEmpty property="IsApplAdvertiseByNewspaper" prepend=",">IsApplAdvertiseByNewspaper</isNotEmpty>
+          <isNotEmpty property="IsApplAdvertiseByYellowpages" prepend=",">IsApplAdvertiseByYellowpages</isNotEmpty>
+          <isNotEmpty property="IsRefAggrementReferToAppl" prepend=",">IsRefAggrementReferToAppl</isNotEmpty>
+          <isNotEmpty property="IsRefAggrementReferToApplRefersOut" prepend=",">IsRefAggrementReferToApplRefersOut</isNotEmpty>
+          <isNotEmpty property="IsAppAcceptRefersFromOtherFirms" prepend=",">IsAppAcceptRefersFromOtherFirms</isNotEmpty>
+          <isNotEmpty property="IsSettlementAggrementsUsed" prepend=",">IsSettlementAggrementsUsed</isNotEmpty>
+          <isNotEmpty property="IsApplAcceptCasesToStatuteOfLim" prepend=",">IsApplAcceptCasesToStatuteOfLim</isNotEmpty>
+          <isNotEmpty property="PerOfCasesBeforeTrail" prepend=",">PerOfCasesBeforeTrail</isNotEmpty>
+          <isNotEmpty property="PerOfCasesTriedToConclusion" prepend=",">PerOfCasesTriedToConclusion</isNotEmpty>
+          <isNotEmpty property="PerOfCasesReferToApplicant" prepend=",">PerOfCasesReferToApplicant</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="IsAppConfirmCarryProfLiabIns" prepend=",">IsAppConfirmCarryProfLiabIns</isNotEmpty>
+          <isNotEmpty property="IsApplAdvertiseByInternet" prepend=",">IsApplAdvertiseByInternet</isNotEmpty>
+          <isNotEmpty property="IsApplAdvertiseByMagazine" prepend=",">IsApplAdvertiseByMagazine</isNotEmpty>
+          <isNotEmpty property="PerOfCasesSettledBeforeTrail" prepend=",">PerOfCasesSettledBeforeTrail</isNotEmpty>
+          <isNotEmpty property="IsAppReferToOtherLawFirms" prepend=",">IsAppReferToOtherLawFirms</isNotEmpty>
+          <isNotEmpty property="IsApplAcceptCasesToStatuteOfLimDesc" prepend=",">IsApplAcceptCasesToStatuteOfLimDesc</isNotEmpty>
+          <isNotEmpty property="massTortOrClassAction" prepend=",">massTortOrClassAction</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="NumberOfAttorneyInPlantiffWork" prepend=",">#NumberOfAttorneyInPlantiffWork#</isNotEmpty>
+          <isNotEmpty property="PercentOfAttorneyTimeDevToPlantiff" prepend=",">#PercentOfAttorneyTimeDevToPlantiff#</isNotEmpty>
+          <isNotEmpty property="NumberOfSuppotedStaffToPlantiff" prepend=",">#NumberOfSuppotedStaffToPlantiff#</isNotEmpty>
+          <isNotEmpty property="NumberOfInjuryCasesIn12Month" prepend=",">#NumberOfInjuryCasesIn12Month#</isNotEmpty>
+          <isNotEmpty property="NumberOfInjuryHandleByAttorney" prepend=",">#NumberOfInjuryHandleByAttorney#</isNotEmpty>
+          <isNotEmpty property="IsApplAdvertiseByTelevision" prepend=",">#IsApplAdvertiseByTelevision#</isNotEmpty>
+          <isNotEmpty property="IsApplAdvertiseByRadio" prepend=",">#IsApplAdvertiseByRadio#</isNotEmpty>
+          <isNotEmpty property="IsApplAdvertiseByNewspaper" prepend=",">#IsApplAdvertiseByNewspaper#</isNotEmpty>
+          <isNotEmpty property="IsApplAdvertiseByYellowpages" prepend=",">#IsApplAdvertiseByYellowpages#</isNotEmpty>
+          <isNotEmpty property="IsRefAggrementReferToAppl" prepend=",">#IsRefAggrementReferToAppl#</isNotEmpty>
+          <isNotEmpty property="IsRefAggrementReferToApplRefersOut" prepend=",">#IsRefAggrementReferToApplRefersOut#</isNotEmpty>
+          <isNotEmpty property="IsAppAcceptRefersFromOtherFirms" prepend=",">#IsAppAcceptRefersFromOtherFirms#</isNotEmpty>
+          <isNotEmpty property="IsSettlementAggrementsUsed" prepend=",">#IsSettlementAggrementsUsed#</isNotEmpty>
+          <isNotEmpty property="IsApplAcceptCasesToStatuteOfLim" prepend=",">#IsApplAcceptCasesToStatuteOfLim#</isNotEmpty>
+          <isNotEmpty property="PerOfCasesBeforeTrail" prepend=",">#PerOfCasesBeforeTrail#</isNotEmpty>
+          <isNotEmpty property="PerOfCasesTriedToConclusion" prepend=",">#PerOfCasesTriedToConclusion#</isNotEmpty>
+          <isNotEmpty property="PerOfCasesReferToApplicant" prepend=",">#PerOfCasesReferToApplicant#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="IsAppConfirmCarryProfLiabIns" prepend=",">#IsAppConfirmCarryProfLiabIns#</isNotEmpty>
+          <isNotEmpty property="IsApplAdvertiseByInternet" prepend=",">#IsApplAdvertiseByInternet#</isNotEmpty>
+          <isNotEmpty property="IsApplAdvertiseByMagazine" prepend=",">#IsApplAdvertiseByMagazine#</isNotEmpty>
+          <isNotEmpty property="PerOfCasesSettledBeforeTrail" prepend=",">#PerOfCasesSettledBeforeTrail#</isNotEmpty>
+          <isNotEmpty property="IsAppReferToOtherLawFirms" prepend=",">#IsAppReferToOtherLawFirms#</isNotEmpty>
+          <isNotEmpty property="IsApplAcceptCasesToStatuteOfLimDesc" prepend=",">#IsApplAcceptCasesToStatuteOfLimDesc#</isNotEmpty>
+          <isNotEmpty property="massTortOrClassAction" prepend=",">#massTortOrClassAction#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select NumberOfAttorneyInPlantiffWork, PercentOfAttorneyTimeDevToPlantiff, NumberOfSuppotedStaffToPlantiff, NumberOfInjuryCasesIn12Month, NumberOfInjuryHandleByAttorney, IsApplAdvertiseByTelevision, IsApplAdvertiseByRadio, IsApplAdvertiseByNewspaper, IsApplAdvertiseByYellowpages, IsRefAggrementReferToAppl, IsRefAggrementReferToApplRefersOut, IsAppAcceptRefersFromOtherFirms, IsSettlementAggrementsUsed, IsApplAcceptCasesToStatuteOfLim, PerOfCasesBeforeTrail, PerOfCasesTriedToConclusion, PerOfCasesReferToApplicant, LastUpdateUserID, LastUpdateTimeStamp, IsAppConfirmCarryProfLiabIns, IsApplAdvertiseByInternet, IsApplAdvertiseByMagazine, PerOfCasesSettledBeforeTrail, IsAppReferToOtherLawFirms, IsApplAcceptCasesToStatuteOfLimDesc, massTortOrClassAction, VersionSequence, PolicyKey from PlantiffSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update PlantiffSuppLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="NumberOfAttorneyInPlantiffWork" prepend=",">NumberOfAttorneyInPlantiffWork = #NumberOfAttorneyInPlantiffWork#</isNotEmpty>
+               <isEmpty property="NumberOfAttorneyInPlantiffWork" prepend=",">NumberOfAttorneyInPlantiffWork = null</isEmpty>
+               <isNotEmpty property="PercentOfAttorneyTimeDevToPlantiff" prepend=",">PercentOfAttorneyTimeDevToPlantiff = #PercentOfAttorneyTimeDevToPlantiff#</isNotEmpty>
+               <isEmpty property="PercentOfAttorneyTimeDevToPlantiff" prepend=",">PercentOfAttorneyTimeDevToPlantiff = null</isEmpty>
+               <isNotEmpty property="NumberOfSuppotedStaffToPlantiff" prepend=",">NumberOfSuppotedStaffToPlantiff = #NumberOfSuppotedStaffToPlantiff#</isNotEmpty>
+               <isEmpty property="NumberOfSuppotedStaffToPlantiff" prepend=",">NumberOfSuppotedStaffToPlantiff = null</isEmpty>
+               <isNotEmpty property="NumberOfInjuryCasesIn12Month" prepend=",">NumberOfInjuryCasesIn12Month = #NumberOfInjuryCasesIn12Month#</isNotEmpty>
+               <isEmpty property="NumberOfInjuryCasesIn12Month" prepend=",">NumberOfInjuryCasesIn12Month = null</isEmpty>
+               <isNotEmpty property="NumberOfInjuryHandleByAttorney" prepend=",">NumberOfInjuryHandleByAttorney = #NumberOfInjuryHandleByAttorney#</isNotEmpty>
+               <isEmpty property="NumberOfInjuryHandleByAttorney" prepend=",">NumberOfInjuryHandleByAttorney = null</isEmpty>
+               <isNotEmpty property="IsApplAdvertiseByTelevision" prepend=",">IsApplAdvertiseByTelevision = #IsApplAdvertiseByTelevision#</isNotEmpty>
+               <isEmpty property="IsApplAdvertiseByTelevision" prepend=",">IsApplAdvertiseByTelevision = null</isEmpty>
+               <isNotEmpty property="IsApplAdvertiseByRadio" prepend=",">IsApplAdvertiseByRadio = #IsApplAdvertiseByRadio#</isNotEmpty>
+               <isEmpty property="IsApplAdvertiseByRadio" prepend=",">IsApplAdvertiseByRadio = null</isEmpty>
+               <isNotEmpty property="IsApplAdvertiseByNewspaper" prepend=",">IsApplAdvertiseByNewspaper = #IsApplAdvertiseByNewspaper#</isNotEmpty>
+               <isEmpty property="IsApplAdvertiseByNewspaper" prepend=",">IsApplAdvertiseByNewspaper = null</isEmpty>
+               <isNotEmpty property="IsApplAdvertiseByYellowpages" prepend=",">IsApplAdvertiseByYellowpages = #IsApplAdvertiseByYellowpages#</isNotEmpty>
+               <isEmpty property="IsApplAdvertiseByYellowpages" prepend=",">IsApplAdvertiseByYellowpages = null</isEmpty>
+               <isNotEmpty property="IsRefAggrementReferToAppl" prepend=",">IsRefAggrementReferToAppl = #IsRefAggrementReferToAppl#</isNotEmpty>
+               <isEmpty property="IsRefAggrementReferToAppl" prepend=",">IsRefAggrementReferToAppl = null</isEmpty>
+               <isNotEmpty property="IsRefAggrementReferToApplRefersOut" prepend=",">IsRefAggrementReferToApplRefersOut = #IsRefAggrementReferToApplRefersOut#</isNotEmpty>
+               <isEmpty property="IsRefAggrementReferToApplRefersOut" prepend=",">IsRefAggrementReferToApplRefersOut = null</isEmpty>
+               <isNotEmpty property="IsAppAcceptRefersFromOtherFirms" prepend=",">IsAppAcceptRefersFromOtherFirms = #IsAppAcceptRefersFromOtherFirms#</isNotEmpty>
+               <isEmpty property="IsAppAcceptRefersFromOtherFirms" prepend=",">IsAppAcceptRefersFromOtherFirms = null</isEmpty>
+               <isNotEmpty property="IsSettlementAggrementsUsed" prepend=",">IsSettlementAggrementsUsed = #IsSettlementAggrementsUsed#</isNotEmpty>
+               <isEmpty property="IsSettlementAggrementsUsed" prepend=",">IsSettlementAggrementsUsed = null</isEmpty>
+               <isNotEmpty property="IsApplAcceptCasesToStatuteOfLim" prepend=",">IsApplAcceptCasesToStatuteOfLim = #IsApplAcceptCasesToStatuteOfLim#</isNotEmpty>
+               <isEmpty property="IsApplAcceptCasesToStatuteOfLim" prepend=",">IsApplAcceptCasesToStatuteOfLim = null</isEmpty>
+               <isNotEmpty property="PerOfCasesBeforeTrail" prepend=",">PerOfCasesBeforeTrail = #PerOfCasesBeforeTrail#</isNotEmpty>
+               <isEmpty property="PerOfCasesBeforeTrail" prepend=",">PerOfCasesBeforeTrail = null</isEmpty>
+               <isNotEmpty property="PerOfCasesTriedToConclusion" prepend=",">PerOfCasesTriedToConclusion = #PerOfCasesTriedToConclusion#</isNotEmpty>
+               <isEmpty property="PerOfCasesTriedToConclusion" prepend=",">PerOfCasesTriedToConclusion = null</isEmpty>
+               <isNotEmpty property="PerOfCasesReferToApplicant" prepend=",">PerOfCasesReferToApplicant = #PerOfCasesReferToApplicant#</isNotEmpty>
+               <isEmpty property="PerOfCasesReferToApplicant" prepend=",">PerOfCasesReferToApplicant = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="IsAppConfirmCarryProfLiabIns" prepend=",">IsAppConfirmCarryProfLiabIns = #IsAppConfirmCarryProfLiabIns#</isNotEmpty>
+               <isEmpty property="IsAppConfirmCarryProfLiabIns" prepend=",">IsAppConfirmCarryProfLiabIns = null</isEmpty>
+               <isNotEmpty property="IsApplAdvertiseByInternet" prepend=",">IsApplAdvertiseByInternet = #IsApplAdvertiseByInternet#</isNotEmpty>
+               <isEmpty property="IsApplAdvertiseByInternet" prepend=",">IsApplAdvertiseByInternet = null</isEmpty>
+               <isNotEmpty property="IsApplAdvertiseByMagazine" prepend=",">IsApplAdvertiseByMagazine = #IsApplAdvertiseByMagazine#</isNotEmpty>
+               <isEmpty property="IsApplAdvertiseByMagazine" prepend=",">IsApplAdvertiseByMagazine = null</isEmpty>
+               <isNotEmpty property="PerOfCasesSettledBeforeTrail" prepend=",">PerOfCasesSettledBeforeTrail = #PerOfCasesSettledBeforeTrail#</isNotEmpty>
+               <isEmpty property="PerOfCasesSettledBeforeTrail" prepend=",">PerOfCasesSettledBeforeTrail = null</isEmpty>
+               <isNotEmpty property="IsAppReferToOtherLawFirms" prepend=",">IsAppReferToOtherLawFirms = #IsAppReferToOtherLawFirms#</isNotEmpty>
+               <isEmpty property="IsAppReferToOtherLawFirms" prepend=",">IsAppReferToOtherLawFirms = null</isEmpty>
+               <isNotEmpty property="IsApplAcceptCasesToStatuteOfLimDesc" prepend=",">IsApplAcceptCasesToStatuteOfLimDesc = #IsApplAcceptCasesToStatuteOfLimDesc#</isNotEmpty>
+               <isEmpty property="IsApplAcceptCasesToStatuteOfLimDesc" prepend=",">IsApplAcceptCasesToStatuteOfLimDesc = null</isEmpty>
+               <isNotEmpty property="massTortOrClassAction" prepend=",">massTortOrClassAction = #massTortOrClassAction#</isNotEmpty>
+               <isEmpty property="massTortOrClassAction" prepend=",">massTortOrClassAction = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from PlantiffSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from PlantiffSuppLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from PlantiffSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select NumberOfAttorneyInPlantiffWork, PercentOfAttorneyTimeDevToPlantiff, NumberOfSuppotedStaffToPlantiff, NumberOfInjuryCasesIn12Month, NumberOfInjuryHandleByAttorney, IsApplAdvertiseByTelevision, IsApplAdvertiseByRadio, IsApplAdvertiseByNewspaper, IsApplAdvertiseByYellowpages, IsRefAggrementReferToAppl, IsRefAggrementReferToApplRefersOut, IsAppAcceptRefersFromOtherFirms, IsSettlementAggrementsUsed, IsApplAcceptCasesToStatuteOfLim, PerOfCasesBeforeTrail, PerOfCasesTriedToConclusion, PerOfCasesReferToApplicant, LastUpdateUserID, LastUpdateTimeStamp, IsAppConfirmCarryProfLiabIns, IsApplAdvertiseByInternet, IsApplAdvertiseByMagazine, PerOfCasesSettledBeforeTrail, IsAppReferToOtherLawFirms, IsApplAcceptCasesToStatuteOfLimDesc, massTortOrClassAction, VersionSequence, PolicyKey from PlantiffSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, NumberOfAttorneyInPlantiffWork, PercentOfAttorneyTimeDevToPlantiff, NumberOfSuppotedStaffToPlantiff, NumberOfInjuryCasesIn12Month, NumberOfInjuryHandleByAttorney, IsApplAdvertiseByTelevision, IsApplAdvertiseByRadio, IsApplAdvertiseByNewspaper, IsApplAdvertiseByYellowpages, IsRefAggrementReferToAppl, IsRefAggrementReferToApplRefersOut, IsAppAcceptRefersFromOtherFirms, IsSettlementAggrementsUsed, IsApplAcceptCasesToStatuteOfLim, PerOfCasesBeforeTrail, PerOfCasesTriedToConclusion, PerOfCasesReferToApplicant, LastUpdateUserID, LastUpdateTimeStamp, IsAppConfirmCarryProfLiabIns, IsApplAdvertiseByInternet, IsApplAdvertiseByMagazine, PerOfCasesSettledBeforeTrail, IsAppReferToOtherLawFirms, IsApplAcceptCasesToStatuteOfLimDesc, massTortOrClassAction from PlantiffSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

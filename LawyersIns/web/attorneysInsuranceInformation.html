@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Attorneys Insurance Information</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js"/>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<form>
+<!-- Bootstrap Core JavaScript -->
+
+<div class="container-fluid bootstrap-node-1">
+  <div class="tableWidth"> 
+   	 <div id="header">
+	        	<span id="#Include:header.html#"></span>
+	      </div>
+	 <div class="menuTab">
+					<span id="#Include:tabs.html#"></span>
+				</div>
+   <div id="contentSection">
+		<div>
+			<h2 class="questionHeading">If more than 3 attorneys insurance information</h2>
+		</div>
+		<div class="form" id="attorneysInsuranceInformation_freeform_contextdata_0">
+			 <div class="form-horizontal row">
+				<div align="right">
+					<i class="error italic">All columns are required. </i>
+				</div>
+				<table class="gridTable sectionPadding" cellpadding="0" cellspacing="0" style="width: 100%;">
+						<thead>
+								<tr>
+									<th width="20%">Insurance Carrier</th>
+										<th height="23" width="20%">Policy Period</th>
+										<th width="20%">Limit/Deductible</th>
+										<th width="22%">Number of Attorneys</th>
+										<th width="18%">Premium</th>
+									</tr>
+									
+								
+								</thead>
+						<tbody id="rowMake">
+							
+							<tr>
+									<td>
+									<div id="error_insuranceCarrierFirstAttoryneyInsurance" class="error"/>
+										<input name="insuranceCarrierFirstAttoryneyInsurance" type="text" class="inputbox" id="ajax_field_insuranceCarrierFirstAttoryneyInsurance"  />
+										 
+									</td>
+									<td><div id="error_policyPeriodFirstAttoryneyInsurance" class="error"/>
+										<input placeholder="yyyy-yyyy" name="policyPeriodFirstAttoryneyInsurance" type="text" class="inputbox" id="ajax_field_policyPeriodFirstAttoryneyInsurance" onclick="loadAttorneyInsuranceInfo();"  />
+										
+									</td>
+									<td>
+										<div id="error_limitDeductibleFirstAttoryneyInsurance" class="error"/>
+										<input name="limitDeductibleFirstAttoryneyInsurance" type="text" class="inputbox" 
+											id="ajax_field_limitDeductibleFirstAttoryneyInsurance" />
+										
+									</td>
+									<td><div id="error_numberOfAttorneysFirstAttoryneyInsurance" class="error"/>
+										<input name="numberOfAttorneysFirstAttoryneyInsurance" type="text" class="inputbox" 
+											id="ajax_field_numberOfAttorneysFirstAttoryneyInsurance" onclick="loadAttorneyInsuranceInfo();"/>
+										
+									</td>
+									<td>
+										<div id="error_PremiumFirstAttoryneyInsurance" class="error"/>
+										<input name="premiumFirstAttoryneyInsurance" type="text" class="inputbox" 
+											id="ajax_field_premiumFirstAttoryneyInsurance" onclick="loadAttorneyInsuranceInfo();" placeholder="$" />
+										
+									</td>
+							</tr>
+							
+							<tr>
+									<td>
+										
+										<input name="insuranceCarrierSecondAttorneyInsurance" type="text" class="inputbox" 
+											id="ajax_field_insuranceCarrierSecondAttorneyInsurance"  />
+										 
+									</td>
+									<td>
+										<div id="error_policyPeriodSecondAttorneyInsurance" class="error"/>
+										<input placeholder="yyyy-yyyy" name="policyPeriodSecondAttorneyInsurance" type="text" class="inputbox"
+											 id="ajax_field_policyPeriodSecondAttorneyInsurance"  onclick="loadAttorneyInsuranceInfo();" />
+										
+									</td>
+									<td>
+									<div id="error_limitDeductibleSecondAttorneyInsurance" class="error"/>
+										<input   name="limitDeductibleSecondAttorneyInsurance" type="text" class="inputbox" 
+											id="ajax_field_limitDeductibleSecondAttorneyInsurance" />
+										
+									</td>
+									<td>
+										<div id="error_numberOfAttorneysSecondAttorneyInsurance" class="error"/>
+										<input name="numberOfAttorneysSecondAttorneyInsurance" type="text" class="inputbox"
+											 id="ajax_field_numberOfAttorneysSecondAttorneyInsurance" onclick="loadAttorneyInsuranceInfo();"/>
+										
+									</td>
+									<td>
+										<div id="error_premiumSecondAttorneyInsurance" class="error"/>
+										<input name="premiumSecondAttorneyInsurance" type="text" class="inputbox" 	
+											id="ajax_field_premiumSecondAttorneyInsurance" onclick="loadAttorneyInsuranceInfo();" placeholder="$" />
+										
+									</td>
+							</tr>
+							<tr>
+									<td>
+										<div id="error_insuranceCarrierThirdAttorneyInsurance" class="error"/>
+										<input name="insuranceCarrierThirdAttorneyInsurance" type="text" class="inputbox" 
+											id="ajax_field_insuranceCarrierThirdAttorneyInsurance"  />
+										 
+									</td>
+									<td>
+										<div id="error_policyPeriodThirdAttorneyInsurance" class="error"/>
+										<input name="policyPeriodThirdAttorneyInsurance" type="text" class="inputbox"  placeholder="yyyy-yyyy" 
+											id="ajax_field_policyPeriodThirdAttorneyInsurance"  onclick="loadAttorneyInsuranceInfo();" />
+										
+									</td>
+									<td>
+										<div id="error_limitDeductibleThirdAttorneyInsurance" class="error"/>
+										<input name="limitDeductibleThirdAttorneyInsurance" type="text" class="inputbox"
+											 id="ajax_field_limitDeductibleThirdAttorneyInsurance"/>
+										
+									</td>
+									<td>
+										<div id="error_numberOfAttorneysForThirdAttorneyInsurance" class="error"/>
+										<input name="numberOfAttorneysForThirdAttorneyInsurance" type="text" class="inputbox" 
+											id="ajax_field_numberOfAttorneysForThirdAttorneyInsurance" onclick="loadAttorneyInsuranceInfo();"/>
+										
+									</td>
+									<td>
+										<div id="error_premiumThirdAttorneyInsurance" class="error"/>
+										<input name="premiumThirdAttorneyInsurance" id="ajax_field_premiumThirdAttorneyInsurance"
+											 type="text" class="inputbox"  onclick="loadAttorneyInsuranceInfo();" placeholder="$"/>
+										
+									</td>
+							</tr>
+						</tbody>
+						</table>
+			  
+			</div>
+			
+		</div>
+		<div class="buttons borderTop row">
+			<a class="btn back floatLeft"
+				href="javascript:submitform('underwritingInfo.html','attorneysInsuranceInformation.back','','');" >Back</a>
+			<div class="floatRight">
+				<!---->
+			
+					<span id="showPageSave">
+							<a class="btn save" 
+						href="javascript:submitform('pastClaims.html','attorneysInsuranceInformation.save','','');" >Save&nbsp;&&nbsp;Continue</a>
+					</span>
+					<span id="showContinue">
+						 <a class="btn next"
+						href="javascript:submitform('pastClaims.html','attorneysInsuranceInformation.continue','','');" >Continue</a> 
+					</span>
+			</div>
+		</div>
+	</div>
+   <div id="footer">
+	    	 <span id="#Include:footer.html#"></span>
+		 </div>
+	      
+	    <table id="attorneysInsuranceInformation_freeform_contextdata_999">
+				<tr>
+					<td><input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />
+						
+						
+					</td>
+				</tr>
+		</table>
+	  </div>
+	</div>	
+	</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

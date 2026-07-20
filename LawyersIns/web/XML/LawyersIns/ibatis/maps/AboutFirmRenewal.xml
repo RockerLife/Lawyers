@@ -1,0 +1,33 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AboutFirmRenewal">
+     <parameterMap id="InsertUpdateRenewAboutFirmDetails_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="IsFirmMergedWithOtherFirm" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="AnnualRevenueSequence" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsFirmCoverageForPreceedorFirms" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isServedAsCEOChairmanPresident" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsFirmHaveClientMoreThan25PercentOfBilling" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ClientNameFirstLargestRevenueClient" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ServicesRenderedFirstLargestRevenueClient" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PercentFromFirstLargestRevenueClient" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="ClientNameSecondLargestRevenueClient" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ServicesRenderedSecondLargestRevenueClient" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PercentFromSecondLargestRevenueClient" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="DateRenderedSecondLargestRevenueClient" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="custodyOrControlFunds" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="disbursementTransaction" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="peopleToDisburseFunds" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="instructionsDocumentedReceivingParty" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="doucumentedProtocolsAndAuthority" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="haveFraudSecurityAwarenessProgram" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="needCyberCoverage" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="DateRenderedFirstLargestRevenueClient" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="IsApplIntToFinanAssests" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isCannibSuppPage" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsApplInitiatedLawsuitForFirm" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BankruptcySuppImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdateRenewAboutFirmDetails_p" parameterMap="InsertUpdateRenewAboutFirmDetails_pMap">{ call InsertUpdateRenewAboutFirmDetails_p(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

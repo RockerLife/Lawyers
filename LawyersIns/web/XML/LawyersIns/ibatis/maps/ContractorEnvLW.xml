@@ -1,0 +1,49 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ContractorEnvLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ContractorEnvLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ContractorEnvLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ContractorEnvLW(VersionSequence, PolicyKey
+          <isNotEmpty property="ContractorName" prepend=",">ContractorName</isNotEmpty>
+          <isNotEmpty property="ContServicesPerformed" prepend=",">ContServicesPerformed</isNotEmpty>
+          <isNotEmpty property="PercentOfEnvGBillings" prepend=",">PercentOfEnvGBillings</isNotEmpty>
+          <isNotEmpty property="IsEvidenceRequired" prepend=",">IsEvidenceRequired</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="ContractorName" prepend=",">#ContractorName#</isNotEmpty>
+          <isNotEmpty property="ContServicesPerformed" prepend=",">#ContServicesPerformed#</isNotEmpty>
+          <isNotEmpty property="PercentOfEnvGBillings" prepend=",">#PercentOfEnvGBillings#</isNotEmpty>
+          <isNotEmpty property="IsEvidenceRequired" prepend=",">#IsEvidenceRequired#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="ContractorEnvKey">SELECT IDENT_CURRENT('ContractorEnvLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ContractorEnvKey, ContractorName, ContServicesPerformed, PercentOfEnvGBillings, IsEvidenceRequired, LastUpdateUserID, LastUpdateTimeStamp, VersionSequence, PolicyKey from ContractorEnvLW where ContractorEnvKey = #ContractorEnvKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ContractorEnvLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="ContractorName" prepend=",">ContractorName = #ContractorName#</isNotEmpty>
+               <isEmpty property="ContractorName" prepend=",">ContractorName = null</isEmpty>
+               <isNotEmpty property="ContServicesPerformed" prepend=",">ContServicesPerformed = #ContServicesPerformed#</isNotEmpty>
+               <isEmpty property="ContServicesPerformed" prepend=",">ContServicesPerformed = null</isEmpty>
+               <isNotEmpty property="PercentOfEnvGBillings" prepend=",">PercentOfEnvGBillings = #PercentOfEnvGBillings#</isNotEmpty>
+               <isEmpty property="PercentOfEnvGBillings" prepend=",">PercentOfEnvGBillings = null</isEmpty>
+               <isNotEmpty property="IsEvidenceRequired" prepend=",">IsEvidenceRequired = #IsEvidenceRequired#</isNotEmpty>
+               <isEmpty property="IsEvidenceRequired" prepend=",">IsEvidenceRequired = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where ContractorEnvKey = #ContractorEnvKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ContractorEnvLW where ContractorEnvKey = #ContractorEnvKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ContractorEnvLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ContractorEnvLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ContractorEnvKey, ContractorName, ContServicesPerformed, PercentOfEnvGBillings, IsEvidenceRequired, LastUpdateUserID, LastUpdateTimeStamp, VersionSequence, PolicyKey from ContractorEnvLW where ContractorEnvKey = #ContractorEnvKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ContractorEnvKey, VersionSequence, PolicyKey, ContractorName, ContServicesPerformed, PercentOfEnvGBillings, IsEvidenceRequired, LastUpdateUserID, LastUpdateTimeStamp from ContractorEnvLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

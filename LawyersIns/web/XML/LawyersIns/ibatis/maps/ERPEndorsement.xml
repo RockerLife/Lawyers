@@ -1,0 +1,75 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ERPEndorsement">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ERPEndorsement</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ERPEndorsement</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ERPEndorsement(
+          <dynamic prepend=" ">
+               <isNotEmpty property="ceasedDate" prepend=",">ceasedDate</isNotEmpty>
+               <isNotEmpty property="isFirmERPRequested" prepend=",">isFirmERPRequested</isNotEmpty>
+               <isNotEmpty property="yearsOfERP" prepend=",">yearsOfERP</isNotEmpty>
+               <isNotEmpty property="practicePortion" prepend=",">practicePortion</isNotEmpty>
+               <isNotEmpty property="isFirmERP" prepend=",">isFirmERP</isNotEmpty>
+               <isNotEmpty property="oneYear" prepend=",">oneYear</isNotEmpty>
+               <isNotEmpty property="threeYear" prepend=",">threeYear</isNotEmpty>
+               <isNotEmpty property="fiveYear" prepend=",">fiveYear</isNotEmpty>
+               <isNotEmpty property="sixYear" prepend=",">sixYear</isNotEmpty>
+               <isNotEmpty property="unlimitedYears" prepend=",">unlimitedYears</isNotEmpty>
+               <isNotEmpty property="deathDisabilityFirmOrAttorneyName" prepend=",">deathDisabilityFirmOrAttorneyName</isNotEmpty>
+               <isNotEmpty property="deathDiablityCeasedDate" prepend=",">deathDiablityCeasedDate</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="ceasedDate" prepend=",">#ceasedDate#</isNotEmpty>
+               <isNotEmpty property="isFirmERPRequested" prepend=",">#isFirmERPRequested#</isNotEmpty>
+               <isNotEmpty property="yearsOfERP" prepend=",">#yearsOfERP#</isNotEmpty>
+               <isNotEmpty property="practicePortion" prepend=",">#practicePortion#</isNotEmpty>
+               <isNotEmpty property="isFirmERP" prepend=",">#isFirmERP#</isNotEmpty>
+               <isNotEmpty property="oneYear" prepend=",">#oneYear#</isNotEmpty>
+               <isNotEmpty property="threeYear" prepend=",">#threeYear#</isNotEmpty>
+               <isNotEmpty property="fiveYear" prepend=",">#fiveYear#</isNotEmpty>
+               <isNotEmpty property="sixYear" prepend=",">#sixYear#</isNotEmpty>
+               <isNotEmpty property="unlimitedYears" prepend=",">#unlimitedYears#</isNotEmpty>
+               <isNotEmpty property="deathDisabilityFirmOrAttorneyName" prepend=",">#deathDisabilityFirmOrAttorneyName#</isNotEmpty>
+               <isNotEmpty property="deathDiablityCeasedDate" prepend=",">#deathDiablityCeasedDate#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ceasedDate, isFirmERPRequested, yearsOfERP, practicePortion, isFirmERP, oneYear, threeYear, fiveYear, sixYear, unlimitedYears, deathDisabilityFirmOrAttorneyName, deathDiablityCeasedDate from ERPEndorsement</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ERPEndorsement set
+          <dynamic prepend=" ">
+               <isNotEmpty property="ceasedDate" prepend=",">ceasedDate = #ceasedDate#</isNotEmpty>
+               <isEmpty property="ceasedDate" prepend=",">ceasedDate = null</isEmpty>
+               <isNotEmpty property="isFirmERPRequested" prepend=",">isFirmERPRequested = #isFirmERPRequested#</isNotEmpty>
+               <isEmpty property="isFirmERPRequested" prepend=",">isFirmERPRequested = null</isEmpty>
+               <isNotEmpty property="yearsOfERP" prepend=",">yearsOfERP = #yearsOfERP#</isNotEmpty>
+               <isEmpty property="yearsOfERP" prepend=",">yearsOfERP = null</isEmpty>
+               <isNotEmpty property="practicePortion" prepend=",">practicePortion = #practicePortion#</isNotEmpty>
+               <isEmpty property="practicePortion" prepend=",">practicePortion = null</isEmpty>
+               <isNotEmpty property="isFirmERP" prepend=",">isFirmERP = #isFirmERP#</isNotEmpty>
+               <isEmpty property="isFirmERP" prepend=",">isFirmERP = null</isEmpty>
+               <isNotEmpty property="oneYear" prepend=",">oneYear = #oneYear#</isNotEmpty>
+               <isEmpty property="oneYear" prepend=",">oneYear = null</isEmpty>
+               <isNotEmpty property="threeYear" prepend=",">threeYear = #threeYear#</isNotEmpty>
+               <isEmpty property="threeYear" prepend=",">threeYear = null</isEmpty>
+               <isNotEmpty property="fiveYear" prepend=",">fiveYear = #fiveYear#</isNotEmpty>
+               <isEmpty property="fiveYear" prepend=",">fiveYear = null</isEmpty>
+               <isNotEmpty property="sixYear" prepend=",">sixYear = #sixYear#</isNotEmpty>
+               <isEmpty property="sixYear" prepend=",">sixYear = null</isEmpty>
+               <isNotEmpty property="unlimitedYears" prepend=",">unlimitedYears = #unlimitedYears#</isNotEmpty>
+               <isEmpty property="unlimitedYears" prepend=",">unlimitedYears = null</isEmpty>
+               <isNotEmpty property="deathDisabilityFirmOrAttorneyName" prepend=",">deathDisabilityFirmOrAttorneyName = #deathDisabilityFirmOrAttorneyName#</isNotEmpty>
+               <isEmpty property="deathDisabilityFirmOrAttorneyName" prepend=",">deathDisabilityFirmOrAttorneyName = null</isEmpty>
+               <isNotEmpty property="deathDiablityCeasedDate" prepend=",">deathDiablityCeasedDate = #deathDiablityCeasedDate#</isNotEmpty>
+               <isEmpty property="deathDiablityCeasedDate" prepend=",">deathDiablityCeasedDate = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ERPEndorsement</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ERPEndorsement</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ERPEndorsement</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ceasedDate, isFirmERPRequested, yearsOfERP, practicePortion, isFirmERP, oneYear, threeYear, fiveYear, sixYear, unlimitedYears, deathDisabilityFirmOrAttorneyName, deathDiablityCeasedDate from ERPEndorsement</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ceasedDate, isFirmERPRequested, yearsOfERP, practicePortion, isFirmERP, oneYear, threeYear, fiveYear, sixYear, unlimitedYears, deathDisabilityFirmOrAttorneyName, deathDiablityCeasedDate from ERPEndorsement</select>
+</sqlMap>
+

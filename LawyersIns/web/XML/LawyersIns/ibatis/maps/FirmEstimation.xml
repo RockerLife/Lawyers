@@ -1,0 +1,109 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="FirmEstimation">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FirmEstimation</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FirmEstimation</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into FirmEstimation(
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence</isNotEmpty>
+               <isNotEmpty property="AccountName" prepend=",">AccountName</isNotEmpty>
+               <isNotEmpty property="AccountEmail" prepend=",">AccountEmail</isNotEmpty>
+               <isNotEmpty property="WorkPhone" prepend=",">WorkPhone</isNotEmpty>
+               <isNotEmpty property="ProducerCode" prepend=",">ProducerCode</isNotEmpty>
+               <isNotEmpty property="Street" prepend=",">Street</isNotEmpty>
+               <isNotEmpty property="Zip" prepend=",">Zip</isNotEmpty>
+               <isNotEmpty property="Zip4" prepend=",">Zip4</isNotEmpty>
+               <isNotEmpty property="StateCode" prepend=",">StateCode</isNotEmpty>
+               <isNotEmpty property="CountyDesc" prepend=",">CountyDesc</isNotEmpty>
+               <isNotEmpty property="City" prepend=",">City</isNotEmpty>
+               <isNotEmpty property="PolicyEffectiveDate" prepend=",">PolicyEffectiveDate</isNotEmpty>
+               <isNotEmpty property="PolicyExpirationDate" prepend=",">PolicyExpirationDate</isNotEmpty>
+               <isNotEmpty property="NumberOfLawyers" prepend=",">NumberOfLawyers</isNotEmpty>
+               <isNotEmpty property="NumberOfLawyers500" prepend=",">NumberOfLawyers500</isNotEmpty>
+               <isNotEmpty property="NumberOfLawyers1000" prepend=",">NumberOfLawyers1000</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">#VersionSequence#</isNotEmpty>
+               <isNotEmpty property="AccountName" prepend=",">#AccountName#</isNotEmpty>
+               <isNotEmpty property="AccountEmail" prepend=",">#AccountEmail#</isNotEmpty>
+               <isNotEmpty property="WorkPhone" prepend=",">#WorkPhone#</isNotEmpty>
+               <isNotEmpty property="ProducerCode" prepend=",">#ProducerCode#</isNotEmpty>
+               <isNotEmpty property="Street" prepend=",">#Street#</isNotEmpty>
+               <isNotEmpty property="Zip" prepend=",">#Zip#</isNotEmpty>
+               <isNotEmpty property="Zip4" prepend=",">#Zip4#</isNotEmpty>
+               <isNotEmpty property="StateCode" prepend=",">#StateCode#</isNotEmpty>
+               <isNotEmpty property="CountyDesc" prepend=",">#CountyDesc#</isNotEmpty>
+               <isNotEmpty property="City" prepend=",">#City#</isNotEmpty>
+               <isNotEmpty property="PolicyEffectiveDate" prepend=",">#PolicyEffectiveDate#</isNotEmpty>
+               <isNotEmpty property="PolicyExpirationDate" prepend=",">#PolicyExpirationDate#</isNotEmpty>
+               <isNotEmpty property="NumberOfLawyers" prepend=",">#NumberOfLawyers#</isNotEmpty>
+               <isNotEmpty property="NumberOfLawyers500" prepend=",">#NumberOfLawyers500#</isNotEmpty>
+               <isNotEmpty property="NumberOfLawyers1000" prepend=",">#NumberOfLawyers1000#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">#VersionKey#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="FirmEstimationKey">SELECT IDENT_CURRENT('FirmEstimation') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirmEstimationKey, PolicyKey, VersionSequence, AccountName, AccountEmail, WorkPhone, ProducerCode, Street, Zip, Zip4, StateCode, CountyDesc, City, PolicyEffectiveDate, PolicyExpirationDate, NumberOfLawyers, NumberOfLawyers500, NumberOfLawyers1000, LastUpdateUserID, LastUpdateTimeStamp, VersionKey from FirmEstimation where FirmEstimationKey = #FirmEstimationKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update FirmEstimation set
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence = #VersionSequence#</isNotEmpty>
+               <isEmpty property="VersionSequence" prepend=",">VersionSequence = null</isEmpty>
+               <isNotEmpty property="AccountName" prepend=",">AccountName = #AccountName#</isNotEmpty>
+               <isEmpty property="AccountName" prepend=",">AccountName = null</isEmpty>
+               <isNotEmpty property="AccountEmail" prepend=",">AccountEmail = #AccountEmail#</isNotEmpty>
+               <isEmpty property="AccountEmail" prepend=",">AccountEmail = null</isEmpty>
+               <isNotEmpty property="WorkPhone" prepend=",">WorkPhone = #WorkPhone#</isNotEmpty>
+               <isEmpty property="WorkPhone" prepend=",">WorkPhone = null</isEmpty>
+               <isNotEmpty property="ProducerCode" prepend=",">ProducerCode = #ProducerCode#</isNotEmpty>
+               <isEmpty property="ProducerCode" prepend=",">ProducerCode = null</isEmpty>
+               <isNotEmpty property="Street" prepend=",">Street = #Street#</isNotEmpty>
+               <isEmpty property="Street" prepend=",">Street = null</isEmpty>
+               <isNotEmpty property="Zip" prepend=",">Zip = #Zip#</isNotEmpty>
+               <isEmpty property="Zip" prepend=",">Zip = null</isEmpty>
+               <isNotEmpty property="Zip4" prepend=",">Zip4 = #Zip4#</isNotEmpty>
+               <isEmpty property="Zip4" prepend=",">Zip4 = null</isEmpty>
+               <isNotEmpty property="StateCode" prepend=",">StateCode = #StateCode#</isNotEmpty>
+               <isEmpty property="StateCode" prepend=",">StateCode = null</isEmpty>
+               <isNotEmpty property="CountyDesc" prepend=",">CountyDesc = #CountyDesc#</isNotEmpty>
+               <isEmpty property="CountyDesc" prepend=",">CountyDesc = null</isEmpty>
+               <isNotEmpty property="City" prepend=",">City = #City#</isNotEmpty>
+               <isEmpty property="City" prepend=",">City = null</isEmpty>
+               <isNotEmpty property="PolicyEffectiveDate" prepend=",">PolicyEffectiveDate = #PolicyEffectiveDate#</isNotEmpty>
+               <isEmpty property="PolicyEffectiveDate" prepend=",">PolicyEffectiveDate = null</isEmpty>
+               <isNotEmpty property="PolicyExpirationDate" prepend=",">PolicyExpirationDate = #PolicyExpirationDate#</isNotEmpty>
+               <isEmpty property="PolicyExpirationDate" prepend=",">PolicyExpirationDate = null</isEmpty>
+               <isNotEmpty property="NumberOfLawyers" prepend=",">NumberOfLawyers = #NumberOfLawyers#</isNotEmpty>
+               <isEmpty property="NumberOfLawyers" prepend=",">NumberOfLawyers = null</isEmpty>
+               <isNotEmpty property="NumberOfLawyers500" prepend=",">NumberOfLawyers500 = #NumberOfLawyers500#</isNotEmpty>
+               <isEmpty property="NumberOfLawyers500" prepend=",">NumberOfLawyers500 = null</isEmpty>
+               <isNotEmpty property="NumberOfLawyers1000" prepend=",">NumberOfLawyers1000 = #NumberOfLawyers1000#</isNotEmpty>
+               <isEmpty property="NumberOfLawyers1000" prepend=",">NumberOfLawyers1000 = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey = #VersionKey#</isNotEmpty>
+               <isEmpty property="VersionKey" prepend=",">VersionKey = null</isEmpty>
+          </dynamic>
+          where FirmEstimationKey = #FirmEstimationKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from FirmEstimation where FirmEstimationKey = #FirmEstimationKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from FirmEstimation</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from FirmEstimation</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirmEstimationKey, PolicyKey, VersionSequence, AccountName, AccountEmail, WorkPhone, ProducerCode, Street, Zip, Zip4, StateCode, CountyDesc, City, PolicyEffectiveDate, PolicyExpirationDate, NumberOfLawyers, NumberOfLawyers500, NumberOfLawyers1000, LastUpdateUserID, LastUpdateTimeStamp, VersionKey from FirmEstimation where FirmEstimationKey = #FirmEstimationKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirmEstimationKey, PolicyKey, VersionSequence, AccountName, AccountEmail, WorkPhone, ProducerCode, Street, Zip, Zip4, StateCode, CountyDesc, City, PolicyEffectiveDate, PolicyExpirationDate, NumberOfLawyers, NumberOfLawyers500, NumberOfLawyers1000, LastUpdateUserID, LastUpdateTimeStamp, VersionKey from FirmEstimation</select>
+</sqlMap>
+

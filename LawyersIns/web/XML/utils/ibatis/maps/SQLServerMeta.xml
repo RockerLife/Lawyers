@@ -1,0 +1,177 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="SQLServerMeta">
+
+	  <select id="getDBExist2000" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select CATALOG_NAME from INFORMATION_SCHEMA.SCHEMATA where CATALOG_NAME = #dbname#
+      </select>
+      
+      <select id="getDBExist2005" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select * from sys.databases where name = #dbname#
+      </select>
+      
+      <select id="getDBExist" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select * from sys.databases where name = #dbname#
+      </select>
+     
+ 	 <select id="getTablesFK" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select name from sysobjects where xtype = 'F' and parent_obj=#id#
+     </select>
+
+	  <select id="getTablesTrigger" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select name from sysobjects where xtype = 'TR' and parent_obj=#id#
+     </select>
+
+	 <select id="getTablesKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select column_name from information_schema.key_column_usage where constraint_name like #keyType# + '%' and table_name=#name#
+     </select>
+     
+     <select id="getTablesMeta" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select name, id from sysobjects where xtype = 'U'
+     </select>
+     
+     <select id="findTableMeta" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select name, id from sysobjects where xtype = 'U' and name = #name#
+     </select>
+     
+     <select id="getColsMeta2000" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select 
+     		b.colid, b.name name, c.name type, b.length length, b.prec, b.scale, b.autoval, b.isnullable
+     	from 
+     		sysobjects a, syscolumns b, systypes c
+     	where
+     		a.id = #id# and a.id = b.id and b.xtype = c.xtype
+     	order by b.colorder	
+     </select>
+     
+     <select id="getColsMeta2005" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select 
+     		b.column_id as colid, b.name name, c.name type, b.max_length length, b.precision, b.scale, b.is_identity as autoval, b.is_nullable as isnullable
+     	from 
+     		sys.objects a, sys.columns b, sys.types c
+     	where
+     		 a.object_id = #id# and a.object_id = b.object_id and b.user_type_id = c.user_type_id
+     	order by b.column_id
+     </select>
+     
+      <select id="getColsMeta" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select 
+     		b.column_id as colid, b.name name, c.name type, b.max_length length, b.precision, b.scale, b.is_identity as autoval, b.is_nullable as isnullable
+     	from 
+     		sys.objects a, sys.columns b, sys.types c
+     	where
+     		 a.object_id = #id# and a.object_id = b.object_id and b.user_type_id = c.user_type_id
+     	order by b.column_id
+     </select>
+     
+     <select id="getColAttributesMeta2000" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select 
+     		c.colid, c.keyno
+     	from 
+     		sysobjects a, sysindexes b, sysindexkeys c
+     	where
+     		a.parent_obj = #id# and a.parent_obj = b.id and a.xtype = 'PK' and a.name = b.name and c.id = a.parent_obj
+     		and c.indid = b.indid and c.colid = #colid#
+     	order by c.keyno
+     </select>
+     
+     <select id="getColAttributesMeta2005" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select 
+     		c.colid, c.keyno
+     	from 
+     		sys.objects a, sysindexes b, sysindexkeys c
+     	where
+     		a.parent_object_id = #id# and a.parent_object_id = b.id and a.type = 'PK' and a.name = b.name and c.id = a.parent_object_id
+     		and c.indid = b.indid and c.colid = #colid#
+     	order by c.keyno
+     </select>
+     <select id="getColAttributesMeta" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select 
+     		c.colid, c.keyno
+     	from 
+     		sys.objects a, sysindexes b, sysindexkeys c
+     	where
+     		a.parent_object_id = #id# and a.parent_object_id = b.id and a.type = 'PK' and a.name = b.name and c.id = a.parent_object_id
+     		and c.indid = b.indid and c.colid = #colid#
+     	order by c.keyno
+     </select>
+     
+     <select id="getDpndTablesMeta2000" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select 
+     		distinct b.name, b.id
+     	from 
+     		sysforeignkeys a, sysobjects b
+     	where
+     		a.rkeyid = #id# and b.id = a.fkeyid 
+     </select>
+     
+     <select id="getDpndTableAttributesMeta2000" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select 
+     		fkey 
+     	from 
+     		sysforeignkeys a, sysobjects b
+     	where
+     		a.rkeyid = #id# and b.id = a.fkeyid and b.id = #dpnd_id#
+     </select>
+     
+     <select id="getDpndTablesMeta2005" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select 
+     		distinct b.name, b.object_id as id
+     	from 
+     		sysforeignkeys a, sys.objects b
+     	where
+     		a.rkeyid = #id# and b.object_id = a.fkeyid 
+     </select>
+     <select id="getDpndTablesMeta" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select 
+     		distinct b.name, b.object_id as id
+     	from 
+     		sysforeignkeys a, sys.objects b
+     	where
+     		a.rkeyid = #id# and b.object_id = a.fkeyid 
+     </select>
+     
+     <select id="getDpndTableAttributesMeta2005" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select 
+     		fkey 
+     	from 
+     		sysforeignkeys a, sys.objects b
+     	where
+     		a.rkeyid = #id# and b.object_id = a.fkeyid and b.object_id = #dpnd_id#
+     </select>
+     <select id="getDpndTableAttributesMeta" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select 
+     		fkey 
+     	from 
+     		sysforeignkeys a, sys.objects b
+     	where
+     		a.rkeyid = #id# and b.object_id = a.fkeyid and b.object_id = #dpnd_id#
+     </select>
+     
+     <select id="getDefaultValue" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select 
+     		a.[name], a.cdefault, b.[text]
+     	from 
+     		syscolumns as a left join syscomments as b on b.[id] = a.[cdefault]
+     	where
+     		a.[name] = #name#
+     </select>     
+     
+     <select id="getTableAllPrimaryKeys" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	SELECT 
+     		KCU.COLUMN_NAME 
+     	FROM 
+     		INFORMATION_SCHEMA.TABLE_CONSTRAINTS AS TC  
+		INNER JOIN  
+			INFORMATION_SCHEMA.KEY_COLUMN_USAGE AS KCU  
+		ON 
+			TC.TABLE_SCHEMA = KCU.TABLE_SCHEMA AND TC.TABLE_NAME = KCU.TABLE_NAME  
+			AND TC.CONSTRAINT_NAME = KCU.CONSTRAINT_NAME  
+		WHERE 
+			TC.CONSTRAINT_TYPE = 'PRIMARY KEY'  
+			AND TC.TABLE_SCHEMA = 'dbo' 
+			AND TC.TABLE_NAME  = #table_name#  
+		ORDER BY 
+			KCU.ORDINAL_POSITION 
+     </select>
+</sqlMap>

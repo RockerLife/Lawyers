@@ -1,0 +1,31 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ZohoToken">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ZohoToken</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ZohoToken</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ZohoToken(
+          <dynamic prepend=" ">
+               <isNotEmpty property="ZohoAccessToken" prepend=",">ZohoAccessToken</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="ZohoAccessToken" prepend=",">#ZohoAccessToken#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ZohoAccessToken from ZohoToken</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ZohoToken set
+          <dynamic prepend=" ">
+               <isNotEmpty property="ZohoAccessToken" prepend=",">ZohoAccessToken = #ZohoAccessToken#</isNotEmpty>
+               <isEmpty property="ZohoAccessToken" prepend=",">ZohoAccessToken = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ZohoToken</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ZohoToken</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ZohoToken</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ZohoAccessToken from ZohoToken</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ZohoAccessToken from ZohoToken</select>
+</sqlMap>
+

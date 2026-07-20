@@ -1,0 +1,115 @@
+<businessflows project="UTILS" version="1.0">
+	<workflow name="SQLServerMeta">
+		<ibatis name="getTablesMeta" executionsequence="1" sqlmapid="SQLServerMeta.getTablesMeta" operation="5"/>
+		<ibatis name="getColsMeta" executionsequence="1" sqlmapid="SQLServerMeta.getColsMeta" operation="5"/>
+		<ibatis name="getColAttributesMeta" executionsequence="1" sqlmapid="SQLServerMeta.getColAttributesMeta" operation="5"/>
+		<ibatis name="getDpndTablesMeta" executionsequence="1" sqlmapid="SQLServerMeta.getDpndTablesMeta" operation="5"/>
+		<ibatis name="getDpndTableAttributesMeta" executionsequence="1" sqlmapid="SQLServerMeta.getDpndTableAttributesMeta" operation="5"/>
+	</workflow>
+	
+	<!-- ***********************************************************************************************************************
+		Used during DB2XML conversion. Any XML template having a GUI interface should have its own workflow 
+		defined in this section. This is required when DB2XML utility is executed against that XML template.	
+	************************************************************************************************************************* -->
+	<workflow name="metadata">
+		<ibatis name="getRootByProject" executionsequence="1" sqlmapid="metadata.findStructureByProjectId" operation="5"/>
+	</workflow>
+	
+	<workflow name="pagemeta">
+		<ibatis name="getRootByProject" executionsequence="1" sqlmapid="pagemeta.findPagemetaByProjectId" operation="5"/>
+	</workflow>
+	
+	<workflow name="workflows">
+		<ibatis name="getRootByProject" executionsequence="1" sqlmapid="workflow.findBusinessflowsByProjectId" operation="5"/>
+	</workflow>
+	
+	<workflow name="expressions">
+		<ibatis name="getRootByProject" executionsequence="1" sqlmapid="expressions.findEvalrulesByProjectId" operation="5"/>
+	</workflow>
+	
+	<workflow name="security">
+		<ibatis name="getRootByProject" executionsequence="1" sqlmapid="security.findSecurityByProjectId" operation="5"/>
+	</workflow>
+	
+	<workflow name="lookup_xmltemplates">
+		<bo name="lookup_xmltemplates" populate="xmlobjectbuilder_list_view" executionsequence="1" obj="com.powerrad.utils.bo.WFXMLObjectBuilder" method="getDropDownData">
+			<argument seq="0" argname="ctx" argtype="com.outline.common.IContext"/>
+			<argument seq="1" argname="fldName" argtype="java.lang.String"/>
+		</bo>
+	</workflow>
+	
+	<workflow name="generate_xmlobjects">
+		<bo name="generate_xmlobjects" executionsequence="1" obj="com.powerrad.utils.bo.WFXMLObjectBuilder" method="generateXMLObjects"/>
+	</workflow>
+	
+	<workflow name="xmltodb">
+		<bo name="xmltodb" executionsequence="1" obj="com.powerrad.utils.bo.WFXMLToDB" method="loadXMLToDB"/>
+	</workflow>
+	
+	<workflow name="dbtoxml">
+		<bo name="dbtoxml" executionsequence="1" obj="com.powerrad.utils.bo.WFDBToXML" method="getXMLFromDB"/>
+	</workflow>
+	
+	<workflow name="genschema">
+		<bo name="genschema" populate="genschema_freeform_view" executionsequence="1" obj="com.powerrad.utils.bo.WFGenSchema" method="generateSchema"/>
+	</workflow>
+	
+	<workflow name="genmetafromdb">
+		<bo name="genmetafromdb" executionsequence="1" obj="com.powerrad.utils.bo.WFGenMetaFromDB" method="generateMetadata"/>
+	</workflow>
+	
+	<workflow name="appconfigrefresh">
+		<bo name="refresh" populate="appgenerator_freeform_view" executionsequence="1" obj="com.powerrad.utils.bo.WFAppGenerator" method="refreshAppConfigParams"/>
+	</workflow>
+	
+	<workflow name="appgen">
+		<bo name="appgen" executionsequence="1" obj="com.powerrad.utils.bo.WFAppGenerator" method="generateApplication"/>
+	</workflow>
+	<!-- ***************************** Edited by yogender on 30/03/2005 ******************************* -->
+	<workflow name="xmigen">
+		<bo name="xmigen" executionsequence="1" obj="com.powerrad.utils.bo.WFXmiGenerator" method="generateXMI" populate="xmigenerator_freeform_view"/>
+	</workflow>
+	
+	<workflow transreqd="N" name="insert_deltalog">
+    	<bo name="deltalog" executionsequence="1" obj="com.powerrad.utils.bo.WFDelta" method="captureInsertDelta"/>
+	</workflow>
+	
+	<workflow transreqd="N" name="modify_deltalog">
+    	<bo name="deltalog" executionsequence="1" obj="com.powerrad.utils.bo.WFDelta" method="captureModifyDelta"/>
+	</workflow>
+	
+	<workflow transreqd="N" name="delete_deltalog">
+    	<bo name="deltalog" executionsequence="1" obj="com.powerrad.utils.bo.WFDelta" method="captureDeleteDelta"/>
+	</workflow>
+	
+	<workflow transreqd="N" name="populate_delta_log">
+    	<bo name="deltalog" executionsequence="1" obj="com.powerrad.utils.bo.WFDeltaPopulate" method="populateXMLDeltaToDB"/>
+	</workflow>
+	
+	<workflow transreqd="N" name="WFArgsList">
+    	<bo name="argsbo" executionsequence="1" obj="com.powerrad.functions.WFFunctions" method="populateArgsList" populate="argsView"/>
+	</workflow>
+	
+	<workflow transreqd="N" name="WFExecuteExpr">
+    	<bo name="exprexecutebo" executionsequence="1" obj="com.powerrad.functions.WFFunctions" method="executeExpression" populate="result"/>
+	</workflow>
+	
+	<workflow transreqd="N" name="retrieve_app_flow">
+    	<bo name="retrieve_app_flow_bo" executionsequence="1" obj="com.powerrad.utils.bo.WFAppFlow" method="retrieveAppFlow" populate="application_flow_view"/>
+	</workflow>
+	
+	<workflow transreqd="N" name="update_app_flow">
+    	<bo name="update_app_flow_bo" executionsequence="1" obj="com.powerrad.utils.bo.WFAppFlow" method="updateAppFlow"/>
+	</workflow>
+	<!-- add for upload download of metadta.xml -->
+	<workflow name="uploadfile" nonpsm="N" >
+		<bo name="upload" executionsequence="1" obj="com.powerrad.utils.bo.UploadDownloadUtil" method="uploadFile"   returntype="Object"/>
+	</workflow>	
+	<workflow name="deletefile" nonpsm="N" >
+		<bo name="delete" executionsequence="1" obj="com.powerrad.utils.bo.UploadDownloadUtil" method="deleteFile"   returntype="Object"/>
+	</workflow>	
+	<workflow name="downloadfile" nonpsm="N" >
+		<bo name="download" executionsequence="1" obj="com.powerrad.utils.bo.UploadDownloadUtil" method="downloadFile"  returntype="Object"/>
+	</workflow>	
+	<!-- upload and download of metadata.xml  -->
+</businessflows>

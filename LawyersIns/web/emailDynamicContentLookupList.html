@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dynamic Content List</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<!-- <script src="js/jquery.js"></script> -->
+<script src="js/jquery.treeview.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+
+<script src="js/jquery.dataTables1.10.19.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-te/1.4.0/jquery-te.js"></script>
+<!-- <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script> -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-te/1.4.0/jquery-te.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<form>
+		<!-- Bootstrap Core JavaScript -->
+
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth">
+				<!---------Header Start---------->
+				<div id="header">
+					<span id="#Include:header.html#"></span>
+				</div>
+				<!---------Header End---------->
+
+				<div id="contentSection">
+					<div>
+						<h2 class="questionHeading">Dynamic Content List</h2>
+					</div>
+					<div class="form row">
+						<div class="block-form">
+							<div class="buttons row">
+									<div class="floatRight">
+									<span>
+										<a class="btn next floatRight" href="javascript:submitform('emailDynamicContentLookup.html','emailDynamicContentLookupList.addEmailDynamicContent','','');">Add Dynamic Content </a>
+									</span>
+								</div> 
+							</div>
+							<div class="paddingTop10">
+								<fieldset class="fieldsetTop" style="max-height: 500px; overflow: auto;" >
+									<legend >Dynamic Content list</legend>
+									<table id="email_DynamicContentLookup_list_1" class="gridTable" cellpadding="0" cellspacing="0" style="width: 100%;">
+										<thead>
+											<tr id="email_DynamicContentLookup_list_header_1" class="tableheading">
+												<th width="10%" id="block_field_DynamicContent_Code">Code</th>
+												<th width="10%" id="block_field_DynamicContent_Name">Name</th>
+												<th id="block_field_DynamicContent_Description">Description</th>
+												<th width="16px" id="block_field_editlink_row_link"></th>
+												<th width="16px" id="block_field_viewlink_row_link"></th>
+												<th width="16px" id="block_field_deletelink_row_link"></th>
+												<th id="block_field_EmailDynamicID" style="display: none;"></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr id="email_DynamicContentLookup_list_mom_data_1">
+												<td id="block_field_DynamicContent_Code"></td>
+												<td id="block_field_DynamicContent_Name"></td>
+												<td id="block_field_DynamicContent_Description"></td>
+												<td align="left" nowrap="nowrap">
+													<div id="block_field_editlink_row_link">
+														<a href="javascript:submitform('emailDynamicContentLookup.html','emailDynamicContentLookupList.emailDynamicContentEdit','','');" class="Link_blue">
+															<img src="img/edit.png" alt="Edit" border="0" />
+														</a>
+													</div>
+												</td>
+												<td align="left" nowrap="nowrap">
+													<div id="block_field_viewlink_row_link">
+														<a href="javascript:submitform('emailDynamicContentLookup.html','emailDynamicContentLookupList.emailDynamicContenttView','','');" class="Link_blue"> 
+															<img src="img/icon_select.png" alt="View" border="0" />
+														</a>
+													</div>
+												</td>
+												<td align="left" valign="middle" nowrap="nowrap" style="border-bottom: 1px solid #ffffff;">
+													<div id="block_field_deletelink_row_link">
+														<a href="javascript:submitform('emailDynamicContentLookupList.html','emailDynamicContentLookupList.emailDynamicContentDelete','','');" class="Link_blue">
+															<img src="img/cross.gif" title="Delete template" border="0" />
+														</a>
+													</div>
+												</td>
+												<td id="block_field_EmailDynamicID" style="display: none;">
+													<input name="EmailDynamicID" id="EmailDynamicID" type="hidden" />
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</fieldset>
+							</div>
+							<div class="buttons row">
+								<div class="floatLeft">
+									<span >
+										<a class="btn back floatLeft" href="javascript:submitform('Lookup.html','emailDynamicContentLookupList.backtoLookup','','','');"> Back </a>
+									</span>
+								</div> 
+							</div>
+						</div>
+					</div>
+					<!---------Footer Start---------->
+					<div id="footer" class="footer">
+						<span id="#Include:footer.html#"></span>
+					</div>
+					<!---------Footer End---------->
+					<table id="emailNotifications_freeform_contextdata_999">
+						<tr>
+							<td>
+								<input type="hidden" name="jsessionid" id="jsessionid" />
+								<input type="hidden" name="divHideShow" id="divHideShow" />
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

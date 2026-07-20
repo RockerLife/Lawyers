@@ -1,0 +1,51 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="PremiumCalculationBuffer">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PremiumCalculationBuffer</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PremiumCalculationBuffer</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into PremiumCalculationBuffer(
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+               <isNotEmpty property="XmlInputDatatoRating" prepend=",">XmlInputDatatoRating</isNotEmpty>
+               <isNotEmpty property="XmlOutputDatafromRating" prepend=",">XmlOutputDatafromRating</isNotEmpty>
+               <isNotEmpty property="UnearnedPremium" prepend=",">UnearnedPremium</isNotEmpty>
+               <isNotEmpty property="UnearnedTax" prepend=",">UnearnedTax</isNotEmpty>
+               <isNotEmpty property="totalUnearnedPremium" prepend=",">totalUnearnedPremium</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+               <isNotEmpty property="XmlInputDatatoRating" prepend=",">#XmlInputDatatoRating#</isNotEmpty>
+               <isNotEmpty property="XmlOutputDatafromRating" prepend=",">#XmlOutputDatafromRating#</isNotEmpty>
+               <isNotEmpty property="UnearnedPremium" prepend=",">#UnearnedPremium#</isNotEmpty>
+               <isNotEmpty property="UnearnedTax" prepend=",">#UnearnedTax#</isNotEmpty>
+               <isNotEmpty property="totalUnearnedPremium" prepend=",">#totalUnearnedPremium#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PolicyKey, XmlInputDatatoRating, XmlOutputDatafromRating, UnearnedPremium, UnearnedTax, totalUnearnedPremium from PremiumCalculationBuffer</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update PremiumCalculationBuffer set
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+               <isNotEmpty property="XmlInputDatatoRating" prepend=",">XmlInputDatatoRating = #XmlInputDatatoRating#</isNotEmpty>
+               <isEmpty property="XmlInputDatatoRating" prepend=",">XmlInputDatatoRating = null</isEmpty>
+               <isNotEmpty property="XmlOutputDatafromRating" prepend=",">XmlOutputDatafromRating = #XmlOutputDatafromRating#</isNotEmpty>
+               <isEmpty property="XmlOutputDatafromRating" prepend=",">XmlOutputDatafromRating = null</isEmpty>
+               <isNotEmpty property="UnearnedPremium" prepend=",">UnearnedPremium = #UnearnedPremium#</isNotEmpty>
+               <isEmpty property="UnearnedPremium" prepend=",">UnearnedPremium = null</isEmpty>
+               <isNotEmpty property="UnearnedTax" prepend=",">UnearnedTax = #UnearnedTax#</isNotEmpty>
+               <isEmpty property="UnearnedTax" prepend=",">UnearnedTax = null</isEmpty>
+               <isNotEmpty property="totalUnearnedPremium" prepend=",">totalUnearnedPremium = #totalUnearnedPremium#</isNotEmpty>
+               <isEmpty property="totalUnearnedPremium" prepend=",">totalUnearnedPremium = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from PremiumCalculationBuffer</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from PremiumCalculationBuffer</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from PremiumCalculationBuffer</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PolicyKey, XmlInputDatatoRating, XmlOutputDatafromRating, UnearnedPremium, UnearnedTax, totalUnearnedPremium from PremiumCalculationBuffer</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PolicyKey, XmlInputDatatoRating, XmlOutputDatafromRating, UnearnedPremium, UnearnedTax, totalUnearnedPremium from PremiumCalculationBuffer</select>
+</sqlMap>
+

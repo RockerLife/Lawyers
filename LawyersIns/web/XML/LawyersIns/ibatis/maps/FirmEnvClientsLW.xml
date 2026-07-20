@@ -1,0 +1,41 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="FirmEnvClientsLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FirmEnvClientsLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FirmEnvClientsLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into FirmEnvClientsLW(VersionSequence, PolicyKey
+          <isNotEmpty property="EnvClientName" prepend=",">EnvClientName</isNotEmpty>
+          <isNotEmpty property="TypesOfWork" prepend=",">TypesOfWork</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="EnvClientName" prepend=",">#EnvClientName#</isNotEmpty>
+          <isNotEmpty property="TypesOfWork" prepend=",">#TypesOfWork#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="FirmEnvClientsKey">SELECT IDENT_CURRENT('FirmEnvClientsLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirmEnvClientsKey, EnvClientName, TypesOfWork, LastUpdateUserID, LastUpdateTimeStamp, VersionSequence, PolicyKey from FirmEnvClientsLW where FirmEnvClientsKey = #FirmEnvClientsKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update FirmEnvClientsLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="EnvClientName" prepend=",">EnvClientName = #EnvClientName#</isNotEmpty>
+               <isEmpty property="EnvClientName" prepend=",">EnvClientName = null</isEmpty>
+               <isNotEmpty property="TypesOfWork" prepend=",">TypesOfWork = #TypesOfWork#</isNotEmpty>
+               <isEmpty property="TypesOfWork" prepend=",">TypesOfWork = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where FirmEnvClientsKey = #FirmEnvClientsKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from FirmEnvClientsLW where FirmEnvClientsKey = #FirmEnvClientsKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from FirmEnvClientsLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from FirmEnvClientsLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirmEnvClientsKey, EnvClientName, TypesOfWork, LastUpdateUserID, LastUpdateTimeStamp, VersionSequence, PolicyKey from FirmEnvClientsLW where FirmEnvClientsKey = #FirmEnvClientsKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirmEnvClientsKey, VersionSequence, PolicyKey, EnvClientName, TypesOfWork, LastUpdateUserID, LastUpdateTimeStamp from FirmEnvClientsLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

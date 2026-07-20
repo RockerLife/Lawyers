@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Rerating</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js"/>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"/>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+<body onload="loadRerateData();">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<form class="form-horizontal row">
+
+
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth" >
+			
+				 <div id="header">
+					<span id="#Include:header.html#"></span>
+				</div> 
+				 
+				
+				<div id="contentSection">
+					<div class="confirmationMsgAlign" id="FirmNewApp_freeform_contextdata_100">
+						<!-- <label class="Confirmation" name="pageMsg" id="pageMsg" /> -->
+						<!-- <div id="error_ApplicationNotCompleted" class="error11Bold"> </div> -->
+					</div>
+					<div class="Confirmation" id="filter_freeform_contextdata_01"
+						align="center">
+						<label name="pageMsg" id="pageMsg" />
+					</div>
+					
+					<div id="FirmNewApp_freeform_contextdata_0">
+						<div>
+							<h2 class="questionHeading">Rerate Policies</h2>
+						</div>
+						<div class="freeFormListTdError paddingLeft3">
+								<div id="error_validatesuccessmessage" class="error"></div>
+								<div id="ajax_error_validatesuccessmessage" class="error"></div>
+			
+							</div>
+							<div class="freeFormListTdError paddingLeft3">
+								<div id="error_successmessage" class="error"></div>
+								<div id="ajax_error_successmessage" class="error"></div>
+														
+													</div>
+																
+						<div class="form row" style="padding: 0px 30px">
+							<div class="block-form">
+								<div class="freeFormDiv form-inline">
+								<fieldset class="fieldsetTop">
+													<legend>Filter Criteria</legend>		
+									<ul class="inlineBlock">
+										<li class="inlineBlock_2_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="error_LBEffectiveDate_searchFrom" class="error"></div>
+														<div id="ajax_error_LBEffectiveDate_searchFrom" class="error"></div>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															Effective Date From :
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput iconsStyle2">
+														<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+														<input type="text" class="form-control datepicker"
+															id="LBEffectiveDate_searchFrom" 
+															name=LBEffectiveDate_searchFrom onkeyup="applyDateFormat(this,event);"/> 
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="inlineBlock_2_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="ajax_error_LBEffectiveDate_searchTo" class="error"></div>
+														 <div id="error_LBEffectiveDate_searchTo" class="error"> </div> 
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															Effective Date To :
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput iconsStyle2">
+														<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+														<input type="text" class="form-control datepicker"
+															id="LBEffectiveDate_searchTo" 
+															name="LBEffectiveDate_searchTo" onkeyup="applyDateFormat(this,event);"/> 
+													</div>
+												</div>
+											</div>
+										</li>
+																	
+										
+										<li class="inlineBlock_2_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="" class="error"> </div>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															State :
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput multiSelectSingle">
+														<select name="WQStateCode_search"	  class="selectpicker" 
+															multiple id=WQStateCode_search>
+																<option value="">ALL</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</li>
+										
+										<li class="inlineBlock_2_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="" class="error"> </div>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															Direct or Sub-produced :
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput">
+														
+															<select name="LBSubProduced" class="form-control"
+																 id="LBSubProduced" >
+																	<option value="">ALL</option>
+																	<option value="Direct">Direct</option>
+																	<option value="SubProduced">Sub-produced</option>
+															</select>
+														
+														
+													</div>
+												</div>
+											</div>
+										</li>
+										
+										
+									</ul>
+									</fieldset>
+									<fieldset class="fieldsetTop">
+													<legend>Update Criteria</legend>		
+									<ul class="inlineBlock">
+										<li class="inlineBlock_2_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="error_Modifier" class="error"></div>
+														
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															Modifier :
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput">
+														<input class="form-control" type="text" name="Modifier" id="Modifier" />
+													</div>
+												</div>
+											</div>
+										</li>
+										</ul></fieldset>
+								</div>
+							</div>
+						</div>
+		
+					</div>
+
+
+					<div class="buttons borderTop row marginsBtn">
+						<a class="btn back floatLeft"
+							href="javascript:submitform('workq.html','BulkAppsPdf.back','','');"
+						>Back</a>
+							
+						<div class="floatRight">
+						 <a class="btn save" onClick="setRerateDropdownData();loadRerateData();" href="javascript:submitform('LawyersBatch.html','LawyersBatch.validatebatch','','');">Validate</a>
+							<a class="btn save" id="eval:LawyersRule.showCallRatingbutton" onClick="setRerateDropdownData();loadRerateData();" href="javascript:submitform('LawyersBatch.html','LawyersBatch.downloadbatch','','');">Download</a>
+							<a class="btn save" id="eval:LawyersRule.showCallRatingbutton" href="javascript:submitform('LawyersBatch.html','LawyersBatch.downloadcallRating','','');">Call Rating</a>
+																		
+							<!--  <span ><a class="btn save"
+							href="javascript:submitform('filter.html','filter.reset','','');"> Clear&nbsp;</a></span> -->
+						</div>
+						
+					</div>
+					
+				</div>
+				<!---------Footer Start---------->
+				<div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<!---------Footer End---------->
+			</div>
+			<table id="firm_freeform_contextdata_999">
+				<tr>
+					<td><input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />
+						<input type="hidden" name="StateCodefilter" id="StateCodefilter" />
+					</td>
+				</tr>
+			</table>
+		</div>
+
+	</form>
+<script>
+loadRerateData();
+</script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script src="js/bootstrap-select.js"></script>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

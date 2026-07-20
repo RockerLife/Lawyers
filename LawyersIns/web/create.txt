@@ -1,0 +1,33 @@
+
+Tidy (vers 4th August 2000) Parsing "InputStream"
+line 12 column 1 - Warning: <script> lacks "type" attribute
+line 34 column 61 - Warning: trimming empty <iframe>
+line 34 column 70 - Warning: trimming empty <noscript>
+line 40 column 4 - Warning: <table> lacks "summary" attribute
+line 42 column 11 - Warning: <table> lacks "summary" attribute
+line 44 column 17 - Warning: <table> lacks "summary" attribute
+line 46 column 39 - Warning: img lacks "alt" attribute
+line 47 column 37 - Warning: <table> lacks "summary" attribute
+line 50 column 44 - Warning: <table> lacks "summary" attribute
+line 52 column 50 - Warning: img lacks "alt" attribute
+line 65 column 17 - Warning: <table> lacks "summary" attribute
+line 67 column 34 - Warning: img lacks "alt" attribute
+line 68 column 64 - Warning: img lacks "alt" attribute
+line 69 column 34 - Warning: img lacks "alt" attribute
+line 74 column 17 - Warning: <table> lacks "summary" attribute
+line 83 column 17 - Warning: <table> lacks "summary" attribute
+line 85 column 34 - Warning: img lacks "alt" attribute
+line 86 column 64 - Warning: img lacks "alt" attribute
+line 96 column 11 - Warning: <table> lacks "summary" attribute
+line 101 column 35 - Warning: img lacks "alt" attribute
+line 104 column 17 - Warning: <table> lacks "summary" attribute
+line 110 column 49 - Warning: <table> lacks "summary" attribute
+line 122 column 29 - Warning: <table> lacks "summary" attribute
+line 134 column 29 - Warning: <table> lacks "summary" attribute
+line 155 column 7 - Warning: adjacent hyphens within comment
+line 159 column 21 - Warning: adjacent hyphens within comment
+line 164 column 15 - Warning: content occurs after end of body
+
+InputStream: Document content looks like HTML proprietary
+27 warnings/errors were found!
+

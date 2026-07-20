@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Upload Documents</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="script/common.js"></script>
+		<script type="text/javascript" src="script/account.js"></script>
+		<script language="javascript" src="script/lawyers.js"> </script>
+		<script type="text/javascript" src="script/tabber.js"></script>
+		<script type="text/javascript" src="script/test_new.js"></script>
+<script type="text/javascript" src="script/manage.js"></script>
+		<script type="text/javascript" src="script/masks.js"></script>
+		<script type="text/javascript" src="script/popup.js"></script>
+		<script type="text/javascript" src="script/utility.js"></script>
+		<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+		<script type="text/javascript">
+		
+
+function checks(){
+
+alert(document.getElementById("file_path").value);
+ document.getElementById("path").value=document.getElementById("file_path").value;
+
+}
+</script>
+	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+	<body onload="showDocTitle();">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+		<form name="myForm" enctype="multipart/form-data">
+			
+			
+			<div id="contextLinks"></div>
+			<div id="header">
+					<span id="#Include:header.html#"></span>
+				</div>
+			<table width="100%" border="0" align="center" cellspacing="0"
+				cellpadding="0">
+				<tr>
+				<td id="uploadexcelpopup_freeform_contextdata_1000">
+				<div id="error_StatusUpdate" class="error11Bold"> </div>
+				</td>
+				</tr>
+				<tr>
+					<td>
+						<div id="">
+							<table width="100%" border="0" align="center" cellpadding="0"
+								cellspacing="0" class="border1">
+								<tr>
+									<td>
+										<table width="100%" border="0" cellpadding="5" cellspacing="0"
+											bordercolor="#CCCCCC">
+											
+											
+											<tr>
+												<td>
+												
+													<div id="eval:LawyersRule.roleEditOnly">
+														<table width="100%" border="0" cellspacing="5"
+															cellpadding="5">
+															
+															<tr >
+																<td valign="top">
+																	<table width="500" border="0" align="center"
+																		cellpadding="2" cellspacing="0"
+																		id="uploadexcelpopup_freeform_contextdata_01">
+																		<tr>
+																			<td></td>
+																			<td>
+																				<div id="error_SearchType" class="defult_tr_errors"></div>
+																			   <div id="error_DocUploadError" class="defult_tr_errors"></div>	
+																			</td>
+																		</tr>		
+																		<tr>
+																			<td align="right" width="255px" class="label"
+																				valign="top">		
+																				<label id="docDiv">Document Type to upload :</label>																		
+																			</td>
+																			
+																			<td align="left" valign="top">
+																				<div>
+
+																				<!-- 	<input type="radio" name="SearchType"
+																						value="policyform" id="SearchType"
+																						 onclick="showotherdiv(this.value,'otherdiv');"/>
+																					Policy Form<br />
+																					<input type="radio" name="SearchType"
+																						value="quoteletter" id="SearchType" onclick="showotherdiv(this.value,'otherdiv');"/>
+																					Quote Letter<br />
+																					<input type="radio" name="SearchType"
+																						value="signedform" id="SearchType" onclick="showotherdiv(this.value,'otherdiv');"/>
+																					Application Form<br />
+																					<input type="radio" name="SearchType" value="other"
+																						id="SearchType" onclick="showotherdiv(this.value,'otherdiv');" />
+																					Other<br /> -->
+
+																					
+																					
+																						<select name="SearchType" id="SearchType" onchange="showotherdiv(this.value,'otherdiv');"
+																									class="inputbox" style=" width:95%;">
+																										<option value="">Select</option>
+																										<option value="policyform">Policy</option>
+																										<option value="quoteletter">Quote Letter</option>
+																										<option value="signedform">Application Form</option>
+																										<option value="lossRun">Loss Run</option>
+																										<option value="priorPolicy">Prior Policy</option>
+																										<option value="other">Other</option>
+																									</select>
+																				
+																					
+																				</div>
+
+																			</td>
+																		</tr>
+																		
+																		<tr id="eval:LawyersRule.isBrokerageVisible">
+																			<td align="left"></td>
+																			<td align="left">
+																				<div class="freeFormListTd tdInput">
+																							&nbsp;<input type="checkbox"  name="isBrokerageDoc" id="isBrokerageDoc"  onchange="setBrokerage();"/> is Brokerage Document 
+																					</div>
+																				</td>
+																		</tr>
+																		
+																		<tr>
+																			
+																			<td colspan="2">
+																				<div id="otherdiv" style="display: none; width:100%">
+																				<table width="100%" border="0">
+																				<tr>
+																					<td align="left" width="254px"></td>
+																					<td align="left">
+																						<div id="error_DocTitle" class="defult_tr_errors"></div>	
+																					</td>
+																				</tr>
+																				
+																				<tr>
+																					<td align="right" nowrap="nowrap"  class="label">
+																						<span class="red">*</span>Document Title :
+																					</td>
+																					<td>
+																						<input name="DocTitle" type="text" class="inputbox"
+																							id="DocTitle" maxlength="50" style=" width:95%;"/>
+																					</td>
+																				</tr>
+																				<tr>
+																				
+																					<td colspan="2" align="center">
+																					<div style="float:right;text-align:left;color:red;"> 
+																					<ul>
+																						<li>Doc Title shouldn't contain special characters.</li> 
+																						<li>Doc Title length should be less than of 25 characters.</li>	
+																						
+																						</ul>
+																						</div>
+																					 </td>
+																				 </tr>
+																				</table>
+																				</div>
+																			</td>
+																				</tr>																		
+																		
+
+
+
+																		<tr>
+																			<td align="left"></td>
+																			<td align="left">
+																				<div id="error_DocFileName" class="defult_tr_errors"></div>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td align="left"></td>
+																			<td align="left">
+																				<div id="error_FileNameCorrect"
+																					class="defult_tr_errors"></div>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td align="right" nowrap="nowrap">
+																				<span class="red">*</span>Select a document for
+																				upload :
+																			</td>
+																			<td>
+																				<input type="file" name="file_path" class="inputbox"
+																					id="file_path" />
+
+																				<input type="hidden" name="path" class="inputbox"
+																					id="path" />
+																			</td>
+																		</tr>
+																		<tr>
+																			<td align="left"></td>
+																			<td align="left">
+																				<div id="error_Comment" class="defult_tr_errors"></div>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td width="220" align="right" nowrap="nowrap">
+																				<span class="red">*</span>Document Description :
+																			</td>
+																			<td>
+																				<textarea rows="5" cols="30" name="Comment"
+																					id="Comment" class="inputbox" onkeyup="limitText(this,1,300);"></textarea>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+
+															<tr>
+																<td>
+																	<table width="500" border="0" align="center"
+																		cellpadding="2" cellspacing="0">
+																		<tr>
+																			<td width="220">&nbsp;
+																				
+
+																			</td>
+																			<td>
+																				<table border="0" cellspacing="0" cellpadding="0">
+																					<tr>
+																						<td>
+																							<div class="button4"
+																								style="width: 100px; float: left;">
+																								<a
+																									href="javascript:submitform('uploadexcelpopup.html','uploadexcelpopup.douploadexcel','','');"
+																									tabindex="43">Upload</a>
+																								
+																							</div>
+																						</td>
+																						<td>
+																							<div class="button4"
+																								style="width: 100px; float: left;">
+																							<a
+																								href="javascript:submitform('firm.html|aop.html|practice.html|coverage.html|quoteOption.html|list.html|confirmation.html|paymentmethod.html|realEstateResi.html|realEstateCommercial.html|plaintiffSupp.html|willsEstateSupp.html|RenewFirm.html|UWReview.html|FirmNewApp.html|insuranceHistory.html|Attorneys.html|lawPractice.html|aboutFirm.html|practiceManagement.html|morePracticeManagement.html|pastClaims.html|housekeeping.html|PredecessorFirmSupplement.html|bankruptcySupplement.html|familylawsupplement.html|FinancialInstitutionSupplement.html|GovernmentSupplement.html|litigationSupplement.html|RealEstateSupplement.html|WillsTrustProbationSupplment.html|taxSupplement.html|collectionSupplement.html|copyRightTrademarkSupplement.html|feesuitSupplement.html|AboutFirmRenewal.html|InsuredQueries.html|indicationinjack.html|SubproducerUWReview.html|Endorsement.html|quickquoteinsured.html|quickquoteoptionlist.html|CorporateCommercialBusinessSupplement.html|addEditBrokeragePolicy.html|addEditBrokeragePolicyList.html|electronicInsurance.html','uploadexcelpopup.back','forwardeval','LawyersRule.isfirmPage|LawyersRule.isAOPPage|LawyersRule.isPracticePage|LawyersRule.isCoveragePage|LawyersRule.isQuoteOptionPage|LawyersRule.isListPage|LawyersRule.isConfirmationPage|LawyersRule.isPaymentmethodPage|LawyersRule.isResiPage|LawyersRule.isCommPage|LawyersRule.isPlantiffPage|LawyersRule.isWillsTrustPage|LawyersRule.isRenewFirmPage|LawyersRule.isUWReviewPage|LawyersRule.isFirmNewAppPage|LawyersRule.isInsuranceHistoryPage|LawyersRule.isAttorneysPage|LawyersRule.isLawPracticePage|LawyersRule.isAboutFirmPage|LawyersRule.isPracticeManagementPage|LawyersRule.isMorePracticeManagementPage|LawyersRule.isPastClaimsPage|LawyersRule.isHousekeepingPage|LawyersRule.isPredecessorFirmSupplementPage|LawyersRule.isBankruptcySupplementPage|LawyersRule.isFamilylawsupplementPage|LawyersRule.isFinancialInstitutionSupplementPage|LawyersRule.isGovernmentSupplementPage|LawyersRule.isLitigationSupplementPage|LawyersRule.isRealEstateSupplementPage|LawyersRule.isWillsTrustProbationSupplmentPage|LawyersRule.isTaxSupplementPage|LawyersRule.isCollectionSupplementPage|LawyersRule.isCopyRightTrademarkSupplementPage|LawyersRule.isFeesuitSupplementPage|LawyersRule.isAboutFirmRenew|LawyersRule.isInsuredQueriesPage|LawyersRule.isIndicationPage|LawyersRule.isSubproducerUWReviewPage|LawyersRule.isEndorsementPage|LawyersRule.isquickquoteinsured|LawyersRule.isquickquoteoptionlist|LawyersRule.isCorporateCommercialBusinessSupplementPage|LawyersRule.isBrokeragePage|LawyersRule.isAddEditBrokeragePolicyListPage|LawyersRule.isElectronicInsurancePage');"
+																								tabindex="43">Back</a>
+																						</div>
+																						</td>
+																					</tr>
+																				</table>
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+														</table>
+
+													</div>
+													
+													<table id="uploadexcelpopup_list_01" width="100%"
+														border="0" cellspacing="1" cellpadding="5" class="border1">
+														<tr class="tableheading1"
+															id="uploadexcelpopup_list_header_01">
+															<td class="tableheading1"
+																style="border-right: 1px solid #ffffff;"
+																id="block_field_DocTitle" width="20%">
+																Title
+															</td>
+															<td class="tableheading1"
+																style="border-right: 1px solid #ffffff;"
+																id="block_field_UploadedTime" width="10%">
+																Date
+															</td>
+															<td class="tableheading1"
+																style="border-right: 1px solid #ffffff;"
+																id="block_field_Comment" width="20%">
+																Document Description
+															</td>
+															<td class="tableheading1"
+																style="border-right: 1px solid #ffffff;"
+																id="block_field_UploadedType" width="10%">
+																Uploaded Type
+															</td>
+															
+															<td class="tableheading1"
+																 width="10%"><span id="block_field_download_row_link">
+																</span> </td>
+															<td class="tableheading1"
+																id="block_field_delete_row_link" width="10%"></td>
+															</tr>
+															
+															<tr id="uploadexcelpopup_list_data_01">
+															<td align="left" id="block_field_DocTitle" width="20%"
+																class="text13Arial"></td>
+															<td align="left" id="block_field_UploadedTime"
+																width="10%" class="text13Arial"></td>
+																
+															<td align="left" id="block_field_Comment"
+																width="20%" class="text13Arial"></td>	
+															<td align="left" id="block_field_UploadedType"
+																width="10%" class="text13Arial"></td>
+																	
+															<td align="left" id="block_field_download_row_link"
+																width="10%" class="text13Arial">
+																
+																<a href="javascript:submitform('uploadexcelpopup.html','uploadexcelpopup.downloadexcel','','');"
+																	class="text13Arial">Download</a>
+															</td>
+															<td id="eval:LawyersRule.IsManagementRole" align="left" 
+																width="10%" class="text13Arial">
+																<span id="block_field_delete_row_link">
+																		<a
+																				href="javascript:submitform('uploadexcelpopup.html','uploadexcelpopup.deletedocument','','');"
+																				class="Link_blue"><img src="img/cross.gif"
+																						title="Delete document" border="0" /> </a> </span>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+											<tr>
+											<td id="eval:LawyersRule.isNotInternalOrPartenerUser" align="center">
+												<div class="button4" style="width: 100px;">
+													<a href="javascript:submitform('firm.html|aop.html|practice.html|coverage.html|quoteOption.html|list.html|confirmation.html|paymentmethod.html|realEstateResi.html|realEstateCommercial.html|plaintiffSupp.html|willsEstateSupp.html|RenewFirm.html|UWReview.html|FirmNewApp.html|insuranceHistory.html|Attorneys.html|lawPractice.html|aboutFirm.html|practiceManagement.html|morePracticeManagement.html|pastClaims.html|housekeeping.html|PredecessorFirmSupplement.html|bankruptcySupplement.html|familylawsupplement.html|FinancialInstitutionSupplement.html|GovernmentSupplement.html|litigationSupplement.html|RealEstateSupplement.html|WillsTrustProbationSupplment.html|taxSupplement.html|collectionSupplement.html|copyRightTrademarkSupplement.html|feesuitSupplement.html|AboutFirmRenewal.html|InsuredQueries.html|indicationinjack.html|SubproducerUWReview.html|Endorsement.html|quickquoteinsured.html|quickquoteoptionlist.html|CorporateCommercialBusinessSupplement.html|addEditBrokeragePolicy.html|addEditBrokeragePolicyList.html|electronicInsurance.html','uploadexcelpopup.back','forwardeval','LawyersRule.isfirmPage|LawyersRule.isAOPPage|LawyersRule.isPracticePage|LawyersRule.isCoveragePage|LawyersRule.isQuoteOptionPage|LawyersRule.isListPage|LawyersRule.isConfirmationPage|LawyersRule.isPaymentmethodPage|LawyersRule.isResiPage|LawyersRule.isCommPage|LawyersRule.isPlantiffPage|LawyersRule.isWillsTrustPage|LawyersRule.isRenewFirmPage|LawyersRule.isUWReviewPage|LawyersRule.isFirmNewAppPage|LawyersRule.isInsuranceHistoryPage|LawyersRule.isAttorneysPage|LawyersRule.isLawPracticePage|LawyersRule.isAboutFirmPage|LawyersRule.isPracticeManagementPage|LawyersRule.isMorePracticeManagementPage|LawyersRule.isPastClaimsPage|LawyersRule.isHousekeepingPage|LawyersRule.isPredecessorFirmSupplementPage|LawyersRule.isBankruptcySupplementPage|LawyersRule.isFamilylawsupplementPage|LawyersRule.isFinancialInstitutionSupplementPage|LawyersRule.isGovernmentSupplementPage|LawyersRule.isLitigationSupplementPage|LawyersRule.isRealEstateSupplementPage|LawyersRule.isWillsTrustProbationSupplmentPage|LawyersRule.isTaxSupplementPage|LawyersRule.isCollectionSupplementPage|LawyersRule.isCopyRightTrademarkSupplementPage|LawyersRule.isFeesuitSupplementPage|LawyersRule.isAboutFirmRenew|LawyersRule.isInsuredQueriesPage|LawyersRule.isIndicationPage|LawyersRule.isSubproducerUWReviewPage|LawyersRule.isEndorsementPage|LawyersRule.isquickquoteinsured|LawyersRule.isquickquoteoptionlist|LawyersRule.isCorporateCommercialBusinessSupplementPage|LawyersRule.isBrokeragePage|LawyersRule.isAddEditBrokeragePolicyListPage|LawyersRule.isElectronicInsurancePage');"
+																								tabindex="43">Back</a>
+												</div>
+											</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div id="footer" class="footer">
+											<span id="#Include:footer.html#"></span>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+            <table id="upload_freeform_contextdata_999">
+				<tr>
+					<td>
+						<input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />
+						<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+						<input type="hidden" name="page" id="page" />
+						<input type="hidden" name="BrokeragePolicyKey" id="BrokeragePolicyKey" />
+						<input type="hidden" name="isBrokerPolicy" id="isBrokerPolicy" />
+						<input type="hidden" name="SearchHidden" class="inputbox" 	id="SearchHidden" />
+						<input type="hidden" name="isBrokerageDocument" class="inputbox" id="isBrokerageDocument" />
+						<input type="hidden" name="AccountID" id="AccountID" />
+					</td>
+				</tr>
+			</table>
+
+		</form>	
+		
+	</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+	
+	
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://userbo.com/" targetNamespace="http://userbo.com/" version="1.0">
+
+  <xs:element name="receiveIssuePolicy" type="tns:receiveIssuePolicy"/>
+
+  <xs:element name="receiveIssuePolicyResponse" type="tns:receiveIssuePolicyResponse"/>
+
+  <xs:complexType name="receiveIssuePolicy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="context" type="xs:string"/>
+      <xs:element minOccurs="0" name="paymentType" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="receiveIssuePolicyResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

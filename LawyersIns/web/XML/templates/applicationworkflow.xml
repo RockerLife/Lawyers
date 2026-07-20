@@ -1,0 +1,32 @@
+<applicationworkflow project="">
+	<nodeinfo uniqueid="project">
+		<implements interface="com.util.IResourceKeys" />
+	</nodeinfo>
+	
+	<event name="">
+		<nodeinfo uniqueid="name"></nodeinfo>
+		<status eval="" name="" workflowstatus="" dashboardid="" workflowfunction="" workflowuser=""
+			emailnotificationid="" executionsequence="" statuscomment="">
+			<nodeinfo uniqueid="name"></nodeinfo>
+			<nodeinfo>
+				<attribute name="executionsequence" datatype="int" />
+			</nodeinfo>
+			<role id=""></role>
+			<email eval="" name="" notificationid="" to="" from="" cc="" bcc="" objectid="" objecttype="" executionsequence="">
+				<nodeinfo uniqueid="name">
+					<implements
+						interface="com.manage.managecomponent.workflow.IExecutionSeq" />
+					<attribute name="executionsequence" datatype="int" />	
+				</nodeinfo>
+				<parameter name="" value="" executionsequence="">
+					<nodeinfo uniqueid="name">
+						<implements
+							interface="com.manage.managecomponent.workflow.IExecutionSeq" />
+						<attribute name="executionsequence" datatype="int" />	
+					</nodeinfo>
+				</parameter>
+			</email>
+		</status>	
+	</event>
+	
+</applicationworkflow>

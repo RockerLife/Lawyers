@@ -1,0 +1,47 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ClaimsReports">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ClaimsReports</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ClaimsReports where MarketableProductKey = #MarketableProductKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ClaimsReports(
+          <dynamic prepend=" ">
+               <isNotEmpty property="ReportName" prepend=",">ReportName</isNotEmpty>
+               <isNotEmpty property="ReportDescription" prepend=",">ReportDescription</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="MarketableProductKey" prepend=",">MarketableProductKey</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="ReportName" prepend=",">#ReportName#</isNotEmpty>
+               <isNotEmpty property="ReportDescription" prepend=",">#ReportDescription#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="MarketableProductKey" prepend=",">#MarketableProductKey#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ReportName, ReportDescription, LastUpdateUserID, LastUpdateTimeStamp, MarketableProductKey from ClaimsReports</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ClaimsReports set
+          <dynamic prepend=" ">
+               <isNotEmpty property="ReportName" prepend=",">ReportName = #ReportName#</isNotEmpty>
+               <isEmpty property="ReportName" prepend=",">ReportName = null</isEmpty>
+               <isNotEmpty property="ReportDescription" prepend=",">ReportDescription = #ReportDescription#</isNotEmpty>
+               <isEmpty property="ReportDescription" prepend=",">ReportDescription = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="MarketableProductKey" prepend=",">MarketableProductKey = #MarketableProductKey#</isNotEmpty>
+               <isEmpty property="MarketableProductKey" prepend=",">MarketableProductKey = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ClaimsReports</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ClaimsReports</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ClaimsReports where MarketableProductKey = #MarketableProductKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ReportName, ReportDescription, LastUpdateUserID, LastUpdateTimeStamp, MarketableProductKey from ClaimsReports</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ReportName, ReportDescription, LastUpdateUserID, LastUpdateTimeStamp from ClaimsReports where MarketableProductKey = #MarketableProductKey#</select>
+</sqlMap>
+

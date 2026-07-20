@@ -1,0 +1,41 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="MarketableProduct">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from MarketableProduct</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from MarketableProduct</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into MarketableProduct(
+          <dynamic prepend=" ">
+               <isNotEmpty property="MarketableProductDesc" prepend=",">MarketableProductDesc</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="MarketableProductDesc" prepend=",">#MarketableProductDesc#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="MarketableProductKey">SELECT IDENT_CURRENT('MarketableProduct') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select MarketableProductKey, MarketableProductDesc, LastUpdateUserID, LastUpdateTimeStamp from MarketableProduct where MarketableProductKey = #MarketableProductKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update MarketableProduct set
+          <dynamic prepend=" ">
+               <isNotEmpty property="MarketableProductDesc" prepend=",">MarketableProductDesc = #MarketableProductDesc#</isNotEmpty>
+               <isEmpty property="MarketableProductDesc" prepend=",">MarketableProductDesc = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where MarketableProductKey = #MarketableProductKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from MarketableProduct where MarketableProductKey = #MarketableProductKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from MarketableProduct</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from MarketableProduct</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select MarketableProductKey, MarketableProductDesc, LastUpdateUserID, LastUpdateTimeStamp from MarketableProduct where MarketableProductKey = #MarketableProductKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select MarketableProductKey, MarketableProductDesc, LastUpdateUserID, LastUpdateTimeStamp from MarketableProduct</select>
+</sqlMap>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="FeeSuitSupplementLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FeeSuitSupplementLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FeeSuitSupplementLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into FeeSuitSupplementLW(
+          <dynamic prepend=" " />
+          ) values (
+          <dynamic prepend=" " />
+          )
+          <selectKey resultClass="int" keyProperty="FirminitLawsuitsKey">SELECT IDENT_CURRENT('FeeSuitSupplementLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirminitLawsuitsKey from FeeSuitSupplementLW where FirminitLawsuitsKey = #FirminitLawsuitsKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update FeeSuitSupplementLW set
+          <dynamic prepend=" " />
+          where FirminitLawsuitsKey = #FirminitLawsuitsKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from FeeSuitSupplementLW where FirminitLawsuitsKey = #FirminitLawsuitsKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from FeeSuitSupplementLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from FeeSuitSupplementLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirminitLawsuitsKey from FeeSuitSupplementLW where FirminitLawsuitsKey = #FirminitLawsuitsKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirminitLawsuitsKey from FeeSuitSupplementLW</select>
+</sqlMap>
+

@@ -1,0 +1,53 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="EnterSportsClientOfFirmLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from EnterSportsClientOfFirmLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from EnterSportsClientOfFirmLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into EnterSportsClientOfFirmLW(VersionSequence, PolicyKey
+          <isNotEmpty property="ClientName" prepend=",">ClientName</isNotEmpty>
+          <isNotEmpty property="FieldOfEntertainment" prepend=",">FieldOfEntertainment</isNotEmpty>
+          <isNotEmpty property="TypeOfServices" prepend=",">TypeOfServices</isNotEmpty>
+          <isNotEmpty property="FromDate" prepend=",">FromDate</isNotEmpty>
+          <isNotEmpty property="ToDate" prepend=",">ToDate</isNotEmpty>
+          <isNotEmpty property="IsCurrentClient" prepend=",">IsCurrentClient</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="ClientName" prepend=",">#ClientName#</isNotEmpty>
+          <isNotEmpty property="FieldOfEntertainment" prepend=",">#FieldOfEntertainment#</isNotEmpty>
+          <isNotEmpty property="TypeOfServices" prepend=",">#TypeOfServices#</isNotEmpty>
+          <isNotEmpty property="FromDate" prepend=",">#FromDate#</isNotEmpty>
+          <isNotEmpty property="ToDate" prepend=",">#ToDate#</isNotEmpty>
+          <isNotEmpty property="IsCurrentClient" prepend=",">#IsCurrentClient#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="EnterSportsClientOfFirmKey">SELECT IDENT_CURRENT('EnterSportsClientOfFirmLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EnterSportsClientOfFirmKey, ClientName, FieldOfEntertainment, TypeOfServices, FromDate, ToDate, IsCurrentClient, LastUpdateUserID, VersionSequence, PolicyKey from EnterSportsClientOfFirmLW where EnterSportsClientOfFirmKey = #EnterSportsClientOfFirmKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update EnterSportsClientOfFirmLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="ClientName" prepend=",">ClientName = #ClientName#</isNotEmpty>
+               <isEmpty property="ClientName" prepend=",">ClientName = null</isEmpty>
+               <isNotEmpty property="FieldOfEntertainment" prepend=",">FieldOfEntertainment = #FieldOfEntertainment#</isNotEmpty>
+               <isEmpty property="FieldOfEntertainment" prepend=",">FieldOfEntertainment = null</isEmpty>
+               <isNotEmpty property="TypeOfServices" prepend=",">TypeOfServices = #TypeOfServices#</isNotEmpty>
+               <isEmpty property="TypeOfServices" prepend=",">TypeOfServices = null</isEmpty>
+               <isNotEmpty property="FromDate" prepend=",">FromDate = #FromDate#</isNotEmpty>
+               <isEmpty property="FromDate" prepend=",">FromDate = null</isEmpty>
+               <isNotEmpty property="ToDate" prepend=",">ToDate = #ToDate#</isNotEmpty>
+               <isEmpty property="ToDate" prepend=",">ToDate = null</isEmpty>
+               <isNotEmpty property="IsCurrentClient" prepend=",">IsCurrentClient = #IsCurrentClient#</isNotEmpty>
+               <isEmpty property="IsCurrentClient" prepend=",">IsCurrentClient = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+          </dynamic>
+          where EnterSportsClientOfFirmKey = #EnterSportsClientOfFirmKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from EnterSportsClientOfFirmLW where EnterSportsClientOfFirmKey = #EnterSportsClientOfFirmKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from EnterSportsClientOfFirmLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from EnterSportsClientOfFirmLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EnterSportsClientOfFirmKey, ClientName, FieldOfEntertainment, TypeOfServices, FromDate, ToDate, IsCurrentClient, LastUpdateUserID, VersionSequence, PolicyKey from EnterSportsClientOfFirmLW where EnterSportsClientOfFirmKey = #EnterSportsClientOfFirmKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EnterSportsClientOfFirmKey, VersionSequence, PolicyKey, ClientName, FieldOfEntertainment, TypeOfServices, FromDate, ToDate, IsCurrentClient, LastUpdateUserID from EnterSportsClientOfFirmLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

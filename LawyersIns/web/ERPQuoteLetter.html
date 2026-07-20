@@ -1,0 +1,263 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>ERP Quote Letter</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/jquery.treeview.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+<body onload="setERPOption();">
+<form>
+<div id="cover"></div>
+<div id="popupsave2">
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog" style="width: 450px;">
+		
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"/>
+			<h4 class="modal-title">Create Letter</h4>
+		  </div>
+		  <div class="modal-body" style="height: 64px;">
+			<p style="text-align: center; line-height: 25px;">Are you sure you want to create and send quote letter? </p>
+		  </div>
+		  <div class="modal-footer">
+			<div class="floatRight">
+				<a class="ovalbutton" 
+				href="javascript:submitform('Endorsement.html','ERPQuoteLetter.generateERPLetter','','');"
+				onclick="closePopUp('popupsave2');">Process</a>
+				
+				<a class="ovalbutton" onclick="closePopUp('popupsave2');">Cancel</a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</div>
+<!-- Bootstrap Core JavaScript -->
+
+<div class="container-fluid bootstrap-node-1">
+  <div class="tableWidth"> 
+  	<div id="header">
+			<span id="#Include:headerEndorsement.html#"></span>
+	</div> 
+	
+   <div id="contentSection">
+		
+		<div>
+			<h2 class="questionHeading">ERP Quote Letter</h2>
+		</div>
+		<div class="form row">
+			<div class="block-form">
+			
+			
+			<div id="div1">
+				<div class="freeFormDiv form-inline" id="ERPQuoteLetter_freeform_contextdata_01">
+					<ul class="inlineBlock">
+						<li class="inlineBlock_1_fix">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_endorsementEffectiveDate" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth txtbold">
+											Endorsement Effective Date :
+										</div>
+									</div>
+									<div class="freeFormListTd mendatoryInput iconsStyle2">
+										<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+										<input type="text" class="form-control datepicker"
+											id="ajax_field_endorsementEffectiveDate" 
+											name="endorsementEffectiveDate" onkeyup="applyDateFormat(this,event);"/> 
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					
+					<div class="row paddingTop20">
+					<div class="freeFormListTdError paddingLeft3">
+													<span id="error_isAttorneyRetiring" class="error"> </span> 
+												</div>
+						<div class="col-sm-6">
+							<div class="border1 padding10" style="margin-right: 15px; height: 100px;">
+								<ul class="inlineBlock">
+									<li class="inlineBlock_1">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+												
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth">
+														
+													</div>
+												</div>
+												<div class="freeFormListTd tdInput">
+													&nbsp;<input type="checkbox" name="isAttorneyRetiring" id="ajax_field_isAttorneyRetiring" value="Y" onclick="setERPOption();"/>Retiring Attorney &nbsp;&nbsp;
+													
+												</div>									
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_1">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="error_nameOfAttorney" class="error"> </span> 
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth">
+														Attorney name:
+													</div>
+												</div>
+												<div class="freeFormListTd mendatoryInput">
+													<select id="ajax_field_nameOfAttorney" name="nameOfAttorney" class="form-control"> 
+														<option value="">-- Select --</option>
+													</select>
+												</div>
+											</div>
+											
+										</div>
+									</li>
+									<li class="inlineBlock_1">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="error_practicePortion" class="error"> </span> 
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth">
+														Insured Portion of the practice : 
+													</div>
+												</div>
+												<div class="freeFormListTd tdInput">
+													<input type="text" name="practicePortion" id="ajax_field_practicePortion" 
+													class="form-control" style="width: 55px;" /> <span>%</span>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="border1 padding10" style="height: 100px;">
+								<ul class="inlineBlock">	
+									<li class="inlineBlock_1">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="error_isFirmERP" class="error"> </span> 
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth">
+														
+													</div>
+												</div>
+												<div class="freeFormListTd tdInput">
+													&nbsp;<input type="checkbox" id="ajax_field_isFirmERP" name="isFirmERP" value="Y" onclick="setERPOption();"/>Firm ERP &nbsp;&nbsp;
+													
+												</div>									
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_1">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"> </span> 
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth">
+														Years for Quote Letter :
+													</div>
+												</div>
+												<div class="freeFormListTd mendatoryInput">
+													<ul class="inlineBlock">
+														<li class="inlineBlock_2"><input type="checkbox" id="ajax_field_oneYear" name="oneYear" value="1"/> One Year</li>
+														<li class="inlineBlock_2"><input type="checkbox" id="ajax_field_threeYear" name="threeYear" value="3"/> Three Year</li>
+														<li class="inlineBlock_2"><input type="checkbox" id="ajax_field_fiveYear" name="fiveYear" value="5"/> Five Year</li>
+														<li class="inlineBlock_2"><span id="eval:LawyersRule.isStateOtherThanAlaska"><input type="checkbox" id="ajax_field_sixYear" name="sixYear" value="6"/> Six Year</span></li>
+														<li class="inlineBlock_2"><span id="eval:LawyersRule.isStateOtherThanAlaska"><input type="checkbox" id="ajax_field_unlimitedYears" name="unlimitedYears" value="10"/> Unlimited Year</span></li>
+													</ul>
+												</div>
+											</div>
+											
+										</div>
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="buttons borderTop row">
+			<a class="btn back floatLeft" href="javascript:submitform('Endorsement.html','ERPQuoteLetter.back','','');"> Back </a>
+			<div class="floatRight">
+				<a class="btn button1" href="javascript:submitform('ERPQuoteLetter.html','ERPQuoteLetter.downloadviewLetter','','');">Preview Quote Letter</a>
+				
+					<a class="btn button1 btnVal1" onclick="showPopUp('popupsave2','500','400');">Create Quote Letter</a>
+			</div>
+		</div>
+		
+	</div>
+      <div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+			
+			<table id="ERPQuoteLetter_freeform_contextdata_30">
+				<tr>
+					<td><input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />
+						<input type="hidden" name="unlimitedYearsERP" id="unlimitedYearsERP" />
+						<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+						<input type="hidden" name="isEnforcedPolicy" id="isEnforcedPolicy" />
+								<input type="hidden" name="anyDecendentPolicy" id="anyDecendentPolicy" />
+								<input type="hidden" name="isExceptionalCase" id="isExceptionalCase" />
+								<input type="hidden" name="isShowPemiumCalculation" id="isShowPemiumCalculation" />
+					</td>
+				</tr>
+			</table>
+	</div>
+  </div>
+</div>
+</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

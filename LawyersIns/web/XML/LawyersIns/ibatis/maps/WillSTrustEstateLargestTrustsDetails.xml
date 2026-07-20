@@ -1,0 +1,65 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="WillSTrustEstateLargestTrustsDetails">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from WillSTrustEstateLargestTrustsDetails</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from WillSTrustEstateLargestTrustsDetails</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into WillSTrustEstateLargestTrustsDetails(
+          <dynamic prepend=" ">
+               <isNotEmpty property="TrustName" prepend=",">TrustName</isNotEmpty>
+               <isNotEmpty property="AssetsValue" prepend=",">AssetsValue</isNotEmpty>
+               <isNotEmpty property="BeneficiaryInterest" prepend=",">BeneficiaryInterest</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="TrustName" prepend=",">#TrustName#</isNotEmpty>
+               <isNotEmpty property="AssetsValue" prepend=",">#AssetsValue#</isNotEmpty>
+               <isNotEmpty property="BeneficiaryInterest" prepend=",">#BeneficiaryInterest#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select TrustName, AssetsValue, BeneficiaryInterest from WillSTrustEstateLargestTrustsDetails</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update WillSTrustEstateLargestTrustsDetails set
+          <dynamic prepend=" ">
+               <isNotEmpty property="TrustName" prepend=",">TrustName = #TrustName#</isNotEmpty>
+               <isEmpty property="TrustName" prepend=",">TrustName = null</isEmpty>
+               <isNotEmpty property="AssetsValue" prepend=",">AssetsValue = #AssetsValue#</isNotEmpty>
+               <isEmpty property="AssetsValue" prepend=",">AssetsValue = null</isEmpty>
+               <isNotEmpty property="BeneficiaryInterest" prepend=",">BeneficiaryInterest = #BeneficiaryInterest#</isNotEmpty>
+               <isEmpty property="BeneficiaryInterest" prepend=",">BeneficiaryInterest = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from WillSTrustEstateLargestTrustsDetails</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from WillSTrustEstateLargestTrustsDetails</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from WillSTrustEstateLargestTrustsDetails</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select TrustName, AssetsValue, BeneficiaryInterest from WillSTrustEstateLargestTrustsDetails</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select TrustName, AssetsValue, BeneficiaryInterest from WillSTrustEstateLargestTrustsDetails</select>
+     <parameterMap id="InsertUpdateWillsLargestTrustData_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdateWillsLargestTrustData_p" parameterMap="InsertUpdateWillsLargestTrustData_pMap">{ call InsertUpdateWillsLargestTrustData_p(?,?,?,?,?)}</procedure>
+     <parameterMap id="InsertUpdateWillsLargestTrustMattersAmountsData_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdateWillsLargestTrustMattersAmountsData_p" parameterMap="InsertUpdateWillsLargestTrustMattersAmountsData_pMap">{ call InsertUpdateWillsLargestTrustMattersAmountsData_p(?,?,?,?,?)}</procedure>
+     <parameterMap id="WillsStateTrustValuesAmountsLWDetails_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="WillsStateTrustValuesAmountsLWDetails_p" parameterMap="WillsStateTrustValuesAmountsLWDetails_pMap" resultClass="java.util.HashMap">{ call WillsStateTrustValuesAmountsLWDetails_p(?,?)}</procedure>
+     <parameterMap id="DisplayLargestTrustData_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="DisplayLargestTrustData_p" parameterMap="DisplayLargestTrustData_pMap" resultClass="java.util.HashMap">{ call DisplayLargestTrustData_p(?,?)}</procedure>
+</sqlMap>
+

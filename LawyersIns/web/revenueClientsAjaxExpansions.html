@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Ajax expansions</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js"/>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<form>
+<!-- Bootstrap Core JavaScript -->
+
+<div class="container-fluid bootstrap-node-1">
+  <div class="tableWidth" id="AppCompleted"> 
+   	 <div id="header">
+	        	<span id="#Include:header.html#"></span>
+	      </div>
+	    <div class="menuTab">
+					<span id="#Include:tabs.html#"></span>
+				</div>
+   <div id="contentSection">
+		<div class="form" id="revenueClientsAjaxExpansions_freeform_contextdata_0">
+			<div class="form-horizontal row">
+			<div class="floatLeft">
+									Please provide your top two revenue clients for past 3 years.
+								</div>
+				<table class="gridTable" cellpadding="0" cellspacing="0" style="width: 100%;">
+						<thead id="rowMake">
+								<tr>
+									<th width="25%"><span class="mendatory">*</span>Client Name</th>
+										<th  width="25%"> <span class="mendatory">*</span>Services Provided</th>
+										<th  width="25%"><span class="mendatory">*</span>Percentage</th>
+										<th  width="25%"><span class="mendatory">*</span>Year</th>
+									</tr>
+									<tr>
+								
+								</thead>
+						<tbody id="rowMake">
+							
+							<tr>
+									<td>
+										<span id="error_ClientNameFirstLargestRevenueClient" class="error"> </span>
+										<input name="ClientNameFirstLargestRevenueClient" type="text" class="inputbox" id="ajax_field_ClientNameFirstLargestRevenueClient"  />
+									</td>
+									<td>
+										<span id="error_ServicesRenderedFirstLargestRevenueClient" class="error"> </span>
+										<input name="ServicesRenderedFirstLargestRevenueClient" type="text" class="inputbox" id="ajax_field_ServicesRenderedFirstLargestRevenueClient"   />
+									</td>
+									<td>
+										<span id="error_PercentFromFirstLargestRevenueClient" class="error"> </span>
+										<input name="PercentFromFirstLargestRevenueClient" type="text" class="inputbox" id="ajax_field_PercentFromFirstLargestRevenueClient"
+										onkeyup="loadrevenueClientsAjaxExpansions();" />
+									</td>
+									<td>
+										<span id="error_DateRenderedFirstLargestRevenueClient" class="error"> </span>
+										<input name="DateRenderedFirstLargestRevenueClient" type="text" class="inputbox" id="ajax_field_DateRenderedFirstLargestRevenueClient"
+										onkeyup="loadrevenueClientsAjaxExpansions();" />
+									</td>
+							</tr>
+							
+							<tr>
+								<td>
+									<span id="error_ClientNameSecondLargestRevenueClient" class="error"> </span>
+									<input name="ClientNameSecondLargestRevenueClient" type="text" class="inputbox" id="ajax_field_ClientNameSecondLargestRevenueClient"  />
+								</td>
+								<td>
+									<span id="error_ServicesRenderedSecondLargestRevenueClient" class="error"> </span>
+									<input name="ServicesRenderedSecondLargestRevenueClient" type="text" class="inputbox" id="ajax_field_ServicesRenderedSecondLargestRevenueClient"   />
+								</td>
+								
+								<td>
+									<span id="error_PercentFromSecondLargestRevenueClient" class="error"> </span>
+									<input name="PercentFromSecondLargestRevenueClient" type="text" class="inputbox" id="ajax_field_PercentFromSecondLargestRevenueClient"
+										onkeyup="loadrevenueClientsAjaxExpansions();" />
+								</td>
+								<td>
+									<span id="error_DateRenderedSecondLargestRevenueClient" class="error"> </span>
+									<input name="DateRenderedSecondLargestRevenueClient" type="text" class="inputbox" id="ajax_field_DateRenderedSecondLargestRevenueClient"
+									onkeyup="loadrevenueClientsAjaxExpansions();" />
+								</td>
+							</tr>
+						</tbody>
+						</table>
+			  
+			</div>
+			
+		</div>
+		<div class="buttons borderTop row">
+			<a class="btn back floatLeft"
+				href="javascript:submitform('morePracticeManagement.html','revenueClientsAjaxExpansions.back','','');" >Back</a>
+			<div class="floatRight">
+				<span id="showPageSave">			
+					<a class="btn save" 
+					href="javascript:submitform('publicFiguresAjaxExpansions.html|underwritingInfo.html','revenueClientsAjaxExpansions.save','forwardeval','LawyersRule.isTherePublicFiguresAjaxExpansions|LawyersRule.isThereNoPublicFiguresAjaxExpansions');" >Save&nbsp;&&nbsp;Continue</a>
+				</span>
+				<span  id="showContinue">
+					<a class="btn next" 
+					href="javascript:submitform('publicFiguresAjaxExpansions.html|underwritingInfo.html','revenueClientsAjaxExpansions.continue','forwardeval','LawyersRule.isTherePublicFiguresAjaxExpansions|LawyersRule.isThereNoPublicFiguresAjaxExpansions');" >Continue</a>
+				</span>
+			</div>
+		</div>
+	</div>
+   <div id="footer">
+	    	 <span id="#Include:footer.html#"></span>
+		 </div>
+	      
+	    <table id="revenueClientsAjaxExpansions_freeform_contextdata_999">
+				<tr>
+					<td><input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />
+						
+						
+					</td>
+				</tr>
+		</table>
+	  </div>
+	</div>	
+	</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

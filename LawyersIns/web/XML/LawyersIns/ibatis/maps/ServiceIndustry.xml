@@ -1,0 +1,33 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ServiceIndustry">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ServiceIndustry</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ServiceIndustry</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ServiceIndustry(
+          <dynamic prepend=" ">
+               <isNotEmpty property="ServiceIndustryDesc" prepend=",">ServiceIndustryDesc</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="ServiceIndustryDesc" prepend=",">#ServiceIndustryDesc#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="ServiceIndustryKey">SELECT IDENT_CURRENT('ServiceIndustry') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ServiceIndustryKey, ServiceIndustryDesc from ServiceIndustry where ServiceIndustryKey = #ServiceIndustryKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ServiceIndustry set
+          <dynamic prepend=" ">
+               <isNotEmpty property="ServiceIndustryDesc" prepend=",">ServiceIndustryDesc = #ServiceIndustryDesc#</isNotEmpty>
+               <isEmpty property="ServiceIndustryDesc" prepend=",">ServiceIndustryDesc = null</isEmpty>
+          </dynamic>
+          where ServiceIndustryKey = #ServiceIndustryKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ServiceIndustry where ServiceIndustryKey = #ServiceIndustryKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ServiceIndustry</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ServiceIndustry</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ServiceIndustryKey, ServiceIndustryDesc from ServiceIndustry where ServiceIndustryKey = #ServiceIndustryKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ServiceIndustryKey, ServiceIndustryDesc from ServiceIndustry</select>
+</sqlMap>
+

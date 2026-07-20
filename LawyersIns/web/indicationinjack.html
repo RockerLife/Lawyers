@@ -1,0 +1,2182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Indication In Jack</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/jquery.treeview.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+<body
+	onload="showHidePriorInsuranceDiv();toggleDivDisplay('ajaxxmlCountyDesc_CountyDesc');loadIndicationPage();makeDefenseOutsideRuleOnPageLoadIndication();showIndicationOther('AOP_Percentage_25');loadAppointmentFeeInformation('ProInsPremium');"
+	onclick="toggleDivDisplay('ajaxxmlCountyDesc_CountyDesc');">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+<!-- Bootstrap Core JavaScript -->
+<div id="cover"></div>
+
+<!-- Modal -->
+<div id="zohodata" class="modal">
+  <div class="modal-dialog" style="width: 400px">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+		<a class="close" href="#" onclick="closePopUp('zohodata')"><i class="fa fa-close">&nbsp;</i></a>
+        <h4 class="modal-title">Confirm</h4>
+	</div>
+      <div class="modal-body">
+		<span id="ajax_error_ZohoError" class="error"></span>
+      </div>
+      <div class="modal-footer">
+		<div class="buttonwrapper">
+			<!-- //<a class="ovalbutton">Save</a> -->
+			<a class="ovalbutton" onclick="closePopUp('zohodata')">Close</a>
+		</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="zohoNameClearance" class="modal">
+  <div class="modal-dialog" style="width: 700px">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+		<a class="close" href="#" onclick="closePopUp('zohoNameClearance')"><i class="fa fa-close">&nbsp;</i></a>
+        <h4 class="modal-title">Confirm</h4>
+	</div>
+      <div class="modal-body" style="height: 100px">
+		<span id="zohoNameClearanceFlag" >The risk exists in Protexure's CRM and will need to be Name Cleared by the Protexure Underwriter prior to pricing.</span>
+      </div>
+      <div class="modal-footer">
+		<div class="buttonwrapper">
+			<!-- //<a class="ovalbutton">Save</a> -->
+			<a class="ovalbutton" onclick="closePopUp('zohoNameClearance')">Close</a>
+		</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+	<form class="form-horizontal row" name="f1">
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth" id="AppCompleted">
+
+				<table width="100%" border="0" align="center" cellpadding="0"
+					cellspacing="0">
+					<tr>
+						<td height="50">
+							<table width="98%" border="0" align="center" cellpadding="0"
+								cellspacing="0">
+								<tr>
+									<td valign="bottom" width="300px"><a
+										href="http://www.protexurelawyers.com"><img
+											src="image/logo_protexureaccountants1.png" width="325"
+											height="64" /></a></td>
+									<td valign="bottom" align="left"
+										id="producerlogo_freeform_contextdata_image"><span
+										id="eval:LawyersRule.IsSubProducerFlow"><a
+											href="context_SPWebsite"><img id="contexturl"
+												src="LogoImagePath" /></a></span></td>
+									<td align="right">
+										<table border="0" cellspacing="1" cellpadding="1">
+											<tr>
+												<td align="center"
+													id="eval:LawyersRule.isInsuredandRegistered">
+													<table width="100%" border="0" cellspacing="0"
+														cellpadding="0">
+														<tr>
+															<td align="center"><img src="img/backPortal1.jpg"
+																width="20" height="22" /></td>
+
+														</tr>
+														<tr>
+
+															<td class="topLink"><span><a
+																	href="javascript:submitform('changepassword.html','firm.changepassword','','');"
+																	class="topLink">Change Password</a> </span> <span
+																id="eval:LawyersRule.showBackToInsuredOnlyPortal">
+																	| <a
+																	href="https://www.protexurelawyers.com"
+																	class="topLink">Back to Insured Only Portal</a>
+															</span></td>
+														</tr>
+													</table>
+												</td>
+												<td align="center" valign="bottom"
+													id="eval:LawyersRule.isShowUserLoginDetails">
+													<table id="workq_freeform_contextdata_555" Border="0"
+														cellpadding="0" cellspacing="0">
+														<tr>
+															<td><label class="txt11BoldBlack" nowrap
+																style="font-size: 11px">Welcome&nbsp;&nbsp;</label></td>
+															<td align="right" style="font-size: 11px" nowrap><label
+																name="AgentName" style="font-size: 10px" id="AgentName"
+																class="txt11BoldBlack"></label> (<label
+																name="UserRoleName" style="font-size: 10px"
+																id="UserRoleName" class="txt11BoldBlack"></label>)&nbsp;&nbsp;</td>
+
+														</tr>
+													</table>
+												</td>
+												<td align="center">
+													<table width="100%" border="0" cellspacing="0"
+														cellpadding="0">
+														<tr>
+															<td align="center">
+																<div id="eval:LawyersRule.isAgent">
+																	<img src="img/backPortal1.jpg" width="20" height="22" />
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="topLink">
+																<div id="eval:LawyersRule.isAgent">
+																	<a
+																		href="javascript:submitform('indexinsured.html|indexagent.html','header.homepage','forwardeval','LawyersRule.isInsured|LawyersRule.isAgent');"
+																		class="topLink">Back to Portal</a>
+																</div>
+															</td>
+														</tr>
+													</table>
+												</td>
+												<td align="center" valign="bottom" class="txtBold11Maroon"
+													id="eval:LawyersRule.isAgentState">|</td>
+												<td align="center" id="eval:LawyersRule.isAgentState">
+													<table width="100%" border="0" cellspacing="0"
+														cellpadding="0">
+														<tr>
+															<td align="center"><img src="img/backList1.jpg"
+																width="20" height="22" /></td>
+														</tr>
+														<tr>
+															<td class="topLink"><a
+																href="javascript:submitform('list.html','header.backtolist','','');"
+																class="topLink">Back to List</a></td>
+														</tr>
+													</table>
+												</td>
+												<td width="5" align="center" valign="bottom"
+													class="txtBold11Maroon" id="eval:LawyersRule.isAgentState">
+													&nbsp;|&nbsp;</td>
+												<td align="center" id="eval:LawyersRule.isAgentState">
+													<table width="100%" border="0" cellspacing="0"
+														cellpadding="0">
+														<tr>
+															<td align="center"><img src="img/backWorkq1.jpg"
+																width="20" height="22" /></td>
+														</tr>
+														<tr>
+															<td class="topLink"><a
+																href="javascript:submitform('workq.html','header.backtoworkq','','');"
+																class="topLink">Back to workq</a></td>
+														</tr>
+													</table>
+												</td>
+												<td width="5" align="center" valign="bottom"
+													class="txtBold11Maroon" id="eval:LawyersRule.isAgentStatelostworkq">
+													&nbsp;|&nbsp;</td>
+												<td align="center" id="eval:LawyersRule.isAgentStatelostworkq">
+													<table width="100%" border="0" cellspacing="0"
+														cellpadding="0">
+														<tr>
+															<td align="center"><img src="img/backWorkq1.jpg"
+																width="20" height="22" /></td>
+														</tr>
+														<tr>
+															<td nowrap="nowrap" class="topLink"><a
+																href="javascript:submitform('lostWorkq.html','header.backtolostworkq','','');"
+																class="topLink">Back to lostWorkq</a></td>
+														</tr>
+													</table>
+												</td>
+												<td id="eval:LawyersRule.isAgent" align="center"
+													valign="bottom" class="txtBold11Maroon">&nbsp; |&nbsp;</td>
+												<td align="center">
+													<table width="100%" border="0" cellspacing="0"
+														cellpadding="0">
+														<tr id="eval:LawyersRule.isAgent">
+															<td align="center"><img src="img/backPortal1.jpg"
+																width="20" height="22" /></td>
+														</tr>
+														<tr id="eval:LawyersRule.isAgent">
+															<td class="topLink"><a
+																href="javascript:submitform('sessionList.html','header.showSessionList','','');"
+																class="topLink">Session</a></td>
+
+														</tr>
+													</table>
+												</td>
+
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="15" class="redLeft"></td>
+									<td align="right" class="redCenter"
+										id="quickquoteoption_freeform_contextdata_callimage">
+										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td align="left"><img src="img/getting_coverage.jpg"
+													width="597" height="33" /></td>
+												<td align="right" id="eval:LawyersRule.IsNotSubProducerFlow"><img
+													src="img/call.jpg" width="289" height="24" /></td>
+												<td align="right" id="eval:LawyersRule.IsSubProducerFlow"><img
+													id="contexturl" src="CallImagePath" width="289" height="24" /></td>
+											</tr>
+										</table>
+									</td>
+									<td width="15" class="redRight"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr id="showAgentOnly">
+						<td>
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="15" class="grayLeft"></td>
+									<td class="grayCenter">
+										<table width="100%" border="0" cellspacing="0" cellpadding="0">
+											<tr>
+												<td align="right">
+													<table border="0" cellspacing="2" cellpadding="2"
+														id="labels_freeform_contextdata_99" class="new_head_info">
+														<tr>
+															<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+																id="eval:LawyersRule.isAccountNameNotEmpty">Firm
+																Name :</td>
+															<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+																id="eval:LawyersRule.isAccountNameNotEmpty"><label
+																name="AccountName" id="AccountName"
+																class="txt11BoldBlack"> </label></td>
+															<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+																id="eval:LawyersRule.isQuoteNumberNotEmpty">Quote#
+																:</td>
+															<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+																id="eval:LawyersRule.isQuoteNumberNotEmpty"><label
+																name="QuoteNumber" id="QuoteNumber"
+																class="txt11BoldBlack"> </label></td>
+															<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+																id="eval:LawyersRule.isStatusNotEmpty">Status :</td>
+															<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+																id="eval:LawyersRule.isStatusNotEmpty"><label
+																id="StatusDesc" name="StatusDesc" class="txt11BoldBlack">
+															</label> <span id="eval:LawyersRule.ShowRenew">(R)</span></td>
+															<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+																id="eval:LawyersRule.isPolicyNumberNotEmpty">
+																Policy# :</td>
+															<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+																id="eval:LawyersRule.isPolicyNumberNotEmpty"><label
+																id="PolicyNumber" name="PolicyNumber"
+																class="txt11BoldBlack"> </label></td>
+															<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+																id="eval:LawyersRule.isEffectiveDateNotEmpty">
+																Effective Date :</td>
+															<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+																id="eval:LawyersRule.isEffectiveDateNotEmpty"><label
+																name="PolicyEffectiveDate" id="PolicyEffectiveDate"
+																class="txt11BoldBlack"> </label></td>
+															<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+																id="eval:LawyersRule.isStateCodeNotEmptyIndication">State
+																:</td>
+															<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+																id="eval:LawyersRule.isStateCodeNotEmptyIndication"><label
+																id="StateDesc" name="StateDesc" class="txt11BoldBlack">
+															</label></td>
+															<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+																id="eval:LawyersRule.isContextPremiumNotEmpty">
+																Premium :</td>
+															<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+																id="eval:LawyersRule.isContextPremiumNotEmpty"><label
+																id="ContextPremium" name="ContextPremium"
+																class="txt11BoldBlack"> </label></td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+										<table align="right" class="downloadDocuments" cellpadding="1"
+											cellspacing="0" id="eval:LawyersRule.isAgent">
+											<tr id="">
+												<td>
+													<span id="eval:LawyersRule.isNameClearanceQQIndicationPopupFlag">
+														<span id="eval:LawyersRule.isShowIndicationUWLink">
+															<a href="javascript:submitform('UWReview.html','indicationinjack.underwriter',' ','');">UnderWriter </a>&nbsp;|
+														</span>
+													</span>
+													<span id="eval:LawyersRule.showNotUWLink">
+														<a href="javascript:submitform('uploadexcelpopup.html','indicationinjack.uploadexcel','','');">Documents </a>
+													</span>
+												</td>
+											</tr>
+										</table>
+									</td>
+									<td width="15" class="grayRight"></td>
+								</tr>
+
+							</table>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="15" class="grayRoundLeft"></td>
+									<td align="right" class="grayRepeat"><span
+										class="grayRoundRight">&nbsp;</span></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+
+				</table>
+
+				<!---------Page content area---------->
+				<div id="contentSection">
+					
+					<div>
+						<h2 class="questionHeading">Indication In Jack</h2>
+						<p id="eval:LawyersRule.isNameClearanceQQIndicationPopupFlag" style="color: red;" align="right">Underwriter Approval is required</p>
+					</div>
+					<div class="form row">
+						<div class="block-form">
+
+							<div class="freeFormDiv form-inline"
+								id="BasicInfo_freeform_contextdata_01">
+								<div id="insuredEmailZoho" >
+								<ul class="inlineBlock">
+									<li class="inlineBlock_1_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+
+											<div class="freeFormListTr">
+												<div class="freeFormListTd">
+													<div class="">
+														<div class="txtbold">1. Insured Details</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">Insured
+													Name :</div>
+												<div class="freeFormListTd mendatoryInput"
+													active="nonMandatory">
+													<input type="text" class="form-control" autofocus name="AccountName"
+														id="AccountName" size="15" />
+													<div id="error_AccountName" class="error"></div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_2_fix" style="width:460px;">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">Insured
+													Email :</div>
+												<div class="freeFormListTd mendatoryInput"
+													active="nonMandatory">
+													<input type="text" class="form-control" name="AccountEmail"
+														id="AccountEmail" size="15" maxlength="100" onblur="validateEmail(this.value,this);"/>
+													<div id="error_AccountEmail" class="error"></div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li id="eval:LawyersRule.isNotSubproducerLoggedIn" style="display: inline-block; vertical-align: bottom;">
+										<div class="freeFormListTd">
+											<input type="button" value="Get from ZOHO" id="getFromZOHO" onclick="javascript:ajaxpageblocklink('indicationinjack.html','indicationinjack.refreshZohoEmail','','','insuredEmailZoho');" />
+										</div>
+									</li>
+								</ul>
+								<ul class="inlineBlock">
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">Insured
+													Phone Number :</div>
+												<div class="freeFormListTd mendatoryInput"
+													active="nonMandatory">
+													<input type="text" class="form-control" name="WorkPhone"
+														id="WorkPhone" size="15" maxlength="15" />
+													<div id="error_WorkPhone" class="error"></div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li id="eval:LawyersRule.isNotSubproducerLoggedIn" class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">
+													Sub-producer :</div>
+												<div class="freeFormListTd tdInput" active="nonMandatory">
+													<!-- <input type="text" class="form-control" name="ProducerCode"
+														id="ProducerCode" size="15" maxlength="15" /> -->
+														<select name="ProducerCode" id="ProducerCode" class="form-control">
+															<option value="">Select</option>
+													</select>
+													<div id="error_ProducerCode" class="error"></div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li id="eval:LawyersRule.isSubproducerLoggedIn" class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">Sub
+													Producer Number :</div>
+												<div class="freeFormListTd tdInput" active="nonMandatory">
+													<input type="text" disabled class="form-control" name="ProducerCode"
+														id="ProducerCode" size="15" maxlength="15" />
+													<div id="error_ProducerCode" class="error"></div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">Street Address :</div>
+												<div class="freeFormListTd tdInput" active="nonMandatory">
+													<input type="text" class="form-control" name="Street" id="Street" size="15" maxlength="500" />
+													<div id="error_Street" class="error"></div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">Zip Code :</div>
+												<div class="freeFormListTd tdInput" active="nonMandatory">
+													<input type="text" class="form-control" name="Zip" id="ajax_field_Zip" size="15" maxlength="15" onkeydown="loadFirmNewApp();" />
+													<div id="error_Zip" class="error"></div>
+												</div>
+											</div>
+										</div>
+									</li>
+									
+								</ul>
+								<ul class="inlineBlock paddingTop40">
+									<li class="inlineBlock_1_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd">
+													<div class="">
+														<div class="txtbold">2. Firm Details</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_1_fix">
+										<div class="freeFormList form-group" id="State">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="error_StateCode" class="error"> </span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth">State :</div>
+												</div>
+												<div class="freeFormListTd mendatoryInput">
+
+													<div>
+														<select name="StateCode" id="StateCode"
+															class="form-control"
+															onchange="javascript:ajaxpageblocklink('indicationinjack.html','indicationinjack.refreshCounty','','','countyListNew');javascript:resetLimitIndiaction();javascript:changeIndicationModifierLabel();">
+															<option value="">Select</option>
+														</select>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<ul class="inlineBlock" id="countyListNew">
+									<li><input type="hidden" name="CompanyAsPerState" id="CompanyAsPerState" /></li>
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="error_CountyDesc" class="error"> </span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth">County :</div>
+												</div>
+												<div class="freeFormListTd tdInput">
+													<span id="eval:LawyersRule.isShowCountyMandetory"
+														class="mendatoryInput"
+														style="margin-left: -5px; position: absolute; margin-top: 0px;">&nbsp;</span>
+													<span> <span id="eval:LawyersRule.isCountySizeZero">
+															<input type="text" class="form-control" name="CountyDesc"
+															id="CountyDesc"
+															onblur="javascript:capitalizeSentences(this,1);"
+															size="30" />
+													</span> <span id="eval:LawyersRule.isCountySizeNotZero"> 
+															<select name="CountyDesc" id="ajax_field_CountyDesc"
+																class="form-control selectBoxSelected">
+																<!-- onchange="javascript:ajaxpageblocklink('indicationinjack.html','indicationinjack.refreshCity','','','countyListNew');javascript:changeIndicationModifierLabel();"> -->
+																	<option value="" selected="selected">Select</option>
+															</select>
+													</span>
+													
+													</span>
+
+													<div id="ajaxxmlCountyDesc_CountyDesc"
+														class="transparent fixcolumnHeaderSearch"
+														style="display: none; border: solid 1px #cccccc; width: 242px;"></div>
+												</div>
+											</div>
+										</div>
+									</li>
+
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="error_City" class="error"> </span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth">City :</div>
+												</div>
+												<div class="freeFormListTd mendatoryInput">
+													<!-- <span id="eval:LawyersRule.ShowCityDropDownList"> <span
+														id="eval:LawyersRule.isCitySizeZero"> <input
+															type="text" class="form-control" name="City" id="City"
+															size="40" maxlength="50"
+															onblur="javascript:capitalizeSentences(this,1);" />
+													</span> <span id="eval:LawyersRule.isCitySizeNotZero"> <select
+															name="City" id="City" class="form-control">
+																<option value="" selected="selected">Select</option>
+														</select>
+													</span>
+													</span> 
+													<span id="eval:LawyersRule.ShowNotCityDropDownList"> -->
+														<input type="text" class="form-control" name="City"
+														id="City" size="40" maxlength="50"
+														onblur="javascript:capitalizeSentences(this,1);" />
+													<!-- </span> -->
+												</div>
+											</div>
+										</div>
+									</li>
+									
+									<li class="inlineBlock_2_fix" id="showAgentOnly">
+										<div  id="companyList">
+											<div class="freeFormList form-group" id="CompanyCodeEdit_Security">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError">
+														<h6>&nbsp;</h6>
+													</div>
+													<div class="freeFormListTdError paddingLeft3">
+														<span id="" class="error"></span>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign freeFormLabelWidth">Company :</div>
+													<div class="freeFormListTd tdInput" active="nonMandatory">
+														<select  name="CompanyKey" id="ajax_field_CompanyKey" class="form-control"
+														onchange="javascript:ajaxpageblocklink('indicationinjack.html','indicationinjack.refreshLimit','','','limitListNew');javascript:resetLimitIndiaction();javascript:changeIndicationModifierLabel();">
+																<option value="">Select</option>	
+														</select>
+													<div id="error_CompanyKey" class="error"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+
+
+
+								<ul class="inlineBlock ">
+									
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth ">Number
+													of Full Time Attys :</div>
+												<div class="freeFormListTd tdInput  mendatoryInput"
+													active="nonMandatory">
+													<input type="text" size="3" class="form-control"
+														maxlength="2" name="NumberOfLawyers" id="NumberOfLawyers" />
+													<div id="error_NumberOfLawyers" class="error" />
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"> </span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth">Effective Date :</div>
+												</div>
+												<div
+													class="freeFormListTd tdInput iconsStyle2  mendatoryInput">
+													<span class="input-group-addon "><i
+														class="fa fa-calendar">&nbsp;</i></span> <input
+														name="PolicyEffectiveDate" type="text"
+														class="form-control datepicker " id="PolicyEffectiveDate"
+														size="13" maxlength="10"
+														onkeyup="applyDateFormat(this,event);"
+														placeholder="(MM/DD/YYYY)" 
+														onchange="javascript:submitform('indicationinjack.html','indicationinjack.refreshCoverage','','');"/>
+														<!-- javascript:ajaxpageblocklink('indicationinjack.html','indicationinjack.refreshCoverage','','','indicationCoverage');" -->
+													<div id="error_PolicyEffectiveDate" class="error" />
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">Step
+													for each Full Time Atty &nbsp;&nbsp;(0-5) :</div>
+												<div class="freeFormListTd tdInput  mendatoryInput"
+													active="nonMandatory">
+													<ul class="smallbox">
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_1" id="ClaimAge_1" onchange="showHidePriorInsuranceDiv();"/></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_2" id="ClaimAge_2"  onchange="showHidePriorInsuranceDiv();"/></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_3" id="ClaimAge_3"  onchange="showHidePriorInsuranceDiv();"/></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_4" id="ClaimAge_4"  onchange="showHidePriorInsuranceDiv();"/></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_5" id="ClaimAge_5"  onchange="showHidePriorInsuranceDiv();"/></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_6" id="ClaimAge_6" /></li>
+													</ul>
+													<ul class="smallbox">
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_7" id="ClaimAge_7" /></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_8" id="ClaimAge_8" /></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_9" id="ClaimAge_9" /></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_10" id="ClaimAge_10" /></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_11" id="ClaimAge_11" /></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_12" id="ClaimAge_12" /></li>
+													</ul>
+													<ul class="smallbox">
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_13" id="ClaimAge_13" /></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_14" id="ClaimAge_14" /></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_15" id="ClaimAge_15" /></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_16" id="ClaimAge_16" /></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_17" id="ClaimAge_17" /></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_18" id="ClaimAge_18" /></li>
+													</ul>
+													<ul class="smallbox">
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_19" id="ClaimAge_19" /></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_20" id="ClaimAge_20" /></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_21" id="ClaimAge_21" /></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_22" id="ClaimAge_22" /></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_23" id="ClaimAge_23" /></li>
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_24" id="ClaimAge_24" /></li>
+													</ul>
+													<ul class="smallbox">
+														<li><input type="text" size="3" maxlength="1"
+															name="ClaimAge_25" id="ClaimAge_25" /></li>
+													</ul>
+													<div id="error_totalLawyers" class="error" />
+												</div>
+											</div>
+										</div>
+									</li>
+
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">Number
+													of 1-500 hr attys :</div>
+												<div class="freeFormListTd tdInput" active="nonMandatory">
+													<input type="text" size="3" class="form-control"
+														name="NumberOfLawyers500" id="NumberOfLawyers500" />
+													<div id="error_NumberOfLawyers500" class="error" />
+												</div>
+											</div>
+										</div>
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"> </span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth">Number of 501-1,000
+														attys :</div>
+												</div>
+												<div class="freeFormListTd tdInput">
+
+													<input type="text" size="3" class="form-control"
+														name="NumberOfLawyers1000" id="NumberOfLawyers1000" />
+													<div id="error_NumberOfLawyers1000" class="error" />
+												</div>
+											</div>
+										</div>
+									</li>
+
+								</ul>
+								
+								<ul class="inlineBlock" id="priorInsuranceDiv" style="display:none;">
+									
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">Carrier :</div>
+												<div class="freeFormListTd" active="nonMandatory">
+													<input type="text" class="form-control" autofocus name="InsuranceCompanyNamePross"
+														id="InsuranceCompanyNamePross" size="15" />
+													<div id="error_InsuranceCompanyNamePross" class="error"></div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_2_fix" style="width:460px;">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">Expiring Premium :</div>
+												<div class="freeFormListTd"active="nonMandatory">
+													<input type="text" class="form-control" name="ProInsPremium" onblur="loadAppointmentFeeInformation('ProInsPremium');"
+														id="ProInsPremium" size="15" maxlength="100" />
+													<div id="error_ProInsPremium" class="error"></div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">Current Limit :</div>
+												<div class="freeFormListTd" active="nonMandatory">
+													<select name="LimitSequencePross" id="ajax_field_LimitSequencePross" class="form-control" onchange="fillLimitOfLiabilityIndication(this.value);">
+														<option value="">- Select -</option>
+													</select>
+													<div id="error_LimitSequencePross" class="error"></div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_2_fix" style="width:460px;">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">Current Deductible :</div>
+												<div class="freeFormListTd" active="nonMandatory">
+													<select name="DeductibleSequencePross" id="ajax_field_DeductibleSequencePross" class="form-control"  onchange="fillDeductibleIndication(this.value);">
+														<option value="">- Select -</option>
+													</select>
+													<div id="error_DeductibleSequencePross" class="error"> </div>
+												</div>
+											</div>
+										</div>
+									</li>
+									
+								</ul>
+								<ul class="inlineBlock paddingTop40">
+									<li class="inlineBlock_1_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd">
+													<div class="">
+														<div class="txtbold">3. Area of Practice</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+									<div class="row paddingTop10 AOP_data">
+									<div class="col-sm-4">
+										<table width="100%" border="0" align="center"
+											class="gridTable" cellpadding="3" cellspacing="0">
+											<tbody>
+												<tr>
+													<th width="5%" align="left" class="aopH">&nbsp;</th>
+													<th align="left" class="aopH">Area of Practice</th>
+													<th width="10%" align="center" class="aopH">%</th>
+												</tr>
+												<tr>
+													<td align="left">1.</td>
+													<td align="left">Administrative or Regulatory</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_54" id="AOP_Percentage_54" size="3"
+														maxlength="3" /></td>
+												</tr>
+
+												<tr>
+													<td align="left">2.</td>
+													<td align="left">Admiralty and Maritime</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_28" id="AOP_Percentage_28" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">3.</td>
+													<td align="left">Anti-trust/Trade Regulation</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_1" id="AOP_Percentage_1" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">4.</td>
+													<td align="left">Alternate Dispute Resolution</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_2" id="AOP_Percentage_2" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">5.</td>
+													<td align="left">Appellate Practice</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_29" id="AOP_Percentage_29" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">6.</td>
+													<td align="left">Aviation</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_30" id="AOP_Percentage_30" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">7.</td>
+													<td align="left">Bankruptcy / Insolvency and
+														Reorganization</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_3" id="AOP_Percentage_3" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">8.</td>
+													<td align="left">Civil Litigation - Defense</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_64" id="AOP_Percentage_64" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">9.</td>
+													<td align="left">Civil Litigation - Plaintiff</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_55" id="AOP_Percentage_55" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">10.</td>
+													<td align="left">Civil Rights or Discrimination</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_4" id="AOP_Percentage_4" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">11.</td>
+													<td align="left">Collections / Repossession</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_31" id="AOP_Percentage_31" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">12.</td>
+													<td align="left">Construction</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_33" id="AOP_Percentage_33" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">13.</td>
+													<td align="left">Construction Litigation - Plaintiff</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_56" id="AOP_Percentage_56" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">14.</td>
+													<td align="left">Construction Litigation - Defense</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_65" id="AOP_Percentage_65" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">15.</td>
+													<td align="left">Communications / Media</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_32" id="AOP_Percentage_32" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">16.</td>
+													<td align="left">Corporate / Commercial / Business</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_5" id="AOP_Percentage_5" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">17.</td>
+													<td align="left">Corporate / Commercial / Business
+														Litigation - Defense</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_66" id="AOP_Percentage_66" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">18.</td>
+													<td align="left">Corporate / Commercial / Business
+														Litigation - Plaintiff</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_57" id="AOP_Percentage_57" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">19.</td>
+													<td align="left">Copyright / Trademark</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_6" id="AOP_Percentage_6" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">20.</td>
+													<td align="left">Creditor Debtor Rights</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_34" id="AOP_Percentage_34" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">21.</td>
+													<td align="left">Criminal Defense</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_35" id="AOP_Percentage_35" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">22.</td>
+													<td align="left">Family Law</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_8" id="AOP_Percentage_8" size="3"
+														maxlength="3" /></td>
+												</tr>
+												
+											</tbody>
+										</table>
+									</div>
+									<div class="col-sm-4">
+										<table width="100%" border="0" align="center"
+											class="gridTable" cellpadding="3" cellspacing="0">
+											<tbody>
+												<tr>
+													<th width="5%" align="left" class="aopH">&nbsp;</th>
+													<th align="left" class="aopH">Area of Practice</th>
+													<th width="10%" align="center" class="aopH">%</th>
+												</tr>
+												<tr>
+													<td align="left">23.</td>
+													<td align="left">Education</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_36" id="AOP_Percentage_36" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">24.</td>
+													<td align="left">Employment</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_37" id="AOP_Percentage_37" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">25.</td>
+													<td align="left">Entertainment / Sports</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_38" id="AOP_Percentage_38" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">26.</td>
+													<td align="left">Elder Law</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_9" id="AOP_Percentage_9" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">27.</td>
+													<td align="left">Environmental</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_10" id="AOP_Percentage_10" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">28.</td>
+													<td align="left">Employee Benefits (ERISA)</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_11" id="AOP_Percentage_11" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">29.</td>
+													<td align="left">Financial Institution / Banking /
+														Finance</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_12" id="AOP_Percentage_12" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">30.</td>
+													<td align="left">Government / Municipal / Zoning</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_13" id="AOP_Percentage_13" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">31.</td>
+													<td align="left">Healthcare</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_39" id="AOP_Percentage_39" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">32.</td>
+													<td align="left">Immigration</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_14" id="AOP_Percentage_14" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">33.</td>
+													<td align="left">Insurance Defense</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_41" id="AOP_Percentage_41" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">34.</td>
+													<td align="left">International</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_42" id="AOP_Percentage_42" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">35.</td>
+													<td align="left">Investment Counseling / Money
+														Management</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_15" id="AOP_Percentage_15" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">36.</td>
+													<td align="left">Juvenile or Guardianship</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_43" id="AOP_Percentage_43" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">37.</td>
+													<td align="left">Labor Management</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_44" id="AOP_Percentage_44" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">38.</td>
+													<td align="left">Labor Union</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_45" id="AOP_Percentage_45" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">39.</td>
+													<td align="left">Litigation - Other - Defense</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_58" id="AOP_Percentage_58" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">40.</td>
+													<td align="left">Litigation - Other - Plaintiff</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_67" id="AOP_Percentage_67" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">41.</td>
+													<td align="left">Mass Tort Litigation / Class Actions
+														- Defense</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_68" id="AOP_Percentage_68" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">42.</td>
+													<td align="left">Mass Tort Litigation / Class Actions
+														- Plaintiff</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_59" id="AOP_Percentage_59" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">43.</td>
+													<td align="left">Medical Malpractice - Defense</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_69" id="AOP_Percentage_69" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">44.</td>
+													<td align="left">Medical Malpractice - Plaintiff</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_60" id="AOP_Percentage_60" size="3"
+														maxlength="3" /></td>
+												</tr>
+												
+												
+											</tbody>
+										</table>
+									</div>
+									<div class="col-sm-4">
+										<table width="100%" border="0" align="center"
+											class="gridTable" cellpadding="3" cellspacing="0">
+											<tbody>
+												<tr>
+													<th width="5%" align="left" class="aopH">&nbsp;</th>
+													<th align="left" class="aopH">Area of Practice</th>
+													<th width="10%" align="center" class="aopH">%</th>
+												</tr>
+												<tr>
+													<td align="left">45.</td>
+													<td align="left">Mergers and Acquisitions</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_46" id="AOP_Percentage_46" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">46.</td>
+													<td align="left">Natural Resources</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_16" id="AOP_Percentage_16" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">47.</td>
+													<td align="left">Non-Medical Malpractice - Defense</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_70" id="AOP_Percentage_70" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">48.</td>
+													<td align="left">Non-Medical Malpractice - Plaintiff</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_61" id="AOP_Percentage_61" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">49.</td>
+													<td align="left">Non-Profit / Charities</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_47" id="AOP_Percentage_47" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">50.</td>
+													<td align="left">Patent</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_48" id="AOP_Percentage_48" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<!-- <tr>
+													<td align="left">51.</td>
+													<td align="left">Personal Contracts</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_17" id="AOP_Percentage_17" size="3"
+														maxlength="3" /></td>
+												</tr> -->
+												<tr>
+													<td align="left">51.</td>
+													<td align="left">Personal Injury Litigation -
+														Plaintiff</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_62" id="AOP_Percentage_62" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<!-- <tr>
+													<td align="left">53.</td>
+													<td align="left">Litigation / Defense / Plaintiff</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_18" id="AOP_Percentage_18"
+														size="3" maxlength="3" /></td>
+												</tr> -->
+												<tr>
+													<td align="left">52.</td>
+													<td align="left">Personal Injury Litigation - Defense</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_71" id="AOP_Percentage_71" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">53.</td>
+													<td align="left">Product Liability Litigation -
+														Defense</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_72" id="AOP_Percentage_72" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">54.</td>
+													<td align="left">Product Liability Litigation -
+														Plaintiff</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_63" id="AOP_Percentage_63" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<!-- <tr>
+													<td align="left">56.</td>
+													<td align="left">Public Utilities</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_19" id="AOP_Percentage_19" size="3"
+														maxlength="3" /></td>
+												</tr> -->
+												<tr>
+													<td align="left">55.</td>
+													<td align="left">Real Estate Commercial</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_20" id="AOP_Percentage_20" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">56.</td>
+													<td align="left">Real Estate Residential</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_27" id="AOP_Percentage_27" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">57.</td>
+													<td align="left">Securities</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_21" id="AOP_Percentage_21" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">58.</td>
+													<td align="left">Social Security / Disability</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_49" id="AOP_Percentage_49" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">59.</td>
+													<td align="left">Tax</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_22" id="AOP_Percentage_22" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<!-- <tr>
+													<td align="left">62.</td>
+													<td align="left">Title</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_23" id="AOP_Percentage_23" size="3"
+														maxlength="3" /></td>
+												</tr> -->
+												<tr>
+													<td align="left">60.</td>
+													<td align="left">Traffic or DUI/DWI Defense</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_50" id="AOP_Percentage_50" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">61.</td>
+													<td align="left">Trusts / Estates / Wills / Probate</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_24" id="AOP_Percentage_24" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">62.</td>
+													<td align="left">Utilities</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_51" id="AOP_Percentage_51" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">63.</td>
+													<td align="left">Workers Compensation Defense</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_52" id="AOP_Percentage_52" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">64.</td>
+													<td align="left">Workers Compensation Plaintiff</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage')"
+														name="AOP_Percentage_53" id="AOP_Percentage_53" size="3"
+														maxlength="3" /></td>
+												</tr>
+												<tr>
+													<td align="left">65.</td>
+													<td align="left">Other (please describe)</td>
+													<td align="left"><input class="txt" type="text"
+														onblur="showIndicationOther('AOP_Percentage_25');populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage');"
+														name="AOP_Percentage_25" id="AOP_Percentage_25" size="3"
+														maxlength="3" /></td>
+												</tr>
+												
+												<tr id="otherDescId">
+												<td  align="right" colspan="3"><table
+														id="lawPractice_freeform_contextdata_001">
+														<tr >
+															<td >Description :</td>
+															<td><textarea rows="2"
+																	cols="50" style="width: 280px; height: 70px;"
+																	name="otherAopDesc"
+																	id="ajax_field_otherAopDesc"></textarea></td>
+														</tr>
+													</table></td>
+												</tr>
+												<!-- <tr>
+													<td align="right" class="Link_blue_bold" colspan="3">
+														Total Percentage <label id="TotalAOP_Percentage"
+														name="TotalAOP_Percentage"></label> % <span
+														class="txtBlack12">(must equal 100%)</span>
+													</td>
+												</tr>
+												<tr class="no-padding">
+													<td colspan="3" valign="middle" nowrap>
+														<div id="error_totalPercentageError"
+															class="error" />
+													</td>
+												</tr> -->
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div>
+									<table width="100%" border="0" align="center" class="gridTable" cellpadding="3" cellspacing="0">
+										<tbody>
+											<tr>
+												<td align="right" class="Link_blue_bold" colspan="3">
+													Total Percentage <label id="TotalAOP_Percentage"
+													name="TotalAOP_Percentage"></label> % <span
+													class="txtBlack12">(must equal 100%)</span>
+												</td>
+											</tr>
+											<tr class="no-padding">
+												<td colspan="3" valign="middle" nowrap>
+													<div id="error_totalPercentageError"
+														class="error" />
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+									<ul class="inlineBlock paddingTop40">
+									<li class="inlineBlock_1_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd">
+													<div class="">
+														<div class="txtbold">4. Limits & Deductible</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_2_fix">
+										<div id="limitListNew" class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr" >
+												<table id="firm_freeform_contextdata_1000">
+													<tr>
+														<td>
+															<input type="hidden" name="IsNewFiling" id="IsNewFiling" />
+															<input type="hidden" name="NMRatingVersion" id="NMRatingVersion" />
+														</td>
+													</tr>
+												</table>
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">Limits
+													:</div>
+												<div class="freeFormListTd tdInput  mendatoryInput"
+													active="nonMandatory">
+													<select name="LimitSequence" id="LimitSequence"
+														class="form-control" onchange="makeDefenseOutsideRuleIndication(this.value);">
+														<option value="">Select</option>
+													</select>
+													<div id="error_LimitSequence" class="error"></div>
+												</div>
+											</div>
+										</div>
+										
+									</li>
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">Deductible
+													:</div>
+												<div class="freeFormListTd tdInput mendatoryInput"
+													active="nonMandatory">
+													<select name="DeductibleSequence" id="DeductibleSequence"
+														class="form-control">
+														<option value="">Select</option>
+														
+													</select>
+													<div id="error_DeductibleSequence" class="error" />
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"> </span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth">Limit Options :</div>
+												</div>
+												<div class="freeFormListTd tdInput  mendatoryInput">
+													<input type="radio" name="IsClaimExpensesType"
+														id="IsClaimExpensesTypeInside" value="N" /> Defense Inside <input
+														type="radio" name="IsClaimExpensesType"
+														id="IsClaimExpensesTypeOutside" value="Y" /> Defense Outside
+
+													<div id="error_IsClaimExpensesType" class="error" />
+												</div>
+											</div>
+
+										</div>
+									</li>
+									<li class="inlineBlock_2_fix" style="margin-top: -0px;">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"> </span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth">Deductible Option :</div>
+												</div>
+												<div class="freeFormListTd tdInput  mendatoryInput">
+													<input type="radio" name="IsClaimOptionType"
+														id="IsClaimOptionTypePerClaim" value="N" /> Per Claim
+													&nbsp;&nbsp; <input type="radio" name="IsClaimOptionType"
+														id="IsClaimOptionTypeAggregate" value="Y" />Aggregate&nbsp;&nbsp;
+													<div id="error_IsClaimOptionType" class="error" />
+												</div>
+
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth">
+														&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+												</div>
+												<div class="freeFormListTd tdInput  ">
+													<input name="IsDollarDefense" type="checkbox"
+														id="IsDollarDefense" value="Y" /> First Dollar Defense
+
+												</div>
+
+											</div>
+
+										</div>
+									</li>
+									<li class="inlineBlock_1_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"> </span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth">&nbsp;</div>
+												</div>
+
+											</div>
+
+										</div>
+									</li>
+								</ul>
+									
+								</div>
+								<div id="CFPolicyIssuance_Security">
+								<ul id="eval:LawyersRule.isNotNameClearanceQQIndicationPopupFlag" class="inlineBlock paddingTop40">
+									<li class="inlineBlock_1_fix" >
+										
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="error_NewYorkStatePremiumError" class="error"></span>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_1_fix" id="eval:LawyersRule.isNotSubproducerLoggedIn">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd">
+													<div class="">
+														<div class="txtbold">5. Rating Modifier</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_1_fix" id="">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr" id="eval:LawyersRule.showHideIndicationModifier">
+												<div id="subProducerModifier" class="freeFormListTd labelAlign freeFormLabelWidth">Modifier
+													(max +25 or -25) :</div>
+												<div class="freeFormListTd tdInput" >
+													<input class="form-control" type="text"
+														name="SchduleRatingModifier1" id="SchduleRatingModifier1" />
+													<div id="error_SchduleRatingModifier1" class="error" ></div>
+												</div>
+											</div>
+											<div class="freeFormListTr" id="eval:LawyersRule.showHideIndicationModifierNot">
+												<div id="subProducerModifier" class="freeFormListTd labelAlign freeFormLabelWidth">Modifier
+													(max +10 or -10) :</div>
+												<div class="freeFormListTd tdInput">
+													<span id="readOnlymodifierforSP">
+														<input class="form-control" type="text"
+															name="SchduleRatingModifier1" id="SchduleRatingModifier1" />
+													</span>
+													<div id="error_SchduleRatingModifier1" class="error"></div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">Total
+													Premium :</div>
+												<div class="freeFormListTd tdInput">
+													<input type="text" class="form-control" name="TotalPremium"
+														id="TotalPremium" size="101" maxlength="15" />
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">Premium
+													with Taxes :</div>
+												<div class="freeFormListTd tdInput">
+													<input type="text" class="form-control"
+														name="InvoicedPremium" id="InvoicedPremium" size="102"
+														maxlength="15" />
+												</div>
+											</div>
+										</div>
+									</li>
+									<li class="inlineBlock_1_fix"
+										id="eval:LawyersRule.isShowRatingOutPut">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div
+													class="freeFormListTd labelAlign valignTop freeFormLabelWidth">
+													<span align="left"
+														id="eval:LawyersRule.IsIndicationPageNotSaved">Rating
+														Output :</span> <span align="left"
+														id="eval:LawyersRule.IsIndicationPageSaved"><a
+														class=""
+														href="javascript:submitform('indicationinjack.html','indicationinjack.downloadRatingOutput','','');">Rating
+															Output</a></span>
+
+												</div>
+												<div class="freeFormListTd tdInput">
+													<textarea name="XmlOutputDatafromRating" disabled
+														class="form-control" id="XmlOutputDatafromRating"
+														cols="10" rows="4" style="width: 744px; height: 80px"></textarea>
+												</div>
+											</div>
+									</li>
+								</ul>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="buttons borderTop row">
+						<div class="floatRight">
+							<span id="eval:LawyersRule.isNotNameClearanceQQIndicationPopupFlag">
+								<span id="eval:LawyersRule.isPreviousPolicy">
+									<a class="btn back" href="javascript:submitform('indicationinjack.html','indicationinjack.previousPolicy','','');">Previous</a>
+								</span>
+							</span>
+							<a class="btn button1" href="javascript:submitform('list.html|workq.html','indicationinjack.cancel','forwardeval','LawyersRule.isIndicationEdit|LawyersRule.isIndicationSave');">Cancel</a>
+							<span id="eval:LawyersRule.isNotNameClearanceQQIndicationPopupFlag">
+								<a class="btn button1" id="calculateAndSave_btn" onclick="javascript:setAccountType2('aop_list');" href="javascript:submitform('indicationinjack.html','indicationinjack.addIndication','','');">Calculate & Save</a>
+								<span id="CFPolicyIssuance_Security">
+								<span id="eval:LawyersRule.IsIndicationPageSaved">
+									<a class="btn button1" href="javascript:submitform('indicationinjack.html','indicationinjack.downloadIndication','','');">Print Indication</a>
+								</span>
+								<span id="eval:LawyersRule.isPolicySendQuoteOrIssueForCompany">
+								<span id="eval:LawyersRule.IsIndicationPageSaved">
+								<span id="eval:LawyersRule.isSubproducerchecking">
+									<a class="btn button1" href="javascript:submitform('indicationinjack.html','indicationinjack.sendIndicationToInsured','','');">Send Indication</a>
+								</span>
+								</span>
+								</span>
+								</span>
+								<span id="eval:LawyersRule.IsIndicationPageSaved">
+									<a class="btn button1" href="javascript:submitform('FirmNewApp.html|firm.html','indicationinjack.convertToApplication','forwardeval','LawyersRule.showFullQuoteNewAppFlowIndication|LawyersRule.showFullQuoteOldAppFlowIndication');">Convert To Application</a>
+								</span>
+								<span id="eval:LawyersRule.isNextPolicy">
+									<a class="btn next" href="javascript:submitform('indicationinjack.html','indicationinjack.nextPolicy','','');">Next</a>
+								</span>
+							</span>
+							<span id="eval:LawyersRule.isNameClearanceQQIndicationPopupFlag">
+								<span id="eval:LawyersRule.isShowIndicationUWLink">
+									<a class="btn button1" href="javascript:submitform('UWReview.html','indicationinjack.underwriter',' ','');">UnderWriter </a>
+								</span>
+							</span>
+						</div>
+					</div>
+					<!--					
+					<div id="FinalDiv" class="row paddingTop40">
+							<table id="indication_list_01" width="100%" border="0"
+								cellpadding="0" cellspacing="0" class="border1">
+								<tr id="indication_list_header_01">
+									<td>
+										<div class="table-responsive">
+											<table width="100%" border="0" align="left" class="gridTable"
+												cellpadding="0" cellspacing="0">
+												<tr>
+													<th width="50">
+														<span id="block_field_IsQuoteSelected">Select Quote</span>	
+													</th>
+													<th width="220" id="block_field_LimitAmount">Limits</th>
+													<th width="90" id="block_field_DeductibleAmount">
+														Deductibles</th>
+													<th width="100" id="block_field_IsClaimExpensesType">
+														Limit Options</th>
+													<th width="90" id="block_field_IsClaimOptionType">
+														Claim Option</th>
+													<th width="90" id="block_field_IsDollarDefenseText">
+														IsDollar Defense</th>
+													<th width="90"
+														id="block_field_TotalPolicyModifierPercentage">
+														Modifiers</th>
+													<th width="90" id="block_field_TotalPolicyTaxAmount">
+														Tax amount</th>
+													<th width="90" id="block_field_TotalPremium">Premium</th>
+													<th width="90" id="block_field_InvoicedPremium">
+														Total Due</th>
+												</tr>
+												<tbody id="indication_list_mom_data_01">
+													<tr id="mom_child_data">
+														<td width="60">		
+															<span id="block_field_IsQuoteSelected">													
+																<span id="eval:LawyersRule.checkedIndication">																
+																	<input
+																		type="radio"
+																		name="IsQuoteSelected"
+																		id="IsQuoteSelected"
+																		value="Y" />
+																</span>																														
+																<span id="eval:LawyersRule.uncheckedIndication">
+																	No
+																</span>
+															</span> 
+														</td>
+														<td width="210" id="block_field_LimitAmount"></td>
+														<td width="90" id="block_field_DeductibleAmount"></td>
+														<td width="100" id="block_field_IsClaimExpensesType"></td>
+														<td width="90" id="block_field_IsClaimOptionType"></td>
+														<td width="90" id="block_field_IsDollarDefenseText"></td>
+														<td width="90" 	id="block_field_TotalPolicyModifierPercentage"></td>
+														<td width="90" id="block_field_TotalPolicyTaxAmount"></td>
+														<td width="90" id="block_field_TotalPremium"></td>
+														<td width="90" id="block_field_InvoicedPremium"></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+						-->
+						<div id="CFPolicyIssuance_Security">
+					<div  id="eval:LawyersRule.isNotNameClearanceQQIndicationPopupFlag">
+					<div id="FinalDiv">
+						<table id="indication_list_01" width="100%" border="0"
+							cellpadding="0" cellspacing="0" class="border1">
+							<tr id="indication_list_header_01">
+								<td>
+									<div class="table-responsive">
+										<table width="100%" border="0" align="left" class="gridTable"
+											cellpadding="0" cellspacing="0">
+											<tr>
+												<th width="60"><span
+													id="block_field_IsThisOptionFinalised">Select Quote</span>
+													<span id="block_field_TransactionSequence"></span></th>
+												<th width="60" id="eval:LawyersRule.isAgent"><span
+													id="block_field_IsQuoteSelected">Quote Selected</span></th>
+												<th width="90" id="block_field_LimitAmount">Limits</th>
+												<th width="90" id="block_field_DeductibleAmount">
+													Deductibles</th>
+												<th width="90" id="block_field_IsClaimExpensesType">
+													Limit Option</th>
+												<th width="90" id="block_field_IsClaimOptionType">
+													Claim Option</th>
+												<th width="90" id="block_field_IsDollarDefenseText">
+													IsDollar Defense</th>
+												<th width="90" id="eval:LawyersRule.isAgent"><span
+													id="block_field_TotalPolicyModifierPercentage">Total
+														Modifiers</span></th>
+												<th width="90" id="block_field_TotalPolicyTaxAmount">
+													Tax amount</th>
+												<th width="90" id="block_field_TotalPremium">Premium</th>
+												<th width="90" id="block_field_InvoicedPremium">Total
+													Due</th>
+											</tr>
+											<tbody id="indication_list_mom_data_01">
+												<tr id="mom_child_data">
+													<td width="60"><span
+														id="block_field_TransactionSequence"><input
+															type="hidden" name="TransactionSequence"
+															id="TransactionSequence" /></span> <span
+														id="block_field_IsThisOptionFinalised"><input
+															type="radio" name="IsThisOptionFinalised"
+															id="IsThisOptionFinalised"
+															onclick="javascript:fillIndicationSequence('SelectedIndicationIndex', this.name);" />
+
+													</span></td>
+													<td width="60"><span id="block_field_IsQuoteSelected">
+															<span id="eval:LawyersRule.checkedIndication"> <input
+																name="IsQuoteSelected" type="checkbox" checked="checked"
+																id="IsQuoteSelected" size="10" maxlength="3"
+																disabled="disabled" />
+														</span> <span id="eval:LawyersRule.uncheckedIndication"> <input
+																name="IsQuoteSelected" type="checkbox"
+																id="IsQuoteSelected" size="10" maxlength="3"
+																disabled="disabled" />
+														</span>
+													</span></td>
+
+													<td width="90" id="block_field_LimitAmount"></td>
+													<td width="90" id="block_field_DeductibleAmount"></td>
+													<td width="90" id="block_field_IsClaimExpensesType"></td>
+													<td width="90" id="block_field_IsClaimOptionType"></td>
+													<td width="90" id="block_field_IsDollarDefenseText"></td>
+													<td width="90" id="eval:LawyersRule.isAgent"><span
+														id="block_field_TotalPolicyModifierPercentage"></span></td>
+													<td width="90" id="block_field_TotalPolicyTaxAmount"></td>
+													<td width="90" id="block_field_TotalPremium"></td>
+													<td width="90" id="block_field_InvoicedPremium"></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					</div></div>
+					<div class="row">&nbsp;</div>
+					<div class="row">&nbsp;</div>
+				</div>
+
+				<div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<!---------Footer End---------->
+			</div>
+		</div>
+		<table id="firm_freeform_contextdata_999">
+			<tr>
+				<td>
+					<input type="hidden" name="SelectedIndicationIndex" id="SelectedIndicationIndex" />
+					<input type="hidden" name="jsessionid" id="jsessionid" /> 
+					<input type="hidden" name="divHideShow" id="divHideShow" />
+					<input type="hidden" name="IndicationAccess" id="IndicationAccess" />
+					<input type="hidden" name="role_id" id="role_id" />
+					<input type="hidden" name="StatusDesc" id="StatusDesc" />
+					<input type="hidden" name="StateDesc" id="StateDesc" />
+					<input type="hidden" name="isNameClearanceRequired" id="isNameClearanceRequired" />
+					<input type="hidden" name="NameClearanceIndicationFlag" id="NameClearanceIndicationFlag" />
+					<input type="hidden" name="UserNo" id="UserNo" />
+				</td>
+			</tr>
+		</table>
+		</div>
+		<div id="StatusValidation_freeform_contextdata_9990">
+			<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+			<input type="hidden" name="ZohoStatusDescUpdated" id="ZohoStatusDescUpdated"  value="IndicationZohoStatus"/>
+		</div>
+	</form>
+
+</body>
+<script>
+	var nameClearanceIndicationFlag = $("#NameClearanceIndicationFlag").val();
+	if(nameClearanceIndicationFlag == "Y"){
+		showPopUpOverloaded('zohoNameClearance','500','400');
+	}
+	setCSSForAccountType2();
+	changeIndicationModifierLabel();
+</script>
+<script>
+	//setScroll();
+	loadQuickQuoteInsured();
+	populateTotalFieldValue('AOP_Percentage_', 'TotalAOP_Percentage');
+	//setScrollTop();
+</script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

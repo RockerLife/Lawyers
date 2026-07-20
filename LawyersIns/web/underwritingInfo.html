@@ -1,0 +1,427 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Underwriting Information</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js"/>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+<body onload="loadCyber();showHidePreceedorFirmsDescription();loadUnderwritingInfo();">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<form autocomplete="chrome-off">
+<!-- Bootstrap Core JavaScript -->
+
+<div class="container-fluid bootstrap-node-1">
+  <div class="tableWidth" id="AppCompleted"> 
+    <!---------Header Start---------->  
+   	<div id="header">
+	        	<span id="#Include:header.html#"></span>
+	      </div>
+    <!---------Header End----------> 
+    <div class="menuTab">
+					<span id="#Include:tabs.html#"></span>
+				</div>
+    <div id="contentSection">
+		<div class="confirmationMsgAlign" id="underwritingInfo_freeform_contextdata_100">
+			<label class="Confirmation" name="pageMsg" id="pageMsg" />
+			<div id="error_StatusUpdate" class="error11Bold"> </div>
+			<!-- <div id="error_ApplicationNotCompleted" class="error11Bold"> </div> -->
+		</div>
+		<div>
+			<h2 class="questionHeading">A Little Underwriting Information</h2>
+		</div>
+		<div class="form">
+			<table class="question underwriting_width" cellpadding="0" cellspacing="0">
+				<tbody id="underwritingInfo_freeform_contextdata_01">
+				<tr>
+					<td valign="top" id="hideisLiabilityInsuranceNo">1.</td>
+					<td width="90%" id="hideisLiabilityInsuranceNo"><div id="error_isPolicyExcludeCoverage" class="error"></div>
+					<span class="mendatory">*</span>
+					<span class="floatLeft" style="width: 90%">Does your current policy exclude coverage for any attorney, predecessor firms, firm affiliates, clients, specific
+						engagements or other circumstances?</span></td>
+					<td nowrap id="hideisLiabilityInsuranceNo">
+						<span class="radio-inline"><input type="radio" name="isPolicyExcludeCoverage" id="ajax_field_isPolicyExcludeCoverage" value="Y" onchange="loadUnderwritingInfo();"/>Yes</span>
+						<span class="radio-inline"><input type="radio" name="isPolicyExcludeCoverage" id="ajax_field_isPolicyExcludeCoverage" value="N" onchange="loadUnderwritingInfo();"/>No</span>
+					</td>
+				</tr>
+				<tr id="rowsm" class="default paddingNone" style="display: none;">
+					<td></td>
+					<td colspan="2">
+					<table width="100%">
+						<tr>
+							<td><div id="error_isPolicyExcludeCoverageDescription" class="error"/></td>
+						</tr>
+						<tr>
+							<td>Please describe :</td>
+						</tr>
+						<tr>
+							<td align="left"><textarea rows="3" class="form-control" maxlength="500" onkeyup="limitText(this,1,3000);" name="isPolicyExcludeCoverageDescription" id="ajax_field_isPolicyExcludeCoverageDescription" style="width:77%; height: 50px;"></textarea></td>
+						</tr>
+					</table>
+						
+					</td>
+				</tr>
+				<tr>
+					<td id="hideisLiabilityInsuranceNo">2.</td>
+					<td id="hideisLiabilityInsuranceNo"><div id="error_IsPolicyIncludeLateralHireCov" class="error"></div>
+					<span class="mendatory">*</span>Does your current policy include lateral hire or career coverage for any of the firm's current attorneys?</td>
+					<td id="hideisLiabilityInsuranceNo">
+						<span class="radio-inline"><input type="radio" value="Y" name="IsPolicyIncludeLateralHireCov" id="ajax_field_IsPolicyIncludeLateralHireCov"/>Yes</span>
+						<span class="radio-inline"><input type="radio" value="N" name="IsPolicyIncludeLateralHireCov" id="ajax_field_IsPolicyIncludeLateralHireCov"/>No</span>
+					</td>
+				</tr>
+				<tr>
+					<!-- <td valign="top" >3.</td> -->
+					
+					<td >
+					<span id="eval:LawyersRule.ishideLiabilityInsurance">3.</span>
+					<span id="eval:LawyersRule.isLiabilityInsuranceNo">1.</span>
+					
+					</td>
+					<td ><div id="error_custodyOrControlFunds" class="error"></div>
+					<span class="mendatory">*</span>
+					<span class="floatLeft" style="width: 90%">Do you have custody or control over any funds or accounts of any of your clients, including but not limited to escrow or trust accounts?
+					</span>
+					</td>
+					
+					<td >
+						<span class="radio-inline"><input type="radio" value="Y" name="custodyOrControlFunds" id="ajax_field_custodyOrControlFunds" onclick="loadUnderwritingInfo();"/>Yes</span>
+						<span class="radio-inline"><input type="radio" value="N" name="custodyOrControlFunds" id="ajax_field_custodyOrControlFunds" onclick="loadUnderwritingInfo();"/>No</span>
+					</td>
+				</tr>
+				</tbody>
+				<tbody id="suppDiv" style="display: none;">
+				<!-- <tr class="default" >
+					<td valign="top" colspan="3">
+								<div id="cyberDiv">
+									<div id="Cyber">
+											<div id="DefaultOpenForm:Cyber"></div>
+										</div>
+								</div>	
+					</td>
+				</tr> -->
+				<tr id="underwritingInfo_freeform_contextdata_14">
+					<td style="width: 2%"></td>
+					<td style="width: 68%;">
+						<div id="error_disbursementTransaction" class="error paddingLeft40"></div>
+						<div class="freeFormListTd valignTop">
+							<span class="subheading_alpha">
+								a.
+							</span>
+						</div>
+						<div class="freeFormListTd valignTop">
+							<span class="mendatory">*</span>
+							In the past year, approximately how many disbursement transactions have you executed from your client funds account?
+						</div>
+					</td>
+					<td nowrap>
+						<input type="text" name="disbursementTransaction" id="ajax_field_disbursementTransaction" class="form-control-83" onkeyup="loadCyber();" autocomplete="chrome-off"/>
+						
+					</td>
+				</tr >
+				
+				<tr id="underwritingInfo_freeform_contextdata_13"> 
+					<td></td>
+					<td>
+						<div id="error_peopleToDisburseFunds" class="error paddingLeft40"></div>
+						<div class="freeFormListTd valignTop">
+							<span class="subheading_alpha">
+								b.
+							</span>
+						</div>
+						<div class="freeFormListTd valignTop">
+							<span class="mendatory">*</span>
+						</div>
+						<div class="freeFormListTd valignTop">
+							How many people at your firm have the authority to disburse funds out of your client accounts, or to change payment instructions, payment accounts or addresses?
+						</div>
+					</td>
+					<td>
+						<input type="text" name="peopleToDisburseFunds" id="ajax_field_peopleToDisburseFunds" class="form-control-83" onkeyup="loadCyber();" autocomplete="chrome-off"/>
+					</td>
+				</tr>
+				
+				<tr id="underwritingInfo_freeform_contextdata_12">
+					<td></td>
+					<td>
+					 	<div id="error_instructionsDocumentedReceivingParty" class="error paddingLeft40"></div>
+						<div class="freeFormListTd valignTop">
+							<span class="subheading_alpha">
+								c.
+							</span>
+						</div>
+						<div class="freeFormListTd valignTop">
+							<span class="mendatory">*</span>
+						</div>
+						<div class="freeFormListTd valignTop">
+							Do you authenticate all changes to payment instructions, account numbers and addresses via out bound phone call to the documented receiving party?
+						</div>
+					</td>
+					<td>
+						<span class="radio-inline"><input type="radio" name="instructionsDocumentedReceivingParty" id="ajax_field_instructionsDocumentedReceivingParty" value="Y"/>Yes</span>
+						<span class="radio-inline"><input type="radio" name="instructionsDocumentedReceivingParty" id="ajax_field_instructionsDocumentedReceivingParty" value="N"/>No</span>
+						
+					</td>
+				</tr>
+				
+				<tr id="underwritingInfo_freeform_contextdata_11">
+					<td></td>
+					<td>
+						<div id="error_doucumentedProtocolsAndAuthority" class="error paddingLeft40"></div>
+						<div class="freeFormListTd valignTop">
+							<span class="subheading_alpha">
+								d.
+							</span>
+						</div>
+						<div class="freeFormListTd valignTop">
+							<span class="mendatory">*</span>
+						</div>
+						<div class="freeFormListTd valignTop">
+							Do you have documented protocols and authority level sign-off for all changes to payment instructions, account numbers and addresses of clients, vendors and third parties?
+						</div>
+					</td>
+					<td>
+						<span class="radio-inline"><input type="radio" name="doucumentedProtocolsAndAuthority" id="ajax_field_doucumentedProtocolsAndAuthority" value="Y"/>Yes</span>
+						<span class="radio-inline"><input type="radio" name="doucumentedProtocolsAndAuthority" id="ajax_field_doucumentedProtocolsAndAuthority" value="N"/>No</span>
+						
+					</td>
+				</tr>
+				</tbody>
+				<tbody>
+				<tr id="underwritingInfo_freeform_contextdata_02">
+					<td >
+					<span id="eval:LawyersRule.ishideLiabilityInsurance">4.</span>
+					<span id="eval:LawyersRule.isLiabilityInsuranceNo">2.</span>
+					</td>
+					<!-- <td id="eval:LawyersRule.isShowLiabilityInsuranceNo">4.</td> -->
+					<td ><div id="error_securityAwareness" class="error"></div>
+					<span class="mendatory">*</span>Do you have a fraud security awareness program that all employees are briefed on?</td>
+					<td >
+						<span class="radio-inline"><input type="radio" value="Y" name="securityAwareness" id="ajax_field_securityAwareness"/>Yes</span>
+						<span class="radio-inline"><input type="radio" value="N" name="securityAwareness" id="ajax_field_securityAwareness"/>No</span>
+					</td>
+				</tr>
+				
+				<tr id="showHideShowAttorneysInsuranceInfo">
+					<td>
+					
+					<span id="eval:LawyersRule.ishideLiabilityInsurance">5.</span>
+					<span id="eval:LawyersRule.isLiabilityInsuranceNo">3.</span>
+					</td>
+					
+					<td><span class="mendatory">*</span>	
+						Please provide your professional liability insurance history, for the 3 years prior to your current carrier</td>
+						<td></td>
+					
+				</tr>
+				<tr id="showHideShowAttorneysInsuranceInfo">
+				<td></td>
+					<td colspan="3">
+						<table class="gridTable sectionPadding" cellpadding="0" cellspacing="0" style="width: 100%;" id="attorneysInsuranceInformation_freeform_contextdata_0">
+										<thead>
+												<tr>
+													<th width="20%">Insurance Carrier</th>
+														<th height="10%" width="20%">Policy Period</th>
+														<th width="45%">Limit/Deductible</th>
+														<th width="10%">Number of Attorneys</th>
+														<th width="15%">Premium</th>
+													</tr>
+													
+												
+												</thead>
+										<tbody id="rowMake">
+											
+											<tr>
+													<td>
+													<div id="error_insuranceCarrierFirstAttoryneyInsurance" class="error"/>
+														<input name="insuranceCarrierFirstAttoryneyInsurance" type="text" class="inputbox" id="ajax_field_insuranceCarrierFirstAttoryneyInsurance" autocomplete="chrome-off" />
+														 
+													</td>
+													<td><div id="error_policyPeriodFirstAttoryneyInsurance" class="error"/>
+														<input placeholder="yyyy-yyyy" name="policyPeriodFirstAttoryneyInsurance" type="text" class="inputbox" id="ajax_field_policyPeriodFirstAttoryneyInsurance" onclick="loadAttorneyInsuranceInfo();"  autocomplete="chrome-off"/>
+														
+													</td>
+													<td>
+														<div id="error_limitDeductibleFirstAttoryneyInsurance" class="error"/>
+														<input name="limitDeductibleFirstAttoryneyInsurance" type="text" class="inputbox" size="50px" 
+															id="ajax_field_limitDeductibleFirstAttoryneyInsurance" autocomplete="chrome-off" />
+														
+													</td>
+													<td><div id="error_numberOfAttorneysFirstAttoryneyInsurance" class="error"/>
+														<input name="numberOfAttorneysFirstAttoryneyInsurance" type="text" class="inputbox" maxlength="10"
+															id="ajax_field_numberOfAttorneysFirstAttoryneyInsurance" onclick="loadAttorneyInsuranceInfo();" autocomplete="chrome-off"/>
+														
+													</td>
+													<td>
+														<div id="error_PremiumFirstAttoryneyInsurance" class="error"/>
+														<input name="premiumFirstAttoryneyInsurance" type="text" class="inputbox" maxlength="13"
+															id="ajax_field_premiumFirstAttoryneyInsurance" onclick="loadAttorneyInsuranceInfo();" placeholder="$" autocomplete="chrome-off"/>
+														
+													</td>
+											</tr>
+											
+											<tr>
+													<td>
+														
+														<input name="insuranceCarrierSecondAttorneyInsurance" type="text" class="inputbox" 
+															id="ajax_field_insuranceCarrierSecondAttorneyInsurance"  autocomplete="chrome-off"/>
+														 
+													</td>
+													<td>
+														<div id="error_policyPeriodSecondAttorneyInsurance" class="error"/>
+														<input placeholder="yyyy-yyyy" name="policyPeriodSecondAttorneyInsurance" type="text" class="inputbox"
+															 id="ajax_field_policyPeriodSecondAttorneyInsurance"  onclick="loadAttorneyInsuranceInfo();" autocomplete="chrome-off"/>
+														
+													</td>
+													<td>
+													<div id="error_limitDeductibleSecondAttorneyInsurance" class="error"/>
+														<input   name="limitDeductibleSecondAttorneyInsurance" type="text" class="inputbox" 
+															id="ajax_field_limitDeductibleSecondAttorneyInsurance" autocomplete="chrome-off"/>
+														
+													</td>
+													<td>
+														<div id="error_numberOfAttorneysSecondAttorneyInsurance" class="error"/>
+														<input name="numberOfAttorneysSecondAttorneyInsurance" type="text" class="inputbox" maxlength="10"
+															 id="ajax_field_numberOfAttorneysSecondAttorneyInsurance" onclick="loadAttorneyInsuranceInfo();" autocomplete="chrome-off"/>
+														
+													</td>
+													<td>
+														<div id="error_premiumSecondAttorneyInsurance" class="error"/>
+														<input name="premiumSecondAttorneyInsurance" type="text" class="inputbox" 	 maxlength="13"
+															id="ajax_field_premiumSecondAttorneyInsurance" onclick="loadAttorneyInsuranceInfo();" placeholder="$" autocomplete="chrome-off"/>
+														
+													</td>
+											</tr>
+											<tr>
+													<td>
+														<div id="error_insuranceCarrierThirdAttorneyInsurance" class="error"/>
+														<input name="insuranceCarrierThirdAttorneyInsurance" type="text" class="inputbox" 
+															id="ajax_field_insuranceCarrierThirdAttorneyInsurance"  autocomplete="chrome-off"/>
+														 
+													</td>
+													<td>
+														<div id="error_policyPeriodThirdAttorneyInsurance" class="error"/>
+														<input name="policyPeriodThirdAttorneyInsurance" type="text" class="inputbox"  placeholder="yyyy-yyyy" 
+															id="ajax_field_policyPeriodThirdAttorneyInsurance"  onclick="loadAttorneyInsuranceInfo();" autocomplete="chrome-off"/>
+														
+													</td>
+													<td>
+														<div id="error_limitDeductibleThirdAttorneyInsurance" class="error"/>
+														<input name="limitDeductibleThirdAttorneyInsurance" type="text" class="inputbox"
+															 id="ajax_field_limitDeductibleThirdAttorneyInsurance" autocomplete="chrome-off"/>
+														
+													</td>
+													<td>
+														<div id="error_numberOfAttorneysForThirdAttorneyInsurance" class="error"/>
+														<input name="numberOfAttorneysForThirdAttorneyInsurance" type="text" class="inputbox"  maxlength="10"
+															id="ajax_field_numberOfAttorneysForThirdAttorneyInsurance" onclick="loadAttorneyInsuranceInfo();" autocomplete="chrome-off"/>
+														
+													</td>
+													<td>
+														<div id="error_premiumThirdAttorneyInsurance" class="error"/>
+														<input name="premiumThirdAttorneyInsurance" id="ajax_field_premiumThirdAttorneyInsurance" maxlength="13"
+															 type="text" class="inputbox"  onclick="loadAttorneyInsuranceInfo();"  placeholder="$" autocomplete="chrome-off"/>
+														
+													</td>
+											</tr>
+										</tbody>
+										</table>
+					</td>
+				</tr>
+				<!-- <tr class="no_bg">
+				<td></td>
+				<td>
+				&nbsp;&nbsp;see next page but only if 3 or more attorneys
+				</td>
+				<td></td>
+				</tr> -->
+				</tbody>
+			</table>
+			
+			
+		</div>
+		<div class="buttons borderTop row">
+			<a href="javascript:submitform('morePracticeManagement.html','underwritingInfo.back','','');"
+				class="btn back floatLeft">Back</a>
+			<div class="floatRight">
+				
+				<span id="showPageSave">
+					<a class="btn save" 
+					href="javascript:submitform('electronicInsurance.html|pastClaims.html|workq.html','underwritingInfo.save','forwardeval','LawyersRule.isElectronicInsuranceTab|LawyersRule.isNotElectronicInsuranceTab|LawyersRule.isPolicyStatusUpdated');" >Save&nbsp;&&nbsp;Continue
+					</a>
+				
+				</span>
+				<span  id="showContinue">
+					<a class="btn next"
+					href="javascript:submitform('electronicInsurance.html|pastClaims.html|workq.html','underwritingInfo.continue','forwardeval','LawyersRule.isElectronicInsuranceTab|LawyersRule.isNotElectronicInsuranceTab|LawyersRule.isPolicyStatusUpdated');">
+					
+					Continue</a>
+				</span>
+			</div>
+		</div>
+	</div>
+    <!---------Footer Start---------->
+    <div id="footer" class="footer">
+       <span id="#Include:footer.html#"></span>
+    </div>
+    <!---------Footer End----------> 
+  </div>
+  <table id="underwritingInfo_freeform_contextdata_999">
+				<tr>
+					<td><input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />
+						
+						<input type="hidden" name="firmNewAppPage" id="firmNewAppPage"/>
+						<input type="hidden" name="insuranceHistoryPage" id="insuranceHistoryPage" />						
+						
+						<input type="hidden" name="bankruptcySuppPage" id="bankruptcySuppPage" />
+						<input type="hidden" name="collectionSuppPage" id="collectionSuppPage" />
+						<input type="hidden" name="copyrightSuppPage" id="copyrightSuppPage" />
+						<input type="hidden" name="familyLawSuppPage" id="familyLawSuppPage" />
+						<input type="hidden" name="financialSuppPage" id="financialSuppPage" />
+						<input type="hidden" name="governmentSuppPage" id="governmentSuppPage" />
+						<input type="hidden" name="litigationSuppPage" id="litigationSuppPage" />
+						<input type="hidden" name="realEstateSuppPage" id="realEstateSuppPage" />
+						<input type="hidden" name="willStateSuppTrustPage" id="willStateSuppTrustPage"/>
+						<input type="hidden" name="taxSuppPage" id="taxSuppPage" />
+												
+						<input type="hidden" name="aboutFirmPage" id="aboutFirmPage" />
+						<input type="hidden" name="aboutFirmRenewalPage" id="aboutFirmRenewalPage" />
+						<input type="hidden" name="PolicyStatusKey" id="PolicyStatusKey" />
+						<input type="hidden" name="practiceManagementPage" id="practiceManagementPage" />
+						<input type="hidden" name="morePracticeManagementPage" id="morePracticeManagementPage"/>
+						<input type="hidden" name="underWritingInfoPage" id="underWritingInfoPage" />
+						<input type="hidden" name="pastClaimsPage" id="pastClaimsPage" />
+						<input type="hidden" name="isElectronicInsurancePage" id="isElectronicInsurancePage" />
+						<input type="hidden" name="page" id="page" />
+						<script type="text/javascript" src="script/manageTab.js"></script>
+						
+					</td>
+				</tr>
+		</table>
+</div>
+<div id="StatusValidation_freeform_contextdata_9990">
+			<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+		</div>
+</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

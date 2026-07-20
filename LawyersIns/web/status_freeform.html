@@ -1,0 +1,261 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Search</title>
+<script src="js/jquery.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+	<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+		<form>
+			<div id="status_freeform_freeform_01">
+				<table width="70%" border="0" align="center" cellpadding="2"
+					cellspacing="0" id="status_freeform_freeform_01">
+					<tr>
+						<td class="bgrowyellow">
+
+							<table width="500" border="0" align="center" cellpadding="2"
+								cellspacing="0">
+								<tr>
+												<td width="200" align="right">
+													&nbsp;
+												</td>
+												<td align="left">
+													<div class="defult_tr_errors"
+														id="ajax_error_StatusKey"></div>
+												</td>
+											</tr>
+								<tr>
+									<td width="200" align="right" nowrap="nowrap">
+										Status :
+									</td>
+									<td align="left">
+										<select name="StatusKey" id="ajax_field_StatusKey" class="inputbox"
+											onChange="showDivAreaStatusFreeform(this.value,StatusKey_Prev.value,Quote_Type.value);">
+											<option value="">
+												Select
+											</option>
+										</select>
+										<input type="hidden" name="StatusKey_Prev"
+											id="ajax_field_StatusKey_Prev" />
+										<input type="hidden" name="Quote_Type"
+											id="ajax_field_Quote_Type" />
+									</td>
+								</tr>
+								<tr>
+												<td width="200" align="right">
+													&nbsp;
+												</td>
+												<td align="left">
+													<div class="defult_tr_errors"
+														id="ajax_error_AcceptanceDate"></div>
+												</td>
+											</tr>
+								<tr>
+									<td colspan="2" nowrap="nowrap">
+										<!--  
+										<table width="100%" border="0" cellspacing="0" cellpadding="2"
+											id="tbl_AcceptedToIssued" style="display: none">
+											<tr>
+												<td width="200" align="right">
+													&nbsp;
+												</td>
+												<td align="left">
+													<div class="defult_tr_errors" id="ajax_error_PolicyNumber"></div>
+												</td>
+											</tr>
+											<tr>
+												<td width="200" align="right">
+													Policy Number :
+												</td>
+												<td align="left">
+													<input type="text" name="PolicyNumber" class="inputbox"
+														id="ajax_field_PolicyNumber" size="20" maxlength="20" />
+												</td>
+											</tr>
+										</table>
+										-->
+										<table width="100%" border="0" cellspacing="0" cellpadding="2"
+											id="tbl_QuotedToIssuedAccepted" style="display: none">
+											<!--  
+											<tr>
+												<td width="200" align="right">
+													&nbsp;
+												</td>
+												<td align="left">
+													<div class="defult_tr_errors"
+														id="ajax_error_AcceptanceDate"></div>
+												</td>
+											</tr>
+											-->
+											<tr>
+												<td width="200" align="right">
+													Acceptance Date :
+												</td>
+												<td align="left">
+													<input type="text" name="AcceptanceDate" class="inputbox"
+														id="ajax_field_AcceptanceDate" size="10" maxlength="8"
+														onkeyup="applyDateFormat(this,event);" />
+													<a title="Select Date" class="calendar-link" id="date_link"
+														onClick="show_calendar_widget(this);"><img
+															src="img/icon_calendar.gif" alt="calendar" width="12"
+															height="12" hspace="4" border="0" />(MM/DD/YYYY) 
+												</td>
+											</tr>
+										</table>
+										<!-- 
+										<table width="100%" border="0" cellspacing="0" cellpadding="2"
+											id="tbl_QuotedToAccepted" style="display:none">
+											<tr>
+												<td width="200" align="right">
+													&nbsp;
+												</td>
+												<td align="left">
+													<div class="defult_tr_errors" id="ajax_error_AcceptanceDate"></div>
+												</td>
+											</tr>
+											<tr>												
+												<td width="98" align="right">
+													Acceptance Date :
+												</td>
+												<td>
+													<input type="text" name="AcceptanceDate" id="ajax_field_AcceptanceDate"  size="10" maxlength="10"/>
+													<a title="Select Date" class="calendar-link" id="date_link" onClick="show_calendar_widget(this);" ><img  src="img/icon_calendar.gif" alt="calendar" width="12" height="12" hspace="4" border="0"/>(MM/DD/YYYY)
+												</td>
+											</tr>
+										</table>
+										 -->
+										<table width="100%" border="0" cellspacing="0" cellpadding="2"
+											id="tbl_Quote" style="display: none">
+											<tr>
+												<td width="200" align="right">
+													&nbsp;
+												</td>
+												<td align="left">
+													<div class="defult_tr_errors"
+														id="ajax_error_Premium"></div>
+												</td>
+											</tr>
+											<tr>
+												<td width="200" align="right">
+													Premium :
+												</td>
+												<td align="left">
+													<input name="Premium" type="text"
+														class="inputbox" onkeyup="applyAmountFormat(this);"
+														id="ajax_field_Premium" size="17" maxlength="12" /> 
+												</td>
+											</tr>
+											<tr>
+												<td width="200" align="right">
+													&nbsp;
+												</td>
+												<td align="left">
+													<div class="defult_tr_errors"
+														id="ajax_error_QuoteEffectiveDate"></div>
+												</td>
+											</tr>
+											<tr>
+												<td width="200" align="right">
+													Quote Sent Date :
+												</td>
+												<td align="left">
+													<input type="text" name="QuoteEffectiveDate" class="inputbox"
+														id="ajax_field_QuoteEffectiveDate" size="10"
+														maxlength="8" onkeyup="applyDateFormat(this,event);" />
+													<a title="Select Date" class="calendar-link" id="date_link"
+														onClick="show_calendar_widget(this);"><img
+															src="img/icon_calendar.gif" alt="calendar" width="12"
+															height="12" hspace="4" border="0" />(MM/DD/YYYY) 
+												</td>
+											</tr>
+										</table>
+										<table width="100%" border="0" cellspacing="0" cellpadding="2"
+											id="tbl_Reason" style="display: none">
+											<tr>
+												<td width="200" align="right">
+													&nbsp;
+												</td>
+												<td align="left">
+													<div class="defult_tr_errors" id="ajax_error_Comment"></div>
+												</td>
+											</tr>
+											<tr>
+												<td width="200" align="right">
+													Specify Reason :
+												</td>
+												<td align="left">
+													<!-- <textarea name="Comment" class="inputbox" maxlength="500" id="ajax_field_Comment" onKeyUp="limitText(this,1,1000);"></textarea> -->
+													<select name="Comment" class="inputbox" id="ajax_field_Comment" >
+														<option value="">
+															Select
+														</option>
+													</select>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										&nbsp;
+									</td>
+									<td align="left" style="padding-top:10px">
+										<table border="0" cellspacing="0" cellpadding="1">
+											<tr>
+												<td>
+													<div id="divshow" class="button4" style="width: 150px">
+														<a
+															href="javascript:ajaxsubmitform('list.html','status_freeform.update','','','ajax_sorting');"
+															onClick="showDivArea(['editN'], ['editY']);">Save</a>
+													</div>
+
+												</td>
+												<td width="70">
+													<div id="divshow" class="button4" style="width: 150px">
+														<a
+															href="javascript:ajaxsubmitform('list.html','status_freeform.close','','','ajax_sorting');">Cancel</a>
+													</div>
+
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										&nbsp;
+									</td>
+									<td align="left">
+										&nbsp;
+									</td>
+									<td align="left">
+										<table id="status_freeform_contextdata_999">
+										<tr><td>
+										<input type="hidden" id="ajax_field_approveSubjective" name="approveSubjective"/>
+										<input type="hidden" id="IsApplicationCompleted" name="IsApplicationCompleted"/>
+										<input type="hidden" id="ajax_field_isPricingApproved" name="isPricingApproved"/>
+										<input type="hidden" id="ajax_field_headerStatusDescUpdated" name="headerStatusDescUpdated"/>
+										</td>
+											
+										</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</form>
+
+	</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+
+</html>

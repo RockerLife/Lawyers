@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Assign</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js"/>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<link href="css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<script src="js/producerOne.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+
+<body onload="loadTemplate();">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<form enctype="multipart/form-data">
+		<!-- Bootstrap Core JavaScript -->
+
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth">
+				<!---------Header Start---------->
+				<div id="header">
+					<span id="#Include:header.html#"></span>
+				</div>
+				<!---------Header End---------->
+
+				<div id="contentSection">
+					<div>
+						<h2 class="questionHeading">Assign Templates screen</h2>
+					</div>
+					<div class="form row">
+						<div class="block-form">
+
+							<div class="paddingTop10">
+								<!-- <fieldset class="fieldsetTop" >
+									<legend>Update Email</legend>
+									<table class="" width="100%" cellpadding="0" cellspacing="0">
+										<tr id="emailNotifications_freeform_contextdata_01">
+											<td valign="bottom" nowrap="nowrap" width="11%">Select Email to upload :</td>
+											<td valign="bottom">&nbsp;<input type="file" name="file_path" style="width: 99.8%" class="form-control" id="ajax_field_file_path" /></td>
+										</tr>
+										<tr>
+											<td></td>
+											<td align="right" style="padding-top: 10px">
+												<a class="btn button1" href="javascript:submitform('emailNotifications.html','emailNotifications.uploadEmailReport','','');">Upload </a>
+											</td>
+										</tr>
+									</table>
+								</fieldset> -->
+								
+								
+							<div id="eval:LawyersRule.showAssignAddData"> 
+									<div id="readOnlySecurityAsignPage">
+									<div id="emailNotifications_freeform_contextdata_01" class="freeFormDiv form-inline">
+											<ul class="inlineBlock">
+												<li class="inlineBlock_2_fix">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<h6>&nbsp;</h6>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Template :</div>
+															<div class="freeFormListTd tdInput">
+																<select name="TemplateName" id="TemplateName" class="form-control">
+																	<option value="">Select</option>
+																</select>
+																<div id="error_" class="error" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<h6>&nbsp;</h6>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Event name :</div>
+															<div class="freeFormListTd tdInput">
+															<input type="text" name="event_name" style="width: 300px;" id="event_name" class="form-control" />
+																<!-- <select type="text" name="event_name" id="event_name" class="form-control" >
+																<option value="">Select</option>
+																</select> -->
+																<div id="error_" class="error" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<h6>&nbsp;</h6>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Effective Date :</div>
+															<div class="freeFormListTd tdInput iconsStyle2">
+																<span class="input-group-addon">
+																	<i class="fa fa-calendar">&nbsp;</i>
+																</span>
+																<input type="text" class="form-control datepicker" name="EffectiveDate" id="EffectiveDate" size="15" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<h6>&nbsp;</h6>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Days :</div>
+															<div class="freeFormListTd tdInput">
+																<select name="Period" id="Period" class="form-control">
+																	<option value="30">0-30</option>
+																	<option value="31">31-90</option>
+																</select>
+																<div id="error_" class="error" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_1_fix">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<h6>&nbsp;</h6>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Email Subject :</div>
+															<div class="freeFormListTd tdInput">
+																<input type="text" name="subject" style="width: 592px;" id="subject" class="form-control" />
+																<div id="error_" class="error" />
+															</div>
+														</div>
+													</div>
+												</li>
+												
+												<li class="inlineBlock_1_fix">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<h6>&nbsp;</h6>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign valignTop freeFormLabelWidth">Email Description :</div>
+															<div class="freeFormListTd tdInput">
+																<textarea name="description" style="width: 600px; height: 80px" class="form-control" id="description" ></textarea>
+																<div id="error_" class="error" />
+															</div>
+														</div>
+													</div>
+												</li>
+												
+												
+												<li class="inlineBlock_1_fix">
+												<div class="freeFormList form-group">
+													
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															State :
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput multiSelectSingle">
+														<select name="StateCode_search"	class="selectpicker"
+															multiple id="StateCode_search">
+																<option value="">All</option>
+														</select>
+													</div>
+												</div>
+												</div>
+												</li>
+											<li class="inlineBlock_1_fix">
+												<div class="freeFormList form-group">
+													
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															Dynamic Content:
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput multiSelectSingle">
+														<select name="DynamicContent_Name"	class="selectpicker"
+															multiple id="DynamicContent_Name">
+																<option value="">Select</option>
+														</select>
+													</div>
+												</div>
+												</div>
+											 </li>
+												
+											</ul>
+											</div>
+										</div>
+									</div>
+									
+								<!-- 	<div class="buttons borderTop row">
+									<a class="btn next floatRight" href="javascript:submitform('assignTemplates.html','assignTemplates.addTemp','','','');"> Assign Template </a>
+									</div>
+									 -->
+									
+									
+									<div class="buttons row" id="eval:LawyersRule.HideAssignTemplateList">
+								<!-- <a class="btn next floatRight" href="javascript:submitform('emailTemplates.html|EventLookup.html|DynamicContentLookup.html','emailTemplates.backtoAssign','forwardeval','LawyersRule.comingfromTemplatepage|LawyersRule.comingfromEventPage|LawyersRule.comingfromDynamicpage');">Add</a>
+								 -->
+								 <span id="eval:LawyersRule.comingfromTemplatepage">
+								<a class="btn next floatRight" href="javascript:submitform('emailTemplates.html','assignTemplates.back','','');">Add</a>
+								</span>
+								<span id="eval:LawyersRule.comingfromEventPage">
+								<a class="btn next floatRight" href="javascript:submitform('EventLookup.html','assignTemplates.backtoEvent','','');">Add Event</a>
+								</span>
+								<span id="eval:LawyersRule.comingfromDynamicpage">
+								<a class="btn next floatRight" href="javascript:submitform('DynamicContentLookup.html','assignTemplates.backtoDynamicPage','','');">Add Dynamic Content</a>
+								</span>
+								<div class="floatRight">
+								<span >
+								<a class="btn next floatRight" href="javascript:submitform('assignTemplates.html','assignTemplates.addAssignTemp','','');">Assign</a>
+								</span>
+							</div> 
+						</div>
+						
+								
+								
+								<fieldset class="fieldsetTop" style="max-height: 500px; overflow: auto;" id="eval:LawyersRule.HideAssignTemplateList">
+									<legend>Email Notifications Details</legend>
+									<table id="EmailNotifications_list_1" class="gridTable" cellpadding="0" cellspacing="0" style="width: 100%;">
+										<thead>
+									
+											<tr id="EmailNotifications_list_header_1" class="tableheading">
+												<th width="10%" id="block_field_TemplateName">Template</th>
+												<th width="18%" id="block_field_event_name">Event</th>
+												<th id="block_field_description">Discription</th>
+												<!-- <th width="120px" id="block_field_description">Email Description</th> -->
+												<th width="20%" id="block_field_subject">Email Subject</th>
+												<!-- <th width="120px" id="block_field_last_updated_by">Last Updated By</th> -->
+												<th width="8%" id="block_field_EffectiveDate">Effective Date</th>
+												<!-- <th width="120px" id="block_field_IsCyber">IsCyber</th> -->
+												<th width="8%" id="block_field_Period">Days</th>
+												<th width="1%" id="block_field_editlink_row_link"></th>
+												<th width="16px" id="block_field_viewlink_row_link"></th>
+												 <!-- <th width="1%" id="block_field_deletelink_row_link"></th> -->
+												<th id="block_field_email_notification_id" style="display: none;"></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr id="EmailNotifications_list_mom_data_1">
+											
+											<td id="block_field_TemplateName"></td>
+											<td id="block_field_event_name"></td>
+												<!-- <td id="block_field_description"></td> -->
+												<td id="block_field_description"></td>
+												<td id="block_field_subject"></td>
+												<!-- <td id="block_field_last_updated_by"></td> -->
+												<td id="block_field_EffectiveDate"></td>
+												<!-- <td id="block_field_IsCyber"></td> -->
+												<td id="block_field_Period"></td>
+												
+												<td align="left" id="1eval:LawyersRule.isShowEditClaimIcon">
+													<div id="block_field_editlink_row_link">
+														<a href="javascript:submitform('assignTemplates.html','assignTemplates.emailNotificationsListEdit','','');" class="Link_blue">
+															<img src="img/edit.png" alt="Edit" border="0" />
+														</a>
+													</div>
+												</td>
+												<td align="left" nowrap="nowrap">
+													<div id="block_field_viewlink_row_link">
+														<a href="javascript:submitform('assignTemplates.html','assignTemplates.emailNotificationsListView','','');" class="Link_blue">
+														 
+															<img src="img/icon_select.png" alt="View" border="0" />
+														</a>
+													</div>
+												</td>
+												<!-- <td align="left" ><span><span
+																		id="block_field_deletelink_row_link"><a
+																			href="javascript:submitform('assignTemplates.html','assignTemplates.emailNotificationsListdelete','','');"
+																			class="Link_blue"><img src="img/cross.gif"
+																				title="Delete template" border="0" /> </a> </span> </span></td>
+												
+												 -->
+												<td id="block_field_email_notification_id" style="display: none;">
+													<input name="email_notification_id" id="email_notification_id" type="hidden" />
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</fieldset>
+							</div>
+							
+						</div>
+						<div class="buttons borderTop row" id="eval:LawyersRule.showAssignAddData">
+							<a class="btn back floatLeft" href="javascript:submitform('assignTemplates.html','assignTemplates.cancel','','','');">Back</a>
+							<div class="floatRight">
+								<span id="eval:events.saveEventNotReadOnly" onclick="setInputValuesForTemplates();" >
+									<a class="btn next" href="javascript:submitform('assignTemplates.html','assignTemplates.save','','','');" >Save</a>
+								</span>
+								<span id="eval:events.editEvent" onclick="setInputValuesForTemplates();">
+									<a class="btn next" href="javascript:submitform('assignTemplates.html','assignTemplates.Modify','','','');" >Update</a>
+								</span>
+							</div>
+						</div>
+					</div>
+					<!---------Footer Start---------->
+					<div id="footer" class="footer">
+						<span id="#Include:footer.html#"></span>
+					</div>
+					<!---------Footer End---------->
+					<table id="emailNotifications_freeform_contextdata_999">
+						<tr>
+							<td>
+								<input type="hidden" name="jsessionid" id="jsessionid" />
+								<input type="hidden" name="divHideShow" id="divHideShow" />
+								<input type="hidden" name="stateCodes" id="stateCodes"/>
+								<input type="hidden" name="DynamicContentNames" id="DynamicContentNames"/>
+								
+								
+								
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</form>
+	<script>
+	loadTemplate();
+</script>
+</body>
+
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+
+<script src="js/bootstrap_3-3-6.js"></script>
+<script src="js/bootstrap-select.js"></script>
+</html>

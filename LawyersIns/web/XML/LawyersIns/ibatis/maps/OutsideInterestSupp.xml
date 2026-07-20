@@ -1,0 +1,93 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="OutsideInterestSupp">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from OutsideInterestSupp</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from OutsideInterestSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into OutsideInterestSupp(
+          <dynamic prepend=" ">
+               <isNotEmpty property="ClientNameOsi" prepend=",">ClientNameOsi</isNotEmpty>
+               <isNotEmpty property="ClientIndustryOsiKey" prepend=",">ClientIndustryOsiKey</isNotEmpty>
+               <isNotEmpty property="ServiceIndustryOsiKey" prepend=",">ServiceIndustryOsiKey</isNotEmpty>
+               <isNotEmpty property="ServiceRenderedOsiDate" prepend=",">ServiceRenderedOsiDate</isNotEmpty>
+               <isNotEmpty property="PercentEquityInterestofOsi" prepend=",">PercentEquityInterestofOsi</isNotEmpty>
+               <isNotEmpty property="CapacityServedByPersonnelOsi" prepend=",">CapacityServedByPersonnelOsi</isNotEmpty>
+               <isNotEmpty property="AnnualFeesChargedOsi" prepend=",">AnnualFeesChargedOsi</isNotEmpty>
+               <isNotEmpty property="EntityNameOsi" prepend=",">EntityNameOsi</isNotEmpty>
+               <isNotEmpty property="PositionHeldOsi" prepend=",">PositionHeldOsi</isNotEmpty>
+               <isNotEmpty property="PercentEquityInterestOsi" prepend=",">PercentEquityInterestOsi</isNotEmpty>
+               <isNotEmpty property="DOInsuranceOsi" prepend=",">DOInsuranceOsi</isNotEmpty>
+               <isNotEmpty property="IndividualListedServicesOsi" prepend=",">IndividualListedServicesOsi</isNotEmpty>
+               <isNotEmpty property="ClientIndustryOsiKeyOthers" prepend=",">ClientIndustryOsiKeyOthers</isNotEmpty>
+               <isNotEmpty property="ServiceIndustryOsiKeyOthers" prepend=",">ServiceIndustryOsiKeyOthers</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="ClientNameOsi" prepend=",">#ClientNameOsi#</isNotEmpty>
+               <isNotEmpty property="ClientIndustryOsiKey" prepend=",">#ClientIndustryOsiKey#</isNotEmpty>
+               <isNotEmpty property="ServiceIndustryOsiKey" prepend=",">#ServiceIndustryOsiKey#</isNotEmpty>
+               <isNotEmpty property="ServiceRenderedOsiDate" prepend=",">#ServiceRenderedOsiDate#</isNotEmpty>
+               <isNotEmpty property="PercentEquityInterestofOsi" prepend=",">#PercentEquityInterestofOsi#</isNotEmpty>
+               <isNotEmpty property="CapacityServedByPersonnelOsi" prepend=",">#CapacityServedByPersonnelOsi#</isNotEmpty>
+               <isNotEmpty property="AnnualFeesChargedOsi" prepend=",">#AnnualFeesChargedOsi#</isNotEmpty>
+               <isNotEmpty property="EntityNameOsi" prepend=",">#EntityNameOsi#</isNotEmpty>
+               <isNotEmpty property="PositionHeldOsi" prepend=",">#PositionHeldOsi#</isNotEmpty>
+               <isNotEmpty property="PercentEquityInterestOsi" prepend=",">#PercentEquityInterestOsi#</isNotEmpty>
+               <isNotEmpty property="DOInsuranceOsi" prepend=",">#DOInsuranceOsi#</isNotEmpty>
+               <isNotEmpty property="IndividualListedServicesOsi" prepend=",">#IndividualListedServicesOsi#</isNotEmpty>
+               <isNotEmpty property="ClientIndustryOsiKeyOthers" prepend=",">#ClientIndustryOsiKeyOthers#</isNotEmpty>
+               <isNotEmpty property="ServiceIndustryOsiKeyOthers" prepend=",">#ServiceIndustryOsiKeyOthers#</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">#VersionSequence#</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="OutsideInterestSuppKey">SELECT IDENT_CURRENT('OutsideInterestSupp') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ClientNameOsi, ClientIndustryOsiKey, ServiceIndustryOsiKey, ServiceRenderedOsiDate, PercentEquityInterestofOsi, CapacityServedByPersonnelOsi, AnnualFeesChargedOsi, EntityNameOsi, PositionHeldOsi, PercentEquityInterestOsi, DOInsuranceOsi, IndividualListedServicesOsi, OutsideInterestSuppKey, ClientIndustryOsiKeyOthers, ServiceIndustryOsiKeyOthers, VersionSequence, PolicyKey from OutsideInterestSupp where OutsideInterestSuppKey = #OutsideInterestSuppKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update OutsideInterestSupp set
+          <dynamic prepend=" ">
+               <isNotEmpty property="ClientNameOsi" prepend=",">ClientNameOsi = #ClientNameOsi#</isNotEmpty>
+               <isEmpty property="ClientNameOsi" prepend=",">ClientNameOsi = null</isEmpty>
+               <isNotEmpty property="ClientIndustryOsiKey" prepend=",">ClientIndustryOsiKey = #ClientIndustryOsiKey#</isNotEmpty>
+               <isEmpty property="ClientIndustryOsiKey" prepend=",">ClientIndustryOsiKey = null</isEmpty>
+               <isNotEmpty property="ServiceIndustryOsiKey" prepend=",">ServiceIndustryOsiKey = #ServiceIndustryOsiKey#</isNotEmpty>
+               <isEmpty property="ServiceIndustryOsiKey" prepend=",">ServiceIndustryOsiKey = null</isEmpty>
+               <isNotEmpty property="ServiceRenderedOsiDate" prepend=",">ServiceRenderedOsiDate = #ServiceRenderedOsiDate#</isNotEmpty>
+               <isEmpty property="ServiceRenderedOsiDate" prepend=",">ServiceRenderedOsiDate = null</isEmpty>
+               <isNotEmpty property="PercentEquityInterestofOsi" prepend=",">PercentEquityInterestofOsi = #PercentEquityInterestofOsi#</isNotEmpty>
+               <isEmpty property="PercentEquityInterestofOsi" prepend=",">PercentEquityInterestofOsi = null</isEmpty>
+               <isNotEmpty property="CapacityServedByPersonnelOsi" prepend=",">CapacityServedByPersonnelOsi = #CapacityServedByPersonnelOsi#</isNotEmpty>
+               <isEmpty property="CapacityServedByPersonnelOsi" prepend=",">CapacityServedByPersonnelOsi = null</isEmpty>
+               <isNotEmpty property="AnnualFeesChargedOsi" prepend=",">AnnualFeesChargedOsi = #AnnualFeesChargedOsi#</isNotEmpty>
+               <isEmpty property="AnnualFeesChargedOsi" prepend=",">AnnualFeesChargedOsi = null</isEmpty>
+               <isNotEmpty property="EntityNameOsi" prepend=",">EntityNameOsi = #EntityNameOsi#</isNotEmpty>
+               <isEmpty property="EntityNameOsi" prepend=",">EntityNameOsi = null</isEmpty>
+               <isNotEmpty property="PositionHeldOsi" prepend=",">PositionHeldOsi = #PositionHeldOsi#</isNotEmpty>
+               <isEmpty property="PositionHeldOsi" prepend=",">PositionHeldOsi = null</isEmpty>
+               <isNotEmpty property="PercentEquityInterestOsi" prepend=",">PercentEquityInterestOsi = #PercentEquityInterestOsi#</isNotEmpty>
+               <isEmpty property="PercentEquityInterestOsi" prepend=",">PercentEquityInterestOsi = null</isEmpty>
+               <isNotEmpty property="DOInsuranceOsi" prepend=",">DOInsuranceOsi = #DOInsuranceOsi#</isNotEmpty>
+               <isEmpty property="DOInsuranceOsi" prepend=",">DOInsuranceOsi = null</isEmpty>
+               <isNotEmpty property="IndividualListedServicesOsi" prepend=",">IndividualListedServicesOsi = #IndividualListedServicesOsi#</isNotEmpty>
+               <isEmpty property="IndividualListedServicesOsi" prepend=",">IndividualListedServicesOsi = null</isEmpty>
+               <isNotEmpty property="ClientIndustryOsiKeyOthers" prepend=",">ClientIndustryOsiKeyOthers = #ClientIndustryOsiKeyOthers#</isNotEmpty>
+               <isEmpty property="ClientIndustryOsiKeyOthers" prepend=",">ClientIndustryOsiKeyOthers = null</isEmpty>
+               <isNotEmpty property="ServiceIndustryOsiKeyOthers" prepend=",">ServiceIndustryOsiKeyOthers = #ServiceIndustryOsiKeyOthers#</isNotEmpty>
+               <isEmpty property="ServiceIndustryOsiKeyOthers" prepend=",">ServiceIndustryOsiKeyOthers = null</isEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence = #VersionSequence#</isNotEmpty>
+               <isEmpty property="VersionSequence" prepend=",">VersionSequence = null</isEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+          </dynamic>
+          where OutsideInterestSuppKey = #OutsideInterestSuppKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from OutsideInterestSupp where OutsideInterestSuppKey = #OutsideInterestSuppKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from OutsideInterestSupp</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from OutsideInterestSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ClientNameOsi, ClientIndustryOsiKey, ServiceIndustryOsiKey, ServiceRenderedOsiDate, PercentEquityInterestofOsi, CapacityServedByPersonnelOsi, AnnualFeesChargedOsi, EntityNameOsi, PositionHeldOsi, PercentEquityInterestOsi, DOInsuranceOsi, IndividualListedServicesOsi, OutsideInterestSuppKey, ClientIndustryOsiKeyOthers, ServiceIndustryOsiKeyOthers, VersionSequence, PolicyKey from OutsideInterestSupp where OutsideInterestSuppKey = #OutsideInterestSuppKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select OutsideInterestSuppKey, ClientNameOsi, ClientIndustryOsiKey, ServiceIndustryOsiKey, ServiceRenderedOsiDate, PercentEquityInterestofOsi, CapacityServedByPersonnelOsi, AnnualFeesChargedOsi, EntityNameOsi, PositionHeldOsi, PercentEquityInterestOsi, DOInsuranceOsi, IndividualListedServicesOsi, ClientIndustryOsiKeyOthers, ServiceIndustryOsiKeyOthers from OutsideInterestSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

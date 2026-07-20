@@ -1,0 +1,1001 @@
+<structure seq="1" project="METAAPP">
+   
+   <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="tempview" dropdown="N" viewlength="0" name="tempview" />
+     <field tiptext="Content No" type="I" decimallength="0" seq="0" fieldlength="4" displayname="Content No" developercomments="Content No" dropdown="N" align="L" viewlength="0" name="contentno" helptext="Content No" />
+     <field tiptext="Version No" type="I" decimallength="0" seq="0" fieldlength="4" displayname="Version No" developercomments="Version No" dropdown="N" align="L" viewlength="0" name="verno" helptext="Version No" />
+     <field type="V" decimallength="0" seq="0" fieldlength="128" displayname="templatetype" dropdown="Y" viewlength="0" name="templatetype">
+          <rangevalue high="html" seq="0" meaning="html" low="html" />
+          <rangevalue high="jsp" seq="1" meaning="jsp" low="jsp" />
+          <rangevalue high="xslt" seq="2" meaning="xslt" low="xslt" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="template" dropdown="N" viewlength="0" name="template" />
+     <field type="V" decimallength="0" seq="0" fieldlength="1" displayname="headerdisplay" dropdown="Y" viewlength="0" name="headerdisplay">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field tiptext="Meta Views No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Meta Views No." developercomments="Meta Views No." dropdown="N" viewlength="0" name="metaviewno" helptext="Meta Views No." />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="commonvalidationrule" dropdown="N" viewlength="0" name="commonvalidationruleno" />
+     <field type="V" decimallength="0" seq="0" fieldlength="12" displayname="Field link scope" dropdown="N" viewlength="0" name="linkscope">
+          <rangevalue high="label" seq="0" meaning="label" low="label" />
+          <rangevalue high="value" seq="1" meaning="value" low="value" />
+          <rangevalue high="field" seq="2" meaning="field" low="field" />
+     </field>
+     <field tiptext="Ref Dropdown No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Ref Dropdown No." developercomments="Ref Dropdown No." dropdown="N" viewlength="0" name="refdropdownno" helptext="Ref Dropdown No." />
+     <field type="V" decimallength="0" seq="0" fieldlength="128" displayname="Expression" dropdown="N" viewlength="0" name="expression" />
+     <field tiptext="This is used for versioning to override a property in a version and to mark it as virtual deleted" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Delete Ind" developercomments="This is used for versioning to override a property in a version and to mark it as virtual deleted" dropdown="Y" viewlength="0" name="deleteind" helptext="This is used for versioning to override a property in a version and to mark it as virtual deleted">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field tiptext="Additional Prop No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Additional Prop No." developercomments="Additional Prop No." dropdown="N" viewlength="0" name="additionalpropno" helptext="Additional Prop No." />
+     <field tiptext="glossaryno" type="I" decimallength="0" seq="0" fieldlength="4" displayname="glossaryno" developercomments="glossaryno" dropdown="N" align="L" viewlength="0" name="glossaryno" helptext="glossaryno" />
+     <field tiptext="Default  Bullet Img" type="V" decimallength="0" seq="0" fieldlength="30" displayname="Default  Bullet Img" developercomments="Default  Bullet Img" dropdown="N" align="L" viewlength="0" name="defaultbulletimg" helptext="Default  Bullet Img" />
+     <field tiptext="User Define Unit Test Case" type="V" decimallength="0" seq="0" fieldlength="1024" displayname="User Define Unit Test Case" developercomments="User Define Unit Test Case" dropdown="N" align="L" viewlength="0" name="userdefineunittestcase" helptext="User Define Unit Test Case" />
+     <field tiptext="Display Field No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Display Field No." developercomments="Display Field No." dropdown="N" viewlength="0" name="displayfieldno" helptext="Display Field No." />
+     <field tiptext="Populate after the scope" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Populate after the scope" developercomments="Populate after the scope" dropdown="Y" viewlength="0" name="post" helptext="Populate after the scope">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field tiptext="Default Value" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Default Value" developercomments="Default Value" dropdown="N" viewlength="0" name="defaultvalue" helptext="Default Value" />
+     <field tiptext="Dependent Object No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Dependent Object No." developercomments="Dependent Object No." dropdown="N" viewlength="0" name="depobjectno" helptext="Dependent Object No." />
+     <field tiptext="Drop Down No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Drop Down No." developercomments="Drop Down No." dropdown="N" viewlength="0" name="dropdownno" helptext="Drop Down No." />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="argumentno" dropdown="N" viewlength="0" name="argumentno" />
+     <field tiptext="Specify a unique paramid" type="V" decimallength="0" seq="0" fieldlength="16" displayname="Specify a unique paramid" developercomments="Specify a unique paramid" dropdown="N" viewlength="0" name="paramid" helptext="Specify a unique paramid" />
+     <field type="V" decimallength="0" seq="0" fieldlength="10" displayname="Operator" dropdown="N" viewlength="0" name="operator" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="sorted" dropdown="Y" viewlength="0" name="sorted">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="Execution Sequence" dropdown="N" viewlength="0" name="executionsequence" />
+     <field type="V" decimallength="0" seq="0" fieldlength="16" displayname="Version" dropdown="N" viewlength="0" name="version" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Compute result" dropdown="N" viewlength="0" name="result" />
+     <field type="V" decimallength="0" seq="0" fieldlength="48" displayname="Page" dropdown="N" viewlength="0" name="page" />
+     <field tiptext="Document Type" type="V" decimallength="0" seq="0" fieldlength="30" displayname="Document Type" developercomments="Document Type" dropdown="Y" align="L" viewlength="0" name="docid" helptext="Document Type">
+          <rangevalue high="TDD" seq="1" meaning="TechnicalDesignDoc" low="TDD" />
+          <rangevalue high="URD" seq="2" meaning="UserRequirementDoc" low="URD" />
+          <rangevalue high="DCD" seq="3" meaning="DevelopersCommentDoc" low="DCD" />
+          <rangevalue high="FDS" seq="4" meaning="FunctionalDesginSpecfication" low="FDS" />
+          <rangevalue high="UMF" seq="5" meaning="UserManualFlow" low="UMF" />
+          <rangevalue high="PFD" seq="6" meaning="PageFlowDocument" low="PFD" />
+          <rangevalue high="UTCD" seq="7" meaning="UnitTestCaseDoc" low="UTCD" />
+          <rangevalue high="DDS" seq="8" meaning="DetailDesignSpefication" low="DDS" />
+          <rangevalue high="RTM" seq="9" meaning="RequirementTracableMatrix" low="RTM" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="36" displayname="Javascript Event" dropdown="Y" viewlength="0" name="jsevent">
+          <rangevalue high="onchange" seq="1" meaning="onchange" low="onchange" />
+          <rangevalue high="onblur" seq="2" meaning="onblur" low="onblur" />
+     </field>
+     <field tiptext="Document Id" type="V" decimallength="0" seq="0" fieldlength="60" displayname="Document Id" developercomments="Document Id" dropdown="N" align="L" viewlength="0" name="documentid" helptext="Document Id" />
+     <field type="V" decimallength="0" seq="0" fieldlength="96" displayname="Method" dropdown="N" viewlength="0" name="method" />
+     <field tiptext="Help Text" type="V" decimallength="0" seq="0" fieldlength="1024" displayname="Help Text" developercomments="Help Text" dropdown="N" viewlength="0" name="helptext" helptext="Help Text" />
+     <field tiptext="Index Type" type="V" decimallength="0" seq="0" fieldlength="16" displayname="Index Type" developercomments="Index Type" dropdown="Y" viewlength="0" name="indextype" helptext="Index Type">
+          <rangevalue high="FULLTEXT" seq="0" meaning="FULLTEXT" low="FULLTEXT" />
+          <rangevalue high="SPATIAL" seq="0" meaning="SPATIAL" low="SPATIAL" />
+          <rangevalue high="UNIQUE" seq="0" meaning="UNIQUE" low="UNIQUE" />
+     </field>
+     <field tiptext="Decimal Length" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Decimal Length" developercomments="Decimal Length" dropdown="N" viewlength="0" name="decimallength" helptext="Decimal Length" />
+     <field tiptext="dynamicvalue" type="V" decimallength="0" seq="0" fieldlength="15" displayname="dynamicvalue" developercomments="dynamicvalue" dropdown="N" align="L" viewlength="0" name="dynamicvalue" helptext="dynamicvalue" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="resultsetno" dropdown="N" align="L" viewlength="0" name="resultsetno" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" dropdown="N" viewlength="0" name="moduleno" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Is paging required?" dropdown="Y" viewlength="0" name="pagingrequired">
+          <rangevalue high="Y" seq="1" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="2" meaning="No" low="N" />
+     </field>
+     <field type="I" decimallength="0" seq="0" fieldlength="2" displayname="Event" dropdown="Y" viewlength="0" name="eventid">
+          <rangevalue high="1" seq="1" meaning="PRE INSERT" low="1" />
+          <rangevalue high="2" seq="2" meaning="PRE UPDATE" low="2" />
+          <rangevalue high="3" seq="3" meaning="PRE DELETE" low="3" />
+          <rangevalue high="4" seq="4" meaning="POST INSERT" low="4" />
+          <rangevalue high="5" seq="5" meaning="POST UPDATE" low="5" />
+          <rangevalue high="6" seq="6" meaning="POST DELETE" low="6" />
+     </field>
+     <field tiptext="Work Flow Seq" type="I" decimallength="0" seq="0" fieldlength="3" displayname="Work Flow Seq" developercomments="Work Flow Seq" dropdown="N" viewlength="0" name="wfseq" helptext="Work Flow Seq" />
+     <field tiptext="Screen Img" type="V" decimallength="0" seq="0" fieldlength="30" displayname="Screen Img" developercomments="Screen Img" dropdown="N" align="L" viewlength="0" name="screenimg" helptext="Screen Img" />
+     <field tiptext="Sort Property No" type="I" decimallength="0" seq="0" fieldlength="3" displayname="Sort Property No" developercomments="Sort Property No" dropdown="N" viewlength="0" name="sortpropno" helptext="Sort Property No" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Navigate" dropdown="Y" viewlength="0" name="navigate">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="2048" displayname="pagedescription" dropdown="N" viewlength="0" name="pagedescription" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Meaning" dropdown="N" viewlength="0" name="meaning" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Hide" dropdown="Y" viewlength="0" name="hide">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field tiptext="Additional Properties List No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Additional Properties List No." developercomments="Additional Properties List No." dropdown="N" viewlength="0" name="additionalpropslistno" helptext="Additional Properties List No." />
+     <field tiptext="contextdatareq" type="C" decimallength="1" seq="0" fieldlength="1" displayname="contextdatareq" developercomments="contextdatareq" dropdown="Y" align="L" viewlength="1" name="contextdatareq" helptext="contextdatareq">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field tiptext="Partial Key No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Partial Key No." developercomments="Partial Key No." dropdown="N" viewlength="0" name="partialkeyno" helptext="Partial Key No." />
+     <field tiptext="Reviewed By" type="V" decimallength="0" seq="0" fieldlength="25" displayname="Reviewed By" developercomments="Reviewed By" dropdown="N" align="L" viewlength="0" name="reviewedby" helptext="Reviewed By" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Persistent" dropdown="Y" viewlength="0" name="persistent">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field tiptext="Release No" type="I" decimallength="0" seq="0" fieldlength="4" displayname="Release No" developercomments="Release No" dropdown="N" viewlength="0" name="releaseno" helptext="Release No" />
+     <field type="V" decimallength="0" seq="0" fieldlength="100" displayname="IsDefaultWorkFlowReq" dropdown="N" viewlength="0" name="isdefaultworkflowreq" />
+     <field tiptext="Resolve Meta Object" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Resolve Meta Object" developercomments="Resolve Meta Object" dropdown="N" viewlength="0" name="resolvemetaobject" helptext="Resolve Meta Object" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="excludeproperties" dropdown="Y" viewlength="0" name="excludeproperties">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="2" meaning="No" low="N" />
+     </field>
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="Common Applinks" dropdown="N" viewlength="0" name="commonapplinksno" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Parent" dropdown="N" viewlength="0" name="parent" />
+     <field type="V" decimallength="0" seq="0" fieldlength="128" displayname="populate" dropdown="N" viewlength="0" name="populate" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="movalidationruleno" dropdown="N" viewlength="0" name="movalidationruleno" />
+     <field tiptext="Meta Link Param No" type="I" decimallength="0" seq="0" fieldlength="3" displayname="Meta Link Param No" developercomments="Meta Link Param No" dropdown="N" viewlength="0" name="metalinkparamno" helptext="Meta Link Param No" />
+     <field tiptext="User Manual Info" type="I" decimallength="0" seq="0" fieldlength="3" displayname="User Manual Info" developercomments="User Manual Info" dropdown="N" align="L" viewlength="0" name="usermanualinfono" helptext="User Manual Info" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="TransReq" dropdown="Y" viewlength="0" name="transreqd">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field tiptext="Parent Prop No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Parent Prop No." developercomments="Parent Prop No." dropdown="N" viewlength="0" name="parentpropno" helptext="Parent Prop No." />
+     <field tiptext="dynamickey" type="V" decimallength="0" seq="0" fieldlength="15" displayname="dynamickey" developercomments="dynamickey" dropdown="N" align="L" viewlength="0" name="dynamickey" helptext="dynamickey" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="id" dropdown="N" viewlength="0" name="id" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="TabParticipate" dropdown="Y" viewlength="0" name="tabparticipate">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="parameterno" dropdown="N" align="L" viewlength="0" name="parameterno" />
+     <field tiptext="Version Name" type="V" decimallength="0" seq="0" fieldlength="20" displayname="Version Name" developercomments="Version Name" dropdown="N" align="L" viewlength="0" name="versionname" helptext="Version Name" />
+     <field tiptext="Common Link Addl Workflow No" type="I" decimallength="0" seq="0" fieldlength="3" displayname="Common Link Addl Workflow No" developercomments="Common Link Addl Workflow No" dropdown="N" viewlength="0" name="commonlinkaddlworkflowno" helptext="Common Link Addl Workflow No" />
+     <field tiptext="Meta Link View No" type="I" decimallength="0" seq="0" fieldlength="3" displayname="Meta Link View No" developercomments="Meta Link View No" dropdown="N" viewlength="0" name="metalinkviewno" helptext="Meta Link View No" />
+     <field tiptext="Context Field" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Context Field" developercomments="Context Field" dropdown="Y" viewlength="0" name="contextfield" helptext="Context Field">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field tiptext="Skip Validation" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Skip Validation" developercomments="Skip Validation" dropdown="Y" viewlength="0" name="skipvalidation" helptext="Skip Validation">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="100" displayname="Help Question ?" developercomments="For helping the user" dropdown="N" align="L" viewlength="0" name="helpquestion" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="Refresh interval" dropdown="N" viewlength="0" name="refreshinterval" />
+     <field tiptext="Auto Increment" type="V" decimallength="0" seq="0" fieldlength="16" displayname="Auto Increment" developercomments="Auto Increment" dropdown="Y" viewlength="0" name="autoincrement" helptext="Auto Increment">
+          <rangevalue high="LOGICAL SEQUENCE" seq="0" meaning="LOGICAL SEQUENCE" low="LOGICAL SEQUENCE" />
+          <rangevalue high="IDENTITY" seq="0" meaning="IDENTITY" low="IDENTITY" />
+     </field>
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Tree Participate" dropdown="Y" align="L" viewlength="1" name="treeparticipate">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="16" displayname="Delimiter" dropdown="N" viewlength="0" name="delimiter" />
+     <field tiptext="Defect ID" type="I" decimallength="0" seq="0" fieldlength="4" displayname="Defect ID" developercomments="Defect ID" dropdown="N" viewlength="0" name="defectid" helptext="Defect ID" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Low" dropdown="N" viewlength="0" name="low" />
+     <field tiptext="Common Link View No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Common Link View No." developercomments="Common Link View No." dropdown="N" viewlength="0" name="commonlinkviewno" helptext="Common Link View No." />
+     <field type="V" decimallength="0" seq="0" fieldlength="96" displayname="Argument name" dropdown="N" viewlength="0" name="argname" />
+     <field type="V" decimallength="0" seq="0" fieldlength="20" displayname="Module Description" dropdown="N" viewlength="0" name="moduledescription" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="businessobjectno" dropdown="N" viewlength="0" name="businessobjectno" />
+     <field type="V" decimallength="0" seq="0" fieldlength="16" displayname="Event" dropdown="Y" viewlength="0" name="event">
+          <rangevalue high="search" seq="0" meaning="search" low="search" />
+          <rangevalue high="download" seq="0" meaning="download" low="download" />
+          <rangevalue high="add" seq="0" meaning="add" low="add" />
+          <rangevalue high="save" seq="0" meaning="save" low="save" />
+          <rangevalue high="addmore" seq="0" meaning="addmore" low="addmore" />
+          <rangevalue high="upload" seq="0" meaning="upload" low="upload" />
+          <rangevalue high="delete" seq="0" meaning="delete" low="delete" />
+          <rangevalue high="deletefile" seq="0" meaning="deletefile" low="deletefile" />
+          <rangevalue high="edit" seq="0" meaning="edit" low="edit" />
+          <rangevalue high="modify" seq="0" meaning="modify" low="modify" />
+          <rangevalue high="reset" seq="8" meaning="reset" low="reset" />
+          <rangevalue high="view" seq="10" meaning="view" low="view" />
+          <rangevalue high="cancel" seq="10" meaning="cancel" low="cancel" />
+          <rangevalue high="lookup" seq="11" meaning="lookup" low="lookup" />
+          <rangevalue high="formclear" seq="12" meaning="formclear" low="formclear" />
+          <rangevalue high="continue" seq="15" meaning="continue" low="continue" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Pattern" dropdown="N" viewlength="0" name="pattern" />
+     <field tiptext="formlinkforwardno" type="I" decimallength="0" seq="0" fieldlength="4" displayname="formlinkforwardno" developercomments="formlinkforwardno" dropdown="N" align="L" viewlength="0" name="formlinkforwardno" helptext="formlinkforwardno" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Identifying" dropdown="Y" viewlength="0" name="identifying">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Lookup" dropdown="Y" viewlength="0" name="lookup">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field tiptext="Comments" type="V" decimallength="0" seq="0" fieldlength="300" displayname="comments" developercomments="Comments" dropdown="N" align="L" viewlength="0" name="comments" helptext="Comments" />
+     <field tiptext="Operator" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Operator" developercomments="Operator" dropdown="Y" viewlength="0" name="op" helptext="Operator">
+          <rangevalue high="eq" seq="0" meaning="Equal" low="eq" />
+          <rangevalue high="gt" seq="0" meaning="Greater Than" low="gt" />
+          <rangevalue high="null" seq="0" meaning="Is null" low="null" />
+          <rangevalue high="notnull" seq="0" meaning="Is not null" low="notnull" />
+          <rangevalue high="lt" seq="0" meaning="Less Than" low="lt" />
+          <rangevalue high="ne" seq="0" meaning="Not Equal" low="ne" />
+     </field>
+     <field tiptext="Common Views No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Common Views No." developercomments="Common Views No." dropdown="N" viewlength="0" name="commonviewsno" helptext="Common Views No." />
+     <field tiptext="Perform the operation on the current context" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Perform the operation on the current context" developercomments="Perform the operation on the current context" dropdown="Y" viewlength="0" name="form" helptext="Perform the operation on the current context">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field tiptext="Content Description" type="V" decimallength="0" seq="0" fieldlength="1024" displayname="Description" developercomments="Content Description" dropdown="N" align="L" viewlength="0" name="contentdescription" helptext="Content Description" />
+     <field tiptext="Perform the operation at session level" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Perform the operation at session level" developercomments="Perform the operation at session level" dropdown="Y" viewlength="0" name="session" helptext="Perform the operation at session level">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field tiptext="Form Display" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Form Display" developercomments="Form Display" dropdown="Y" viewlength="0" name="formdisplay" helptext="Form Display">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field type="I" decimallength="0" seq="0" fieldlength="4" dropdown="N" viewlength="0" name="formlinkparamno" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="storedprocedureno" dropdown="N" align="L" viewlength="0" name="storedprocedureno" />
+     <field tiptext="Drop Down" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Drop Down" developercomments="Drop Down" dropdown="Y" viewlength="0" name="dropdown" helptext="Drop Down">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field tiptext="Meta Object" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Meta Object" developercomments="Meta Object" dropdown="N" viewlength="0" name="metaobject" helptext="Meta Object" />
+     <field tiptext="Block Id" type="V" decimallength="0" seq="0" fieldlength="8" displayname="Block Id" developercomments="Block Id" dropdown="N" viewlength="0" name="blockid" helptext="Block Id" />
+     <field type="V" decimallength="0" seq="0" fieldlength="12" displayname="Scope" dropdown="Y" viewlength="0" name="scope">
+          <rangevalue high="request" seq="0" meaning="request" low="request" />
+          <rangevalue high="view" seq="1" meaning="view" low="view" />
+     </field>
+     <field tiptext="Changes Made" type="V" decimallength="0" seq="0" fieldlength="1024" displayname="Changes Made" developercomments="Changes Made" dropdown="N" align="L" viewlength="0" name="changesmade" helptext="Changes Made" />
+     <field tiptext="Release Date" type="D" decimallength="0" seq="0" fieldlength="10" displayname="Release Date" developercomments="Release Date" dropdown="N" align="L" viewlength="0" name="releasedate" helptext="Release Date" />
+     <field tiptext="Mapped Column" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Mapped Column" developercomments="Mapped Column" dropdown="N" viewlength="0" name="mappedcol" helptext="Mapped Column" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Referred page" dropdown="N" viewlength="0" name="referpage" helptext="Select a page where this block should refer to." />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="computefldruleno" dropdown="N" viewlength="0" name="computefldruleno" />
+     <field tiptext="Capture Application Level Continue Links" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Is Continue Link Required ?" developercomments="Capture Application Level Continue Links" dropdown="Y" align="L" viewlength="0" name="iscontinuereq" helptext="Capture Application Level Continue Links">
+          <rangevalue high="Y" seq="1" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="2" meaning="No" low="N" />
+     </field>
+     <field type="TS" decimallength="0" seq="0" fieldlength="10" displayname="LastUpdateTS" dropdown="N" viewlength="0" name="LastUpdateTS" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="IsDefaultModule" dropdown="Y" viewlength="0" name="isdefaultmodule">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="10" displayname="Module Id" dropdown="N" viewlength="0" name="moduleid" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Perform session cache?" dropdown="Y" viewlength="0" name="sessioncachereqd">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Type" dropdown="Y" viewlength="0" name="type">
+          <rangevalue high="TS" seq="0" meaning="Timestamp" low="TS" />
+          <rangevalue high="D" seq="0" meaning="Date" low="D" />
+          <rangevalue high="I" seq="0" meaning="Int" low="I" />
+          <rangevalue high="C" seq="0" meaning="Char" low="C" />
+          <rangevalue high="T" seq="0" meaning="Time" low="T" />
+          <rangevalue high="N" seq="0" meaning="Numeric" low="N" />
+          <rangevalue high="B" seq="0" meaning="Byte" low="B" />
+          <rangevalue high="V" seq="0" meaning="Varchar" low="V" />
+          <rangevalue high="BL" seq="8" meaning="Boolean" low="BL" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Parameter class" dropdown="Y" viewlength="0" name="parameterclass">
+          <rangevalue high="java.util.HashMap" seq="0" meaning="java.util.HashMap" low="java.util.HashMap" />
+     </field>
+     <field tiptext="Screen Title" type="V" decimallength="0" seq="0" fieldlength="30" displayname="Screen Title" developercomments="Screen Title" dropdown="N" align="L" viewlength="0" name="screentitle" helptext="Screen Title" />
+     <field tiptext="Drop Down Type" type="V" decimallength="0" seq="0" fieldlength="16" displayname="Drop Down Type" developercomments="Drop Down Type" dropdown="Y" viewlength="0" name="dropdowntype" helptext="Drop Down Type">
+          <rangevalue high="sql" seq="1" meaning="sql" low="sql" />
+          <rangevalue high="bo" seq="2" meaning="bo" low="bo" />
+          <rangevalue high="workflow" seq="3" meaning="workflow" low="workflow" />
+          <rangevalue high="user_session" seq="4" meaning="User Session" low="user_session" />
+          <rangevalue high="app_cache" seq="5" meaning="App Cache" low="app_cache" />
+     </field>
+     <field tiptext="Remove from the current context or session" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Remove from the current context or session" developercomments="Remove from the current context or session" dropdown="Y" viewlength="0" name="remove" helptext="Remove from the current context or session">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field tiptext="Operational Changes" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Operational Changes" developercomments="Operational Changes" dropdown="Y" viewlength="0" name="operationalchanges" helptext="Operational Changes">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field tiptext="Sort Order" type="V" decimallength="0" seq="0" fieldlength="4" displayname="Sort Order" developercomments="Sort Order" dropdown="Y" viewlength="0" name="sortorder" helptext="Sort Order">
+          <rangevalue high="asc" seq="0" meaning="asc" low="asc" />
+          <rangevalue high="desc" seq="0" meaning="desc" low="desc" />
+     </field>
+     <field tiptext="Skip Request" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Skip Request" developercomments="Skip Request" dropdown="Y" viewlength="0" name="skiprequest" helptext="Skip Request">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Project" dropdown="N" viewlength="0" name="project" />
+     <field tiptext="User Manual Stmt" type="I" decimallength="0" seq="0" fieldlength="3" displayname="User Manual Stmt" developercomments="User Manual Stmt" dropdown="N" align="L" viewlength="0" name="usermanualstmtno" helptext="User Manual Stmt" />
+     <field tiptext="Meta Index No" type="I" decimallength="0" seq="0" fieldlength="3" displayname="Meta Index No" developercomments="Meta Index No" dropdown="N" viewlength="0" name="metaindexno" helptext="Meta Index No" />
+     <field type="V" decimallength="0" seq="0" fieldlength="25" displayname="Parenttab" dropdown="N" viewlength="0" name="parenttab" />
+     <field tiptext="Additional Object" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Additional Object" developercomments="Additional Object" dropdown="N" viewlength="0" name="addlobj" helptext="Additional Object" />
+     <field type="V" decimallength="0" seq="0" fieldlength="30" displayname="Reflink" dropdown="N" viewlength="0" name="reflink" />
+     <field tiptext="Triggers No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Triggers No." developercomments="Triggers No." dropdown="N" viewlength="0" name="triggersno" helptext="Triggers No." />
+     <field type="I" decimallength="0" seq="0" fieldlength="0" displayname="Viewapplinkno" dropdown="N" viewlength="0" name="viewapplinkno" />
+     <field tiptext="A property marked as Resolve will be resolved when ever this table shows up in a join." type="C" decimallength="0" seq="0" fieldlength="1" displayname="Resolve" developercomments="A property marked as Resolve will be resolved when ever this table shows up in a join." dropdown="Y" viewlength="0" name="resolve" helptext="A property marked as Resolve will be resolved when ever this table shows up in a join.">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="storedproceduremetano" dropdown="N" align="L" viewlength="0" name="storedproceduremetano" />
+     <field tiptext="Field display on the page" type="V" decimallength="0" seq="0" fieldlength="256" displayname="Display Name" developercomments="Field display on the page" dropdown="N" viewlength="0" name="displayname" helptext="Field display on the page " />
+     <field tiptext="This determines if the field will be retrieved and displayed on the list page as part of the list." type="C" decimallength="0" seq="0" fieldlength="1" displayname="List Display" developercomments="This determines if the field will be retrieved and displayed on the list page as part of the list." dropdown="Y" viewlength="0" name="listdisplay" helptext="This determines if the field will be retrieved and displayed on the list page as part of the list.">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="128" displayname="eval" dropdown="N" viewlength="0" name="eval" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="formlinkvalidationruleno" dropdown="N" viewlength="0" name="formlinkvalidationruleno" />
+     <field tiptext="Page Help" type="V" decimallength="0" seq="0" fieldlength="1024" displayname="Page Help" developercomments="Page Help" dropdown="N" viewlength="0" name="pagehelptext" helptext="Page Help" />
+     <field type="I" decimallength="0" seq="0" fieldlength="0" displayname="flowno" dropdown="N" viewlength="0" name="flowno" />
+     <field tiptext="The name of the field on the meta view for which the Field Link has been attached manually." type="V" decimallength="0" seq="0" fieldlength="64" displayname="Link Field" developercomments="The name of the field on the meta view for which the Field Link has been attached manually." dropdown="N" viewlength="0" name="linkfield" helptext="The name of the field on the meta view for which the Field Link has been attached manually." />
+     <field tiptext="Data Object" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Data Object / Cache Key" developercomments="Data Object" dropdown="N" viewlength="0" name="dataobject" helptext="Data Object" />
+     <field tiptext="isEncrypt" type="C" decimallength="0" seq="0" fieldlength="1" displayname="isEncrypt" developercomments="isEncrypt" dropdown="Y" align="L" viewlength="0" name="isEncrypt" helptext="isEncrypt">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Cache key" dropdown="N" viewlength="0" name="cachekey" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Active indicator" dropdown="Y" viewlength="0" name="active">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field tiptext="Current Property Version No" type="I" decimallength="0" seq="0" fieldlength="3" displayname="Current Property Version No" developercomments="Current Property Version No" dropdown="N" viewlength="0" name="currentPropertyversionno" helptext="Current Property Version No" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="childviewdefno" dropdown="N" viewlength="0" name="childviewdefno" />
+     <field tiptext="Main View" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Main View" developercomments="Main View" dropdown="Y" viewlength="0" name="mainview" helptext="Main View">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field tiptext="Delata Ind" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Delta Ind" developercomments="Delata Ind" dropdown="Y" viewlength="0" name="deltaind" helptext="Delata Ind">
+          <rangevalue high="D" seq="0" meaning="Delete" low="D" />
+          <rangevalue high="O" seq="1" meaning="Original" low="O" />
+          <rangevalue high="I" seq="2" meaning="Insert" low="I" />
+          <rangevalue high="M" seq="3" meaning="Modify" low="M" />
+     </field>
+     <field tiptext="docversionno" type="I" decimallength="0" seq="0" fieldlength="4" displayname="docversionno" developercomments="docversionno" dropdown="N" align="L" viewlength="0" name="docversionno" helptext="docversionno" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="formlinkaddlworkflow" dropdown="N" viewlength="0" name="formlinkaddlworkflowno" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Mapping class" dropdown="Y" viewlength="0" name="mappingclass">
+          <rangevalue high="java.util.HashMap" seq="1" meaning="java.util.HashMap" low="java.util.HashMap" />
+     </field>
+     <field tiptext="Property No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Property No." developercomments="Property No." dropdown="N" viewlength="0" name="propertyno" helptext="Property No." />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="indexno" dropdown="N" viewlength="0" name="indexno" />
+     <field tiptext="Skip Cache Check" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Skip Cache Check" developercomments="Skip Cache Check" dropdown="Y" viewlength="0" name="skipcachecheck" helptext="Skip Cache Check">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="CommonParamNo" dropdown="N" viewlength="0" name="commonparamno" />
+     <field tiptext="Meta Link Additional Workflowno" type="I" decimallength="0" seq="0" fieldlength="3" displayname="Meta Link Additional Workflowno" developercomments="Meta Link Additional Workflowno" dropdown="N" viewlength="0" name="metalinkaddlworkflowno" helptext="Meta Link Additional Workflowno" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Forward" dropdown="N" viewlength="0" name="forward" />
+     <field tiptext="Work Flow Name" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Work Flow Name" developercomments="Work Flow Name" dropdown="N" viewlength="0" name="wfname" helptext="Work Flow Name" />
+     <field tiptext="Form Link Dynamic   No" type="I" decimallength="0" seq="0" fieldlength="4" displayname="Form Link Dynamic   No" developercomments="Form Link Dynamic   No" dropdown="N" align="L" viewlength="0" name="formlinkdynamicno" helptext="Form Link Dynamic   No" />
+     <field type="V" decimallength="0" seq="0" fieldlength="4" displayname="Index" dropdown="N" align="L" viewlength="0" name="index" />
+     <field type="V" decimallength="0" seq="0" fieldlength="96" displayname="imageobject" dropdown="N" viewlength="0" name="imageobject" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Add/Edit Page" dropdown="N" viewlength="0" name="freeformforward" />
+     <field tiptext="Search Meta Object" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Search Meta Object" developercomments="Search Meta Object" dropdown="N" viewlength="0" name="searchmo" helptext="Search Meta Object" />
+     <field tiptext="Reference No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Reference No." developercomments="Reference No." dropdown="N" viewlength="0" name="referenceno" helptext="Reference No." />
+     <field type="V" decimallength="0" seq="0" fieldlength="256" displayname="Error message on fail" dropdown="N" viewlength="0" name="message" helptext="This error message will be displayed if the attached validation rule fails." />
+     <field type="I" decimallength="0" seq="0" fieldlength="3" displayname="Seq" dropdown="N" viewlength="0" name="seq" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Confirmation message" dropdown="N" viewlength="0" name="confirmmessage" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="Form Link View No" dropdown="N" viewlength="0" name="formlinkviewno" />
+     <field tiptext="Link Name" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Link Name" developercomments="Link Name" dropdown="N" viewlength="0" name="linkname" helptext="Link Name" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="systemruleno" dropdown="N" viewlength="0" name="systemruleno" />
+     <field tiptext="Developer Comments" type="V" decimallength="0" seq="0" fieldlength="1024" displayname="Developer Comments" developercomments="Developer Comments" dropdown="N" viewlength="0" name="developercomments" helptext="Developer Comments" />
+     <field tiptext="Bullet Img" type="V" decimallength="0" seq="0" fieldlength="25" displayname="Bullet Img" developercomments="Bullet Img" dropdown="N" align="L" viewlength="0" name="bulletimg" helptext="Bullet Img" />
+     <field tiptext="Block Help" type="V" decimallength="0" seq="0" fieldlength="1024" displayname="Block Help" developercomments="Block Help" dropdown="N" viewlength="0" name="blockhelptext" helptext="Block Help" />
+     <field type="I" decimallength="0" seq="0" fieldlength="3" displayname="requestworkflowdefno" dropdown="N" viewlength="0" name="requestworkflowdefno" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Interface Id" dropdown="N" viewlength="0" name="interfaceid" />
+     <field type="V" decimallength="0" seq="0" fieldlength="96" displayname="Object name" dropdown="N" viewlength="0" name="obj" />
+     <field tiptext="Field No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Field No." developercomments="Field No." dropdown="N" viewlength="0" name="fieldno" helptext="Field No." />
+     <field tiptext="Join Column No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Join Column No." developercomments="Join Column No." dropdown="N" viewlength="0" name="joincolno" helptext="Join Column No." />
+     <field type="V" decimallength="0" seq="0" fieldlength="96" displayname="image" dropdown="N" viewlength="0" name="image" />
+     <field tiptext="View Def No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="View Def No." developercomments="View Def No." dropdown="N" viewlength="0" name="viewdefno" helptext="View Def No." />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="movalidationeventno" dropdown="N" viewlength="0" name="movalidationeventno" />
+     <field tiptext="Display Type" type="V" decimallength="0" seq="0" fieldlength="16" displayname="Display Type" developercomments="Display Type" dropdown="Y" viewlength="0" name="displaytype" helptext="Display Type">
+          <rangevalue high="label" seq="0" meaning="label" low="label" />
+          <rangevalue high="checkbox" seq="1" meaning="checkbox" low="checkbox" />
+          <rangevalue high="hidden" seq="2" meaning="hidden" low="hidden" />
+          <rangevalue high="radio" seq="3" meaning="radio" low="radio" />
+          <rangevalue high="textarea" seq="4" meaning="textarea" low="textarea" />
+          <rangevalue high="password" seq="5" meaning="password" low="password" />
+          <rangevalue high="file" seq="6" meaning="file" low="file" />
+          <rangevalue high="text" seq="7" meaning="text" low="text" />
+          <rangevalue high="select" seq="8" meaning="select" low="select" />
+          <rangevalue high="combobox" seq="10" meaning="combobox" low="combobox" />
+          <rangevalue high="fileupload" seq="11" meaning="fileupload" low="fileupload" />
+          <rangevalue high="filedownload" seq="12" meaning="filedownload" low="filedownload" />
+          <rangevalue high="hiddenandlabel" seq="13" meaning="hiddenandlabel" low="hiddenandlabel" />
+          <rangevalue high="image" seq="14" meaning="image" low="image" />
+          <rangevalue high="email" seq="15" meaning="email" low="email" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Name" dropdown="N" viewlength="0" name="name" />
+     <field tiptext="Index Column No" type="I" decimallength="0" seq="0" fieldlength="3" displayname="Index Column No" developercomments="Index Column No" dropdown="N" viewlength="0" name="indexcolno" helptext="Index Column No" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="javascript" dropdown="N" viewlength="0" name="javascript" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="High" dropdown="N" viewlength="0" name="high" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Generate form level save and continue link?" dropdown="Y" viewlength="0" name="formlevelsave">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field tiptext="View Work Flow Def No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="View Work Flow Def No." developercomments="View Work Flow Def No." dropdown="N" viewlength="0" name="viewworkflowdefno" helptext="View Work Flow Def No." />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="Commonworkflow No" dropdown="N" viewlength="0" name="commonworkflowno" />
+     <field tiptext="Complete List Object" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Complete List Object" developercomments="Complete List Object" dropdown="N" viewlength="0" name="completelistobj" helptext="Complete List Object" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Image source" dropdown="N" viewlength="0" name="imgsrc" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="Length" dropdown="N" viewlength="0" name="length" />
+     <field type="V" decimallength="0" seq="0" fieldlength="16" displayname="Mode" dropdown="Y" viewlength="0" name="mode">
+          <rangevalue high="IN" seq="0" meaning="IN" low="IN" />
+          <rangevalue high="OUT" seq="1" meaning="OUT" low="OUT" />
+          <rangevalue high="INOUT" seq="2" meaning="INOUT" low="INOUT" />
+     </field>
+     <field type="I" decimallength="0" seq="0" fieldlength="10" displayname="PageDefNo" dropdown="N" viewlength="0" name="pagedefno" />
+     <field tiptext="Meta Object No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Meta Object No." developercomments="Meta Object No." dropdown="N" viewlength="0" name="metaobjectno" helptext="Meta Object No." />
+     <field tiptext="Common Link Param No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Common Link Param No." developercomments="Common Link Param No." dropdown="N" viewlength="0" name="commonlinkparamno" helptext="Common Link Param No." />
+     <field tiptext="Property Version No" type="I" decimallength="0" seq="0" fieldlength="3" displayname="Property Version No" developercomments="Property Version No" dropdown="N" viewlength="0" name="propertyversionno" helptext="Property Version No" />
+     <field tiptext="Project Display Name" type="V" decimallength="0" seq="0" fieldlength="60" displayname="Project Display Name" developercomments="Project Display Name" dropdown="N" align="L" viewlength="0" name="projectdisplayname" helptext="Project Display Name" />
+     <field tiptext="Application Id" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Application Id" developercomments="Application Id" dropdown="N" viewlength="0" name="applid" helptext="Application Id" />
+     <field tiptext="Populate the field with this name" type="V" decimallength="0" seq="0" fieldlength="32" displayname="Populate the field with this name" developercomments="Populate the field with this name" dropdown="N" viewlength="0" name="populatename" helptext="Populate the field with this name" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Value when it is checked" dropdown="N" viewlength="0" name="checkvalue" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="Textarea Rows" dropdown="N" viewlength="0" name="textarearows" />
+     <field type="I" decimallength="0" seq="0" fieldlength="3" displayname="metaflowno" dropdown="N" viewlength="0" name="metaflowno" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="ismenu" dropdown="N" viewlength="0" name="ismenu" />
+     <field type="V" decimallength="0" seq="0" fieldlength="128" displayname="Route eval" dropdown="N" viewlength="0" name="routeeval" helptext="Specify route eval condition." />
+     <field tiptext="Default Value Type" type="V" decimallength="0" seq="0" fieldlength="32" displayname="Default Value Type" developercomments="Default Value Type" dropdown="Y" viewlength="0" name="defaultvaluetype" helptext="Default Value Type">
+          <rangevalue high="function_default" seq="0" meaning="function_default" low="function_default" />
+          <rangevalue high="bindvar_default" seq="0" meaning="bindvar_default" low="bindvar_default" />
+          <rangevalue high="constant_default" seq="0" meaning="constant_default" low="constant_default" />
+          <rangevalue high="sysvar_default" seq="0" meaning="sysvar_default" low="sysvar_default" />
+     </field>
+     <field tiptext="Range Value No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Range Value No." developercomments="Range Value No." dropdown="N" viewlength="0" name="rangevalueno" helptext="Range Value No." />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="metalinkvalidationruleno" dropdown="N" viewlength="0" name="metalinkvalidationruleno" />
+     <field type="V" decimallength="0" seq="0" fieldlength="2048" displayname="blockdescription" dropdown="N" viewlength="0" name="blockdescription" />
+     <field type="V" decimallength="0" seq="0" fieldlength="128" displayname="Left value for the validate condition" dropdown="N" viewlength="0" name="lvalue" />
+     <field type="I" decimallength="0" seq="0" fieldlength="1" displayname="Cache demand level" dropdown="Y" viewlength="0" name="cachedemandlevel">
+          <rangevalue high="1" seq="0" meaning="Application level cache" low="1" />
+          <rangevalue high="2" seq="1" meaning="Session level cache" low="2" />
+          <rangevalue high="3" seq="2" meaning="Lazy application level cache" low="3" />
+          <rangevalue high="4" seq="3" meaning="Lazy session level cache" low="4" />
+     </field>
+     <field tiptext="Dependent Object" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Dependent Object" developercomments="Dependent Object" dropdown="N" viewlength="0" name="depobject" helptext="Dependent Object" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="resultsetmetano" dropdown="N" align="L" viewlength="0" name="resultsetmetano" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="commonlinkvalidationruleno" dropdown="N" viewlength="0" name="commonlinkvalidationruleno" />
+     <field type="V" decimallength="0" seq="0" fieldlength="96" displayname="Argument type" dropdown="N" viewlength="0" name="argtype" />
+     <field tiptext="Parent Object" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Parent Object" developercomments="Parent Object" dropdown="N" viewlength="0" name="parentobject" helptext="Parent Object" />
+     <field tiptext="Link Level" type="V" decimallength="0" seq="0" fieldlength="24" displayname="Link Level" developercomments="Link Level" dropdown="Y" viewlength="0" name="linklevel" helptext="Link Level">
+          <rangevalue high="block" seq="0" meaning="block" low="block" />
+          <rangevalue high="row" seq="1" meaning="row" low="row" />
+          <rangevalue high="field" seq="2" meaning="field" low="field" />
+     </field>
+     <field type="I" decimallength="0" seq="0" fieldlength="3" displayname="No of records per page" dropdown="N" viewlength="0" name="noofrecordsperpage" />
+     <field tiptext="Index Order" type="V" decimallength="0" seq="0" fieldlength="4" displayname="Index Order" developercomments="Index Order" dropdown="Y" viewlength="0" name="indexorder" helptext="Index Order">
+          <rangevalue high="DESC" seq="0" meaning="DESC" low="DESC" />
+          <rangevalue high="ASC" seq="0" meaning="ASC" low="ASC" />
+     </field>
+     <field tiptext="Value Field No." type="I" decimallength="0" seq="0" fieldlength="3" displayname="Value Field No." developercomments="Value Field No." dropdown="N" viewlength="0" name="valuefieldno" helptext="Value Field No." />
+     <field tiptext="Default Join" type="V" decimallength="0" seq="0" fieldlength="16" displayname="Default Join" developercomments="Default Join" dropdown="N" viewlength="0" name="defaultjoin" helptext="Default Join">
+          <rangevalue high="PK" seq="0" meaning="PK" low="PK" />
+     </field>
+     <field tiptext="Null Constraint" type="V" decimallength="0" seq="0" fieldlength="16" displayname="Null Constraint" developercomments="Null Constraint" dropdown="Y" viewlength="0" name="nullconstraint" helptext="Null Constraint">
+          <rangevalue high="NOT NULL" seq="0" meaning="NOT NULL" low="NOT NULL" />
+          <rangevalue high="NULL" seq="0" meaning="NULL" low="NULL" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="48" displayname="Page Title" dropdown="N" viewlength="0" name="pagetitle" />
+     <field tiptext="Sql Statement" type="V" decimallength="0" seq="0" fieldlength="3000" displayname="Sql Statement" developercomments="Sql Statement" dropdown="N" viewlength="0" name="sqlstmt" helptext="Sql Statement" />
+     <field tiptext="View Type" type="V" decimallength="0" seq="0" fieldlength="32" displayname="View Type" developercomments="View Type" dropdown="Y" viewlength="0" name="viewtype" helptext="View Type">
+          <rangevalue high="freeform" seq="0" meaning="freeform" low="freeform" />
+          <rangevalue high="list" seq="1" meaning="list" low="list" />
+          <rangevalue high="searchform" seq="2" meaning="searchform" low="searchform" />
+          <rangevalue high="searchlist" seq="3" meaning="searchlist" low="searchlist" />
+          <rangevalue high="momfinitelist" seq="4" meaning="momfinitelist" low="momfinitelist" />
+          <rangevalue high="momsearchlist" seq="5" meaning="momsearchlist" low="momsearchlist" />
+          <rangevalue high="multirowsavelist" seq="6" meaning="multirowsavelist" low="multirowsavelist" />
+          <rangevalue high="reportlist" seq="7" meaning="reportlist" low="reportlist" />
+          <rangevalue high="dropdownfreeform" seq="8" meaning="dropdownfreeform" low="dropdownfreeform" />
+          <rangevalue high="dropdownlist" seq="9" meaning="dropdownlist" low="dropdownlist" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Value when it is unchecked" dropdown="N" viewlength="0" name="uncheckvalue" />
+     <field tiptext="Display Direction" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Display Direction" developercomments="Display Direction" dropdown="Y" viewlength="0" name="displaydirection" helptext="Display Direction">
+          <rangevalue high="V" seq="0" meaning="Vertical" low="V" />
+          <rangevalue high="H" seq="1" meaning="Horizontal" low="H" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="48" displayname="Block Title" dropdown="N" viewlength="0" name="blocktitle" />
+     <field tiptext="Display Length" type="I" decimallength="0" seq="0" fieldlength="4" displayname="Display Length" developercomments="Display Length" dropdown="N" align="L" viewlength="0" name="viewlength" helptext="Display Length" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="propvalidationruleno" dropdown="N" viewlength="0" name="propvalidationruleno" />
+     <field tiptext="Check Flag" type="V" decimallength="0" seq="0" fieldlength="32" displayname="Check Flag" developercomments="Check Flag" dropdown="N" viewlength="0" name="checkflag" helptext="Check Flag" />
+     <field tiptext="Structure No" type="I" decimallength="0" seq="0" fieldlength="3" displayname="Structure No" developercomments="Structure No" dropdown="N" viewlength="0" name="structureno" helptext="Structure No" />
+     <field tiptext="Populate before the scope" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Populate before the scope" developercomments="Populate before the scope" dropdown="Y" viewlength="0" name="pre" helptext="Populate before the scope">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field tiptext="Populate field under this namespace" type="V" decimallength="0" seq="0" fieldlength="32" displayname="Populate field under this namespace" developercomments="Populate field under this namespace" dropdown="N" viewlength="0" name="namespace" helptext="Populate field under this namespace" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="DeleteAll" dropdown="N" viewlength="0" name="DeleteAll" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Combined" dropdown="Y" viewlength="0" name="combined">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field tiptext="Project Code" type="V" decimallength="0" seq="0" fieldlength="60" displayname="Project Code" developercomments="Project Code" dropdown="N" align="L" viewlength="0" name="projectcode" helptext="Project Code" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Property" dropdown="N" viewlength="0" name="property" />
+     <field tiptext="Name of the Document" type="V" decimallength="0" seq="0" fieldlength="100" displayname="Name of the Document" developercomments="Name of the Document" dropdown="N" align="L" viewlength="0" name="nameofdoc" helptext="Name of the Document" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Links Direction" dropdown="Y" align="L" viewlength="0" name="linksdirection">
+          <rangevalue high="H" seq="0" meaning="Horizontal" low="H" />
+          <rangevalue high="V" seq="1" meaning="Vertical" low="V" />
+     </field>
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Help link direction" dropdown="Y" align="L" viewlength="0" name="helplinkdirection">
+          <rangevalue high="H" seq="0" meaning="Horizontal" low="H" />
+          <rangevalue high="V" seq="1" meaning="Vertical" low="V" />
+     </field>
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="applinkno" dropdown="N" viewlength="0" name="pageapplinksno" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Placeholder" dropdown="Y" viewlength="0" name="placeholder">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field tiptext="Field Def No" type="I" decimallength="0" seq="0" fieldlength="3" displayname="Field Def No" developercomments="Field Def No" dropdown="N" viewlength="0" name="fielddefno" helptext="Field Def No" />
+     <field tiptext="Function Name" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Function Name" developercomments="Function Name" dropdown="N" viewlength="0" name="functionname" helptext="Function Name" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="massdelete" dropdown="Y" viewlength="0" name="massdelete">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field tiptext="Value Type" type="V" decimallength="0" seq="0" fieldlength="32" displayname="Value Type" developercomments="Value Type" dropdown="Y" viewlength="0" name="valuetype" helptext="Value Type">
+          <rangevalue high="constant_default" seq="0" meaning="constant_default" low="constant_default" />
+          <rangevalue high="bindvar_default" seq="1" meaning="bindvar_default" low="bindvar_default" />
+          <rangevalue high="sysvar_default" seq="2" meaning="sysvar_default" low="sysvar_default" />
+          <rangevalue high="rowbindvar_default" seq="3" meaning="rowbindvar_default" low="rowbindvar_default" />
+          <rangevalue high="function_default" seq="4" meaning="function_default" low="function_default" />
+     </field>
+     <field tiptext="Value" type="V" decimallength="0" seq="0" fieldlength="96" displayname="Value" developercomments="Value" dropdown="N" viewlength="0" name="val" helptext="Value" />
+     <field tiptext="Tip Text" type="V" decimallength="0" seq="0" fieldlength="128" displayname="Tip Text" developercomments="Tip Text" dropdown="N" viewlength="0" name="tiptext" helptext="Tip Text" />
+     <field type="V" decimallength="0" seq="0" fieldlength="96" displayname="Return type" dropdown="N" viewlength="0" name="returntype" />
+     <field type="V" decimallength="0" seq="0" fieldlength="16" displayname="Referred Block" dropdown="N" viewlength="0" name="referblockid" helptext="Select the block where this viewdef should refer to." />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Redirect page" dropdown="N" viewlength="0" name="routepage" helptext="Select page where you want to redirect to." />
+     <field type="V" decimallength="0" seq="0" fieldlength="128" displayname="Right value for the validate condition" dropdown="N" viewlength="0" name="rvalue" />
+     <field tiptext="alias" type="V" decimallength="0" seq="0" fieldlength="12" displayname="alias" developercomments="alias" dropdown="N" align="L" viewlength="12" name="alias" helptext="alias" />
+     <field tiptext="Approved Date" type="D" decimallength="0" seq="0" fieldlength="10" displayname="Approve Date" developercomments="Approved Date" dropdown="N" align="L" viewlength="0" name="approvedate" helptext="Approved Date" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Readonly" dropdown="Y" viewlength="0" name="readonly">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Align" dropdown="Y" viewlength="0" name="align">
+          <rangevalue high="L" seq="0" meaning="Left" low="L" />
+          <rangevalue high="C" seq="1" meaning="Center" low="C" />
+          <rangevalue high="R" seq="2" meaning="Right" low="R" />
+     </field>
+     <field tiptext="documentno" type="I" decimallength="0" seq="0" fieldlength="4" displayname="documentno" developercomments="documentno" dropdown="N" align="L" viewlength="0" name="documentno" helptext="documentno" />
+     <field tiptext="Check Evaluate" type="V" decimallength="0" seq="0" fieldlength="128" displayname="Check Evaluate" developercomments="Check Evaluate" dropdown="N" viewlength="0" name="checkevaluate" helptext="Check Evaluate" />
+     <field tiptext="stackregister" type="V" decimallength="0" seq="0" fieldlength="1" displayname="stackregister" developercomments="stackregister" dropdown="Y" align="L" viewlength="0" name="stackregister" helptext="stackregister">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field tiptext="Layout Changes" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Layout Changes" developercomments="Layout Changes" dropdown="Y" viewlength="0" name="layoutchanges" helptext="Layout Changes">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field tiptext="Approved By" type="V" decimallength="0" seq="0" fieldlength="30" displayname="Approved By" developercomments="Approved By" dropdown="N" align="L" viewlength="0" name="approvedby" helptext="Approved By" />
+     <field tiptext="Search Field" type="C" decimallength="0" seq="0" fieldlength="1" displayname="Search Field" developercomments="Search Field" dropdown="Y" viewlength="0" name="searchfield" helptext="Search Field">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="50" displayname="Return Property" dropdown="N" align="L" viewlength="20" name="returnproperty" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="parametermetano" dropdown="N" align="L" viewlength="0" name="parametermetano" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Redirect if required?" dropdown="Y" viewlength="0" name="redirectifreqd">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field tiptext="Statements" type="V" decimallength="0" seq="0" fieldlength="2000" displayname="Statements" developercomments="Statements" dropdown="N" align="L" viewlength="0" name="stmts" helptext="Statements" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="computepropruleno" dropdown="N" viewlength="0" name="computepropruleno" />
+     <field tiptext="A property marked as Resolve will be resolved when ever this table shows up in a join." type="C" decimallength="0" seq="0" fieldlength="1" displayname="Resolve Display" developercomments="A property marked as Resolve will be resolved when ever this table shows up in a join." dropdown="Y" viewlength="0" name="resolvedisplay" helptext="A property marked as Resolve will be resolved when ever this table shows up in a join.">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+     </field>
+     <field tiptext="Key Constraint" type="V" decimallength="0" seq="0" fieldlength="16" displayname="Key Constraint" developercomments="Key Constraint" dropdown="Y" viewlength="0" name="keyconstraint" helptext="Key Constraint">
+          <rangevalue high="PRIMARY KEY" seq="0" meaning="PRIMARY KEY" low="PRIMARY KEY" />
+          <rangevalue high="UNIQUE" seq="0" meaning="UNIQUE" low="UNIQUE" />
+     </field>
+     <field tiptext="Java Script Parameters" type="V" decimallength="0" seq="0" fieldlength="128" displayname="JavascriptParameters" developercomments="Java Script Parameters" dropdown="N" align="L" viewlength="0" name="javascriptparameters" helptext="Java Script Parameters" />
+     <field tiptext="Meta Link Dynamic No" type="I" decimallength="0" seq="0" fieldlength="4" displayname="Meta Link Dynamic No" developercomments="Meta Link Dynamic No" dropdown="N" align="L" viewlength="0" name="metalinkdynamicno" helptext="Meta Link Dynamic No" />
+     <field type="C" decimallength="0" seq="0" fieldlength="1" displayname="Cache enabled?" dropdown="Y" viewlength="0" name="cacheenabled">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field type="V" decimallength="0" seq="0" fieldlength="128" displayname="Description" dropdown="N" viewlength="0" name="description" />
+     <field type="V" decimallength="0" seq="0" fieldlength="64" displayname="Field" dropdown="N" viewlength="0" name="field" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="interfacesno" dropdown="N" viewlength="0" name="interfacesno" />
+     <field tiptext="Application Level Continue Link Image" type="V" decimallength="0" seq="0" fieldlength="64" displayname="Continue Link Image" developercomments="Application Level Continue Link Image" dropdown="N" align="L" viewlength="0" name="continueimage" helptext="Application Level Continue Link Image" />
+     <field tiptext="Trigger No" type="I" decimallength="0" seq="0" fieldlength="3" displayname="Trigger No" developercomments="Trigger No" dropdown="N" viewlength="0" name="triggerno" helptext="Trigger No" />
+     <field tiptext="Default Stmt Title" type="V" decimallength="0" seq="0" fieldlength="30" displayname="Default Stmt Title" developercomments="Default Stmt Title" dropdown="N" align="L" viewlength="0" name="defaultstmttitle" helptext="Default Stmt Title" />
+     <field type="I" decimallength="0" seq="0" fieldlength="4" displayname="sqlstmtno" dropdown="N" viewlength="0" name="sqlstmtno" />
+     <field type="I" decimallength="0" seq="1" fieldlength="4" displayname="Textarea Columns" dropdown="N" viewlength="0" name="textareacolumns" />
+     <field tiptext="metalinkforwardno" type="I" decimallength="0" seq="1" fieldlength="4" displayname="metalinkforwardno" developercomments="metalinkforwardno" dropdown="N" align="L" viewlength="0" name="metalinkforwardno" helptext="metalinkforwardno" />
+     <field tiptext="nonpsm" type="V" decimallength="0" seq="1" fieldlength="1" displayname="nonpsm" developercomments="nonpsm" dropdown="Y" align="L" viewlength="0" name="nonpsm" helptext="nonpsm">
+          <rangevalue high="N" seq="0" meaning="No" low="N" />
+          <rangevalue high="Y" seq="1" meaning="Yes" low="Y" />
+     </field>
+     <field tiptext="Review Date" type="D" decimallength="0" seq="11" fieldlength="10" displayname="Review Date" developercomments="Review Date" dropdown="N" align="L" viewlength="0" name="reviewedate" helptext="Review Date" />
+     <field type="C" decimallength="0" seq="100" fieldlength="1" displayname="operation" dropdown="Y" align="L" viewlength="0" name="operation">
+          <rangevalue high="1" seq="1" meaning="insert" low="1" />
+          <rangevalue high="2" seq="2" meaning="delete" low="2" />
+          <rangevalue high="4" seq="4" meaning="update" low="4" />
+          <rangevalue high="5" seq="5" meaning="select" low="5" />
+     </field>
+     <field tiptext="eventname" type="V" decimallength="0" seq="100" fieldlength="50" displayname="Operation" developercomments="eventname" dropdown="Y" align="L" viewlength="0" name="eventname" helptext="eventname">
+          <rangevalue high="insert" seq="0" meaning="insert" low="insert" />
+          <rangevalue high="delete" seq="1" meaning="delete" low="delete" />
+          <rangevalue high="findByKey" seq="2" meaning="findByKey" low="findByKey" />
+          <rangevalue high="update" seq="3" meaning="update" low="update" />
+          <rangevalue high="findAllByKey" seq="4" meaning="findAllByKey" low="findAllByKey" />
+          <rangevalue high="momsave" seq="5" meaning="momsave" low="momsave" />
+          <rangevalue high="momfindByPartialKey" seq="6" meaning="momfindByPartialKey" low="momfindByPartialKey" />
+          <rangevalue high="momsearch" seq="7" meaning="momsearch" low="momsearch" />
+          <rangevalue high="findallByParentPKEY" seq="8" meaning="findallByParentPKEY" low="findallByParentPKEY" />
+          <rangevalue high="deleteAllByParentPKEY" seq="9" meaning="deleteAllByParentPKEY" low="deleteAllByParentPKEY" />
+          <rangevalue high="uploadfile" seq="10" meaning="uploadfile" low="uploadfile" />
+          <rangevalue high="downloadfile" seq="11" meaning="downloadfile" low="downloadfile" />
+          <rangevalue high="deletefile" seq="12" meaning="deletefile" low="deletefile" />
+     </field>
+     <field tiptext="TriggerName" type="V" decimallength="0" seq="100" fieldlength="50" displayname="TriggerName" developercomments="TriggerName" dropdown="N" align="L" viewlength="0" name="triggername" helptext="TriggerName" />
+     <field tiptext="TriggerType" type="C" decimallength="0" seq="101" fieldlength="1" displayname="TriggerType" developercomments="TriggerType" dropdown="Y" align="L" viewlength="0" name="triggertype" helptext="TriggerType">
+          <rangevalue high="i" seq="1" meaning="instead of" low="i" />
+          <rangevalue high="a" seq="2" meaning="after" low="a" />
+     </field>
+     <field type="V" decimallength="0" seq="101" fieldlength="50" dropdown="N" align="L" viewlength="0" name="sqlmapid" />
+     <field tiptext="TriggerEvent" type="C" decimallength="0" seq="102" fieldlength="1" displayname="TriggerEvent" developercomments="TriggerEvent" dropdown="Y" align="L" viewlength="0" name="triggerevent" helptext="TriggerEvent">
+          <rangevalue high="i" seq="1" meaning="insert" low="i" />
+          <rangevalue high="d" seq="2" meaning="delete" low="d" />
+          <rangevalue high="u" seq="3" meaning="update" low="u" />
+     </field>
+     <field tiptext="TriggerQuery" type="V" decimallength="0" seq="103" fieldlength="1000" displayname="TriggerQuery" developercomments="TriggerQuery" dropdown="N" align="L" viewlength="0" name="triggerquery" helptext="TriggerQuery" />
+     <field tiptext="Trans type" type="C" decimallength="0" seq="104" fieldlength="1" displayname="Trans type" developercomments="Trans type" dropdown="N" align="L" viewlength="0" name="transtype" helptext="Trans type">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     <field tiptext="Work flow group" type="V" decimallength="0" seq="105" fieldlength="128" displayname="Work flow group" developercomments="Work flow group" dropdown="N" align="L" viewlength="0" name="wfgroup" helptext="Work flow group" />
+     <field type="C" decimallength="0" seq="106" fieldlength="1" dropdown="Y" align="L" viewlength="0" name="isMerge">
+          <rangevalue high="Y" seq="0" meaning="Yes" low="Y" />
+          <rangevalue high="N" seq="1" meaning="No" low="N" />
+     </field>
+     
+     <field type="I" decimallength="0" seq="107" fieldlength="10" dropdown="N" align="L" viewlength="0" name="operationno" />
+     <field type="I" decimallength="0" seq="108" fieldlength="10" dropdown="N" align="L" viewlength="0" name="bono" />
+     <field type="I" decimallength="0" seq="109" fieldlength="10" dropdown="N" align="L" viewlength="0" name="ibatisno" />
+     <field type="I" decimallength="0" seq="110" fieldlength="10" dropdown="N" align="L" viewlength="0" name="storeprocwfno" />
+	 <field type="I" decimallength="0" seq="111" fieldlength="10" dropdown="N" align="L" viewlength="0" name="propvalidationno" />
+	 <field type="I" decimallength="0" seq="112" fieldlength="10" dropdown="N" align="L" viewlength="0" name="executionseq" />
+	 
+	 <field type="V" decimallength="0" seq="113" fieldlength="15" dropdown="N" align="L" viewlength="0" name="motype" />
+	 <field type="V" decimallength="0" seq="114" fieldlength="5" dropdown="N" align="L" viewlength="0" name="lookupsource" />
+	 <field type="V" decimallength="0" seq="115" fieldlength="500" dropdown="N" align="L" viewlength="0" name="lookupsourcepath" />
+	 <field type="V" decimallength="0" seq="116" fieldlength="20" dropdown="N" align="L" viewlength="0" name="input" />
+	 <field type="V" decimallength="0" seq="117" fieldlength="20" dropdown="N" align="L" viewlength="0" name="output" />
+	 
+	 <field type="I" decimallength="0" seq="118" fieldlength="20" dropdown="N" align="L" viewlength="0" name="computeruleno" />
+	 <field type="I" decimallength="0" seq="119" fieldlength="20" dropdown="N" align="L" viewlength="0" name="fieldlength" />
+	 <field type="I" decimallength="0" seq="120" fieldlength="20" dropdown="N" align="L" viewlength="0" name="propertylength" />
+	 
+	   	 
+   <metaobject seq="0" persistent="Y" active="Y" name="structure" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property tiptext="Structure No" decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Structure No" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="structureno" helptext="Structure No" />
+               <property decimallength="0" seq="1" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="Y" resolvedisplay="N" persistent="Y" field="project" isrequired="Y"  displaytype="text"/>
+               <property decimallength="0" seq="2" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="version" isrequired="N" displaytype="text"/>
+               <property decimallength="0" seq="3" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="seq" isrequired="N" displaytype="text" />
+          </propertyversion>
+          <depobject seq="0" metaobject="field" navigate="Y" identifying="Y" />
+          <depobject seq="1" metaobject="metaobject" navigate="Y" identifying="Y" />
+          <depobject seq="2" metaobject="systemrule" navigate="Y" identifying="Y" />
+   </metaobject>
+  
+   <metaobject seq="1" persistent="Y" active="Y" name="metaobject" motype="">
+          <propertyversion versionname="0" seq="0">
+               <property tiptext="Meta Object No." decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Meta Object No." listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="metaobjectno" helptext="Meta Object No." />
+               <property tiptext="Enter the Name of the MetaObject. This will be used as the Table name. Keep into consideration the database naming conventions." decimallength="0" seq="1" formdisplay="Y" deleteind="N" developercomments="Enter the Name of the MetaObject. This will be used as the Table name. Keep into consideration the database naming conventions." listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="Y" resolvedisplay="N" persistent="Y" field="name" helptext="Enter the Name of the MetaObject. This will be used as the Table name. Keep into consideration the database naming conventions." isrequired="Y" displaytype="MetaObject Name" />
+               <property tiptext="Briefly describe the metaobject here, can provide what basic functionality is assigned to this metaobject." decimallength="0" seq="2" formdisplay="Y" deleteind="N" developercomments="Briefly describe the metaobject here, can provide what basic functionality is assigned to this metaobject." listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="Y" resolvedisplay="N" persistent="Y" field="description" helptext="Briefly describe the metaobject here, can provide what basic functionality is assigned to this metaobject." isrequired="N" displaytype="Description" />
+               <property tiptext="Identifies if the metaobject is a lookup object and will be presented always. Can be used for DropDowns." decimallength="0" seq="3" formdisplay="Y" deleteind="N" developercomments="Identifies if the metaobject is a lookup object and will be presented always. Can be used for DropDowns." listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="motype" helptext="Identifies if the metaobject is a lookup object and will be presented always. Can be used for DropDowns." isrequired="Y" displaytype="Meta Object Type" />
+               <property tiptext="This identifies if this metaobject is persistent into the database/ filesystem. " decimallength="0" seq="4" formdisplay="Y" deleteind="N" developercomments="This identifies if this metaobject is persistent into the database/ filesystem. A No means no Database call to be made. Could refer to a web service." listdisplay="N" nullconstraint="NOT NULL" contextfield="N" viewlength="0" isEncrypt="N" defaultvalue="Y" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" defaultvaluetype="constant_default" field="persistent" helptext="This identifies if this metaobject is persistent into the database/ filesystem. A No means no Database call to be made. Could refer to a web service." isrequired="Y" displaytype="Persistent" />
+               <property decimallength="0" seq="5" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="seq" isrequired="N" displaytype="textbox"/>
+               <property tiptext="Developer Comments" decimallength="0" seq="6" formdisplay="Y" deleteind="N" developercomments="Developer Comments" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="developercomments" helptext="Developer Comments" isrequired="N" displaytype="textarea" />
+               <property tiptext="Help Text" decimallength="0" seq="7" formdisplay="Y" deleteind="N" developercomments="Help Text" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="helptext" helptext="Help Text" isrequired="N" displaytype="textarea" />
+               <property tiptext="Tip Text" decimallength="0" seq="8" formdisplay="Y" deleteind="N" developercomments="Tip Text" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="tiptext" helptext="Tip Text" isrequired="N" displaytype="textarea" />
+               <property decimallength="0" seq="9" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" defaultvalue="Y" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" defaultvaluetype="constant_default" field="active" isrequired="Y" displaytype="dropdown" />
+               <property tiptext="User Define Unit Test Case" decimallength="0" seq="10" formdisplay="Y" deleteind="N" developercomments="User Define Unit Test Case" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="userdefineunittestcase" helptext="User Define Unit Test Case" isrequired="N" displaytype="textarea" />
+          	   
+          	   <property tiptext="" decimallength="0" seq="11" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="lookupsource" helptext="Source for lookup either xml or sql" isrequired="Y" displaytype="text" />
+          	   <property tiptext="" decimallength="0" seq="12" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="lookupsourcepath" helptext="Path for lookup source" isrequired="Y" displaytype="text" />
+                              
+          </propertyversion>
+          <depobject seq="0" metaobject="propertyversion" navigate="Y" identifying="Y" />
+          <depobject seq="1" metaobject="depobject" navigate="Y" identifying="Y" />
+          <depobject seq="2" metaobject="reference" navigate="Y" identifying="Y" />
+          <depobject seq="3" metaobject="metaindex" navigate="Y" identifying="Y" />
+          <depobject seq="4" metaobject="movalidationrule" description="Validation Rules" navigate="Y" identifying="Y" />
+          <depobject seq="5" metaobject="metatrigger" description="Meta Trigger" navigate="Y" identifying="Y" developercomments="Meta Trigger" helptext="Meta Trigger" />
+   </metaobject>
+  
+   <metaobject active="Y" seq="2" persistent="Y" name="field" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property tiptext="Field No." decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Field No." listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="Y" persistent="Y" field="fieldno" helptext="Field No." />
+               <property decimallength="0" seq="1" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="Y" resolvedisplay="N" persistent="Y" field="name" isrequired="Y" displaytype="text" />
+               <property decimallength="0" seq="2" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="fieldlength" isrequired="Y" displaytype="text" />
+               <property tiptext="Decimal Length" decimallength="0" seq="3" formdisplay="Y" deleteind="N" developercomments="Decimal Length" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="decimallength" helptext="Decimal Length" isrequired="N" displaytype="text" />
+               <property decimallength="0" seq="4" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="Y" resolvedisplay="N" persistent="Y" field="type" isrequired="Y" displaytype="textarea" />
+               <property tiptext="Field display on the page" decimallength="0" seq="5" formdisplay="Y" deleteind="N" developercomments="Field display on the page" listdisplay="N" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="Y" resolvedisplay="N" persistent="Y" field="displayname" helptext="Field display on the page " isrequired="Y" displaytype="text" />
+               <property tiptext="Drop Down" decimallength="0" seq="6" formdisplay="Y" deleteind="N" developercomments="Drop Down" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="dropdown" helptext="Drop Down" isrequired="Y" displaytype="text" />
+               <property decimallength="0" seq="7" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="pattern" isrequired="N" displaytype="text" />
+               <property decimallength="0" seq="8" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="seq" isrequired="N" displaytype="text" />
+               <property tiptext="Developer Comments" decimallength="0" seq="9" formdisplay="Y" deleteind="N" developercomments="Developer Comments" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="developercomments" helptext="Developer Comments" isrequired="N" displaytype="textarea" />
+               <property tiptext="Help Text" decimallength="0" seq="10" formdisplay="Y" deleteind="N" developercomments="Help Text" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="helptext" helptext="Help Text" isrequired="N" displaytype="textarea" />
+               <property tiptext="Tip Text" decimallength="0" seq="11" formdisplay="Y" deleteind="N" developercomments="Tip Text" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="tiptext" helptext="Tip Text" isrequired="N" displaytype="textarea" />
+               <property decimallength="0" seq="12" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" defaultvalue="L" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" defaultvaluetype="constant_default" field="align" isrequired="N" displaytype="text" />
+               <property decimallength="0" seq="13" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" align="L" contextfield="N" viewlength="0" isEncrypt="N" propertylength="100" searchfield="N" resolvedisplay="N" persistent="Y" field="helpquestion" isrequired="N" displaytype="text" />
+               <property decimallength="0" seq="14" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" defaultvalue="H" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" defaultvaluetype="constant_default" field="helplinkdirection" isrequired="N" displaytype="text" />
+               <property decimallength="0" seq="15" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="viewlength" isrequired="N" displaytype="text" />
+               <property tiptext="User Define Unit Test Case" decimallength="0" seq="16" formdisplay="Y" deleteind="N" developercomments="User Define Unit Test Case" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="userdefineunittestcase" helptext="User Define Unit Test Case" isrequired="N" displaytype="textarea" />
+          </propertyversion>
+          <depobject seq="0" metaobject="rangevalue" navigate="Y" identifying="Y" />
+   </metaobject>
+   
+     <metaobject seq="3" persistent="Y" active="Y" description="System Rules" name="systemrule" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property decimallength="0" seq="0" formdisplay="N" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="systemruleno" />
+               <property decimallength="0" seq="1" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NOT NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="name" />
+               <property decimallength="0" seq="2" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="expression" />
+               <property decimallength="0" seq="3" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="event" />
+               <property decimallength="0" seq="4" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="input" />
+               <property decimallength="0" seq="5" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="output" />
+               <property decimallength="0" seq="6" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="description" />               
+               <property decimallength="0" seq="6" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="deltaind" />
+          </propertyversion> 
+     </metaobject> 
+    
+	 <metaobject seq="4" persistent="Y" active="Y" name="propertyversion" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property tiptext="Property Version No" decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Property Version No" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="propertyversionno" helptext="Property Version No" isrequired="Y" displaytype="text" />
+               <property tiptext="Version Name" decimallength="0" seq="1" formdisplay="Y" deleteind="N" developercomments="Version Name" listdisplay="Y" nullconstraint="NOT NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="versionname" helptext="Version Name" isrequired="N" displaytype="text" />
+               <property decimallength="0" seq="2" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="seq" isrequired="N" displaytype="text" />
+          </propertyversion>
+          <depobject seq="0" metaobject="property" navigate="Y" identifying="Y" />
+     </metaobject>  
+      
+     <metaobject seq="5" persistent="Y" active="Y" name="depobject" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property tiptext="Dependent Object No." decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Dependent Object No." listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="depobjectno" helptext="Dependent Object No." />
+               <property tiptext="Name of the Metaobject on which this meta object is dependent." decimallength="0" seq="1" formdisplay="Y" deleteind="N" developercomments="Name of the Metaobject on which this meta object is dependent. This would be similar to the FK relationship on the Database" listdisplay="Y" nullconstraint="NOT NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="metaobject" helptext="Name of the Metaobject on which this meta object is dependent. This would be similar to the FK relationship on the Database" isrequired="Y" displaytype="dropdown">
+                    <dropdown seq="0" metaobject="metaobject" dropdowntype="sql" sorted="Y" name="metaobject_dropdown" >
+                         <valuefield seq="0" field="name" />
+                         <displayfield seq="0" field="name" />
+                         <partialkey seq="0" property="structureno" />
+                    </dropdown>
+               </property>
+               <property tiptext="Determines if this is an identifying relationship. " decimallength="0" seq="2" formdisplay="Y" deleteind="N" developercomments="Determines if this is an identifying relationship. Similar to the identifying and non identifying relationships on the databases." listdisplay="Y" nullconstraint="NOT NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="identifying" helptext="Determines if this is an identifying relationship. Similar to the identifying and non identifying relationships on the databases." isrequired="Y" displaytype="dropdown" />
+               <property tiptext="This determines if the work flow will allow navigattion based on this dependency." decimallength="0" seq="3" formdisplay="Y" deleteind="N" developercomments="This determines if the work flow will allow navigattion based on this dependency." listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" defaultvalue="Y" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" defaultvaluetype="constant_default" field="navigate" helptext="This determines if the work flow will allow navigattion based on this dependency." isrequired="Y" displaytype="dropdown" />
+               <property decimallength="0" seq="4" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="description" isrequired="N" displaytype="textarea" />
+               <property decimallength="0" seq="5" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="seq" isrequired="N" displaytype="text" />
+               <property tiptext="Developer Comments" decimallength="0" seq="6" formdisplay="Y" deleteind="N" developercomments="Developer Comments" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="developercomments" helptext="Developer Comments" isrequired="Y" displaytype="textarea" />
+               <property tiptext="Help Text" decimallength="0" seq="7" formdisplay="Y" deleteind="N" developercomments="Help Text" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="helptext" helptext="Help Text" isrequired="Y" displaytype="textarea" />
+               <property tiptext="Tip Text" decimallength="0" seq="8" formdisplay="Y" deleteind="N" developercomments="Tip Text" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="tiptext" helptext="Tip Text" isrequired="Y" displaytype="textarea" />
+               <property tiptext="User Define Unit Test Case" decimallength="0" seq="10" formdisplay="Y" deleteind="N" developercomments="User Define Unit Test Case" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="userdefineunittestcase" helptext="User Define Unit Test Case" isrequired="Y" displaytype="textarea" />
+          </propertyversion> 
+     </metaobject>
+     
+     <metaobject seq="6" persistent="Y" active="Y" name="reference" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property tiptext="Reference No." decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Reference No." listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="referenceno" helptext="Reference No." />
+               <property tiptext="Meta Object" decimallength="0" seq="1" formdisplay="Y" deleteind="N" developercomments="Meta Object name that this Object references" listdisplay="Y" nullconstraint="NOT NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="metaobject" helptext="Meta Object name that this Object references" isrequired="Y" displaytype="dropdowm" >
+                    <dropdown seq="0" metaobject="metaobject" dropdowntype="sql" sorted="Y" name="refmo_dropdown">
+                         <valuefield seq="0" field="name" />
+                         <displayfield seq="0" field="name" />
+                         <partialkey seq="0" property="structureno" />
+                    </dropdown>
+               </property>
+               <property decimallength="0" seq="2" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="description" isrequired="N" displaytype="textarea" />
+               <property tiptext="Developer Comments" decimallength="0" seq="3" formdisplay="Y" deleteind="N" developercomments="Developer Comments" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="developercomments" helptext="Developer Comments" isrequired="N" displaytype="textarea" />
+               <property tiptext="Help Text" decimallength="0" seq="4" formdisplay="Y" deleteind="N" developercomments="Help Text" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="helptext" helptext="Help Text" isrequired="N" displaytype="textarea" />
+               <property tiptext="Tip Text" decimallength="0" seq="5" formdisplay="Y" deleteind="N" developercomments="Tip Text" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="tiptext" helptext="Tip Text" isrequired="N" displaytype="textarea" />
+               <property decimallength="0" seq="6" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="seq" isrequired="N" displaytype="text" />
+               <property tiptext="User Define Unit Test Case" decimallength="0" seq="9" formdisplay="Y" deleteind="N" developercomments="User Define Unit Test Case" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="userdefineunittestcase" helptext="User Define Unit Test Case" isrequired="N" displaytype="textarea" />
+          </propertyversion>
+          <depobject seq="0" metaobject="refdropdown" navigate="Y" identifying="Y" />
+     </metaobject>
+     
+  	 <metaobject seq="7" persistent="Y" active="Y" name="metaindex" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property tiptext="Meta Index No" decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Meta Index No" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="metaindexno" helptext="Meta Index No" />
+               <property tiptext="Name of the index" decimallength="0" seq="1" formdisplay="Y" deleteind="N" developercomments="Name of the index" listdisplay="Y" nullconstraint="NOT NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="name" helptext="Name of the index"  isrequired="Y" displaytype="text"/>
+               <property tiptext="Index Type" decimallength="0" seq="2" formdisplay="Y" deleteind="N" developercomments="Index Type" listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="indextype" helptext="Index Type" isrequired="Y" displaytype="dropdown" />
+               <property decimallength="0" seq="3" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="seq" />
+          </propertyversion>
+          <depobject seq="0" metaobject="indexcol" navigate="Y" identifying="Y" />
+     </metaobject>
+     
+     <metaobject seq="8" persistent="Y" active="Y" description="Metaobject Validation Rules" name="movalidationrule" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property decimallength="0" seq="0" formdisplay="N" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="movalidationruleno" />
+               <property decimallength="0" seq="1" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NOT NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="name" isrequired="Y" displaytype="text" />
+               <property decimallength="0" seq="2" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="expression" isrequired="Y" displaytype="text" />
+               <property decimallength="0" seq="3" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="lvalue" isrequired="Y" displaytype="dropdown" >
+                    <dropdown seq="0" metaobject="property" dropdowntype="sql" sorted="Y" name="movalidationrule_dropdown">
+                         <valuefield seq="0" field="field" />
+                         <displayfield seq="0" field="field" />
+                         <partialkey seq="0" property="structureno" />
+                         <partialkey seq="1" property="metaobjectno" />
+                    </dropdown>
+               </property>
+               <property decimallength="0" seq="4" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="op" isrequired="Y" displaytype="text" />
+               <property decimallength="0" seq="5" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="rvalue" isrequired="Y" displaytype="text" />
+               <property decimallength="0" seq="6" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="message" isrequired="N" displaytype="text" />
+               <property decimallength="0" seq="7" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="description" isrequired="N" displaytype="text" />
+          </propertyversion>          
+     </metaobject>
+     
+     <metaobject seq="9" persistent="Y" active="Y" name="metatrigger" developercomments="Meta Trigger" tiptext="Meta Trigger" description="Meta Trigger" helptext="Meta Trigger" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property tiptext="Trigger Event" decimallength="0" seq="0" formdisplay="Y" deleteind="N" developercomments="Trigger Event" listdisplay="Y" nullconstraint="NOT NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="triggerevent" />
+               <property tiptext="Trigger No" decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Trigger No" listdisplay="N" nullconstraint="NOT NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="triggerno" />
+               <property tiptext="Trigger Name" decimallength="0" seq="1" formdisplay="Y" deleteind="N" developercomments="Trigger Name" listdisplay="Y" nullconstraint="NOT NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="triggername" />
+               <property tiptext="Trigger Type" decimallength="0" seq="2" formdisplay="Y" deleteind="N" developercomments="Trigger Type" listdisplay="Y" nullconstraint="NOT NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="triggertype" />
+               <property tiptext="Trigger Query" decimallength="0" seq="4" formdisplay="Y" deleteind="N" developercomments="Trigger Query" listdisplay="Y" nullconstraint="NOT NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="triggerquery" />
+          </propertyversion>
+     </metaobject>
+     
+     <metaobject seq="10" persistent="Y" active="Y" name="property" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property tiptext="Property No." decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Property No." listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="propertyno" helptext="Property No." />
+               <property decimallength="0" seq="1" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="Y" resolvedisplay="N" persistent="Y" field="field">
+                    <dropdown seq="0" metaobject="field" dropdowntype="sql" sorted="Y" name="field_dropdown">
+                         <valuefield seq="0" field="name" />
+                         <displayfield seq="0" field="name" />
+                         <partialkey seq="0" property="structureno" />
+                    </dropdown>
+               </property>
+               <property decimallength="0" seq="2" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" defaultvalue="Y" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" defaultvaluetype="constant_default" field="persistent" />
+               <property tiptext="Null Constraint" decimallength="0" seq="3" formdisplay="Y" deleteind="N" developercomments="Null Constraint" listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" defaultvalue="NULL" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" defaultvaluetype="constant_default" field="nullconstraint" helptext="Null Constraint" />
+               <property tiptext="Key Constraint" decimallength="0" seq="4" formdisplay="Y" deleteind="N" developercomments="Key Constraint" listdisplay="N" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="keyconstraint" helptext="Key Constraint" />
+               <property tiptext="Auto Increment" decimallength="0" seq="5" formdisplay="Y" deleteind="N" developercomments="Auto Increment" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="autoincrement" helptext="Auto Increment" />
+               <property tiptext="Default Value" decimallength="0" seq="6" formdisplay="Y" deleteind="N" developercomments="Default Value" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="defaultvalue" helptext="Default Value" />
+               <property tiptext="Default Value Type" decimallength="0" seq="7" formdisplay="Y" deleteind="N" developercomments="Default Value Type" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="defaultvaluetype" helptext="Below are the available default system variables - SYSDATE: stores current date on insert SYSDATETIME: stores current timestamp on insert" />
+               <property tiptext="This determines if the field will be retrieved and displayed on the list page as part of the list." decimallength="0" seq="8" formdisplay="Y" deleteind="N" developercomments="This determines if the field will be retrieved and displayed on the list page as part of the list." listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="listdisplay" helptext="This determines if the field will be retrieved and displayed on the list page as part of the list." />
+               <property tiptext="Form Display" decimallength="0" seq="9" formdisplay="Y" deleteind="N" developercomments="Form Display" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" defaultvalue="Y" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" defaultvaluetype="constant_default" field="formdisplay" helptext="Form Display" />
+               <property tiptext="Search Field" decimallength="0" seq="10" formdisplay="Y" deleteind="N" developercomments="Search Field" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="searchfield" helptext="Search Field" />
+               <property tiptext="Context Field" decimallength="0" seq="11" formdisplay="Y" deleteind="N" developercomments="Context Field" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="contextfield" helptext="Context Field" />
+               <property tiptext="A property marked as Resolve will be resolved when ever this table shows up in a join." decimallength="0" seq="12" formdisplay="Y" deleteind="N" developercomments="A property marked as Resolve will be resolved when ever this table shows up in a join." listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="resolvedisplay" helptext="A property marked as Resolve will be resolved when ever this table shows up in a join." />
+               <property tiptext="This is used for versioning to override a property in a version and to mark it as virtual deleted" decimallength="0" seq="13" formdisplay="Y" deleteind="N" developercomments="This is used for versioning to override a property in a version and to mark it as virtual deleted" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="deleteind" helptext="This is used for versioning to override a property in a version and to mark it as virtual deleted" />
+               <property decimallength="0" seq="14" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="seq" />
+               <property tiptext="Developer Comments" decimallength="0" seq="15" formdisplay="Y" deleteind="N" developercomments="Developer Comments" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="developercomments" helptext="Developer Comments" />
+               <property tiptext="Help Text" decimallength="0" seq="16" formdisplay="Y" deleteind="N" developercomments="Help Text" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="helptext" helptext="Help Text" />
+               <property tiptext="Tip Text" decimallength="0" seq="17" formdisplay="Y" deleteind="N" developercomments="Tip Text" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="Y" resolvedisplay="N" persistent="Y" field="tiptext" helptext="Tip Text" />
+               <property decimallength="0" seq="19" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="type" />
+               <property decimallength="0" seq="20" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="propertylength" />
+               <property decimallength="0" seq="21" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="align" />
+               <property decimallength="0" seq="22" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="viewlength" />
+               <property decimallength="0" seq="25" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="isEncrypt" />
+               <property tiptext="User Define Unit Test Case" decimallength="0" seq="26" formdisplay="Y" deleteind="N" developercomments="User Define Unit Test Case" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="userdefineunittestcase" helptext="User Define Unit Test Case" />
+               <property tiptext="alias" decimallength="0" seq="27" formdisplay="Y" deleteind="N" developercomments="alias" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="10" isEncrypt="N" type="V" propertylength="12" searchfield="N" resolvedisplay="N" persistent="Y" field="alias" helptext="alias" />
+               <property decimallength="0" seq="28" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="5" isEncrypt="N" type="I" propertylength="5" searchfield="N" resolvedisplay="N" persistent="Y" field="decimallength" />
+               <property decimallength="0" seq="29" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="20" isEncrypt="N" propertylength="50" searchfield="N" resolvedisplay="N" persistent="Y" field="eval" />
+          
+          </propertyversion>
+          <depobject seq="0" metaobject="parentprop" navigate="Y" identifying="Y" />
+          <depobject seq="1" metaobject="dropdown" navigate="Y" identifying="Y" />
+          <depobject seq="2" metaobject="propvalidation" description="Validation rules" navigate="Y" identifying="Y" />
+          <depobject seq="3" metaobject="computerule" description="Compute rules " navigate="Y" identifying="Y" />          
+     </metaobject>
+     
+     <metaobject seq="11" persistent="Y" active="Y" name="computerule" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property decimallength="0" seq="0" formdisplay="N" deleteind="N" listdisplay="N" nullconstraint="NOT NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="computeruleno" />
+               <property decimallength="0" seq="1" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="name" isrequired="Y" displaytype="text" />
+               <property decimallength="0" seq="2" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="expression" isrequired="Y" displaytype="text" />
+               <property decimallength="0" seq="3" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="event" isrequired="Y" displaytype="text" />
+               <property decimallength="0" seq="4" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="eval" isrequired="N" displaytype="text" />
+               <property decimallength="0" seq="5" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="description" isrequired="N" displaytype="text" />
+               <property decimallength="0" seq="6" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="executionseq" isrequired="Y" displaytype="text" />
+               
+          </propertyversion>
+     </metaobject>
+     
+     <metaobject seq="12" persistent="Y" active="Y" name="rangevalue" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property tiptext="Range Value No." decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Range Value No." listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="rangevalueno" helptext="Range Value No." />
+               <property decimallength="0" seq="1" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="low" isrequired="Y" displaytype="text" />
+               <property decimallength="0" seq="2" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="high" isrequired="N" displaytype="text" />
+               <property decimallength="0" seq="3" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="meaning" isrequired="N" displaytype="text" />
+               <property decimallength="0" seq="4" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="seq" isrequired="N" displaytype="text" />
+          </propertyversion>
+     </metaobject>
+     
+     <metaobject seq="13" persistent="Y" active="Y" name="parentprop" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property tiptext="Parent Prop No." decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Parent Prop No." listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="parentpropno" helptext="Parent Prop No." />
+               <property tiptext="Specify parent property." decimallength="0" seq="1" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NOT NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="parent" helptext="Parent property must exist under the same metaobject. Eventually this text box will turn into a dropdown which has all the properties for the metaobject you are working on.">
+                    <dropdown seq="0" metaobject="property" dropdowntype="sql" sorted="Y" name="parentprop_dropdown">
+                         <valuefield seq="0" field="field" />
+                         <displayfield seq="0" field="field" />
+                         <partialkey seq="0" property="structureno" />
+                         <partialkey seq="1" property="metaobjectno" />
+                         <partialkey seq="2" property="propertyversionno" />
+                    </dropdown>
+               </property>
+               <property tiptext="Operator" decimallength="0" seq="2" formdisplay="Y" deleteind="N" developercomments="Operator" listdisplay="Y" nullconstraint="NOT NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="op" helptext="Select an operator. At runtime, parent property value will be evaluated using this operator and a decision is made while showing the child question." />
+               <property tiptext="Value" decimallength="0" seq="3" formdisplay="Y" deleteind="N" developercomments="Value" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="val" helptext="Specify value of the parent property which will be used during the evaluation process." />
+               <property decimallength="0" seq="4" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="seq" />
+               <property seq="5" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="eval" />
+          
+          </propertyversion>
+     </metaobject>
+     
+     <metaobject seq="14" persistent="Y" active="Y" name="dropdown" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property tiptext="Drop Down No." decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Drop Down No." listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="dropdownno" helptext="Drop Down No." />
+               <property decimallength="0" seq="1" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="name" isrequired="Y" displaytype="text" />
+               <property tiptext="Drop Down Type" decimallength="0" seq="2" formdisplay="Y" deleteind="N" developercomments="Drop Down Type" listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="dropdowntype" helptext="Drop Down Type" isrequired="N" displaytype="dropdown" />
+               <property tiptext="Data Object" decimallength="0" seq="3" formdisplay="Y" deleteind="N" developercomments="Data Object" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="dataobject" helptext="Data Object"  isrequired="N" displaytype="text" />
+               <property tiptext="Meta Object" decimallength="0" seq="4" formdisplay="Y" deleteind="N" developercomments="Meta Object" listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="metaobject" helptext="Meta Object" isrequired="N" displaytype="dropdown" >
+                    <dropdown seq="4" metaobject="metaobject" dropdowntype="sql" sorted="Y" name="metaobject_dropdown">
+                         <valuefield seq="0" field="name" />
+                         <displayfield seq="0" field="name" />
+                         <partialkey seq="0" property="structureno" />
+                    </dropdown>
+               </property>
+               <property decimallength="0" seq="5" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" defaultvalue="Y" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" defaultvaluetype="constant_default" field="sorted"  isrequired="N" displaytype="text" />
+               <property tiptext="Application Id" decimallength="0" seq="6" formdisplay="Y" deleteind="N" developercomments="Application Id" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="applid" helptext="Application Id" isrequired="N" displaytype="text" />
+               <property decimallength="0" seq="7" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="seq" isrequired="N" displaytype="text" />
+          </propertyversion>
+          <depobject seq="0" metaobject="valuefield" navigate="Y" identifying="Y" />
+          <depobject seq="1" metaobject="displayfield" navigate="Y" identifying="Y" />
+          <depobject seq="2" metaobject="partialkey" navigate="Y" identifying="Y" />
+     </metaobject>	
+     																																												  
+     <metaobject seq="15" persistent="Y" active="Y" name="propvalidation" description="Property validation rules" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property decimallength="0" seq="0" formdisplay="N" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="propvalidationno" />
+               <property decimallength="0" seq="1" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NOT NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="name" isrequired="Y" displaytype="text" />
+               <property decimallength="0" seq="2" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="expression" isrequired="Y" displaytype="text" />
+               <property decimallength="0" seq="3" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="event" isrequired="N" displaytype="text" />
+               <property decimallength="0" seq="4" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="message" isrequired="N" displaytype="text" />
+               <property decimallength="0" seq="5" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="description" isrequired="N" displaytype="textarea" />
+               <property decimallength="0" seq="6" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="executionseq" isrequired="N" displaytype="text" />               
+          </propertyversion> 
+     </metaobject> 
+     
+     <metaobject seq="16" active="Y" persistent="Y" name="indexcol" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property tiptext="Index Column No" decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Index Column No" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="indexcolno" helptext="Index Column No" />
+               <property decimallength="0" seq="1" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NOT NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="property">
+                    <dropdown seq="0" metaobject="property" dropdowntype="sql" sorted="Y" name="index_prop_dropdown">
+                         <valuefield seq="0" field="field" />
+                         <displayfield seq="0" field="field" />
+                         <partialkey seq="0" property="metaobjectno" />
+                         <partialkey seq="1" property="structureno" />
+                    </dropdown>
+               </property>
+               <property tiptext="Index Order" decimallength="0" seq="2" formdisplay="Y" deleteind="N" developercomments="Index Order" listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="indexorder" helptext="Index Order" />
+               <property decimallength="0" seq="3" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="seq" />
+          </propertyversion> 
+     </metaobject>
+     
+     <metaobject seq="17" persistent="Y"  active="Y" name="refdropdown" motype="N"> 
+     	   <propertyversion versionname="0" seq="0">
+               <property tiptext="Ref Dropdown No." decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Ref Dropdown No." listdisplay="Y" nullconstraint="NULL" contextfield="Y" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="refdropdownno" helptext="Ref Dropdown No." />
+               <property decimallength="0" seq="1" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NOT NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="property" />
+               <property decimallength="0" seq="2" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="seq" />
+          </propertyversion>          
+     </metaobject>
+     
+     <metaobject seq="18" persistent="Y" active="Y" name="valuefield" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property tiptext="Value Field No." decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Value Field No." listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="valuefieldno" helptext="Value Field No." />
+               <property decimallength="0" seq="1" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NOT NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="field" isrequired="Y" displaytype="dropdown">
+                    <dropdown seq="0" metaobject="field" dropdowntype="sql" sorted="Y" name="valuefield_field_dropdown">
+                         <valuefield seq="0" field="name" />
+                         <displayfield seq="0" field="name" />
+                         <partialkey seq="0" property="structureno" />
+                    </dropdown>
+               </property>
+               <property decimallength="0" seq="2" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="delimiter" isrequired="N" displaytype="text" />
+               <property decimallength="0" seq="3" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="seq" isrequired="N" displaytype="text" />
+          </propertyversion>
+     </metaobject>
+     
+     <metaobject seq="19" persistent="Y" active="Y" name="displayfield" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property tiptext="Display Field No." decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Display Field No." listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="displayfieldno" helptext="Display Field No." />
+               <property decimallength="0" seq="1" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NOT NULL" contextfield="Y" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="field" isrequired="y" displaytype="dropdown" >
+                    <dropdown seq="0" metaobject="field" dropdowntype="sql" sorted="Y" name="displayfield_field_dropdown">
+                         <valuefield seq="0" field="name" />
+                         <displayfield seq="0" field="name" />
+                         <partialkey seq="0" property="structureno" />
+                    </dropdown>
+               </property>
+               <property decimallength="0" seq="2" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="delimiter"  isrequired="N" displaytype="text"/>
+               <property decimallength="0" seq="3" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="seq" isrequired="N" displaytype="text" />
+          </propertyversion>           
+     </metaobject>
+     
+     <metaobject seq="20" persistent="Y" active="Y" name="partialkey" motype="N">
+          <propertyversion versionname="0" seq="0">
+               <property tiptext="Partial Key No." decimallength="0" seq="0" formdisplay="N" deleteind="N" developercomments="Partial Key No." listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" autoincrement="IDENTITY" propertylength="0" searchfield="N" keyconstraint="PRIMARY KEY" resolvedisplay="N" persistent="Y" field="partialkeyno" helptext="Partial Key No." />
+               <property decimallength="0" seq="1" formdisplay="Y" deleteind="N" listdisplay="Y" nullconstraint="NOT NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="property" isrequired="Y" displaytype="dropdown">
+                    <dropdown seq="0" metaobject="field" dropdowntype="sql" sorted="Y" name="partialkey_property_dropdown">
+                         <valuefield seq="0" field="name" />
+                         <displayfield seq="0" field="name" />
+                         <partialkey seq="0" property="structureno" />
+                    </dropdown>
+               </property>
+               <property decimallength="0" seq="2" formdisplay="Y" deleteind="N" listdisplay="N" nullconstraint="NULL" contextfield="N" viewlength="0" isEncrypt="N" propertylength="0" searchfield="N" resolvedisplay="N" persistent="Y" field="seq"  isrequired="N" displaytype="text"/>
+          </propertyversion>
+     </metaobject>
+     
+</structure>

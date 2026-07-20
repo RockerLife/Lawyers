@@ -1,0 +1,365 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Firm">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Firm</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Firm where PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into Firm(PolicyKey
+          <isNotEmpty property="ContactPerson" prepend=",">ContactPerson</isNotEmpty>
+          <isNotEmpty property="ContactPhone" prepend=",">ContactPhone</isNotEmpty>
+          <isNotEmpty property="IsFirmRenderingServices" prepend=",">IsFirmRenderingServices</isNotEmpty>
+          <isNotEmpty property="IsCoverageIncludedForThisEntity" prepend=",">IsCoverageIncludedForThisEntity</isNotEmpty>
+          <isNotEmpty property="TotalFirmPersonnel" prepend=",">TotalFirmPersonnel</isNotEmpty>
+          <isNotEmpty property="IsAnyFirmMeargedOrAcquired" prepend=",">IsAnyFirmMeargedOrAcquired</isNotEmpty>
+          <isNotEmpty property="IsReducedNumberOfOwners" prepend=",">IsReducedNumberOfOwners</isNotEmpty>
+          <isNotEmpty property="IsFirmCarryingProfLiabilityIns" prepend=",">IsFirmCarryingProfLiabilityIns</isNotEmpty>
+          <isNotEmpty property="IsPriorAct" prepend=",">IsPriorAct</isNotEmpty>
+          <isNotEmpty property="IsFullPriorAct" prepend=",">IsFullPriorAct</isNotEmpty>
+          <isNotEmpty property="PriorActDate" prepend=",">PriorActDate</isNotEmpty>
+          <isNotEmpty property="IsPolicyExcludesCoverage" prepend=",">IsPolicyExcludesCoverage</isNotEmpty>
+          <isNotEmpty property="RetroDate" prepend=",">RetroDate</isNotEmpty>
+          <isNotEmpty property="RetroFirmName" prepend=",">RetroFirmName</isNotEmpty>
+          <isNotEmpty property="PercentOfRevenueFromLargestClient" prepend=",">PercentOfRevenueFromLargestClient</isNotEmpty>
+          <isNotEmpty property="PercentOfRevenueFromSecondLargestClient" prepend=",">PercentOfRevenueFromSecondLargestClient</isNotEmpty>
+          <isNotEmpty property="ClientIndustryIDofLargestClient" prepend=",">ClientIndustryIDofLargestClient</isNotEmpty>
+          <isNotEmpty property="ClientIndustryIDofSecondLargestClient" prepend=",">ClientIndustryIDofSecondLargestClient</isNotEmpty>
+          <isNotEmpty property="ServiceIndustryIDofLargestClient" prepend=",">ServiceIndustryIDofLargestClient</isNotEmpty>
+          <isNotEmpty property="ServiceIndustryIDofSecondLargestClient" prepend=",">ServiceIndustryIDofSecondLargestClient</isNotEmpty>
+          <isNotEmpty property="IsQualityReviewOfferedByAICPA" prepend=",">IsQualityReviewOfferedByAICPA</isNotEmpty>
+          <isNotEmpty property="IsCommissionRecieved" prepend=",">IsCommissionRecieved</isNotEmpty>
+          <isNotEmpty property="IsPublicTradedAudited" prepend=",">IsPublicTradedAudited</isNotEmpty>
+          <isNotEmpty property="IsServedAsTrustee" prepend=",">IsServedAsTrustee</isNotEmpty>
+          <isNotEmpty property="IsPublicPrivateOfferingsDone" prepend=",">IsPublicPrivateOfferingsDone</isNotEmpty>
+          <isNotEmpty property="PublicPrivateFirmName" prepend=",">PublicPrivateFirmName</isNotEmpty>
+          <isNotEmpty property="PublicPrivateYearsOfExperience" prepend=",">PublicPrivateYearsOfExperience</isNotEmpty>
+          <isNotEmpty property="IsInvestmentVenture" prepend=",">IsInvestmentVenture</isNotEmpty>
+          <isNotEmpty property="IsDebtOrEquityFinancing" prepend=",">IsDebtOrEquityFinancing</isNotEmpty>
+          <isNotEmpty property="IsManagementServiceProvided" prepend=",">IsManagementServiceProvided</isNotEmpty>
+          <isNotEmpty property="IsNonPublicInvestmentDone" prepend=",">IsNonPublicInvestmentDone</isNotEmpty>
+          <isNotEmpty property="IsFirmRenderedServiceForAnyClient" prepend=",">IsFirmRenderedServiceForAnyClient</isNotEmpty>
+          <isNotEmpty property="IsNonMonetaryCompensationRecieved" prepend=",">IsNonMonetaryCompensationRecieved</isNotEmpty>
+          <isNotEmpty property="CurrentValueNmc" prepend=",">CurrentValueNmc</isNotEmpty>
+          <isNotEmpty property="ClientNameNmc" prepend=",">ClientNameNmc</isNotEmpty>
+          <isNotEmpty property="ClientIndustryNmcKey" prepend=",">ClientIndustryNmcKey</isNotEmpty>
+          <isNotEmpty property="ServiceIndustryNmcKey" prepend=",">ServiceIndustryNmcKey</isNotEmpty>
+          <isNotEmpty property="MergedOrNumberComment" prepend=",">MergedOrNumberComment</isNotEmpty>
+          <isNotEmpty property="IsFirmRenderedAuditOrAttestService" prepend=",">IsFirmRenderedAuditOrAttestService</isNotEmpty>
+          <isNotEmpty property="IsSuitInstituted" prepend=",">IsSuitInstituted</isNotEmpty>
+          <isNotEmpty property="AgainstHowManyClients" prepend=",">AgainstHowManyClients</isNotEmpty>
+          <isNotEmpty property="IsSignedEngagement" prepend=",">IsSignedEngagement</isNotEmpty>
+          <isNotEmpty property="IsControlClientFunds" prepend=",">IsControlClientFunds</isNotEmpty>
+          <isNotEmpty property="IsAnyRegulatoryInquiry" prepend=",">IsAnyRegulatoryInquiry</isNotEmpty>
+          <isNotEmpty property="IsAwarenessOfAnyProfLiability" prepend=",">IsAwarenessOfAnyProfLiability</isNotEmpty>
+          <isNotEmpty property="IsAwarenessOfAnyProfLiabilitySuitAgainst" prepend=",">IsAwarenessOfAnyProfLiabilitySuitAgainst</isNotEmpty>
+          <isNotEmpty property="Email" prepend=",">Email</isNotEmpty>
+          <isNotEmpty property="OtherLargestClientIndustry" prepend=",">OtherLargestClientIndustry</isNotEmpty>
+          <isNotEmpty property="OtherLargestServiceIndustry" prepend=",">OtherLargestServiceIndustry</isNotEmpty>
+          <isNotEmpty property="OtherClientIndSecondLargestClient" prepend=",">OtherClientIndSecondLargestClient</isNotEmpty>
+          <isNotEmpty property="OtherServiceIndSecondLargestClient" prepend=",">OtherServiceIndSecondLargestClient</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="IsFirmsRevenueMorethan25Percent" prepend=",">IsFirmsRevenueMorethan25Percent</isNotEmpty>
+          <isNotEmpty property="IsFirmAttendedRiskMagtSeminarIn3Years" prepend=",">IsFirmAttendedRiskMagtSeminarIn3Years</isNotEmpty>
+          <isNotEmpty property="RegulatoryInquiryExaplain" prepend=",">RegulatoryInquiryExaplain</isNotEmpty>
+          <isNotEmpty property="RegulatoryInquiryComment" prepend=",">RegulatoryInquiryComment</isNotEmpty>
+          <isNotEmpty property="IsFirmDeclinedOtherthanNonPayment" prepend=",">IsFirmDeclinedOtherthanNonPayment</isNotEmpty>
+          <isNotEmpty property="ReasonForDecline" prepend=",">ReasonForDecline</isNotEmpty>
+          <isNotEmpty property="ReasonForDeclineComment" prepend=",">ReasonForDeclineComment</isNotEmpty>
+          <isNotEmpty property="IsPredecessorsOrInvestVentures" prepend=",">IsPredecessorsOrInvestVentures</isNotEmpty>
+          <isNotEmpty property="IsSyndicationManagers" prepend=",">IsSyndicationManagers</isNotEmpty>
+          <isNotEmpty property="IsQuickQuoteByEmail" prepend=",">IsQuickQuoteByEmail</isNotEmpty>
+          <isNotEmpty property="IsAnAgentCall" prepend=",">IsAnAgentCall</isNotEmpty>
+          <isNotEmpty property="ContactPhoneExt" prepend=",">ContactPhoneExt</isNotEmpty>
+          <isNotEmpty property="IsRatingDone" prepend=",">IsRatingDone</isNotEmpty>
+          <isNotEmpty property="IsBasicPage" prepend=",">IsBasicPage</isNotEmpty>
+          <isNotEmpty property="IsGeneralPage" prepend=",">IsGeneralPage</isNotEmpty>
+          <isNotEmpty property="IsSupplementPage" prepend=",">IsSupplementPage</isNotEmpty>
+          <isNotEmpty property="IsClientTerminated" prepend=",">IsClientTerminated</isNotEmpty>
+          <isNotEmpty property="IsAnyDeclination" prepend=",">IsAnyDeclination</isNotEmpty>
+          <isNotEmpty property="IsPolicyProhibiting" prepend=",">IsPolicyProhibiting</isNotEmpty>
+          <isNotEmpty property="IsWrittenAnyQualityControlDocument" prepend=",">IsWrittenAnyQualityControlDocument</isNotEmpty>
+          <isNotEmpty property="IsAttesationPage" prepend=",">IsAttesationPage</isNotEmpty>
+          <isNotEmpty property="IsComputerServicePage" prepend=",">IsComputerServicePage</isNotEmpty>
+          <isNotEmpty property="OtherITServiceComment" prepend=",">OtherITServiceComment</isNotEmpty>
+          <isNotEmpty property="IsBusinessFundPage" prepend=",">IsBusinessFundPage</isNotEmpty>
+          <isNotEmpty property="IsPracriceMangPage" prepend=",">IsPracriceMangPage</isNotEmpty>
+          <isNotEmpty property="ServiceIndustryofLargestClient" prepend=",">ServiceIndustryofLargestClient</isNotEmpty>
+          <isNotEmpty property="ServiceIndustryofSecondLargestClient" prepend=",">ServiceIndustryofSecondLargestClient</isNotEmpty>
+          <isNotEmpty property="FirstReviewUserID" prepend=",">FirstReviewUserID</isNotEmpty>
+          <isNotEmpty property="ClientIndustryNmcKeyOthers" prepend=",">ClientIndustryNmcKeyOthers</isNotEmpty>
+          <isNotEmpty property="ServiceIndustryNmcKeyOthers" prepend=",">ServiceIndustryNmcKeyOthers</isNotEmpty>
+          <isNotEmpty property="LicenseNumber" prepend=",">LicenseNumber</isNotEmpty>
+          <isNotEmpty property="IsQuotePage" prepend=",">IsQuotePage</isNotEmpty>
+          ) values (#PolicyKey:NUMERIC#
+          <isNotEmpty property="ContactPerson" prepend=",">#ContactPerson#</isNotEmpty>
+          <isNotEmpty property="ContactPhone" prepend=",">#ContactPhone#</isNotEmpty>
+          <isNotEmpty property="IsFirmRenderingServices" prepend=",">#IsFirmRenderingServices#</isNotEmpty>
+          <isNotEmpty property="IsCoverageIncludedForThisEntity" prepend=",">#IsCoverageIncludedForThisEntity#</isNotEmpty>
+          <isNotEmpty property="TotalFirmPersonnel" prepend=",">#TotalFirmPersonnel#</isNotEmpty>
+          <isNotEmpty property="IsAnyFirmMeargedOrAcquired" prepend=",">#IsAnyFirmMeargedOrAcquired#</isNotEmpty>
+          <isNotEmpty property="IsReducedNumberOfOwners" prepend=",">#IsReducedNumberOfOwners#</isNotEmpty>
+          <isNotEmpty property="IsFirmCarryingProfLiabilityIns" prepend=",">#IsFirmCarryingProfLiabilityIns#</isNotEmpty>
+          <isNotEmpty property="IsPriorAct" prepend=",">#IsPriorAct#</isNotEmpty>
+          <isNotEmpty property="IsFullPriorAct" prepend=",">#IsFullPriorAct#</isNotEmpty>
+          <isNotEmpty property="PriorActDate" prepend=",">#PriorActDate#</isNotEmpty>
+          <isNotEmpty property="IsPolicyExcludesCoverage" prepend=",">#IsPolicyExcludesCoverage#</isNotEmpty>
+          <isNotEmpty property="RetroDate" prepend=",">#RetroDate#</isNotEmpty>
+          <isNotEmpty property="RetroFirmName" prepend=",">#RetroFirmName#</isNotEmpty>
+          <isNotEmpty property="PercentOfRevenueFromLargestClient" prepend=",">#PercentOfRevenueFromLargestClient#</isNotEmpty>
+          <isNotEmpty property="PercentOfRevenueFromSecondLargestClient" prepend=",">#PercentOfRevenueFromSecondLargestClient#</isNotEmpty>
+          <isNotEmpty property="ClientIndustryIDofLargestClient" prepend=",">#ClientIndustryIDofLargestClient#</isNotEmpty>
+          <isNotEmpty property="ClientIndustryIDofSecondLargestClient" prepend=",">#ClientIndustryIDofSecondLargestClient#</isNotEmpty>
+          <isNotEmpty property="ServiceIndustryIDofLargestClient" prepend=",">#ServiceIndustryIDofLargestClient#</isNotEmpty>
+          <isNotEmpty property="ServiceIndustryIDofSecondLargestClient" prepend=",">#ServiceIndustryIDofSecondLargestClient#</isNotEmpty>
+          <isNotEmpty property="IsQualityReviewOfferedByAICPA" prepend=",">#IsQualityReviewOfferedByAICPA#</isNotEmpty>
+          <isNotEmpty property="IsCommissionRecieved" prepend=",">#IsCommissionRecieved#</isNotEmpty>
+          <isNotEmpty property="IsPublicTradedAudited" prepend=",">#IsPublicTradedAudited#</isNotEmpty>
+          <isNotEmpty property="IsServedAsTrustee" prepend=",">#IsServedAsTrustee#</isNotEmpty>
+          <isNotEmpty property="IsPublicPrivateOfferingsDone" prepend=",">#IsPublicPrivateOfferingsDone#</isNotEmpty>
+          <isNotEmpty property="PublicPrivateFirmName" prepend=",">#PublicPrivateFirmName#</isNotEmpty>
+          <isNotEmpty property="PublicPrivateYearsOfExperience" prepend=",">#PublicPrivateYearsOfExperience#</isNotEmpty>
+          <isNotEmpty property="IsInvestmentVenture" prepend=",">#IsInvestmentVenture#</isNotEmpty>
+          <isNotEmpty property="IsDebtOrEquityFinancing" prepend=",">#IsDebtOrEquityFinancing#</isNotEmpty>
+          <isNotEmpty property="IsManagementServiceProvided" prepend=",">#IsManagementServiceProvided#</isNotEmpty>
+          <isNotEmpty property="IsNonPublicInvestmentDone" prepend=",">#IsNonPublicInvestmentDone#</isNotEmpty>
+          <isNotEmpty property="IsFirmRenderedServiceForAnyClient" prepend=",">#IsFirmRenderedServiceForAnyClient#</isNotEmpty>
+          <isNotEmpty property="IsNonMonetaryCompensationRecieved" prepend=",">#IsNonMonetaryCompensationRecieved#</isNotEmpty>
+          <isNotEmpty property="CurrentValueNmc" prepend=",">#CurrentValueNmc#</isNotEmpty>
+          <isNotEmpty property="ClientNameNmc" prepend=",">#ClientNameNmc#</isNotEmpty>
+          <isNotEmpty property="ClientIndustryNmcKey" prepend=",">#ClientIndustryNmcKey#</isNotEmpty>
+          <isNotEmpty property="ServiceIndustryNmcKey" prepend=",">#ServiceIndustryNmcKey#</isNotEmpty>
+          <isNotEmpty property="MergedOrNumberComment" prepend=",">#MergedOrNumberComment#</isNotEmpty>
+          <isNotEmpty property="IsFirmRenderedAuditOrAttestService" prepend=",">#IsFirmRenderedAuditOrAttestService#</isNotEmpty>
+          <isNotEmpty property="IsSuitInstituted" prepend=",">#IsSuitInstituted#</isNotEmpty>
+          <isNotEmpty property="AgainstHowManyClients" prepend=",">#AgainstHowManyClients#</isNotEmpty>
+          <isNotEmpty property="IsSignedEngagement" prepend=",">#IsSignedEngagement#</isNotEmpty>
+          <isNotEmpty property="IsControlClientFunds" prepend=",">#IsControlClientFunds#</isNotEmpty>
+          <isNotEmpty property="IsAnyRegulatoryInquiry" prepend=",">#IsAnyRegulatoryInquiry#</isNotEmpty>
+          <isNotEmpty property="IsAwarenessOfAnyProfLiability" prepend=",">#IsAwarenessOfAnyProfLiability#</isNotEmpty>
+          <isNotEmpty property="IsAwarenessOfAnyProfLiabilitySuitAgainst" prepend=",">#IsAwarenessOfAnyProfLiabilitySuitAgainst#</isNotEmpty>
+          <isNotEmpty property="Email" prepend=",">#Email#</isNotEmpty>
+          <isNotEmpty property="OtherLargestClientIndustry" prepend=",">#OtherLargestClientIndustry#</isNotEmpty>
+          <isNotEmpty property="OtherLargestServiceIndustry" prepend=",">#OtherLargestServiceIndustry#</isNotEmpty>
+          <isNotEmpty property="OtherClientIndSecondLargestClient" prepend=",">#OtherClientIndSecondLargestClient#</isNotEmpty>
+          <isNotEmpty property="OtherServiceIndSecondLargestClient" prepend=",">#OtherServiceIndSecondLargestClient#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="IsFirmsRevenueMorethan25Percent" prepend=",">#IsFirmsRevenueMorethan25Percent#</isNotEmpty>
+          <isNotEmpty property="IsFirmAttendedRiskMagtSeminarIn3Years" prepend=",">#IsFirmAttendedRiskMagtSeminarIn3Years#</isNotEmpty>
+          <isNotEmpty property="RegulatoryInquiryExaplain" prepend=",">#RegulatoryInquiryExaplain#</isNotEmpty>
+          <isNotEmpty property="RegulatoryInquiryComment" prepend=",">#RegulatoryInquiryComment#</isNotEmpty>
+          <isNotEmpty property="IsFirmDeclinedOtherthanNonPayment" prepend=",">#IsFirmDeclinedOtherthanNonPayment#</isNotEmpty>
+          <isNotEmpty property="ReasonForDecline" prepend=",">#ReasonForDecline#</isNotEmpty>
+          <isNotEmpty property="ReasonForDeclineComment" prepend=",">#ReasonForDeclineComment#</isNotEmpty>
+          <isNotEmpty property="IsPredecessorsOrInvestVentures" prepend=",">#IsPredecessorsOrInvestVentures#</isNotEmpty>
+          <isNotEmpty property="IsSyndicationManagers" prepend=",">#IsSyndicationManagers#</isNotEmpty>
+          <isNotEmpty property="IsQuickQuoteByEmail" prepend=",">#IsQuickQuoteByEmail#</isNotEmpty>
+          <isNotEmpty property="IsAnAgentCall" prepend=",">#IsAnAgentCall#</isNotEmpty>
+          <isNotEmpty property="ContactPhoneExt" prepend=",">#ContactPhoneExt#</isNotEmpty>
+          <isNotEmpty property="IsRatingDone" prepend=",">#IsRatingDone#</isNotEmpty>
+          <isNotEmpty property="IsBasicPage" prepend=",">#IsBasicPage#</isNotEmpty>
+          <isNotEmpty property="IsGeneralPage" prepend=",">#IsGeneralPage#</isNotEmpty>
+          <isNotEmpty property="IsSupplementPage" prepend=",">#IsSupplementPage#</isNotEmpty>
+          <isNotEmpty property="IsClientTerminated" prepend=",">#IsClientTerminated#</isNotEmpty>
+          <isNotEmpty property="IsAnyDeclination" prepend=",">#IsAnyDeclination#</isNotEmpty>
+          <isNotEmpty property="IsPolicyProhibiting" prepend=",">#IsPolicyProhibiting#</isNotEmpty>
+          <isNotEmpty property="IsWrittenAnyQualityControlDocument" prepend=",">#IsWrittenAnyQualityControlDocument#</isNotEmpty>
+          <isNotEmpty property="IsAttesationPage" prepend=",">#IsAttesationPage#</isNotEmpty>
+          <isNotEmpty property="IsComputerServicePage" prepend=",">#IsComputerServicePage#</isNotEmpty>
+          <isNotEmpty property="OtherITServiceComment" prepend=",">#OtherITServiceComment#</isNotEmpty>
+          <isNotEmpty property="IsBusinessFundPage" prepend=",">#IsBusinessFundPage#</isNotEmpty>
+          <isNotEmpty property="IsPracriceMangPage" prepend=",">#IsPracriceMangPage#</isNotEmpty>
+          <isNotEmpty property="ServiceIndustryofLargestClient" prepend=",">#ServiceIndustryofLargestClient#</isNotEmpty>
+          <isNotEmpty property="ServiceIndustryofSecondLargestClient" prepend=",">#ServiceIndustryofSecondLargestClient#</isNotEmpty>
+          <isNotEmpty property="FirstReviewUserID" prepend=",">#FirstReviewUserID#</isNotEmpty>
+          <isNotEmpty property="ClientIndustryNmcKeyOthers" prepend=",">#ClientIndustryNmcKeyOthers#</isNotEmpty>
+          <isNotEmpty property="ServiceIndustryNmcKeyOthers" prepend=",">#ServiceIndustryNmcKeyOthers#</isNotEmpty>
+          <isNotEmpty property="LicenseNumber" prepend=",">#LicenseNumber#</isNotEmpty>
+          <isNotEmpty property="IsQuotePage" prepend=",">#IsQuotePage#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="VersionSequence">SELECT IDENT_CURRENT('Firm') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ContactPerson, ContactPhone, IsFirmRenderingServices, IsCoverageIncludedForThisEntity, TotalFirmPersonnel, IsAnyFirmMeargedOrAcquired, IsReducedNumberOfOwners, IsFirmCarryingProfLiabilityIns, IsPriorAct, IsFullPriorAct, PriorActDate, IsPolicyExcludesCoverage, RetroDate, RetroFirmName, PercentOfRevenueFromLargestClient, PercentOfRevenueFromSecondLargestClient, ClientIndustryIDofLargestClient, ClientIndustryIDofSecondLargestClient, ServiceIndustryIDofLargestClient, ServiceIndustryIDofSecondLargestClient, IsQualityReviewOfferedByAICPA, IsCommissionRecieved, IsPublicTradedAudited, IsServedAsTrustee, IsPublicPrivateOfferingsDone, PublicPrivateFirmName, PublicPrivateYearsOfExperience, IsInvestmentVenture, IsDebtOrEquityFinancing, IsManagementServiceProvided, IsNonPublicInvestmentDone, IsFirmRenderedServiceForAnyClient, IsNonMonetaryCompensationRecieved, CurrentValueNmc, ClientNameNmc, ClientIndustryNmcKey, ServiceIndustryNmcKey, MergedOrNumberComment, IsFirmRenderedAuditOrAttestService, IsSuitInstituted, AgainstHowManyClients, IsSignedEngagement, IsControlClientFunds, IsAnyRegulatoryInquiry, IsAwarenessOfAnyProfLiability, IsAwarenessOfAnyProfLiabilitySuitAgainst, Email, OtherLargestClientIndustry, OtherLargestServiceIndustry, OtherClientIndSecondLargestClient, OtherServiceIndSecondLargestClient, LastUpdateUserID, LastUpdateTimeStamp, IsFirmsRevenueMorethan25Percent, IsFirmAttendedRiskMagtSeminarIn3Years, RegulatoryInquiryExaplain, RegulatoryInquiryComment, IsFirmDeclinedOtherthanNonPayment, ReasonForDecline, ReasonForDeclineComment, IsPredecessorsOrInvestVentures, IsSyndicationManagers, IsQuickQuoteByEmail, IsAnAgentCall, ContactPhoneExt, IsRatingDone, IsBasicPage, IsGeneralPage, IsSupplementPage, IsClientTerminated, IsAnyDeclination, IsPolicyProhibiting, IsWrittenAnyQualityControlDocument, IsAttesationPage, IsComputerServicePage, OtherITServiceComment, IsBusinessFundPage, IsPracriceMangPage, ServiceIndustryofLargestClient, ServiceIndustryofSecondLargestClient, FirstReviewUserID, VersionSequence, ClientIndustryNmcKeyOthers, ServiceIndustryNmcKeyOthers, LicenseNumber, IsQuotePage, PolicyKey from Firm where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update Firm set
+          <dynamic prepend=" ">
+               <isNotEmpty property="ContactPerson" prepend=",">ContactPerson = #ContactPerson#</isNotEmpty>
+               <isEmpty property="ContactPerson" prepend=",">ContactPerson = null</isEmpty>
+               <isNotEmpty property="ContactPhone" prepend=",">ContactPhone = #ContactPhone#</isNotEmpty>
+               <isEmpty property="ContactPhone" prepend=",">ContactPhone = null</isEmpty>
+               <isNotEmpty property="IsFirmRenderingServices" prepend=",">IsFirmRenderingServices = #IsFirmRenderingServices#</isNotEmpty>
+               <isEmpty property="IsFirmRenderingServices" prepend=",">IsFirmRenderingServices = null</isEmpty>
+               <isNotEmpty property="IsCoverageIncludedForThisEntity" prepend=",">IsCoverageIncludedForThisEntity = #IsCoverageIncludedForThisEntity#</isNotEmpty>
+               <isEmpty property="IsCoverageIncludedForThisEntity" prepend=",">IsCoverageIncludedForThisEntity = null</isEmpty>
+               <isNotEmpty property="TotalFirmPersonnel" prepend=",">TotalFirmPersonnel = #TotalFirmPersonnel#</isNotEmpty>
+               <isEmpty property="TotalFirmPersonnel" prepend=",">TotalFirmPersonnel = null</isEmpty>
+               <isNotEmpty property="IsAnyFirmMeargedOrAcquired" prepend=",">IsAnyFirmMeargedOrAcquired = #IsAnyFirmMeargedOrAcquired#</isNotEmpty>
+               <isEmpty property="IsAnyFirmMeargedOrAcquired" prepend=",">IsAnyFirmMeargedOrAcquired = null</isEmpty>
+               <isNotEmpty property="IsReducedNumberOfOwners" prepend=",">IsReducedNumberOfOwners = #IsReducedNumberOfOwners#</isNotEmpty>
+               <isEmpty property="IsReducedNumberOfOwners" prepend=",">IsReducedNumberOfOwners = null</isEmpty>
+               <isNotEmpty property="IsFirmCarryingProfLiabilityIns" prepend=",">IsFirmCarryingProfLiabilityIns = #IsFirmCarryingProfLiabilityIns#</isNotEmpty>
+               <isEmpty property="IsFirmCarryingProfLiabilityIns" prepend=",">IsFirmCarryingProfLiabilityIns = null</isEmpty>
+               <isNotEmpty property="IsPriorAct" prepend=",">IsPriorAct = #IsPriorAct#</isNotEmpty>
+               <isEmpty property="IsPriorAct" prepend=",">IsPriorAct = null</isEmpty>
+               <isNotEmpty property="IsFullPriorAct" prepend=",">IsFullPriorAct = #IsFullPriorAct#</isNotEmpty>
+               <isEmpty property="IsFullPriorAct" prepend=",">IsFullPriorAct = null</isEmpty>
+               <isNotEmpty property="PriorActDate" prepend=",">PriorActDate = #PriorActDate#</isNotEmpty>
+               <isEmpty property="PriorActDate" prepend=",">PriorActDate = null</isEmpty>
+               <isNotEmpty property="IsPolicyExcludesCoverage" prepend=",">IsPolicyExcludesCoverage = #IsPolicyExcludesCoverage#</isNotEmpty>
+               <isEmpty property="IsPolicyExcludesCoverage" prepend=",">IsPolicyExcludesCoverage = null</isEmpty>
+               <isNotEmpty property="RetroDate" prepend=",">RetroDate = #RetroDate#</isNotEmpty>
+               <isEmpty property="RetroDate" prepend=",">RetroDate = null</isEmpty>
+               <isNotEmpty property="RetroFirmName" prepend=",">RetroFirmName = #RetroFirmName#</isNotEmpty>
+               <isEmpty property="RetroFirmName" prepend=",">RetroFirmName = null</isEmpty>
+               <isNotEmpty property="PercentOfRevenueFromLargestClient" prepend=",">PercentOfRevenueFromLargestClient = #PercentOfRevenueFromLargestClient#</isNotEmpty>
+               <isEmpty property="PercentOfRevenueFromLargestClient" prepend=",">PercentOfRevenueFromLargestClient = null</isEmpty>
+               <isNotEmpty property="PercentOfRevenueFromSecondLargestClient" prepend=",">PercentOfRevenueFromSecondLargestClient = #PercentOfRevenueFromSecondLargestClient#</isNotEmpty>
+               <isEmpty property="PercentOfRevenueFromSecondLargestClient" prepend=",">PercentOfRevenueFromSecondLargestClient = null</isEmpty>
+               <isNotEmpty property="ClientIndustryIDofLargestClient" prepend=",">ClientIndustryIDofLargestClient = #ClientIndustryIDofLargestClient#</isNotEmpty>
+               <isEmpty property="ClientIndustryIDofLargestClient" prepend=",">ClientIndustryIDofLargestClient = null</isEmpty>
+               <isNotEmpty property="ClientIndustryIDofSecondLargestClient" prepend=",">ClientIndustryIDofSecondLargestClient = #ClientIndustryIDofSecondLargestClient#</isNotEmpty>
+               <isEmpty property="ClientIndustryIDofSecondLargestClient" prepend=",">ClientIndustryIDofSecondLargestClient = null</isEmpty>
+               <isNotEmpty property="ServiceIndustryIDofLargestClient" prepend=",">ServiceIndustryIDofLargestClient = #ServiceIndustryIDofLargestClient#</isNotEmpty>
+               <isEmpty property="ServiceIndustryIDofLargestClient" prepend=",">ServiceIndustryIDofLargestClient = null</isEmpty>
+               <isNotEmpty property="ServiceIndustryIDofSecondLargestClient" prepend=",">ServiceIndustryIDofSecondLargestClient = #ServiceIndustryIDofSecondLargestClient#</isNotEmpty>
+               <isEmpty property="ServiceIndustryIDofSecondLargestClient" prepend=",">ServiceIndustryIDofSecondLargestClient = null</isEmpty>
+               <isNotEmpty property="IsQualityReviewOfferedByAICPA" prepend=",">IsQualityReviewOfferedByAICPA = #IsQualityReviewOfferedByAICPA#</isNotEmpty>
+               <isEmpty property="IsQualityReviewOfferedByAICPA" prepend=",">IsQualityReviewOfferedByAICPA = null</isEmpty>
+               <isNotEmpty property="IsCommissionRecieved" prepend=",">IsCommissionRecieved = #IsCommissionRecieved#</isNotEmpty>
+               <isEmpty property="IsCommissionRecieved" prepend=",">IsCommissionRecieved = null</isEmpty>
+               <isNotEmpty property="IsPublicTradedAudited" prepend=",">IsPublicTradedAudited = #IsPublicTradedAudited#</isNotEmpty>
+               <isEmpty property="IsPublicTradedAudited" prepend=",">IsPublicTradedAudited = null</isEmpty>
+               <isNotEmpty property="IsServedAsTrustee" prepend=",">IsServedAsTrustee = #IsServedAsTrustee#</isNotEmpty>
+               <isEmpty property="IsServedAsTrustee" prepend=",">IsServedAsTrustee = null</isEmpty>
+               <isNotEmpty property="IsPublicPrivateOfferingsDone" prepend=",">IsPublicPrivateOfferingsDone = #IsPublicPrivateOfferingsDone#</isNotEmpty>
+               <isEmpty property="IsPublicPrivateOfferingsDone" prepend=",">IsPublicPrivateOfferingsDone = null</isEmpty>
+               <isNotEmpty property="PublicPrivateFirmName" prepend=",">PublicPrivateFirmName = #PublicPrivateFirmName#</isNotEmpty>
+               <isEmpty property="PublicPrivateFirmName" prepend=",">PublicPrivateFirmName = null</isEmpty>
+               <isNotEmpty property="PublicPrivateYearsOfExperience" prepend=",">PublicPrivateYearsOfExperience = #PublicPrivateYearsOfExperience#</isNotEmpty>
+               <isEmpty property="PublicPrivateYearsOfExperience" prepend=",">PublicPrivateYearsOfExperience = null</isEmpty>
+               <isNotEmpty property="IsInvestmentVenture" prepend=",">IsInvestmentVenture = #IsInvestmentVenture#</isNotEmpty>
+               <isEmpty property="IsInvestmentVenture" prepend=",">IsInvestmentVenture = null</isEmpty>
+               <isNotEmpty property="IsDebtOrEquityFinancing" prepend=",">IsDebtOrEquityFinancing = #IsDebtOrEquityFinancing#</isNotEmpty>
+               <isEmpty property="IsDebtOrEquityFinancing" prepend=",">IsDebtOrEquityFinancing = null</isEmpty>
+               <isNotEmpty property="IsManagementServiceProvided" prepend=",">IsManagementServiceProvided = #IsManagementServiceProvided#</isNotEmpty>
+               <isEmpty property="IsManagementServiceProvided" prepend=",">IsManagementServiceProvided = null</isEmpty>
+               <isNotEmpty property="IsNonPublicInvestmentDone" prepend=",">IsNonPublicInvestmentDone = #IsNonPublicInvestmentDone#</isNotEmpty>
+               <isEmpty property="IsNonPublicInvestmentDone" prepend=",">IsNonPublicInvestmentDone = null</isEmpty>
+               <isNotEmpty property="IsFirmRenderedServiceForAnyClient" prepend=",">IsFirmRenderedServiceForAnyClient = #IsFirmRenderedServiceForAnyClient#</isNotEmpty>
+               <isEmpty property="IsFirmRenderedServiceForAnyClient" prepend=",">IsFirmRenderedServiceForAnyClient = null</isEmpty>
+               <isNotEmpty property="IsNonMonetaryCompensationRecieved" prepend=",">IsNonMonetaryCompensationRecieved = #IsNonMonetaryCompensationRecieved#</isNotEmpty>
+               <isEmpty property="IsNonMonetaryCompensationRecieved" prepend=",">IsNonMonetaryCompensationRecieved = null</isEmpty>
+               <isNotEmpty property="CurrentValueNmc" prepend=",">CurrentValueNmc = #CurrentValueNmc#</isNotEmpty>
+               <isEmpty property="CurrentValueNmc" prepend=",">CurrentValueNmc = null</isEmpty>
+               <isNotEmpty property="ClientNameNmc" prepend=",">ClientNameNmc = #ClientNameNmc#</isNotEmpty>
+               <isEmpty property="ClientNameNmc" prepend=",">ClientNameNmc = null</isEmpty>
+               <isNotEmpty property="ClientIndustryNmcKey" prepend=",">ClientIndustryNmcKey = #ClientIndustryNmcKey#</isNotEmpty>
+               <isEmpty property="ClientIndustryNmcKey" prepend=",">ClientIndustryNmcKey = null</isEmpty>
+               <isNotEmpty property="ServiceIndustryNmcKey" prepend=",">ServiceIndustryNmcKey = #ServiceIndustryNmcKey#</isNotEmpty>
+               <isEmpty property="ServiceIndustryNmcKey" prepend=",">ServiceIndustryNmcKey = null</isEmpty>
+               <isNotEmpty property="MergedOrNumberComment" prepend=",">MergedOrNumberComment = #MergedOrNumberComment#</isNotEmpty>
+               <isEmpty property="MergedOrNumberComment" prepend=",">MergedOrNumberComment = null</isEmpty>
+               <isNotEmpty property="IsFirmRenderedAuditOrAttestService" prepend=",">IsFirmRenderedAuditOrAttestService = #IsFirmRenderedAuditOrAttestService#</isNotEmpty>
+               <isEmpty property="IsFirmRenderedAuditOrAttestService" prepend=",">IsFirmRenderedAuditOrAttestService = null</isEmpty>
+               <isNotEmpty property="IsSuitInstituted" prepend=",">IsSuitInstituted = #IsSuitInstituted#</isNotEmpty>
+               <isEmpty property="IsSuitInstituted" prepend=",">IsSuitInstituted = null</isEmpty>
+               <isNotEmpty property="AgainstHowManyClients" prepend=",">AgainstHowManyClients = #AgainstHowManyClients#</isNotEmpty>
+               <isEmpty property="AgainstHowManyClients" prepend=",">AgainstHowManyClients = null</isEmpty>
+               <isNotEmpty property="IsSignedEngagement" prepend=",">IsSignedEngagement = #IsSignedEngagement#</isNotEmpty>
+               <isEmpty property="IsSignedEngagement" prepend=",">IsSignedEngagement = null</isEmpty>
+               <isNotEmpty property="IsControlClientFunds" prepend=",">IsControlClientFunds = #IsControlClientFunds#</isNotEmpty>
+               <isEmpty property="IsControlClientFunds" prepend=",">IsControlClientFunds = null</isEmpty>
+               <isNotEmpty property="IsAnyRegulatoryInquiry" prepend=",">IsAnyRegulatoryInquiry = #IsAnyRegulatoryInquiry#</isNotEmpty>
+               <isEmpty property="IsAnyRegulatoryInquiry" prepend=",">IsAnyRegulatoryInquiry = null</isEmpty>
+               <isNotEmpty property="IsAwarenessOfAnyProfLiability" prepend=",">IsAwarenessOfAnyProfLiability = #IsAwarenessOfAnyProfLiability#</isNotEmpty>
+               <isEmpty property="IsAwarenessOfAnyProfLiability" prepend=",">IsAwarenessOfAnyProfLiability = null</isEmpty>
+               <isNotEmpty property="IsAwarenessOfAnyProfLiabilitySuitAgainst" prepend=",">IsAwarenessOfAnyProfLiabilitySuitAgainst = #IsAwarenessOfAnyProfLiabilitySuitAgainst#</isNotEmpty>
+               <isEmpty property="IsAwarenessOfAnyProfLiabilitySuitAgainst" prepend=",">IsAwarenessOfAnyProfLiabilitySuitAgainst = null</isEmpty>
+               <isNotEmpty property="Email" prepend=",">Email = #Email#</isNotEmpty>
+               <isEmpty property="Email" prepend=",">Email = null</isEmpty>
+               <isNotEmpty property="OtherLargestClientIndustry" prepend=",">OtherLargestClientIndustry = #OtherLargestClientIndustry#</isNotEmpty>
+               <isEmpty property="OtherLargestClientIndustry" prepend=",">OtherLargestClientIndustry = null</isEmpty>
+               <isNotEmpty property="OtherLargestServiceIndustry" prepend=",">OtherLargestServiceIndustry = #OtherLargestServiceIndustry#</isNotEmpty>
+               <isEmpty property="OtherLargestServiceIndustry" prepend=",">OtherLargestServiceIndustry = null</isEmpty>
+               <isNotEmpty property="OtherClientIndSecondLargestClient" prepend=",">OtherClientIndSecondLargestClient = #OtherClientIndSecondLargestClient#</isNotEmpty>
+               <isEmpty property="OtherClientIndSecondLargestClient" prepend=",">OtherClientIndSecondLargestClient = null</isEmpty>
+               <isNotEmpty property="OtherServiceIndSecondLargestClient" prepend=",">OtherServiceIndSecondLargestClient = #OtherServiceIndSecondLargestClient#</isNotEmpty>
+               <isEmpty property="OtherServiceIndSecondLargestClient" prepend=",">OtherServiceIndSecondLargestClient = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="IsFirmsRevenueMorethan25Percent" prepend=",">IsFirmsRevenueMorethan25Percent = #IsFirmsRevenueMorethan25Percent#</isNotEmpty>
+               <isEmpty property="IsFirmsRevenueMorethan25Percent" prepend=",">IsFirmsRevenueMorethan25Percent = null</isEmpty>
+               <isNotEmpty property="IsFirmAttendedRiskMagtSeminarIn3Years" prepend=",">IsFirmAttendedRiskMagtSeminarIn3Years = #IsFirmAttendedRiskMagtSeminarIn3Years#</isNotEmpty>
+               <isEmpty property="IsFirmAttendedRiskMagtSeminarIn3Years" prepend=",">IsFirmAttendedRiskMagtSeminarIn3Years = null</isEmpty>
+               <isNotEmpty property="RegulatoryInquiryExaplain" prepend=",">RegulatoryInquiryExaplain = #RegulatoryInquiryExaplain#</isNotEmpty>
+               <isEmpty property="RegulatoryInquiryExaplain" prepend=",">RegulatoryInquiryExaplain = null</isEmpty>
+               <isNotEmpty property="RegulatoryInquiryComment" prepend=",">RegulatoryInquiryComment = #RegulatoryInquiryComment#</isNotEmpty>
+               <isEmpty property="RegulatoryInquiryComment" prepend=",">RegulatoryInquiryComment = null</isEmpty>
+               <isNotEmpty property="IsFirmDeclinedOtherthanNonPayment" prepend=",">IsFirmDeclinedOtherthanNonPayment = #IsFirmDeclinedOtherthanNonPayment#</isNotEmpty>
+               <isEmpty property="IsFirmDeclinedOtherthanNonPayment" prepend=",">IsFirmDeclinedOtherthanNonPayment = null</isEmpty>
+               <isNotEmpty property="ReasonForDecline" prepend=",">ReasonForDecline = #ReasonForDecline#</isNotEmpty>
+               <isEmpty property="ReasonForDecline" prepend=",">ReasonForDecline = null</isEmpty>
+               <isNotEmpty property="ReasonForDeclineComment" prepend=",">ReasonForDeclineComment = #ReasonForDeclineComment#</isNotEmpty>
+               <isEmpty property="ReasonForDeclineComment" prepend=",">ReasonForDeclineComment = null</isEmpty>
+               <isNotEmpty property="IsPredecessorsOrInvestVentures" prepend=",">IsPredecessorsOrInvestVentures = #IsPredecessorsOrInvestVentures#</isNotEmpty>
+               <isEmpty property="IsPredecessorsOrInvestVentures" prepend=",">IsPredecessorsOrInvestVentures = null</isEmpty>
+               <isNotEmpty property="IsSyndicationManagers" prepend=",">IsSyndicationManagers = #IsSyndicationManagers#</isNotEmpty>
+               <isEmpty property="IsSyndicationManagers" prepend=",">IsSyndicationManagers = null</isEmpty>
+               <isNotEmpty property="IsQuickQuoteByEmail" prepend=",">IsQuickQuoteByEmail = #IsQuickQuoteByEmail#</isNotEmpty>
+               <isEmpty property="IsQuickQuoteByEmail" prepend=",">IsQuickQuoteByEmail = null</isEmpty>
+               <isNotEmpty property="IsAnAgentCall" prepend=",">IsAnAgentCall = #IsAnAgentCall#</isNotEmpty>
+               <isEmpty property="IsAnAgentCall" prepend=",">IsAnAgentCall = null</isEmpty>
+               <isNotEmpty property="ContactPhoneExt" prepend=",">ContactPhoneExt = #ContactPhoneExt#</isNotEmpty>
+               <isEmpty property="ContactPhoneExt" prepend=",">ContactPhoneExt = null</isEmpty>
+               <isNotEmpty property="IsRatingDone" prepend=",">IsRatingDone = #IsRatingDone#</isNotEmpty>
+               <isEmpty property="IsRatingDone" prepend=",">IsRatingDone = null</isEmpty>
+               <isNotEmpty property="IsBasicPage" prepend=",">IsBasicPage = #IsBasicPage#</isNotEmpty>
+               <isEmpty property="IsBasicPage" prepend=",">IsBasicPage = null</isEmpty>
+               <isNotEmpty property="IsGeneralPage" prepend=",">IsGeneralPage = #IsGeneralPage#</isNotEmpty>
+               <isEmpty property="IsGeneralPage" prepend=",">IsGeneralPage = null</isEmpty>
+               <isNotEmpty property="IsSupplementPage" prepend=",">IsSupplementPage = #IsSupplementPage#</isNotEmpty>
+               <isEmpty property="IsSupplementPage" prepend=",">IsSupplementPage = null</isEmpty>
+               <isNotEmpty property="IsClientTerminated" prepend=",">IsClientTerminated = #IsClientTerminated#</isNotEmpty>
+               <isEmpty property="IsClientTerminated" prepend=",">IsClientTerminated = null</isEmpty>
+               <isNotEmpty property="IsAnyDeclination" prepend=",">IsAnyDeclination = #IsAnyDeclination#</isNotEmpty>
+               <isEmpty property="IsAnyDeclination" prepend=",">IsAnyDeclination = null</isEmpty>
+               <isNotEmpty property="IsPolicyProhibiting" prepend=",">IsPolicyProhibiting = #IsPolicyProhibiting#</isNotEmpty>
+               <isEmpty property="IsPolicyProhibiting" prepend=",">IsPolicyProhibiting = null</isEmpty>
+               <isNotEmpty property="IsWrittenAnyQualityControlDocument" prepend=",">IsWrittenAnyQualityControlDocument = #IsWrittenAnyQualityControlDocument#</isNotEmpty>
+               <isEmpty property="IsWrittenAnyQualityControlDocument" prepend=",">IsWrittenAnyQualityControlDocument = null</isEmpty>
+               <isNotEmpty property="IsAttesationPage" prepend=",">IsAttesationPage = #IsAttesationPage#</isNotEmpty>
+               <isEmpty property="IsAttesationPage" prepend=",">IsAttesationPage = null</isEmpty>
+               <isNotEmpty property="IsComputerServicePage" prepend=",">IsComputerServicePage = #IsComputerServicePage#</isNotEmpty>
+               <isEmpty property="IsComputerServicePage" prepend=",">IsComputerServicePage = null</isEmpty>
+               <isNotEmpty property="OtherITServiceComment" prepend=",">OtherITServiceComment = #OtherITServiceComment#</isNotEmpty>
+               <isEmpty property="OtherITServiceComment" prepend=",">OtherITServiceComment = null</isEmpty>
+               <isNotEmpty property="IsBusinessFundPage" prepend=",">IsBusinessFundPage = #IsBusinessFundPage#</isNotEmpty>
+               <isEmpty property="IsBusinessFundPage" prepend=",">IsBusinessFundPage = null</isEmpty>
+               <isNotEmpty property="IsPracriceMangPage" prepend=",">IsPracriceMangPage = #IsPracriceMangPage#</isNotEmpty>
+               <isEmpty property="IsPracriceMangPage" prepend=",">IsPracriceMangPage = null</isEmpty>
+               <isNotEmpty property="ServiceIndustryofLargestClient" prepend=",">ServiceIndustryofLargestClient = #ServiceIndustryofLargestClient#</isNotEmpty>
+               <isEmpty property="ServiceIndustryofLargestClient" prepend=",">ServiceIndustryofLargestClient = null</isEmpty>
+               <isNotEmpty property="ServiceIndustryofSecondLargestClient" prepend=",">ServiceIndustryofSecondLargestClient = #ServiceIndustryofSecondLargestClient#</isNotEmpty>
+               <isEmpty property="ServiceIndustryofSecondLargestClient" prepend=",">ServiceIndustryofSecondLargestClient = null</isEmpty>
+               <isNotEmpty property="FirstReviewUserID" prepend=",">FirstReviewUserID = #FirstReviewUserID#</isNotEmpty>
+               <isEmpty property="FirstReviewUserID" prepend=",">FirstReviewUserID = null</isEmpty>
+               <isNotEmpty property="ClientIndustryNmcKeyOthers" prepend=",">ClientIndustryNmcKeyOthers = #ClientIndustryNmcKeyOthers#</isNotEmpty>
+               <isEmpty property="ClientIndustryNmcKeyOthers" prepend=",">ClientIndustryNmcKeyOthers = null</isEmpty>
+               <isNotEmpty property="ServiceIndustryNmcKeyOthers" prepend=",">ServiceIndustryNmcKeyOthers = #ServiceIndustryNmcKeyOthers#</isNotEmpty>
+               <isEmpty property="ServiceIndustryNmcKeyOthers" prepend=",">ServiceIndustryNmcKeyOthers = null</isEmpty>
+               <isNotEmpty property="LicenseNumber" prepend=",">LicenseNumber = #LicenseNumber#</isNotEmpty>
+               <isEmpty property="LicenseNumber" prepend=",">LicenseNumber = null</isEmpty>
+               <isNotEmpty property="IsQuotePage" prepend=",">IsQuotePage = #IsQuotePage#</isNotEmpty>
+               <isEmpty property="IsQuotePage" prepend=",">IsQuotePage = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from Firm where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from Firm</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from Firm where PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ContactPerson, ContactPhone, IsFirmRenderingServices, IsCoverageIncludedForThisEntity, TotalFirmPersonnel, IsAnyFirmMeargedOrAcquired, IsReducedNumberOfOwners, IsFirmCarryingProfLiabilityIns, IsPriorAct, IsFullPriorAct, PriorActDate, IsPolicyExcludesCoverage, RetroDate, RetroFirmName, PercentOfRevenueFromLargestClient, PercentOfRevenueFromSecondLargestClient, ClientIndustryIDofLargestClient, ClientIndustryIDofSecondLargestClient, ServiceIndustryIDofLargestClient, ServiceIndustryIDofSecondLargestClient, IsQualityReviewOfferedByAICPA, IsCommissionRecieved, IsPublicTradedAudited, IsServedAsTrustee, IsPublicPrivateOfferingsDone, PublicPrivateFirmName, PublicPrivateYearsOfExperience, IsInvestmentVenture, IsDebtOrEquityFinancing, IsManagementServiceProvided, IsNonPublicInvestmentDone, IsFirmRenderedServiceForAnyClient, IsNonMonetaryCompensationRecieved, CurrentValueNmc, ClientNameNmc, ClientIndustryNmcKey, ServiceIndustryNmcKey, MergedOrNumberComment, IsFirmRenderedAuditOrAttestService, IsSuitInstituted, AgainstHowManyClients, IsSignedEngagement, IsControlClientFunds, IsAnyRegulatoryInquiry, IsAwarenessOfAnyProfLiability, IsAwarenessOfAnyProfLiabilitySuitAgainst, Email, OtherLargestClientIndustry, OtherLargestServiceIndustry, OtherClientIndSecondLargestClient, OtherServiceIndSecondLargestClient, LastUpdateUserID, LastUpdateTimeStamp, IsFirmsRevenueMorethan25Percent, IsFirmAttendedRiskMagtSeminarIn3Years, RegulatoryInquiryExaplain, RegulatoryInquiryComment, IsFirmDeclinedOtherthanNonPayment, ReasonForDecline, ReasonForDeclineComment, IsPredecessorsOrInvestVentures, IsSyndicationManagers, IsQuickQuoteByEmail, IsAnAgentCall, ContactPhoneExt, IsRatingDone, IsBasicPage, IsGeneralPage, IsSupplementPage, IsClientTerminated, IsAnyDeclination, IsPolicyProhibiting, IsWrittenAnyQualityControlDocument, IsAttesationPage, IsComputerServicePage, OtherITServiceComment, IsBusinessFundPage, IsPracriceMangPage, ServiceIndustryofLargestClient, ServiceIndustryofSecondLargestClient, FirstReviewUserID, VersionSequence, ClientIndustryNmcKeyOthers, ServiceIndustryNmcKeyOthers, LicenseNumber, IsQuotePage, PolicyKey from Firm where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, ContactPerson, ContactPhone, IsFirmRenderingServices, IsCoverageIncludedForThisEntity, TotalFirmPersonnel, IsAnyFirmMeargedOrAcquired, IsReducedNumberOfOwners, IsFirmCarryingProfLiabilityIns, IsPriorAct, IsFullPriorAct, PriorActDate, IsPolicyExcludesCoverage, RetroDate, RetroFirmName, PercentOfRevenueFromLargestClient, PercentOfRevenueFromSecondLargestClient, ClientIndustryIDofLargestClient, ClientIndustryIDofSecondLargestClient, ServiceIndustryIDofLargestClient, ServiceIndustryIDofSecondLargestClient, IsQualityReviewOfferedByAICPA, IsCommissionRecieved, IsPublicTradedAudited, IsServedAsTrustee, IsPublicPrivateOfferingsDone, PublicPrivateFirmName, PublicPrivateYearsOfExperience, IsInvestmentVenture, IsDebtOrEquityFinancing, IsManagementServiceProvided, IsNonPublicInvestmentDone, IsFirmRenderedServiceForAnyClient, IsNonMonetaryCompensationRecieved, CurrentValueNmc, ClientNameNmc, ClientIndustryNmcKey, ServiceIndustryNmcKey, MergedOrNumberComment, IsFirmRenderedAuditOrAttestService, IsSuitInstituted, AgainstHowManyClients, IsSignedEngagement, IsControlClientFunds, IsAnyRegulatoryInquiry, IsAwarenessOfAnyProfLiability, IsAwarenessOfAnyProfLiabilitySuitAgainst, Email, OtherLargestClientIndustry, OtherLargestServiceIndustry, OtherClientIndSecondLargestClient, OtherServiceIndSecondLargestClient, LastUpdateUserID, LastUpdateTimeStamp, IsFirmsRevenueMorethan25Percent, IsFirmAttendedRiskMagtSeminarIn3Years, RegulatoryInquiryExaplain, RegulatoryInquiryComment, IsFirmDeclinedOtherthanNonPayment, ReasonForDecline, ReasonForDeclineComment, IsPredecessorsOrInvestVentures, IsSyndicationManagers, IsQuickQuoteByEmail, IsAnAgentCall, ContactPhoneExt, IsRatingDone, IsBasicPage, IsGeneralPage, IsSupplementPage, IsClientTerminated, IsAnyDeclination, IsPolicyProhibiting, IsWrittenAnyQualityControlDocument, IsAttesationPage, IsComputerServicePage, OtherITServiceComment, IsBusinessFundPage, IsPracriceMangPage, ServiceIndustryofLargestClient, ServiceIndustryofSecondLargestClient, FirstReviewUserID, ClientIndustryNmcKeyOthers, ServiceIndustryNmcKeyOthers, LicenseNumber, IsQuotePage from Firm where PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

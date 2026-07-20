@@ -1,0 +1,53 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Version">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Version</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Version where PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into Version(
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">#RecordType#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">#CreatedDate#</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">#CreatedBy#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="VersionKey">SELECT IDENT_CURRENT('Version') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionKey, PolicyKey, RecordType, LastUpdateTimeStamp, LastUpdateUserID, CreatedDate, CreatedBy from Version where VersionKey = #VersionKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update Version set
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType = #RecordType#</isNotEmpty>
+               <isEmpty property="RecordType" prepend=",">RecordType = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate = #CreatedDate#</isNotEmpty>
+               <isEmpty property="CreatedDate" prepend=",">CreatedDate = null</isEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy = #CreatedBy#</isNotEmpty>
+               <isEmpty property="CreatedBy" prepend=",">CreatedBy = null</isEmpty>
+          </dynamic>
+          where VersionKey = #VersionKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from Version where VersionKey = #VersionKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from Version</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from Version where PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionKey, PolicyKey, RecordType, LastUpdateTimeStamp, LastUpdateUserID, CreatedDate, CreatedBy from Version where VersionKey = #VersionKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionKey, PolicyKey, RecordType, LastUpdateTimeStamp, LastUpdateUserID, CreatedDate, CreatedBy from Version where PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

@@ -1,0 +1,19 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="MarketableProductCoverage">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from MarketableProductCoverage</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from MarketableProductCoverage where CoverageKey = #CoverageKey# and MarketableProductKey = #MarketableProductKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">insert into MarketableProductCoverage(CoverageKey, MarketableProductKey) values (#CoverageKey:NUMERIC#, #MarketableProductKey:NUMERIC# )</insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CoverageKey, MarketableProductKey from MarketableProductCoverage where CoverageKey = #CoverageKey# and MarketableProductKey = #MarketableProductKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update MarketableProductCoverage set
+          <dynamic prepend=" " />
+          where CoverageKey = #CoverageKey# and MarketableProductKey = #MarketableProductKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from MarketableProductCoverage where CoverageKey = #CoverageKey# and MarketableProductKey = #MarketableProductKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from MarketableProductCoverage</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from MarketableProductCoverage where CoverageKey = #CoverageKey# and MarketableProductKey = #MarketableProductKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CoverageKey, MarketableProductKey from MarketableProductCoverage where CoverageKey = #CoverageKey# and MarketableProductKey = #MarketableProductKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CoverageKey, MarketableProductKey from MarketableProductCoverage where CoverageKey = #CoverageKey# and MarketableProductKey = #MarketableProductKey#</select>
+</sqlMap>
+

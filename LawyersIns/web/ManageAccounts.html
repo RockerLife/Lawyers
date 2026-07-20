@@ -1,0 +1,385 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Accounts Management</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+		<link href="css/uiupdate2026.css?v=20260707-manageaccounts-8" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/jquery.treeview.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script src="js/jquery.dataTables1.10.19.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+ <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+<body onload="accountManagement();setlinkDelink();toggleDivDisplay('ajaxxmlAccountNameSearch_AccountNameSearch');toggleDivDisplay('ajaxxmlAccountEmailSearch_AccountEmailSearch');">
+	<form>
+	<div id="cover"></div>
+	<div id="popupsave2">
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog" style="width: 450px;">
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"></button>
+			<h4 class="modal-title">Process Activity</h4>
+		  </div>
+		  <div class="modal-body text-center" style="height: 64px;" id="cancellation_freeform_contextdata_002">
+			<p style="text-align: center; line-height: 25px;">Are you sure to
+			<label id="actionName" name="actionName"/>  following firms:</p>
+			<p><strong><label id="activityAccountNames" name="activityAccountNames"/></strong></p>
+		  </div>
+		  <div class="modal-footer">
+			<div class="floatRight">
+				
+				<a class="ovalbutton" href="javascript:submitform('ManageAccounts.html','ManageAccounts.save','','');">Update</a>
+				<a class="ovalbutton" onclick="closePopUp2('popupsave2');">Cancel</a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</div>
+
+<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth pageShellNoSideBorder">
+				
+					<div id="#Include:header.html#"></div>
+				
+				<div id="contentSection">
+					<h2 class="questionHeading">
+						Accounts Management
+					</h2>
+					<div class="sectionRule"></div>
+					<div class="sectionHeading">Search</div>
+					<div class="sectionRule sectionRuleTight"></div>
+					<div id="errorsDiv" class="confirmationMsgAlign">
+						<div id="error_noSelecion" class="error"/>
+						<div id="error_noAccountActivity" class="error"/>
+						<div id="error_singalAccountActivity" class="error"/>
+						<div id="error_noMandetoryFiletr" class="error"/>
+						
+					</div>
+					
+					<div class="form row">
+						<div class="block-form" style="padding-top:10px;">
+							<div class="freeFormDiv form-inline" id="searchoffrisk_freeform_contextdata_01">
+								<ul class="inlineBlock">
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="error_AccountNameSearch" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">
+													Firm Name :</div>
+												<div class="freeFormListTd tdInput">
+													<input name="AccountNameSearch" class="form-control"
+														id="AccountNameSearch" type="text" autocomplete="OFF"
+														onkeyup="javascript:ajaxpageblocklink('ManageAccounts.html','ManageAccounts.getAccountNameList','','','ajaxxmlAccountNameSearch_AccountNameSearch');"
+														onclick="nottoggleDivDisplay(this,'AccountNameSearch','ajaxxmlAccountNameSearch_AccountNameSearch');" />
+														<div id="ajaxxmlAccountNameSearch_AccountNameSearch"
+															class="transparent fixcolumnHeaderSearch"
+															style="display: none; border: solid 1px #cccccc; width: 215px;"></div>
+												</div>
+												
+											</div>
+										</div>
+									</li>
+									
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="error_AccountEmailSearch" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">
+													Account email :</div>
+												<div class="freeFormListTd tdInput">
+													<input name="AccountEmailSearch" type="text" 
+														class="form-control"  id="AccountEmailSearch" autocomplete="OFF"
+														onkeyup="javascript:ajaxpageblocklink('ManageAccounts.html','ManageAccounts.getEmailList','','','ajaxxmlAccountEmailSearch_AccountEmailSearch');"
+														onclick="nottoggleDivDisplay(this,'AccountEmailSearch','ajaxxmlAccountEmailSearch_AccountEmailSearch');" />
+														<div id="ajaxxmlAccountEmailSearch_AccountEmailSearch"
+															class="transparent fixcolumnHeaderSearch"
+															style="display: none; border: solid 1px #cccccc; width: 215px;"></div>
+												</div>
+											</div>
+										</div>
+									</li>
+									
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="error_AccountID" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">
+													Account Number :</div>
+												<div class="freeFormListTd tdInput">
+													<input type="text" id="ajax_field_AccountNumberSearch" name="AccountNumberSearch" class="form-control" />
+												</div>
+											</div>
+										</div>
+									</li>
+									
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="error_AccountID" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">
+													Phone Number :</div>
+												<div class="freeFormListTd tdInput">
+													<input type="text" class="form-control" id="ajax_field_WorkPhoneSearch" name="WorkPhoneSearch" onclick="loadFirmNewApp();"/>
+												</div>
+											</div>
+										</div>
+									</li>
+									
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="error_AccountID" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">
+													State :</div>
+												<div class="freeFormListTd tdInput">
+													<select name="MergeStateCode" id="ajax_field_MergeStateCode" class="form-control">
+														<option value="">--Select--</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</li>
+									
+									<li class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="error_AccountID" class="error"></span>
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign freeFormLabelWidth">
+													Effective Date :</div>
+												<div class="freeFormListTd tdInput">
+													<input type="text" class="form-control"	id="ajax_field_PolicyEffectiveMonthYear" name="PolicyEffectiveMonthYear" maxlength="7"
+													onkeyup="setMonthYearFormat('ajax_field_PolicyEffectiveMonthYear');" placeholder="mm/yyyy"/>
+												</div>
+											</div>
+										</div>
+									
+									
+									
+								</ul>
+							</div>
+							<div style="margin-left:220px;margin-top:10px;">
+								<span>
+									<input name="setBrokerSearch" type="checkbox" 
+											id="setBrokerSearch" onchange="setworkq();" /><span style="margin-left:5px;font-weight:bold;">Include Brokered </span> 
+								</span>								
+							</div>
+							<div class="row">
+								<div class="buttons sectionActions sectionActionsRight">
+								
+									<span><a class="btn button1" id="" href="#" onclick="clearSearchData();">Reset</a></span>
+									<span><a class="btn button1" id="" href="javascript:submitform('ManageAccounts.html','ManageAccounts.search','','');">Search</a></span>
+								</div>
+							</div>
+					<div class="sectionHeading">&nbsp;</div>
+					<div class="sectionRule sectionRuleTight"></div>
+							<div class="row">
+								
+								
+							<div id="policiesListDiv" class="row paddingTop10 gridSection">
+								<div class="row">
+									<div id="error_noSelecion" class="defult_tr_errors"></div>
+								</div>
+								<div class="gridActionBar choiceField">
+									<input type="checkbox" id="selectAllAccounts" onclick="selectAllAccountManagement(this.checked);"/> <label for="selectAllAccounts">Select All</label>
+									<input type="radio" name="linkAccounts" id="ajax_field_linkAccounts" value="linkAccounts" onchange="linkDelinkAccounts();"/> <label>Link</label>
+									<input type="radio" name="linkAccounts" id="ajax_field_deLinkAccounts" value="deLinkAccounts" onchange="linkDelinkAccounts();"/> <label>DeLink</label>
+									
+									
+								</div>
+									<table width="100%"  class="gridTable dataTables_grid modernGrid" id="AccountsSearch_list_01" border="0" 
+											cellpadding="0" cellspacing="0">
+											<thead  id="AccountsSearch_list_header_01">
+												<tr class="tableheading1">
+													<th width="2%"
+														id="block_field_AccountID" >Select</th>
+													
+													<th width="10%" id="block_field_AccountNumber" >Account Number</th>
+													<th width="40%" id="block_field_AccountName">Account Name</th>
+													
+													<th width="10%" 
+														id="block_field_AccountEmail">Account Email</th>
+													<th width="15%" 
+														id="block_field_WorkPhone">Phone Number</th>
+													<th width="10%"
+														id="block_field_PolicyEffectiveDate">
+														<div style="width: 100px">Policy Effective Date</div></th>
+													<th width="20%"
+														id="block_field_State">State</th>
+													<th width="2%" 
+														id="block_field_isBrokeragePolicy"/>
+												</tr>
+											</thead>
+											<tbody id="AccountsSearch_list_mom_data_01">
+												<tr>
+													
+													<td id="block_field_AccountID"><input
+															name="AccountID" type="checkbox" onChange="getSelectedPolicyKeyAccountManagement();"
+															id="AccountID" size="10" maxlength="3"
+															tabindex="36" />
+														</td>	
+														<td id="block_field_AccountNumber"/>
+														<td id="block_field_AccountName"/>
+														<td id="block_field_AccountEmail"/>
+														<td id="block_field_WorkPhone"/>
+														<td align="center" id="block_field_PolicyEffectiveDate"/>
+														<td align="center" id="block_field_State"/>
+														<td nowrap="nowrap" id="block_field_isBrokeragePolicy">
+															<span id="eval:LawyersRule.isBrokeragePolicy_AccountManagement">
+																<img src="img/Brokerage_icons.png"	width="15" height="17" title="Brokerage Policy"/>
+															</span>
+														</td>
+													</tr>
+													</tbody>
+										</table>
+									</div>	
+								
+								<div class="buttons borderTop row" style="padding-top:10px;" >
+									<a class="btn back floatLeft" href="javascript:submitform('workq.html','OffRiskEmailList.back','','');">Back</a>
+									<div class="floatRight">
+										<a class="btn save" href="#" onclick="updateData();">Update Data</a>									
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+					
+						<div id="#Include:footer.html#"/>
+					
+					<!---------Footer End---------->
+				</div>
+		</div>
+		<table id="ManageAccounts_freeform_contextdata_999" width="100%" border="0" align="center" cellspacing="5"cellpadding="0">
+								<tr>
+									<td>
+										<table width="100%">
+											<tr>
+												<td colspan="2">
+												<input type="hidden" name="jsessionid" id="jsessionid" />
+													<input type="text" name="strPolicyKey" id="strPolicyKey" />
+													<input type="text" name="accountActivity" id="accountActivity" />	
+													<input type="text" name="SearchlistSize" id="SearchlistSize" />	
+													<input type="text" name="WQIsBrokered_search" id="WQIsBrokered_search" />
+														
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+							<input type="hidden" name="divHideShow" id="divHideShow" value="" /> 
+		<input type="hidden" name="ctxmenuparam" value="" />
+							
+	</div>
+
+
+						
+							
+		
+		<div id="popupsave3" style="display:none;">
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog" style="width: 450px;">
+		<!-- Modal content-->
+		<div class="modal-content text-center">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"></button>
+			<h4 class="modal-title">Error occurred</h4>
+		  </div>
+		  <div class="modal-body text-center" style="height: 64px;">
+			<p style="line-height: 25px;">Please select Link or De-link activity type</p>
+			
+		  </div>
+		  <div class="modal-footer">
+			<div class="floatRight">
+				<a class="ovalbutton" onclick="closePopUp2('popupsave3');">OK</a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</div>
+<div id="popupsave4" style="display:none;">
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog" style="width: 450px;">
+		<!-- Modal content-->
+		<div class="modal-content text-center">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"></button>
+			<h4 class="modal-title">Error occurred</h4>
+		  </div>
+		  <div class="modal-body text-center" style="height: 64px;">
+			<p style="line-height: 25px;">Please select accounts to perform activity</p>
+			
+		  </div>
+		  <div class="modal-footer">
+			<div class="floatRight">
+				<a class="ovalbutton" onclick="closePopUp2('popupsave4');">OK</a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</div>
+	</form>
+</body>      
+
+
+</html>

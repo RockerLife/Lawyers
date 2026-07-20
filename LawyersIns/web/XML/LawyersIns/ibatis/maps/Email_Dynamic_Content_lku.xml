@@ -1,0 +1,58 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Email_Dynamic_Content_lku">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Email_Dynamic_Content_lku</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Email_Dynamic_Content_lku</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into Email_Dynamic_Content_lku(
+          <dynamic prepend=" ">
+               <isNotEmpty property="DynamicContent_Name" prepend=",">DynamicContent_Name</isNotEmpty>
+               <isNotEmpty property="DynamicContent_Description" prepend=",">DynamicContent_Description</isNotEmpty>
+               <isNotEmpty property="DynamicContent_Body" prepend=",">DynamicContent_Body</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="DynamicContent_Code" prepend=",">DynamicContent_Code</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="DynamicContent_Name" prepend=",">#DynamicContent_Name#</isNotEmpty>
+               <isNotEmpty property="DynamicContent_Description" prepend=",">#DynamicContent_Description#</isNotEmpty>
+               <isNotEmpty property="DynamicContent_Body" prepend=",">#DynamicContent_Body#</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">#RecordType#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="DynamicContent_Code" prepend=",">#DynamicContent_Code#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="EmailDynamicID">SELECT IDENT_CURRENT('Email_Dynamic_Content_lku') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EmailDynamicID, DynamicContent_Name, DynamicContent_Description, DynamicContent_Body, RecordType, LastUpdateUserID, LastUpdateTimeStamp, DynamicContent_Code from Email_Dynamic_Content_lku where EmailDynamicID = #EmailDynamicID#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update Email_Dynamic_Content_lku set
+          <dynamic prepend=" ">
+               <isNotEmpty property="DynamicContent_Name" prepend=",">DynamicContent_Name = #DynamicContent_Name#</isNotEmpty>
+               <isEmpty property="DynamicContent_Name" prepend=",">DynamicContent_Name = null</isEmpty>
+               <isNotEmpty property="DynamicContent_Description" prepend=",">DynamicContent_Description = #DynamicContent_Description#</isNotEmpty>
+               <isEmpty property="DynamicContent_Description" prepend=",">DynamicContent_Description = null</isEmpty>
+               <isNotEmpty property="DynamicContent_Body" prepend=",">DynamicContent_Body = #DynamicContent_Body#</isNotEmpty>
+               <isEmpty property="DynamicContent_Body" prepend=",">DynamicContent_Body = null</isEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType = #RecordType#</isNotEmpty>
+               <isEmpty property="RecordType" prepend=",">RecordType = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="DynamicContent_Code" prepend=",">DynamicContent_Code = #DynamicContent_Code#</isNotEmpty>
+               <isEmpty property="DynamicContent_Code" prepend=",">DynamicContent_Code = null</isEmpty>
+          </dynamic>
+          where EmailDynamicID = #EmailDynamicID#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from Email_Dynamic_Content_lku where EmailDynamicID = #EmailDynamicID#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from Email_Dynamic_Content_lku</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from Email_Dynamic_Content_lku</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EmailDynamicID, DynamicContent_Name, DynamicContent_Description, DynamicContent_Body, RecordType, LastUpdateUserID, LastUpdateTimeStamp, DynamicContent_Code from Email_Dynamic_Content_lku where EmailDynamicID = #EmailDynamicID#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EmailDynamicID, DynamicContent_Name, DynamicContent_Description, DynamicContent_Body, RecordType, LastUpdateUserID, LastUpdateTimeStamp, DynamicContent_Code from Email_Dynamic_Content_lku</select>
+     <select id="getAllEmailDynamicBodyList" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select DynamicContent_Code,DynamicContent_Name from Email_Dynamic_Content_lku where RecordType != 'D'</select>
+</sqlMap>
+

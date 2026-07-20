@@ -1,0 +1,41 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="GrossRevenueForTIALW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from GrossRevenueForTIALW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from GrossRevenueForTIALW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into GrossRevenueForTIALW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="GrossRevenueForTIADesc" prepend=",">GrossRevenueForTIADesc</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="GrossRevenueForTIADesc" prepend=",">#GrossRevenueForTIADesc#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="GrossRevenueForTIAKey">SELECT IDENT_CURRENT('GrossRevenueForTIALW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select GrossRevenueForTIAKey, GrossRevenueForTIADesc, LastUpdateUserID, LastUpdateTimeStamp from GrossRevenueForTIALW where GrossRevenueForTIAKey = #GrossRevenueForTIAKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update GrossRevenueForTIALW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="GrossRevenueForTIADesc" prepend=",">GrossRevenueForTIADesc = #GrossRevenueForTIADesc#</isNotEmpty>
+               <isEmpty property="GrossRevenueForTIADesc" prepend=",">GrossRevenueForTIADesc = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where GrossRevenueForTIAKey = #GrossRevenueForTIAKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from GrossRevenueForTIALW where GrossRevenueForTIAKey = #GrossRevenueForTIAKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from GrossRevenueForTIALW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from GrossRevenueForTIALW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select GrossRevenueForTIAKey, GrossRevenueForTIADesc, LastUpdateUserID, LastUpdateTimeStamp from GrossRevenueForTIALW where GrossRevenueForTIAKey = #GrossRevenueForTIAKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select GrossRevenueForTIAKey, GrossRevenueForTIADesc, LastUpdateUserID, LastUpdateTimeStamp from GrossRevenueForTIALW</select>
+</sqlMap>
+

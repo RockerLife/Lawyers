@@ -1,0 +1,41 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AOLLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AOLLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AOLLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into AOLLW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOLDesc" prepend=",">AOLDesc</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOLDesc" prepend=",">#AOLDesc#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="AOLKey">SELECT IDENT_CURRENT('AOLLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOLKey, AOLDesc, LastUpdateUserID, LastUpdateTimeStamp from AOLLW where AOLKey = #AOLKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update AOLLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOLDesc" prepend=",">AOLDesc = #AOLDesc#</isNotEmpty>
+               <isEmpty property="AOLDesc" prepend=",">AOLDesc = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where AOLKey = #AOLKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from AOLLW where AOLKey = #AOLKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from AOLLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AOLLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOLKey, AOLDesc, LastUpdateUserID, LastUpdateTimeStamp from AOLLW where AOLKey = #AOLKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOLKey, AOLDesc, LastUpdateUserID, LastUpdateTimeStamp from AOLLW</select>
+</sqlMap>
+

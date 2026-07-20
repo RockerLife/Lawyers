@@ -1,0 +1,472 @@
+<functionsdef>
+	<functiondefinition name="add" classname="com.manage.managemetadata.functions.commonfunctions.Math" method="add" description="method to add params" returntype="java.lang.Object">
+		<argument seq="0" name="arg1" datatype="java.lang.Object" />
+		<argument seq="1" name="arg2" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="subtract" classname="com.manage.managemetadata.functions.commonfunctions.Math" method="subtract" returntype="java.lang.Object">
+		<argument seq="0" name="arg1" datatype="java.lang.Object"/>
+		<argument seq="1" name="arg2" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="multiply" classname="com.manage.managemetadata.functions.commonfunctions.Math" method="multiply" returntype="java.lang.Object">
+		<argument seq="0" name="arg1" datatype="java.lang.Object"/>
+		<argument seq="1" name="arg2" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="divide" classname="com.manage.managemetadata.functions.commonfunctions.Math" method="divide" returntype="java.lang.Object">
+		<argument seq="0" name="arg1" datatype="java.lang.Object"/>
+		<argument seq="1" name="arg2" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="modulus" classname="com.manage.managemetadata.functions.commonfunctions.Math" method="modulus" returntype="java.lang.Object">
+		<argument seq="0" name="arg1" datatype="java.lang.Object"/>
+		<argument seq="1" name="arg2" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="round" classname="com.manage.managemetadata.functions.commonfunctions.Math" method="round" returntype="java.lang.Object">
+		<argument seq="0" name="arg1" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="decimalFormat" classname="com.manage.managemetadata.functions.commonfunctions.Math" method="decimalFormat" returntype="java.lang.Object">
+		<argument seq="0" name="arg1" datatype="java.lang.Object"/>
+		<argument seq="1" name="arg2" datatype="I"/>
+	</functiondefinition>
+	
+	<functiondefinition name="removeAmountFormat" classname="com.manage.managemetadata.functions.commonfunctions.Math" method="removeAmountFormat" returntype="java.lang.Object">
+		<argument seq="0" name="arg1" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	
+	<functiondefinition name="daysdiff" classname="com.util.DateUtils" method="calculateDiffInDays" returntype="I">
+		<argument seq="0" name="date1" datatype="D"/>
+		<argument seq="1" name="date2" datatype="D"/>
+	</functiondefinition>
+	
+	<functiondefinition name="yearsdiff" classname="com.util.DateUtils" method="calculateDiffInYears" returntype="I">
+		<argument seq="0" name="date1" datatype="D"/>
+		<argument seq="1" name="date2" datatype="D"/>
+	</functiondefinition>
+	
+	<functiondefinition name="adddaystodate" classname="com.util.DateUtils" method="addDaysToDate" returntype="D">
+		<argument seq="0" name="date1" datatype="D"/>
+		<argument seq="1" name="days" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="addMonthsToDate" classname="com.util.DateUtils" method="addMonthsToDate" returntype="D">
+		<argument seq="0" name="date1" datatype="D"/>
+		<argument seq="1" name="months" datatype="java.lang.Object"/>
+	</functiondefinition>	
+    
+    <functiondefinition name="convertStringToDate" classname="com.util.DateUtils" method="convertStringToDate" returntype="D">
+		<argument seq="0" name="value" datatype="V"/>
+		<argument seq="1" name="pattern" datatype="V"/>
+	</functiondefinition>
+	
+	<functiondefinition name="getTodaysDate" classname="com.util.DateUtils" method="getTodaysDate" returntype="D">
+	</functiondefinition>
+    
+    <functiondefinition name="preConcat" classname="com.util.StringUtils" method="preConcat" returntype="V">
+            <argument seq="0" name="str" datatype="V"/>
+            <argument seq="1" name="strToConcat" datatype="V"/>
+    </functiondefinition>
+    
+    <functiondefinition name="postConcat" classname="com.util.StringUtils" method="postConcat" returntype="V">
+            <argument seq="0" name="str" datatype="V"/>
+            <argument seq="1" name="strToConcat" datatype="V"/>
+    </functiondefinition>    
+	
+	<functiondefinition name="findBeanInList" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="findBeanInList" returntype="java.lang.Object">
+		<argument seq="0" name="list" datatype="java.util.List"/>
+		<argument seq="1" name="key" datatype="V"/>
+		<argument seq="2" name="val" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="resolveBeanValue" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="resolveBeanValue" returntype="java.lang.Object">
+		<argument seq="0" name="bean" datatype="java.lang.Object"/>
+		<argument seq="1" name="key" datatype="V"/>
+	</functiondefinition>
+	
+	<functiondefinition name="containsInCache" classname="com.manage.managemetadata.functions.commonfunctions.CacheUtils" method="containsInCache" returntype="I">
+		<argument seq="0" name="listname" datatype="V"/>
+		<argument seq="1" name="key" datatype="V"/>
+		<argument seq="2" name="val" datatype="java.lang.Object"/>
+	</functiondefinition>	
+	
+	<functiondefinition name="listSize" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="listSize" returntype="java.lang.Object">
+		<argument seq="0" name="list" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="isEqual" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="isEqual" returntype="B">
+		<argument seq="0" name="param1" datatype="java.lang.Object"/>
+		<argument seq="1" name="param2" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="isNotEqual" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="isNotEqual" returntype="B">
+		<argument seq="0" name="param1" datatype="java.lang.Object"/>
+		<argument seq="1" name="param2" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="isGreaterThan" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="isGreaterThan" returntype="B">
+		<argument seq="0" name="param1" datatype="java.lang.Object"/>
+		<argument seq="1" name="param2" datatype="java.lang.Object" />
+	</functiondefinition>
+	
+	<functiondefinition name="isLessThan" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="isLessThan" returntype="B">
+		<argument seq="0" name="param1" datatype="java.lang.Object"/>
+		<argument seq="1" name="param2" datatype="java.lang.Object" />
+	</functiondefinition>
+	
+	<functiondefinition name="isGreaterThanEqual" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="isGreaterThanEqual" returntype="B">
+		<argument seq="0" name="param1" datatype="java.lang.Object"/>
+		<argument seq="1" name="param2" datatype="java.lang.Object" />
+	</functiondefinition>
+	
+	<functiondefinition name="isLessThanEqual" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="isLessThanEqual" returntype="B">
+		<argument seq="0" name="param1" datatype="java.lang.Object"/>
+		<argument seq="1" name="param2" datatype="java.lang.Object" />
+	</functiondefinition>
+	
+	<functiondefinition name="andCondition" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="andCondition" returntype="B">
+		<argument seq="0" name="param1" datatype="java.lang.Object"/>
+		<argument seq="1" name="param2" datatype="java.lang.Object" />
+	</functiondefinition>
+	
+	<functiondefinition name="orCondition" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="orCondition" returntype="B">
+		<argument seq="0" name="param1" datatype="java.lang.Object"/>
+		<argument seq="1" name="param2" datatype="java.lang.Object" />
+	</functiondefinition>
+	
+	<functiondefinition name="getBeanProperty" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="getBeanProperty" returntype="java.lang.Object">
+		<argument seq="0" name="object" datatype="java.lang.Object"/>
+		<argument seq="1" name="property" datatype="V"/>
+	</functiondefinition>
+		
+	<functiondefinition name="getDataFromCache" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="getDataFromCache" returntype="java.util.List">
+		<argument seq="0" name="listname" datatype="V"/>
+	</functiondefinition>
+	
+	<functiondefinition name="getSelectedDataWithKeys" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="getSelectedDataWithKeys" returntype="java.lang.Object">
+		<argument seq="0" name="list" datatype="java.util.List"/>
+		<argument seq="1" name="whereClause" datatype="V"/>
+		<argument seq="2" name="multirows" datatype="V"/>
+		<argument seq="3" name="projectName" datatype="V"/>
+	</functiondefinition>
+	
+	<functiondefinition name="getLookupDataByKey" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="getLookupDataByKey" returntype="java.lang.Object">
+		<argument seq="0" name="listname" datatype="V"/>
+		<argument seq="1" name="keysList" datatype="java.util.List"/>
+		<argument seq="2" name="valuesList" datatype="java.util.List"/>
+	</functiondefinition>
+	
+	<functiondefinition name="getTotalRecordsForPropertyValue" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="getTotalRecordsForPropertyValue" returntype="I">
+		<argument seq="0" name="dataList" datatype="java.util.List"/>
+		<argument seq="1" name="property" datatype="V"/>
+		<argument seq="2" name="propertyValue" datatype="V"/>
+	</functiondefinition>
+	
+	<functiondefinition name="getLookupPropertyByKey" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="getLookupPropertyByKey" returntype="java.lang.Object">
+		<argument seq="0" name="listname" datatype="V"/>
+		<argument seq="1" name="keys" datatype="V"/>
+		<argument seq="2" name="values" datatype="V"/>
+		<argument seq="3" name="property" datatype="V"/>	
+	</functiondefinition>	
+	
+	<functiondefinition name="isNot" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="isNot" returntype="B">
+		<argument seq="0" name="value1" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="multiply" classname="com.manage.managemetadata.functions.commonfunctions.Math" method="multiply" returntype="N">
+		<argument seq="0" name="arg1" datatype="N"/>
+		<argument seq="1" name="arg2" datatype="N"/>
+	</functiondefinition>
+	
+	<functiondefinition name="round" classname="com.manage.managemetadata.functions.commonfunctions.Math" method="round" returntype="I">
+		<argument seq="0" name="arg1" datatype="N"/>		
+	</functiondefinition>
+	
+	<functiondefinition name="divide" classname="com.manage.managemetadata.functions.commonfunctions.Math" method="divide" returntype="N">
+		<argument seq="0" name="arg1" datatype="N"/>
+		<argument seq="1" name="arg2" datatype="N"/>
+	</functiondefinition>
+	
+	<functiondefinition name="getTodayDate" classname="com.util.DateUtils" method="getTodaysDate" returntype="D">
+	</functiondefinition>
+	<functiondefinition name="getTotalForPropertyValue" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="getTotalForPropertyValue" returntype="I">
+		<argument seq="0" name="arg1" datatype="java.util.List"/>
+		<argument seq="1" name="arg2" datatype="V"/>
+	</functiondefinition>
+
+	<!-- 	
+	<functiondefinition name="executeDBOperation" classname="com.manage.managemetadata.functions.commonfunctions.DBUtils" method="executeDBOperation" returntype="java.lang.Object">
+		<argument seq="0" name="data" datatype="com.util.IContext"/>
+		<argument seq="1" name="moName" datatype="V"/>
+		<argument seq="2" name="operation" datatype="V"/>		
+	</functiondefinition>	
+	 -->
+	<functiondefinition name="executeSystemRule" classname="com.manage.managemetadata.functions.commonfunctions.SystemRuleUtils" method="executeSystemRule" returntype="java.lang.Object">
+		<argument seq="0" name="data" datatype="com.util.IContext"/>
+		<argument seq="1" name="inputxml" datatype="V"/>
+		<argument seq="2" name="outputxml" datatype="V"/>
+		<argument seq="3" name="event" datatype="V"/>			
+	</functiondefinition>
+	
+	<functiondefinition name="isEmpty" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="isEmpty" returntype="B">
+		<argument seq="0" name="value1" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="containsObject" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="contains" returntype="I">
+		<argument seq="0" name="list" datatype="java.util.List"/>
+		<argument seq="1" name="val" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="isAlphaNumeric" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="isAlphaNumeric" returntype="I">
+		<argument seq="0" name="value" datatype="V"/>
+	</functiondefinition>
+	
+	<functiondefinition name="blankString" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="blankString" returntype="V">
+	</functiondefinition>	
+	
+	
+	<functiondefinition name="string-length" classname="com.util.StringUtils" method="length" returntype="I">
+            <argument seq="0" name="str" datatype="V"/>
+    </functiondefinition>
+    <!--
+	<functiondefinition name="contains" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="contains" returntype="I">
+		<argument seq="0" name="list" datatype="java.util.List"/>
+		<argument seq="1" name="key" datatype="V"/>
+		<argument seq="2" name="val" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="containsObject" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="contains" returntype="I">
+		<argument seq="0" name="list" datatype="java.util.List"/>
+		<argument seq="1" name="val" datatype="java.lang.Object"/>
+	</functiondefinition>	
+	
+	<functiondefinition name="isListEmpty" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="isListEmpty" returntype="I">
+		<argument seq="0" name="list" datatype="java.util.List"/>
+	</functiondefinition>
+	
+	<functiondefinition name="isMapEmpty" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="isMapEmpty" returntype="B">
+		<argument seq="0" name="map" datatype="java.util.Map"/>
+	</functiondefinition>
+	
+	<functiondefinition name="isMapNotEmpty" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="isMapNotEmpty" returntype="B">
+		<argument seq="0" name="map" datatype="java.util.Map"/>
+	</functiondefinition>
+	
+	<functiondefinition name="isNull" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="isNull" returntype="B">
+		<argument seq="0" name="param1" datatype="java.lang.Object"/>		
+	</functiondefinition>
+	
+	<functiondefinition name="isNotNull" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="isNotNull" returntype="B">
+		<argument seq="0" name="param1" datatype="java.lang.Object"/>		
+	</functiondefinition>	
+	
+	 -->
+	 
+	<functiondefinition name="initcapString" classname="com.util.StringUtils" method="getInitcapString" returntype="V">
+    	<argument seq="0" name="str" datatype="V"/>
+    </functiondefinition>
+    <functiondefinition name="findPropertyByKey" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="findPropertyByKey" returntype="java.lang.Object">
+		<argument seq="0" name="listname" datatype="V"/>
+		<argument seq="1" name="keys" datatype="V"/>
+		<argument seq="2" name="values" datatype="V"/>
+		<argument seq="3" name="property" datatype="V"/>
+		<argument seq="4" name="project" datatype="V"/>	
+	</functiondefinition>
+	
+	<functiondefinition name="getIdentifierKey" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="getIdentifierKey" returntype="java.lang.Object">
+		<argument seq="0" name="moname" datatype="V"/>
+		<argument seq="1" name="effectiveDate" datatype="V"/>
+		<argument seq="4" name="project" datatype="V"/>	
+	</functiondefinition>
+	
+	<functiondefinition name="generateMap" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="generateMap" returntype="java.util.Map">
+		<argument seq="0" name="context" datatype="com.util.Context"/>
+		<argument seq="1" name="parameters" datatype="V"/>
+	</functiondefinition>
+	
+	<functiondefinition name="generateXML" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="generateXML" returntype="java.lang.String">
+		<argument seq="0" name="object" datatype="java.lang.Object"/>
+		<argument seq="1" name="xmltype" datatype="I"/>
+	</functiondefinition>
+	
+	<functiondefinition name="populateContext" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="populateContext" returntype="B">
+		<argument seq="0" name="context" datatype="com.util.Context"/>
+		<argument seq="1" name="xmlviewid" datatype="V"/>
+	</functiondefinition>
+	
+	<functiondefinition name="populateError" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="populateError" returntype="B">
+		<argument seq="0" name="context" datatype="com.util.Context"/>
+		<argument seq="1" name="field" datatype="V"/>
+		<argument seq="2" name="msgKey" datatype="V"/>
+	</functiondefinition>
+	
+	<functiondefinition name="returnNull" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="returnNull" returntype="java.lang.Object">
+	</functiondefinition>
+	
+	<functiondefinition name="getPropertyFromOneRecordList" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="getPropertyFromOneRecordList" returntype="java.lang.Object">
+		<argument seq="0" name="dataList" datatype="java.util.List"/>
+		<argument seq="1" name="property" datatype="V"/>
+	</functiondefinition>
+	
+	<functiondefinition name="returnValue" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="returnValue" returntype="java.lang.Object">
+		<argument seq="0" name="obj" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="getValueFromPropertyFile" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="getValueFromPropertyFile" returntype="java.lang.Object">
+		<argument seq="0" name="obj" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="convertDateToString" classname="com.util.DateUtils" method="convertDateToString" returntype="V">
+		<argument seq="0" name="value" datatype="D"/>
+		<argument seq="1" name="pattern" datatype="V"/>
+	</functiondefinition>
+	
+	<functiondefinition name="isDateBefore" classname="com.util.DateUtils" method="isDateBefore" returntype="V">
+		<argument seq="0" name="date1" datatype="java.lang.Object"/>
+		<argument seq="1" name="date2" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="isDateAfter" classname="com.util.DateUtils" method="isDateAfter" returntype="V">
+		<argument seq="0" name="date1" datatype="java.lang.Object"/>
+		<argument seq="1" name="date2" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="getMessage" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="getMessage" returntype="java.lang.String">
+		<argument seq="0" name="context" datatype="com.util.Context"/>
+		<argument seq="1" name="key" datatype="java.lang.String"/>
+	</functiondefinition>
+	
+	<functiondefinition name="removeSymbolFromString" classname="com.util.StringUtils" method="removeSymbolFromString" returntype="java.lang.String">
+		<argument seq="0" name="str" datatype="java.lang.String"/>
+		<argument seq="1" name="symbol" datatype="java.lang.String"/>
+	</functiondefinition>
+	
+	<functiondefinition name="setValueInRequest" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="setValueInRequest" returntype="java.lang.String">
+		<argument seq="0" name="context" datatype="com.util.Context"/>
+		<argument seq="1" name="symbol" datatype="java.lang.String"/>
+	</functiondefinition>
+	<functiondefinition name="isDateEqual" classname="com.util.DateUtils" method="isDateEqual" returntype="V">
+		<argument seq="0" name="date1" datatype="java.lang.Object"/>
+		<argument seq="1" name="date2" datatype="java.lang.Object"/>
+	</functiondefinition>
+	<functiondefinition name="isDateNotEqual" classname="com.util.DateUtils" method="isDateNotEqual" returntype="V">
+		<argument seq="0" name="date1" datatype="java.lang.Object"/>
+		<argument seq="1" name="date2" datatype="java.lang.Object"/>
+	</functiondefinition>
+	
+	<functiondefinition name="parseDate" classname="com.util.DateUtils" method="parseDate" returntype="B">
+		<argument seq="0" name="context" datatype="com.util.Context"/>
+		<argument seq="1" name="field" datatype="java.lang.String"/>
+	</functiondefinition>
+	<functiondefinition name="setValueInSession" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="setValueInSession" returntype="java.lang.String">
+		<argument seq="0" name="context" datatype="com.util.Context"/>
+		<argument seq="1" name="symbol" datatype="java.lang.String"/>
+	</functiondefinition>
+	<functiondefinition name="checkEmail" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="checkEmail" returntype="B">
+		<argument seq="0" name="context" datatype="com.util.Context"/>
+		<argument seq="1" name="field" datatype="java.lang.String"/>
+	</functiondefinition>
+	<functiondefinition name="setFirstElementFromListInContext" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="setFirstElementFromListInContext" returntype="java.util.Map">
+		<argument seq="0" name="context" datatype="com.util.Context"/>
+		<argument seq="1" name="list" datatype="java.util.List"/>
+	</functiondefinition>
+	<functiondefinition name="addElementToList" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="addElementToList" returntype="V">
+		<argument seq="0" name="context" datatype="com.util.Context"/>
+		<argument seq="1" name="listName" datatype="java.lang.String"/>
+		<argument seq="2" name="fieldName" datatype="java.lang.String"/>
+		<argument seq="3" name="fieldValue" datatype="java.lang.String"/>
+	</functiondefinition>
+	
+	<functiondefinition name="executeDBOperation" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="executeDBOperation" returntype="java.lang.Object">
+		<argument seq="0" name="context" datatype="com.util.Context"/>
+		<argument seq="1" name="moName" datatype="java.lang.String"/>
+		<argument seq="2" name="operation" datatype="java.lang.String"/>
+		<argument seq="3" name="sqlStmtId" datatype="java.lang.String"/>
+	</functiondefinition>
+	<functiondefinition name="contains" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="contains" returntype="I">
+		<argument seq="0" name="str" datatype="java.lang.String"/>
+		<argument seq="1" name="value" datatype="java.lang.String"/>
+	</functiondefinition>
+	
+	<functiondefinition name="calculateDiffInDaysWithFormat" classname="com.util.DateUtils" method="calculateDiffInDaysWithFormat" returntype="I">
+		<argument seq="0" name="date1" datatype="java.lang.String"/>
+		<argument seq="1" name="date2" datatype="java.lang.String"/>
+		<argument seq="2" name="format" datatype="java.lang.String"/>
+	</functiondefinition>
+	<functiondefinition name="calculateDiffInHoursWithFormat" classname="com.util.DateUtils" method="calculateDiffInHoursWithFormat" returntype="I">
+		<argument seq="0" name="date1" datatype="java.lang.String"/>
+		<argument seq="1" name="date2" datatype="java.lang.String"/>
+		<argument seq="2" name="format" datatype="java.lang.String"/>
+	</functiondefinition>
+	<functiondefinition name="calculateDiffInMinutesWithFormat" classname="com.util.DateUtils" method="calculateDiffInMinutesWithFormat" returntype="I">
+		<argument seq="0" name="date1" datatype="java.lang.String"/>
+		<argument seq="1" name="date2" datatype="java.lang.String"/>
+		<argument seq="2" name="format" datatype="java.lang.String"/>
+	</functiondefinition>
+	<functiondefinition name="calculateDiffInSecondsWithFormat" classname="com.util.DateUtils" method="calculateDiffInSecondsWithFormat" returntype="I">
+		<argument seq="0" name="date1" datatype="java.lang.String"/>
+		<argument seq="1" name="date2" datatype="java.lang.String"/>
+		<argument seq="2" name="format" datatype="java.lang.String"/>
+	</functiondefinition>
+	<functiondefinition name="removeValueFromSession" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="removeValueFromSession" returntype="java.lang.String">
+		<argument seq="0" name="context" datatype="com.util.Context"/>
+		<argument seq="1" name="fieldname" datatype="java.lang.String"/>
+	</functiondefinition>
+	<functiondefinition name="isEqualsIgnoreCase" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="isEqualsIgnoreCase" returntype="B">
+		<argument seq="0" name="param1" datatype="java.lang.Object"/>
+		<argument seq="1" name="param2" datatype="java.lang.Object"/>
+	</functiondefinition>
+	<functiondefinition name="getMonthFromDate" classname="com.util.DateUtils" method="getMonthFromDate" returntype="I">
+		<argument seq="0" name="param1" datatype="java.lang.String"/>
+	</functiondefinition>
+	<functiondefinition name="getDayFromDate" classname="com.util.DateUtils" method="getDayFromDate" returntype="I">
+		<argument seq="0" name="param1" datatype="java.lang.String"/>
+	</functiondefinition>
+	<functiondefinition name="getYearFromDate" classname="com.util.DateUtils" method="getYearFromDate" returntype="I">
+		<argument seq="0" name="param1" datatype="java.lang.String"/>
+	</functiondefinition>
+	<functiondefinition name="reloadXML" classname="com.util.LoadXML" method="reloadXML" returntype="I">
+		<argument seq="0" name="context" datatype="com.util.Context"/>
+		<argument seq="1" name="param1" datatype="java.lang.String"/>
+	</functiondefinition>
+	<functiondefinition name="isContainsSymbol" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="isContainsSymbol" returntype="B">
+		<argument seq="0" name="param1" datatype="java.lang.String"/>
+		<argument seq="1" name="param2" datatype="java.lang.String"/>
+	</functiondefinition>
+	
+	<functiondefinition name="isListEmpty" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="isListEmpty" returntype="B">
+		<argument seq="0" name="list" datatype="java.util.List"/>
+	</functiondefinition>
+	
+	<functiondefinition name="isListNotEmpty" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="isListNotEmpty" returntype="B">
+		<argument seq="0" name="list" datatype="java.util.List"/>
+	</functiondefinition>
+	
+	<functiondefinition name="isNotGreaterThan" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="isNotGreaterThan" returntype="B">
+		<argument seq="0" name="param1" datatype="java.lang.Object"/>
+		<argument seq="1" name="param2" datatype="java.lang.Object" />
+	</functiondefinition>
+	
+	<functiondefinition name="isNotLessThan" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="isNotLessThan" returntype="B">
+		<argument seq="0" name="param1" datatype="java.lang.Object"/>
+		<argument seq="1" name="param2" datatype="java.lang.Object" />
+	</functiondefinition>
+	
+	<functiondefinition name="isNotGreaterThanEqual" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="isNotGreaterThanEqual" returntype="B">
+		<argument seq="0" name="param1" datatype="java.lang.Object"/>
+		<argument seq="1" name="param2" datatype="java.lang.Object" />
+	</functiondefinition>
+	
+	<functiondefinition name="isNotLessThanEqual" classname="com.manage.managemetadata.functions.commonfunctions.Conditions" method="isNotLessThanEqual" returntype="B">
+		<argument seq="0" name="param1" datatype="java.lang.Object"/>
+		<argument seq="1" name="param2" datatype="java.lang.Object" />
+	</functiondefinition>
+	
+	<functiondefinition name="getSessionList" classname="com.manage.managemetadata.functions.commonfunctions.DataUtils" method="getSessionList" returntype="V">
+     	<argument seq="0" name="context" datatype="com.util.Context"/>
+     	<argument seq="1" name="listName" datatype="java.lang.String" />
+     </functiondefinition>
+</functionsdef>

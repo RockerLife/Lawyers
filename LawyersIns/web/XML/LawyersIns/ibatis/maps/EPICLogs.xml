@@ -1,0 +1,69 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="EPICLogs">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from EPICLogs</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from EPICLogs</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into EPICLogs(
+          <dynamic prepend=" ">
+               <isNotEmpty property="MarketableProductKey" prepend=",">MarketableProductKey</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy</isNotEmpty>
+               <isNotEmpty property="EPICType" prepend=",">EPICType</isNotEmpty>
+               <isNotEmpty property="EPICData" prepend=",">EPICData</isNotEmpty>
+               <isNotEmpty property="EPICAccountId" prepend=",">EPICAccountId</isNotEmpty>
+               <isNotEmpty property="EPICLookupCode" prepend=",">EPICLookupCode</isNotEmpty>
+               <isNotEmpty property="EPICStatus" prepend=",">EPICStatus</isNotEmpty>
+               <isNotEmpty property="EPICComment" prepend=",">EPICComment</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="MarketableProductKey" prepend=",">#MarketableProductKey#</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">#CreatedDate#</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">#CreatedBy#</isNotEmpty>
+               <isNotEmpty property="EPICType" prepend=",">#EPICType#</isNotEmpty>
+               <isNotEmpty property="EPICData" prepend=",">#EPICData#</isNotEmpty>
+               <isNotEmpty property="EPICAccountId" prepend=",">#EPICAccountId#</isNotEmpty>
+               <isNotEmpty property="EPICLookupCode" prepend=",">#EPICLookupCode#</isNotEmpty>
+               <isNotEmpty property="EPICStatus" prepend=",">#EPICStatus#</isNotEmpty>
+               <isNotEmpty property="EPICComment" prepend=",">#EPICComment#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="EPICLogsKey">SELECT IDENT_CURRENT('EPICLogs') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EPICLogsKey, MarketableProductKey, PolicyKey, CreatedDate, CreatedBy, EPICType, EPICData, EPICAccountId, EPICLookupCode, EPICStatus, EPICComment from EPICLogs where EPICLogsKey = #EPICLogsKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update EPICLogs set
+          <dynamic prepend=" ">
+               <isNotEmpty property="MarketableProductKey" prepend=",">MarketableProductKey = #MarketableProductKey#</isNotEmpty>
+               <isEmpty property="MarketableProductKey" prepend=",">MarketableProductKey = null</isEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate = #CreatedDate#</isNotEmpty>
+               <isEmpty property="CreatedDate" prepend=",">CreatedDate = null</isEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy = #CreatedBy#</isNotEmpty>
+               <isEmpty property="CreatedBy" prepend=",">CreatedBy = null</isEmpty>
+               <isNotEmpty property="EPICType" prepend=",">EPICType = #EPICType#</isNotEmpty>
+               <isEmpty property="EPICType" prepend=",">EPICType = null</isEmpty>
+               <isNotEmpty property="EPICData" prepend=",">EPICData = #EPICData#</isNotEmpty>
+               <isEmpty property="EPICData" prepend=",">EPICData = null</isEmpty>
+               <isNotEmpty property="EPICAccountId" prepend=",">EPICAccountId = #EPICAccountId#</isNotEmpty>
+               <isEmpty property="EPICAccountId" prepend=",">EPICAccountId = null</isEmpty>
+               <isNotEmpty property="EPICLookupCode" prepend=",">EPICLookupCode = #EPICLookupCode#</isNotEmpty>
+               <isEmpty property="EPICLookupCode" prepend=",">EPICLookupCode = null</isEmpty>
+               <isNotEmpty property="EPICStatus" prepend=",">EPICStatus = #EPICStatus#</isNotEmpty>
+               <isEmpty property="EPICStatus" prepend=",">EPICStatus = null</isEmpty>
+               <isNotEmpty property="EPICComment" prepend=",">EPICComment = #EPICComment#</isNotEmpty>
+               <isEmpty property="EPICComment" prepend=",">EPICComment = null</isEmpty>
+          </dynamic>
+          where EPICLogsKey = #EPICLogsKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from EPICLogs where EPICLogsKey = #EPICLogsKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from EPICLogs</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from EPICLogs</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EPICLogsKey, MarketableProductKey, PolicyKey, CreatedDate, CreatedBy, EPICType, EPICData, EPICAccountId, EPICLookupCode, EPICStatus, EPICComment from EPICLogs where EPICLogsKey = #EPICLogsKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EPICLogsKey, MarketableProductKey, PolicyKey, CreatedDate, CreatedBy, EPICType, EPICData, EPICAccountId, EPICLookupCode, EPICStatus, EPICComment from EPICLogs</select>
+</sqlMap>
+

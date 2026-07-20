@@ -1,0 +1,378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Firm</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/jquery.treeview.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<form class="form-horizontal row" enctype="multipart/form-data">
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth">
+				<div id="header">
+					<span id="#Include:header.html#"></span>
+				</div>
+				<!-- <div class="menuTab">
+					<span id="#Include:tabs.html#"></span>
+				</div> -->
+				<div id="contentSection">
+					<div class="confirmationMsgAlign" id="SubproducerForm_freeform_contextdata_100">
+						<span class="Confirmation">
+							<label style="padding-left:5px;font-weight:bold;line-height:20px;color:green;"  name="pageMsg" id="pageMsg" />
+						</span>
+					</div>
+					<div class="form">
+						<div class="row newFreeForm_UI" id="SubproducerForm_freeform_contextdata_0">
+							<div class="block-form firmNewApp">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group form-group2">
+											<label>Billing Contact Name :</label>
+											<input class="form-control" type="text" id="ajax_field_BillingContactName" name="BillingContactName" maxlength="100"/>
+										</div>
+									</div>
+									<div class="col-sm-3" id ="showAgentOnly">
+										<div class="form-group form-group2" >
+											<label>Billing Contact Email :</label>
+											<input class="form-control"  type="text" id="ajax_field_BillingContactEmail" name="BillingContactEmail" onblur="javascript:validateEmail(this);" maxlength="100"/>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label>Billing Contact Number :</label>
+											<input class="form-control" type="text" id="ajax_field_BillingContactNumber" name="BillingContactNumber" onclick="loadFirmNewApp();"/>
+										</div>
+									</div>
+									
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group form-group2">
+											<label class="asterisk">Producer Name :</label> 
+											<input class="form-control" type="text" name="ProducerName"
+													id="ajax_field_ProducerName" />
+			
+											<div id="error_ProducerName" class="error"></div>
+											<div id="ajax_error_ProducerName" class="error"></div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group form-group2" id="StreetAddress">
+											<label class="asterisk">Street Address :</label>
+											<input class="form-control" type="text" name="StreetAddress" 
+													id="ajax_field_StreetAddress" />
+											<div id="error_StreetAddress" class="error"> </div>
+										</div>
+									</div>
+									<div class="col-sm-4">
+										<div class="form-group form-group2">
+											<label class="asterisk">Contact Name :</label>
+											<input class="form-control" type="text" id="ajax_field_SPContactName" name="SPContactName"/>
+											 <div id="error_SPContactName" class="error"> </div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+										<div class="form-group form-group2" id="State">
+											<label class="asterisk">State :</label>
+											<div class="xform-control xmultiSelectSingle">
+														<select name="State" class="form-control" 
+															id="State">
+															<option value="">-Select-</option>
+														</select>
+													</div>
+											<div id="error_State" class="error"> </div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk">City :</label>
+											<input type="text" name="SPCity" id="ajax_field_SPCity" class="form-control"
+													/> 
+											<div id="error_SPCity" class="error"> </div> 
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk">Zip Code :</label>
+											<input type="text" name="SPZip" id="ajax_field_SPZip" class="form-control"
+													onkeydown="loadFirmNewApp()" /> 
+											<div id="error_SPZip" class="error"> </div> 
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="">Fax :</label>
+											<input class="form-control" type="text" id="ajax_field_Fax" name="Fax" 
+												onclick="loadFirmNewApp();"	 />
+											<div id="error_Fax" class="error"> </div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk">Producer Email :</label>
+											<input class="form-control" type="text" id="ajax_field_Producer_email" name="Producer_email" 
+													onblur="javascript:validateEmail(this);" maxlength="100"/>
+											<div id="error_Producer_email" class="error"> </div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk">Phone Number :</label>
+											<input class="form-control" type="text" id="ajax_field_SPPhoneNumber" name="SPPhoneNumber"
+													 onclick="loadFirmNewApp();"/>
+											 <div id="error_SPPhoneNumber" class="error"> </div>
+										</div>
+									</div>
+									<div class="col-sm-3" id="showAgentOnly">
+										<div class="form-group form-group2" >
+											<label class="asterisk">Sub Producer Number :</label>
+											
+											<span id="eval:LawyersRule.isSubProducerEditReadOnly">
+											<input class="form-control"  type="text" id="ajax_field_ProducerCode" name="ProducerCode" readonly="readonly"  maxlength="8"
+											 onclick="SubProducerMask();"/>
+											 </span>
+											 <span id="eval:LawyersRule.isSubProducerEditNotReadOnly">
+											<input class="form-control"  type="text" id="ajax_field_ProducerCode" name="ProducerCode"  maxlength="8"
+											 onclick="SubProducerMask();"/>
+											 </span>
+											  <div id="error_ProducerCode" class="error"> </div>
+										</div>
+										
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk">Sub Producer Abbr :</label>
+											<input class="form-control" type="text" id="ajax_field_ProducerAbbr" maxlength="20" name="ProducerAbbr"/>
+											 <div id="error_ProducerAbbr" class="error"> </div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk">New Commission :</label>
+											<input class="form-control" placeholder="%" type="text" name="NewCommission" id="ajax_field_NewCommission" 
+											onclick="SubProducerCommissionMask();"/>
+											<div id="error_NewCommission" class="error"> </div> 
+											
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk">Renewal Commission :</label> 
+											<input class="form-control" placeholder="%" type="text" name="RenewalCommission" 
+													id="ajax_field_RenewalCommission" onclick="SubProducerCommissionMask();"/>
+			
+											<div id="error_RenewalCommission" class="error"></div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div id="NewBusiness" class="form-group form-group2">
+											<label class="asterisk"> Date Added :</label> 
+											<div class="iconsStyle3">
+												<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+												<input type="text" class="form-control datepicker"
+													id="ajax_field_Date_added" name="Date_added"
+													onkeyup="applyDateFormat(this,event);" value="03/31/2018">
+											</div>
+											<div id="error_Date_added" class="error"> </div> 
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="">Website :</label>
+											<input class="form-control" type="text" id="ajax_field_SPWebsite" name="SPWebsite" 
+													 />
+											<div id="error_SPWebsite" class="error"> </div>
+										</div>
+									</div>
+									</div>
+								<div class="row">
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk"> Archive :</label> 
+											<div>
+											<input type="radio"
+													id="ajax_field_Archive" value="Y" name="Archive" /> Yes	
+												<input type="radio"
+													id="ajax_field_Archive" value="N"  name="Archive" /> No
+											</div>
+											<div id="error_Archive" class="error"> </div> 
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk">Send Quote / Policy Documents :</label>
+											<input type="radio"
+													id="ajax_field_SendQuoteLetter" value="Y" name="SendQuoteLetter" /> Yes
+											<input type="radio"
+													id="ajax_field_SendQuoteLetter" value="N"  name="SendQuoteLetter" /> No
+											 <div id="error_SendQuoteLetter" class="error"> </div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk">Send Renewal Solicitation :</label>
+											<input type="radio"
+													id="ajax_field_SendRenewalSolicitation" value="Y" name="SendRenewalSolicitation" /> Yes
+											<input type="radio"
+													id="ajax_field_SendRenewalSolicitation" value="N"  name="SendRenewalSolicitation" /> No
+											 <div id="error_SendRenewalSolicitation" class="error"> </div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk">Sub Producer Policy Issued Access :</label>
+											<input type="radio"
+													id="ajax_field_SubProducerPolicyIssuedAccess" value="Y" name="SubProducerPolicyIssuedAccess" /> Yes
+											<input type="radio"
+													id="ajax_field_SubProducerPolicyIssuedAccess" value="N"  name="SubProducerPolicyIssuedAccess" /> No
+											 <div id="error_SubProducerPolicyIssuedAccess" class="error"> </div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk">Indication Access :</label>
+											<input type="radio"
+													id="ajax_field_IndicationAccess" value="Y" name="IndicationAccess" /> Yes
+											<input type="radio"
+													id="ajax_field_IndicationAccess"  value="N"  name="IndicationAccess" /> No
+											 <div id="error_IndicationAccess" class="error"> </div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk">Online payment:</label>
+											<input type="radio"
+													id="ajax_field_creditCardAccess" value="Y" name="creditCardAccess" /> Yes
+											<input type="radio"
+													id="ajax_field_creditCardAccess" value="N"  name="creditCardAccess" /> No
+											 <div id="error_creditCardAccess" class="error"> </div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk">Is Direct :</label>
+											<input type="radio"
+													id="ajax_field_IsDriect" value="Y" name="IsDriect" onchange="disableIsDriectButtonAct();" /> Yes
+											<input type="radio"
+													id="ajax_field_IsDriect" value="N"  name="IsDriect" onchange="disableIsDriectButtonAct();" /> No
+											 <div id="error_IsDriect" class="error"> </div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk">Sub Producer Access :</label>
+											<input type="radio"
+													id="ajax_field_SubProducerAccess" value="Y" name="SubProducerAccess" onchange="disableIndiOnlinePayButton();" /> Yes
+											<input type="radio"
+													id="ajax_field_SubProducerAccess" value="N"  name="SubProducerAccess" onchange="disableIndiOnlinePayButton();" /> No
+											 <div id="error_SubProducerAccess" class="error"> </div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-4">
+										<div class="form-group form-group2">
+											<label>Select a Signature to upload : </label>
+											<input type="file" name="sig_path" class="inputbox" id="ajax_field_sig_path"	 />
+											<input type="hidden" name="s_path" class="inputbox" id="s_path" />
+											<div id="error_sig_path" class="error"> </div>
+											<div id="error_s_path" class="error"> </div>
+										</div>
+									</div>
+										<div class="col-sm-4">
+										<div class="form-group form-group2">
+											<label>Select a Logo to upload : </label>
+											<input type="file" name="file_path" class="inputbox" id="ajax_field_file_path"	 />
+	 										<input type="hidden" name="path" class="inputbox" id="path" />
+											<div id="error_file_path" class="error"> </div>
+											<div id="error_path" class="error"> </div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="buttons borderTop row marginsBtn">
+						<div>
+							<div class="">
+								<span id="">
+									<a class="btn save floatRight" href="javascript:submitform('SubproducerFormList.html','SubproducerForm.save','','');"
+										>Save</a></span>
+								<a class="btn back floatLeft"
+							href="javascript:submitform('SubproducerFormList.html','SubproducerForm.back','','');">Back</a>
+							</div>
+							</div>
+						
+					</div>
+				</div>
+				<!---------Footer Start---------->
+				<div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<!---------Footer End---------->
+			</div>
+			<table id="SubproducerForm__freeform_contextdata_999">
+				<tr>
+					<td>
+					<input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />
+						<input type="hidden" name="IsEditSubproducer" id="IsEditSubproducer" />
+						<input type="hidden" name="SubProducerAccess1" id="SubProducerAccess1" />
+		
+						<script type="text/javascript" src="script/manageTab.js"></script>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+	</form>
+	<script type="text/javascript">
+		
+	disableIndiOnlinePayButton();
+	disableIsDriectButtonAct();
+function checks(){
+
+ document.getElementById("path").value=document.getElementById("file_path").value;
+
+}
+$(document) .ready( function() {
+	if($.trim($('#ajax_field_Date_added').val()) == ''){
+		$('#ajax_field_Date_added').datepicker("setDate", new Date());
+	}
+}); 
+
+</script>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

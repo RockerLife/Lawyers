@@ -1,0 +1,2170 @@
+@font-face {
+	font-family: 'ErasDemiITCRegular';
+	src: url('fonts/erasdemi.eot');
+	src: url('fonts/erasdemi.eot') format('embedded-opentype'),
+		url('fonts/erasdemi.woff') format('woff'), url('fonts/erasdemi.ttf')
+		format('truetype'), url('fonts/erasdemi.svg#ErasDemiITCRegular')
+		format('svg');
+}
+
+th {
+	font-weight: normal;
+}
+
+.lineHeight20 {
+	line-height: 20px;
+}
+
+img {
+	border: 0px;
+}
+
+div {
+	padding: 0px;
+	margin: 0px;
+}
+
+div.topFix200 {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 200px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* Keep the header cells positioned as we scroll */
+.topFix200 table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.topFix200 table tbody {
+	overflow: visible;
+}
+
+.divFix190 {
+	height: auto;
+	max-height: 190px;
+	overflow: auto;
+	overflow-x: hidden;
+	xborder: 1px solid #cccccc;
+}
+
+.divFix63 {
+	height: auto;
+	max-height: 63px;
+	overflow: auto;
+	overflow-x: hidden;
+	xborder: 1px solid #cccccc;
+}
+
+div.topFix250 {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 250px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* Keep the header cells positioned as we scroll */
+.topFix250 table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.topFix250 table tbody {
+	overflow: visible;
+}
+
+div.topFix300 {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 300px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* Keep the header cells positioned as we scroll */
+.topFix300 table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.topFix300 table tbody {
+	overflow: visible;
+}
+
+div.topFix350 {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 350px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* Keep the header cells positioned as we scroll */
+.topFix350 table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.topFix350 table tbody {
+	overflow: visible;
+}
+
+div.topFix400 {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 400px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* Keep the header cells positioned as we scroll */
+.topFix400 table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.topFix400 table tbody {
+	overflow: visible;
+}
+
+.subTab {
+	margin-bottom: -2px;
+}
+
+.hide {
+	display: none;
+	width: 100%;
+}
+
+.hideDiv {
+	display: none;
+}
+
+div.coveragesContainerBulletinHomeAction {
+	overflow-y: auto;
+	overflow-x: auto;
+	height: 127px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 400px;
+}
+
+/* Keep the header cells positioned as we scroll */
+.coveragesContainerBulletinHomeAction table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.coveragesContainerBulletinHomeAction table tbody {
+	overflow: visible;
+}
+
+div.coveragesContainerProdutionReport12 {
+	overflow-y: hidden;
+	overflow-x: auto;
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* Keep the header cells positioned as we scroll */
+.coveragesContainerProdutionReport12 table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.coveragesContainerProdutionReport12 table tbody {
+	overflow: visible;
+}
+
+.popupHover {
+	margin-top: 200px;
+}
+
+div.coveragesContainerTask {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 170px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* Keep the header cells positioned as we scroll */
+.coveragesContainerTask table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.coveragesContainerTask table tbody {
+	overflow: visible;
+}
+
+div.coveragesContainer1 {
+	overflow-x: auto;
+	overflow-y: hidden;
+	position: relative;
+	margin: 0 auto;
+	width: 844px;
+}
+
+/* Keep the header cells positioned as we scroll */
+.coveragesContainer1 table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.coveragesContainer1 table tbody {
+	overflow: visible;
+}
+
+div.coveragesContainer2 {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 250px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* Keep the header cells positioned as we scroll */
+.coveragesContainer2 table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.coveragesContainer2 table tbody {
+	overflow: visible;
+}
+
+div.coveragesContainerMna {
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 250px;
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* Keep the header cells positioned as we scroll */
+.coveragesContainerMna table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.coveragesContainerMna table tbody {
+	overflow: visible;
+}
+
+div.coveragesContainerBusinessSegment {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 300px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 98%;
+}
+
+/* Keep the header cells positioned as we scroll */
+.coveragesContainerBusinessSegment table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.coveragesContainerBusinessSegment table tbody {
+	overflow: visible;
+}
+
+div.coveragesContainerCampaignDetail {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 270px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* Keep the header cells positioned as we scroll */
+.coveragesContainerCampaignDetail table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.coveragesContainerCampaignDetail table tbody {
+	overflow: visible;
+}
+
+div.coveragesContainerLOALOBMAPPING {
+	overflow: auto;
+	height: 300px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 700px;
+}
+
+/* Keep the header cells positioned as we scroll */
+.coveragesContainerLOALOBMAPPING table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.coveragesContainerLOALOBMAPPING table tbody {
+	overflow: visible;
+}
+
+div.coveragesContainerCompanyStateMapping {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 300px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 500px;
+}
+
+/* Keep the header cells positioned as we scroll */
+.coveragesContainerCompanyStateMapping table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.coveragesContainerCompanyStateMapping table tbody {
+	overflow: visible;
+}
+
+div.coveragesContainerLoa {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 300px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 500px;
+}
+
+/* Keep the header cells positioned as we scroll */
+.coveragesContainerLoa table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.coveragesContainerLoa table tbody {
+	overflow: visible;
+}
+
+div.coveragesContainercounty {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 300px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 500px;
+}
+
+/* Keep the header cells positioned as we scroll */
+.coveragesContainercounty table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.coveragesContainercounty table tbody {
+	overflow: visible;
+}
+
+div.coveragesContainerNiprLicenseclass {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 300px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 600px;
+}
+
+/* Keep the header cells positioned as we scroll */
+.coveragesContainerNiprLicenseclass table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.coveragesContainerNiprLicenseclass table tbody {
+	overflow: visible;
+}
+
+div.coveragesContainerNIPRVerification {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 250px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 760px;
+}
+
+/* Keep the header cells positioned as we scroll */
+.coveragesContainerNIPRVerification table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.coveragesContainerNIPRVerification table tbody {
+	overflow: visible;
+}
+
+div.coveragesContainerTermination {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 350px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 700px;
+}
+
+/* Keep the header cells positioned as we scroll */
+.coveragesContainerTermination table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.coveragesContainerTermination table tbody {
+	overflow: visible;
+}
+
+div.coveragesContainerBackGrounCheck {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 150px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* Keep the header cells positioned as we scroll */
+.coveragesContainerBackGrounCheck table th {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	/* see note just below */
+}
+
+/* For alignment of the scroll bar */
+.coveragesContainerBackGrounCheck table tbody {
+	overflow: visible;
+}
+
+.HeaderFreez {
+	position: relative;
+	top: expression(this . offsetParent . scrollTop);
+	z-index: 10;
+}
+
+div.coveragesContainerPendingRequest {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 150px; /* must be greater than tbody*/
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/* Keep the header cells positioned as we scroll */
+
+.labelAlignment {
+	text-align: right;
+	padding-right: 5px;
+}
+
+.inputBox {
+	xwidth: 95%;
+}
+
+.dropDownBox {
+	width: 96%;
+}
+
+.inputBoxImage {
+	width: 90%;
+}
+
+.spacerRow {
+	line-height: 10px;
+}
+
+.spacerTd5 {
+	width: 5px;
+	line-height: 5px;
+}
+
+.spacerTd {
+	width: 10px;
+	line-height: 10px;
+}
+
+.spacerGrid {
+	height: 7px;
+}
+
+.spacerGridcol {
+	height: 8px;
+}
+
+.spacerTd16 {
+	width: 16px;
+	line-height: 16px;
+}
+
+.spacerTd6 {
+	width: 6px;
+	line-height: 6px;
+}
+
+.spacerTd20 {
+	width: 20px;
+}
+
+.spacerTd22 {
+	zwidth: 10px;
+	xline-height: 26px;
+	xdisplay: none;
+}
+
+.spacerTd40 {
+	width: 70px;
+}
+
+.spacerTd30 {
+	width: 30px;
+}
+
+.spacerTd42 {
+	width: 42px;
+}
+
+.spacerTd60 {
+	width: 60px;
+	line-height: 19px;
+}
+
+ul, li {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul {
+	xborder-bottom: solid 1px #3c96d5;
+	xpadding-left: 20px;
+}
+
+li {
+	float: left;
+	margin-right: 2px;
+}
+.gridTopPadding4 {
+	padding-top: 4px;
+}
+
+.headingBoldBig, .headingBoldBig label {
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.summaryHeadingBold {
+	font-weight: bold;
+}
+
+.summaryHeadingBold label {
+	font-weight: normal;
+}
+
+.summaryHeadingBold span {
+	font-weight: normal;
+}
+
+.height22 {
+	height: 22px;
+}
+
+.netTotal td {
+	font-weight: bold;
+}
+
+.subTotal td {
+	font-weight: bold;
+	background-color: #f7f7f7;
+}
+
+.inputArea {
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+.hsButton {
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-right: 7px
+}
+
+.paddingLeft15 {
+	padding-left: 15px;
+}
+
+.amountRowReport, .amountRowAdmin, .amountRowCarrier {
+	text-align: right !important;
+	padding-right: 10px !important;
+}
+
+.amountHeaderReport, .amountHeaderAdmin, .amountHeaderCarrier {
+	text-align: right !important;
+	padding-right: 10px !important;
+}
+
+.gridValignTxt {
+	vertical-align: top;
+	padding-top: 10px !important;
+	padding-bottom: 10px !important;
+}
+
+.gridValignBtn {
+	vertical-align: top;
+	padding-top: 12px !important;
+}
+
+.radioButton2 td {
+	width: 75px;
+}
+
+.paddingLeftError2 {
+	padding-left: 2px !important;
+}
+
+.app_Term_Comments {
+	padding: 5px 20px 5px 5px;
+	xheight: 200px;
+	vertical-align: top;
+}
+
+.popupContent1 {
+	padding: 10px 20px 20px 20px;
+	height: 200px;
+	vertical-align: top;
+}
+
+.popupContentEL {
+	padding: 10px;
+	height: 130px;
+	vertical-align: top;
+}
+
+.btmTabs .roundTab2 {
+	margin-left: 0px !important;
+}
+
+.labelAlign {
+	text-align: right !important;
+	xtext-align: left;
+}
+
+div.labelAlign {
+	text-align: right !important;
+	xtext-align: left;
+	xpadding-left: 10px;
+	height: 19px;
+}
+
+.tdInput {
+	padding-left: 5px !important;
+}
+
+.mendatoryInput {
+	margin: 5px 0px;
+	padding-left: 5px !important;
+	background:url url('../img/mendatory_Icon.png') no-repeat 0px 7px};
+
+
+
+
+.fixcolumnSearchM {
+	xoverflow: hidden;
+	table-layout: fixed;
+	max-width: 145px;
+	word-wrap: break-word;
+}
+
+.mendatoryAsterisk2 {
+	font-family: Verdana, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	xcolor: #ff0000;
+	width: 10px;
+	text-align: right;
+	xheight: 22px;
+	height: 22px;
+}
+
+.popupDivM_4 {
+	xoverflow-y: scroll;
+	xheight: 100px;
+	color: #000000;
+	border: 1px solid transparent;
+}
+
+.errorGroup {
+	text-align: center;
+}
+
+.tab1_Width30 {
+	width: 30px;
+}
+
+.tab1_Width40 {
+	width: 40px;
+}
+
+.tab1_Width50 {
+	width: 50px;
+}
+
+.tab1_Width60 {
+	width: 60px;
+}
+
+.tab1_Width70 {
+	width: 70px;
+}
+
+.tab1_Width80 {
+	width: 80px;
+}
+
+.tab1_Width90 {
+	width: 90px;
+}
+
+.tab1_Width100 {
+	width: 100px;
+}
+
+.tab1_Width125 {
+	width: 125px;
+}
+
+.tab1_Width130 {
+	width: 130px;
+}
+
+.tab1_Width140 {
+	width: 140px;
+}
+
+.tab1_paddingTop4 {
+	padding-top: 4px;
+}
+
+.tab2_Width30 {
+	xwidth: 30px;
+}
+
+.tab2_Width40 {
+	xwidth: 40px;
+}
+
+.tab2_Width50 {
+	xwidth: 50px;
+}
+
+.tab2_Width60 {
+	xwidth: 75px;
+}
+
+.tab2_Width70 {
+	xwidth: 70px;
+}
+
+.tab2_Width80 {
+	xwidth: 100px !important;
+}
+
+.tab2_Width90 {
+	xwidth: 90px;
+}
+
+.tab2_Width100 {
+	xwidth: 100px;
+}
+
+.tab2_Width130 {
+	xwidth: 130px;
+}
+
+.tab2_paddingTop4 {
+	xpadding-top: 4px;
+}
+
+.detailsTR {
+	display: block;
+}
+
+.detailsTD {
+	float: left;
+	width: 100%
+}
+
+.detailsTD1 {
+	display: none;
+}
+
+.detailsTD2 {
+	float: left;
+	width: 100%;
+	vertical-align: top;
+}
+
+.mainDiv {
+	width: 100%;
+}
+
+.dataTable {
+	display: table;
+	width: auto;
+}
+
+.dataTr {
+	display: table-row;
+}
+
+.dataTd {
+	display: table-cell;
+}
+
+.spacerDiv {
+	clear: both;
+	height: 10px;
+}
+
+.divWidths {
+	width: 100%;
+	clear: both;
+}
+
+.divButton {
+	display: block;
+	clear: both;
+	width: 99%;
+}
+
+.freeFormDiv {
+	clear: both;
+}
+
+.freeFormList {
+	display: table;
+	width: auto;
+}
+
+.freeFormListTr {
+	display: table-row;
+	width: auto;
+	clear: both;
+}
+
+.freeFormListTd {
+	display: table-cell;
+	padding: 0px 0px;
+}
+
+.freeFormListTdError {
+	display: table-cell;
+}
+
+.freeFormListTdError h6 {
+	line-height: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.mendatoryAsteriskDiv {
+	font-family: Verdana, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	color: transparent;
+	width: 10px;
+	text-align: right;
+	height: 19px;
+	visibility: hidden;
+}
+
+.paddingBottom10 {
+	padding-bottom: 10px;
+}
+
+.freeFormList100 {
+	display: table;
+	width: 100%;
+}
+
+.freeFormList10 {
+	width: 10%;
+}
+
+.freeFormList89 {
+	width: 89%;
+}
+
+.freeFormList01 {
+	width: 1%;
+}
+
+.freeFormList_vTop {
+	vertical-align: top;
+	padding-top: 4px;
+}
+
+.width1 {
+	width: 1%;
+}
+
+.width3 {
+	width: 3%;
+}
+
+.width4 {
+	width: 4%;
+}
+
+.width5 {
+	width: 5%;
+}
+
+.width10 {
+	width: 12%;
+}
+
+.width15 {
+	width: 21%;
+}
+
+.width16 {
+	width: 16%;
+}
+
+.width20 {
+	width: 20%;
+}
+
+.width25 {
+	width: 25%;
+}
+
+.width30 {
+	width: 30%;
+}
+
+.width35 {
+	width: 35%;
+}
+
+.width40 {
+	width: 40%;
+}
+
+.width45 {
+	width: 45%;
+}
+
+.width49 {
+	width: 49%;
+}
+
+.width50 {
+	width: 50%;
+}
+
+.width55 {
+	width: 55%;
+}
+
+.width60 {
+	width: 60%;
+}
+
+.width90 {
+	width: 90%;
+}
+
+.width70 {
+	width: 70%;
+}
+.width81-7 {
+	width: 81.7%;
+}
+.width80 {
+	width: 80%;
+}
+
+.width84 {
+	width: 84%;
+}
+
+.width95 {
+	width: 95%;
+}
+
+.width97 {
+	width: 97%;
+}
+
+.width100 {
+	width: 100%;
+}
+
+.width33 {
+	width: 33%;
+}
+
+.paginationTable {
+	display: table;
+	width: 100%;
+}
+
+.paginationTable2 {
+	xpadding: 3px;
+	display: table;
+	float: right;
+}
+
+.paginationTr {
+	display: table-row;
+}
+
+.paginationTd {
+	display: table-cell;
+	vertical-align: middle;
+	height: 20px;
+}
+
+.paginationTable2 .paginationTd {
+	padding: 2px;
+}
+
+.freeFormDiv ul.split-list {
+	border-bottom: medium none;
+	float: left;
+	margin-left: 0;
+	padding: 0;
+	width: 100%;
+}
+
+.freeFormDiv ul.sub-list {
+	width: 50%;
+	float: left;
+	border-bottom: none;
+}
+
+.freeFormDiv ul.split-list li {
+	float: none;
+	line-height: 1.5em;
+	padding-right: 0;
+	padding: 1px 0px;
+	width: 100%;
+}
+
+.freeFormLabelWidth_60 {
+	width: 60px;
+}
+
+.freeFormLabelWidth_80 {
+	width: 80px;
+}
+
+.freeFormLabelWidth_100 {
+	width: 100px;
+}
+
+.freeFormLabelWidth_120 {
+	width: 120px;
+}
+
+.freeFormLabelWidth_130 {
+	width: 130px;
+}
+
+.freeFormLabelWidth_140 {
+	width: 140px;
+}
+
+.freeFormLabelWidth_160 {
+	width: 160px;
+}
+.freeFormLabelWidth_164 {
+	width: 164px;
+}
+
+.freeFormLabelWidth_170 {
+	width: 170px;
+}
+.freeFormLabelWidth_175 {
+	width: 175px;
+}
+
+.freeFormLabelWidth_180 {
+	width: 180px;
+}
+.freeFormLabelWidth_185 {
+	width: 185px!important;
+}
+
+
+.freeFormLabelWidth_190 {
+	width: 190px;
+}
+
+.freeFormLabelWidth_200 {
+	width: 200px;
+}
+
+.freeFormLabelWidth_210 {
+	width: 210px;
+}
+.freeFormLabelWidth_213 {
+	width: 213px;
+}
+
+.freeFormLabelWidth_225 {
+	width: 225px;
+}
+
+.freeFormLabelWidth_300{
+	width: 300px;
+}
+.clearDiv {
+	clear: both;
+}
+
+.paddingBottom5 {
+	padding-bottom: 5px;
+}
+
+.paddingBottom6 {
+	padding-bottom: 6px;
+}
+
+.paddingBottom7 {
+	padding-bottom: 7px;
+}
+
+.paddingBottom8 {
+	padding-bottom: 8px;
+}
+
+.paddingBottom9 {
+	padding-bottom: 9px;
+}
+
+.boldSign {
+	padding-left: 3px;
+	font-weight: normal;
+	line-height: 20px;
+}
+
+.perSign {
+	padding-left: 3px;
+	font-weight: normal;
+}
+
+.nowrapDiv {
+	white-space: nowrap;
+}
+
+.floatRight {
+	float: right;
+}
+
+.paddingTopNone .paddingTop10 {
+	padding-top: 0px;
+}
+.paddingTop30{padding-top:30px;}
+.paddingTop12{padding-top:12px;}
+.lineHeight0 {
+	line-height: 0px;
+}
+
+.alignTopDiv {
+	vertical-align: top;
+}
+
+.clearDivFooter {
+	clear: both;
+}
+
+.borderNone {
+	border: none;
+	padding: 0px;
+}
+
+.borderNone li {
+	float: left;
+	margin: 0px;
+}
+
+.errorMsgAlign {
+	clear: both;
+	text-align: center;
+}
+
+.confirmationMsgAlign {
+	clear: both;
+	text-align: center;
+	margin-top: 5px;
+}
+.Confirmation {
+	width: 100%;
+	color: #017d0a;
+	font-weight: bold;
+	text-align: center !important;
+}
+.errorDiv {
+	text-align: center;
+	clear: both;
+}
+
+.paddingTopBottom_2 {
+	padding: 2px 0px;
+}
+
+.reportAsterisk {
+	font-family: Verdana, Arial;
+	font-size: 11px;
+	font-weight: bold;
+	display: none;
+	width: 10px;
+	text-align: right;
+	xheight: 22px;
+	height: 24px;
+}
+
+.bulkAppoint2Width {
+	width: 180px;
+}
+
+.bulkAppoint2Width_2 {
+	width: 178px;
+}
+
+.freeFormLabelWidth_110 {
+	width: 110px;
+}
+
+.bulkStep1Width {
+	width: 180px;
+}
+
+.importWidth {
+	width: 170px;
+}
+
+.margin-Padding_0 {
+	margin: 0px;
+	padding: 0px;
+}
+
+.userRolesWidth {
+	width: 170px;
+}
+
+.tdPaddingLeft_Doc10 {
+	padding-left: 10% !important;
+}
+
+.tdPaddingLeft_Doc10 .spacerTd40 {
+	width: 151px;
+}
+
+.search_Agent_Result_height .HeaderStyle {
+	Xheight: 50px;
+}
+
+.fix90_height {
+	width: 99.4%;
+	padding-left: 2px;
+	overflow: auto;
+	overflow-x: hidden;
+	margin-bottom: 16px;
+}
+
+.popupDivResult .fixcolumnInput, .popupDivResult .transparent {
+	max-width: 443px;
+	width: 443px !important;
+}
+
+.tdPaddingLeft20 {
+	padding-left: 20%;
+}
+
+.tdPaddingLeft10 {
+	padding-left: 10%;
+}
+
+.agencyAddressType3 .mendatoryCounty, .agencyAddressType2 .mendatoryCounty
+	{
+	margin: 5px 0px;
+	padding-left: 5px !important;
+	background: none;
+}
+
+.tdInputCheckbox {
+	padding-left: 8px !important;
+}
+
+.adminSection .bgAccordionN fieldset {
+	margin: 0px 0px !important;
+}
+
+.backgroundNone {
+	background: none !important;
+}
+
+.textAlignRight {
+	text-align: right;
+}
+
+.textAlignCenter {
+	text-align: right;
+}
+
+.height150 {
+	height: 150px;
+}
+
+.red {
+	color: red;
+}
+
+.word-break {
+	word-break: break-all;
+}
+
+.paddingRight1 {
+	padding-right: 1px;
+}
+
+.paddingRight2 {
+	padding-right: 2px;
+}
+
+.paddingRight3 {
+	padding-right: 3px;
+}
+
+.paddingRight4 {
+	padding-right: 4px;
+}
+
+.paddingRight5 {
+	padding-right: 5px;
+}
+
+.paddingRight6 {
+	padding-right: 6px;
+}
+
+.paddingRight7 {
+	padding-right: 7px;
+}
+
+.paddingRight10 {
+	padding-right: 10px;
+}
+
+.paddingRight11 {
+	padding-right: 11px;
+}
+
+.paddingRight13 {
+	padding-right: 13px;
+}
+
+.paddingTop1 {
+	padding-top: 1px;
+}
+
+.paddingTop2 {
+	padding-top: 2px;
+}
+
+.paddingTop3 {
+	padding-top: 3px;
+}
+
+.paddingTop4 {
+	padding-top: 4px !important;
+}
+
+.paddingTop5 {
+	padding-top: 5px;
+}
+
+.paddingTop6 {
+	padding-top: 6px;
+}
+
+.paddingTop8 {
+	padding-top: 8px;
+}
+
+.paddingTop10 {
+	padding-top: 10px;
+}
+
+.paddingTop20 {
+	padding-top: 20px;
+}
+
+.paddingLeft1 {
+	padding-left: 2px;
+}
+
+.paddingLeft2 {
+	padding-left: 2px;
+}
+
+.paddingLeft3 {
+	padding-left: 4px;
+}
+
+.paddingLeft4 {
+	padding-left: 5px;
+}
+
+.paddingLeft5 {
+	padding-left: 5px;
+}
+
+.paddingLeft6 {
+	padding-left: 6px;
+}
+
+.paddingLeft7 {
+	padding-left: 7px;
+}
+
+.paddingLeft8 {
+	padding-left: 8px;
+}
+
+.paddingLeft9 {
+	padding-left: 9px;
+}
+
+.paddingLeft9-imp {
+	padding-left: 9px !important;
+}
+
+.paddingLeft10 {
+	padding-left: 10px !important;
+}
+
+.paddingLeft23 {
+	padding-left: 23px !important;
+}
+
+.padding1 {
+	padding: 1px;
+}
+
+.padding2 {
+	padding: 2px;
+}
+
+.padding3 {
+	padding: 3px;
+}
+
+.padding4 {
+	padding: 6px;
+}
+
+.padding5 {
+	padding: 5px;
+}
+
+.padding8 {
+	padding: 8px;
+}
+
+.padding10 {
+	padding: 10px;
+}
+
+.errorPaddingBtm {
+	padding-bottom: 5px;
+}
+
+.paddingLeftError {
+	padding-left: 3px !important;
+}
+
+.marginTop0 {
+	margin-top: 0px;
+}
+
+.marginTop1 {
+	margin-top: 1px;
+}
+
+.marginTop2 {
+	margin-top: 2px;
+}
+
+.marginTop3 {
+	margin-top: 3px;
+}
+
+.marginTop4 {
+	margin-top: 4px;
+}
+
+.marginTop5 {
+	margin-top: 5px;
+}
+
+.marginTop6 {
+	margin-top: 6px;
+}
+
+.marginTop7 {
+	margin-top: 7px;
+}
+
+.marginTop8 {
+	margin-top: 8px;
+}
+
+.marginTop8 {
+	margin-top: 9px;
+}
+
+.marginTop8 {
+	margin-top: 10px;
+}
+
+.marginLeft-3 {
+	margin-left: -3px;
+}
+
+.marginLeft-4 {
+	margin-left: -4px;
+}
+
+.agencyAddressType1 .mendatoryCounty {
+	margin: 5px 0px;
+	padding-left: 5px !important;
+	background: none;
+}
+
+.invitationImport .fixcolumnHeader {
+	max-width: 24.3%;
+}
+
+.fixcolumnSearchDiv {
+	xoverflow: hidden;
+	table-layout: fixed;
+	max-width: 271px;
+	word-wrap: break-word;
+}
+
+.hierarchyBGWhite {
+	background: #ffffff;
+}
+
+.warning {
+	color: #000000;
+	xbackground: url(../images/icons/warning.png) no-repeat;
+	clear: both;
+}
+
+.node43 table #table1 td {
+	padding: 0px !important;
+}
+
+.paddingLeftError4 {
+	padding-left: 4px;
+}
+
+.freeFormLabelWidth_240 {
+	width: 240px;
+}
+
+.paddingTop15 {
+	padding-top: 15px;
+}
+
+.disclaimer {
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 10px;
+	border: solid 1px #cccccc;
+	background: #ffffcc;
+	color: #666666;
+}
+
+.contactPadding {
+	line-height: 18px !important;
+	text-align: justify;
+}
+
+.contactInfoSelf .detail_Split_List .split-list {
+	width: 100%;
+}
+
+.contactInfoSelf .detail_Split_List .split-list .sub-list {
+	width: 533px;
+}
+
+.contactInfoSelf .detail_Split_List .split-list li {
+	width: 100%;
+}
+
+input[disabled], select[disabled], textarea[disabled] {
+	border: 1px solid #dedcdc !important;
+	color: #929090 !important;
+}
+
+input[readonly], select[readonly], textarea[readonly] {
+	border: 1px solid #dedcdc !important;
+	color: #929090 !important;
+}
+
+input[type=radio], input[type=checkbox] {
+	border: 0px !important;
+}
+
+.fixcolumnInputProfile {
+	xoverflow: hidden;
+	table-layout: fixed;
+	max-width: 350px;
+	word-wrap: break-word;
+}
+
+.detailLeftLableWidthProducerContact {
+	width: 299px;
+}
+
+.searchResults .topDetails {
+	display: none;
+}
+
+.fixContact150 {
+	height: 150px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.heightProducerCode {
+	min-height: auto;
+	max-height: 150px;
+	height: auto;
+}
+
+.agency-assoc-smry #firstFieldsdet {
+	min-height: 230px !important;
+}
+
+.agency-assoc-profile #secondFieldsdet
+{min-height: 230px !important;}
+
+.heightProducerCode-Associate {
+	min-height: auto;
+	max-height: 200px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.padding4-top-bottom {
+	padding: 4px 0px;
+}
+.fieldset-top-border{
+	border-left:none;
+	border-right:none;
+	border-bottom:none;
+	padding:0px;
+}
+.text-heading {
+	clear: both;
+	padding-bottom: 5px;
+}
+
+
+/*----------------------------------------- Common Width All Pages ----------------------------------------*/
+.freeFormLabelWidth {
+	width: 210px;
+}
+
+.labelWidth_250 .freeFormLabelWidth {
+	width: 250px;
+}
+.producerDetail .freeFormLabelWidth {
+	width: 224px!important;
+}
+.adjustment_deduction .freeFormLabelWidth {
+	width: 250px!important;
+}
+.commissionSchedules .freeFormLabelWidth {
+	width: 250px!important;
+}
+/*----------------------------------------- Page Level Width ----------------------------------------*/
+.entityCompetitorAppointments_width .freeFormLabelWidth {
+	
+}
+
+.entityOtherInformation_width .freeFormLabelWidth {
+	width: 250px;
+}
+.license_list .listRow2CSS, .license_list .listRow1CSS{
+                border-top:none;
+                border-right:1px solid #f2f2f2;
+                padding:5px 5px !important;
+                float:left;
+                display:block;
+                height:auto !important;
+}
+.padding5{
+                padding:5px;
+}
+.license_list_green{color: green !important;;font-weight: bold;}
+.license_list_black{color: black !important;}
+.popupContentELConfirmation {
+                padding: 10px;
+                height: 130px;
+                vertical-align: top;
+                line-height:20px;
+}
+.ConfirmationAlign, .errorMsgAlign  {
+        text-align:center!Important;
+        
+        }
+        
+. agencyCodesDivWidthCloseSub{
+	width:180px;
+
+	}
+	
+.tdPaddingLeft11 {
+	padding-left: 11% !important;
+}
+.tableWidth2{width: 95%; margin: 0px auto;}
+
+.mendatoryInputpadding {
+	margin: 5px 0px;
+	padding-left: 9px !important;
+	background: url(../images/icons/mendatory_Icon.png) no-repeat 0px 10px;
+}
+
+
+.tableLeft1 {
+	float:left;
+	width:100%!important;
+    padding-left:0px!important;
+}
+.tableLeftChkBx{position:absolute;display:none!important;}
+
+
+.scroll250 {
+	height: 250px;
+	overflow-x: auto;
+}
+.padding20{padding: 20px;}
+
+
+.dynamicFieldSet .gridTable{border:0px!important}
+#DYNAMICPAGECONTENT .mendatoryInputpadding{padding-top:0px;}
+.dynamicFieldSet .listRow2CSS td, .dynamicFieldSet .listRow1CSS td{border-bottom:0px}
+
+
+.dynamicFieldDivTable{width:50%;float:left;padding-bottom:10px;}
+.dynamicFieldSet{border:0px;border-top:1px solid #ccc;padding:0px;padding-bottom:15px}
+.dynamicFieldSet legend{padding-right:10px;}
+.dynamicFieldSet .mendatoryLegend{
+	padding-left: 13px !important;
+	background: url(../images/icons/mendatory_Icon.png) no-repeat 4px 2px;
+	
+}
+.dynamic2DGridDiv {padding:10px 0px 0px}
+.dynamicLabel{width:230px;text-align:right;padding-top:6px}
+.dynamicField input#ajax_field_commission_rate1_2{width:229px!important}
+.dynamicGridDiv{padding-bottom:15px}
+.dynamicFieldDivTable a.icoCalendar{margin-left:3px;}
+.dynamicFieldDivTable td{line-height:22px}
+
+.dynamicFieldSet .dynamicGridTable{border: 0px solid #CEEFF2!important;}
+.dynamicFieldSet .dynamicGridTable .listRow2CSS td, .dynamicFieldSet .dynamicGridTable .listRow1CSS td{border-bottom:0px}
+
+#DYNAMICPAGECONTENT .dynamicLabel,
+#DYNAMICPAGECONTENT .dynamicField{padding-bottom:0px;height:19px;}
+
+.dynamicGridDiv td{xwidth:30%}
+
+
+.dynamicGridTable .listRow1CSS td,
+.dynamicGridTable .listRow2CSS td{padding:3px 3px} 
+.dynamicGridTableCol2 td{width:50%}
+#DYNAMICPAGECONTENT .mendatoryInputpadding {background: url(../images/icons/mendatory_Icon.png) no-repeat 1px 11px!important;padding-left:6px!important}
+
+#DYNAMICPAGECONTENT .dynamicField input[type=text]{xwidth:245px;}
+.dynamicField select.dynamicSelect{width:233px;}
+.dynamicField select.dynamicSelectWithOperator{width:183px;}
+
+#DYNAMICPAGECONTENT .dynamicField .icoCalendar{margin-left:5px}
+#createDynamicTableSecurity {padding-bottom:20px;}
+.dynamicTableDiv fieldset{margin-bottom:0px!important;margin-top:15px!important}
+
+.dynamicTableDiv {margin-bottom:20px;}
+
+.dynamicTableDiv .gridTable .listRow1CSS .dynamicGridTextbox,
+.dynamicTableDiv .gridTable .listRow2CSS .dynamicGridTextbox{width:80px;}
+
+td.includeRadio{font-weight:bold;padding-bottom:20px;padding-left:5px;padding-top:5px;}
+td.includeRadio span{padding-right:15px;}
+.homeActionBlockSidebarLeft{width:17%;float:left;height:415px}
+.homeActionBlockMiddel{width:63%;float:left;height:415px}
+.homeActionBlockSidebarRight{width:20%;float:left;height:415px}
+.homeActionBlockSidebarLeft .homeActionBlockSidebarLeftInner,
+.homeActionBlockSidebarRight .homeActionBlockSidebarRightInner,
+.homeActionBlockMiddel .homeActionBlockMiddelInner,
+.homeActionBlockGraphs .homeActionBlockGraphsInner
+{margin:5px;border: 1px solid #6bc2f8;}
+.homeActionBlockMarginTop{padding-top:1px;}
+.homeActionBlockSidebarLeft table.calendar{border:0px;}
+
+.homeActionBlockSidebarRight .homeActionBlockSidebarRightInner{
+background: -webkit-gradient(linear, 0 0, 0 bottom, from(#eae9e8),
+		to(#fdf9ea));
+	background: -webkit-linear-gradient(#eae9e8, #fdf9ea);
+	background: -moz-linear-gradient(#eae9e8, #fdf9ea);
+	background: -ms-linear-gradient(#eae9e8, #fdf9ea);
+	background: -o-linear-gradient(#eae9e8, #fdf9ea);
+	background: linear-gradient(#eae9e8, #fdf9ea);
+	-pie-background: linear-gradient(#eae9e8, #fdf9ea);
+	behavior: url(css/htc/PIE.htc);
+}
+.homeActionBlockSidebarRightInner .border{border:solid 1px #c4c4c4;}
+.homeActionBlockSidebarRightInner ul.DBroundSubTab1 {padding-left:1px;!important}
+.homeActionBlockSidebarRightInner .DBroundSubTab1 li {background:#cccccc!important}
+
+.homeActionBlockSidebarLeft .DashboardHeaderStyle,
+.homeActionBlockMiddel .DashboardHeaderStyle{background:#e2e1e1!important}
+.homeActionBlockMiddel .SubHeaderBg{background:#f2f1f1!important}
+.homeActionBlockGraphs {width:83%;float:left}
+
+.homeActionGridBg{padding-left:5px!important}
+.homeActionBlockSidebarLeft .triggerHome5:hover{color:#c6643f}
+.homeActionBlockSidebarLeft .triggerHome5{border-bottom: 1px solid #ffffff;}
+
+.homeActionBlockSidebarLeft .homeActionGridBg,
+.homeActionBlockMiddel .homeActionGridBg,
+.homeActionBlockSidebarRight .homeActionGridBg,
+.homeActionBlockGraphs .homeActionGridBg,
+.homeActionBlockSidebarLeft .dashboardCalenderHeading{
+	-webkit-text-shadow: #000 0px 1px 2px;
+	-moz-text-shadow: #000 0px 1px 2px;
+	xtext-shadow: #000 0px 1px 2px;
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from(#45a1e0),
+		to(#2b7fba));
+	background: -webkit-linear-gradient(#45a1e0, #2b7fba);
+	background: -moz-linear-gradient(#45a1e0, #2b7fba);
+	background: -ms-linear-gradient(#45a1e0, #2b7fba);
+	background: -o-linear-gradient(#45a1e0, #2b7fba);
+	background: linear-gradient(#45a1e0, #2b7fba);
+	-pie-background: linear-gradient(#45a1e0, #2b7fba);
+	behavior: url(css/htc/PIE.htc);
+	height: 30px;
+	padding:3px!important;
+	padding-left: 5px!important;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;	
+}
+.textShadow{text-shadow: #000 0px 1px 2px!important;}
+.homeActionBlockSidebarLeft .dashboardCalenderHeading a{background:transparent!important;}
+.spacerTd140{    width: 140px;}
+.listRow2CSS .spacerTd140, .listRow1CSS .spacerTd140{    width: 150px!important;}
+.listRow2CSS .tdPaddingLeft10, .listRow1CSS .tdPaddingLeft10{    padding-left: 10%!important;}
+.bgAccordionN .gridTable .listRow1CSS td{padding:3px!important}
+.addTableRow tr td select,
+.addTableRow tr td input{margin:3px;}
+.addTableRow .error{padding-left:3px!important}
+
+
+ul.extendedField{
+width:100%;float:left;	
+}
+ul.extendedField li{
+width:49%;float:none;display:inline-block;	
+}
+ul.extendedField li h6{margin:0px;padding:0px;}
+
+ul.extendedField li h6:after {
+    content: " ";
+}
+
+
+ul.extendedField li .freeformList{display:table;width:100%}
+ul.extendedField li  .freeformListTr{display:table-row;}
+ul.extendedField li .labelAlign,
+ul.extendedField li .error{width:215px;}
+ul.extendedField li .freeformListTd{text-align:right;display:table-cell;padding:2px 0px;}
+ul.extendedField li  .mendatoryInput, ul.extendedField li  .tdInput{text-align:left;}
+ul.extendedField li  .freeformListTdError{display:table-cell;}
+ul.extendedField li  .mendatoryInput input[type=text],
+ul.extendedField li  .mendatoryInput input[type=password], 
+ul.extendedField li  .tdInput input[type=text],
+ul.extendedField li  .tdInput input[type=password]{width:230px}
+
+ul.extendedField li  .mendatoryInput input[type=checkbox], 
+ul.extendedField li  .tdInput input[type=checkbox],
+ul.extendedField li  .mendatoryInput input[type=radio], 
+ul.extendedField li  .tdInput input[type=radio]{margin-left: 4px;}
+
+.icoAttachSqlMini a {
+	background-image: url(../images/icons/attach_sql_icon.png);
+	width: 16px;
+	height: 16px;
+	display: block;
+	background-repeat: no-repeat;
+}
+.wizardInner{padding:20px;}
+#xmlMenuTree ul, #xmlMenuTree ul ul{font-size:12px!important}
+.wizard_border .manageTamplateTree{overflow:auto!important;height:auto!important;}
+.wizard_border .templateBuilder_Form{border-bottom:solid 1px #cccccc;padding-bottom:15px;width:100%;float:left;}
+.wizard_border .templateTypeDecisionTable{background:none;width:100%;padding-top:15px}
+.templateBuilderDiv  .icoAttachRule, .templateBuilderDiv  .icoDelete{position:inherit!important} 
+
+.blueLink .frameData a{color: #0000ff;}
+.blueLink .frameData a:hover{color: #c6643f;}
+.textWrap {word-break: break-all;}
+.decisionTable .templateBuilderDiv{padding:0px;width:100%;padding-bottom:20px;}
+.paddingBottom20{padding-bottom:20px;}
+ul.progress-tracker li{z-index:9!important}
+.dynamicHistory {padding:15px}
+.dynamicHistory td.error{padding-left:3px!important}
+.decisionTables td.decisionTableHeading {background:#e3e3e3;padding:5px 10px;font-weight:bold;}
+.decisionTables td.decisionTableIcoAttach {background:#e3e3e3;padding:5px 5px;width:16px;}
+.decisionTables td.decisionTableIcoSqlAttach {background:#e3e3e3;padding:5px 5px;width:16px;}
+.decisionTables td.decisionTableIcoDelAttach {background:#e3e3e3;padding:5px 3px;width:16px;}
+
+
+.decisionTables td.decisionTableIcoAttach a{width:12px;margin-left:4px}
+.decisionTables td.decisionTableIcoDelAttach{padding-left:7px;padding-top:8px;padding-bottom:3px}
+
+.decisionTables td.decisionTableIcoSqlAttach a{background-position:2px 2px}
+.decisionTables td.decisionTableIcoAttach a{background-position:2px 2px}
+
+.decisionTables td.decisionTableIcoAttach:hover,
+.decisionTables td.decisionTableIcoSqlAttach:hover,
+.decisionTableIcoDelAttach:hover 
+{background:#cccccc;cursor:pointer}
+.decisionTableIcoDelAttach a{background-size:12px 12px;width:12px;}
+.decisionTables td.decisionTableIcoAttach,
+.decisionTables td.decisionTableIcoSqlAttach,
+.decisionTableIcoDelAttach{padding:5px 5px;border-left:solid 1px #cccccc;} 
+.decisionTables td.decisionTableIcoDelAttach:hover{background:#ccc;}
+.homeActionBlockHeightGraph{height: 382px; background: #ffffff;}
+
+
+a.dynamicIconRule{position:relative;margin-left:5px}
+.tooltip{position:absolute;padding:3px 6px;border:solid 1px #999;background:#ffffff;left:25px!important;color:#3e3e3e;
+-webkit-box-shadow: #666 3px 3px 2px;
+	-moz-box-shadow: #666 3px 3px 2px;
+	box-shadow: #666 3px 3px 2px;
+	white-space:nowrap;
+}
+.kpiReportsFilter .reportlabel{text-align:right!important;width:150px}
+.kpiReportsFilter td.mendatoryInput{background: url(../images/icons/mendatory_Icon.png) no-repeat 0px 7px !important;}
+.kpiReportsFilter .reportcomponentselect select{width:260px!important}
+.kpiReportsFilter  .reportcomponentmultiselect select{width:260px!important}
+
+
+
+
+
+.borderIn fieldset .border{border: 1px solid #CEEFF2;}
+
+.ContractWidthContract {
+	width: 230px;
+}
+.breadcrumb .breadcrumb1{
+	font-size: 9px;
+    font-weight: bold;
+    color: #ffffff;
+}
+/* new Icons SVG------------------- */
+.icons{
+	background-size: 18px;
+	vertical-align: middle;
+	display: block;
+	cursor: pointer;
+	background-repeat: no-repeat;
+}
+.icons:hover{
+	xfilter: alpha(opacity = 100);
+	xopacity: 1.0;
+}
+.housekeeping{
+	background-image: url(../img/housekeeping.svg);
+	background-size: 16px;
+    text-align: center;
+    margin-left: 41px;
+    margin-top: 11px;
+    padding-bottom: 9px;
+}
+.floatLeft{
+	float:left;
+}
+
+.header-top-block{background: #ffffff; height: 70px; padding-top: 10px;}
+.header-block-inner{padding: 0px 20px;}
+.logo-block, .punchline-block{float: left;}
+.punchline-block img{padding-top: 20px;}
+.punchline-block{
+	position: relative; 
+	background: url(../images/taglineSperator.png) no-repeat left;
+    margin-left: 35px;
+    padding-left: 35px;
+    height: 50px;
+}
+.welcome-block{float: right;}
+.notesearch_width
+{
+	width:80px;
+}
+.freeFormLabelWidth_194 {
+	width: 194px;
+}
+
+.checkbox_align{margin: 0px 3px !important;}
+
+.freeFormLabelWidth_174{width:174px;}
+.tab1_Width67{width: 67px;}
+.tab1_Width80{width: 80px;}
+
+ul.roundTab2{padding-left: 20px;}
+
+.detailLeftLableWidthComm 
+{
+	
+	width:217px;
+}
+.invitation_BU_scroll{
+	border: 1px solid #ccc;
+	min-height: 80px;
+	max-height: 154px;
+	overflow-y:scroll;
+	width: 788px;
+    margin-left: 3px;
+}
+.invitation_BU_scroll .listRow2CSS td, .invitation_BU_scroll .listRow1CSS td{padding: 1px !important;}
+
+.freeFormLabelWidth_150 {
+	width: 150px;
+}
+
+.contractTempateHeight .manageTamplateTree{height: 300px;}
+.tdInput .tdInput, #mandatoryDOBForLicense .tdInput{padding-left: 0px !important;}
+.checkboxMargins{margin-left: 3px !important;}
+.agent_phone .ext-control{width: 69px !important;}
+.dynamicForm ul li{padding:2px 0px;}
+.licence td{padding: 4px 0px;}
+
+.bulk2Width .inlineBlock_2 .freeFormLabelWidth{width: 215px;}
+
+.reporting_li{margin: 60px 0px 20px 10px !important; float: left;}
+.reporting_img{padding-right: 30%; padding-top: 10%; float: left;}
+#commissionCalculationDiv .paddingLeftError .error{padding-left: 0px !important;}
+.summary {
+    border: 1px solid #e6e6e6;
+    background: #fcf5e4;
+    padding: 9px 5px 5px 5px;
+    margin-bottom: 20px;
+    float: left;
+    width: 99%;
+}
+.summary li{padding-left: 20px; padding-bottom: 4px;}
+.paddingLeft20{padding-left: 20px;}
+.ico_block{
+	background: url(../images/icons/icon_arrow1.gif) no-repeat left top;
+    padding-left: 18px;
+}
+.generalBlock li .trigger, .generalBlock li .branch{margin-left: 20px; margin-right: 10px;}
+.generalBlock li{margin: 8px 0px;}
+.generalBlock li .branch{padding: 5px 5px 5px 14px;}
+
+.report_block{
+	border-bottom: #077ccc 1px solid;
+	font-weight: bold;
+	padding-bottom: 4px;
+    margin-bottom: 10px;
+}
+.report_block .report_circle {
+    border-radius: 100%;
+    background: #077ccc;
+    margin-left: 3px;
+    color: #fff;
+    width: 25px;
+    font-weight: bold;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+    display: inline-block;
+}
+
+.EmptyRowStyle{
+	color: #ff0000;
+	text-align: center;
+}
+
+

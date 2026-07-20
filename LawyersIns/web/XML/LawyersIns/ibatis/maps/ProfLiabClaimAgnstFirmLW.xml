@@ -1,0 +1,166 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ProfLiabClaimAgnstFirmLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ProfLiabClaimAgnstFirmLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ProfLiabClaimAgnstFirmLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ProfLiabClaimAgnstFirmLW(VersionSequence, PolicyKey
+          <isNotEmpty property="NameOfClaimant" prepend=",">NameOfClaimant</isNotEmpty>
+          <isNotEmpty property="ClaimNotifiedDate" prepend=",">ClaimNotifiedDate</isNotEmpty>
+          <isNotEmpty property="DateOfAllegedError" prepend=",">DateOfAllegedError</isNotEmpty>
+          <isNotEmpty property="NameOfPersonnelINClaim" prepend=",">NameOfPersonnelINClaim</isNotEmpty>
+          <isNotEmpty property="DescOfClaim" prepend=",">DescOfClaim</isNotEmpty>
+          <isNotEmpty property="IsClaimReportedToInsComp" prepend=",">IsClaimReportedToInsComp</isNotEmpty>
+          <isNotEmpty property="NameOfInsComp" prepend=",">NameOfInsComp</isNotEmpty>
+          <isNotEmpty property="DateReportedToInsComp" prepend=",">DateReportedToInsComp</isNotEmpty>
+          <isNotEmpty property="InsurerLoss" prepend=",">InsurerLoss</isNotEmpty>
+          <isNotEmpty property="ClaimClosingDate" prepend=",">ClaimClosingDate</isNotEmpty>
+          <isNotEmpty property="TotalAmountPaid" prepend=",">TotalAmountPaid</isNotEmpty>
+          <isNotEmpty property="StepsTakenToPreventClaims" prepend=",">StepsTakenToPreventClaims</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="ClaimantLastDemand" prepend=",">ClaimantLastDemand</isNotEmpty>
+          <isNotEmpty property="CurrentStatus" prepend=",">CurrentStatus</isNotEmpty>
+          <isNotEmpty property="IsClient" prepend=",">IsClient</isNotEmpty>
+          <isNotEmpty property="IsClaimInSuit" prepend=",">IsClaimInSuit</isNotEmpty>
+          <isNotEmpty property="ClaimNumber" prepend=",">ClaimNumber</isNotEmpty>
+          <isNotEmpty property="InsurerLossReserveCi" prepend=",">InsurerLossReserveCi</isNotEmpty>
+          <isNotEmpty property="ExpensePaid" prepend=",">ExpensePaid</isNotEmpty>
+          <isNotEmpty property="TotalIncurred" prepend=",">TotalIncurred</isNotEmpty>
+          <isNotEmpty property="Signal" prepend=",">Signal</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="NameOfClaimant" prepend=",">#NameOfClaimant#</isNotEmpty>
+          <isNotEmpty property="ClaimNotifiedDate" prepend=",">#ClaimNotifiedDate#</isNotEmpty>
+          <isNotEmpty property="DateOfAllegedError" prepend=",">#DateOfAllegedError#</isNotEmpty>
+          <isNotEmpty property="NameOfPersonnelINClaim" prepend=",">#NameOfPersonnelINClaim#</isNotEmpty>
+          <isNotEmpty property="DescOfClaim" prepend=",">#DescOfClaim#</isNotEmpty>
+          <isNotEmpty property="IsClaimReportedToInsComp" prepend=",">#IsClaimReportedToInsComp#</isNotEmpty>
+          <isNotEmpty property="NameOfInsComp" prepend=",">#NameOfInsComp#</isNotEmpty>
+          <isNotEmpty property="DateReportedToInsComp" prepend=",">#DateReportedToInsComp#</isNotEmpty>
+          <isNotEmpty property="InsurerLoss" prepend=",">#InsurerLoss#</isNotEmpty>
+          <isNotEmpty property="ClaimClosingDate" prepend=",">#ClaimClosingDate#</isNotEmpty>
+          <isNotEmpty property="TotalAmountPaid" prepend=",">#TotalAmountPaid#</isNotEmpty>
+          <isNotEmpty property="StepsTakenToPreventClaims" prepend=",">#StepsTakenToPreventClaims#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="ClaimantLastDemand" prepend=",">#ClaimantLastDemand#</isNotEmpty>
+          <isNotEmpty property="CurrentStatus" prepend=",">#CurrentStatus#</isNotEmpty>
+          <isNotEmpty property="IsClient" prepend=",">#IsClient#</isNotEmpty>
+          <isNotEmpty property="IsClaimInSuit" prepend=",">#IsClaimInSuit#</isNotEmpty>
+          <isNotEmpty property="ClaimNumber" prepend=",">#ClaimNumber#</isNotEmpty>
+          <isNotEmpty property="InsurerLossReserveCi" prepend=",">#InsurerLossReserveCi#</isNotEmpty>
+          <isNotEmpty property="ExpensePaid" prepend=",">#ExpensePaid#</isNotEmpty>
+          <isNotEmpty property="TotalIncurred" prepend=",">#TotalIncurred#</isNotEmpty>
+          <isNotEmpty property="Signal" prepend=",">#Signal#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="ProfLiabClaimAgnstFirmKey">SELECT IDENT_CURRENT('ProfLiabClaimAgnstFirmLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ProfLiabClaimAgnstFirmKey, NameOfClaimant, ClaimNotifiedDate, DateOfAllegedError, NameOfPersonnelINClaim, DescOfClaim, IsClaimReportedToInsComp, NameOfInsComp, DateReportedToInsComp, InsurerLoss, ClaimClosingDate, TotalAmountPaid, StepsTakenToPreventClaims, LastUpdateUserID, LastUpdateTimeStamp, ClaimantLastDemand, CurrentStatus, IsClient, IsClaimInSuit, ClaimNumber, InsurerLossReserveCi, ExpensePaid, TotalIncurred, Signal, VersionSequence, PolicyKey from ProfLiabClaimAgnstFirmLW where ProfLiabClaimAgnstFirmKey = #ProfLiabClaimAgnstFirmKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ProfLiabClaimAgnstFirmLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="NameOfClaimant" prepend=",">NameOfClaimant = #NameOfClaimant#</isNotEmpty>
+               <isEmpty property="NameOfClaimant" prepend=",">NameOfClaimant = null</isEmpty>
+               <isNotEmpty property="ClaimNotifiedDate" prepend=",">ClaimNotifiedDate = #ClaimNotifiedDate#</isNotEmpty>
+               <isEmpty property="ClaimNotifiedDate" prepend=",">ClaimNotifiedDate = null</isEmpty>
+               <isNotEmpty property="DateOfAllegedError" prepend=",">DateOfAllegedError = #DateOfAllegedError#</isNotEmpty>
+               <isEmpty property="DateOfAllegedError" prepend=",">DateOfAllegedError = null</isEmpty>
+               <isNotEmpty property="NameOfPersonnelINClaim" prepend=",">NameOfPersonnelINClaim = #NameOfPersonnelINClaim#</isNotEmpty>
+               <isEmpty property="NameOfPersonnelINClaim" prepend=",">NameOfPersonnelINClaim = null</isEmpty>
+               <isNotEmpty property="DescOfClaim" prepend=",">DescOfClaim = #DescOfClaim#</isNotEmpty>
+               <isEmpty property="DescOfClaim" prepend=",">DescOfClaim = null</isEmpty>
+               <isNotEmpty property="IsClaimReportedToInsComp" prepend=",">IsClaimReportedToInsComp = #IsClaimReportedToInsComp#</isNotEmpty>
+               <isEmpty property="IsClaimReportedToInsComp" prepend=",">IsClaimReportedToInsComp = null</isEmpty>
+               <isNotEmpty property="NameOfInsComp" prepend=",">NameOfInsComp = #NameOfInsComp#</isNotEmpty>
+               <isEmpty property="NameOfInsComp" prepend=",">NameOfInsComp = null</isEmpty>
+               <isNotEmpty property="DateReportedToInsComp" prepend=",">DateReportedToInsComp = #DateReportedToInsComp#</isNotEmpty>
+               <isEmpty property="DateReportedToInsComp" prepend=",">DateReportedToInsComp = null</isEmpty>
+               <isNotEmpty property="InsurerLoss" prepend=",">InsurerLoss = #InsurerLoss#</isNotEmpty>
+               <isEmpty property="InsurerLoss" prepend=",">InsurerLoss = null</isEmpty>
+               <isNotEmpty property="ClaimClosingDate" prepend=",">ClaimClosingDate = #ClaimClosingDate#</isNotEmpty>
+               <isEmpty property="ClaimClosingDate" prepend=",">ClaimClosingDate = null</isEmpty>
+               <isNotEmpty property="TotalAmountPaid" prepend=",">TotalAmountPaid = #TotalAmountPaid#</isNotEmpty>
+               <isEmpty property="TotalAmountPaid" prepend=",">TotalAmountPaid = null</isEmpty>
+               <isNotEmpty property="StepsTakenToPreventClaims" prepend=",">StepsTakenToPreventClaims = #StepsTakenToPreventClaims#</isNotEmpty>
+               <isEmpty property="StepsTakenToPreventClaims" prepend=",">StepsTakenToPreventClaims = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="ClaimantLastDemand" prepend=",">ClaimantLastDemand = #ClaimantLastDemand#</isNotEmpty>
+               <isEmpty property="ClaimantLastDemand" prepend=",">ClaimantLastDemand = null</isEmpty>
+               <isNotEmpty property="CurrentStatus" prepend=",">CurrentStatus = #CurrentStatus#</isNotEmpty>
+               <isEmpty property="CurrentStatus" prepend=",">CurrentStatus = null</isEmpty>
+               <isNotEmpty property="IsClient" prepend=",">IsClient = #IsClient#</isNotEmpty>
+               <isEmpty property="IsClient" prepend=",">IsClient = null</isEmpty>
+               <isNotEmpty property="IsClaimInSuit" prepend=",">IsClaimInSuit = #IsClaimInSuit#</isNotEmpty>
+               <isEmpty property="IsClaimInSuit" prepend=",">IsClaimInSuit = null</isEmpty>
+               <isNotEmpty property="ClaimNumber" prepend=",">ClaimNumber = #ClaimNumber#</isNotEmpty>
+               <isEmpty property="ClaimNumber" prepend=",">ClaimNumber = null</isEmpty>
+               <isNotEmpty property="InsurerLossReserveCi" prepend=",">InsurerLossReserveCi = #InsurerLossReserveCi#</isNotEmpty>
+               <isEmpty property="InsurerLossReserveCi" prepend=",">InsurerLossReserveCi = null</isEmpty>
+               <isNotEmpty property="ExpensePaid" prepend=",">ExpensePaid = #ExpensePaid#</isNotEmpty>
+               <isEmpty property="ExpensePaid" prepend=",">ExpensePaid = null</isEmpty>
+               <isNotEmpty property="TotalIncurred" prepend=",">TotalIncurred = #TotalIncurred#</isNotEmpty>
+               <isEmpty property="TotalIncurred" prepend=",">TotalIncurred = null</isEmpty>
+               <isNotEmpty property="Signal" prepend=",">Signal = #Signal#</isNotEmpty>
+               <isEmpty property="Signal" prepend=",">Signal = null</isEmpty>
+          </dynamic>
+          where ProfLiabClaimAgnstFirmKey = #ProfLiabClaimAgnstFirmKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ProfLiabClaimAgnstFirmLW where ProfLiabClaimAgnstFirmKey = #ProfLiabClaimAgnstFirmKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ProfLiabClaimAgnstFirmLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ProfLiabClaimAgnstFirmLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ProfLiabClaimAgnstFirmKey, NameOfClaimant, ClaimNotifiedDate, DateOfAllegedError, NameOfPersonnelINClaim, DescOfClaim, IsClaimReportedToInsComp, NameOfInsComp, DateReportedToInsComp, InsurerLoss, ClaimClosingDate, TotalAmountPaid, StepsTakenToPreventClaims, LastUpdateUserID, LastUpdateTimeStamp, ClaimantLastDemand, CurrentStatus, IsClient, IsClaimInSuit, ClaimNumber, InsurerLossReserveCi, ExpensePaid, TotalIncurred, Signal, VersionSequence, PolicyKey from ProfLiabClaimAgnstFirmLW where ProfLiabClaimAgnstFirmKey = #ProfLiabClaimAgnstFirmKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ProfLiabClaimAgnstFirmKey, VersionSequence, PolicyKey, NameOfClaimant, ClaimNotifiedDate, DateOfAllegedError, NameOfPersonnelINClaim, DescOfClaim, IsClaimReportedToInsComp, NameOfInsComp, DateReportedToInsComp, InsurerLoss, ClaimClosingDate, TotalAmountPaid, StepsTakenToPreventClaims, LastUpdateUserID, LastUpdateTimeStamp, ClaimantLastDemand, CurrentStatus, IsClient, IsClaimInSuit, ClaimNumber, InsurerLossReserveCi, ExpensePaid, TotalIncurred, Signal from ProfLiabClaimAgnstFirmLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <parameterMap id="GetClaimsSummaryListDataLW_pMap" class="java.util.HashMap">
+          <parameter property="AccountID_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="GetClaimsSummaryListDataLW_p" parameterMap="GetClaimsSummaryListDataLW_pMap" resultClass="java.util.HashMap">{ call GetClaimsSummaryListDataLW_p(?)}</procedure>
+     <parameterMap id="FetchClaimSummaryDetailsLW_pMap" class="java.util.HashMap">
+          <parameter property="ProfLiabClaimAgnstFirmKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="FetchClaimSummaryDetailsLW_p" parameterMap="FetchClaimSummaryDetailsLW_pMap" resultClass="java.util.HashMap">{ call FetchClaimSummaryDetailsLW_p(?)}</procedure>
+     <parameterMap id="InsertUpdateProfLiabClaimAgnstFirmLWData_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="NameOfClaimant" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsClient" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsClaimInSuit" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ClaimNotifiedDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="DateOfAllegedError" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="NameOfPersonnelINClaim" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsClaimReportedToInsComp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="NameOfInsComp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="DateReportedToInsComp" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="InsurerLoss" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="ClaimantLastDemand" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="CurrentStatus" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ClaimClosingDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="TotalAmountPaid" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="StepsTakenToPreventClaims" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="DescOfClaim" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdateProfLiabClaimAgnstFirmLWData_p" parameterMap="InsertUpdateProfLiabClaimAgnstFirmLWData_pMap">{ call InsertUpdateProfLiabClaimAgnstFirmLWData_p(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="GetClaimsSummaryDataLW_pMap" class="java.util.HashMap">
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="GetClaimsSummaryDataLW_p" parameterMap="GetClaimsSummaryDataLW_pMap" resultClass="java.util.HashMap">{ call GetClaimsSummaryDataLW_p(?,?)}</procedure>
+     <parameterMap id="InsertClaimsSummaryLW_pMap" class="java.util.HashMap">
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertClaimsSummaryLW_p" parameterMap="InsertClaimsSummaryLW_pMap" resultClass="java.util.HashMap">{ call InsertClaimsSummaryLW_p(?,?,?)}</procedure>
+     <parameterMap id="UpdateClaimsSummaryDescriptionLW_pMap" class="java.util.HashMap">
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UpdateClaimsSummaryDescriptionLW_p" parameterMap="UpdateClaimsSummaryDescriptionLW_pMap" resultClass="java.util.HashMap">{ call UpdateClaimsSummaryDescriptionLW_p(?,?,?)}</procedure>
+</sqlMap>
+

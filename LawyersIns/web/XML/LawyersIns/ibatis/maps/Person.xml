@@ -1,0 +1,65 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Person">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Person</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Person</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into Person(
+          <dynamic prepend=" ">
+               <isNotEmpty property="FirstName" prepend=",">FirstName</isNotEmpty>
+               <isNotEmpty property="MiddleName" prepend=",">MiddleName</isNotEmpty>
+               <isNotEmpty property="LastName" prepend=",">LastName</isNotEmpty>
+               <isNotEmpty property="Email" prepend=",">Email</isNotEmpty>
+               <isNotEmpty property="Sex" prepend=",">Sex</isNotEmpty>
+               <isNotEmpty property="DateofBirth" prepend=",">DateofBirth</isNotEmpty>
+               <isNotEmpty property="SSN" prepend=",">SSN</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="FirstName" prepend=",">#FirstName#</isNotEmpty>
+               <isNotEmpty property="MiddleName" prepend=",">#MiddleName#</isNotEmpty>
+               <isNotEmpty property="LastName" prepend=",">#LastName#</isNotEmpty>
+               <isNotEmpty property="Email" prepend=",">#Email#</isNotEmpty>
+               <isNotEmpty property="Sex" prepend=",">#Sex#</isNotEmpty>
+               <isNotEmpty property="DateofBirth" prepend=",">#DateofBirth#</isNotEmpty>
+               <isNotEmpty property="SSN" prepend=",">#SSN#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="PersonKey">SELECT IDENT_CURRENT('Person') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PersonKey, FirstName, MiddleName, LastName, Email, Sex, DateofBirth, SSN, LastUpdateUserID, LastUpdateTimeStamp from Person where PersonKey = #PersonKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update Person set
+          <dynamic prepend=" ">
+               <isNotEmpty property="FirstName" prepend=",">FirstName = #FirstName#</isNotEmpty>
+               <isEmpty property="FirstName" prepend=",">FirstName = null</isEmpty>
+               <isNotEmpty property="MiddleName" prepend=",">MiddleName = #MiddleName#</isNotEmpty>
+               <isEmpty property="MiddleName" prepend=",">MiddleName = null</isEmpty>
+               <isNotEmpty property="LastName" prepend=",">LastName = #LastName#</isNotEmpty>
+               <isEmpty property="LastName" prepend=",">LastName = null</isEmpty>
+               <isNotEmpty property="Email" prepend=",">Email = #Email#</isNotEmpty>
+               <isEmpty property="Email" prepend=",">Email = null</isEmpty>
+               <isNotEmpty property="Sex" prepend=",">Sex = #Sex#</isNotEmpty>
+               <isEmpty property="Sex" prepend=",">Sex = null</isEmpty>
+               <isNotEmpty property="DateofBirth" prepend=",">DateofBirth = #DateofBirth#</isNotEmpty>
+               <isEmpty property="DateofBirth" prepend=",">DateofBirth = null</isEmpty>
+               <isNotEmpty property="SSN" prepend=",">SSN = #SSN#</isNotEmpty>
+               <isEmpty property="SSN" prepend=",">SSN = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where PersonKey = #PersonKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from Person where PersonKey = #PersonKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from Person</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from Person</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PersonKey, FirstName, MiddleName, LastName, Email, Sex, DateofBirth, SSN, LastUpdateUserID, LastUpdateTimeStamp from Person where PersonKey = #PersonKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PersonKey, FirstName, MiddleName, LastName, Email, Sex, DateofBirth, SSN, LastUpdateUserID, LastUpdateTimeStamp from Person</select>
+</sqlMap>
+

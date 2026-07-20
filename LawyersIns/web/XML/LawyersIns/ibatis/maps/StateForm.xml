@@ -1,0 +1,41 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="StateForm">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from StateForm</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from StateForm where StateCode = #StateCode#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into StateForm(StateCode
+          <isNotEmpty property="FormName" prepend=",">FormName</isNotEmpty>
+          <isNotEmpty property="FormDesc" prepend=",">FormDesc</isNotEmpty>
+          <isNotEmpty property="EffectiveDate" prepend=",">EffectiveDate</isNotEmpty>
+          <isNotEmpty property="ExpirationDate" prepend=",">ExpirationDate</isNotEmpty>
+          ) values (#StateCode#
+          <isNotEmpty property="FormName" prepend=",">#FormName#</isNotEmpty>
+          <isNotEmpty property="FormDesc" prepend=",">#FormDesc#</isNotEmpty>
+          <isNotEmpty property="EffectiveDate" prepend=",">#EffectiveDate#</isNotEmpty>
+          <isNotEmpty property="ExpirationDate" prepend=",">#ExpirationDate#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="FormID">SELECT IDENT_CURRENT('StateForm') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FormID, FormName, FormDesc, EffectiveDate, ExpirationDate, StateCode from StateForm where FormID = #FormID# and StateCode = #StateCode#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update StateForm set
+          <dynamic prepend=" ">
+               <isNotEmpty property="FormName" prepend=",">FormName = #FormName#</isNotEmpty>
+               <isEmpty property="FormName" prepend=",">FormName = null</isEmpty>
+               <isNotEmpty property="FormDesc" prepend=",">FormDesc = #FormDesc#</isNotEmpty>
+               <isEmpty property="FormDesc" prepend=",">FormDesc = null</isEmpty>
+               <isNotEmpty property="EffectiveDate" prepend=",">EffectiveDate = #EffectiveDate#</isNotEmpty>
+               <isEmpty property="EffectiveDate" prepend=",">EffectiveDate = null</isEmpty>
+               <isNotEmpty property="ExpirationDate" prepend=",">ExpirationDate = #ExpirationDate#</isNotEmpty>
+               <isEmpty property="ExpirationDate" prepend=",">ExpirationDate = null</isEmpty>
+          </dynamic>
+          where FormID = #FormID# and StateCode = #StateCode#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from StateForm where FormID = #FormID# and StateCode = #StateCode#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from StateForm</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from StateForm where StateCode = #StateCode#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FormID, FormName, FormDesc, EffectiveDate, ExpirationDate, StateCode from StateForm where FormID = #FormID# and StateCode = #StateCode#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FormID, StateCode, FormName, FormDesc, EffectiveDate, ExpirationDate from StateForm where StateCode = #StateCode#</select>
+</sqlMap>
+

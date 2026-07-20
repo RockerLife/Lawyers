@@ -1,0 +1,12 @@
+<evalrules seq="0" project="METAAPP">
+     <conditionset seq="0" name="versioning">
+          <condition seq="0" datatype="C" operator="eq" id="is_copied_property">
+               <lvalue value="property_list_multirowsavelist_view_1.parent_object" seq="0" valuetype="beanfield" />
+               <rvalue value="Y" seq="0" valuetype="constant" />
+          </condition>
+     </conditionset>
+     <expressionset seq="0" name="links">
+          <expression seq="0" evaluate="(!(form.isReadOnly))&(!versioning.is_copied_property)" id="showDeleteLink" />
+     </expressionset>
+</evalrules>
+

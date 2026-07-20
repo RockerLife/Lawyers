@@ -1,0 +1,33 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="FamilyLawDetailsLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FamilyLawDetailsLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FamilyLawDetailsLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into FamilyLawDetailsLW(
+          <dynamic prepend=" " />
+          ) values (
+          <dynamic prepend=" " />
+          )
+          <selectKey resultClass="int" keyProperty="FLAOPKey">SELECT IDENT_CURRENT('FamilyLawDetailsLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  from FamilyLawDetailsLW</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update FamilyLawDetailsLW set
+          <dynamic prepend=" " />
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from FamilyLawDetailsLW</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from FamilyLawDetailsLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from FamilyLawDetailsLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  from FamilyLawDetailsLW</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  from FamilyLawDetailsLW</select>
+     <parameterMap id="InsertUpdateFamilySupplimentDetails_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdateFamilySupplimentDetails_p" parameterMap="InsertUpdateFamilySupplimentDetails_pMap">{ call InsertUpdateFamilySupplimentDetails_p(?,?,?,?,?)}</procedure>
+</sqlMap>
+

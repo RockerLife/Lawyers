@@ -1,0 +1,73 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="CarrearCoverageAttorneyDetails">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from CarrearCoverageAttorneyDetails</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from CarrearCoverageAttorneyDetails</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into CarrearCoverageAttorneyDetails(
+          <dynamic prepend=" ">
+               <isNotEmpty property="FormDataKey" prepend=",">FormDataKey</isNotEmpty>
+               <isNotEmpty property="AttorneyName" prepend=",">AttorneyName</isNotEmpty>
+               <isNotEmpty property="PriorActDate" prepend=",">PriorActDate</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy</isNotEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="FormDataKey" prepend=",">#FormDataKey#</isNotEmpty>
+               <isNotEmpty property="AttorneyName" prepend=",">#AttorneyName#</isNotEmpty>
+               <isNotEmpty property="PriorActDate" prepend=",">#PriorActDate#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">#RecordType#</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">#CreatedDate#</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">#CreatedBy#</isNotEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">#VersionKey#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="CCADKey">SELECT IDENT_CURRENT('CarrearCoverageAttorneyDetails') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CCADKey, FormDataKey, AttorneyName, PriorActDate, LastUpdateUserID, LastUpdateTimeStamp, RecordType, CreatedDate, CreatedBy, VersionKey from CarrearCoverageAttorneyDetails where CCADKey = #CCADKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update CarrearCoverageAttorneyDetails set
+          <dynamic prepend=" ">
+               <isNotEmpty property="FormDataKey" prepend=",">FormDataKey = #FormDataKey#</isNotEmpty>
+               <isEmpty property="FormDataKey" prepend=",">FormDataKey = null</isEmpty>
+               <isNotEmpty property="AttorneyName" prepend=",">AttorneyName = #AttorneyName#</isNotEmpty>
+               <isEmpty property="AttorneyName" prepend=",">AttorneyName = null</isEmpty>
+               <isNotEmpty property="PriorActDate" prepend=",">PriorActDate = #PriorActDate#</isNotEmpty>
+               <isEmpty property="PriorActDate" prepend=",">PriorActDate = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType = #RecordType#</isNotEmpty>
+               <isEmpty property="RecordType" prepend=",">RecordType = null</isEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate = #CreatedDate#</isNotEmpty>
+               <isEmpty property="CreatedDate" prepend=",">CreatedDate = null</isEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy = #CreatedBy#</isNotEmpty>
+               <isEmpty property="CreatedBy" prepend=",">CreatedBy = null</isEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey = #VersionKey#</isNotEmpty>
+               <isEmpty property="VersionKey" prepend=",">VersionKey = null</isEmpty>
+          </dynamic>
+          where CCADKey = #CCADKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from CarrearCoverageAttorneyDetails where CCADKey = #CCADKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from CarrearCoverageAttorneyDetails</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from CarrearCoverageAttorneyDetails</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CCADKey, FormDataKey, AttorneyName, PriorActDate, LastUpdateUserID, LastUpdateTimeStamp, RecordType, CreatedDate, CreatedBy, VersionKey from CarrearCoverageAttorneyDetails where CCADKey = #CCADKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CCADKey, FormDataKey, AttorneyName, PriorActDate, LastUpdateUserID, LastUpdateTimeStamp, RecordType, CreatedDate, CreatedBy, VersionKey from CarrearCoverageAttorneyDetails</select>
+     <parameterMap id="InsertCarrearCoverageAttorneyDetails_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertCarrearCoverageAttorneyDetails_p" parameterMap="InsertCarrearCoverageAttorneyDetails_pMap">{ call InsertCarrearCoverageAttorneyDetails_p(?,?,?,?,?)}</procedure>
+</sqlMap>
+

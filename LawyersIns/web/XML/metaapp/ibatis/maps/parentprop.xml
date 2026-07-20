@@ -1,0 +1,41 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="parentprop">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from parentprop</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from parentprop where propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into parentprop(propertyno, propertyversionno, metaobjectno, structureno, parent, op
+          <isNotEmpty property="val" prepend=",">val</isNotEmpty>
+          <isNotEmpty property="seq" prepend=",">seq</isNotEmpty>
+          <isNotEmpty property="eval" prepend=",">eval</isNotEmpty>
+          ) values (#propertyno:NUMERIC#, #propertyversionno:NUMERIC#, #metaobjectno:NUMERIC#, #structureno:NUMERIC#, #parent#, #op#
+          <isNotEmpty property="val" prepend=",">#val#</isNotEmpty>
+          <isNotEmpty property="seq" prepend=",">#seq#</isNotEmpty>
+          <isNotEmpty property="eval" prepend=",">#eval#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="parentpropno">SELECT IDENT_CURRENT('parentprop') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select parentpropno, parent, op, val, seq, eval, propertyno, propertyversionno, metaobjectno, structureno from parentprop where parentpropno = #parentpropno# and propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update parentprop set
+          <dynamic prepend=" ">
+               <isNotEmpty property="parent" prepend=",">parent = #parent#</isNotEmpty>
+               <isEmpty property="parent" prepend=",">parent = null</isEmpty>
+               <isNotEmpty property="op" prepend=",">op = #op#</isNotEmpty>
+               <isEmpty property="op" prepend=",">op = null</isEmpty>
+               <isNotEmpty property="val" prepend=",">val = #val#</isNotEmpty>
+               <isEmpty property="val" prepend=",">val = null</isEmpty>
+               <isNotEmpty property="seq" prepend=",">seq = #seq#</isNotEmpty>
+               <isEmpty property="seq" prepend=",">seq = null</isEmpty>
+               <isNotEmpty property="eval" prepend=",">eval = #eval#</isNotEmpty>
+               <isEmpty property="eval" prepend=",">eval = null</isEmpty>
+          </dynamic>
+          where parentpropno = #parentpropno# and propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from parentprop where parentpropno = #parentpropno# and propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from parentprop</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from parentprop where propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select parentpropno, parent, op, val, seq, eval, propertyno, propertyversionno, metaobjectno, structureno from parentprop where parentpropno = #parentpropno# and propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select parentpropno, propertyno, propertyversionno, metaobjectno, structureno, parent, op, val from parentprop where propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+</sqlMap>
+

@@ -1,0 +1,33 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AddressType">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AddressType</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AddressType</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into AddressType(
+          <dynamic prepend=" ">
+               <isNotEmpty property="AddressTypeDesc" prepend=",">AddressTypeDesc</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="AddressTypeDesc" prepend=",">#AddressTypeDesc#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="AddressTypeKey">SELECT IDENT_CURRENT('AddressType') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AddressTypeKey, AddressTypeDesc from AddressType where AddressTypeKey = #AddressTypeKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update AddressType set
+          <dynamic prepend=" ">
+               <isNotEmpty property="AddressTypeDesc" prepend=",">AddressTypeDesc = #AddressTypeDesc#</isNotEmpty>
+               <isEmpty property="AddressTypeDesc" prepend=",">AddressTypeDesc = null</isEmpty>
+          </dynamic>
+          where AddressTypeKey = #AddressTypeKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from AddressType where AddressTypeKey = #AddressTypeKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from AddressType</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AddressType</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AddressTypeKey, AddressTypeDesc from AddressType where AddressTypeKey = #AddressTypeKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AddressTypeKey, AddressTypeDesc from AddressType</select>
+</sqlMap>
+

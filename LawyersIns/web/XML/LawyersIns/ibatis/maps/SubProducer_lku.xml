@@ -1,0 +1,43 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="SubProducer_lku">
+     <select id="getProducerListfilter" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ProducerCode,ProducerCompanyName as ProducerCodeDec from SubProducer_lku order by ProducerCodeDec</select>
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SubProducer_lku</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SubProducer_lku</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into SubProducer_lku(ProducerCode
+          <isNotEmpty property="ProducerId" prepend=",">ProducerId</isNotEmpty>
+          <isNotEmpty property="ProducerCompanyName" prepend=",">ProducerCompanyName</isNotEmpty>
+          <isNotEmpty property="Accountant" prepend=",">Accountant</isNotEmpty>
+          <isNotEmpty property="Lawyers" prepend=",">Lawyers</isNotEmpty>
+          ) values (#ProducerCode#
+          <isNotEmpty property="ProducerId" prepend=",">#ProducerId#</isNotEmpty>
+          <isNotEmpty property="ProducerCompanyName" prepend=",">#ProducerCompanyName#</isNotEmpty>
+          <isNotEmpty property="Accountant" prepend=",">#Accountant#</isNotEmpty>
+          <isNotEmpty property="Lawyers" prepend=",">#Lawyers#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="ProducerId">SELECT IDENT_CURRENT('SubProducer_lku') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ProducerCode, ProducerId, ProducerCompanyName, Accountant, Lawyers from SubProducer_lku where ProducerCode = #ProducerCode#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update SubProducer_lku set
+          <dynamic prepend=" ">
+               <isNotEmpty property="ProducerId" prepend=",">ProducerId = #ProducerId#</isNotEmpty>
+               <isEmpty property="ProducerId" prepend=",">ProducerId = null</isEmpty>
+               <isNotEmpty property="ProducerCompanyName" prepend=",">ProducerCompanyName = #ProducerCompanyName#</isNotEmpty>
+               <isEmpty property="ProducerCompanyName" prepend=",">ProducerCompanyName = null</isEmpty>
+               <isNotEmpty property="Accountant" prepend=",">Accountant = #Accountant#</isNotEmpty>
+               <isEmpty property="Accountant" prepend=",">Accountant = null</isEmpty>
+               <isNotEmpty property="Lawyers" prepend=",">Lawyers = #Lawyers#</isNotEmpty>
+               <isEmpty property="Lawyers" prepend=",">Lawyers = null</isEmpty>
+          </dynamic>
+          where ProducerCode = #ProducerCode#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from SubProducer_lku where ProducerCode = #ProducerCode#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from SubProducer_lku</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from SubProducer_lku</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ProducerCode, ProducerId, ProducerCompanyName, Accountant, Lawyers from SubProducer_lku where ProducerCode = #ProducerCode#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ProducerCode, ProducerId, ProducerCompanyName, Accountant, Lawyers from SubProducer_lku</select>
+     <select id="getPolicyTransactionforfilter" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ProducerCode,ProducerCompanyName as ProducerCodeDec from SubProducer_lku order by ProducerCodeDec</select>
+</sqlMap>
+

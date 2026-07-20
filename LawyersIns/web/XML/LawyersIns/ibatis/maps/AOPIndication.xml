@@ -1,0 +1,33 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AOPIndication">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AOPIndication</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AOPIndication</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into AOPIndication(
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPDesc" prepend=",">AOPDesc</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPDesc" prepend=",">#AOPDesc#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="AOPKey">SELECT IDENT_CURRENT('AOPIndication') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOPKey, AOPDesc from AOPIndication where AOPKey = #AOPKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update AOPIndication set
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPDesc" prepend=",">AOPDesc = #AOPDesc#</isNotEmpty>
+               <isEmpty property="AOPDesc" prepend=",">AOPDesc = null</isEmpty>
+          </dynamic>
+          where AOPKey = #AOPKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from AOPIndication where AOPKey = #AOPKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from AOPIndication</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AOPIndication</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOPKey, AOPDesc from AOPIndication where AOPKey = #AOPKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOPKey, AOPDesc from AOPIndication</select>
+</sqlMap>
+

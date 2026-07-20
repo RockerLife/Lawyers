@@ -1,0 +1,100 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="field">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from field</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from field where structureno = #structureno#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into field(structureno
+          <isNotEmpty property="name" prepend=",">name</isNotEmpty>
+          <isNotEmpty property="fieldlength" prepend=",">fieldlength</isNotEmpty>
+          <isNotEmpty property="decimallength" prepend=",">decimallength</isNotEmpty>
+          <isNotEmpty property="type" prepend=",">type</isNotEmpty>
+          <isNotEmpty property="displayname" prepend=",">displayname</isNotEmpty>
+          <isNotEmpty property="dropdown" prepend=",">dropdown</isNotEmpty>
+          <isNotEmpty property="pattern" prepend=",">pattern</isNotEmpty>
+          <isNotEmpty property="seq" prepend=",">seq</isNotEmpty>
+          <isNotEmpty property="developercomments" prepend=",">developercomments</isNotEmpty>
+          <isNotEmpty property="helptext" prepend=",">helptext</isNotEmpty>
+          <isNotEmpty property="tiptext" prepend=",">tiptext</isNotEmpty>
+          <isNotEmpty property="align" prepend=",">align</isNotEmpty>
+          <isNotEmpty property="helpquestion" prepend=",">helpquestion</isNotEmpty>
+          <isNotEmpty property="helplinkdirection" prepend=",">helplinkdirection</isNotEmpty>
+          <isNotEmpty property="viewlength" prepend=",">viewlength</isNotEmpty>
+          <isNotEmpty property="userdefineunittestcase" prepend=",">userdefineunittestcase</isNotEmpty>
+          ) values (#structureno:NUMERIC#
+          <isNotEmpty property="name" prepend=",">#name#</isNotEmpty>
+          <isNotEmpty property="fieldlength" prepend=",">#fieldlength#</isNotEmpty>
+          <isNotEmpty property="decimallength" prepend=",">#decimallength#</isNotEmpty>
+          <isNotEmpty property="type" prepend=",">#type#</isNotEmpty>
+          <isNotEmpty property="displayname" prepend=",">#displayname#</isNotEmpty>
+          <isNotEmpty property="dropdown" prepend=",">#dropdown#</isNotEmpty>
+          <isNotEmpty property="pattern" prepend=",">#pattern#</isNotEmpty>
+          <isNotEmpty property="seq" prepend=",">#seq#</isNotEmpty>
+          <isNotEmpty property="developercomments" prepend=",">#developercomments#</isNotEmpty>
+          <isNotEmpty property="helptext" prepend=",">#helptext#</isNotEmpty>
+          <isNotEmpty property="tiptext" prepend=",">#tiptext#</isNotEmpty>
+          <isNotEmpty property="align" prepend=",">#align#</isNotEmpty>
+          <isNotEmpty property="helpquestion" prepend=",">#helpquestion#</isNotEmpty>
+          <isNotEmpty property="helplinkdirection" prepend=",">#helplinkdirection#</isNotEmpty>
+          <isNotEmpty property="viewlength" prepend=",">#viewlength#</isNotEmpty>
+          <isNotEmpty property="userdefineunittestcase" prepend=",">#userdefineunittestcase#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="fieldno">SELECT IDENT_CURRENT('field') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select fieldno, name, fieldlength, decimallength, type, displayname, dropdown, pattern, seq, developercomments, helptext, tiptext, align, helpquestion, helplinkdirection, viewlength, userdefineunittestcase, structureno from field where fieldno = #fieldno# and structureno = #structureno#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update field set
+          <dynamic prepend=" ">
+               <isNotEmpty property="name" prepend=",">name = #name#</isNotEmpty>
+               <isEmpty property="name" prepend=",">name = null</isEmpty>
+               <isNotEmpty property="fieldlength" prepend=",">fieldlength = #fieldlength#</isNotEmpty>
+               <isEmpty property="fieldlength" prepend=",">fieldlength = null</isEmpty>
+               <isNotEmpty property="decimallength" prepend=",">decimallength = #decimallength#</isNotEmpty>
+               <isEmpty property="decimallength" prepend=",">decimallength = null</isEmpty>
+               <isNotEmpty property="type" prepend=",">type = #type#</isNotEmpty>
+               <isEmpty property="type" prepend=",">type = null</isEmpty>
+               <isNotEmpty property="displayname" prepend=",">displayname = #displayname#</isNotEmpty>
+               <isEmpty property="displayname" prepend=",">displayname = null</isEmpty>
+               <isNotEmpty property="dropdown" prepend=",">dropdown = #dropdown#</isNotEmpty>
+               <isEmpty property="dropdown" prepend=",">dropdown = null</isEmpty>
+               <isNotEmpty property="pattern" prepend=",">pattern = #pattern#</isNotEmpty>
+               <isEmpty property="pattern" prepend=",">pattern = null</isEmpty>
+               <isNotEmpty property="seq" prepend=",">seq = #seq#</isNotEmpty>
+               <isEmpty property="seq" prepend=",">seq = null</isEmpty>
+               <isNotEmpty property="developercomments" prepend=",">developercomments = #developercomments#</isNotEmpty>
+               <isEmpty property="developercomments" prepend=",">developercomments = null</isEmpty>
+               <isNotEmpty property="helptext" prepend=",">helptext = #helptext#</isNotEmpty>
+               <isEmpty property="helptext" prepend=",">helptext = null</isEmpty>
+               <isNotEmpty property="tiptext" prepend=",">tiptext = #tiptext#</isNotEmpty>
+               <isEmpty property="tiptext" prepend=",">tiptext = null</isEmpty>
+               <isNotEmpty property="align" prepend=",">align = #align#</isNotEmpty>
+               <isEmpty property="align" prepend=",">align = null</isEmpty>
+               <isNotEmpty property="helpquestion" prepend=",">helpquestion = #helpquestion#</isNotEmpty>
+               <isEmpty property="helpquestion" prepend=",">helpquestion = null</isEmpty>
+               <isNotEmpty property="helplinkdirection" prepend=",">helplinkdirection = #helplinkdirection#</isNotEmpty>
+               <isEmpty property="helplinkdirection" prepend=",">helplinkdirection = null</isEmpty>
+               <isNotEmpty property="viewlength" prepend=",">viewlength = #viewlength#</isNotEmpty>
+               <isEmpty property="viewlength" prepend=",">viewlength = null</isEmpty>
+               <isNotEmpty property="userdefineunittestcase" prepend=",">userdefineunittestcase = #userdefineunittestcase#</isNotEmpty>
+               <isEmpty property="userdefineunittestcase" prepend=",">userdefineunittestcase = null</isEmpty>
+          </dynamic>
+          where fieldno = #fieldno# and structureno = #structureno#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from field where fieldno = #fieldno# and structureno = #structureno#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from field</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from field where structureno = #structureno#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select fieldno, name, fieldlength, decimallength, type, displayname, dropdown, pattern, seq, developercomments, helptext, tiptext, align, helpquestion, helplinkdirection, viewlength, userdefineunittestcase, structureno from field where fieldno = #fieldno# and structureno = #structureno#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+          select fieldno, structureno, name, fieldlength, decimallength, type, dropdown, helplinkdirection from field where structureno = #structureno#
+          <dynamic>
+               <isNotEmpty property="name" prepend=" and ">name like #name# + '%'</isNotEmpty>
+               <isNotEmpty property="type" prepend=" and ">type like #type# + '%'</isNotEmpty>
+               <isNotEmpty property="displayname" prepend=" and ">displayname like #displayname# + '%'</isNotEmpty>
+          </dynamic>
+     </select>
+     <select id="field_dropdown" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select distinct name from field where structureno = #structureno# order by name</select>
+     <select id="valuefield_field_dropdown" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select distinct name from field where structureno = #structureno# order by name</select>
+     <select id="displayfield_field_dropdown" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select distinct name from field where structureno = #structureno# order by name</select>
+     <select id="partialkey_property_dropdown" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select distinct name from field where structureno = #structureno# order by name</select>
+</sqlMap>
+

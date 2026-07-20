@@ -1,0 +1,77 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="EstimateFormDocumentArchive">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from EstimateFormDocumentArchive</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from EstimateFormDocumentArchive</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into EstimateFormDocumentArchive(
+          <dynamic prepend=" ">
+               <isNotEmpty property="DocTitle" prepend=",">DocTitle</isNotEmpty>
+               <isNotEmpty property="Comment" prepend=",">Comment</isNotEmpty>
+               <isNotEmpty property="DocFileName" prepend=",">DocFileName</isNotEmpty>
+               <isNotEmpty property="DocUrl" prepend=",">DocUrl</isNotEmpty>
+               <isNotEmpty property="UploadedTime" prepend=",">UploadedTime</isNotEmpty>
+               <isNotEmpty property="UploadedType" prepend=",">UploadedType</isNotEmpty>
+               <isNotEmpty property="FormKey" prepend=",">FormKey</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="DocTitle" prepend=",">#DocTitle#</isNotEmpty>
+               <isNotEmpty property="Comment" prepend=",">#Comment#</isNotEmpty>
+               <isNotEmpty property="DocFileName" prepend=",">#DocFileName#</isNotEmpty>
+               <isNotEmpty property="DocUrl" prepend=",">#DocUrl#</isNotEmpty>
+               <isNotEmpty property="UploadedTime" prepend=",">#UploadedTime#</isNotEmpty>
+               <isNotEmpty property="UploadedType" prepend=",">#UploadedType#</isNotEmpty>
+               <isNotEmpty property="FormKey" prepend=",">#FormKey#</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">#RecordType#</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">#CreatedDate#</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">#CreatedBy#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="FormDocumentKey">SELECT IDENT_CURRENT('EstimateFormDocumentArchive') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FormDocumentKey, DocTitle, Comment, DocFileName, DocUrl, UploadedTime, UploadedType, FormKey, RecordType, CreatedDate, CreatedBy, LastUpdateUserID, LastUpdateTimeStamp from EstimateFormDocumentArchive where FormDocumentKey = #FormDocumentKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update EstimateFormDocumentArchive set
+          <dynamic prepend=" ">
+               <isNotEmpty property="DocTitle" prepend=",">DocTitle = #DocTitle#</isNotEmpty>
+               <isEmpty property="DocTitle" prepend=",">DocTitle = null</isEmpty>
+               <isNotEmpty property="Comment" prepend=",">Comment = #Comment#</isNotEmpty>
+               <isEmpty property="Comment" prepend=",">Comment = null</isEmpty>
+               <isNotEmpty property="DocFileName" prepend=",">DocFileName = #DocFileName#</isNotEmpty>
+               <isEmpty property="DocFileName" prepend=",">DocFileName = null</isEmpty>
+               <isNotEmpty property="DocUrl" prepend=",">DocUrl = #DocUrl#</isNotEmpty>
+               <isEmpty property="DocUrl" prepend=",">DocUrl = null</isEmpty>
+               <isNotEmpty property="UploadedTime" prepend=",">UploadedTime = #UploadedTime#</isNotEmpty>
+               <isEmpty property="UploadedTime" prepend=",">UploadedTime = null</isEmpty>
+               <isNotEmpty property="UploadedType" prepend=",">UploadedType = #UploadedType#</isNotEmpty>
+               <isEmpty property="UploadedType" prepend=",">UploadedType = null</isEmpty>
+               <isNotEmpty property="FormKey" prepend=",">FormKey = #FormKey#</isNotEmpty>
+               <isEmpty property="FormKey" prepend=",">FormKey = null</isEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType = #RecordType#</isNotEmpty>
+               <isEmpty property="RecordType" prepend=",">RecordType = null</isEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate = #CreatedDate#</isNotEmpty>
+               <isEmpty property="CreatedDate" prepend=",">CreatedDate = null</isEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy = #CreatedBy#</isNotEmpty>
+               <isEmpty property="CreatedBy" prepend=",">CreatedBy = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where FormDocumentKey = #FormDocumentKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from EstimateFormDocumentArchive where FormDocumentKey = #FormDocumentKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from EstimateFormDocumentArchive</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from EstimateFormDocumentArchive</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FormDocumentKey, DocTitle, Comment, DocFileName, DocUrl, UploadedTime, UploadedType, FormKey, RecordType, CreatedDate, CreatedBy, LastUpdateUserID, LastUpdateTimeStamp from EstimateFormDocumentArchive where FormDocumentKey = #FormDocumentKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FormDocumentKey, DocTitle, Comment, DocFileName, DocUrl, UploadedTime, UploadedType, FormKey, RecordType, CreatedDate, CreatedBy, LastUpdateUserID, LastUpdateTimeStamp from EstimateFormDocumentArchive</select>
+</sqlMap>
+

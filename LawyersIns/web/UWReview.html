@@ -1,0 +1,536 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<title>UnderWriter</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js">
+	
+</script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+<body
+	onload="showPopUpList('popupNew','eval:LawyersRule.isShowSublist');"
+	onclick="toggleDivDisplay('ajaxxmlCountyDesc_CountyDesc');">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+	<form> 
+	<div id="UWReview">
+	<div id="header">
+					<span id="#Include:header.html#"></span>
+				</div>
+		<table style="width: 99.7%" border="0" align="center" cellspacing="0"
+			cellpadding="0">
+			<tr>
+				<td><div id="contentList" >
+						<table cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td align="center"> 
+								<span id="eval:LawyersRule.isAllFlagsNotCleared" >
+									<span style="padding-left:5px;font-weight:bold;line-height:20px;"
+											id="error_flagsNotCleard" class="error11Bold">
+									</span>
+								</span>
+								
+									<span style="padding-left:5px;font-weight:bold;line-height:20px;"
+											id="error_ApplicationNotCompleted" class="error11Bold">
+									</span>
+								
+								<div class="Confirmation"	id="UWReview_freeform_contextdata_100">
+										<label style="padding-left:5px;font-weight:bold;line-height:20px;color:green;" name="pageMsg" id="pageMsg" />
+								
+								<div id="error_StatusUpdate" class="error11Bold"> </div>
+								</div>
+									</td>
+									
+							</tr>
+						</table>
+						<table width="100%" border="0" align="center" cellpadding="0"
+							cellspacing="0" class="border2">
+
+							<tr>
+
+								<td bgcolor="#e7e7e7" style="padding:5px 10px;">
+									<table cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td align="left" valign="middle">
+												<table cellpadding="0" cellspacing="1">
+													<tr>
+														<td><img src="img/drilldown_down_aproved.png" /></td>
+														<td>Approved</td>
+														<td width="15px">&nbsp;</td>
+														<td><img src="img/drilldown_down.png" /></td>
+														<td>Approval Pending</td>
+														<td width="15px">&nbsp;</td>
+														<td><img src="img/drilldown_down_subjective.png" /></td>
+														<td>Subjective Approval</td>
+														<td width="15px">&nbsp;</td>
+														<td><img src="img/drilldown_down_AI.png" /></td>
+														<td>Additional Information</td>
+															
+													</tr>
+												</table>
+											</td>
+											<td align="right" valign="top">
+												<table align="right">
+													<tr>
+														<td><div id="divshow" class="button4"
+																style="width: 100px; float: right; margin-right:5px;">
+																<a href="javascript:submitform('UWReview.html','UWReview.expandAll','','');">Expand All</a>
+															</div>
+														</td>
+														<td>
+															<div id="divshow" class="button4"
+																style="width: 100px; float: right; margin-right:5px;">
+																<a href="javascript:submitform('UWReview.html','UWReview.collapseAll','','');">Collaspe All</a>
+															</div>
+														</td>
+														<td id="eval:LawyersRule.isShowUW" align="right">
+															<div id="divshow" class="button4" style="width:100px;">
+																<a	href="javascript:submitform('ViewAll.html','UWReview.viewAll','','');">View All</a>
+															</div>
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td><table width="100%" border="0" align="center"
+										cellpadding="0" cellspacing="5">
+										<tr>
+											<td><div id="underReviewListDiv">
+													<table width="100%" border="0" cellspacing="0"
+														cellpadding="2">
+														<tr id="">
+															<td colspan="2">
+															<table width="100%" border="0"
+																	align="left" cellpadding="0" cellspacing="0"
+																	id="UWReview_list_01">
+																	<tr id="UWReview_list_header_01">
+																		<td colspan="3"><table width="100%" border="0"
+																				align="left" cellpadding="5" cellspacing="0">
+																				<tr>
+																					<td id="block_field_edit_row_link" width="1%"><span
+																						id="displaydiv"> </span></td>
+																					<!-- <td valign="top" align="left" width="1%"><span
+																						style="font-weight:bold;" id="block_field_rownum"></span>
+
+																					</td> -->
+																					<td valign="top" align="left" class="fixcolumnTd"><span
+																						style="font-weight:bold;"
+																						id="block_field_Description"></span></td>
+																					<td id="block_field_ToolTipDescription_row_link"></td>
+																				</tr>
+																			</table></td>
+																	</tr>
+																	<tbody id="UWReview_list_data_01">
+																		<tr>
+																			<td id="displaydiv" align="left" width="1%"
+																				valign="top" class="reviewIcon"><div
+																					id="block_field_edit_row_link">
+																					<a href="javascript:rightclickmenu('addNewUWReview.html','addNewUWReview.edit','','','div_ajaxpostionpremium_freeform:RulePolicyId');"
+																						name="displaydiv"> 
+																						<span id="eval:LawyersRule.isShowDrillDownIcon">
+																							<img id="displaydiv" border="0" title="Approval pending." src="img/drilldown_down.png" />
+																						</span>
+																						 <span id="eval:LawyersRule.isShowApproveIcon">
+																							<img id="displaydiv" border="0" title="Approved." src="img/drilldown_down_aproved.png" />
+																						</span> 
+																						<span id="eval:LawyersRule.isShowApproveSubjectiveIcon">
+																							<img id="displaydiv" title="Subjective Approval." border="0" src="img/drilldown_down_subjective.png" />
+																						</span>
+																						<span id="eval:LawyersRule.isShowAIIcon">
+																							<img id="displaydiv" title="Additional Information" border="0" src="img/drilldown_down_AI.png" />
+																						</span>
+																					</a>
+																				</div></td>
+
+																			<!-- <td align="left" width="1%"><span
+																					style="font-weight:bold;" id="block_field_rownum"></span><span
+																					style="font-weight:bold;">.</span></td> -->
+																			<td colspan="2" valign="top" class="reviewTitle">
+																				<span id="block_field_Description"></span> 
+																				<span id="block_field_ToolTipDescription_row_link">
+																					<a title="context_ToolTipDescription" href="#"><img border="0" src="img/HelpIcon.jpg" /> </a>
+																				</span>
+																			 </td>
+																		</tr>
+																		<tr id="search_ajaxpostion_list_01">
+																			<td colspan="3" align="left"
+																				style="border-bottom:solid 1px #dedede;"><div
+																					id="div_ajaxpostionpremium_freeform:RulePolicyId">
+																				</div></td>
+																		</tr>
+																	</tbody>
+																</table></td>
+														</tr>
+													</table>
+												</div>
+												<div id="pricingCommentListDiv">
+													<!-- <div id="1eval:LawyersRule.isShowPricingSection"> -->
+													<div>
+														<table width="100%" border="0" cellspacing="0"
+															cellpadding="2">
+															<tr id="">
+																<td colspan="2">
+																	<table id="eval:LawyersRule.isNotNameClearanceQQIndicationPopupFlag" width="99%" border="0" align="left"
+																		cellpadding="3" cellspacing="0">
+																		<tr>
+																			<td id="displayPricingdiv" style="padding-left:2px;"
+																				align="left" width="1.5%" class="reviewIcon">
+																				<!-- <span id="eval:LawyersRule.isNotShowPricingApproveIcon">
+																					<a 
+																						href="javascript:rightclickmenu('addNewPricingComment.html','addNewPricingComment.edit','','','div_ajaxpostion_addNewPricingComment:Pricing');"
+																						name="displayPricingdiv"> 
+																						
+																						<span>
+																							<img id="displaydiv" border="0" title="Approval pending." src="img/drilldown_down.png" />
+																						</span>
+																					</a>
+																				</span >
+																				<span id="eval:LawyersRule.isShowPricingApproveIcon">
+																					<a 
+																						href="javascript:rightclickmenu('addNewPricingComment.html','addNewPricingComment.edit','','','div_ajaxpostion_addNewPricingComment:Pricing');"
+																						name="displayPricingdiv"> 
+																						<span >
+																							<img id="displaydiv" border="0" title="Approved." src="img/drilldown_down_aproved.png" />
+																						</span> 
+																					</a>
+																				</span> -->
+																				<span id="eval:LawyersRule.isNotShowPricingApproveIcon">
+																					<span id="eval:LawyersRule.isNotShowAIIconForPricing">
+																					<a 
+																						href="javascript:rightclickmenu('addNewPricingComment.html','addNewPricingComment.edit','','','div_ajaxpostion_addNewPricingComment:Pricing');"
+																						name="displayPricingdiv"> 
+																						
+																						<span>
+																							<img id="displaydiv" border="0" title="Approval pending." src="img/drilldown_down.png" />
+																						</span>
+																					</a>
+																					</span >
+																				</span>
+																				<span id="eval:LawyersRule.isShowPricingApproveIcon">
+																					<a 
+																						href="javascript:rightclickmenu('addNewPricingComment.html','addNewPricingComment.edit','','','div_ajaxpostion_addNewPricingComment:Pricing');"
+																						name="displayPricingdiv"> 
+																						<span >
+																							<img id="displaydiv" border="0" title="Approved." src="img/drilldown_down_aproved.png" />
+																						</span> 
+																					</a>
+																				</span>
+																						<span id="eval:LawyersRule.isShowAIIconForPricing">
+																					<a 
+																						href="javascript:rightclickmenu('addNewPricingComment.html','addNewPricingComment.edit','','','div_ajaxpostion_addNewPricingComment:Pricing');"
+																						name="displayPricingdiv"> 
+																						
+																						<span>
+																							<img id="displaydiv" border="0" title="Approval pending." src="img/drilldown_down_AI.png" />
+																						</span>
+																					</a>
+																				</span >
+																				
+																				</td>
+																			<td id="UWReview_freeform_contextdata_101"
+																				class="reviewTitle"><span>Ratings</span>
+																				<!-- <label id="PricingJustification" name="PricingJustification"></label> -->
+																			</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+															<tr class="border0"
+																id="UWReview_freeform_contextdata_112">
+																<td align="left" border="0" style="border-bottom:solid 1px #dedede;">
+																	<div
+																		id="div_ajaxpostion_addNewPricingComment:Pricing">
+																	</div>
+																</td>
+															</tr>
+														</table>
+													</div>
+												</div></td>
+										</tr>
+										
+										
+										
+										<!-- new comment box starts -->
+										<tr>
+													<td align="center">
+													<span class="Confirmation"	id="UWReview_freeform_contextdata_1000">
+																<label style="padding-left:5px;font-weight:bold;line-height:20px;color:green;"  name="pageMsgCommentUW" id="pageMsgCommentUW" />
+													</span>
+													
+													</td>
+													
+										</tr>
+													<td>
+													<div >
+																<div id="eval:LawyersRule.isAgent">
+																	<table border="0" align="center" cellpadding="0"
+																		cellspacing="0"
+																		id="UWReview_freeform_contextdata_999">
+																		<tr id="eval:LawyersRule.isNotNameClearanceQQIndicationPopupFlag">
+																			<td nowrap>Comment :&nbsp;</td>
+																			<td id="eval:LawyersRule.enableCommentUW">
+																				<textarea name="UnderwriterComment"
+																					id="UnderwriterComment" class="inputbox" cols="90"
+																					rows="3" onKeyUp="limitText(this,1,8000);" />
+																			</td>
+																			<td id="eval:LawyersRule.disableShowCommentUW">
+																				<textarea name="UnderwriterComment"
+																					id="UnderwriterComment" class="inputbox" cols="90"
+																					rows="3" readonly="readonly" />
+																			</td>
+																			<td>&nbsp;&nbsp;</td>
+																			<!-- -->
+																			<td id="eval:LawyersRule.enableCommentUW">
+																				<div>
+																					<div class="button4" style="width: 98px">
+																						<a href="javascript:submitform('UWReview.html','UWReview.saveComment','','');"
+																							tabindex="43">Save</a>
+																					</div>
+																				</div>
+																			</td>
+																		</tr>
+																		<tr id="eval:LawyersRule.isNameClearanceQQIndicationPopupFlag">
+																			<td nowrap>Comment :&nbsp;</td>
+																			<td>
+																				<textarea name="UnderwriterComment"
+																					id="UnderwriterComment" class="inputbox" cols="90"
+																					rows="3" onKeyUp="limitText(this,1,8000);" />
+																			</td>
+																			<td>&nbsp;&nbsp;</td>
+																			<td>
+																				<div>
+																					<div class="button4" style="width: 98px">
+																						<a href="javascript:submitform('UWReview.html','UWReview.saveComment','','');"
+																							tabindex="43">Save</a>
+																					</div>
+																				</div>
+																			</td>
+																		</tr>
+																		<tr id="eval:LawyersRule.showSubProducerCommentbox">
+																			<td nowrap>Subproducer Comment :&nbsp;</td>
+																			<td id="eval:LawyersRule.enableCommentUW">
+																				<textarea name="SubProducerComment"
+																					id="SubProducerComment" class="inputbox" cols="90"
+																					rows="3" onKeyUp="limitText(this,1,8000);" readonly="readonly" />
+																			</td>
+																			<td id="eval:LawyersRule.disableShowCommentUW">
+																				<textarea name="SubProducerComment"
+																					id="SubProducerComment" class="inputbox" cols="90"
+																					rows="3" readonly="readonly" />
+																			</td>
+																			<td>&nbsp;&nbsp;</td>
+																				
+																			<!-- <td
+																							id="eval:LawyersRule.enableCommentUW">
+																							<div>
+																								<div class="button4" style="width: 98px">
+																									<a
+																										href="javascript:submitform('UWReview.html','UWReview.saveComment','','');"
+																										tabindex="43">Save</a>
+																								</div>
+																							</div>
+																			</td> -->
+																		</tr>
+																		<tr id="eval:LawyersRule.isdeclinedstatus">
+																				<td nowrap>Declined Reason :&nbsp;</td>
+																				<td>
+																					<textarea name="DeclinedComment"
+																						id="DeclinedComment" class="inputbox" cols="90"
+																						rows="3" readonly="readonly" style="font-weight: bold !important; color: #000000 !important;"/>
+																				</td>
+																		</tr>
+																	</table>
+																</div>
+																</div>
+															</td>
+										
+										<!-- New comment box ends -->
+										<tr id="UWReview_freeform_contextdata_333">
+										<td id="eval:LawyersRule.HideShowZohoNameClearanceQuestion" align="left" width="90%" colspan="2">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+												<div class="freeFormListTdError paddingLeft3">
+													<span id="error_isNameClearanceRequired" class="tr_errors"></span> 
+												</div>
+											</div>
+											<div class="error paddingLeft40"></div>
+											<div class="freeFormListTd valignTop">
+												<!-- <div style="float: left;">
+													Name Clearance Required?  
+													<span class="mendatory">*</span>
+												</div> -->
+												<div style="float: left;">
+													<span class="radio-inline"><input type="radio" name="isNameClearanceRequired" id="ajax_field_isNameClearanceRequired" value="Y" />Zoho Automatic</span>
+													<span class="radio-inline"><input type="radio" name="isNameClearanceRequired" id="ajax_field_isNameClearanceRequired" value="N" />Zoho Manual</span>
+												</div>
+											</div>
+											</td>
+										</tr>
+										<tr>
+											<td align="center">
+											<table align="center" border="0" width="auto"
+													cellpadding="3" cellspacing="3">
+													<tr>
+													<td> 
+													<table cellpadding="3" cellspacing="3">
+													<tr id="eval:LawyersRule.isNotSubproducerLoggedIn">
+													
+														<td> 
+														<div id="eval:LawyersRule.isShowUWCompletedButton"
+															align="center">
+															<div id="divshow1" class="button4"
+																style="width:100px">
+																<a  href="javascript:submitform('UWReview.html','UWReview.uwcomplete','','');" tabindex="110">UW&nbsp;Complete</a>
+															</div>
+															</div>
+															</td>
+														
+														<td id="eval:LawyersRule.isShowUWReviewButton" align="center">
+															<div id="divshow1" class="button4" style="width: 100px">
+																<a	href="javascript:submitform('UWReview.html','UWReview.ureview','','');" tabindex="110">UW&nbsp;Review</a>
+															</div>
+														</td>
+														<td colspan="0" id="eval:LawyersRule.isShowUnderreview" align="center">
+														<div id="eval:LawyersRule.isChangeStatusVisibile">
+															<div id="divshow" class="button4" style="width: 130px">
+																<a	href="javascript:submitform('UWReview.html','UWReview.underreview','','');" tabindex="110">UnderReview</a>
+															</div>
+															</div>
+														</td>
+														<td id="eval:LawyersRule.isShowDecline" align="center">
+															<div id="divshow1" class="button4" style="width:100px">
+																<!-- <a href="javascript:submitform('UWReview.html','UWReview.decline','','');" tabindex="110">Decline</a> -->
+																<a href="javascript:rightclickmenu('DeclineStatusOnUW.html','DeclineStatusOnUW.edit','','','div_ajaxpostion_DeclineStatusOnUW:DeclineStatus');"
+																	>Decline</a> 
+															</div>
+														</td>
+														<td id="eval:LawyersRule.isNameClearanceQQIndicationPopupFlag" align="center">
+															<div id="divshow1" class="button4" style="width: 100px">
+																<a href="javascript:submitform('quickquoteinsured.html|indicationinjack.html','UWReview.nameClearanceIndicationFlag','forwardeval','LawyersRule.isquickquoteinsured|LawyersRule.isIndicationPage');" tabindex="110">Save</a>
+															</div>
+														</td>
+														<td align="center">
+															<div id="divshow1" class="button4" style="width: 100px">
+																<a href="javascript:submitform('quickquoteinsured.html|indicationinjack.html|firm.html|aop.html|practice.html|coverage.html|quoteOption.html|list.html|confirmation.html|paymentmethod.html|realEstateResi.html|realEstateCommercial.html|plaintiffSupp.html|WillsTrustProbationSupplment.html|RenewFirm.html|FirmNewApp.html|insuranceHistory.html|Attorneys.html|lawPractice.html|aboutFirm.html|practiceManagement.html|morePracticeManagement.html|pastClaims.html|housekeeping.html|PredecessorFirmSupplement.html|bankruptcySupplement.html|FinancialInstitutionSupplement.html|familylawsupplement.html|GovernmentSupplement.html|litigationSupplement.html|RealEstateSupplement.html|WillsTrustProbationSupplment.html|taxSupplement.html|collectionSupplement.html|copyRightTrademarkSupplement.html|feesuitSupplement.html|AboutFirmRenewal.html|InsuredQueries.html|SubproducerUWReview.html|underwritingInfo.html|electronicInsurance.html','UWReview.back','forwardeval','LawyersRule.isquickquoteinsured|LawyersRule.isIndicationPage|LawyersRule.isfirmPage|LawyersRule.isAOPPage|LawyersRule.isPracticePage|LawyersRule.isCoveragePage|LawyersRule.isQuoteOptionPage|LawyersRule.isListPage|LawyersRule.isConfirmationPage|LawyersRule.isPaymentmethodPage|LawyersRule.isResiPage|LawyersRule.isCommPage|LawyersRule.isPlantiffPage|LawyersRule.isWillsTrustPage|LawyersRule.isRenewFirmPage|LawyersRule.isFirmNewAppPage|LawyersRule.isInsuranceHistoryPage|LawyersRule.isAttorneysPage|LawyersRule.isLawPracticePage|LawyersRule.isAboutFirmPage|LawyersRule.isPracticeManagementPage|LawyersRule.isMorePracticeManagementPage|LawyersRule.isPastClaimsPage|LawyersRule.isHousekeepingPage|LawyersRule.isPredecessorFirmSupplementPage|LawyersRule.isBankruptcySupplementPage|LawyersRule.isFinancialInstitutionSupplementPage|LawyersRule.isFamilylawsupplementPage|LawyersRule.isGovernmentSupplementPage|LawyersRule.isLitigationSupplementPage|LawyersRule.isRealEstateSupplementPage|LawyersRule.isWillsTrustProbationSupplmentPage|LawyersRule.isTaxSupplementPage|LawyersRule.isCollectionSupplementPage|LawyersRule.isCopyRightTrademarkSupplementPage|LawyersRule.isFeesuitSupplementPage|LawyersRule.isAboutFirmRenew|LawyersRule.isInsuredQueriesPage|LawyersRule.isSubproducerUWReviewPage|LawyersRule.isUnderwritingInfoPage|LawyersRule.isElectronicInsurancePage');"
+																	tabindex="110">Back</a>
+															</div>
+														</td>
+														</tr>
+													</table>
+													</td>
+												  <td>
+												  <table cellpadding="3" cellspacing="0">
+												  <tr id="eval:LawyersRule.isSubproducerLoggedIn">
+												
+														<!-- <td id="eval:LawyersRule.isShowUWCompletedButtonForSubproducer">
+														<div 
+															align="center">
+															<div id="divshow1" class="button4"
+																style="width:100px">
+																<a  href="javascript:submitform('quoteOption.html','UWReview.uwcompleteForSubproducer','','');" tabindex="110">UW&nbsp;Complete</a>
+															</div>
+															</div>
+														</td> -->
+														
+														<td id="eval:LawyersRule.isShowUWReviewButtonForSub" align="center">
+															<div id="divshow1" class="button4" style="width: 100px">
+																<a	href="javascript:submitform('SubproducerUWReview.html','UWReview.ureviewForSubproducer','','');" tabindex="110">UW&nbsp;Review</a>
+															</div>
+														</td>
+														<td colspan="0" id="eval:LawyersRule.showWantToChangeApplicationForSubproducer" align="center">
+														<div id="eval:LawyersRule.isChangeStatusVisibile">
+															<div id="divshow" class="button4" style="width: 130px">
+																<a	href="javascript:submitform('SubproducerUWReview.html','UWReview.underreviewForSubproducer','','');" tabindex="110">UnderReview</a>
+															</div>
+															</div>
+														</td>
+													<td id="eval:LawyersRule.isShowDeclineForSub" align="center">
+															<div id="divshow1" class="button4" style="width:100px">
+																<!-- <a href="javascript:submitform('UWReview.html','UWReview.decline','','');" tabindex="110">Decline</a> -->
+																<a href="javascript:rightclickmenu('DeclineStatusOnUW.html','DeclineStatusOnUW.edit','','','div_ajaxpostion_DeclineStatusOnUW:DeclineStatus');"
+																	>Decline</a> 
+															
+															</div>
+														</td>
+														<td align="center">
+															<div id="divshow1" class="button4"
+																style="width: 100px">
+																<a
+																	href="javascript:submitform('firm.html|aop.html|practice.html|coverage.html|quoteOption.html|list.html|confirmation.html|paymentmethod.html|realEstateResi.html|realEstateCommercial.html|plaintiffSupp.html|WillsTrustProbationSupplment.html|RenewFirm.html|FirmNewApp.html|insuranceHistory.html|Attorneys.html|lawPractice.html|aboutFirm.html|practiceManagement.html|morePracticeManagement.html|pastClaims.html|housekeeping.html|PredecessorFirmSupplement.html|bankruptcySupplement.html|FinancialInstitutionSupplement.html|familylawsupplement.html|GovernmentSupplement.html|litigationSupplement.html|RealEstateSupplement.html|WillsTrustProbationSupplment.html|taxSupplement.html|collectionSupplement.html|copyRightTrademarkSupplement.html|feesuitSupplement.html|AboutFirmRenewal.html|InsuredQueries.html|SubproducerUWReview.html|CorporateCommercialBusinessSupplement.html|electronicInsurance.html','UWReview.back','forwardeval','LawyersRule.isfirmPage|LawyersRule.isAOPPage|LawyersRule.isPracticePage|LawyersRule.isCoveragePage|LawyersRule.isQuoteOptionPage|LawyersRule.isListPage|LawyersRule.isConfirmationPage|LawyersRule.isPaymentmethodPage|LawyersRule.isResiPage|LawyersRule.isCommPage|LawyersRule.isPlantiffPage|LawyersRule.isWillsTrustPage|LawyersRule.isRenewFirmPage|LawyersRule.isFirmNewAppPage|LawyersRule.isInsuranceHistoryPage|LawyersRule.isAttorneysPage|LawyersRule.isLawPracticePage|LawyersRule.isAboutFirmPage|LawyersRule.isPracticeManagementPage|LawyersRule.isMorePracticeManagementPage|LawyersRule.isPastClaimsPage|LawyersRule.isHousekeepingPage|LawyersRule.isPredecessorFirmSupplementPage|LawyersRule.isBankruptcySupplementPage|LawyersRule.isFinancialInstitutionSupplementPage|LawyersRule.isFamilylawsupplementPage|LawyersRule.isGovernmentSupplementPage|LawyersRule.isLitigationSupplementPage|LawyersRule.isRealEstateSupplementPage|LawyersRule.isWillsTrustProbationSupplmentPage|LawyersRule.isTaxSupplementPage|LawyersRule.isCollectionSupplementPage|LawyersRule.isCopyRightTrademarkSupplementPage|LawyersRule.isFeesuitSupplementPage|LawyersRule.isAboutFirmRenew|LawyersRule.isInsuredQueriesPage|LawyersRule.isSubproducerUWReviewPage|LawyersRule.isCorporateCommercialBusinessSupplementPage|LawyersRule.isElectronicInsurancePage');"
+																	tabindex="110">Back</a>
+															</div></td>
+														</tr>
+														
+														
+													</table></td>
+													</tr>
+														
+													
+												</table> 
+												</td>
+										</tr>
+										<tr class="border0" id="UWReview_freeform_contextdata_112">
+											<td align="left" border="0" style="border-bottom:solid 1px #dedede;">
+												<div
+													id="div_ajaxpostion_DeclineStatusOnUW:DeclineStatus">
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td><table id="UWReview_list_freeform_contextdata_333">
+													<tr>
+														<!-- <td> <input type="text" id="PolicyKey" name="PolicyKey"/> </td> -->
+														<!-- <td><input type="text" name="page" id="page" /></td> -->
+													</tr>
+												</table></td>
+										</tr>
+									</table></td>
+							</tr>
+
+						</table>
+					</div></td>
+			</tr>
+			<tr>
+				<td>
+					<table id="firm_freeform_contextdata_999">
+						<tr>
+							<td><input type="hidden" name="jsessionid" id="jsessionid" />
+								<input type="hidden" name="divHideShow" id="divHideShow" />
+								<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+								<input type="hidden" name="ProducerCode" id="ProducerCode" />
+								<input type="hidden" name="ClearStatusFlag" id="ClearStatusFlag" />
+								<input type="hidden" name="IsQuickQuote" id="IsQuickQuote" />
+								<input type="hidden" name="StatusDesc" id="StatusDesc" />
+								</td>
+						</tr>
+					</table></td>
+			</tr>
+		</table>
+		</div>
+		<!---------Footer Start---------->
+				<div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<!---------Footer End---------->
+	</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>
+ 

@@ -1,0 +1,559 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Attorneys</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js"/>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<link href="css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<script src="js/producerOne.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+<style type="text/css">
+	#attorneyGrid {
+		margin: 8px 0 0 16px;
+		max-width: 1280px;
+		width: 98%;
+	}
+	#attorneyGrid .attorneyRosterGrid {
+		background: #ffffff;
+		border: 1px solid #c8d7e4;
+		border-collapse: collapse;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+		table-layout: fixed;
+		width: 100%;
+	}
+	#attorneyGrid .attorneyGridNote {
+		margin: 0 0 8px;
+		text-align: right;
+	}
+	#attorneyGrid .attorneyRosterGrid th {
+		background: #e3e3e3;
+		border-bottom: 1px solid #d1d1d1;
+		color: #222222;
+		font-family: Arial;
+		font-size: 14px;
+		font-weight: bold;
+		line-height: 16px;
+		padding: 7px 5px;
+		text-align: center;
+		vertical-align: middle;
+	}
+	#attorneyGrid .attorneyRosterGrid td {
+		border-bottom: 1px solid #dde7ef;
+		color: #333333;
+		font-family: Arial;
+		font-size: 14px;
+		padding: 6px 5px;
+		text-align: center;
+		vertical-align: middle;
+	}
+	#attorneyGrid .attorneyRosterGrid tbody tr:nth-child(even) td {
+		background: #f8fbfd;
+	}
+	#attorneyGrid .attorneyRosterGrid input[type=text],
+	#attorneyGrid .attorneyRosterGrid select,
+	#attorneyGrid .attorneyRosterGrid .bootstrap-select {
+		box-sizing: border-box;
+		font-family: Arial;
+		font-size: 14px;
+		height: 30px;
+		margin: 0 auto;
+		max-width: 100%;
+	}
+	#attorneyGrid #AttorneyName {
+		width: 330px !important;
+	}
+	#attorneyGrid #ajax_field_DesignationId {
+		width: 135px !important;
+	}
+	#attorneyGrid .attorneys_dropdown .show-tick,
+	#attorneyGrid .attorneys_dropdown .bootstrap-select {
+		width: 170px !important;
+	}
+	#attorneyGrid #ajax_field_AnnualWorkedHours {
+		width: 86px !important;
+	}
+	#attorneyGrid #ajax_field_AttorneyPriorActDate {
+		width: 104px !important;
+	}
+	#attorneyGrid #ajax_field_NumberOfYearsInPractice {
+		width: 66px !important;
+	}
+	#attorneyGrid .radio-inline {
+		display: inline-flex;
+		align-items: center;
+		gap: 3px;
+		font-family: Arial;
+		font-size: 14px;
+		line-height: 20px;
+		margin: 0 10px 0 0;
+		white-space: nowrap;
+	}
+	#attorneyGrid .radio-inline input[type=radio] {
+		margin: 0;
+		position: static;
+	}
+	#attorneyGrid .radio-inline span {
+		display: inline-block;
+		padding-left: 0;
+	}
+	#attorneyGrid .delete_icon {
+		color: #b91c1c !important;
+		font-size: 16px;
+	}
+</style> </head>
+<body onload="loadLicensedStates();loadLawPractice();">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<form>
+<!-- Bootstrap Core JavaScript -->
+<div id="cover"></div>
+
+<!-- Modal -->
+<div id="hours" class="modal">
+  <div class="modal-dialog" style="width: 400px">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+		<a class="close" href="#" onclick="closePopUp('hours')"><i class="fa fa-close">&nbsp;</i></a>
+        <h4 class="modal-title">Confirm</h4>
+	</div>
+      <div class="modal-body">
+        <p>Are these your Annual hours?</p>
+      </div>
+      <div class="modal-footer">
+		<div class="buttonwrapper">
+			<!-- //<a class="ovalbutton">Save</a> -->
+			<a class="ovalbutton" onclick="closePopUp('hours')">Close</a>
+		</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="fte" class="modal">
+  <div class="modal-dialog" style="width: 400px">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+		<a class="close" href="#" onclick="closePopUp('fte')"><i class="fa fa-close">&nbsp;</i></a>
+        <h4 class="modal-title">Confirm</h4>
+	</div>
+      <div class="modal-body">
+        <p>At least one attorney must have more than 1,000 hours.</p>
+      </div>
+      <div class="modal-footer">
+		<div class="buttonwrapper">
+			<!-- //<a class="ovalbutton">Save</a> -->
+			<a class="ovalbutton" onclick="closePopUp('fte')">Close</a>
+		</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="emptyAttorney" class="modal">
+  <div class="modal-dialog" style="width: 400px">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+		<a class="close" href="#" onclick="closePopUp('emptyAttorney')"><i class="fa fa-close">&nbsp;</i></a>
+        <h4 class="modal-title">Confirm</h4>
+	</div>
+      <div class="modal-body">
+        <p>All added attorneys data need to be filled.</p>
+      </div>
+      <div class="modal-footer">
+		<div class="buttonwrapper">
+			<!-- //<a class="ovalbutton">Save</a> -->
+			<a class="ovalbutton" onclick="closePopUp('emptyAttorney')">Close</a>
+		</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="invalidDate" class="modal">
+  <div class="modal-dialog" style="width: 400px">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+		<a class="close" href="#" onclick="closePopUp('invalidDate')"><i class="fa fa-close">&nbsp;</i></a>
+        <h4 class="modal-title">Confirm</h4>
+	</div>
+      <div class="modal-body">
+        <p>Please enter valid date.</p>
+      </div>
+      <div class="modal-footer">
+		<div class="buttonwrapper">
+			<!-- //<a class="ovalbutton">Save</a> -->
+			<a class="ovalbutton" onclick="closePopUp('invalidDate')">Close</a>
+		</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container-fluid bootstrap-node-1">
+  <div class="tableWidth" id="AppCompleted" > 
+  	<div id="header">
+	        	<span id="#Include:header.html#"></span>
+	      </div>
+	      <div class="menuTab">
+					<span id="#Include:tabs.html#"></span>
+				</div>
+   <div id="contentSection">
+  				 <div class="confirmationMsgAlign" id="Attorneys_freeform_contextdata_1100">
+					
+						<div id="error_ApplicationNotCompleted" class="error11Bold"/>
+												<div id="error_StatusUpdate" class="error11Bold"> </div>
+						
+					</div>
+		<div>
+			<h2 class="questionHeading"><span>3.</span> Attorney Roster</h2>
+		</div>
+		<div class="form">			
+			<div class="questionBlock">
+				<div class="freeFormDiv form-inline" id="div1" style="padding-top: 15px;">
+					<div class="errorMsgAlign">
+						<span id="error_attorneyCountError" class="error"/><span id="error_attorneyDataIncomplete" class="error"/>
+						<span id="error_singleNonRatedAttorney" class="error"/>
+						<div id="error_IsAttorneyAddedDeleted" class="error"/>
+					</div>
+					<div id="Attorneys_freeform_contextdata_01">
+					<ul class="inlineBlock">
+					<li class="inlineBlock_1_fix">
+							<div class="freeFormList form-group" id="RenewBusiness">
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="txtbold">
+											Has the status of any of your attorneys changed in the past year, or have any attorneys left or joined the firm?
+										</div>
+									</div>
+									<div class="freeFormListTd mendatoryInput">
+										<span class="radio-inline"><input type="radio" name="IsAttorneyAddedDeleted" id="ajax_field_IsAttorneyAddedDeleted" value="Y" onchange="setReadWriteAccessAttorneysList('attorneyGrid');loadLawPractice();" />Yes</span>
+										<span class="radio-inline"><input type="radio" name="IsAttorneyAddedDeleted" id="ajax_field_IsAttorneyAddedDeleted" value="N" onchange="setReadWriteAccessAttorneysList('attorneyGrid');loadLawPractice();" />No</span>
+					
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_1_fix">
+							<div class="freeFormList form-group" id="addAttorneysDiv">
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="txtbold">
+											How many Attorneys work in your Firm? :  
+										</div>
+									</div>
+									<div class="freeFormListTd mendatoryInput">
+										<select name="addAttorneys" style="width: 100px" id="ajax_field_addAttorneys" class="form-control"  onchange="loadLicensedStates;javascript:submitform('Attorneys.html','Attorneys.refreshGrid','','','attorneyGrid');">
+										  <option value="0">Select</option>
+										  <option value="1">1</option>
+										  <option value="2">2</option>
+										  <option value="3">3</option>
+										  <option value="4">4</option>
+										  <option value="5">5</option>
+										  <option value="6">6</option>
+										  <option value="7">7</option>
+										  <option value="8">8</option>
+										  <option value="9">9</option>
+										  <option value="10">10</option>
+										  <option value="11">11</option>
+										  <option value="12">12</option>
+										  <option value="13">13</option>
+										  <option value="14">14</option>
+										  <option value="15">15</option>
+										  <option value="16">16</option>
+										  <option value="17">17</option>
+										  <option value="18">18</option>
+										  <option value="19">19</option>
+										  <option value="20">20</option>
+										  <option value="21">21</option>
+										  <option value="22">22</option>
+										  <option value="23">23</option>
+										  <option value="24">24</option>
+										  <option value="25">25</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					</div>
+				</div>
+				<!-- <script >
+				var e = document.getElementById("ajax_field_addAttorneys");
+				var strUser = e.options[e.selectedIndex].value;
+				
+				</script> -->
+				<div id="attorneyGrid">
+					<div class="attorneyGridNote">
+						<i class="error italic">All columns are required.&nbsp;</i>
+					</div>
+					<table  class="gridTable sectionPadding attorneyRosterGrid" cellpadding="0" cellspacing="0" id="AttorneysDetailsList_list_01">
+						<thead id="rowMake">
+							<tr>
+								<th width="30%">Attorney Name</th>
+								<th width="13%">Attorney Designation</th>
+								<th width="15%">States Licensed to Practice Law</th>
+								<th width="10%">Annual Hours Worked</th>
+								<th width="12%">Date Joined the Firm</th>
+								<!-- <th width="13%">Prior Acts Date</th> -->
+								<th width="9%"># of Years in Practice</th>
+								<th width="1%" />
+								<th id="nonRatedAttorney_security" width="13%"><span id="showAgentOnly">Non-rated attorney?</span></th>
+								<th width="2%" />
+								<th width="1%" />
+							</tr>
+						</thead>
+					<tbody id="rowMake">
+					<tr id="AttorneysDetailsList_list_header_01" class="no-padding">
+						
+						<td>
+						<span id="block_field_rownum"></span>
+						
+						<span id="block_field_AttorneyName"></span>
+						</td>
+						<td id="block_field_DesignationId"/>
+						<td id="block_field_LicensedStates"/>
+						<td><span id="block_field_AnnualWorkedHours"></span></td>
+						<td id="block_field_AttorneyPriorActDate"/>
+						<!-- <td id="block_field_PriorActDateAttorneysNew"/> -->
+						<td id="block_field_NumberOfYearsInPractice"/>
+						<td id="block_field_combinedStates"/>
+						<td id="nonRatedAttorney_security">
+							<span id="block_field_IsNonRatedAttorney"></span>
+						</td>
+						<td >
+							<div id="showAgentOnly">
+								<div id="block_field_deletelink_row_link"/>
+							</div>
+						</td>
+						<td>
+							<span id="block_field_AttorneyKey">
+														</span>
+							
+							<span id="block_field_CreatedBy">
+								
+							</span>
+							<span id="block_field_CreatedDate">
+								
+							</span>
+						</td>
+						
+					</tr>
+					<tr id="AttorneysDetailsList_list_mom_data_01"> 
+						<td nowrap>
+						<span id="block_field_rownum">
+							<input name="rownum" type="hidden"  id="rownum"/></span>
+						
+						
+						<span  id="block_field_AttorneyName">
+							<input name="AttorneyName" type="text" class="inputbox" id="AttorneyName" autocomplete="chrome-off"/></span>
+						</td>
+						
+						<td nowrap >
+							<span id="block_field_DesignationId">
+								<select name="DesignationId" id="ajax_field_DesignationId" style="width: 115px;"
+												class="inputbox">
+												<option value="">- Select -</option>
+								</select>
+											
+							</span>
+						</td>
+					<td nowrap  class="attorneys_dropdown">
+						<span id="block_field_LicensedStates" >
+							<select class="selectpicker" multiple  width="60px" name="LicensedStates" id="ajax_field_LicensedStates"  tabindex="14">
+										<option value="">Select</option>
+										
+							</select>
+							</span>
+						</td>
+						
+						<td nowrap id="block_field_AnnualWorkedHours">
+							<input name="AnnualWorkedHours" type="text" class="inputbox" id="ajax_field_AnnualWorkedHours" onclick="loadLawPractice();" onblur="validateAnualHours(this);" autocomplete="chrome-off" />
+						</td>
+						
+						<td nowrap >
+							<div class="iconsStyle2">
+								<span id="block_field_AttorneyPriorActDate">
+								<input type="text"  style="width: 88px !important"
+									id="ajax_field_AttorneyPriorActDate" 
+									name="AttorneyPriorActDate" onkeyup="applyDateFormat(this,event);loadAttorneyPriorActDate();" onclick="loadAttorneyPriorActDate();"
+										placeholder="MM/DD/YYYY" onselect="loadAttorneyPriorActDate();" onchange="loadAttorneyPriorActDate();" autocomplete="chrome-off"/> 
+								</span>	
+								<span id="error_PolicyExpirationDatePross" class="error"> </span>
+							</div>
+						</td>
+						<!-- <td nowrap>
+							<div class="iconsStyle2">
+								<span id="block_field_PriorActDateAttorneysNew">
+								<input type="text" style="width: 88px !important" placeholder="MM/DD/YYYY"
+									id="ajax_field_PriorActDateAttorneysNew" onkeyup="applyDateFormat(this,event);" 
+									name="PriorActDateAttorneysNew"></input> 
+								</span>
+								<span id="error_PolicyExpirationDatePross" class="error"> </span>
+							</div>
+						</td> -->
+						<td id="block_field_NumberOfYearsInPractice" >
+							<input name="NumberOfYearsInPractice" style="width: 50px;" id="ajax_field_NumberOfYearsInPractice" type="text" class="inputbox" onclick="loadLicensedStates();loadLawPractice();" 
+								onselect="loadAttorneyPriorActDate();" onfocus="loadAttorneyPriorActDate();" autocomplete="chrome-off"/>
+						</td>
+						 <td id="block_field_combinedStates" >
+							<input  name="combinedStates" style="width: 50px;" id="ajax_field_combinedStates" type="hidden" class="inputbox"/>
+						</td> 
+						<!-- <td id="block_field_IsNonRatedAttorney">
+							
+									<input name="IsNonRatedAttorney" type="checkbox" 
+										 value="Y" id="ajax_field_IsNonRatedAttorney"   />
+								
+						</td> -->
+						<td nowrap>
+								<div id="nonRatedAttorney_security">
+							<div id="showAgentOnly">
+								<div id="eval:LawyersRule.isNotNewFiling">
+									<span class="radio-inline" id="block_field_IsNonRatedAttorney">
+										<input type="radio" name="IsNonRatedAttorney" id="ajax_field_IsNonRatedAttorney1_FixedValue" value="Y" />
+										<span>Yes</span>
+									</span>
+									<span class="radio-inline" id="block_field_IsNonRatedAttorney">
+										<input type="radio" name="IsNonRatedAttorney" id="ajax_field_IsNonRatedAttorney2_FixedValue" value="N" />
+										<span>No</span>
+									</span>
+								</div>
+								<div id="eval:LawyersRule.isNewFiling">
+									<span class="radio-inline" id="block_field_IsNonRatedAttorney">
+										<input type="radio" name="IsNonRatedAttorney" id="ajax_field_IsNonRatedAttorney1_FixedValue" value="Y" disabled="disabled"/>
+										<span>Yes</span>
+									</span>
+									<span class="radio-inline" id="block_field_IsNonRatedAttorney">
+										<input type="radio" name="IsNonRatedAttorney" id="ajax_field_IsNonRatedAttorney2_FixedValue" value="N" disabled="disabled"/>
+										<span>No</span>
+									</span>
+								</div>
+							</div>
+							</div>
+						</td>
+						<td >
+						<div id="showPageSave">
+							<div id="eval:LawyersRule.isAttorneySaved">
+								<div id="block_field_deletelink_row_link">
+													<a href="javascript:submitform('Attorneys.html','Attorneys.deleteAttorney','','');" class="Link_blue">
+													<i class="fa fa-times delete_icon">&nbsp;</i> </a>
+								</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<span id="block_field_AttorneyKey">
+								<input name="AttorneyKey" id="ajax_field_AttorneyKey" type="hidden" />
+							</span>
+							
+							<span id="block_field_CreatedBy">
+								<input name="CreatedBy" id="ajax_field_CreatedBy" type="hidden" />
+							</span>
+							<span id="block_field_CreatedDate">
+								<input name="CreatedDate" id="ajax_field_CreatedDate" type="hidden" />
+							</span>
+						</td>
+						
+					</tr>
+					</tbody>
+				</table>
+				</div>
+		</div>
+		<div class="buttons borderTop row" id="NewBusiness">
+				<a class="btn back floatLeft"
+				href="javascript:submitform('insuranceHistory.html','Attorneys.back','','');">Back</a>
+				<div class="floatRight">
+				<span id="showPageSave">
+					<a class="btn save" onclick="javascript:setAccountType2('aop_list'); loadLicensedStates();return validateAttorney();"
+					href="javascript:submitform('lawPractice.html|workq.html','Attorneys.save','forwardeval','LawyersRule.isPolicyStatusNotUpdated|LawyersRule.isPolicyStatusUpdated');">Save&nbsp;&amp;&nbsp;Continue</a>
+				</span>
+				<span id="showContinue">
+						 <a onclick="javascript:setAccountType2('aop_list');" href="javascript:submitform('lawPractice.html|workq.html','Attorneys.continue','forwardeval','LawyersRule.isPolicyStatusNotUpdated|LawyersRule.isPolicyStatusUpdated');"
+                			class="btn next">Continue</a>
+                	 </span>
+				</div>
+				
+			</div>
+			<div class="buttons borderTop row" id="RenewBusiness">
+				<a class="btn back floatLeft"
+				href="javascript:submitform('FirmNewApp.html','Attorneys.renewBack','','');">Back</a>
+				<div class="floatRight">
+							
+				<span id="showPageSave">
+					<a class="btn save" onclick="javascript:setAccountType2('aop_list'); loadLicensedStates();return validateAttorney(); "
+					href="javascript:submitform('lawPractice.html|workq.html','Attorneys.save','forwardeval','LawyersRule.isPolicyStatusNotUpdated|LawyersRule.isPolicyStatusUpdated');">Save&nbsp;&&nbsp;Continue</a>
+				</span>
+				<span id="showContinue">
+						 <a onclick="javascript:setAccountType2('aop_list');" href="javascript:submitform('lawPractice.html|workq.html','Attorneys.renewContinue','forwardeval','LawyersRule.isPolicyStatusNotUpdated|LawyersRule.isPolicyStatusUpdated');"
+                			class="btn next">Continue</a>
+                	 </span>
+				</div>
+				
+			</div>
+	</div>
+    <!---------Footer Start---------->
+     <div id="footer" class="footer">
+       <span id="#Include:footer.html#"></span>
+    </div>
+    <!---------Footer End----------> 
+  </div>
+  <table id="Attorneys_freeform_contextdata_999">
+				<tr>
+					<td><input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />
+						<input type="hidden" name="newLicensedStates" id="ajax_field_newLicensedStates"/>
+						<input type="hidden" name="PolicyStatusKey" id="ajax_field_PolicyStatusKey"/> 
+						<input type="hidden" name="IsNewFiling" id="IsNewFiling"/>
+						<input type="hidden" name="VersionKey" id="VersionKey"/>
+						
+					</td>
+				</tr>
+		</table>
+</div>
+<div id="StatusValidation_freeform_contextdata_9990">
+		<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+	</div>
+
+</form>
+<script>
+	setCSSForAccountType2();
+	loadChangeAttorney();
+</script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script src="js/bootstrap-select.js"></script>
+<script>
+setReadWriteAccessAttorneysList('attorneyGrid');
+</script>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

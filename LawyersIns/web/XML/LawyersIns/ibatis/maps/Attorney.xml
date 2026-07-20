@@ -1,0 +1,12 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Attorney">
+     <parameterMap id="InsertEndorsedAttorniesData_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertEndorsedAttorniesData_p" parameterMap="InsertEndorsedAttorniesData_pMap">{ call InsertEndorsedAttorniesData_p(?,?,?,?)}</procedure>
+</sqlMap>
+

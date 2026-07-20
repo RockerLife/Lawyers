@@ -1,0 +1,2101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>Quote Option</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script type="text/javascript" src="script/account.js"></script>
+<script language="javascript" src="script/lawyers.js"></script>
+<script type="text/javascript" src="script/tabber.js"></script>
+<script type="text/javascript" src="script/test_new.js"></script>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/utility.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript">
+	function showHide() {
+
+		if (document.getElementById("IsManualPremium").checked) {
+
+			document.getElementById("ManualPremium").style.display = 'block';
+			document.getElementById('saveLink').style.display = 'block';
+			document.getElementById('getLink').style.display = 'none';
+
+			var LimitSequence = document.getElementById('LimitSequence');
+			var limit = LimitSequence.options[LimitSequence.selectedIndex].value;
+
+			var DeductibleSequence = document
+					.getElementById('DeductibleSequence');
+			var deductible = DeductibleSequence.options[DeductibleSequence.selectedIndex].value;
+
+			if (limit == '' || deductible == '') {
+
+				document.getElementById('downloadLinkText').style.display = 'block';
+				document.getElementById('downloadLink').style.display = 'none';
+			} else {
+				document.getElementById('downloadLink').style.display = 'block';
+				document.getElementById('downloadLinkText').style.display = 'none';
+			}
+
+		}
+	}
+
+	function checks() {
+		document.getElementById("EffectiveDate").disabled = true;
+		//alert(document.getElementById("EffectiveDate").style.readOnly);
+	}
+</script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+<body onload="setSelectionOfQuotes();showHide();showSpecialIssuanceDiv();loadQuoteOption();setEffectiveDate();">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<form>
+
+		<div id="cover" style="width: 100%; height: 1000px"></div>
+		<div id="contextLinks"></div>
+		
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth"> 
+			<div id="header">
+				<span id="#Include:header.html#"></span>
+			</div>
+			<div>
+				<table cellpadding="0" cellspacing="0" width="100%">
+					<tr id="eval:LawyersRule.FollowOldApp">
+						<td>
+
+							<table width="100%" border="0" align="center"
+								cellpadding="0" cellspacing="0">
+
+								<tr>
+									<td valign="top">
+										<table width="98%" border="0" align="center"
+											cellpadding="0" cellspacing="0">
+											<tr>
+												<td id="eval:LawyersRule.IsNotRenewalPolicy">
+													<table border="0" cellspacing="0" cellpadding="0" class="colorBlack">
+														<tr>
+															<td>
+																<table border="0" cellspacing="0" cellpadding="0">
+																	<tr>
+																		<td align="right" height="7px"></td>
+																		<td align="center"></td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<td align="right"><img src="img/arrow.gif"
+																			width="16" height="16" /></td>
+																		<td align="center"><span
+																			id="eval:LawyersRule.showSupplementsTab"
+																			class="txtgreen">Step#6/6</span> <span
+																			id="eval:LawyersRule.showNotSupplementsTab"
+																			class="txtgreen">Step#5/5</span></td>
+																		<td><img src="img/line.jpg" width="5"
+																			height="16" /></td>
+																	</tr>
+																</table>
+															</td>
+															<td>
+																<table border="0" cellspacing="0" cellpadding="0">
+																	<tr>
+																		<td></td>
+																		<td></td>
+																		<td></td>
+																		<td></td>
+																		<td></td>
+																		<td></td>
+																		<td></td>
+																		<td></td>
+																		<td></td>
+																		<td></td>
+																		<td></td>
+																		<td></td>
+																		<td></td>
+																		<td></td>
+																		<td id="eval:LawyersRule.showNotSupplementsTab"
+																			class="redArrow"></td>
+																		<td valign="top"></td>
+																		<td id="eval:LawyersRule.showSupplementsTab"
+																			class="redArrow"></td>
+																	</tr>
+																	<tr>
+																		<td><img src="img/1inactive.jpg" width="16"
+																			height="16" /></td>
+																		<td nowrap="nowrap" class="nav"><span
+																			id="eval:LawyersRule.isCoveragePageNotReadOnly">
+																				<a
+																				href="javascript:submitform('firm.html','quoteOption.tabFirm','','');">Firm</a>
+																		</span> <span
+																			id="eval:LawyersRule.isCoveragePageReadOnly">
+																				<a
+																				href="javascript:submitform('firm.html','quoteOption.tabFirm','','');">Firm</a>
+																		</span></td>
+																		<td><img src="img/bgline.jpg" /></td>
+																		<td><img src="img/2inactive.jpg" width="16"
+																			height="16" /></td>
+																		<td nowrap="nowrap" class="nav"><span
+																			id="eval:LawyersRule.isCoveragePageNotReadOnly">
+																				<a
+																				href="javascript:submitform('aop.html','quoteOption.tabAop','','');">AOP</a>
+																		</span> <span
+																			id="eval:LawyersRule.isCoveragePageReadOnly">
+																				<a
+																				href="javascript:submitform('aop.html','quoteOption.tabAop','','');">AOP</a>
+																		</span></td>
+																		<td><img src="img/bgline.jpg" /></td>
+																		<td><img src="img/3inactive.jpg" width="16"
+																			height="16" /></td>
+																		<td nowrap="nowrap" class="nav"><span
+																			id="eval:LawyersRule.isCoveragePageNotReadOnly">
+																				<a
+																				href="javascript:submitform('practice.html','quoteOption.tabPractice','','');">Practice
+																					Management</a>
+																		</span> <span
+																			id="eval:LawyersRule.isCoveragePageReadOnly">
+																				<a
+																				href="javascript:submitform('practice.html','quoteOption.tabPractice','','');">Practice
+																					Management</a>
+																		</span></td>
+																		<td><img src="img/bgline.jpg" /></td>
+																		<td><img src="img/4inactive.jpg" width="16"
+																			height="16" /></td>
+																		<td nowrap="nowrap" class="nav"><span
+																			id="eval:LawyersRule.isCoveragePageNotReadOnly">
+																				<a
+																				href="javascript:submitform('coverage.html','quoteOption.tabCoverage','','');">
+																					Coverage</a>
+																		</span> <span
+																			id="eval:LawyersRule.isCoveragePageReadOnly">
+																				<a
+																				href="javascript:submitform('coverage.html','quoteOption.tabCoverage','','');">
+																					Coverage</a>
+																		</span></td>
+																		<td><span
+																			id="eval:LawyersRule.showSupplementsTab"><img
+																				src="img/bgline.jpg" /> </span></td>
+																		<td><span
+																			id="eval:LawyersRule.showSupplementsTab"><img
+																				src="img/5inactive.jpg" width="16" height="16" />
+																		</span></td>
+																		<td nowrap="nowrap" class="nav"
+																			id="eval:LawyersRule.showSupplementsTab"><span
+																			id="eval:LawyersRule.isCoveragePageNotReadOnly">
+																				<a
+																				href="javascript:submitform('realEstateResi.html|realEstateCommercial.html|plaintiffSupp.html|willsEstateSupp.html','quoteOption.tabSupplements','forwardeval','LawyersRule.IsRealEstateResidentialAOP|LawyersRule.IsRealEstateCommercialAOP|LawyersRule.IsPlaintiffAOP|LawyersRule.IsWillsEstateAOP');">Supplements</a>
+																		</span> <span
+																			id="eval:LawyersRule.isCoveragePageReadOnly">
+																				<a
+																				href="javascript:submitform('realEstateResi.html|realEstateCommercial.html|plaintiffSupp.html|willsEstateSupp.html','quoteOption.tabSupplementsContinue','forwardeval','LawyersRule.IsRealEstateResidentialAOP|LawyersRule.IsRealEstateCommercialAOP|LawyersRule.IsPlaintiffAOP|LawyersRule.IsWillsEstateAOP');">Supplements</a>
+																		</span></td>
+
+																		<td><img src="img/bgline.jpg" /></td>
+																		<td><span
+																			id="eval:LawyersRule.showSupplementsTab"><img
+																				src="img/6active.jpg" width="16" height="16" />
+																		</span> <span
+																			id="eval:LawyersRule.showNotSupplementsTab"><img
+																				src="img/5active.jpg" width="16" height="16" />
+																		</span></td>
+																		<td nowrap="nowrap" class="nav"><span>
+																				Quote Option </span></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td></td>
+															<td><span
+																id="eval:LawyersRule.showSupplementsTab"><img
+																	src="img/5arrow.jpg" width="590" height="12" /> </span>
+																<span id="eval:LawyersRule.showNotSupplementsTab"><img
+																	src="img/5arrow.jpg" width="480" height="12" /> </span>
+															</td>
+														</tr>
+													</table>
+												</td>
+												<td id="eval:LawyersRule.IsRenewalPolicy">
+													<table border="0" cellspacing="0" cellpadding="0" class="colorBlack">
+														<tr>
+															<td>
+																<table border="0" cellspacing="0" cellpadding="0">
+																	<tr>
+																		<td align="right" height="7px"></td>
+																		<td align="center"></td>
+																		<td></td>
+																	</tr>
+																	<tr>
+																		<td align="right"><img src="img/arrow.gif"
+																			width="16" height="16" /></td>
+																		<td align="center"><span
+																			id="eval:LawyersRule.showSupplementsTab"
+																			class="txtgreen">Step#3/3</span> <span
+																			id="eval:LawyersRule.showNotSupplementsTab"
+																			class="txtgreen">Step#2/2</span></td>
+																		<td><img src="img/line.jpg" width="5"
+																			height="16" /></td>
+																	</tr>
+																</table>
+															</td>
+															<td>
+																<table border="0" cellspacing="0" cellpadding="0">
+																	<tr>
+																		<td></td>
+																		<td></td>
+																		<td></td>
+
+
+																		<td id="eval:LawyersRule.showNotSupplementsTab"
+																			class="redArrow"></td>
+																		<td valign="top"></td>
+																		<td id="eval:LawyersRule.showSupplementsTab"
+																			class="redArrow"></td>
+																	</tr>
+																	<tr>
+																		<td><img src="img/1inactive.jpg" width="16"
+																			height="16" /></td>
+																		<td nowrap="nowrap" class="nav"><a
+																			href="javascript:submitform('RenewFirm.html','quoteOption.tabRenewFirm','','');">Firm</a>
+
+																		</td>
+																		<td id="eval:LawyersRule.showSupplementsTab">
+																			<img src="img/bgline.jpg" />
+																		</td>
+																		<td id="eval:LawyersRule.showSupplementsTab">
+																			<img src="img/2inactive.jpg" width="16"
+																			height="16" />
+																		</td>
+
+
+																		<td nowrap="nowrap" class="nav"
+																			id="eval:LawyersRule.showSupplementsTab"><span
+																			id="eval:LawyersRule.isCoveragePageNotReadOnly">
+																				<a
+																				href="javascript:submitform('realEstateResi.html|realEstateCommercial.html|plaintiffSupp.html|willsEstateSupp.html','quoteOption.tabSupplements','forwardeval','LawyersRule.IsRealEstateResidentialAOP|LawyersRule.IsRealEstateCommercialAOP|LawyersRule.IsPlaintiffAOP|LawyersRule.IsWillsEstateAOP');">Supplements</a>
+																		</span> <span
+																			id="eval:LawyersRule.isCoveragePageReadOnly">
+																				<a
+																				href="javascript:submitform('realEstateResi.html|realEstateCommercial.html|plaintiffSupp.html|willsEstateSupp.html','quoteOption.tabSupplementsContinue','forwardeval','LawyersRule.IsRealEstateResidentialAOP|LawyersRule.IsRealEstateCommercialAOP|LawyersRule.IsPlaintiffAOP|LawyersRule.IsWillsEstateAOP');">Supplements</a>
+																		</span></td>
+
+																		<td><img src="img/bgline.jpg" /></td>
+																		<td><span
+																			id="eval:LawyersRule.showSupplementsTab"><img
+																				src="img/3active.jpg" width="16" height="16" />
+																		</span> <span
+																			id="eval:LawyersRule.showNotSupplementsTab"><img
+																				src="img/2active.jpg" width="16" height="16" />
+																		</span></td>
+																		<td nowrap="nowrap" class="nav"><span>
+																				Quote Option </span></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td></td>
+															<td><span
+																id="eval:LawyersRule.showSupplementsTab"><img
+																	src="img/5arrow.jpg" width="270" height="12" /> </span>
+																<span id="eval:LawyersRule.showNotSupplementsTab"><img
+																	src="img/5arrow.jpg" width="150" height="12" /> </span>
+															</td>
+														</tr>
+													</table>
+												</td>
+												<!-- <td align="right" class="linksBlk"
+													id="eval:LawyersRule.isAgent">
+													<table cellpadding="1" cellspacing="0" class="colorBlack">
+														<tr>
+															<td>
+																<a
+																	href="javascript:submitform('quoteOption.html','quoteOption.downloadpdf','','');">Download
+																		PDF</a>&nbsp;| <a
+																	href="javascript:submitform('quoteOption.html','quoteOption.downloadexcel','','');">Download
+																		Excel</a>&nbsp;| <a
+																	href="javascript:submitform('uploadexcelpopup.html','quoteOption.uploadexcel','','');">Documents
+																</a>&nbsp;| <a
+																	href="javascript:submitform('comment.html','quoteOption.comment','','');">Comments
+																</a>
+																<span id="">&nbsp;|
+																			<a
+																				href="javascript:submitform('UWReview.html','quoteOption.underwriter',' ','');">UnderWriter
+																			</a>
+																</span>
+															</td>
+														</tr>
+													</table>
+												</td> -->
+											</tr>
+										</table>
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+										<table width="100%" border="0" cellspacing="0"
+											cellpadding="0" class="border1">
+											<tr>
+												<td class="heading1">Quote Option</td>
+												<td align="right" class="heading1">
+
+
+                                                
+														
+													<div id="error_isQuoteLetterSentView"
+														class="error"></div>
+													<div id="error_isQuoteExpired"
+														class="error"></div> <!-- 
+														<span id="eval:LawyersRule.isQuoteLetterSentView" class="error11">You have selected a manual quote.</span>
+															--> <span
+													id="eval:LawyersRule.isQuoteLetterSent"
+													class="error11">Quote letter is sent
+														successfully.</span> <span
+													id="eval:LawyersRule.isQuoteLetterNotSent"
+													class="error11">Quote letter could not be sent.</span>
+													<!-- <span id="error_IsquoteEffectiveNB" class="error11Bold"></span> -->
+												</td>
+											</tr>
+											<tr>
+												<td align="right">
+													<table width="100%" border="0" cellspacing="0"
+														cellpadding="0">
+														<tr class="defult_tr_errors"
+															id="tr_error_indication_div">
+															<td align="left">
+																<span id="error_indication_div" class="error11Bold"></span>
+																<span class="Confirmation"	id="UWReview_freeform_contextdata_100">
+																			<label style="padding-left:5px;font-weight:bold;line-height:20px;color:green;"  name="pageMsg" id="pageMsg" />
+																	</span>
+															</td>
+														</tr>
+														<!-- <tr class="defult_tr_errors"
+															id="tr_error_indication_div">
+															<td align="left">
+																<span id="error_indication_div" class="error11Bold"></span>
+																<span class="Confirmation"	id="UWReview_freeform_contextdata_100">
+																			<label style="padding-left:5px;font-weight:bold;line-height:20px;color:red;"  name="effectivedatepageMsg" id="effectivedatepageMsgNB" />
+																	</span>
+																	
+																	<div id="error_IsquoteEffectiveNB" 
+																		class="error"></div>
+															</td>
+														</tr> -->
+														
+														
+														
+														<!-- <tr class="defult_tr_errors"
+															id="tr_error_indication_div">
+															<td align="left">
+																<span id="error_IsquoteEffectiveNB" class="error11Bold"></span>
+																
+															</td>
+														</tr> -->
+													</table>
+												</td>
+												<td align="right"
+													id="eval:LawyersRule.QuotedIssuedAcceptNot_Status">
+													<span class="error11Bold">Note :</span> <span
+													class="error11">All fields are required </span>
+												</td>
+
+											</tr>
+											
+										</table>
+									</td>
+								</tr>
+
+							</table>
+						</td>
+					</tr>
+					
+				</table>
+			</div>
+			<div class="menuTab" id="eval:LawyersRule.FollowNewApp">
+				<span id="#Include:tabs.html#"></span>
+				<div id="Quote_freeform_contextdata_005">
+				<table width="100%" border="0" cellspacing="0"
+											cellpadding="0" class="">
+											<tr id="eval:LawyersRule.IsNotIssued">
+												<td align="right" class="heading1">
+														<div id="error_StatusUpdate" class="error11Bold"> </div>
+													<div id="error_isQuoteLetterSentView"
+														class="error"></div>
+													<div id="error_isQuoteExpired"
+														class="error"></div> 
+														
+														<div id="error_RBEffectiveDateError"
+														class="error"></div> 
+														<div id="error_duplicateQuoteError" class="error"></div> 
+														
+														<!-- 
+														<span id="eval:LawyersRule.isQuoteLetterSentView" class="error11">You have selected a manual quote.</span>
+															--> <span
+													id="eval:LawyersRule.isQuoteLetterSent"
+													class="error">Quote letter is sent
+														successfully.</span> <span
+													id="eval:LawyersRule.isQuoteLetterNotSent"
+													class="error11">Quote letter could not be sent.</span>
+
+												</td>
+											</tr>
+											<tr id="eval:LawyersRule.IsNotIssued">
+												<td align="right">
+													<table width="100%" border="0" cellspacing="0"
+														cellpadding="0">
+														<tr class="error"
+															id="tr_error_indication_div">
+															<td align="center">
+																<span id="error_indication_div" class="error11Bold"></span>
+																<span class="Confirmation"	id="UWReview_freeform_contextdata_100">
+																			<label style="padding-left:5px;font-weight:bold;line-height:20px;color:green;"  name="pageMsg" id="pageMsg" />
+																	</span>
+															</td>
+														</tr>
+													</table>
+												</td>
+												<!-- <td align="right"
+													id="eval:LawyersRule.QuotedIssuedAcceptNot_Status">
+													<span class="error11Bold">Note :</span> <span
+													class="error11">All fields are required </span>
+												</td> -->
+
+											</tr>
+											
+											<tr id="eval:LawyersRule.IsNotIssued">
+											<td  align="center">
+												<div id="eval:LawyersRule.effectiveDateRBDisplayMessage">
+													<span class="error11Bold">Policy EffectiveDate cannot be more than 30 days past. </span>
+												</div>
+												<div id="eval:LawyersRule.ValidatePolicyEffectiveDateNot">
+													<span class="error11Bold">Policy Effective Date is required to be within the last 30 days or prior to 300 days in the future.</span>
+												</div>
+												<div id="eval:LawyersRule.isNonISMIEPolicy">
+													<span id="eval:LawyersRule.isShowQuoteEffectiveDateError">
+														<span id="eval:LawyersRule.isQuoteEffectiveDatevalid" class="error11Bold">Can't send the quote for more than 45 days out.</span>
+														<span id="eval:LawyersRule.isQuoteEffectiveDatevalidRB" class="error11Bold">Can't send the quote for more than 70 days out.</span>
+													</span>
+												</div>
+												
+												<div id="eval:LawyersRule.isISMIEPolicy">
+													<span id="eval:LawyersRule.isShowQuoteEffectiveDateError">
+															<span id="eval:LawyersRule.isQuoteEffectiveDatevalid" class="error11Bold">Can't send the quote for more than 90 days out.</span>
+															<span id="eval:LawyersRule.isQuoteEffectiveDatevalidRB" class="error11Bold">Can't send the quote for more than 90 days out.</span>
+													</span>
+												</div>
+													
+												</td>
+											</tr>
+											
+											
+										</table>
+				</div>
+				
+			</div>
+			<div id="contentSection">
+				<div id="eval:LawyersRule.FollowNewApp">
+					<h2 class="questionHeading">Quote</h2>
+				</div>
+				<div class="form">			
+					<div id="content" >
+						<div>
+							<div id="eval:LawyersRule.isInsured" class="paddingTop20">
+								<table width="80%" border="0" align="center"
+									cellpadding="4" cellspacing="0" class="padding10"
+									style="background-color: #fae5ac; line-height: 18px; text-align: justify; color: #990033; border: 1px solid #c8a43c;">
+									<tr  id="QuoteOption_freeform_contextdata_721">
+										<td>
+											<strong>Congratulations. You are now approved
+												for professional liability insurance through your
+												successful completion of our on-line application. If
+												you would like to explore other pricing options please
+												contact us at
+											<span id="eval:LawyersRule.isSubproducerLogin">
+												<label class="txt11Bold" id="ajax_field_SPPhoneNumber" name="SPPhoneNumber" style="font-weight:bold" />
+											</span>
+											<span id="eval:LawyersRule.IsNotSubproducerLoggedInsured"><b>877-569-4111</b></span>
+											<b> and we can provide them to
+											you. Thank you for your business. </b></strong>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<!-- <div id="eval:LawyersRule.isSubproducerLoggedInsured">
+								<table width="80%" border="0" align="center"
+									cellpadding="4" cellspacing="0"
+									style="background-color: #fae5ac; line-height: 18px; text-align: justify; color: #990033; border: 1px solid #c8a43c;">
+									<tr>
+										<td><br/><b>Congratulations. You are now approved
+												for professional liability insurance through your
+												successful completion of our on-line application. If
+												you would like to explore other pricing options please
+												contact us at <label id="ajax_field_SPPhoneNumber" name="SPPhoneNumber" /> and we can provide them to
+												you. Thank you for your business. </b></td>
+									</tr>
+								</table>
+							</div> -->
+						
+							<div class="row">
+								<div class="block-form">
+									<div id="eval:LawyersRule.showQuoteAddDiv">
+										<div class="freeFormDiv form-inline" id="QuoteOption_freeform_01">
+											<ul class="inlineBlock">
+												<li class="inlineBlock_2_fix">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_LimitSequence" class="error"> </div>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	Limits of Liability $ :
+																</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<select
+																	name="LimitSequence" id="LimitSequence"
+																	class="form-control" 
+																	onchange="makeDefenseOutsideRuleQuoteOption(this.value);">
+																		<option value="">Select</option>
+																</select>
+															</div>
+														</div>
+														
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="error_DeductibleSequence" class="error"> </div>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	Deductible $ :
+																</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<select
+																	name="DeductibleSequence"
+																	id="DeductibleSequence" class="form-control"
+																	onchange="showHideRatingLink();">
+																		<option value="">Select</option>
+																</select>
+															</div>
+														</div>
+														
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="" class="error"> </div>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	&nbsp;
+																</div>
+															</div>
+															<div class="freeFormListTd valignTop tdInput">
+																<input
+																type="checkbox" class="checkboxMargins" name="IsClaimExpensesType"
+																id="IsClaimExpensesType"
+																value="Y" /> 
+															</div>
+															<div class="freeFormListTd valignTop tdInput">
+																Defense expenses paid in
+																addition to the limits of liability
+															</div>
+														</div>
+														
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="" class="error"> </div>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	&nbsp;
+																</div>
+															</div>
+															<div class="freeFormListTd tdInput">
+																<input type="checkbox" class="checkboxMargins"
+																name="IsClaimOptionType"
+																id="IsClaimOptionType"
+																value="Y" /> Annual Aggregate
+															</div>
+														</div>
+														
+													</div>
+												</li>
+												<li class="inlineBlock_2_fix">&nbsp;</li>
+												<li class="inlineBlock_2_fix">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+															<div class="freeFormListTdError paddingLeft3">
+																<div id="" class="error"> </div>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">
+																	&nbsp;
+																</div>
+															</div>
+															<div class="freeFormListTd valignTop tdInput">
+																<input type="checkbox" class="checkboxMargins"
+																name="IsDollarDefense" id="IsDollarDefense"
+																 value="Y" />
+															</div>
+															<div class="freeFormListTd valignTop tdInput">
+																Deductible does
+																not apply to defense expenses (first dollar
+																defense)
+															</div>
+														</div>
+														
+													</div>
+												</li>
+											</ul>
+											<div class="row">
+												<div id="getLink" align="center" class="paddingTop5">
+													<a class="btn next"
+														href="javascript:submitform('quoteOption.html','quoteOption.saveQuote','','');"
+														>Get Another Quote Option</a>
+												</div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="row" id="Modifiers_freeform_contextdata_01">
+										<div class="col-sm-5" id="eval:LawyersRule.ShowModifiersBlock">
+											<div id="eval:LawyersRule.diplayAdditionalQuoteOptions">
+												<div class="freeFormDiv form-inline">
+													<ul class="inlineBlock" id="eval:LawyersRule.IsModifierState">
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="error_SchduleRatingModifier1" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">
+																			Claims :
+																		</div>
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<input
+																		name="SchduleRatingModifier1"
+																		id="SchduleRatingModifier1"
+																		type="text" class="form-control"
+																		size="3" maxlength="3" />
+																	</div>
+																</div>
+																
+															</div>
+														</li>
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="error_SchduleRatingModifier2" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">
+																			<span id="eval:LawyersRule.isNotNewFiling">
+																			Firm Practice :
+																			</span>
+																			<span id="eval:LawyersRule.isNewFiling">
+																			Firm Characteristics :
+																			</span>
+																		</div>
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<input
+																		name="SchduleRatingModifier2"
+																		id="SchduleRatingModifier2"
+																		type="text" class="form-control"
+																		size="3" maxlength="3" />
+																	</div>
+																</div>
+															</div>
+														</li>
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="error_SchduleRatingModifier3" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">
+																			<span id="eval:LawyersRule.isNotNewFiling">
+																			Firm Ed. and Training :
+																			</span>
+																			<span id="eval:LawyersRule.isNewFiling">
+																			Firm Management :
+																			</span>	
+																		</div>
+																	</div>
+																	
+																	<div class="freeFormListTd tdInput">
+																		<input
+																		name="SchduleRatingModifier3"
+																		id="SchduleRatingModifier3"
+																		type="text" class="form-control"
+																		size="3" maxlength="3" />
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="error_SchduleRatingModifier4" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr" id="eval:LawyersRule.isMissouriAndNewFiling">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">
+																			<span >
+																			Classification Peculiarities :
+																			</span>
+																			
+																		</div>
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<input
+																		name="SchduleRatingModifier4"
+																		id="SchduleRatingModifier4"
+																		type="text" class="form-control"
+																		size="3" maxlength="3" />
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="error_SchduleRatingModifier5" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr" id="eval:LawyersRule.isMissouriAndNewFiling">
+																	<div class="freeFormListTd labelAlign">
+																		Years in Existence :
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<input
+																		name="SchduleRatingModifier5"
+																		id="SchduleRatingModifier5"
+																		type="text" class="form-control"
+																		size="3" maxlength="3" />
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="error_SchduleRatingModifier6" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr" id="eval:LawyersRule.isMissouriAndNewFiling">
+																	<div class="freeFormListTd labelAlign">
+																		Ethics and Moral Standing :
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<input
+																		name="SchduleRatingModifier6"
+																		id="SchduleRatingModifier6"
+																		type="text" class="form-control"
+																		size="3" maxlength="3" />
+																	</div>
+																</div>
+															</div>
+														</li>
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="error_ModifierComment" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">
+																			Underwriting Justification :
+																		</div>
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<textarea
+																			name="ModifierComment"
+																			id="ModifierComment"
+																			class="form-control" cols="35"
+																			rows="3"
+																			onKeyUp="limitText(this,1,1000);" />
+																	</div>
+																</div>
+															</div>
+														</li>
+													</ul>
+													<ul class="inlineBlock">
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">
+																			Skip Tax Calculation :
+																		</div>
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<input
+																			type="radio" class="checkboxMargins"
+																			name="IsTaxCalculation"
+																			id="IsTaxCalculation" value="Y"
+																			 /> Yes 
+																		<input
+																			type="radio"
+																			name="IsTaxCalculation"
+																			id="IsTaxCalculation" value="N"
+																			 /> No
+																	</div>
+																</div>
+																
+															</div>
+														</li>
+														<li class="inlineBlock_1" id="eval:LawyersRule.isNotCFOrInsured">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">
+																			Special Issuance :
+																		</div>
+																	</div>
+																	<div class="freeFormListTd tdInput" >
+																		<input
+																		type="radio"
+																		name="IsSpecialIssuance"
+																		id="IsSpecialIssuance" value="Y"
+																		 class="checkboxMargins"
+																		onclick="showSpecialIssuanceDiv();" />
+																		Yes <input type="radio"
+																		name="IsSpecialIssuance"
+																		id="IsSpecialIssuance" value="N"
+																		onclick="showSpecialIssuanceDiv();" />
+																		No
+																	</div>
+																</div>
+																
+															</div>
+														</li>
+														<li class="inlineBlock_1" id="SpecialIssuanceCommentsDiv">
+															<div class="freeFormList form-group" id="eval:LawyersRule.isNotCFOrInsured">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">
+																			Comments :
+																		</div>
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<textarea
+																				name="SpecialIssuanceComments"
+																				id="SpecialIssuanceComments"
+																				class="form-control" cols="35"
+																				rows="3"
+																				onKeyUp="limitText(this,1,8000);" />
+																	</div>
+																</div>
+																
+															</div>
+														</li>
+													</ul>
+													
+												</div>
+												<div align="left" style="margin-left: 200px;margin-top:10px" id="eval:LawyersRule.isShowSaveModifier">
+													<a class="btn next"
+														href="javascript:submitform('quoteOption.html','quoteOption.saveModifier','','');"
+														>Update </a>
+												</div>
+											</div>
+											
+											<div id="eval:LawyersRule.diplayAdditionalQuoteOptionsDisabled">
+												<div class="freeFormDiv form-inline">
+													<ul class="inlineBlock" id="eval:LawyersRule.IsModifierState">
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="error_SchduleRatingModifier1" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">
+																			Claims :
+																		</div>
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<input
+																		name="SchduleRatingModifier1"
+																		id="SchduleRatingModifier1"
+																		type="text" class="form-control"
+																		size="3" maxlength="3"
+																		disabled="disabled"  />
+																	</div>
+																</div>
+																
+															</div>
+														</li>
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="error_SchduleRatingModifier2" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																			<div class="freeFormLabelWidth">
+																			<span id="eval:LawyersRule.isNotMissouriAndNewFiling">
+																			Firm Practice :
+																			</span>
+																			<span id="eval:LawyersRule.isMissouriAndNewFiling">
+																			Types of Clients :
+																			</span>
+																		</div>
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<input
+																		name="SchduleRatingModifier2"
+																		id="SchduleRatingModifier2"
+																		type="text" class="form-control"
+																		size="3" maxlength="3"
+																		disabled="disabled" />
+																	</div>
+																</div>
+															</div>
+														</li>
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="error_SchduleRatingModifier3" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																<div class="freeFormListTd labelAlign">
+																	<div class="freeFormLabelWidth">
+																			<span id="eval:LawyersRule.isNotMissouriAndNewFiling">
+																			Firm Ed. and Training :
+																			</span>
+																			<span id="eval:LawyersRule.isMissouriAndNewFiling">
+																			Internal Management :
+																			</span>	
+																		</div>
+																		</div>
+																	<div class="freeFormListTd tdInput">
+																		<input
+																		name="SchduleRatingModifier3"
+																		id="SchduleRatingModifier3"
+																		type="text" class="form-control"
+																		size="3" maxlength="3"
+																		disabled="disabled" />
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="error_SchduleRatingModifier3" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr" id="eval:LawyersRule.isMissouriAndNewFiling">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">
+																			<span >
+																			Classification Peculiarities :
+																			</span>
+																			
+																		</div>
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<input
+																		name="SchduleRatingModifier4"
+																		id="SchduleRatingModifier4"
+																		type="text" class="form-control"
+																		size="3" maxlength="3" disabled="disabled" />
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="error_SchduleRatingModifier3" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr" id="eval:LawyersRule.isMissouriAndNewFiling">
+																	<div class="freeFormListTd labelAlign">
+																		Years in Existence :
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<input
+																		name="SchduleRatingModifier5"
+																		id="SchduleRatingModifier5"
+																		type="text" class="form-control"
+																		size="3" maxlength="3" disabled="disabled" />
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="error_SchduleRatingModifier3" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr" id="eval:LawyersRule.isMissouriAndNewFiling">
+																	<div class="freeFormListTd labelAlign">
+																		Ethics and Moral Standing :
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<input
+																		name="SchduleRatingModifier6"
+																		id="SchduleRatingModifier6"
+																		type="text" class="form-control"
+																		size="3" maxlength="3"  disabled="disabled"/>
+																	</div>
+																</div>
+															</div>
+														</li>
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="error_ModifierComment" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">
+																			Underwriting Justification :
+																		</div>
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<textarea
+																		name="ModifierComment"
+																		id="ModifierComment"
+																		class="form-control" cols="35"
+																		rows="3" disabled="disabled" />
+																	</div>
+																</div>
+															</div>
+														</li>
+													</ul>
+													<ul class="inlineBlock">
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">
+																			Skip Tax Calculation :
+																		</div>
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<input
+																			type="radio" class="checkboxMargins"
+																			name="IsTaxCalculation"
+																			id="IsTaxCalculation" value="Y"
+																			disabled="disabled"  />
+																			Yes 
+																		<input type="radio"
+																			name="IsTaxCalculation"
+																			id="IsTaxCalculation" value="N"
+																			disabled="disabled" /> No
+																	</div>
+																</div>
+																
+															</div>
+														</li>
+														<li class="inlineBlock_1" id="eval:LawyersRule.isNotCFOrInsured">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">
+																			Special Issuance :
+																		</div>
+																	</div>
+																	<div class="freeFormListTd tdInput" >
+																		<input
+																			type="radio" class="checkboxMargins"
+																			name="IsSpecialIssuance"
+																			id="IsSpecialIssuance" value="Y"
+																			disabled="disabled"
+																			onclick="showSpecialIssuanceDiv();" />
+																			Yes <input type="radio"
+																			name="IsSpecialIssuance"
+																			id="IsSpecialIssuance"
+																			disabled="disabled" value="N"
+																			onclick="showSpecialIssuanceDiv();" />
+																			No
+																	</div>
+																</div>
+															</div>
+														</li>
+														<li class="inlineBlock_1" id="SpecialIssuanceCommentsDiv">
+															<div class="freeFormList form-group" id="eval:LawyersRule.isNotCFOrInsured">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<div id="" class="error"> </div>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">
+																			Comments :
+																		</div>
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<textarea
+																			name="SpecialIssuanceComments"
+																			id="SpecialIssuanceComments"
+																			class="form-control" cols="40"
+																			rows="3" readonly="readonly" />
+																	</div>
+																</div>
+															</div>
+														</li>
+													</ul>
+												</div>
+												<div align="right" style="padding-right: 62px;" id="eval:LawyersRule.isShowEditModifiers">
+													<a class="btn next"
+														href="javascript:submitform('quoteOption.html','quoteOption.editModifiers','','');"
+														>Edit Modifiers </a>
+												</div>
+											</div>
+											
+											<div id="eval:LawyersRule.IsNonModifierState">
+												<div class="error">
+													Note: Schedule modifiers are not allowed for this state.
+												</div>
+											</div>
+											
+										</div>
+										
+										<div class="col-sm-7" id="eval:LawyersRule.ShowGetAnotherOptionBlock">
+											<div id="eval:LawyersRule.isShowARepManualPriumBlock">
+											<div class="freeFormDiv form-inline">
+												<ul class="inlineBlock">
+													<li class="inlineBlock_1">
+														<div class="freeFormList form-group">
+															<div class="freeFormListTr">
+																<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																<div class="freeFormListTdError paddingLeft3">
+																<div id="error_limitIncreaseFlagError"	class="error"/>
+																	<div id="error_LimitSequence" class="error"> </div>
+																</div>
+															</div>
+															<div class="freeFormListTr">
+																<div class="freeFormListTd labelAlign">
+																	<div class="freeFormLabelWidth">
+																		Limits of Liability $ :
+																	</div>
+																</div>
+																<div class="freeFormListTd tdInput">
+																	<select
+																		name="LimitSequence"
+																		id="LimitSequence" class="form-control"
+																		onchange="makeDefenseOutsideRuleQuoteOption(this.value);">
+																			<option value="">Select</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+													</li>
+													<li class="inlineBlock_1">
+														<div class="freeFormList form-group">
+															<div class="freeFormListTr">
+																<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																<div class="freeFormListTdError paddingLeft3">
+																	<div id="" class="error"> </div>
+																</div>
+															</div>
+															<div class="freeFormListTr">
+																<div class="freeFormListTd labelAlign">
+																	<div class="freeFormLabelWidth">
+																		&nbsp;
+																	</div>
+																</div>
+																<div class="freeFormListTd tdInput">
+																	<span id="eval:LawyersRule.IsNotSountDakhota">
+																		<input type="checkbox" class="checkboxMargins"
+																		name="IsClaimExpensesType"
+																		id="IsClaimExpensesType" value="Y" /> Defense
+																		expenses paid in addition to the
+																		limits of liability
+																	</span>
+																	<!-- <div id="eval:LawyersRule.IsClaimExpenseOutsideOnly">
+																		<input type="checkbox"
+																		name="IsClaimExpensesType"
+																		id="IsClaimExpensesType"
+																		value="Y" checked="checked" class="checkboxMargins"
+																		disabled="disabled" /> Defense
+																		expenses paid in addition to the
+																		limits of liability
+																	</div>
+																	<div id="eval:LawyersRule.IsNotClaimExpenseOutsideOnly">
+																		<span id="eval:LawyersRule.IsNotSountDakhota">
+																			<input type="checkbox" class="checkboxMargins"
+																			name="IsClaimExpensesType"
+																			id="IsClaimExpensesType" value="Y" /> Defense
+																			expenses paid in addition to the
+																			limits of liability
+																		</span>
+																	</div> -->
+																</div>
+															</div>
+														</div>
+													</li>
+													<li class="inlineBlock_1">
+														<div class="freeFormList form-group">
+															<div class="freeFormListTr">
+																<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																<div class="freeFormListTdError paddingLeft3">
+																	<div id="" class="error"> </div>
+																</div>
+															</div>
+															<div class="freeFormListTr">
+																<div class="freeFormListTd labelAlign">
+																	<div class="freeFormLabelWidth">
+																		&nbsp;
+																	</div>
+																</div>
+																<div class="freeFormListTd tdInput">
+																	<input
+																		type="checkbox" class="checkboxMargins"
+																		name="IsDollarDefense"
+																		id="IsDollarDefense" 
+																		value="Y" />
+																	<!--<span
+																		id="eval:LawyersRule.IsDollarDefenseState"><input
+																			type="checkbox" class="checkboxMargins"
+																			name="IsDollarDefense"
+																			id="IsDollarDefense" 
+																			value="Y" disabled="disabled"
+																			checked="checked" /></span> 
+																		<span
+																		id="eval:LawyersRule.IsNotDollarDefenseState"><input
+																			type="checkbox" class="checkboxMargins"
+																			name="IsDollarDefense"
+																			id="IsDollarDefense" 
+																			value="Y" /></span> --> Deductible does not
+																		apply to defense expenses (first
+																		dollar defense)
+																</div>
+															</div>
+														</div>
+													</li>
+													<li class="inlineBlock_1">
+														<div class="freeFormList form-group">
+															<div class="freeFormListTr">
+																<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																<div class="freeFormListTdError paddingLeft3">
+																	<div id="" class="error"> </div>
+																</div>
+															</div>
+															<div class="freeFormListTr">
+																<div class="freeFormListTd labelAlign">
+																	<div class="freeFormLabelWidth">
+																		&nbsp;
+																	</div>
+																</div>
+																<div class="freeFormListTd tdInput">
+																	<input
+																		type="checkbox" class="checkboxMargins" name="IsManualPremium"
+																		id="IsManualPremium"
+																		value="Y"
+																		onclick="showDivAreaManualPremium('IsManualPremium','ManualPremium');" />
+																	Calculate manual premium
+																</div>
+															</div>
+														</div>
+													</li>
+													<li class="inlineBlock_1">
+														<div class="freeFormList form-group">
+															<div class="freeFormListTr">
+																<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																<div class="freeFormListTdError paddingLeft3">
+																	<div id="error_DeductibleSequence" class="error"> </div>
+																</div>
+															</div>
+															<div class="freeFormListTr">
+																<div class="freeFormListTd labelAlign">
+																	<div class="freeFormLabelWidth">
+																		Deductible $ :
+																	</div>
+																</div>
+																<div class="freeFormListTd tdInput">
+																	<select
+																		name="DeductibleSequence"
+																		id="DeductibleSequence"
+																		class="form-control"
+																		onchange="showHideRatingLink();">
+																			<option value="">Select</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+													</li>
+													<li class="inlineBlock_1">
+														<div class="freeFormList form-group">
+															<div class="freeFormListTr">
+																<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																<div class="freeFormListTdError paddingLeft3">
+																	<div id="" class="error"> </div>
+																</div>
+															</div>
+															<div class="freeFormListTr">
+																<div class="freeFormListTd labelAlign">
+																	<div class="freeFormLabelWidth">
+																		&nbsp;
+																	</div>
+																</div>
+																<div class="freeFormListTd tdInput">
+																	<input
+																	type="checkbox" class="checkboxMargins"
+																	name="IsClaimOptionType"
+																	id="IsClaimOptionType"
+																	value="Y" /> Annual Aggregate
+																</div>
+															</div>
+														</div>
+													</li>
+												</ul>
+											</div>
+											<div id="ManualPremium" style="display: none; padding-left: 207px; padding-top: 5px;">
+												<table cellpadding="0" style="padding-left: 10px" class="paddingTop10"
+													cellspacing="3" width="100%">
+													<!-- <tr>
+														<td width="21.5%" align="right">
+															Step</td>
+														<td width="8px">1:</td>
+														<td></td>
+													</tr>
+													<tr>
+														<td colspan="2"></td>
+														<td>
+															<div id="downloadLink"
+																style="display: none">
+																<a
+																	href="javascript:submitform('quoteOption.html','quoteOption.downloadexcelPremium','','');">Click here to
+																	download Excel</a>
+															</div>
+															<div id="downloadLinkText">
+																Click here to download Excel</div>
+
+														</td>
+													</tr>
+													<tr>
+														<td align="right">Step</td>
+														<td>2:</td>
+														<td></td>
+													</tr> -->
+													<tr>
+														<td colspan="2"></td>
+														<td>Enter Premium</td>
+													</tr>
+													<tr>
+														<td colspan="2"></td>
+														<td>
+															<div id="error_ManualPremium"
+																class="defult_tr_errors"></div>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="2"></td>
+														<td><input type="text"
+															class="inputbox"
+															name="ManualPremium"
+															id="ManualPremium" size="11"
+															maxlength="11" 
+															onclick="javascript:attachAmountFormat(this);"
+															onkeyup="limitAmountText(this,8);" />
+														</td>
+													</tr>
+												</table>
+											</div>
+											
+											<div align="left" class="paddingTop5" style="margin-left:200px;margin-top:20px;">
+												<div id="getLink">
+													<a class="btn next"
+														href="javascript:submitform('quoteOption.html','quoteOption.saveQuote','','');">Get Another
+														Quote Option</a>
+												</div>
+												<div id="saveLink" style="display: none">
+													<span> <a class="btn next"
+														href="javascript:submitform('quoteOption.html','quoteOption.saveQuote','','');">Get Manual
+															Premium</a>
+													</span>
+												</div>
+											</div>
+											</div>
+										</div>
+										
+									</div>
+									
+									<div class="row">
+										<div id="divAy" class="paddingTop10">
+											<div align="center">
+												<div id="freeform_contextdata_validatefield">
+													<input type="hidden" name="validate1" />
+													<input type="hidden" name="validate2" />
+												</div>
+												<div id="error_FinalisedQuote"
+													class="error"></div>
+												<div id="error_validate1"
+													class="error"></div>
+												<div id="error_validate2"
+													class="error"></div>
+											</div>
+											<div id="FinalDiv">
+											<div>
+												<table id="QuoteOption_list_01_0"
+													width="100%" border="0" cellpadding="0"
+													cellspacing="0" class="border1">
+
+													<tr id="QuoteOption_list_header_01_0">
+														<td>
+															<div  class="table-responsive">
+															<table width="100%" border="0"
+																align="left" class="gridTable" cellpadding="0"
+																cellspacing="0">
+																<tr>
+																	<th width="60"><span
+																		id="block_field_IsThisOptionFinalised">Select
+																			a Quote</span>
+																		<span id="block_field_TransactionSequence"></span>	
+																			</th>
+																		
+
+																	<th width="60"
+																		id="eval:LawyersRule.isAgent">
+																		<span
+																		id="block_field_IsQuoteSelected">Is
+																			Quote Selected</span>
+																		
+																	</th>
+																	
+																	<th width="90"
+																		id="block_field_InvoicedPremium">
+																		Total Due</th>
+																	<th width="220"
+																		id="block_field_LimitAmount">
+																		Limits</th>
+																	<th width="100"
+																		id="block_field_ClaimExpensesTypeText_row_link" >
+																		Defense expenses </th>
+																	<th width="90"
+																		id="block_field_DeductibleAmount">
+																		Deductibles</th>
+																	<th width="90" id="block_field_IsClaimOptionType">
+																		</th>
+																	<th width="90"
+																		id="block_field_IsDollarDefenseText">
+																		Loss Only Deductible</th>
+																	<th width="90"
+																		id="eval:LawyersRule.isAgent">
+																		<span id="totalModifiersSubproducer_security">
+																		<span
+																		id="block_field_TotalPolicyModifierPercentage">Total
+																			Modifiers</span>
+																			</span>
+																	</th>
+																	<th width="90" id="eval:LawyersRule.isAgent">
+																	<span id="block_field_TotalPolicyTaxAmount">
+																		Tax amount</span></th>
+																	<th width="90"
+																		id="block_field_TotalPremium">
+																		Premium</th>
+
+
+																	<!-- <td width="90" class="tableheading1"
+																		style="border-right: 1px solid #ffffff; padding-left: 2px"
+																		id="block_field_InvoicedPremium">
+																		Invoiced Premium</td> -->
+																	<th width="90"
+																		id="eval:LawyersRule.isAgent">
+																		<span
+																		id="block_field_IsManualPremiumText">Type</span>
+																	</th>
+																	<th width="20" align="left"
+																		id="eval:LawyersRule.isAgent">
+
+																		<span
+																		id="block_field_delete_row_link">
+																			&nbsp;</span>
+																	</th>
+
+																	<th width="20" align="left"
+																		id="eval:LawyersRule.isAgent">
+																		<span
+																		id="block_field_downloadrating_row_link">
+																			&nbsp;</span>
+																	</th>
+
+
+																</tr>
+																<tbody
+																	id="QuoteOption_list_mom_data_01_0">
+																	<tr id="mom_child_data">
+																		<td width="60">
+																			<span
+																				id="block_field_TransactionSequence"><input
+																					type="hidden"
+																					name="TransactionSequence"
+																					id="TransactionSequence"
+																					/></span>
+
+																			<span
+																			id="eval:LawyersRule.disableIsThisOptionFinalised">
+																				<span
+																				id="block_field_IsThisOptionFinalised"><input
+																					type="radio"
+																					name="IsThisOptionFinalised"
+																					id="IsThisOptionFinalised"
+																					value="Y" disabled="disabled" />
+																				
+																			</span>
+																		</span> <span
+																			id="eval:LawyersRule.enableIsThisOptionFinalised">
+																				<span
+																				id="block_field_IsThisOptionFinalised">
+																					<input type="radio"
+																					name="IsThisOptionFinalised"
+																					id="IsThisOptionFinalised"
+																					value="Y"
+																					onclick="javascript:submitform('quoteOption.html','quoteOption.finaliseQuote','','');" />
+																			</span>
+																		</span>
+
+																		</td>
+																		<td width="60"
+																			id="eval:LawyersRule.isAgent">
+																			<span
+																			id="eval:LawyersRule.enableIsQuoteSelected">
+																				<span
+																				id="block_field_IsQuoteSelected"><input
+																					name="IsQuoteSelected"
+																					type="checkbox"
+																					id="IsQuoteSelected" size="10"
+																					maxlength="3"
+																					onclick="javascript:submitform('quoteOption.html','quoteOption.selectQuote','','');"
+																						/>
+																					 <!-- onclick="javascript:getCheckedQuotations();" -->
+																					
+																					 
+																					  </span>
+																		</span> 
+																		<span
+																			id="eval:LawyersRule.disableIsQuoteSelected">
+																				<span
+																				id="block_field_IsQuoteSelected"><input
+																					name="IsQuoteSelected"
+																					type="checkbox"
+																					id="IsQuoteSelected" size="10"
+																					maxlength="3"
+																					onclick="javascript:getCheckedQuotations();"
+																					disabled="disabled" /> </span>
+																		</span>
+
+																		</td>
+																		<td width="90"
+																			id="block_field_InvoicedPremium"></td>
+																		<td width="210"
+																			id="block_field_LimitAmount"></td>
+
+																		<td width="100" id="block_field_ClaimExpensesTypeText">
+																			<!-- <span class="helptext gridHelpText" id="block_field_ClaimExpensesTypeText"> -->
+																			<!-- <span id="block_field_IsClaimExpensesType"></span> -->
+																			<!-- <span>&nbsp;</span>
+																			<span>
+																			
+																			</span> -->
+																			</span>
+																			</td>
+																		<td width="90"
+																			id="block_field_DeductibleAmount"></td>
+																		<td width="90"
+																			id="block_field_IsClaimOptionType"></td>
+																		<td width="90"
+																			id="block_field_IsDollarDefenseText"></td>
+																		<td width="90"
+																			id="eval:LawyersRule.isAgent">
+																			<span id="totalModifiersSubproducer_security">
+																			<span
+																			id="block_field_TotalPolicyModifierPercentage"></span>
+																			</span>
+																		</td>
+																		<td width="90" id="eval:LawyersRule.isAgent">
+																			<span id="block_field_TotalPolicyTaxAmount"></span>
+																			</td>
+																		<td width="90"
+																			id="block_field_TotalPremium"></td>
+																		<!-- <td width="90"
+																			style="border-right: 1px solid #cccccc; padding-left: 2px"
+																			id="block_field_InvoicedPremium"></td> -->
+																		<td width="90"
+																			id="eval:LawyersRule.isAgent">
+																			<span
+																			id="block_field_IsManualPremiumText"></span>
+																		</td>
+																		<td width="20" align="center"
+																			id="eval:LawyersRule.isAgent">
+																			<span
+																			id="eval:LawyersRule.ShowDeleteSaveConvertToFullQuote">
+																				<span id="block_field_IsFirstQuote">
+																				<span
+																				id="eval:LawyersRule.IsNotFirstQuote">
+																					<span
+																					id="eval:LawyersRule.UnderReviewQuotedStatus">
+																						<span
+																						id="block_field_delete_row_link"><a
+																							href="javascript:submitform('quoteOption.html','quoteOption.deleteQuote','','');"
+																							class="Link_blue"><img
+																								src="img/cross.gif" width="16"
+																								height="17" border="0"
+																								title="Delete" /> </a> </span>
+																				</span>
+																			</span>
+																			</span>
+																		</span>
+																		</td>
+
+																		<td width="20" align="center" id="eval:LawyersRule.isAgent">
+																			<div id="block_field_IsManualPremium">
+																			<span id="eval:LawyersRule.IsNotManualPremiumQuote">
+																				<span id="DownloadRatingSubproducer_security">
+																				<span
+																				id="block_field_downloadrating_row_link"><a
+																					href="javascript:submitform('quoteOption.html','quoteOption.downloadpdfrating','','');"
+																					class="Link_blue"><img
+																						src="img/icon_location.gif"
+																						title="Download Rating"
+																						alt="Download Rating" width="15"
+																						height="17" border="0" /> </a> </span>
+																		</span>
+																		</span>
+																		</div>
+																		</td>
+
+
+
+
+																	</tr>
+																</tbody>
+															</table>
+															</div>
+														</td>
+													</tr>
+												</table>
+											</div>
+											
+											
+											<div id="endorsementTransactionVisbility_security" style="margin-top:10px;">
+											<div style="font-weight:bold;">Endorsement Transactions :
+											<table id="QuoteOption_list_01_1"
+													width="100%" border="0" cellpadding="0"
+													cellspacing="0" class="border1">
+
+													<tr id="QuoteOption_list_header_01_1">
+														<td>
+															<div  class="table-responsive">
+															<table width="100%" border="0"
+																align="left" class="gridTable" cellpadding="0"
+																cellspacing="0">
+																<tr>
+																	
+																	<th width="60"
+																		id="">
+																		<span
+																		id="block_field_TransactionTypeDesc">Transaction Type</span>
+																		
+																	</th>
+																	<th width="60"
+																		id="">
+																		<span
+																		id="block_field_EndorsementEffectiveDate">Endorsement Effective Date</span>
+																		
+																	</th>
+																	<th width="60"
+																		id="">
+																		<span
+																		id="block_field_EndorsementIssuedDate">Endorsement Issued Date</span>
+																		
+																	</th>
+																	<th width="90"
+																		id="block_field_InvoicedPremium">
+																		Total Due</th>
+																	<th width="220"
+																		id="block_field_LimitAmount">
+																		Limits</th>
+																	<th width="100"
+																		id="block_field_ClaimExpensesTypeText_row_link" >
+																		Defense expenses </th>
+																	<th width="90"
+																		id="block_field_DeductibleAmount">
+																		Deductibles</th>
+																	<th width="90" id="block_field_IsClaimOptionType">
+																		</th>
+																	<th width="90"
+																		id="block_field_IsDollarDefenseText">
+																		Loss Only Deductible</th>
+																	<th width="90"
+																		id="eval:LawyersRule.isAgent">
+																		<span id="totalModifiersSubproducer_security">
+																		<span
+																		id="block_field_TotalPolicyModifierPercentage">Total
+																			Modifiers</span>
+																			</span>
+																	</th>
+																	<th width="90" id="eval:LawyersRule.isAgent">
+																	<span id="block_field_TotalPolicyTaxAmount">
+																		Tax amount</span></th>
+																	<th width="90"
+																		id="block_field_TotalPremium">
+																		Premium</th>
+
+
+																	
+																	<th width="90"
+																		id="eval:LawyersRule.isAgent">
+																		<span
+																		id="block_field_IsManualPremiumText">Type</span>
+																	</th>
+																	
+
+
+																</tr>
+																<tbody
+																	id="QuoteOption_list_mom_data_01_1">
+																	<tr id="mom_child_data">
+																		
+																		<td id="block_field_TransactionTypeDesc">
+																		
+																		</td>
+																		<td id="block_field_EndorsementEffectiveDate">
+																		
+																		</td>
+																		<td id="block_field_EndorsementIssuedDate">
+																		
+																		</td>
+																		<td width="90"
+																			id="block_field_InvoicedPremium"></td>
+																		<td width="210"
+																			id="block_field_LimitAmount"></td>
+
+																		<td width="100" id="block_field_ClaimExpensesTypeText">
+																		
+																			</span>
+																			</td>
+																		<td width="90"
+																			id="block_field_DeductibleAmount"></td>
+																		<td width="90"
+																			id="block_field_IsClaimOptionType"></td>
+																		<td width="90"
+																			id="block_field_IsDollarDefenseText"></td>
+																		<td width="90"
+																			id="eval:LawyersRule.isAgent">
+																			<span id="totalModifiersSubproducer_security">
+																			<span
+																			id="block_field_TotalPolicyModifierPercentage"></span>
+																			</span>
+																		</td>
+																		<td width="90" id="eval:LawyersRule.isAgent">
+																			<span id="block_field_TotalPolicyTaxAmount"></span>
+																			</td>
+																		<td width="90"
+																			id="block_field_TotalPremium"></td>
+																		<!-- <td width="90"
+																			style="border-right: 1px solid #cccccc; padding-left: 2px"
+																			id="block_field_InvoicedPremium"></td> -->
+																		<td width="90"
+																			id="eval:LawyersRule.isAgent">
+																			<span
+																			id="block_field_IsManualPremiumText"></span>
+																		</td>
+																
+																		</tr>
+																</tbody>
+															</table>
+															</div>
+														</td>
+													</tr>
+												</table>
+											</div></div>
+											</div>
+										</div> <!-- The code for agent ends here -->
+										<div id="divAn" class="hide"></div>
+									</div>
+									<div align="center">
+										<span class="Confirmation" id="UWReview_freeform_contextdata_1000">
+											<label class="Confirmation" name="pageMsgComment" id="pageMsgComment" />
+										</span>
+									</div>
+									<div class="freeFormDiv row form-inline paddingTop10" id="eval:LawyersRule.isAgent">
+										<div  id="Comment_freeform_contextdata_99">
+												<table border="0" align="center">
+													<tr>
+														<td colspan=""> 
+														<div style="float:left;">
+																<div class="text-nowrap">
+																	This quotation is subject to the following conditions :
+																</div>
+																<div class="freeFormListTd tdInput">
+																	<div id="quoteCommentOnQuoteHideShow_security">
+																	<div id="eval:LawyersRule.enableComment" style="padding-top:10px;"><textarea
+																			name="QuoteComment" id="QuoteComment"
+																			class="inputbox" cols="150" rows="3"
+																			onKeyUp="limitText(this,1,1000);"/></div>
+																	</div>
+																	<div id="eval:LawyersRule.disableComment" style="padding-top:10px;">
+																		<textarea name="QuoteComment" 
+																			id="QuoteComment" class="inputbox" cols="150"
+																			rows="3" readonly="readonly" />
+																	</div>
+																</div>
+																</div>
+																<div  id="quoteCommentOnQuote_security" style="float:left; padding-top:40px;"">
+																
+																	<div id="eval:LawyersRule.showCommentButton" >
+																		<div id="1eval:LawyersRule.isRatingState">
+																			<a class="btn next"
+																			href="javascript:submitform('quoteOption.html','quoteOption.saveComment','','');">Save</a>
+																		</div>
+																	</div>
+																
+																</div>
+															</td>
+															
+															
+													</tr>
+													<tr>
+															
+															<td colspan="2">
+																<div class="row paddingTop10" align="center">
+																<span id="eval:LawyersRule.isApplicationCompletlyFilledRule">
+																<span id="eval:LawyersRule.showAttachAdditionalFormsButton">
+																	 <a class="btn next" 
+																	href="javascript:submitform('additionalFormsData.html','quoteOption.additionalFormsData','','');">
+																	Attach Additional Forms</a>
+																</span>
+																</span>
+															 <span id="eval:LawyersRule.isAgent">
+															 <span id="eval:LawyersRule.isApplicationCompletlyFilledRule">
+															 	<span id="CompanyCodeVisibility_Security">
+																	<span id="eval:LawyersRule.isShowQuoteButtonsToSubProducer">
+																	<span id="eval:LawyersRule.showViewQuoteLetterButton">
+																		<span id="eval:LawyersRule.isRatingState">
+																		<span id="eval:LawyersRule.isQuoteEffectiveDateCheck">
+																				
+																			<a class="btn next"
+																				href="javascript:submitform('quoteOption.html','quoteOption.downloadViewQuoteLetter','','');">View Quote Letter</a>
+																		</span>
+																		</span>
+																	</span></span></span></span>
+																	
+																	<span id="eval:LawyersRule.isShowQuoteButtonsToSubProducer">
+																	 <span id="eval:LawyersRule.ValidateEffectiveDateRB">
+																	<span id="eval:LawyersRule.isPolicySendQuoteOrIssueForCompany">
+																	<span id="eval:LawyersRule.showSendQuoteLetterButton">
+																		<span id="eval:LawyersRule.isNotFollowUWFlow">
+																			<span id="eval:LawyersRule.isRatingsApproved">
+																				<span id="eval:LawyersRule.isRatingState">
+																				<span id="eval:LawyersRule.isQuoteEffectiveDateCheck">
+																				
+																					<a class="btn next"
+																						href="javascript:submitform('quoteOption.html','quoteOption.sendquoteletter','','');">Send Quote Letter</a>
+																				</span>
+																				</span>
+																			</span>
+																		</span>
+																	</span>
+																	</span>
+																	<span id="eval:LawyersRule.isNotFollowUWFlow">
+																		<span id="eval:LawyersRule.IsManagementAndNotQuoted">
+																		<span id="eval:LawyersRule.isRatingsApproved">
+																			<a onclick="getSelectedTransactionSequence();" class="btn next"
+																				href="javascript:submitform('quoteOption.html','quoteOption.changestatustoquoted','','');">Change to Quoted</a>
+																		</span></span>
+																	</span>
+																	</span>
+																	</span>
+																	
+																	<span id="eval:LawyersRule.isNotSubproducerLoggedIn">
+																	<span id="eval:LawyersRule.isChangeStatusVisibile">
+																		<span id="eval:LawyersRule.showWantToChangeApplication">
+																			<span id="eval:LawyersRule.isManagementOrAccountRepOrUnderwriter">
+																				<a class="btn next" href="javascript:submitform('quoteOption.html','quoteOption.changeapplication','','');">Want to Change
+																					Application?</a>
+																			</span>
+																		</span>
+																	</span>
+																	</span>
+																	 <span id="eval:LawyersRule.isApplicationCompletlyFilledRule">
+																	<span id="eval:LawyersRule.isNotSubproducerLoggedIn">
+																	<span id="eval:LawyersRule.isFollowUWFlow">
+																		<span id="eval:LawyersRule.isRatingsNotApproved">
+																			<a class="btn next"
+																				href="javascript:submitform('quoteOption.html','quoteOption.toUWReview','','');">Change to UW Review</a>
+																		</span>
+																	</span>
+																	</span>
+																	</span>
+																<span id="eval:LawyersRule.isSubproducerLoggedIn">									
+																	<span id="eval:LawyersRule.IsNotIssued">
+																		<a class="btn next"
+																			href="javascript:submitform('SubproducerUWReview.html','quoteOption.toUWReviewForSubproducer','','');">Change to UW Review</a>
+																	</span>
+																</span>
+																<span id="eval:LawyersRule.isSubproducerLoggedIn">	
+																<span id="eval:LawyersRule.isChangeStatusVisibile">
+																		<span id="eval:LawyersRule.showWantToChangeApplication">
+																		
+																			<!-- <a class="btn next"
+																					href="javascript:submitform('SubproducerUWReview.html','quoteOption.changeapplicationForSub','','');">Want to Change
+																					Application?</a> -->
+																			
+																		</span>
+																	</span>
+																</span>
+																
+																
+																</span>
+															</div>
+							
+															</td>
+													</tr>
+												</table>
+												</div>
+									</div>
+								</div>
+							</div>
+						
+							
+						</div>
+					</div>		
+				</div>
+				<div class="buttons borderTop row">
+						
+						<div class="floatRight">
+							<span id="eval:LawyersRule.showContinueButton">
+								<!-- href="javascript:submitform('indexThanksPayment.html|indexThanks.html|confirmation.html|quoteOption.html|firm.html|FirmNewApp.html','quoteOption.stepForward','forwardeval','LawyersRule.isNotPaymentDetailListData|LawyersRule.showIndexInsuredThanksPage|LawyersRule.showConfirmationPage|LawyersRule.isQuotationExpiredAndAgent|LawyersRule.isQuotationExpiredAndInsuredOldApp|LawyersRule.isQuotationExpiredAndInsuredNewApp');"> -->
+								 <a class="btn save" 
+								href="javascript:submitform('indexThanksPayment.html|confirmation.html|quoteOption.html|firm.html|FirmNewApp.html','quoteOption.stepForward','forwardeval','LawyersRule.isNotEmptyPaymentDetailListData|LawyersRule.showConfirmationPage|LawyersRule.isQuotationExpiredAndAgent|LawyersRule.isQuotationExpiredAndInsuredOldApp|LawyersRule.isQuotationExpiredAndInsuredNewApp');">
+								Continue</a>
+							</span>
+						</div>
+						
+					</div>
+			</div>
+			
+			  <div id="footer">
+				
+				 <span id="#Include:footer.html#"></span>
+			 </div>
+					  
+			 </div>
+		</div>
+<table id="QuoteOption_freeform_contextdata_17" cellpadding="0" cellspacing="0">
+	<tr>
+		<td>
+		<!-- <input type="text" name="FollowUnderwriterFlow" id="FollowUnderwriterFlow" />
+		<input type="text" name="isComingFromUWFlow" id="isComingFromUWFlow" /> -->
+		<input type="hidden" name="jsessionid" id="jsessionid" />
+		<input type="hidden" name="StateCode" id="StateCode" />
+		<input type="hidden" name="TransactionSequenceHidden" id="TransactionSequenceHidden" />
+		<input type="hidden" name="IsNewFiling" id="IsNewFiling" />
+		<input type="hidden" name="ProducerCode" id="ProducerCode" />
+		<input type="hidden" name="NMRatingVersion" id="NMRatingVersion" />
+		<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+		<input type="hidden" name="newPolicyForms" id="newPolicyForms" />
+		<input type="hidden" name="priorPolicyForms" id="priorPolicyForms" />
+	</tr>
+</table>
+
+<!--<div class="calendar_widget" id="calendar_widget">
+	<iframe id="calendar_widget_iframe" name="calendar_widget_iframe"
+		src="calendar_widget.html" frameborder="0" />
+</div> -->
+<input type="hidden" name="divHideShow" value="" />
+<input type="hidden" name="ctxmenuparam" value="" />
+
+	</form>
+
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+<script>
+	
+	
+	//populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage');
+	//populateTotalFieldValue('NumberOfPersonnel_','TotalFirmPersonnel');
+</script>
+</html>

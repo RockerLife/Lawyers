@@ -1,0 +1,47 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AttorneysInsurance">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AttorneysInsurance</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AttorneysInsurance</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into AttorneysInsurance(
+          <dynamic prepend=" " />
+          ) values (
+          <dynamic prepend=" " />
+          )
+          <selectKey resultClass="int" keyProperty="attorneysInsuranceId">SELECT IDENT_CURRENT('AttorneysInsurance') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select attorneysInsuranceId from AttorneysInsurance where attorneysInsuranceId = #attorneysInsuranceId#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update AttorneysInsurance set
+          <dynamic prepend=" " />
+          where attorneysInsuranceId = #attorneysInsuranceId#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from AttorneysInsurance where attorneysInsuranceId = #attorneysInsuranceId#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from AttorneysInsurance</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AttorneysInsurance</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select attorneysInsuranceId from AttorneysInsurance where attorneysInsuranceId = #attorneysInsuranceId#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select attorneysInsuranceId from AttorneysInsurance</select>
+     <parameterMap id="InsertAttorneyInsuranceInfo_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="insuranceCarrierFirstAttoryneyInsurance" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="policyPeriodFirstAttoryneyInsurance" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="limitDeductibleFirstAttoryneyInsurance" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="numberOfAttorneysFirstAttoryneyInsurance" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="premiumFirstAttoryneyInsurance" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="insuranceCarrierSecondAttorneyInsurance" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="policyPeriodSecondAttorneyInsurance" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="limitDeductibleSecondAttorneyInsurance" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="numberOfAttorneysSecondAttorneyInsurance" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="premiumSecondAttorneyInsurance" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="insuranceCarrierThirdAttorneyInsurance" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="policyPeriodThirdAttorneyInsurance" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="limitDeductibleThirdAttorneyInsurance" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="numberOfAttorneysForThirdAttorneyInsurance" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="premiumThirdAttorneyInsurance" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertAttorneyInsuranceInfo_p" parameterMap="InsertAttorneyInsuranceInfo_pMap">{ call InsertAttorneyInsuranceInfo_p(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

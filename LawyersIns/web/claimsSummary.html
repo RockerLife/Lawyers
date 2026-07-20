@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Claims Summary</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/jquery.treeview.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script src="js/jquery.dataTables1.10.19.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<form enctype="multipart/form-data">
+		<!-- Bootstrap Core JavaScript -->
+
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth">
+				<!---------Header Start---------->
+				<div id="header">
+					<span id="#Include:header.html#"></span>
+				</div>
+				<!---------Header End---------->
+
+				<div id="contentSection">
+
+					<div>
+						<h2 class="questionHeading">Claim Summary Screen</h2>
+					</div>
+					<div class="form row">
+						<div class="block-form">
+
+							<div class="paddingTop10">
+								<fieldset class="fieldsetTop">
+									<legend>Update Criteria</legend>
+									<table class="" width="100%" cellpadding="0" cellspacing="0">
+										<tr id="claimSummary_freeform_contextdata_01">
+											<td valign="bottom" nowrap="nowrap" width="11%">Select report to upload :</td>
+											<td valign="bottom">&nbsp;<input type="file" name="file_path" style="width: 99.8%" class="form-control" id="ajax_field_file_path" /></td>
+										</tr>
+										<tr>
+											<td valign="top" nowrap="nowrap" style="padding-top: 10px">Document Description :</td>
+											<td valign="top" style="padding-top: 10px" id="claimSummary_freeform_contextdata_02">
+												<textarea name="ReportDescription" class="form-control" style="width: 99.5%" id="ReportDescription" ></textarea>
+											</td>
+										</tr>
+										<tr>
+											<td></td>
+											<td align="right" style="padding-top: 10px"><a class="btn button1"
+										href="javascript:submitform('claimsSummary.html','claimsSummary.uploadReport','','');">
+											Upload </a></td>
+										</tr>
+									</table>
+								</fieldset>
+								<fieldset class="fieldsetTop">
+									<legend>Claim Reports</legend>
+									<table id="ClaimsReports_list_1" class="dataTables_grid border1" cellpadding="0" cellspacing="0" style="width: 100%;">
+										<thead>
+											<tr id="ClaimsReports_list_header_1" class="tableheading">
+												<th width="120px" id="block_field_ReportName">Report Name</th>
+												<th width="120px" id="block_field_ReportDescription">Report Description</th>
+												<th width="120px" id="block_field_ReportDate">Report Date</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr id="ClaimsReports_list_mom_data_1">
+												<td id="block_field_ReportName"></td>
+												<td id="block_field_ReportDescription"></td>
+												<td id="block_field_ReportDate"></td>
+											</tr>
+										</tbody>
+									</table>
+								</fieldset>
+								<fieldset class="fieldsetTop">
+									<legend>Claim Details</legend>
+									<table id="ClaimsSummary_list_1" class="dataTables_grid border1" cellpadding="0" cellspacing="0" style="width: 100%;">
+										<thead>
+											<tr id="ClaimsSummary_list_header_1" class="tableheading">
+												<th width="120px" id="block_field_Claim_Number">Claim Number</th>
+												<th width="120px" id="block_field_Policy_Number">Policy Number</th>
+												<th width="120px" id="block_field_Insurance_Company">Insurance Name</th>
+												<th width="120px" id="block_field_Policy_Effective_Date">Policy Effective Date</th>
+												<th width="120px" id="block_field_Policy_Expiration_Date">Policy Expiration Date</th>
+												<th width="120px" id="block_field_Date_Reported">Date Reported</th>
+												<th width="120px" id="block_field_Closed_Date">Closed Date</th>
+												<th width="150px" id="block_field_Incurred">Total Claim Amount</th>
+												<th width="140px" id="block_field_Current_Status">Current Status</th>
+												<th width="140px" id="block_field_Description">Claim Description</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr id="ClaimsSummary_list_mom_data_1">
+												<td id="block_field_Claim_Number"></td>
+												<td id="block_field_Policy_Number"></td>
+												<td id="block_field_Insurance_Company"></td>
+												<td id="block_field_Policy_Effective_Date"></td>
+												<td id="block_field_Policy_Expiration_Date"></td>
+												<td id="block_field_Date_Reported"></td>
+												<td id="block_field_Closed_Date"></td>
+												<td id="block_field_Incurred"></td>
+												<td id="block_field_Current_Status"></td>
+												<td id="block_field_Description"></td>
+											</tr>
+										</tbody>
+									</table>
+								</fieldset>
+							</div>
+							<br><br><br><br>
+						</div>
+						<div class="buttons borderTop row">
+							<a class="btn back floatLeft"
+								href="javascript:submitform('workq.html','claimsSummary.back','','');">
+								Back </a>
+
+						</div>
+					</div>
+					<!---------Footer Start---------->
+					<div id="footer" class="footer">
+						<span id="#Include:footer.html#"></span>
+					</div>
+					<!---------Footer End---------->
+					<table id="claimSummary_freeform_contextdata_999">
+						<tr>
+							<td><input type="hidden" name="jsessionid" id="jsessionid" />
+								<input type="hidden" name="divHideShow" id="divHideShow" /></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

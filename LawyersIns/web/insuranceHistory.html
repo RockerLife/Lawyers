@@ -1,0 +1,432 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Insurance History</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+
+<body
+	onload="showIsPriorActDateFullSection();showHideInsuranceHistory();makeDefenseOutsideRuleOnPageLoad();">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+	<form autocomplete="chrome-off"  name="myForm" enctype="multipart/form-data">
+		<!-- Bootstrap Core JavaScript -->
+
+		<div class="container-fluid bootstrap-node-1">
+
+			<div class="tableWidth" id="AppCompleted">
+				<!---------Header Start---------->
+
+				<div id="header">
+					<span id="#Include:header.html#"></span>
+				</div>
+
+
+				<!---------Header End---------->
+				<div class="menuTab">
+					<span id="#Include:tabs.html#"></span>
+				</div>
+				<div id="contentSection">
+					<div class="confirmationMsgAlign" id="insuranceHistory_freeform_contextdata_100">
+						<label class="Confirmation" name="pageMsg" id="pageMsg" />
+						<!-- <div id="error_ApplicationNotCompleted" class="error11Bold"/> -->
+						<div id="error_StatusUpdate" class="error11Bold"> </div>
+					</div>
+					<div>
+						<h2 class="questionHeading">
+							<span>2.</span> Insurance History
+						</h2>
+					</div>
+					<div class="form" style="min-height: 250px;"
+						id="insuranceHistory_freeform_contextdata_0">
+
+						<div class="block-form">
+							<div class="freeFormDiv form-inline">
+								<ul class="inlineBlock">
+									<li class="inlineBlock_1_fix">
+										<div class="freeFormList form-group">
+											<div class="freeFormListTr">
+												<div class="freeFormListTdError">
+													<h6>&nbsp;</h6>
+												</div>
+												<div class="freeFormListTdError paddingLeft3">
+													
+												</div>
+											</div>
+											<div class="freeFormListTr">
+												<div class="freeFormListTd">
+													<div class="txtbold">Do you currently carry
+														professional liability? :</div>
+												</div>
+												<div class="freeFormListTd tdInput">
+													<input type="radio"
+														name="IsFirmHaveLawyersLiabilityInsurance"
+														id="ajax_field_IsFirmHaveLawyersLiabilityInsurance"
+														value="Y"
+														onchange="showHideInsuranceHistory1()" /> Yes
+													&nbsp;&nbsp; <input type="radio"
+														name="IsFirmHaveLawyersLiabilityInsurance"
+														id="ajax_field_IsFirmHaveLawyersLiabilityInsurance"
+														tabindex="12" value="N"
+														onchange="showHideInsuranceHistory2()" /> No
+													<div id="error_IsFirmHaveLawyersLiabilityInsurance" class="error"> </div>
+												</div>
+											</div>
+										</div></li>
+								</ul>
+							</div>
+							
+							<div class="row insuranceFloat" style="padding-top: 15px;">
+								<div id="div1" style="Display:none;">
+									<div class="freeFormDiv borderRight">
+											<div class="row newFreeForm_UI" style="width: 100%">
+												<div class="row">
+													<!-- <div class="headingNew2">How much insurance do you want?</div> -->
+													<div class="headingNew2">Tell us about your current insurer</div> 
+												</div>
+												<div class="firmNewApp">
+													<div class="row">
+														<div class="col-sm-6">
+															<div class="form-group form-group2">
+																<label id="NewBusiness" class="">Insurance Company :</label>
+																<input class="form-control" type="text" 
+																	name="InsuranceCompanyNamePross"
+																	id="ajax_field_InsuranceCompanyNamePross" autocomplete="chrome-off"/>
+																<div id="error_InsuranceCompanyNamePross" class="error"></div>
+															</div>
+														</div>
+														<div class="col-sm-6">
+															<div class="form-group form-group-last">
+																<label class="asterisk">Policy expiration date :</label> 
+																<div class="iconsStyle3">
+																	<span class="input-group-addon"><i
+																		class="fa fa-calendar">&nbsp;</i>
+																	</span> <input type="text" class="form-control datepicker"
+																		id="ajax_field_PolicyExpirationDatePross"
+																		name="PolicyExpirationDatePross" 
+																		onkeyup="applyDateFormat(this,event);" autocomplete="chrome-off"></input>
+																</div>
+																<div id="error_PolicyExpirationDatePross" class="error"></div>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-sm-6">
+															<div class="form-group form-group2">
+																<label id="NewBusiness">What is your current premium? :</label> 
+																<input class="form-control" type="text"  autocomplete="chrome-off"
+																	name="ProInsPremium" id="ajax_field_ProInsPremium" onblur="loadAppointmentFeeInformation('ajax_field_ProInsPremium');"/>
+															</div>
+														</div>
+														<div class="col-sm-6">
+															<div class="form-group form-group-last">
+																<label class="asterisk">Current Limit :</label> 
+																<select name="LimitSequencePross" style="width: 96%;"
+																	id="ajax_field_LimitSequencePross" class="form-control"
+																	onchange="fillLimitOfLiability(this.value);">
+																	<option value="">- Select -</option>
+																</select>
+																<div id="error_LimitSequencePross" class="error"> </div>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-sm-6">
+															<div class="form-group">
+																<label class="asterisk">Current Deductible :</label> 
+																<select name="DeductibleSequencePross"
+																	id="ajax_field_DeductibleSequencePross"
+																	class="form-control"  
+																	onchange="fillDeductible(this.value);">
+																	<option value="">- Select -</option>
+																</select>
+																<div id="error_DeductibleSequencePross" class="error"> </div>
+															</div>
+														</div>
+														<div class="col-sm-6">
+															<div class="form-group" style="margin-right: 15px;">
+																<span class="spanBlock"> <input type="radio"
+																	class="inputMargin" id="ajax_field_IsClaimExpLiability"
+																	name="IsClaimExpLiability" value="DR"
+																	onclick="fillDefenseExpense(this.value);" /> Defense
+																	expenses reduce the limit of Liability  <span class="asterisk">&nbsp;</span></span> 
+																<span class="spanBlock"> <input
+																	type="radio" class="inputMargin"
+																	id="ajax_field_IsClaimExpLiability"
+																	name="IsClaimExpLiability"
+																	onclick="fillDefenseExpense(this.value);" value="DA"
+																	 /> Defense expenses are paid in addition to
+																	the Limit of Liability </span>
+																			
+																<div id="error_IsClaimExpLiability" class="error"></div>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-sm-6">
+															<div class="form-group">
+																<span class="spanBlock"> 
+																	<input class="inputMargin" name="IsPerClaim"
+																		id="ajax_field_IsPerClaim" type="radio"
+																		value="PC" onclick="fillClaim(this.value);" /> 
+																		Per Claim <span class="asterisk">&nbsp;</span>
+																</span>
+																<span class="spanBlock"> 
+																	<input name="IsPerClaim"
+																		class="inputMargin" type="radio" value="AA"
+																		id="ajax_field_IsPerClaim" 
+																		onclick="fillClaim(this.value);" /> 
+																	Annual Aggregate 
+																</span>
+																<div>
+																	<input name="IsProfDefenceExpense" class="inputMargin"
+																		type="checkbox" value="Y"
+																		id="ajax_field_IsProfDefenceExpense"
+																		onclick="fillFirstDollarDefence(this.value);" />
+																	Deductible does not apply to defense expenses <i class="italic">- first dollar defense</i>
+																	</div>
+																<div id="error_IsPerClaim" class="error"> </div>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-sm-6">
+															<div class="form-group">
+																<label class="asterisk">Prior Acts :</label> 
+																<span class="spanBlock">
+																	<input class="inputMargin" name="IsPriorActDateFull"
+																	id="ajax_field_IsPriorActDateFull" 
+																	type="radio" value="N" onchange="showPriorActsSection();" />
+																	Prior Acts Date 
+																</span> 
+																<span class="spanBlock" active="nonMandatory">
+																	<input class="inputMargin"
+																	name="IsPriorActDateFull" type="radio" 
+																	value="Y" id="ajax_field_IsPriorActDateFull"
+																	onchange="showFullActsSection();" />
+																	Full</span>
+																
+																<div id="error_IsPriorActDateFull" class="error"> </div>
+															</div>
+														</div>
+														<div class="col-sm-6">
+															<div class="form-group form-group-last">
+																<label class="txtbold">Please upload your current policy pdf, if available:</label>
+																<input type="file" name="file_path" id="file_path" class="form-control" accept="application/pdf" onchange="onSelectUploadInsuedFile(this);"  />
+																<input type="text" style="display: none;" name="path" id="path" />
+																<div id="error_DocFileName" class="error"></div>
+																<div id="error_DocUploadError" class="error"></div>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div id="priorActsSpecific" class="col-sm-6">
+															<div class="form-group form-group-last">
+																<label class="asterisk">What is your prior acts date? :</label> 
+																 <input type="text" style="width: 150px;"
+																	id="" placeholder="MM/DD/YYYY"
+																	name="PriorActDatePross" class="form-control"
+																	onkeyup="applyDateFormat(this,event);" autocomplete="chrome-off"/> 
+																<div id="error_PriorActDatePross" class="error"></div>
+															</div>
+														</div>
+														<div id="fullYear" class="col-sm-6">
+															<div class="form-group form-group-last">
+																<label class="asterisk">If Full prior acts, for how many years have you
+																	had continuous insurance? :</label> 
+																 <input type="text" class="form-control" style="width: 50px;"
+																	id="ajax_field_FirmYear" name="FirmYear" autocomplete="chrome-off"/>
+																<div id="error_FirmYear" class="error"></div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+									</div>		
+								</div>
+								<div id="div2" style="Display:none;">
+									<div class="freeFormDiv">
+										<div class="row newFreeForm_UI" style="width: 100%">
+											<div class="">
+												<div class="row">
+													<!-- <div class="headingNew2">How much insurance do you want?</div> -->
+													<div class="headingNew2">Tell us about the new insurance you want</div> 
+												</div>
+												<div class="row">
+													<div class="col-sm-6">
+														<div class="row">
+															<div class="col-sm-12">
+																<div class="form-group">
+																	<label class="asterisk">What limits would you like us to quote? :</label> 
+																	<select class="form-control" name="LimitSequence"
+																		id="ajax_field_LimitSequence" onchange="makeDefenseOutsideRule(this.value);">
+																		<option value="">- Select -</option>
+																	</select>
+																	<div id="error_LimitSequence" class="error"> </div>
+																</div>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<div class="form-group form-group-last">
+																	<label class="asterisk">What limit options would you like? :</label> 
+																	<div>
+																		<span class="spanBlock"> <input type="radio"
+																			class="inputMargin" 
+																			name="IsClaimExpensesType" value="N"
+																			id="ajax_field_IsClaimExpensesType" /><span id="lb1">Defense expenses
+																			reduce your limit</span>  </span>  <span
+																			class="spanBlock"> <input type="radio"
+																			class="inputMargin" 
+																			name="IsClaimExpensesType" value="Y"
+																			id="ajax_field_IsClaimExpensesType" /> Defense expenses
+																			are in addition to your limit </span>
+																		<div id="error_IsClaimExpensesType" class="error"></div>
+																	</div>
+																</div>
+															</div>
+														</div>
+														
+													</div>
+													<div class="col-sm-6">
+														<div class="row">
+															<div class="col-sm-12">
+																<div class="form-group form-group-last">
+																	<label class="asterisk">What Deductible amount would you like to see? :</label> 
+																	<select class="form-control" name="DeductibleSequence"
+																		id="ajax_field_DeductibleSequence" >
+																		<option value="">- Select -</option>
+																	</select>
+																	<div id="error_DeductibleSequence" class="error"> </div>
+																</div>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-sm-12">
+																<div class="form-group form-group-last">
+																	<label class="asterisk">Please tell us what deductible options you would like us to quote :</label> 
+																	<div>
+																		<span class="spanBlock"> <input class="inputMargin"
+																			type="radio" name="IsClaimOptionType"
+																			id="ajax_field_IsClaimOptionType" value="N" /> Per Claim
+																			<i class="italic"> - The deductible is paid for each
+																				claim during the policy period</i> </span> 
+																		<span class="spanBlock"> <input class="inputMargin"
+																			type="radio" name="IsClaimOptionType"
+																			id="ajax_field_IsClaimOptionType" value="Y" /> Annual
+																			Aggregate <i class="italic">- this deductible is paid
+																				only once for the first claim</i> </span>
+																	</div>
+																	<div>
+																		<input class="inputMargin" type="checkbox"
+																			id="ajax_field_IsDollarDefense" value="Y"
+																			name="IsDollarDefense" /> First Dollar Defense <i
+																			class="italic"> - Your deductible is not used for
+																			defense expenses</i>
+																	</div>
+																	<div id="error_IsClaimOptionType" class="error"> </div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+									</div>								
+								</div>
+							</div>
+							
+						</div>
+
+
+					</div>
+					<div class="buttons borderTop row">
+						<a class="btn back floatLeft"
+							href="javascript:submitform('FirmNewApp.html','insuranceHistory.back','','');"
+							>Back</a>
+
+						<div class="floatRight">
+							<span id="showPageSave"> <a class="btn save"
+								href="javascript:submitform('Attorneys.html|workq.html','insuranceHistory.save','forwardeval','LawyersRule.isPolicyStatusNotUpdated|LawyersRule.isPolicyStatusUpdated');"
+								> Save&nbsp;&&nbsp;Continue</a> </span> <span
+								id="showContinue"> <a class="btn next" tabindex="36"
+								href="javascript:submitform('lawPractice.html|workq.html','insuranceHistory.continue','forwardeval','LawyersRule.isPolicyStatusNotUpdated|LawyersRule.isPolicyStatusUpdated');">Continue</a>
+							</span>
+						</div>
+					</div>
+
+				</div>
+				<!---------Footer Start---------->
+
+				<div id="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+
+				<table id="insuranceHistory_freeform_contextdata_999">
+					<tr>
+						<td><input type="hidden" name="jsessionid" id="jsessionid" />
+							<input type="hidden" name="divHideShow" id="divHideShow" /> 
+							<input type="hidden" name="perClaim" id="perClaim" /> 
+							<input type="hidden" name="claimExpensesType" id="claimExpensesType" />
+							<input type="hidden" name="StateCode" id="StateCode" />
+							<input type="hidden" name="IsNewFiling" id="IsNewFiling" />
+							<input type="hidden" name="NMRatingVersion" id="NMRatingVersion" />
+							<input type="text" style="display: none;" name="SearchType" id="SearchType" />	
+						
+							<input type="hidden" name="firmNewAppPage" id="firmNewAppPage"/>
+							<input type="hidden" name="insuranceHistoryPage" id="insuranceHistoryPage" />						
+							
+							<input type="hidden" name="bankruptcySuppPage" id="bankruptcySuppPage" />
+							<input type="hidden" name="collectionSuppPage" id="collectionSuppPage" />
+							<input type="hidden" name="copyrightSuppPage" id="copyrightSuppPage" />
+							<input type="hidden" name="familyLawSuppPage" id="familyLawSuppPage" />
+							<input type="hidden" name="financialSuppPage" id="financialSuppPage" />
+							<input type="hidden" name="governmentSuppPage" id="governmentSuppPage" />
+							<input type="hidden" name="litigationSuppPage" id="litigationSuppPage" />
+							<input type="hidden" name="realEstateSuppPage" id="realEstateSuppPage" />
+							<input type="hidden" name="willStateSuppTrustPage" id="willStateSuppTrustPage"/>
+							<input type="hidden" name="taxSuppPage" id="taxSuppPage" />
+													
+							<input type="hidden" name="aboutFirmPage" id="aboutFirmPage" />
+							<input type="hidden" name="aboutFirmRenewalPage" id="aboutFirmRenewalPage" />
+							<input type="hidden" name="PolicyStatusKey" id="PolicyStatusKey" />
+							<input type="hidden" name="practiceManagementPage" id="practiceManagementPage" />
+							<input type="hidden" name="morePracticeManagementPage" id="morePracticeManagementPage"/>
+							<input type="hidden" name="underWritingInfoPage" id="underWritingInfoPage" />
+							<input type="hidden" name="pastClaimsPage" id="pastClaimsPage" />
+							<input type="hidden" name="isElectronicInsurancePage" id="isElectronicInsurancePage" />
+							<script type="text/javascript" src="script/manageTab.js"></script>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="StatusValidation_freeform_contextdata_9990">
+		<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+	</div>
+	</form>
+	
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

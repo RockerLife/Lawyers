@@ -1,0 +1,654 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>What type of Law do you practice?</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+<style type="text/css">
+	#lawPracticeDiv .tab-content {
+		box-sizing: border-box;
+		margin: 8px 16px 0 16px;
+		max-width: none;
+		width: calc(100% - 32px);
+	}
+	#lawPracticeDiv #aop_search,
+	#lawPracticeDiv #aop_list,
+	#lawPracticeDiv #aop_list + div {
+		box-sizing: border-box;
+		width: 49.4% !important;
+	}
+	#lawPracticeDiv #aop_list > table,
+	#lawPracticeDiv #aop_list + div > table {
+		padding-top: 20px !important;
+	}
+	#lawPracticeDiv .gridTable {
+		background: #ffffff;
+		border: 1px solid #c8d7e4;
+		border-collapse: collapse;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+		table-layout: fixed;
+		width: 100% !important;
+	}
+	#lawPracticeDiv .gridTable th {
+		background: #e3e3e3;
+		border-bottom: 1px solid #d1d1d1;
+		color: #222222;
+		font-family: Arial;
+		font-size: 14px;
+		font-weight: bold;
+		line-height: 16px;
+		padding: 7px 5px;
+		text-align: center;
+		vertical-align: middle;
+	}
+	#lawPracticeDiv .gridTable th#block_field_AOPDesc,
+	#lawPracticeDiv .gridTable th#block_field_AopSearch {
+		text-align: left;
+		padding-left: 14px;
+	}
+	#lawPracticeDiv .gridTable td {
+		border-bottom: 1px solid #dde7ef;
+		color: #333333;
+		font-family: Arial;
+		font-size: 14px;
+		padding: 6px 5px;
+		vertical-align: middle;
+	}
+	#lawPracticeDiv .gridTable table {
+		border-collapse: collapse;
+		table-layout: fixed;
+	}
+	#lawPracticeDiv .gridTable .law_scroll table tr:nth-child(even) td {
+		background: #f8fbfd;
+	}
+	#lawPracticeDiv .gridTable input[type=text],
+	#lawPracticeDiv .gridTable textarea {
+		box-sizing: border-box;
+		font-family: Arial;
+		font-size: 14px;
+	}
+	#lawPracticeDiv .gridTable input[type=text] {
+		height: 30px;
+		margin: 0 auto;
+		max-width: 100%;
+		text-align: center;
+	}
+	#lawPracticeDiv #ajax_field_AopSearch {
+		font-family: Arial;
+		font-size: 14px;
+		height: 30px;
+		max-width: 100%;
+	}
+	#lawPracticeDiv .aopName,
+	#lawPracticeDiv .RowStyle,
+	#lawPracticeDiv .areaOfPractice {
+		text-align: left;
+	}
+	#lawPracticeDiv .aopPercentage,
+	#lawPracticeDiv .aopPageSave {
+		text-align: center;
+	}
+	#lawPracticeDiv #AOP_Percentage,
+	#lawPracticeDiv #AOP_PercentageOld,
+	#lawPracticeDiv #PriorAopPercentage,
+	#lawPracticeDiv #TotalAOP_Percentage {
+		width: 82px !important;
+	}
+	#lawPracticeDiv .delete_icon {
+		color: #b91c1c !important;
+		font-size: 16px;
+	}
+	#lawPracticeDiv .law_scroll {
+		background: #ffffff;
+	}
+	#lawPracticeDiv .tab-content .floatRight {
+		margin-top: 6px;
+	}
+</style> </head>
+<body
+	onload="showOtherDesc();toggleDivDisplay('ajaxxmlAopSearch_AopSearch');isAreasofPracticeValueChange();">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+	<form>
+
+		<!-- Bootstrap Core JavaScript -->
+
+		<div class="container-fluid bootstrap-node-1" id="lawPracticeDiv">
+			<div class="tableWidth" id="AppCompleted">
+				<div id="header">
+					<span id="#Include:header.html#"></span>
+				</div>
+				<div class="menuTab">
+					<span id="#Include:tabs.html#"></span>
+				</div>
+				<div id="contentSection">
+					<div class="confirmationMsgAlign" id="lawPractice_freeform_contextdata_1100">
+						<!-- <div id="error_ApplicationNotCompleted" class="error11Bold"> </div> -->
+						<div id="error_StatusUpdate" class="error11Bold"> </div>
+					</div>
+					<div id="NewBusiness">
+						<h2 class="questionHeading">
+							<span>4.</span> What type of Law do you practice? </h2>
+					</div>
+					<div id="RenewBusiness">
+						<h2 class="questionHeading">Please update your areas of practice</h2>
+					</div>
+					<div class="form">
+						<div class="questionBlock" style="min-height: 210px; width: 100%; clear: both">
+							<table class="form-table" style="padding-top: 10px" width="100%" cellpadding="0" cellspacing="0">
+								<tr id="RenewBusiness">										
+									<td class="paddingTop20">	
+										<div id="aoprenewalNew_security">
+											<div id="error_IsAOPChange" class="error"></div>										
+											<span class="mendatory">*</span>Has the distribution of your Areas of Practice changed?
+											<span id="lawPractice_freeform_contextdata_101" class="paddingLeft20">
+												<span>
+													<input type="radio" name="IsAOPChange" id="IsAOPChangeY" value="Y" onchange="isAreasofPracticeValueChange();"/> Yes</span>
+												<span class="paddingLeft20">
+													<input type="radio" name="IsAOPChange" id="IsAOPChangeN" value="N" onchange="javascript:submitform('lawPractice.html','lawPractice.backToPriorYear','','');"/> No</span>
+											</span>
+										</div>
+									</td>
+								</tr>
+								<tr id="RenewBusiness">
+									<td colspan="3">
+										<span>
+											Please update your areas of practice. 
+											<img src="image/AddAop.png" width="80" height="20" />
+										</span>
+									</td>
+								</tr>
+								<tr>
+									<td valign="top" align="right">
+										<table cellpadding="0" cellspacing="0" width="100%">
+											<tr>
+												<td class="">
+													<i>(Not sure what category your Area of Practice fits, please use the AOP search tab.)</i>
+												</td>
+											</tr>
+											<tr>
+												<td style="padding-top: 0px;" valign="top">
+													<div>
+														<ul class="nav nav-tabs">
+															<li id="aop_list_btn" class="active">
+																<a data-toggle="tab" onclick="javascript:setAccountType2('aop_list');">AOP List</a>
+															</li>
+															<li id="aop_search_btn">
+																<a data-toggle="tab" onclick="javascript:setAccountType2('aop_search');">AOP Search</a>
+															</li>
+														</ul>
+														<div class="tab-content row">
+															<div id="aop_search" class="tab-pane in fade" style="width: 49%; float: left;">
+																<table cellpadding="0" cellspacing="0" width="100%" style="padding-top: 19px;">
+																	<tr>
+																		<td>
+																			<table cellpadding="0" cellspacing="0" width="100%">
+																				<tr>
+																					<td width="10%">
+																						<input name="AopSearch" class="form-control-400" id="ajax_field_AopSearch" type="text" placeholder="Describe what you do?" autocomplete="chrome-off"/>
+																					</td>
+																					<td width="1%" id="hideIcon">
+																						<a id="ajax_field_AopSearchLink" onclick="javascript:setAccountType2('aop_search'); Showdiv()" href="javascript:submitform('lawPractice.html','lawPractice.getAopSearchResult','');">
+																							<img src="img/searchIco.png" />
+																						</a>
+																					</td>
+																					<td>
+																						<div style="float: right;">
+																							<span id="showPageSave">
+																								<a id="addAopNewApp" class="btn add" onclick="javascript:setAccountType2('aop_search');getLoc();" href="javascript:submitform('lawPractice.html','lawPractice.saveAOP','','');"> Add AOP </a>
+																							</span>
+																						</div>
+																					</td>
+																				</tr>
+																			</table>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<div id="lawPractice">
+																				<table id="ajaxxmlAopSearch_AopSearchResult_list_01" class="gridTable" cellpadding="0" cellspacing="0" align="left">
+																					<tr id="ajaxxmlAopSearch_AopSearchResult_list_header_01">
+																						<th width="1%" id="block_field_AOPKey"/>
+																						<th width="49%" id="block_field_AopSearch" height="25px">Area of Practice</th>
+																					</tr>
+																					<tr>
+																						<td colspan="2" style="padding: 0px;">
+																							<div class="law_scroll" style="width: 100%; height: auto; min-height: auto; max-height: 200px;" id="eval:LawyersRule.showHideAopSearchResult">
+																								<table cellpadding="0" cellspacing="0" width="100%">
+																									<tr id="ajaxxmlAopSearch_AopSearchResult_list_data_01">
+																										<td valign="middle" width="5%" id="block_field_AOPKey">
+																											<input name="AOPKey" id="ajax_field_AOPKey" type="checkbox" onclick="getLoc()" />
+																										</td>
+																										<td id="block_field_AopSearch" width="95%"/>
+																									</tr>
+																								</table>
+																							</div>
+																						</td>
+																					</tr>
+																				</table>
+																			</div>
+																		</td>
+																	</tr>
+																</table>
+															</div>
+															<div id="aop_list" class="tab-pane fade active" style="width: 49%; float: left;">
+																<table cellpadding="0" cellspacing="0" width="100%" style="padding-top: 28px;">
+																	<tr>
+																		<td>
+																			<table cellpadding="0" cellspacing="0" width="100%">
+																				<tr>
+																					<td valign="middle">&nbsp;What are your Areas of Practice?</td>
+																					<td/>
+																				</tr>
+																			</table>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<table cellpadding="0" cellspacing="0" width="100%" id="aoplist_list_1" class="gridTable">
+																				<tr class="tableheading" id="lawPractice_list_header_01">
+																					<th width="5%" class="HeaderStyle" id="block_field_AOPKey"/>
+																					<th width="95%" height="25px" class="HeaderStyle" id="block_field_AOPDesc">Area of Practice</th>
+																				</tr>
+																				<tr>
+																					<td colspan="2" style="padding: 0px;">
+																						<div class="law_scroll" style="height: 230px;">
+																							<table cellpadding="0" cellspacing="0" width="100%" class="add_claim borderNone no-borders">
+																								<tr id="lawPractice_list_data_1">
+																									<td width="5%" id="block_field_AOPKey">
+																										<input type="checkbox" id="AOPKey" name="AOPKey" onclick="getLoc()" />
+																									</td>
+																									<td class="RowStyle" id="block_field_AOPDesc" />
+																								</tr>
+																							</table>
+																						</div>
+																					</td>
+																				</tr>
+																			</table>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<div class="floatRight">
+																				<span id="showPageSave">
+																					<a id="addAopNewApp" class="btn add" onclick="javascript:setAccountType2('aop_list');getLoc();" href="javascript:submitform('lawPractice.html','lawPractice.saveAOP','','');"> Add AOP </a>
+																				</span>
+																			</div>
+																		</td>
+																	</tr>
+																</table>
+															</div>
+															<div style="width: 49%; float: right;">
+																<div id="aoprenewalOld_security">
+																<table cellpadding="0" cellspacing="0" width="100%" style="padding-top: 34px" id="RenewBusiness">
+																	<tr>
+																		<td class="">Prior Application(for your reference)</td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<table cellpadding="0" cellspacing="0" id="PriorYearAop_list_01" class="gridTable" align="left" style="width: 99.5%; margin-left: 4px;">
+																				<thead>
+																					<tr id="PriorYearAop_list_header_01">
+																						<th width="90%" height="25px" id="block_field_DescAOP">Area of Practice</th>
+																						<th id="block_field_priorYearPercentage">Percentage</th>
+																					</tr>
+																				</thead>
+																				<tbody id="enableDisablePageContent">
+																					<tr id="PriorYearAop_list_mom_data_2">
+																						<td id="block_field_DescAOP">
+																							<input type="hidden" name="DescAOP" id="DescAOP" />
+																							<label id="DescAOP" name="DescAOP" />
+																						</td>
+																						<td id="block_field_priorYearPercentage" valign="middle" nowrap>
+																							<input name="PriorAopPercentage" id="PriorAopPercentage" placeholder="%" type="text" style="width: 70px;" autocomplete="chrome-off"/> &nbsp;
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</td>
+																	</tr>
+																	<tr id="litigationDefensefPriorDescId">
+																		<td colspan="2" align="right">
+																			<table id="lawPractice_freeform_contextdata_051">
+																				<tr id="eval:LawyersRule.showHideOtherAopDesc">
+																					<td>Litigation defense other Description :</td>
+																					<td id="enableDisablePageContent">
+																						<textarea rows="2" cols="30" style="width: 300px; height: 70px;" name="litDefensePriorOtherDesc" id="ajax_field_litDefensePriorOtherDesc"/>
+																					</td>
+																				</tr>
+																			</table>
+																		</td>
+																	</tr>
+																	<tr id="litigationPlaintiffPriorDescId">
+																		<td colspan="2" align="right">
+																			<table id="lawPractice_freeform_contextdata_041">
+																				<tr id="eval:LawyersRule.showHideOtherAopDesc">
+																					<td>Litigation plaintiff other Description :</td>
+																					<td id="enableDisablePageContent">
+																						<textarea rows="2" cols="30" style="width: 300px; height: 70px;" name="litPlaintiffPriorOtherDesc" id="ajax_field_litPlaintiffPriorOtherDesc"/>
+																					</td>
+																				</tr>
+																			</table>
+																		</td>
+																	</tr>
+																	<tr id="otherPriorDescId">
+																		<td colspan="2" align="right">
+																			<table id="lawPractice_freeform_contextdata_001">
+																				<tr id="eval:LawyersRule.showHideOtherAopDesc">
+																					<td>Description :</td>
+																					<td id="enableDisablePageContent">
+																						<textarea rows="2" cols="30" style="width: 300px; height: 70px;" name="otherAopDescPriorYear" id="ajax_field_otherAopDescPriorYear"/>
+																					</td>
+																				</tr>
+																			</table>
+																		</td>
+																	</tr>
+																</table>
+																</div>
+																<table cellpadding="0" cellspacing="0" width="100%">
+																	<tr>
+																		<td class="" colspan="2">
+																			<div>
+																				<table>
+																					<tr id="RenewBusiness">
+																						<td>
+																							<span class="mendatory">*</span>Current Application (please choose from the list to the left)
+																						</td>
+																					</tr>
+																					<tr>
+																						<td valign="top" style="padding-left: 9px">Enter the percentage of revenue for each area below for the past fiscal year</td>
+																					</tr>
+																				</table>
+																			</div>
+																			<!-- <div id="NewBusiness">
+																				<span class="mendatory">*</span>Enter the percentage of revenue for each area below for the past fiscal year.
+																			</div> -->
+																		</td>
+																	</tr>
+																	<tr>
+																		<td colspan="2">
+																			<div id="aoprenewalNew_security">
+																			<table cellpadding="0" cellspacing="0" id="aoplist_list_2" class="gridTable" align="left" style="width: 99.5%; margin-left: 4px;">
+																				<thead>
+																					<tr id="aoplist_list_header_2">
+																						<th width="52%" height="25px" id="block_field_AOPDesc">Area of Practice</th>
+																						<th width="17%">
+																							<div id="RenewBusiness">
+																								<span id="block_field_PercentageOld" >Prior Application</span>
+																							</div>
+																						</th>
+																						<th id="block_field_percentage" width="20%">Current Percentage</th>
+																						<th id="showPageSave" width="5%">
+																							<span id="block_field_deletelink_row_link" />
+																						</th>
+																						<th id="block_field_IsEdit" style="display: none;" />
+																					</tr>
+																				</thead>
+																				<tbody id="eval:LawyersRule.showHidelawPracticeList">
+																					<tr>
+																						<td colspan="6" style="padding: 0px;">
+																							<div class="law_scroll" style="height: 223px;">
+																								<table width="100%">
+																									<tr id="aoplist_list_mom_data_2">
+																										<td id="block_field_AOPDesc" class="aopName" width="53%">
+																											<input type="hidden" name="AOPDesc" id="AOPDesc" />
+																											<label id="AOPDesc" name="AOPDesc" />
+																										</td>
+																										<td valign="middle" class="aopPercentage" width="18%">
+																											<div id="RenewBusiness">
+																												<div id="block_field_PercentageOld">
+																													<input name="AOP_PercentageOld" readonly="readonly" id="AOP_PercentageOld" maxlength="3" type="text" autocomplete="chrome-off"
+																													onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage');" style="width: 70px; margin-left: 0px;" /> 
+																												</div>
+																											</div>
+																										</td>
+																										<td valign="middle" class="aopPercentage" width="18%">
+																											<div id="block_field_percentage" >
+																												<input name="AOP_Percentage" id="AOP_Percentage" placeholder="%" maxlength="3" type="text"  autocomplete="chrome-off"
+																												onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage');" style="width: 70px; margin-left: 0px;" onkeypress="return IsNumeric(this, event, true, true, '');" ondrop="return false;" onpaste="return false;"/>
+																											</div>
+																										</td>
+																										<td id="showPageSave" class="aopPageSave" width="5%">
+																											<div id="eval:LawyersRule.isAOPDeleteButtonShow">
+																												<div id="block_field_deletelink_row_link">
+																													<!-- <a href="javascript:ajaxpageblocklink('lawPractice.html','lawPractice.deleteAOP','','','lawPracticeDiv');" class="Link_blue"> -->
+																													<a href="javascript:submitform('lawPractice.html','lawPractice.deleteAOP','','');" class="Link_blue">
+																														<i class="fa fa-times delete_icon">&nbsp;</i>
+																													</a>
+																												</div>
+																											</div>
+																										</td>
+																										<td id="block_field_IsEdit" style="display: none;">
+																											<input type="hidden" name="IsEdit" id="IsEdit" />
+																										</td>
+																									</tr>
+																								</table>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																				<tfoot> </tfoot>
+																			</table>
+																			</div>
+																			<div id="aoprenewalOld_security">
+																				<table cellpadding="0" cellspacing="0" id="aoplist_list_2" class="gridTable" align="left" style="width: 99.5%; margin-left: 4px;">
+																					<thead>
+																						<tr id="aoplist_list_header_2">
+																							<th width="77%" height="25px" id="block_field_AOPDesc">Area of Practice</th>
+																							<th id="block_field_percentage" width="18%">Percentage</th>
+																							<th id="block_field_AOPDesc" />
+																							<th id="showPageSave" width="5%">
+																								<span id="block_field_deletelink_row_link" />
+																							</th>
+																						</tr>
+																					</thead>
+																					<tbody id="eval:LawyersRule.showHidelawPracticeList">
+																						<tr id="aoplist_list_mom_data_2">
+																							<td class="areaOfPractice" colspan="4">
+																								<table width="100%">
+																									<tr>
+																										<td id="block_field_AOPDesc" class="aopName" width="75%">
+																											<input type="hidden" name="AOPDesc" id="AOPDesc" />
+																											<label id="AOPDesc" name="AOPDesc" />
+																										</td>
+																										<td id="block_field_percentage" valign="middle" class="aopPercentage" width="20%">
+																											<input name="AOP_Percentage" id="AOP_Percentage" placeholder="%" type="text" onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage');" style="width: 70px;" /> &nbsp;</td>
+																										<td id="showPageSave" class="aopPageSave" width="5%">
+																											<div id="block_field_deletelink_row_link">
+																												<!-- <a href="javascript:ajaxpageblocklink('lawPractice.html','lawPractice.deleteAOP','','','lawPracticeDiv');" class="Link_blue"> -->
+																												<a href="javascript:submitform('lawPractice.html','lawPractice.deleteAOP','','');" class="Link_blue">
+																													<i class="fa fa-times delete_icon">&nbsp;</i>
+																												</a>
+																											</div>
+																										</td>
+																									</tr>
+																								</table>
+																							</td>
+																						</tr>
+																					</tbody>
+																					<tfoot> </tfoot>
+																				</table>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr id="litigationDefensefDescId">
+																		<td colspan="2" align="right">
+																			<table id="lawPractice_freeform_contextdata_011">
+																				<tr>
+																					<td/>
+																					<td colspan="2">
+																						<div id="error_litDefenseOtherDesc" class="error" />
+																					</td>
+																				</tr>
+																				<tr id="eval:LawyersRule.showHideOtherAopDesc">
+																					<td>Litigation defense other Description :</td>
+																					<td>
+																						<textarea rows="2" cols="30" style="width: 300px; height: 70px;" name="litDefenseOtherDesc" id="ajax_field_litDefenseOtherDesc"/>
+																					</td>
+																				</tr>
+																			</table>
+																		</td>
+																	</tr>
+																	<tr id="litigationPlaintiffDescId">
+																		<td colspan="2" align="right">
+																			<table id="lawPractice_freeform_contextdata_021">
+																				<tr>
+																					<td/>
+																					<td colspan="2">
+																						<div id="error_litPlaintiffotherDesc" class="error" />
+																					</td>
+																				</tr>
+																				<tr id="eval:LawyersRule.showHideOtherAopDesc">
+																					<td>Litigation plaintiff other Description :</td>
+																					<td>
+																						<textarea rows="2" cols="30" style="width: 300px; height: 70px;" name="litPlaintiffotherDesc" id="ajax_field_litPlaintiffotherDesc"/>
+																					</td>
+																				</tr>
+																			</table>
+																		</td>
+																	</tr>
+																	<tr id="otherDescId">
+																		<td colspan="2" align="right">
+																			<table id="lawPractice_freeform_contextdata_031">
+																				<tr>
+																					<td/>
+																					<td colspan="2">
+																						<div id="error_otherAopDescLaw" class="error" />
+																					</td>
+																				</tr>
+																				<tr id="eval:LawyersRule.showHideOtherAopDesc">
+																					<td>Other Aop Description :</td>
+																					<td>
+																						<textarea rows="2" cols="30" style="width: 300px; height: 70px;" name="otherAopDescLaw" id="ajax_field_otherAopDescLaw"/>
+																					</td>
+																				</tr>
+																			</table>
+																		</td>
+																	</tr>
+																	<tr id="row1">
+																		<td style="text-align: right; border-bottom: none;">Total <i class="italic">(must equal 100%)</i>
+																		</td>
+																		<td valign="middle" nowrap style="border-bottom: none;">
+																			<!-- <input type="text" style="width: 70px;" />&nbsp; </td> -->
+																			<label id="TotalAOP_Percentage" name="TotalAOP_Percentage" style="width: 70px;"/> &nbsp; </td>
+																	</tr>
+																	<tr class="no-padding">
+																		<td colspan="2" valign="middle" nowrap>
+																			<span id="error_totalPercentageError" class="error" />
+																		</td>
+																	</tr>
+																</table>
+															</div>
+														</div>
+													</div>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div id="NonBridgeApp_Security">
+					<div class="buttons borderTop row" id="NewBusiness">
+						<a class="btn back floatLeft" href="javascript:submitform('Attorneys.html','lawPractice.back','','');">Back</a>
+						<div class="floatRight">
+							<span id="showPageSave">
+								<a class="btn save" href="javascript:submitform('bankruptcySupplement.html|collectionSupplement.html|copyRightTrademarkSupplement.html|CorporateCommercialBusinessSupplement.html|familylawsupplement.html|FinancialInstitutionSupplement.html|GovernmentSupplement.html|litigationSupplement.html|RealEstateSupplement.html|WillsTrustProbationSupplment.html|taxSupplement.html|aboutFirm.html','lawPractice.save','forwardeval','LawyersRule.isShowBankruptcySupplement|LawyersRule.isShowcollectionSupplement|LawyersRule.isShowCopyRightTrademarkSupplement|LawyersRule.isShowCCBsupplement|LawyersRule.isShowFamilylawsupplement|LawyersRule.isShowFinancialInstitutionSupplement|LawyersRule.isShowGovernmentSupplement|LawyersRule.isShowLitigationSupplement|LawyersRule.isShowRealEstateSupplement|LawyersRule.isShowWillsEstateSupp|LawyersRule.isShowTaxSupplement|LawyersRule.noSupplement');">Save&nbsp;&&nbsp;Continue</a>
+							</span>
+							<span id="showContinue">
+								<a class="btn next" href="javascript:submitform('bankruptcySupplement.html|collectionSupplement.html|copyRightTrademarkSupplement.html|CorporateCommercialBusinessSupplement.html|familylawsupplement.html|FinancialInstitutionSupplement.html|GovernmentSupplement.html|litigationSupplement.html|RealEstateSupplement.html|WillsTrustProbationSupplment.html|taxSupplement.html|aboutFirm.html','lawPractice.continue','forwardeval','LawyersRule.isShowBankruptcySupplement|LawyersRule.isShowcollectionSupplement|LawyersRule.isShowCopyRightTrademarkSupplement|LawyersRule.isShowCCBsupplement|LawyersRule.isShowFamilylawsupplement|LawyersRule.isShowFinancialInstitutionSupplement|LawyersRule.isShowGovernmentSupplement|LawyersRule.isShowLitigationSupplement|LawyersRule.isShowRealEstateSupplement|LawyersRule.isShowWillsEstateSupp|LawyersRule.isShowTaxSupplement|LawyersRule.noSupplement');">Continue</a>
+							</span>
+						</div>
+					</div>
+					<div class="buttons borderTop row" id="RenewBusiness">
+						<a class="btn back floatLeft" href="javascript:submitform('Attorneys.html','lawPractice.renewBack','','');">Back</a>
+						<div class="floatRight">
+							<span id="showPageSave">
+								<a class="btn save" href="javascript:submitform('bankruptcySupplement.html|collectionSupplement.html|copyRightTrademarkSupplement.html|CorporateCommercialBusinessSupplement.html|familylawsupplement.html|FinancialInstitutionSupplement.html|GovernmentSupplement.html|litigationSupplement.html|RealEstateSupplement.html|WillsTrustProbationSupplment.html|taxSupplement.html|pastClaims.html','lawPractice.renewSave','forwardeval','LawyersRule.isBankruptcy|LawyersRule.isCollection|LawyersRule.isCopyright|LawyersRule.isCCB|LawyersRule.isFamilyLaw|LawyersRule.isFinancial|LawyersRule.isGoverment|LawyersRule.isLitigation|LawyersRule.isRealestate|LawyersRule.isWillsTrust|LawyersRule.isTax|LawyersRule.noSupplementVisibility');">Save&nbsp;&&nbsp;Continue</a>
+							</span>
+							<span id="showContinue">
+								<a class="btn next" href="javascript:submitform('bankruptcySupplement.html|collectionSupplement.html|copyRightTrademarkSupplement.html|CorporateCommercialBusinessSupplement.html|familylawsupplement.html|FinancialInstitutionSupplement.html|GovernmentSupplement.html|litigationSupplement.html|RealEstateSupplement.html|WillsTrustProbationSupplment.html|taxSupplement.html|pastClaims.html','lawPractice.renewContinue','forwardeval','LawyersRule.isBankruptcy|LawyersRule.isCollection|LawyersRule.isCopyright|LawyersRule.isCCB|LawyersRule.isFamilyLaw|LawyersRule.isFinancial|LawyersRule.isGoverment|LawyersRule.isLitigation|LawyersRule.isRealestate|LawyersRule.isWillsTrust|LawyersRule.isTax|LawyersRule.noSupplementVisibility');">Continue</a>
+							</span>
+						</div>
+					</div>
+					</div>
+					<div id="BridgeApp_Security">
+					<div class="buttons borderTop row" id="NewBusiness">
+						<a class="btn back floatLeft" href="javascript:submitform('Attorneys.html','lawPractice.backBridgeApp','','');">Back</a>
+						<div class="floatRight">
+							<span id="showPageSave">
+								<a class="btn save" href="javascript:submitform('pastClaims.html|workq.html','lawPractice.saveBridgeApp','forwardeval','LawyersRule.isPolicyStatusNotUpdated|LawyersRule.isPolicyStatusUpdated');">Save&nbsp;&&nbsp;Continue</a>
+							</span>
+							<span id="showContinue">
+								<a class="btn next" href="javascript:submitform('pastClaims.html|workq.html','lawPractice.continueBridgeApp','forwardeval','LawyersRule.isPolicyStatusNotUpdated|LawyersRule.isPolicyStatusUpdated');">Continue</a>
+							</span>
+						</div>
+					</div>
+					
+					</div>
+				</div>
+				<div id="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<table id="lawPractice_freeform_contextdata_999">
+					<tr>
+						<td>
+							<input type="hidden" name="jsessionid" id="jsessionid" />
+							<input type="hidden" name="divHideShow" id="divHideShow" />
+							<input type="hidden" id="ajax_field_AOP_values" name="AOP_values" /> 
+							<input type="hidden" id="ajax_field_totalAopListSize" name="totalAopListSize" />
+							<input type="hidden" id="ajax_field_PriorAopListSize" name="PriorAopListSize" />
+							<input type="hidden" name="StatusKey" id="StatusKeyAOP"/>
+							<input type="hidden" name="PolicyStatusKey" id="PolicyStatusKeyAOP"/>
+							<input type="hidden" name="aopCount" id="aopCount"/>
+							<input type="hidden" name="AOPRenewalDate" id="AOPRenewalDate"/>
+							<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="StatusValidation_freeform_contextdata_9990">
+			<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+	  </div>
+	</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+<script>
+	setCSSForAccountType2();
+</script>
+<script type="text/javascript">
+	populateTotalFieldValue('AOP_Percentage_', 'TotalAOP_Percentage');
+	//rearrange();
+	//loadList();
+	function getSearchResultEnter(e) {
+
+		if (e.keyCode === 13) {
+			e.preventDefault(); // Ensure it is only this code that rusn */
+			submitform('lawPractice.html', 'lawPractice.getAopSearchResult', '');
+			//alert("Enter was pressed was presses");
+		}
+
+	}
+</script>
+
+</html>

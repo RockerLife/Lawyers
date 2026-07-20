@@ -1,0 +1,86 @@
+<evalrules project="common">  
+	
+	<ruleset name="Paging">
+    	
+    	<rule id="NextPageId" expression="isEqual(:next_page,Y);"/>
+    	<rule id="PreviousPageId" expression="isEqual(:previous_page,Y);"/>
+    	    	
+    </ruleset> 
+    
+	<ruleset name="events">
+    	
+    	<rule id="addEvent" expression="isEqual(:inet_eventid,add);"/>
+    	<rule id="addmoreEvent" expression="isEqual(:inet_eventid,addmore);"/>
+    	<rule id="saveEvent" expression="isNotEqual(:inet_eventid,edit);"/>
+    	<rule id="editEvent" expression="isEqual(:inet_eventid,edit);"/>
+    	<rule id="upload" expression="isEqual(:inet_eventid,upload);"/>
+    	<rule id="deletefile" expression="isEqual(:inet_eventid,deletefile);"/>
+    	
+    	<rule id="cancelEvent" expression="isEqual(:inet_eventid,cancel);"/>
+    	<rule id="deleteEvent" expression="isEqual(:inet_eventid,delete);"/>
+    	<rule id="modifyEvent" expression="isNotEqual(:inet_eventid,modify);"/>
+    	<!-- <rule id="nullEvent" expression="isNull(:inet_eventid);"/> -->
+    	<rule id="searchEvent" expression="isEqual(:inet_eventid,search);"/>
+    	<rule id="sortEvent" expression="isEqual(:inet_eventid,sort);"/> 
+    	
+    	<rule id="paginationEvent" expression="isEqual(:inet_eventid,pagination);"/>
+    	<rule id="deleteevent" expression="isEqual(:inet_eventid,delete);"/>
+    	<rule id="runfindByKey" expression="isNotEqual(:runfindByKey,N);"/>
+    	<rule id="saveEventNotReadOnly" expression="andCondition(isNotEqual(:inet_readonly_mode,Y),isNotEqual(:inet_eventid,edit));"/>
+    	
+    </ruleset>
+    
+    <ruleset name="form">
+    	
+    	<rule id="isDirty" expression="isEqual(:inet_form_dirty,Y);"/>
+    	<rule id="isReadOnly" expression="isEqual(:inet_readonly_mode,Y);"/>
+    	<!-- <rule id="sortClicked" expression="isNull(:inet_sort_field);"/> -->
+    	
+    </ruleset> 
+     
+    <!-- 
+    <ruleset name="link">
+    	
+    	<rule id="UploadLinkempty" expression="isEmpty(:filename);"/>
+    	<rule id="UploadLinknull" expression="isNull(:filename);"/>
+    	<rule id="DownloadLinkempty" expression="isEmpty(:filename);"/>
+    	<rule id="DownloadLinknull" expression="isNull(:filename);"/>
+    	<rule id="DeleteLinkempty" expression="isEmpty(:filename);"/>
+    	<rule id="DeleteLinknull" expression="isNull(:filename);"/>  	
+    	
+    </ruleset> 
+     -->
+     
+    <ruleset name="links">
+    
+    	<rule id="notRunFindbykey" expression="isNot(call_rule(events.runfindByKey));"/>    	
+    	<rule id="executeFindbykey" expression="andCondition(call_rule(events.editEvent),call_rule(links.notRunFindbykey));"/>
+    	
+    	<rule id="notReadOnly" expression="isNot(call_rule(form.isReadOnly));"/>     	
+    	<rule id="showEditLink" expression="call_rule(links.notReadOnly);"/>
+    	<rule id="showDeleteLink" expression="call_rule(links.notReadOnly);"/>
+    	<rule id="showViewLink" expression="call_rule(links.notReadOnly);"/>
+    	    	
+    	<!--<rule id="notDownloadLinknull" expression="isNot(call_rule(link.DownloadLinknull));"/> 
+    	<rule id="notDeleteLinknull" expression="isNot(call_rule(link.DeleteLinknull));"/> 
+       	<rule id="showUploadLink" expression="andCondition(call_rule(link.UploadLinkempty),call_rule(link.UploadLinknull));"/> 
+    	<rule id="showDownLoadLink" expression="andCondition(call_rule(link.DownloadLinkempty),call_rule(links.notDownloadLinknull));"/>
+      	<rule id="showDeletelink" expression="andCondition(call_rule(link.DeleteLinkempty),call_rule(links.notDeleteLinknull));"/>
+    	 -->
+    	 
+    </ruleset>  
+    
+    <ruleset name="common">
+    	
+    	<rule id="true" expression="isEqual(Y,Y);"/>
+    	<rule id="show_child_qstns" expression="isEqual(:inet_childqstns_present,Y);"/>    	
+    	    	
+    </ruleset> 
+    <!-- 
+    <ruleset name="security-rules">
+    	
+    	<rule id="isAdmin" expression="containsObject(:inet_business_roles, Administrator);"/>
+    	    	
+    </ruleset>  
+	-->
+</evalrules>

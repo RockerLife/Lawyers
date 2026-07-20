@@ -1,0 +1,99 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="FirmNewApp">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FirmNewApp</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FirmNewApp</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into FirmNewApp(
+          <dynamic prepend=" ">
+               <isNotEmpty property="Address1" prepend=",">Address1</isNotEmpty>
+               <isNotEmpty property="Address2" prepend=",">Address2</isNotEmpty>
+               <isNotEmpty property="Zip" prepend=",">Zip</isNotEmpty>
+               <isNotEmpty property="WorkPhone" prepend=",">WorkPhone</isNotEmpty>
+               <isNotEmpty property="MobilePhone" prepend=",">MobilePhone</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="CountyDesc" prepend=",">CountyDesc</isNotEmpty>
+               <isNotEmpty property="CountryDesc" prepend=",">CountryDesc</isNotEmpty>
+               <isNotEmpty property="City" prepend=",">City</isNotEmpty>
+               <isNotEmpty property="IsPersonnelBeSubOfAnyInvest" prepend=",">IsPersonnelBeSubOfAnyInvest</isNotEmpty>
+               <isNotEmpty property="PersonnelBeSubOfAnyInvestDate" prepend=",">PersonnelBeSubOfAnyInvestDate</isNotEmpty>
+               <isNotEmpty property="PersonnelBeSubOfAnyInvestDetails" prepend=",">PersonnelBeSubOfAnyInvestDetails</isNotEmpty>
+               <isNotEmpty property="IsLawyerProfLiabClaimAgntAppl" prepend=",">IsLawyerProfLiabClaimAgntAppl</isNotEmpty>
+               <isNotEmpty property="IsAttorneyDeclineForProfLiability" prepend=",">IsAttorneyDeclineForProfLiability</isNotEmpty>
+               <isNotEmpty property="AttorneyDeclineForProfLiabilityDates" prepend=",">AttorneyDeclineForProfLiabilityDates</isNotEmpty>
+               <isNotEmpty property="AttorneyDeclineForProfLiabilityReasons" prepend=",">AttorneyDeclineForProfLiabilityReasons</isNotEmpty>
+               <isNotEmpty property="IsApplicantProvidesLegalServices" prepend=",">IsApplicantProvidesLegalServices</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="Address1" prepend=",">#Address1#</isNotEmpty>
+               <isNotEmpty property="Address2" prepend=",">#Address2#</isNotEmpty>
+               <isNotEmpty property="Zip" prepend=",">#Zip#</isNotEmpty>
+               <isNotEmpty property="WorkPhone" prepend=",">#WorkPhone#</isNotEmpty>
+               <isNotEmpty property="MobilePhone" prepend=",">#MobilePhone#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="CountyDesc" prepend=",">#CountyDesc#</isNotEmpty>
+               <isNotEmpty property="CountryDesc" prepend=",">#CountryDesc#</isNotEmpty>
+               <isNotEmpty property="City" prepend=",">#City#</isNotEmpty>
+               <isNotEmpty property="IsPersonnelBeSubOfAnyInvest" prepend=",">#IsPersonnelBeSubOfAnyInvest#</isNotEmpty>
+               <isNotEmpty property="PersonnelBeSubOfAnyInvestDate" prepend=",">#PersonnelBeSubOfAnyInvestDate#</isNotEmpty>
+               <isNotEmpty property="PersonnelBeSubOfAnyInvestDetails" prepend=",">#PersonnelBeSubOfAnyInvestDetails#</isNotEmpty>
+               <isNotEmpty property="IsLawyerProfLiabClaimAgntAppl" prepend=",">#IsLawyerProfLiabClaimAgntAppl#</isNotEmpty>
+               <isNotEmpty property="IsAttorneyDeclineForProfLiability" prepend=",">#IsAttorneyDeclineForProfLiability#</isNotEmpty>
+               <isNotEmpty property="AttorneyDeclineForProfLiabilityDates" prepend=",">#AttorneyDeclineForProfLiabilityDates#</isNotEmpty>
+               <isNotEmpty property="AttorneyDeclineForProfLiabilityReasons" prepend=",">#AttorneyDeclineForProfLiabilityReasons#</isNotEmpty>
+               <isNotEmpty property="IsApplicantProvidesLegalServices" prepend=",">#IsApplicantProvidesLegalServices#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select Address1, Address2, Zip, WorkPhone, MobilePhone, LastUpdateUserID, LastUpdateTimeStamp, CountyDesc, CountryDesc, City, IsPersonnelBeSubOfAnyInvest, PersonnelBeSubOfAnyInvestDate, PersonnelBeSubOfAnyInvestDetails, IsLawyerProfLiabClaimAgntAppl, IsAttorneyDeclineForProfLiability, AttorneyDeclineForProfLiabilityDates, AttorneyDeclineForProfLiabilityReasons, IsApplicantProvidesLegalServices from FirmNewApp</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update FirmNewApp set
+          <dynamic prepend=" ">
+               <isNotEmpty property="Address1" prepend=",">Address1 = #Address1#</isNotEmpty>
+               <isEmpty property="Address1" prepend=",">Address1 = null</isEmpty>
+               <isNotEmpty property="Address2" prepend=",">Address2 = #Address2#</isNotEmpty>
+               <isEmpty property="Address2" prepend=",">Address2 = null</isEmpty>
+               <isNotEmpty property="Zip" prepend=",">Zip = #Zip#</isNotEmpty>
+               <isEmpty property="Zip" prepend=",">Zip = null</isEmpty>
+               <isNotEmpty property="WorkPhone" prepend=",">WorkPhone = #WorkPhone#</isNotEmpty>
+               <isEmpty property="WorkPhone" prepend=",">WorkPhone = null</isEmpty>
+               <isNotEmpty property="MobilePhone" prepend=",">MobilePhone = #MobilePhone#</isNotEmpty>
+               <isEmpty property="MobilePhone" prepend=",">MobilePhone = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="CountyDesc" prepend=",">CountyDesc = #CountyDesc#</isNotEmpty>
+               <isEmpty property="CountyDesc" prepend=",">CountyDesc = null</isEmpty>
+               <isNotEmpty property="CountryDesc" prepend=",">CountryDesc = #CountryDesc#</isNotEmpty>
+               <isEmpty property="CountryDesc" prepend=",">CountryDesc = null</isEmpty>
+               <isNotEmpty property="City" prepend=",">City = #City#</isNotEmpty>
+               <isEmpty property="City" prepend=",">City = null</isEmpty>
+               <isNotEmpty property="IsPersonnelBeSubOfAnyInvest" prepend=",">IsPersonnelBeSubOfAnyInvest = #IsPersonnelBeSubOfAnyInvest#</isNotEmpty>
+               <isEmpty property="IsPersonnelBeSubOfAnyInvest" prepend=",">IsPersonnelBeSubOfAnyInvest = null</isEmpty>
+               <isNotEmpty property="PersonnelBeSubOfAnyInvestDate" prepend=",">PersonnelBeSubOfAnyInvestDate = #PersonnelBeSubOfAnyInvestDate#</isNotEmpty>
+               <isEmpty property="PersonnelBeSubOfAnyInvestDate" prepend=",">PersonnelBeSubOfAnyInvestDate = null</isEmpty>
+               <isNotEmpty property="PersonnelBeSubOfAnyInvestDetails" prepend=",">PersonnelBeSubOfAnyInvestDetails = #PersonnelBeSubOfAnyInvestDetails#</isNotEmpty>
+               <isEmpty property="PersonnelBeSubOfAnyInvestDetails" prepend=",">PersonnelBeSubOfAnyInvestDetails = null</isEmpty>
+               <isNotEmpty property="IsLawyerProfLiabClaimAgntAppl" prepend=",">IsLawyerProfLiabClaimAgntAppl = #IsLawyerProfLiabClaimAgntAppl#</isNotEmpty>
+               <isEmpty property="IsLawyerProfLiabClaimAgntAppl" prepend=",">IsLawyerProfLiabClaimAgntAppl = null</isEmpty>
+               <isNotEmpty property="IsAttorneyDeclineForProfLiability" prepend=",">IsAttorneyDeclineForProfLiability = #IsAttorneyDeclineForProfLiability#</isNotEmpty>
+               <isEmpty property="IsAttorneyDeclineForProfLiability" prepend=",">IsAttorneyDeclineForProfLiability = null</isEmpty>
+               <isNotEmpty property="AttorneyDeclineForProfLiabilityDates" prepend=",">AttorneyDeclineForProfLiabilityDates = #AttorneyDeclineForProfLiabilityDates#</isNotEmpty>
+               <isEmpty property="AttorneyDeclineForProfLiabilityDates" prepend=",">AttorneyDeclineForProfLiabilityDates = null</isEmpty>
+               <isNotEmpty property="AttorneyDeclineForProfLiabilityReasons" prepend=",">AttorneyDeclineForProfLiabilityReasons = #AttorneyDeclineForProfLiabilityReasons#</isNotEmpty>
+               <isEmpty property="AttorneyDeclineForProfLiabilityReasons" prepend=",">AttorneyDeclineForProfLiabilityReasons = null</isEmpty>
+               <isNotEmpty property="IsApplicantProvidesLegalServices" prepend=",">IsApplicantProvidesLegalServices = #IsApplicantProvidesLegalServices#</isNotEmpty>
+               <isEmpty property="IsApplicantProvidesLegalServices" prepend=",">IsApplicantProvidesLegalServices = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from FirmNewApp</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from FirmNewApp</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from FirmNewApp</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select Address1, Address2, Zip, WorkPhone, MobilePhone, LastUpdateUserID, LastUpdateTimeStamp, CountyDesc, CountryDesc, City, IsPersonnelBeSubOfAnyInvest, PersonnelBeSubOfAnyInvestDate, PersonnelBeSubOfAnyInvestDetails, IsLawyerProfLiabClaimAgntAppl, IsAttorneyDeclineForProfLiability, AttorneyDeclineForProfLiabilityDates, AttorneyDeclineForProfLiabilityReasons, IsApplicantProvidesLegalServices from FirmNewApp</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select Address1, Address2, Zip, WorkPhone, MobilePhone, LastUpdateUserID, LastUpdateTimeStamp, CountyDesc, CountryDesc, City, IsPersonnelBeSubOfAnyInvest, PersonnelBeSubOfAnyInvestDate, PersonnelBeSubOfAnyInvestDetails, IsLawyerProfLiabClaimAgntAppl, IsAttorneyDeclineForProfLiability, AttorneyDeclineForProfLiabilityDates, AttorneyDeclineForProfLiabilityReasons, IsApplicantProvidesLegalServices from FirmNewApp</select>
+</sqlMap>
+

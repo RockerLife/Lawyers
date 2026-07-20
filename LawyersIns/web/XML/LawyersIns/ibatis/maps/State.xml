@@ -1,0 +1,65 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="State">
+     <select id="getStatesList" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StateCode,CountryKey,StateDesc,IsBusinessActive,IsBusinessActiveLW,IssueMailLwy,IssueMailAcc,IsStateReferred,ShowCityDropDown,IsStateReferredFQ from State order by statedesc</select>
+     <select id="BRStateCode" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StateCode,StateDesc  from State order by statedesc</select>
+     <select id="getStatesListFilter" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select *  from State order by statedesc</select>
+     <select id="getStatesList2" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StateDesc as LicensedStates,StateDesc from State order by LicensedStates,StateDesc;</select>
+     <select id="getStatesListForNewApp" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select statecode as LicensedStates, statecode as StateDesc from State order by LicensedStates,StateDesc</select>
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from State</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from State where CountryKey = #CountryKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into State(StateCode
+          <isNotEmpty property="StateDesc" prepend=",">StateDesc</isNotEmpty>
+          <isNotEmpty property="IsBusinessActive" prepend=",">IsBusinessActive</isNotEmpty>
+          <isNotEmpty property="IsBusinessActiveLW" prepend=",">IsBusinessActiveLW</isNotEmpty>
+          <isNotEmpty property="IssueMailLwy" prepend=",">IssueMailLwy</isNotEmpty>
+          <isNotEmpty property="IsStateReferredFQ" prepend=",">IsStateReferredFQ</isNotEmpty>
+          <isNotEmpty property="IsStateReferred" prepend=",">IsStateReferred</isNotEmpty>
+          <isNotEmpty property="ShowCityDropDown" prepend=",">ShowCityDropDown</isNotEmpty>
+          <isNotEmpty property="CountryKey" prepend=",">CountryKey</isNotEmpty>
+          ) values (#StateCode#
+          <isNotEmpty property="StateDesc" prepend=",">#StateDesc#</isNotEmpty>
+          <isNotEmpty property="IsBusinessActive" prepend=",">#IsBusinessActive#</isNotEmpty>
+          <isNotEmpty property="IsBusinessActiveLW" prepend=",">#IsBusinessActiveLW#</isNotEmpty>
+          <isNotEmpty property="IssueMailLwy" prepend=",">#IssueMailLwy#</isNotEmpty>
+          <isNotEmpty property="IsStateReferredFQ" prepend=",">#IsStateReferredFQ#</isNotEmpty>
+          <isNotEmpty property="IsStateReferred" prepend=",">#IsStateReferred#</isNotEmpty>
+          <isNotEmpty property="ShowCityDropDown" prepend=",">#ShowCityDropDown#</isNotEmpty>
+          <isNotEmpty property="CountryKey" prepend=",">#CountryKey#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StateCode, StateDesc, IsBusinessActive, IsBusinessActiveLW, IssueMailLwy, IsStateReferredFQ, IsStateReferred, ShowCityDropDown, CountryKey from State where StateCode = #StateCode#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update State set
+          <dynamic prepend=" ">
+               <isNotEmpty property="StateDesc" prepend=",">StateDesc = #StateDesc#</isNotEmpty>
+               <isEmpty property="StateDesc" prepend=",">StateDesc = null</isEmpty>
+               <isNotEmpty property="IsBusinessActive" prepend=",">IsBusinessActive = #IsBusinessActive#</isNotEmpty>
+               <isEmpty property="IsBusinessActive" prepend=",">IsBusinessActive = null</isEmpty>
+               <isNotEmpty property="IsBusinessActiveLW" prepend=",">IsBusinessActiveLW = #IsBusinessActiveLW#</isNotEmpty>
+               <isEmpty property="IsBusinessActiveLW" prepend=",">IsBusinessActiveLW = null</isEmpty>
+               <isNotEmpty property="IssueMailLwy" prepend=",">IssueMailLwy = #IssueMailLwy#</isNotEmpty>
+               <isEmpty property="IssueMailLwy" prepend=",">IssueMailLwy = null</isEmpty>
+               <isNotEmpty property="IsStateReferredFQ" prepend=",">IsStateReferredFQ = #IsStateReferredFQ#</isNotEmpty>
+               <isEmpty property="IsStateReferredFQ" prepend=",">IsStateReferredFQ = null</isEmpty>
+               <isNotEmpty property="IsStateReferred" prepend=",">IsStateReferred = #IsStateReferred#</isNotEmpty>
+               <isEmpty property="IsStateReferred" prepend=",">IsStateReferred = null</isEmpty>
+               <isNotEmpty property="ShowCityDropDown" prepend=",">ShowCityDropDown = #ShowCityDropDown#</isNotEmpty>
+               <isEmpty property="ShowCityDropDown" prepend=",">ShowCityDropDown = null</isEmpty>
+               <isNotEmpty property="CountryKey" prepend=",">CountryKey = #CountryKey#</isNotEmpty>
+               <isEmpty property="CountryKey" prepend=",">CountryKey = null</isEmpty>
+          </dynamic>
+          where StateCode = #StateCode#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from State where StateCode = #StateCode#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from State</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from State where CountryKey = #CountryKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StateCode, StateDesc, IsBusinessActive, IsBusinessActiveLW, IssueMailLwy, IsStateReferredFQ, IsStateReferred, ShowCityDropDown, CountryKey from State where StateCode = #StateCode#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StateCode, StateDesc, IsBusinessActive, IsBusinessActiveLW, IssueMailLwy, IsStateReferredFQ, IsStateReferred, ShowCityDropDown from State where CountryKey = #CountryKey#</select>
+     <select id="getStatesList1" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StateCode,CountryKey,StateDesc,IsBusinessActive,IsBusinessActiveLW,IssueMailLwy,IssueMailAcc,IsStateReferred,ShowCityDropDown,IsStateReferredFQ from State order by StateDesc</select>
+     <select id="getStatesListForSub" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StateCode,StateDesc  from State order by StateDesc</select>
+     <select id="getInstituteStatesList" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StateDesc as InstitutionState,StateDesc from State order by StateDesc</select>
+     <select id="getStatesList3" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StateDesc as FPLStateCode,StateDesc from State order by StateDesc;</select>
+</sqlMap>
+

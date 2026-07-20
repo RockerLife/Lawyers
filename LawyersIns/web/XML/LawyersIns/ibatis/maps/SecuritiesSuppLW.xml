@@ -1,0 +1,192 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="SecuritiesSuppLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SecuritiesSuppLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SecuritiesSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into SecuritiesSuppLW(VersionSequence, PolicyKey
+          <isNotEmpty property="FeesDerFromApplSecurityFiscalYr1" prepend=",">FeesDerFromApplSecurityFiscalYr1</isNotEmpty>
+          <isNotEmpty property="FeesDerFromApplSecurityFiscalYr2" prepend=",">FeesDerFromApplSecurityFiscalYr2</isNotEmpty>
+          <isNotEmpty property="IsNoConflictWithSecurityMatters" prepend=",">IsNoConflictWithSecurityMatters</isNotEmpty>
+          <isNotEmpty property="IsAppSeekSecAdvRelToTransaction" prepend=",">IsAppSeekSecAdvRelToTransaction</isNotEmpty>
+          <isNotEmpty property="AppSeekSecAdvRelToTransactionDesc" prepend=",">AppSeekSecAdvRelToTransactionDesc</isNotEmpty>
+          <isNotEmpty property="IsAppReqAttorneyToIntervClientDir" prepend=",">IsAppReqAttorneyToIntervClientDir</isNotEmpty>
+          <isNotEmpty property="IsAppReqRecordsOfFactualsource" prepend=",">IsAppReqRecordsOfFactualsource</isNotEmpty>
+          <isNotEmpty property="IsAppProhibitPolicyFromSecProcess" prepend=",">IsAppProhibitPolicyFromSecProcess</isNotEmpty>
+          <isNotEmpty property="AppProhibitPolicyFromSecProcessDesc" prepend=",">AppProhibitPolicyFromSecProcessDesc</isNotEmpty>
+          <isNotEmpty property="IsAppProhibitSecAttorWithInvest" prepend=",">IsAppProhibitSecAttorWithInvest</isNotEmpty>
+          <isNotEmpty property="IsAppProhibitFirmFromTrading" prepend=",">IsAppProhibitFirmFromTrading</isNotEmpty>
+          <isNotEmpty property="IsAppReqSecToDissolveAllInvest" prepend=",">IsAppReqSecToDissolveAllInvest</isNotEmpty>
+          <isNotEmpty property="IsAppHavePolicyGovernTrading" prepend=",">IsAppHavePolicyGovernTrading</isNotEmpty>
+          <isNotEmpty property="IsAppPreventAttorneysStaff" prepend=",">IsAppPreventAttorneysStaff</isNotEmpty>
+          <isNotEmpty property="IsAppPrecludingInDisclosureDocs" prepend=",">IsAppPrecludingInDisclosureDocs</isNotEmpty>
+          <isNotEmpty property="IsAppProhibitAttorneyOfDirector" prepend=",">IsAppProhibitAttorneyOfDirector</isNotEmpty>
+          <isNotEmpty property="IsAppProhSecPaysForAppServices" prepend=",">IsAppProhSecPaysForAppServices</isNotEmpty>
+          <isNotEmpty property="AppProhSecPaysForAppServicesDesc" prepend=",">AppProhSecPaysForAppServicesDesc</isNotEmpty>
+          <isNotEmpty property="IsAppHaveObligationToPayServices" prepend=",">IsAppHaveObligationToPayServices</isNotEmpty>
+          <isNotEmpty property="IsAppReqAtleastOneSecurityAtt" prepend=",">IsAppReqAtleastOneSecurityAtt</isNotEmpty>
+          <isNotEmpty property="IsAppPolicyReqExecutiveCommRev" prepend=",">IsAppPolicyReqExecutiveCommRev</isNotEmpty>
+          <isNotEmpty property="IsAppSubjectOfInvestBySEC" prepend=",">IsAppSubjectOfInvestBySEC</isNotEmpty>
+          <isNotEmpty property="IsAppProvLegalServiceFor1933Act" prepend=",">IsAppProvLegalServiceFor1933Act</isNotEmpty>
+          <isNotEmpty property="IsSecurityIssuedByBank" prepend=",">IsSecurityIssuedByBank</isNotEmpty>
+          <isNotEmpty property="IsSecurityIssuedByUS" prepend=",">IsSecurityIssuedByUS</isNotEmpty>
+          <isNotEmpty property="IsSecurityIssuedByLoanInstitute" prepend=",">IsSecurityIssuedByLoanInstitute</isNotEmpty>
+          <isNotEmpty property="IsAppProvLegalServiceForInsuranceBonds" prepend=",">IsAppProvLegalServiceForInsuranceBonds</isNotEmpty>
+          <isNotEmpty property="IsAppProvLegalserviceForPrivPlaceBonds" prepend=",">IsAppProvLegalserviceForPrivPlaceBonds</isNotEmpty>
+          <isNotEmpty property="IsDiligenceRetForAllPrivateBonds" prepend=",">IsDiligenceRetForAllPrivateBonds</isNotEmpty>
+          <isNotEmpty property="NumberOfBondsIssuedToApp" prepend=",">NumberOfBondsIssuedToApp</isNotEmpty>
+          <isNotEmpty property="NumberOfBondsForGenObligation" prepend=",">NumberOfBondsForGenObligation</isNotEmpty>
+          <isNotEmpty property="NumberOfBondsByRevenue" prepend=",">NumberOfBondsByRevenue</isNotEmpty>
+          <isNotEmpty property="NumberOfBondsOtherDetails" prepend=",">NumberOfBondsOtherDetails</isNotEmpty>
+          <isNotEmpty property="ApplicantEmployForBondIssues" prepend=",">ApplicantEmployForBondIssues</isNotEmpty>
+          <isNotEmpty property="BondCounsel" prepend=",">BondCounsel</isNotEmpty>
+          <isNotEmpty property="Issuer" prepend=",">Issuer</isNotEmpty>
+          <isNotEmpty property="Underwriter" prepend=",">Underwriter</isNotEmpty>
+          <isNotEmpty property="ApplicantEmployForBondIssuesOther" prepend=",">ApplicantEmployForBondIssuesOther</isNotEmpty>
+          <isNotEmpty property="NumberOfBondHaveExpInDefProc" prepend=",">NumberOfBondHaveExpInDefProc</isNotEmpty>
+          <isNotEmpty property="NumberOfBondCurrentInDef" prepend=",">NumberOfBondCurrentInDef</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="FeesDerFromApplSecurityFiscalYr1" prepend=",">#FeesDerFromApplSecurityFiscalYr1#</isNotEmpty>
+          <isNotEmpty property="FeesDerFromApplSecurityFiscalYr2" prepend=",">#FeesDerFromApplSecurityFiscalYr2#</isNotEmpty>
+          <isNotEmpty property="IsNoConflictWithSecurityMatters" prepend=",">#IsNoConflictWithSecurityMatters#</isNotEmpty>
+          <isNotEmpty property="IsAppSeekSecAdvRelToTransaction" prepend=",">#IsAppSeekSecAdvRelToTransaction#</isNotEmpty>
+          <isNotEmpty property="AppSeekSecAdvRelToTransactionDesc" prepend=",">#AppSeekSecAdvRelToTransactionDesc#</isNotEmpty>
+          <isNotEmpty property="IsAppReqAttorneyToIntervClientDir" prepend=",">#IsAppReqAttorneyToIntervClientDir#</isNotEmpty>
+          <isNotEmpty property="IsAppReqRecordsOfFactualsource" prepend=",">#IsAppReqRecordsOfFactualsource#</isNotEmpty>
+          <isNotEmpty property="IsAppProhibitPolicyFromSecProcess" prepend=",">#IsAppProhibitPolicyFromSecProcess#</isNotEmpty>
+          <isNotEmpty property="AppProhibitPolicyFromSecProcessDesc" prepend=",">#AppProhibitPolicyFromSecProcessDesc#</isNotEmpty>
+          <isNotEmpty property="IsAppProhibitSecAttorWithInvest" prepend=",">#IsAppProhibitSecAttorWithInvest#</isNotEmpty>
+          <isNotEmpty property="IsAppProhibitFirmFromTrading" prepend=",">#IsAppProhibitFirmFromTrading#</isNotEmpty>
+          <isNotEmpty property="IsAppReqSecToDissolveAllInvest" prepend=",">#IsAppReqSecToDissolveAllInvest#</isNotEmpty>
+          <isNotEmpty property="IsAppHavePolicyGovernTrading" prepend=",">#IsAppHavePolicyGovernTrading#</isNotEmpty>
+          <isNotEmpty property="IsAppPreventAttorneysStaff" prepend=",">#IsAppPreventAttorneysStaff#</isNotEmpty>
+          <isNotEmpty property="IsAppPrecludingInDisclosureDocs" prepend=",">#IsAppPrecludingInDisclosureDocs#</isNotEmpty>
+          <isNotEmpty property="IsAppProhibitAttorneyOfDirector" prepend=",">#IsAppProhibitAttorneyOfDirector#</isNotEmpty>
+          <isNotEmpty property="IsAppProhSecPaysForAppServices" prepend=",">#IsAppProhSecPaysForAppServices#</isNotEmpty>
+          <isNotEmpty property="AppProhSecPaysForAppServicesDesc" prepend=",">#AppProhSecPaysForAppServicesDesc#</isNotEmpty>
+          <isNotEmpty property="IsAppHaveObligationToPayServices" prepend=",">#IsAppHaveObligationToPayServices#</isNotEmpty>
+          <isNotEmpty property="IsAppReqAtleastOneSecurityAtt" prepend=",">#IsAppReqAtleastOneSecurityAtt#</isNotEmpty>
+          <isNotEmpty property="IsAppPolicyReqExecutiveCommRev" prepend=",">#IsAppPolicyReqExecutiveCommRev#</isNotEmpty>
+          <isNotEmpty property="IsAppSubjectOfInvestBySEC" prepend=",">#IsAppSubjectOfInvestBySEC#</isNotEmpty>
+          <isNotEmpty property="IsAppProvLegalServiceFor1933Act" prepend=",">#IsAppProvLegalServiceFor1933Act#</isNotEmpty>
+          <isNotEmpty property="IsSecurityIssuedByBank" prepend=",">#IsSecurityIssuedByBank#</isNotEmpty>
+          <isNotEmpty property="IsSecurityIssuedByUS" prepend=",">#IsSecurityIssuedByUS#</isNotEmpty>
+          <isNotEmpty property="IsSecurityIssuedByLoanInstitute" prepend=",">#IsSecurityIssuedByLoanInstitute#</isNotEmpty>
+          <isNotEmpty property="IsAppProvLegalServiceForInsuranceBonds" prepend=",">#IsAppProvLegalServiceForInsuranceBonds#</isNotEmpty>
+          <isNotEmpty property="IsAppProvLegalserviceForPrivPlaceBonds" prepend=",">#IsAppProvLegalserviceForPrivPlaceBonds#</isNotEmpty>
+          <isNotEmpty property="IsDiligenceRetForAllPrivateBonds" prepend=",">#IsDiligenceRetForAllPrivateBonds#</isNotEmpty>
+          <isNotEmpty property="NumberOfBondsIssuedToApp" prepend=",">#NumberOfBondsIssuedToApp#</isNotEmpty>
+          <isNotEmpty property="NumberOfBondsForGenObligation" prepend=",">#NumberOfBondsForGenObligation#</isNotEmpty>
+          <isNotEmpty property="NumberOfBondsByRevenue" prepend=",">#NumberOfBondsByRevenue#</isNotEmpty>
+          <isNotEmpty property="NumberOfBondsOtherDetails" prepend=",">#NumberOfBondsOtherDetails#</isNotEmpty>
+          <isNotEmpty property="ApplicantEmployForBondIssues" prepend=",">#ApplicantEmployForBondIssues#</isNotEmpty>
+          <isNotEmpty property="BondCounsel" prepend=",">#BondCounsel#</isNotEmpty>
+          <isNotEmpty property="Issuer" prepend=",">#Issuer#</isNotEmpty>
+          <isNotEmpty property="Underwriter" prepend=",">#Underwriter#</isNotEmpty>
+          <isNotEmpty property="ApplicantEmployForBondIssuesOther" prepend=",">#ApplicantEmployForBondIssuesOther#</isNotEmpty>
+          <isNotEmpty property="NumberOfBondHaveExpInDefProc" prepend=",">#NumberOfBondHaveExpInDefProc#</isNotEmpty>
+          <isNotEmpty property="NumberOfBondCurrentInDef" prepend=",">#NumberOfBondCurrentInDef#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FeesDerFromApplSecurityFiscalYr1, FeesDerFromApplSecurityFiscalYr2, IsNoConflictWithSecurityMatters, IsAppSeekSecAdvRelToTransaction, AppSeekSecAdvRelToTransactionDesc, IsAppReqAttorneyToIntervClientDir, IsAppReqRecordsOfFactualsource, IsAppProhibitPolicyFromSecProcess, AppProhibitPolicyFromSecProcessDesc, IsAppProhibitSecAttorWithInvest, IsAppProhibitFirmFromTrading, IsAppReqSecToDissolveAllInvest, IsAppHavePolicyGovernTrading, IsAppPreventAttorneysStaff, IsAppPrecludingInDisclosureDocs, IsAppProhibitAttorneyOfDirector, IsAppProhSecPaysForAppServices, AppProhSecPaysForAppServicesDesc, IsAppHaveObligationToPayServices, IsAppReqAtleastOneSecurityAtt, IsAppPolicyReqExecutiveCommRev, IsAppSubjectOfInvestBySEC, IsAppProvLegalServiceFor1933Act, IsSecurityIssuedByBank, IsSecurityIssuedByUS, IsSecurityIssuedByLoanInstitute, IsAppProvLegalServiceForInsuranceBonds, IsAppProvLegalserviceForPrivPlaceBonds, IsDiligenceRetForAllPrivateBonds, NumberOfBondsIssuedToApp, NumberOfBondsForGenObligation, NumberOfBondsByRevenue, NumberOfBondsOtherDetails, ApplicantEmployForBondIssues, BondCounsel, Issuer, Underwriter, ApplicantEmployForBondIssuesOther, NumberOfBondHaveExpInDefProc, NumberOfBondCurrentInDef, LastUpdateUserID, LastUpdateTimeStamp, VersionSequence, PolicyKey from SecuritiesSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update SecuritiesSuppLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="FeesDerFromApplSecurityFiscalYr1" prepend=",">FeesDerFromApplSecurityFiscalYr1 = #FeesDerFromApplSecurityFiscalYr1#</isNotEmpty>
+               <isEmpty property="FeesDerFromApplSecurityFiscalYr1" prepend=",">FeesDerFromApplSecurityFiscalYr1 = null</isEmpty>
+               <isNotEmpty property="FeesDerFromApplSecurityFiscalYr2" prepend=",">FeesDerFromApplSecurityFiscalYr2 = #FeesDerFromApplSecurityFiscalYr2#</isNotEmpty>
+               <isEmpty property="FeesDerFromApplSecurityFiscalYr2" prepend=",">FeesDerFromApplSecurityFiscalYr2 = null</isEmpty>
+               <isNotEmpty property="IsNoConflictWithSecurityMatters" prepend=",">IsNoConflictWithSecurityMatters = #IsNoConflictWithSecurityMatters#</isNotEmpty>
+               <isEmpty property="IsNoConflictWithSecurityMatters" prepend=",">IsNoConflictWithSecurityMatters = null</isEmpty>
+               <isNotEmpty property="IsAppSeekSecAdvRelToTransaction" prepend=",">IsAppSeekSecAdvRelToTransaction = #IsAppSeekSecAdvRelToTransaction#</isNotEmpty>
+               <isEmpty property="IsAppSeekSecAdvRelToTransaction" prepend=",">IsAppSeekSecAdvRelToTransaction = null</isEmpty>
+               <isNotEmpty property="AppSeekSecAdvRelToTransactionDesc" prepend=",">AppSeekSecAdvRelToTransactionDesc = #AppSeekSecAdvRelToTransactionDesc#</isNotEmpty>
+               <isEmpty property="AppSeekSecAdvRelToTransactionDesc" prepend=",">AppSeekSecAdvRelToTransactionDesc = null</isEmpty>
+               <isNotEmpty property="IsAppReqAttorneyToIntervClientDir" prepend=",">IsAppReqAttorneyToIntervClientDir = #IsAppReqAttorneyToIntervClientDir#</isNotEmpty>
+               <isEmpty property="IsAppReqAttorneyToIntervClientDir" prepend=",">IsAppReqAttorneyToIntervClientDir = null</isEmpty>
+               <isNotEmpty property="IsAppReqRecordsOfFactualsource" prepend=",">IsAppReqRecordsOfFactualsource = #IsAppReqRecordsOfFactualsource#</isNotEmpty>
+               <isEmpty property="IsAppReqRecordsOfFactualsource" prepend=",">IsAppReqRecordsOfFactualsource = null</isEmpty>
+               <isNotEmpty property="IsAppProhibitPolicyFromSecProcess" prepend=",">IsAppProhibitPolicyFromSecProcess = #IsAppProhibitPolicyFromSecProcess#</isNotEmpty>
+               <isEmpty property="IsAppProhibitPolicyFromSecProcess" prepend=",">IsAppProhibitPolicyFromSecProcess = null</isEmpty>
+               <isNotEmpty property="AppProhibitPolicyFromSecProcessDesc" prepend=",">AppProhibitPolicyFromSecProcessDesc = #AppProhibitPolicyFromSecProcessDesc#</isNotEmpty>
+               <isEmpty property="AppProhibitPolicyFromSecProcessDesc" prepend=",">AppProhibitPolicyFromSecProcessDesc = null</isEmpty>
+               <isNotEmpty property="IsAppProhibitSecAttorWithInvest" prepend=",">IsAppProhibitSecAttorWithInvest = #IsAppProhibitSecAttorWithInvest#</isNotEmpty>
+               <isEmpty property="IsAppProhibitSecAttorWithInvest" prepend=",">IsAppProhibitSecAttorWithInvest = null</isEmpty>
+               <isNotEmpty property="IsAppProhibitFirmFromTrading" prepend=",">IsAppProhibitFirmFromTrading = #IsAppProhibitFirmFromTrading#</isNotEmpty>
+               <isEmpty property="IsAppProhibitFirmFromTrading" prepend=",">IsAppProhibitFirmFromTrading = null</isEmpty>
+               <isNotEmpty property="IsAppReqSecToDissolveAllInvest" prepend=",">IsAppReqSecToDissolveAllInvest = #IsAppReqSecToDissolveAllInvest#</isNotEmpty>
+               <isEmpty property="IsAppReqSecToDissolveAllInvest" prepend=",">IsAppReqSecToDissolveAllInvest = null</isEmpty>
+               <isNotEmpty property="IsAppHavePolicyGovernTrading" prepend=",">IsAppHavePolicyGovernTrading = #IsAppHavePolicyGovernTrading#</isNotEmpty>
+               <isEmpty property="IsAppHavePolicyGovernTrading" prepend=",">IsAppHavePolicyGovernTrading = null</isEmpty>
+               <isNotEmpty property="IsAppPreventAttorneysStaff" prepend=",">IsAppPreventAttorneysStaff = #IsAppPreventAttorneysStaff#</isNotEmpty>
+               <isEmpty property="IsAppPreventAttorneysStaff" prepend=",">IsAppPreventAttorneysStaff = null</isEmpty>
+               <isNotEmpty property="IsAppPrecludingInDisclosureDocs" prepend=",">IsAppPrecludingInDisclosureDocs = #IsAppPrecludingInDisclosureDocs#</isNotEmpty>
+               <isEmpty property="IsAppPrecludingInDisclosureDocs" prepend=",">IsAppPrecludingInDisclosureDocs = null</isEmpty>
+               <isNotEmpty property="IsAppProhibitAttorneyOfDirector" prepend=",">IsAppProhibitAttorneyOfDirector = #IsAppProhibitAttorneyOfDirector#</isNotEmpty>
+               <isEmpty property="IsAppProhibitAttorneyOfDirector" prepend=",">IsAppProhibitAttorneyOfDirector = null</isEmpty>
+               <isNotEmpty property="IsAppProhSecPaysForAppServices" prepend=",">IsAppProhSecPaysForAppServices = #IsAppProhSecPaysForAppServices#</isNotEmpty>
+               <isEmpty property="IsAppProhSecPaysForAppServices" prepend=",">IsAppProhSecPaysForAppServices = null</isEmpty>
+               <isNotEmpty property="AppProhSecPaysForAppServicesDesc" prepend=",">AppProhSecPaysForAppServicesDesc = #AppProhSecPaysForAppServicesDesc#</isNotEmpty>
+               <isEmpty property="AppProhSecPaysForAppServicesDesc" prepend=",">AppProhSecPaysForAppServicesDesc = null</isEmpty>
+               <isNotEmpty property="IsAppHaveObligationToPayServices" prepend=",">IsAppHaveObligationToPayServices = #IsAppHaveObligationToPayServices#</isNotEmpty>
+               <isEmpty property="IsAppHaveObligationToPayServices" prepend=",">IsAppHaveObligationToPayServices = null</isEmpty>
+               <isNotEmpty property="IsAppReqAtleastOneSecurityAtt" prepend=",">IsAppReqAtleastOneSecurityAtt = #IsAppReqAtleastOneSecurityAtt#</isNotEmpty>
+               <isEmpty property="IsAppReqAtleastOneSecurityAtt" prepend=",">IsAppReqAtleastOneSecurityAtt = null</isEmpty>
+               <isNotEmpty property="IsAppPolicyReqExecutiveCommRev" prepend=",">IsAppPolicyReqExecutiveCommRev = #IsAppPolicyReqExecutiveCommRev#</isNotEmpty>
+               <isEmpty property="IsAppPolicyReqExecutiveCommRev" prepend=",">IsAppPolicyReqExecutiveCommRev = null</isEmpty>
+               <isNotEmpty property="IsAppSubjectOfInvestBySEC" prepend=",">IsAppSubjectOfInvestBySEC = #IsAppSubjectOfInvestBySEC#</isNotEmpty>
+               <isEmpty property="IsAppSubjectOfInvestBySEC" prepend=",">IsAppSubjectOfInvestBySEC = null</isEmpty>
+               <isNotEmpty property="IsAppProvLegalServiceFor1933Act" prepend=",">IsAppProvLegalServiceFor1933Act = #IsAppProvLegalServiceFor1933Act#</isNotEmpty>
+               <isEmpty property="IsAppProvLegalServiceFor1933Act" prepend=",">IsAppProvLegalServiceFor1933Act = null</isEmpty>
+               <isNotEmpty property="IsSecurityIssuedByBank" prepend=",">IsSecurityIssuedByBank = #IsSecurityIssuedByBank#</isNotEmpty>
+               <isEmpty property="IsSecurityIssuedByBank" prepend=",">IsSecurityIssuedByBank = null</isEmpty>
+               <isNotEmpty property="IsSecurityIssuedByUS" prepend=",">IsSecurityIssuedByUS = #IsSecurityIssuedByUS#</isNotEmpty>
+               <isEmpty property="IsSecurityIssuedByUS" prepend=",">IsSecurityIssuedByUS = null</isEmpty>
+               <isNotEmpty property="IsSecurityIssuedByLoanInstitute" prepend=",">IsSecurityIssuedByLoanInstitute = #IsSecurityIssuedByLoanInstitute#</isNotEmpty>
+               <isEmpty property="IsSecurityIssuedByLoanInstitute" prepend=",">IsSecurityIssuedByLoanInstitute = null</isEmpty>
+               <isNotEmpty property="IsAppProvLegalServiceForInsuranceBonds" prepend=",">IsAppProvLegalServiceForInsuranceBonds = #IsAppProvLegalServiceForInsuranceBonds#</isNotEmpty>
+               <isEmpty property="IsAppProvLegalServiceForInsuranceBonds" prepend=",">IsAppProvLegalServiceForInsuranceBonds = null</isEmpty>
+               <isNotEmpty property="IsAppProvLegalserviceForPrivPlaceBonds" prepend=",">IsAppProvLegalserviceForPrivPlaceBonds = #IsAppProvLegalserviceForPrivPlaceBonds#</isNotEmpty>
+               <isEmpty property="IsAppProvLegalserviceForPrivPlaceBonds" prepend=",">IsAppProvLegalserviceForPrivPlaceBonds = null</isEmpty>
+               <isNotEmpty property="IsDiligenceRetForAllPrivateBonds" prepend=",">IsDiligenceRetForAllPrivateBonds = #IsDiligenceRetForAllPrivateBonds#</isNotEmpty>
+               <isEmpty property="IsDiligenceRetForAllPrivateBonds" prepend=",">IsDiligenceRetForAllPrivateBonds = null</isEmpty>
+               <isNotEmpty property="NumberOfBondsIssuedToApp" prepend=",">NumberOfBondsIssuedToApp = #NumberOfBondsIssuedToApp#</isNotEmpty>
+               <isEmpty property="NumberOfBondsIssuedToApp" prepend=",">NumberOfBondsIssuedToApp = null</isEmpty>
+               <isNotEmpty property="NumberOfBondsForGenObligation" prepend=",">NumberOfBondsForGenObligation = #NumberOfBondsForGenObligation#</isNotEmpty>
+               <isEmpty property="NumberOfBondsForGenObligation" prepend=",">NumberOfBondsForGenObligation = null</isEmpty>
+               <isNotEmpty property="NumberOfBondsByRevenue" prepend=",">NumberOfBondsByRevenue = #NumberOfBondsByRevenue#</isNotEmpty>
+               <isEmpty property="NumberOfBondsByRevenue" prepend=",">NumberOfBondsByRevenue = null</isEmpty>
+               <isNotEmpty property="NumberOfBondsOtherDetails" prepend=",">NumberOfBondsOtherDetails = #NumberOfBondsOtherDetails#</isNotEmpty>
+               <isEmpty property="NumberOfBondsOtherDetails" prepend=",">NumberOfBondsOtherDetails = null</isEmpty>
+               <isNotEmpty property="ApplicantEmployForBondIssues" prepend=",">ApplicantEmployForBondIssues = #ApplicantEmployForBondIssues#</isNotEmpty>
+               <isEmpty property="ApplicantEmployForBondIssues" prepend=",">ApplicantEmployForBondIssues = null</isEmpty>
+               <isNotEmpty property="BondCounsel" prepend=",">BondCounsel = #BondCounsel#</isNotEmpty>
+               <isEmpty property="BondCounsel" prepend=",">BondCounsel = null</isEmpty>
+               <isNotEmpty property="Issuer" prepend=",">Issuer = #Issuer#</isNotEmpty>
+               <isEmpty property="Issuer" prepend=",">Issuer = null</isEmpty>
+               <isNotEmpty property="Underwriter" prepend=",">Underwriter = #Underwriter#</isNotEmpty>
+               <isEmpty property="Underwriter" prepend=",">Underwriter = null</isEmpty>
+               <isNotEmpty property="ApplicantEmployForBondIssuesOther" prepend=",">ApplicantEmployForBondIssuesOther = #ApplicantEmployForBondIssuesOther#</isNotEmpty>
+               <isEmpty property="ApplicantEmployForBondIssuesOther" prepend=",">ApplicantEmployForBondIssuesOther = null</isEmpty>
+               <isNotEmpty property="NumberOfBondHaveExpInDefProc" prepend=",">NumberOfBondHaveExpInDefProc = #NumberOfBondHaveExpInDefProc#</isNotEmpty>
+               <isEmpty property="NumberOfBondHaveExpInDefProc" prepend=",">NumberOfBondHaveExpInDefProc = null</isEmpty>
+               <isNotEmpty property="NumberOfBondCurrentInDef" prepend=",">NumberOfBondCurrentInDef = #NumberOfBondCurrentInDef#</isNotEmpty>
+               <isEmpty property="NumberOfBondCurrentInDef" prepend=",">NumberOfBondCurrentInDef = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from SecuritiesSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from SecuritiesSuppLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from SecuritiesSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FeesDerFromApplSecurityFiscalYr1, FeesDerFromApplSecurityFiscalYr2, IsNoConflictWithSecurityMatters, IsAppSeekSecAdvRelToTransaction, AppSeekSecAdvRelToTransactionDesc, IsAppReqAttorneyToIntervClientDir, IsAppReqRecordsOfFactualsource, IsAppProhibitPolicyFromSecProcess, AppProhibitPolicyFromSecProcessDesc, IsAppProhibitSecAttorWithInvest, IsAppProhibitFirmFromTrading, IsAppReqSecToDissolveAllInvest, IsAppHavePolicyGovernTrading, IsAppPreventAttorneysStaff, IsAppPrecludingInDisclosureDocs, IsAppProhibitAttorneyOfDirector, IsAppProhSecPaysForAppServices, AppProhSecPaysForAppServicesDesc, IsAppHaveObligationToPayServices, IsAppReqAtleastOneSecurityAtt, IsAppPolicyReqExecutiveCommRev, IsAppSubjectOfInvestBySEC, IsAppProvLegalServiceFor1933Act, IsSecurityIssuedByBank, IsSecurityIssuedByUS, IsSecurityIssuedByLoanInstitute, IsAppProvLegalServiceForInsuranceBonds, IsAppProvLegalserviceForPrivPlaceBonds, IsDiligenceRetForAllPrivateBonds, NumberOfBondsIssuedToApp, NumberOfBondsForGenObligation, NumberOfBondsByRevenue, NumberOfBondsOtherDetails, ApplicantEmployForBondIssues, BondCounsel, Issuer, Underwriter, ApplicantEmployForBondIssuesOther, NumberOfBondHaveExpInDefProc, NumberOfBondCurrentInDef, LastUpdateUserID, LastUpdateTimeStamp, VersionSequence, PolicyKey from SecuritiesSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, FeesDerFromApplSecurityFiscalYr1, FeesDerFromApplSecurityFiscalYr2, IsNoConflictWithSecurityMatters, IsAppSeekSecAdvRelToTransaction, AppSeekSecAdvRelToTransactionDesc, IsAppReqAttorneyToIntervClientDir, IsAppReqRecordsOfFactualsource, IsAppProhibitPolicyFromSecProcess, AppProhibitPolicyFromSecProcessDesc, IsAppProhibitSecAttorWithInvest, IsAppProhibitFirmFromTrading, IsAppReqSecToDissolveAllInvest, IsAppHavePolicyGovernTrading, IsAppPreventAttorneysStaff, IsAppPrecludingInDisclosureDocs, IsAppProhibitAttorneyOfDirector, IsAppProhSecPaysForAppServices, AppProhSecPaysForAppServicesDesc, IsAppHaveObligationToPayServices, IsAppReqAtleastOneSecurityAtt, IsAppPolicyReqExecutiveCommRev, IsAppSubjectOfInvestBySEC, IsAppProvLegalServiceFor1933Act, IsSecurityIssuedByBank, IsSecurityIssuedByUS, IsSecurityIssuedByLoanInstitute, IsAppProvLegalServiceForInsuranceBonds, IsAppProvLegalserviceForPrivPlaceBonds, IsDiligenceRetForAllPrivateBonds, NumberOfBondsIssuedToApp, NumberOfBondsForGenObligation, NumberOfBondsByRevenue, NumberOfBondsOtherDetails, ApplicantEmployForBondIssues, BondCounsel, Issuer, Underwriter, ApplicantEmployForBondIssuesOther, NumberOfBondHaveExpInDefProc, NumberOfBondCurrentInDef, LastUpdateUserID, LastUpdateTimeStamp from SecuritiesSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

@@ -1,0 +1,52 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="TaxSuppLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from TaxSuppLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from TaxSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into TaxSuppLW(VersionSequence, PolicyKey
+          <isNotEmpty property="IsApplDesignedTaxShelter" prepend=",">IsApplDesignedTaxShelter</isNotEmpty>
+          <isNotEmpty property="IsIRSChallenged" prepend=",">IsIRSChallenged</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="IsApplInvInPrivMemo" prepend=",">IsApplInvInPrivMemo</isNotEmpty>
+          <isNotEmpty property="PlacementMemoDetails" prepend=",">PlacementMemoDetails</isNotEmpty>
+          <isNotEmpty property="IsApplSubjOfFedState" prepend=",">IsApplSubjOfFedState</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="IsApplDesignedTaxShelter" prepend=",">#IsApplDesignedTaxShelter#</isNotEmpty>
+          <isNotEmpty property="IsIRSChallenged" prepend=",">#IsIRSChallenged#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="IsApplInvInPrivMemo" prepend=",">#IsApplInvInPrivMemo#</isNotEmpty>
+          <isNotEmpty property="PlacementMemoDetails" prepend=",">#PlacementMemoDetails#</isNotEmpty>
+          <isNotEmpty property="IsApplSubjOfFedState" prepend=",">#IsApplSubjOfFedState#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select IsApplDesignedTaxShelter, IsIRSChallenged, LastUpdateUserID, LastUpdateTimeStamp, IsApplInvInPrivMemo, PlacementMemoDetails, IsApplSubjOfFedState, VersionSequence, PolicyKey from TaxSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update TaxSuppLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="IsApplDesignedTaxShelter" prepend=",">IsApplDesignedTaxShelter = #IsApplDesignedTaxShelter#</isNotEmpty>
+               <isEmpty property="IsApplDesignedTaxShelter" prepend=",">IsApplDesignedTaxShelter = null</isEmpty>
+               <isNotEmpty property="IsIRSChallenged" prepend=",">IsIRSChallenged = #IsIRSChallenged#</isNotEmpty>
+               <isEmpty property="IsIRSChallenged" prepend=",">IsIRSChallenged = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="IsApplInvInPrivMemo" prepend=",">IsApplInvInPrivMemo = #IsApplInvInPrivMemo#</isNotEmpty>
+               <isEmpty property="IsApplInvInPrivMemo" prepend=",">IsApplInvInPrivMemo = null</isEmpty>
+               <isNotEmpty property="PlacementMemoDetails" prepend=",">PlacementMemoDetails = #PlacementMemoDetails#</isNotEmpty>
+               <isEmpty property="PlacementMemoDetails" prepend=",">PlacementMemoDetails = null</isEmpty>
+               <isNotEmpty property="IsApplSubjOfFedState" prepend=",">IsApplSubjOfFedState = #IsApplSubjOfFedState#</isNotEmpty>
+               <isEmpty property="IsApplSubjOfFedState" prepend=",">IsApplSubjOfFedState = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from TaxSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from TaxSuppLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from TaxSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select IsApplDesignedTaxShelter, IsIRSChallenged, LastUpdateUserID, LastUpdateTimeStamp, IsApplInvInPrivMemo, PlacementMemoDetails, IsApplSubjOfFedState, VersionSequence, PolicyKey from TaxSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, IsApplDesignedTaxShelter, IsIRSChallenged, LastUpdateUserID, LastUpdateTimeStamp, IsApplInvInPrivMemo, PlacementMemoDetails, IsApplSubjOfFedState from TaxSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

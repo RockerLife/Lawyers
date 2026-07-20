@@ -1,0 +1,32 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="GrossRevenueForTitleInsuranceLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from GrossRevenueForTitleInsuranceLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from GrossRevenueForTitleInsuranceLW where GrossRevenueForTIAKey = #GrossRevenueForTIAKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into GrossRevenueForTitleInsuranceLW(GrossRevenueForTIAKey, VersionSequence, PolicyKey
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          ) values (#GrossRevenueForTIAKey:NUMERIC#, #VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select LastUpdateUserID, LastUpdateTimeStamp, GrossRevenueForTIAKey, VersionSequence, PolicyKey from GrossRevenueForTitleInsuranceLW where GrossRevenueForTIAKey = #GrossRevenueForTIAKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update GrossRevenueForTitleInsuranceLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where GrossRevenueForTIAKey = #GrossRevenueForTIAKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from GrossRevenueForTitleInsuranceLW where GrossRevenueForTIAKey = #GrossRevenueForTIAKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from GrossRevenueForTitleInsuranceLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from GrossRevenueForTitleInsuranceLW where GrossRevenueForTIAKey = #GrossRevenueForTIAKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select LastUpdateUserID, LastUpdateTimeStamp, GrossRevenueForTIAKey, VersionSequence, PolicyKey from GrossRevenueForTitleInsuranceLW where GrossRevenueForTIAKey = #GrossRevenueForTIAKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select GrossRevenueForTIAKey, VersionSequence, PolicyKey, LastUpdateUserID, LastUpdateTimeStamp from GrossRevenueForTitleInsuranceLW where GrossRevenueForTIAKey = #GrossRevenueForTIAKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

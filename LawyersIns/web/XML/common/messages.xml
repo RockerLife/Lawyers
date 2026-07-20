@@ -1,0 +1,10 @@
+<messages>
+    <message msglevel="W" msgkey="required_field_missing" message="Please enter {0}"/>
+    <message msglevel="W" msgkey="incorrect_numeric_field" message="Please enter valid {0}"/>
+    <message msglevel="W" msgkey="incorrect_range" message="{0} must be in the range of {1}."/>
+    <message msglevel="W" msgkey="incorrect_date_pattern" message="{0} must be specified in the format of {1}."/>
+    <message msglevel="W" msgkey="column_not_found" message="{0} column is not present."/>
+    <message msglevel="W" msgkey="pk_key_missing" message="{0} primary key is missing."/>
+    <message msglevel="W" msgkey="incorrect_char_length" message="{0} cannot exceed more than {1} characters"/>
+    <message msglevel="W" msgkey="incorrect_date" message="Invalid Date"/>
+</messages>

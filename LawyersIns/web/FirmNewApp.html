@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Firm</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/jquery.treeview.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+<body onload=""><!--loadCompany();  -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Bootstrap Core JavaScript -->
+<div id="cover"></div>
+
+<!-- Modal -->
+<div id="zohoNameClearance" class="modal">
+  <div class="modal-dialog" style="width: 700px">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+		<a class="close" href="#" onclick="{closePopUp('zohoNameClearance'); window.location.href = $('#firmNewAppID').attr('href');}"><i class="fa fa-close">&nbsp;</i></a>
+        <h4 class="modal-title">Confirm</h4>
+	</div>
+      <div class="modal-body" style="height: 100px">
+		<span id="zohoNameClearanceFlag" >The risk exists in Protexure's CRM and will need to be Name Cleared by the Protexure Underwriter prior to pricing.</span>
+      </div>
+      <div class="modal-footer">
+		<div class="buttonwrapper">
+			<!-- //<a class="ovalbutton">Save</a> -->
+			<a class="ovalbutton" onclick="{closePopUp('zohoNameClearance'); window.location.href = $('#firmNewAppID').attr('href');}">Close</a>
+		</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+	<form class="form-horizontal row" autocomplete="chrome-off">
+
+
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth" id="AppCompleted">
+			
+				<div id="header">
+					<span id="#Include:header.html#"></span>
+				</div>
+				<div class="menuTab">
+					<span id="#Include:tabs.html#"></span>
+				</div>
+				
+				<div id="contentSection">
+					<div class="confirmationMsgAlign" id="FirmNewApp_freeform_contextdata_100">
+						<!-- <label class="Confirmation" name="pageMsg" id="pageMsg" /> -->
+						<!-- <div id="error_ApplicationNotCompleted" class="error11Bold"> </div> -->
+						<div id="error_StatusUpdate" class="error11Bold"> </div>
+					</div>
+					<div id="NewBusiness">
+						<h2 class="questionHeading">
+							<span>1.</span> Tell us about the firm you would like to insure
+						</h2>
+					</div>
+					<div id="RenewBusiness">
+						<h2 class="questionHeading">
+							<span>1.</span> Have you changed your contact information?
+						</h2>
+					</div>
+					<div class="form">
+						<div class="row newFreeForm_UI" id="FirmNewApp_freeform_contextdata_0">
+							<div class="block-form firmNewApp">
+								<div class="row">
+								<!-- 	<div class="col-sm-12"><div class="headingNew hideTemp">1. What is the name of your Firm? </div></div> -->
+									<div class="col-sm-12">
+										<div class="form-group form-group-last">
+											<label class="asterisk">Firm Name :</label> 
+											<input class="form-control" type="text" name="AccountName"
+													id="ajax_field_AccountName" autocomplete="chrome-off"/>
+			
+											<div id="error_AccountName" class="error"></div>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12"><div class="headingNew hideTemp">2. Where is your Firm located? (Physical location)</div></div>
+									<div class="col-sm-6">
+										<div id="RenewBusiness" class="form-group">
+											<label class="asterisk">Physical Address :</label>
+											<input class="form-control" type="text" name="Address1" id="ajax_field_Address1" autocomplete="chrome-off"/>
+											<div id="error_Address1" class="error"> </div>
+										</div>
+										<div id="NewBusiness" class="form-group">
+											<label class="asterisk">Street Address :</label>
+											<input class="form-control" type="text" name="Street" id="ajax_field_Street" autocomplete="chrome-off"/>
+											<div id="error_Street" class="error"> </div> 
+											<div id="ajax_error_Street" class="error"> </div>
+										</div>
+									</div>
+			
+									
+									<div class="col-sm-6">
+										<div class="form-group form-group-last">
+											<label>Address Line 2 :</label> 
+											<input class="form-control" type="text" name="Address2" 
+													id="ajax_field_Address2" autocomplete="chrome-off"/>
+			
+											<div id="error_Address2" class="error"></div>
+										</div>
+									</div>
+									
+									
+									
+								</div>
+								<div class="row">
+								<div class="col-sm-3">
+										<div class="form-group form-group2" id="State">
+											<label class="asterisk">State :</label>
+											<select name="StateCode" id="StateCode"
+												class="form-control"
+												onchange="javascript:ajaxpageblocklink('FirmNewApp.html','FirmNewApp.refreshCounty','','','countyList');"><!--setTimeout(loadCompany, 1500);  -->
+													<option value="">Select</option>
+											</select>
+											<div id="error_StateCode" class="error"> </div>
+										</div>
+									</div>
+									<div id="countyList">
+										<div class="col-sm-6" >
+											<div class="row">
+											
+												<div class="col-sm-6">
+													<div class="form-group ">
+														<label class="asterisk">County :</label>
+														<div>
+															 <span id="eval:LawyersRule.isCountySizeZero">
+																	 <input type="text" class="form-control"
+																	name="CountyDesc" id="CountyDesc"
+																	onblur="javascript:capitalizeSentences(this,1);"
+																	size="30"  autocomplete="chrome-off"/>
+															</span> 
+															<span id="eval:LawyersRule.isCountySizeNotZero">
+																	 <select name="CountyDesc" id="ajax_field_CountyDesc"
+																	class="form-control selectBoxSelected">
+																	<!-- onchange="javascript:ajaxpageblocklink('FirmNewApp.html','FirmNewApp.refreshCity','','','countyList');" -->
+																			<option value="" selected="selected">
+																				Select</option>
+																	</select>
+															</span>
+														</div>
+														<div id="ajaxxmlCountyDesc_CountyDesc"
+															class="transparent fixcolumnHeaderSearch"
+															style="display: none; border: solid 1px #cccccc; width: 242px;"></div>
+														<div id="error_CountyDesc" class="error"> </div>
+													</div>
+												</div>
+												<div class="col-sm-6">
+													<div class="form-group form-group2">
+														<label class="asterisk">City :</label>
+														<!-- <div
+															id="eval:LawyersRule.ShowCityDropDownList">
+																<span id="eval:LawyersRule.isCitySizeZero">
+																	<input type="text" class="form-control"
+																	name="City" id="ajax_field_City" size="40"
+																	maxlength="50" autocomplete="chrome-off"
+																	onblur="javascript:capitalizeSentences(this,1);" />
+															</span> <span id="eval:LawyersRule.isCitySizeNotZero">
+																	<select name="City" id="City"
+																	class="form-control">
+																		<option value="" selected="selected">
+																			Select</option>
+																</select>
+															</span>
+														</div> 
+														 <div id="eval:LawyersRule.ShowNotCityDropDownList"> -->
+															<input type="text" class="form-control"
+															name="City" id="City" size="40" maxlength="50"
+															onblur="javascript:capitalizeSentences(this,1);" autocomplete="chrome-off"
+															/>
+														<!-- </div> -->
+														<div id="error_City" class="error"> </div> 
+													</div>
+													<input type="hidden" name="CompanyAsPerState" id="CompanyAsPerState"/>
+												</div>
+											</div>
+										</div>
+										<div id="companyList">
+											<div id="showAgentOnly">
+
+												<div class="col-sm-3" id="CompanyCodeEdit_Security">
+													<div class="form-group form-group-last">
+														<div id="">
+															<label>Company :</label> <select name="CompanyKey"
+																id="ajax_field_CompanyKey" class="form-control">
+																<option value="">Select</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>		
+									</div>
+									
+								</div>
+								
+								<div class="row">
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk">Zip Code :</label>
+											<input type="text" name="Zip" id="ajax_field_Zip" class="form-control"
+													onkeydown="loadFirmNewApp()" autocomplete="chrome-off" /> 
+											<div id="error_Zip" class="error"> </div> 
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group">
+											<label class="asterisk">Email :</label>
+											<input class="form-control" type="text" id="ajax_field_AccountEmail" name="AccountEmail" 
+													onblur="validateEmail(this.value,this);" autocomplete="chrome-off"/>
+											<div id="error_AccountEmail" class="error"> </div>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="asterisk">Phone Number :</label>
+											<input class="form-control" type="text" id="ajax_field_WorkPhone" name="WorkPhone"
+													 onclick="loadFirmNewApp();" autocomplete="chrome-off"/>
+											 <div id="error_WorkPhone" class="error"> </div>
+										</div>
+									</div>
+									<div class="col-sm-3" id ="showAgentOnly">
+										<div class="form-group form-group-last" id="eval:LawyersRule.isSubproducerLoggedIn">
+											<label class="">Sub Producer Number :</label>
+											<input class="form-control" disabled tabindex="23" type="text" id="ajax_field_ProducerCode" name="ProducerCode"  maxlength="8"/>
+										</div>
+										<div class="form-group form-group-last" id="eval:LawyersRule.isNotSubproducerLoggedIn">
+										<label class="asterisk" id="BridgeApp_Security">Sub-producer :</label>
+											<label class="" id="NonBridgeApp_Security">Sub-producer :</label>
+											<!-- <input class="form-control" tabindex="23" type="text" id="ajax_field_ProducerCode" name="ProducerCode"  maxlength="8" onblur="toUpperCase('ajax_field_ProducerCode');"/> -->
+											<select name="ProducerCode" id="ajax_field_ProducerCode" class="form-control">
+													<option value="">Select</option>
+											</select>
+											<div id="error_ProducerCode" class="error"> </div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="row">
+									<div class="col-sm-12" id="NewBusiness"><div class="headingNew hideTemp">3. When would you like your insurance to start?</div></div>
+									
+									<div class="col-sm-3" id="NewBusiness">
+										<div class="form-group">
+											<label class="asterisk">Start Date :</label> 
+											<div class="iconsStyle3">
+												<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+												<input autocomplete="chrome-off" type="text" class="form-control datepicker"
+													id="ajax_field_PolicyEffectiveDate" name="PolicyEffectiveDate"
+													onkeyup="applyDateFormat(this,event);"
+													onchange="javascript:ajaxpageblocklink('FirmNewApp.html','FirmNewApp.refreshCompany','','','companyList');"/>
+											</div>
+											<div id="error_PolicyEffectiveDate" class="error"> </div> 
+										</div>
+									</div>
+									
+									
+								</div>
+								
+								
+							</div>
+							<div id="RenewBusiness" class="block-form firmNewApp">
+								<div class="row">
+									<div class="headingNew2">Contact Information</div>
+								</div>
+								
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="asterisk">Primary Contact Name :</label> 
+											<input autocomplete="chrome-off" class="form-control" type="text" id="ajax_field_ContactPerson" name="ContactPerson" onclick="loadHouseKeeping();"/>
+											<div id="error_ContactPerson" class="error"> </div>																
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group2">
+											<label class="">Contact Phone Number : </label> 
+											<input class="form-control" type="text" id="ajax_field_otherPhone" name="otherPhone" onclick="loadFirmNewApp();"
+											 placeholder="(If different than primary number)" autocomplete="chrome-off"/>
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="form-group form-group-last">
+											<label class="">Secondary Email :</label> 
+											<input class="form-control" type="text" id="ajax_field_secondaryEmail" name="secondaryEmail" onblur="validateEmail(this.value,this);" autocomplete="chrome-off"/>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="">Secondary Contact Name :</label> 
+											<input class="form-control" type="text" id="ajax_field_secondayContactPerson" name="secondayContactPerson" autocomplete="chrome-off"/>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group form-group-last">
+											<label class="">Website Address :</label> 
+											<input class="form-control" type="text" id="ajax_field_Website" name="Website" autocomplete="chrome-off"/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="buttons borderTop row marginsBtn">
+						
+						<div id="NewBusiness">
+							
+							<div class="floatRight">
+								<span id="showPageSave">
+									<a id="firmNewAppID" class="btn save" href="javascript:submitform('FirmNewApp.html|insuranceHistory.html|workq.html','FirmNewApp.save','forwardeval','LawyersRule.isNameClearanceFirmNewAppPopupFlag|LawyersRule.isNotNameClearanceFirmNewAppPopupFlag|LawyersRule.isPolicyStatusUpdated');"
+										>Save&nbsp;&&nbsp;Continue</a></span>
+								<span id="showContinue">
+									 <a  href="javascript:submitform('insuranceHistory.html|workq.html','FirmNewApp.continue','forwardeval','LawyersRule.isPolicyStatusNotUpdated|LawyersRule.isPolicyStatusUpdated');" 
+	                  	 				class="btn next">Continue</a> </span>
+							</div>
+							</div>
+						<div id="RenewBusiness">
+							<div class="floatRight">
+								<span id="showPageSave">
+									<a class="btn save" href="javascript:submitform('Attorneys.html|workq.html','FirmNewApp.rbsave','forwardeval','LawyersRule.isPolicyStatusNotUpdated|LawyersRule.isPolicyStatusUpdated');"
+										>Save&nbsp;&&nbsp;Continue</a>
+								</span>
+								<span id="showContinue">
+									 <a  href="javascript:submitform('Attorneys.html|workq.html','FirmNewApp.rbcontinue','forwardeval','LawyersRule.isPolicyStatusNotUpdated|LawyersRule.isPolicyStatusUpdated');" 
+	                  	 				class="btn next">Continue</a> 
+	                  	 		</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!---------Footer Start---------->
+				<div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<!---------Footer End---------->
+			</div>
+			<table id="firm_freeform_contextdata_999">
+				<tr>
+					<td><input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />
+						<input type="hidden" name="AppCreatedDate" id="AppCreatedDate" />
+						<input type="hidden" name="ProducerCode" id="ProducerCode2" />
+						<input type="hidden" name="approveSubjective" id="approveSubjective" />
+						<!-- <input type="text" name="page" id="page"/> -->
+						<input type="hidden" name="User" id="User" />
+						
+						<input type="hidden" name="firmNewAppPage" id="firmNewAppPage"/>
+						<input type="hidden" name="insuranceHistoryPage" id="insuranceHistoryPage" />						
+						
+						<input type="hidden" name="bankruptcySuppPage" id="bankruptcySuppPage" />
+						<input type="hidden" name="collectionSuppPage" id="collectionSuppPage" />
+						<input type="hidden" name="copyrightSuppPage" id="copyrightSuppPage" />
+						<input type="hidden" name="familyLawSuppPage" id="familyLawSuppPage" />
+						<input type="hidden" name="financialSuppPage" id="financialSuppPage" />
+						<input type="hidden" name="governmentSuppPage" id="governmentSuppPage" />
+						<input type="hidden" name="litigationSuppPage" id="litigationSuppPage" />
+						<input type="hidden" name="realEstateSuppPage" id="realEstateSuppPage" />
+						<input type="hidden" name="willStateSuppTrustPage" id="willStateSuppTrustPage"/>
+						<input type="hidden" name="taxSuppPage" id="taxSuppPage" />
+												
+						<input type="hidden" name="aboutFirmPage" id="aboutFirmPage" />
+						<input type="hidden" name="aboutFirmRenewalPage" id="aboutFirmRenewalPage" />
+						<input type="hidden" name="PolicyStatusKey" id="PolicyStatusKey" />
+						<input type="hidden" name="practiceManagementPage" id="practiceManagementPage" />
+						<input type="hidden" name="morePracticeManagementPage" id="morePracticeManagementPage"/>
+						<input type="hidden" name="underWritingInfoPage" id="underWritingInfoPage" />
+						<input type="hidden" name="pastClaimsPage" id="pastClaimsPage" />
+						<input type="hidden" name="isNameClearanceRequired" id="isNameClearanceRequired" />
+						<input type="hidden" name="NameClearanceIndicationFlag" id="NameClearanceIndicationFlag" />
+						<input type="hidden" name="isElectronicInsurancePage" id="isElectronicInsurancePage" />
+						<script type="text/javascript" src="script/manageTab.js"></script>
+					</td>
+				</tr>
+			</table>
+		</div>
+	<div id="StatusValidation_freeform_contextdata_9990">
+		<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+		<input type="hidden" name="ZohoStatusDescUpdated" id="ZohoStatusDescUpdated" value="NewZohoStatus"/>
+	</div>
+	</form>
+</body>     
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+  
+<script>
+	var nameClearanceIndicationFlag = $("#NameClearanceIndicationFlag").val();
+	if(nameClearanceIndicationFlag == "Y"){
+		showPopUpOverloaded('zohoNameClearance','500','400');
+	}
+</script>
+</html>

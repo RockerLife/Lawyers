@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Claims Summary</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/jquery.treeview.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+	<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+		<form enctype="multipart/form-data">
+			<!-- Bootstrap Core JavaScript -->
+			<div class="container-fluid bootstrap-node-1">
+				<div class="tableWidth">
+					<!---------Header Start---------->
+					<div id="header">
+						<span id="#Include:header.html#"></span>
+					</div>
+					<!---------Header End---------->
+					<div id="contentSection">
+						<div id="ClaimSummary_freeform_contextdata_555">
+							<h2 class="questionHeading">Claim Summary Screen (
+							<label name="AccountID_search" style="font-size: 20px" id="AccountID_search" class="txt11BoldBlack"></label>
+							)</h2>
+						</div>
+						<div class="form row">
+							<div class="block-form">
+								<div class="paddingTop10">
+									<div id="suppClaimDiv">
+										<div id="error_ClaimSupplemnts" class="error paddingLeft40"/>
+										<table width="100%" border="0" align="center" cellpadding="5" cellspacing="0" class="gridTable" 
+												 id="coverage_list_1">
+											<tr id="coverage_list_header_1">
+												<th align="left" id="block_field_NameOfClaimant">
+													Claimant or Potential claimant
+												</th>
+												<th id="block_field_NameOfInsComp">
+													Insurance company
+												</th>
+												<th id="block_field_CurrentStatus">
+													Status
+												</th>
+												<th id="block_field_DateOfAllegedError">
+													Date of alleged error
+												</th>
+												<th  
+													id="block_field_DateReportedToInsComp">
+													Date reported
+												</th>
+												<th 
+													id="block_field_PolicyNumber">
+													Policy Number
+												</th>
+												<!-- <th 
+													id="block_field_AccountID">
+													AccountID
+												</th> -->
+												<th 
+													id="block_field_ClaimNumber">
+													Claim Number
+												</th>
+												<th 
+													id="block_field_ClaimClosingDate">
+													Closed Date
+												</th>
+												<th 
+													id="block_field_TotalIncurred">
+													Total Claim Amount
+												</th>
+												<th 
+													id="block_field_Description">
+													Claim Description
+												</th>
+												<th 
+													id="block_field_Signal">
+													Signal
+												</th>
+												<th width="16"
+													id="block_field_editlink_row_link"></th>
+													<th width="16"
+													id="block_field_viewlink_row_link"></th>
+												<th width="16" align="left"
+													id="block_field_deletelink_row_link"></th>
+											</tr>
+											<tbody  id="coverage_list_data_4">
+												
+												<tr id="1eval:LawyersRule.showHideCoverageList">
+													<td align="left"
+														id="block_field_NameOfClaimant"></td>
+													<td align="left"
+														id="block_field_NameOfInsComp"></td>
+													<td align="left"
+														id="block_field_CurrentStatus"></td>
+													<td align="left"
+														id="block_field_DateOfAllegedError"></td>
+													<td align="left"
+														id="block_field_DateReportedToInsComp"></td>
+													<td align="left"
+														id="block_field_PolicyNumber"></td>
+													<!-- <td align="left"
+														id="block_field_AccountID"></td> -->
+													<td align="left"
+														id="block_field_ClaimNumber"></td>
+													<td align="left"
+														id="block_field_ClaimClosingDate"></td>
+													<td align="left"
+														id="block_field_TotalIncurred"></td>
+														<td align="left"
+														id="block_field_Description"></td>
+													<td align="left"
+														id="block_field_Signal"></td>
+													<td align="left" nowrap="nowrap" id="eval:LawyersRule.isShowEditClaimIcon">
+														<div id="block_field_editlink_row_link">
+															<a href="javascript:rightclickmenu('claimsSummaryDetail.html','claimsSummaryDetail.editClaims','','','div_ajaxpostioncoverageClaims_freeform:ProfLiabClaimAgnstFirmKey');"
+																class="Link_blue"> 
+																<img src="img/edit.png" alt="Edit" border="0" />
+															</a>
+														</div>
+													</td>
+													<td align="left" nowrap="nowrap" id="eval:LawyersRule.isNotShowEditClaimIcon">
+														<div id="block_field_viewlink_row_link">
+															<a href="javascript:rightclickmenu('claimsSummaryDetail.html','claimsSummaryDetail.viewClaims','','','div_ajaxpostioncoverageClaims_freeform:ProfLiabClaimAgnstFirmKey');"
+																class="Link_blue"> 
+																<img src="img/icon_select.png" alt="View" border="0" />
+															</a>
+														</div>
+													</td>
+													<td align="left" nowrap="nowrap" id="showPageSave">
+														<div id="block_field_deletelink_row_link">
+															<a title="Delete" href="javascript:submitform('claimsSummaryList.html','pastClaims.deleteClaim','','');">
+																<i class="fa fa-times delete_icon">&nbsp;</i>
+															</a>
+														</div>
+													</td>
+												</tr>
+												<tr id="coverage_ajaxpostion_list_4" class="td_error">
+													<td align="left" colspan="12">
+														<div
+															id="div_ajaxpostioncoverageClaims_freeform:ProfLiabClaimAgnstFirmKey"></div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<br><br><br><br>
+							</div>
+							<div class="buttons borderTop row">
+								<a class="btn back floatLeft"
+									href="javascript:submitform('list.html','claimsSummaryList.back','','');">
+									Back </a>
+							</div>
+						</div>
+						<!---------Footer Start---------->
+						<div id="footer" class="footer">
+							<span id="#Include:footer.html#"></span>
+						</div>
+						<!---------Footer End---------->
+						<table id="claimSummary_freeform_contextdata_999">
+							<tr>
+								<td><input type="hidden" name="jsessionid" id="jsessionid" />
+									<input type="hidden" name="divHideShow" id="divHideShow" /></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</form>
+	</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

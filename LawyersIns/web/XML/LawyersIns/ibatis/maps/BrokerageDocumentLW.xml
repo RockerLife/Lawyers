@@ -1,0 +1,73 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="BrokerageDocumentLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from BrokerageDocumentLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from BrokerageDocumentLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into BrokerageDocumentLW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="DocTitle" prepend=",">DocTitle</isNotEmpty>
+               <isNotEmpty property="Comment" prepend=",">Comment</isNotEmpty>
+               <isNotEmpty property="DocFileName" prepend=",">DocFileName</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="DocUrl" prepend=",">DocUrl</isNotEmpty>
+               <isNotEmpty property="UploadedType" prepend=",">UploadedType</isNotEmpty>
+               <isNotEmpty property="UploadedTime" prepend=",">UploadedTime</isNotEmpty>
+               <isNotEmpty property="DocType" prepend=",">DocType</isNotEmpty>
+               <isNotEmpty property="BrokeragePolicyKey" prepend=",">BrokeragePolicyKey</isNotEmpty>
+               <isNotEmpty property="AccountID" prepend=",">AccountID</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="DocTitle" prepend=",">#DocTitle#</isNotEmpty>
+               <isNotEmpty property="Comment" prepend=",">#Comment#</isNotEmpty>
+               <isNotEmpty property="DocFileName" prepend=",">#DocFileName#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="DocUrl" prepend=",">#DocUrl#</isNotEmpty>
+               <isNotEmpty property="UploadedType" prepend=",">#UploadedType#</isNotEmpty>
+               <isNotEmpty property="UploadedTime" prepend=",">#UploadedTime#</isNotEmpty>
+               <isNotEmpty property="DocType" prepend=",">#DocType#</isNotEmpty>
+               <isNotEmpty property="BrokeragePolicyKey" prepend=",">#BrokeragePolicyKey#</isNotEmpty>
+               <isNotEmpty property="AccountID" prepend=",">#AccountID#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="DocumentID">SELECT IDENT_CURRENT('BrokerageDocumentLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select DocumentID, DocTitle, Comment, DocFileName, LastUpdateUserID, LastUpdateTimeStamp, DocUrl, UploadedType, UploadedTime, DocType, BrokeragePolicyKey, AccountID from BrokerageDocumentLW where DocumentID = #DocumentID#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update BrokerageDocumentLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="DocTitle" prepend=",">DocTitle = #DocTitle#</isNotEmpty>
+               <isEmpty property="DocTitle" prepend=",">DocTitle = null</isEmpty>
+               <isNotEmpty property="Comment" prepend=",">Comment = #Comment#</isNotEmpty>
+               <isEmpty property="Comment" prepend=",">Comment = null</isEmpty>
+               <isNotEmpty property="DocFileName" prepend=",">DocFileName = #DocFileName#</isNotEmpty>
+               <isEmpty property="DocFileName" prepend=",">DocFileName = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="DocUrl" prepend=",">DocUrl = #DocUrl#</isNotEmpty>
+               <isEmpty property="DocUrl" prepend=",">DocUrl = null</isEmpty>
+               <isNotEmpty property="UploadedType" prepend=",">UploadedType = #UploadedType#</isNotEmpty>
+               <isEmpty property="UploadedType" prepend=",">UploadedType = null</isEmpty>
+               <isNotEmpty property="UploadedTime" prepend=",">UploadedTime = #UploadedTime#</isNotEmpty>
+               <isEmpty property="UploadedTime" prepend=",">UploadedTime = null</isEmpty>
+               <isNotEmpty property="DocType" prepend=",">DocType = #DocType#</isNotEmpty>
+               <isEmpty property="DocType" prepend=",">DocType = null</isEmpty>
+               <isNotEmpty property="BrokeragePolicyKey" prepend=",">BrokeragePolicyKey = #BrokeragePolicyKey#</isNotEmpty>
+               <isEmpty property="BrokeragePolicyKey" prepend=",">BrokeragePolicyKey = null</isEmpty>
+               <isNotEmpty property="AccountID" prepend=",">AccountID = #AccountID#</isNotEmpty>
+               <isEmpty property="AccountID" prepend=",">AccountID = null</isEmpty>
+          </dynamic>
+          where DocumentID = #DocumentID#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from BrokerageDocumentLW where DocumentID = #DocumentID#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from BrokerageDocumentLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from BrokerageDocumentLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select DocumentID, DocTitle, Comment, DocFileName, LastUpdateUserID, LastUpdateTimeStamp, DocUrl, UploadedType, UploadedTime, DocType, BrokeragePolicyKey, AccountID from BrokerageDocumentLW where DocumentID = #DocumentID#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select DocumentID, DocTitle, Comment, DocFileName, LastUpdateUserID, LastUpdateTimeStamp, DocUrl, UploadedType, UploadedTime, DocType, BrokeragePolicyKey, AccountID from BrokerageDocumentLW</select>
+</sqlMap>
+

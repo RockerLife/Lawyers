@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cancellation / ReinstatementEndorsement</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+<body onload="loadCancellationPage();setFieldsReadonly();setEndorsementType();">
+<form class="form-horizontal row">
+<!-- Modal -->
+<div id="cover"></div>
+<div id="popupsave2">
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog" style="width: 450px;">
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"></button>
+			<h4 class="modal-title">Process Endorsement</h4>
+		  </div>
+		  <div class="modal-body" style="height: 64px;" id="cancellation_freeform_contextdata_002">
+			<p style="text-align: center; line-height: 25px;">Are you sure you want to process the 
+				<span id="visibleForCancellation">Cancellation endorsement </span>
+				<span id="visibleForReinstatement">Reinstatement endorsement </span> 
+				for <label id="ajax_field_AccountName" name="AccountName"/>.</p>
+		  </div>
+		  <div class="modal-footer">
+			<div class="floatRight">
+				<span id="visibleForCancellation"><a class="ovalbutton" onclick="closePopUp2('popupsave2');javascript:submitform('Endorsement.html','CancellationReinstatementEndorsement.processCancellationEndorsement','','');" >Process Endorsement</a></span>
+				<span id="visibleForReinstatement"><a class="ovalbutton" onclick="closePopUp2('popupsave2');javascript:submitform('Endorsement.html','CancellationReinstatementEndorsement.processReinstatementEndorsement','','');" >Process Endorsemenbt</a></span>
+				<a class="ovalbutton" onclick="closePopUp2('popupsave2');">Cancel</a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</div>
+
+<!-- Bootstrap Core JavaScript -->
+
+<div class="container-fluid bootstrap-node-1">
+  <div class="tableWidth"> 
+     <div class="tableWidth"> 
+    <!---------Header Start---------->  
+     <div id="header">
+			<span id="#Include:headerEndorsement.html#"></span>
+	</div>
+		
+		<div>
+			<h2 class="questionHeading">Cancellation/Reinstatement Endorsement</h2>
+		</div>
+		<div class="form row">
+			<div class="block-form">
+			
+			<div id="visibleForCancellation">
+				<div id="xdiv1" class="div1A">
+					<div class="freeFormDiv form-inline" id="CancellationEndorsement_freeform_contextdata_01">
+						<ul class="inlineBlock">
+							<li class="inlineBlock_1_fix">
+								<div class="freeFormList form-group">
+									<div class="freeFormListTr">
+										<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+										<div class="freeFormListTdError paddingLeft3">
+											<span id="error_CancellationEffectiveDate" class="error"> </span> 
+										</div>
+									</div>
+									<div class="freeFormListTr">
+										<div class="freeFormListTd labelAlign">
+											<div class="freeFormLabelWidth txtbold">
+												Cancellation Effective Date :
+											</div>
+										 </div>
+										<div class="freeFormListTd mendatoryInput iconsStyle2">
+											<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+											<input type="text" class="form-control datepicker"
+												id="ajax_field_CancellationEffectiveDate" 
+												name="CancellationEffectiveDate" onkeyup="applyDateFormat(this,event);"/> 
+										</div>
+									</div>
+								</div>
+							</li>
+							
+							<li class="inlineBlock_1_fix paddingTop20">
+								<div class="freeFormList form-group">
+									<div class="freeFormListTr">
+										<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+										<div class="freeFormListTdError paddingLeft3">
+											<span id="error_cancellationReason" class="error"> </span> 
+										</div>
+									</div>
+									<div class="freeFormListTr">
+										<div class="freeFormListTd labelAlign">
+											<div class="freeFormLabelWidth">
+												Cancellation Reason :
+											</div>
+										</div>
+										<div class="freeFormListTd mendatoryInput">
+											<select class="form-control" id="ajax_field_cancellationReason" name="cancellationReason" onchange="setEndorsementType();">
+												<option>Select</option>
+												
+												
+											</select>
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="inlineBlock_1_fix">
+								<div class="freeFormList form-group" id="premiumDiv">
+									<div class="freeFormListTr">
+										<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+										<div class="freeFormListTdError paddingLeft3">
+											<span id="error_cancellationType" class="error"> </span> 
+										</div>
+									</div>
+									<div class="freeFormListTr">
+										<div class="freeFormListTd labelAlign">
+											<div class="freeFormLabelWidth">
+												Cancellation Type :
+											</div>
+										</div>
+										<div class="freeFormListTd mendatoryInput">
+											<select class="form-control" id="ajax_field_cancellationType" name="cancellationType" onchange="showHideCalculationPDF()">
+												<option value="Select">Select</option>
+											</select>
+										</div>
+										
+									</div>
+								</div>
+							</li>
+							
+						</ul>
+						<div class="buttonCalculate row" id="premiumDiv1">
+							<a class="ovalbutton" title="Calculate Premium"
+								 href="javascript:submitform('CancellationReinstatementEndorsement.html','CancellationReinstatementEndorsement.calculateCancellationPremium','','');" >
+							 <i class="fa-calculator fa"></i> Calculate Premium</a>
+						</div>
+						<ul class="inlineBlock paddingTop10 totalPremium" id="premiumList1">
+							<li class="inlineBlock_3_fix">
+								<div class="freeFormList form-group">
+									<div class="freeFormListTr">
+										<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+										<div class="freeFormListTdError paddingLeft3">
+											<span id="error_premiumError" class="error"> </span> 
+										</div>
+									</div>
+									<div class="freeFormListTr">
+										<div class="freeFormListTd labelAlign">
+											<div class="freeFormLabelWidth">
+												Return Premium : $
+											</div>
+										</div>
+										<div class="freeFormListTd tdInput">
+											<input type="text" class="form-control" style="width: 100px;" readonly id="ajax_field_cancellationReturnPremium" name="cancellationReturnPremium" />
+											<!-- <label style="border:1px solid black;width:20px;pading:15px" id="ajax_field_cancellationReturnPremium" name="cancellationReturnPremium"/> -->
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="inlineBlock_3_fix">
+								<div class="freeFormList form-group">
+									<div class="freeFormListTr">
+										<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+										<div class="freeFormListTdError paddingLeft3">
+											<span id="" class="error"> </span> 
+										</div>
+									</div>
+									<div class="freeFormListTr">
+										<div class="freeFormListTd labelAlign">
+											<div class="">
+												Return Tax : $
+											</div>
+										</div>
+										<div class="freeFormListTd tdInput">
+											 <input type="text" class="form-control" style="width: 100px;" readonly id="ajax_field_cancellationReturnTax" name="cancellationReturnTax"/>
+											<!-- <label id="ajax_field_cancellationReturnTax" name="cancellationReturnTax"/> -->
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="inlineBlock_3_fix">
+								<div class="freeFormList form-group">
+									<div class="freeFormListTr">
+										<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+										<div class="freeFormListTdError paddingLeft3">
+											<span id="" class="error"> </span> 
+										</div>
+									</div>
+									<div class="freeFormListTr">
+										<div class="freeFormListTd labelAlign">
+											<div class="txtbold">
+												Total : $
+											</div>
+										</div>
+										<div class="freeFormListTd tdInput">
+											 <input type="text" class="form-control" style="width: 100px;"  readonly id="ajax_field_cancellationTotalReturnPremium" name="cancellationTotalReturnPremium" />
+											 <!-- <label id="ajax_field_cancellationTotalReturnPremium" name="cancellationTotalReturnPremium"/> -->
+										</div>
+									</div>
+								</div>
+							</li>
+							<li class="inlineBlock_3_fix">
+						
+								<div id="endorsementPdfDiv">
+									&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:submitform('CancellationReinstatementEndorsement.html','CancellationReinstatementEndorsement.downloadPremiumCalculationPdf','','');"
+										class="Link_blue"><img
+											src="img/icon_location.gif"
+											title="Download Premium Calculation"
+											alt="Download Calculation" width="30"
+											height="25" border="0" /> </a> 
+																			
+									</div>
+								
+											
+						</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			<div id="visibleForReinstatement">
+			<div id="xdiv2" class="div1B">
+				<div class="freeFormDiv form-inline" id="CancellationEndorsement_freeform_contextdata_02">
+					<ul class="inlineBlock">
+						<li class="inlineBlock_1_fix">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="txtbold">
+											Reinstatement Effective Date :
+										</div>
+									</div>
+									<div class="freeFormListTd mendatoryInput iconsStyle2">
+										<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+										<input type="text" class="form-control datepicker"
+											id="ajax_field_ReinstatementEffectiveDate" 
+											name="ReinstatementEffectiveDate" onkeyup="applyDateFormat(this,event);" readonly="readonly"/> 
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<!-- <div class="buttonCalculate row">
+						<a class="ovalbutton" title="Calculate Premium"
+							 href="javascript:submitform('CancellationReinstatementEndorsement.html','CancellationReinstatementEndorsement.calculateReinstatementPremium','','');" >
+						
+						 <i class="fa-calculator fa"></i> Calculate Premium</a>
+					</div> -->
+					<ul class="inlineBlock paddingTop20 totalPremium" id="">
+						<li class="inlineBlock_3_fix">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth">
+											Return Premium : $
+										</div>
+									</div>
+									<div class="freeFormListTd tdInput">
+										<input type="text" class="form-control" style="width: 100px;" disabled id="ajax_field_reinstatementReturnPremium" name="reinstatementReturnPremium" />
+										<!-- <label id="ajax_field_reinstatementReturnPremium" name="reinstatementReturnPremium"/> -->
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_3_fix">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="">
+											Return Tax : $
+										</div>
+									</div>
+									<div class="freeFormListTd tdInput">
+										 <input type="text" class="form-control" style="width: 100px;" disabled id="ajax_field_reinstatementReturnTax" name="reinstatementReturnTax" />
+										 <!-- <label style="border:1px solid black;width:20px;" id="ajax_field_reinstatementReturnTax" name="reinstatementReturnTax"/> -->
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_3_fix">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="txtbold">
+											Total : $
+										</div>
+									</div>
+									<div class="freeFormListTd tdInput">
+										 <input type="text" class="form-control" style="width: 100px;" disabled id="ajax_field_reinstatementTotalReturnPremium" name="reinstatementTotalReturnPremium"  onload="setAmoutFormat(this)"/> 
+										<!-- <label id="ajax_field_reinstatementTotalReturnPremium" name="reinstatementTotalReturnPremium"/> -->
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			</div>
+		</div>	
+		</div>
+		<div class="buttons borderTop row">
+			<a class="btn back floatLeft" 
+			href="javascript:submitform('Endorsement.html','CancellationReinstatementEndorsement.back','','');" 
+			> Back </a>
+			<div class="floatRight">
+				
+				<span id="visibleForCancellation">
+					<a class="btn button1 btnVal1" 
+					href="javascript:submitform('CancellationReinstatementEndorsement.html','CancellationReinstatementEndorsement.downloadReviewCancellationEndorsement','','');"
+					>Review Endorsement</a>
+				</span>
+				<span id="visibleForReinstatement">
+					<a class="btn button1 btnVal1" 
+						href="javascript:submitform('CancellationReinstatementEndorsement.html','CancellationReinstatementEndorsement.downloadReviewReinstatementEndorsement','','');"
+					>Review Endorsement</a>
+				</span>
+				<span id="visibleForCancellation">
+					<a class="btn button1 btnVal1" onclick="showPopUp('popupsave2','500','400');">Process Cancellation</a>
+				</span>
+				
+			<!-- 	<span id="visibleForCancellation">
+					<a class="btn button1 btnVal1" href="javascript:submitform('uploadexcelpopup.html','CancellationReinstatementEndorsement.UploadDocuments','','');">Upload Cancellation Documents</a>
+				</span> -->
+				
+				<span id="visibleForReinstatement">
+					<a class="btn button1 btnVal2" onclick="showPopUp('popupsave2','500','400');">Process Reinstatement</a>
+				</span>
+				
+				<!-- <span id="visibleForReinstatement">
+					<a class="btn button1 btnVal2" href="javascript:submitform('uploadexcelpopup.html','CancellationReinstatementEndorsement.UploadDocuments','','');">Upload Reinstatement Documents</a>
+				</span>
+				
+				<a class="btn button1"  href="javascript:submitform('CancellationReinstatementEndorsement.html','CancellationReinstatementEndorsement.emailToSubProducer','','');">Email to Sub Producer</a>
+			 --></div>
+		</div>
+		
+	</div>
+    <!---------Footer Start---------->
+				<div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<!---------Footer End---------->
+			</div>
+			<table id="CancellationEndorsement_freeform_contextdata_999">
+				<tr>
+					<td><input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />
+						<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+						<input type="hidden" name="isEnforcedPolicy" id="isEnforcedPolicy" />
+						<input type="hidden" name="anyDecendentPolicy" id="anyDecendentPolicy" />
+						<input type="hidden" name="isExceptionalCase" id="isExceptionalCase" />
+						<input type="hidden" name="isShowPemiumCalculation" id="isShowPemiumCalculation" />
+						<input type="hidden" name="endorsementDataList" id="endorsementDataList" />		 
+						</td>
+				</tr>
+			</table>
+  </div>
+</div>
+</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

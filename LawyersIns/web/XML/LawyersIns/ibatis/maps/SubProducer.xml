@@ -1,0 +1,69 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="SubProducer">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SubProducer</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SubProducer</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into SubProducer(
+          <dynamic prepend=" ">
+               <isNotEmpty property="ProducerCode" prepend=",">ProducerCode</isNotEmpty>
+               <isNotEmpty property="LogoImagePath" prepend=",">LogoImagePath</isNotEmpty>
+               <isNotEmpty property="SPContactName" prepend=",">SPContactName</isNotEmpty>
+               <isNotEmpty property="SPContactAddress" prepend=",">SPContactAddress</isNotEmpty>
+               <isNotEmpty property="SPWebsite" prepend=",">SPWebsite</isNotEmpty>
+               <isNotEmpty property="SPCompanyName" prepend=",">SPCompanyName</isNotEmpty>
+               <isNotEmpty property="SPPhoneNumber" prepend=",">SPPhoneNumber</isNotEmpty>
+               <isNotEmpty property="CallImagePath" prepend=",">CallImagePath</isNotEmpty>
+               <isNotEmpty property="IsActive" prepend=",">IsActive</isNotEmpty>
+               <isNotEmpty property="SPConatctEmailId" prepend=",">SPConatctEmailId</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="ProducerCode" prepend=",">#ProducerCode#</isNotEmpty>
+               <isNotEmpty property="LogoImagePath" prepend=",">#LogoImagePath#</isNotEmpty>
+               <isNotEmpty property="SPContactName" prepend=",">#SPContactName#</isNotEmpty>
+               <isNotEmpty property="SPContactAddress" prepend=",">#SPContactAddress#</isNotEmpty>
+               <isNotEmpty property="SPWebsite" prepend=",">#SPWebsite#</isNotEmpty>
+               <isNotEmpty property="SPCompanyName" prepend=",">#SPCompanyName#</isNotEmpty>
+               <isNotEmpty property="SPPhoneNumber" prepend=",">#SPPhoneNumber#</isNotEmpty>
+               <isNotEmpty property="CallImagePath" prepend=",">#CallImagePath#</isNotEmpty>
+               <isNotEmpty property="IsActive" prepend=",">#IsActive#</isNotEmpty>
+               <isNotEmpty property="SPConatctEmailId" prepend=",">#SPConatctEmailId#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="ProducerId">SELECT IDENT_CURRENT('SubProducer') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ProducerId, ProducerCode, LogoImagePath, SPContactName, SPContactAddress, SPWebsite, SPCompanyName, SPPhoneNumber, CallImagePath, IsActive, SPConatctEmailId from SubProducer where ProducerId = #ProducerId#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update SubProducer set
+          <dynamic prepend=" ">
+               <isNotEmpty property="ProducerCode" prepend=",">ProducerCode = #ProducerCode#</isNotEmpty>
+               <isEmpty property="ProducerCode" prepend=",">ProducerCode = null</isEmpty>
+               <isNotEmpty property="LogoImagePath" prepend=",">LogoImagePath = #LogoImagePath#</isNotEmpty>
+               <isEmpty property="LogoImagePath" prepend=",">LogoImagePath = null</isEmpty>
+               <isNotEmpty property="SPContactName" prepend=",">SPContactName = #SPContactName#</isNotEmpty>
+               <isEmpty property="SPContactName" prepend=",">SPContactName = null</isEmpty>
+               <isNotEmpty property="SPContactAddress" prepend=",">SPContactAddress = #SPContactAddress#</isNotEmpty>
+               <isEmpty property="SPContactAddress" prepend=",">SPContactAddress = null</isEmpty>
+               <isNotEmpty property="SPWebsite" prepend=",">SPWebsite = #SPWebsite#</isNotEmpty>
+               <isEmpty property="SPWebsite" prepend=",">SPWebsite = null</isEmpty>
+               <isNotEmpty property="SPCompanyName" prepend=",">SPCompanyName = #SPCompanyName#</isNotEmpty>
+               <isEmpty property="SPCompanyName" prepend=",">SPCompanyName = null</isEmpty>
+               <isNotEmpty property="SPPhoneNumber" prepend=",">SPPhoneNumber = #SPPhoneNumber#</isNotEmpty>
+               <isEmpty property="SPPhoneNumber" prepend=",">SPPhoneNumber = null</isEmpty>
+               <isNotEmpty property="CallImagePath" prepend=",">CallImagePath = #CallImagePath#</isNotEmpty>
+               <isEmpty property="CallImagePath" prepend=",">CallImagePath = null</isEmpty>
+               <isNotEmpty property="IsActive" prepend=",">IsActive = #IsActive#</isNotEmpty>
+               <isEmpty property="IsActive" prepend=",">IsActive = null</isEmpty>
+               <isNotEmpty property="SPConatctEmailId" prepend=",">SPConatctEmailId = #SPConatctEmailId#</isNotEmpty>
+               <isEmpty property="SPConatctEmailId" prepend=",">SPConatctEmailId = null</isEmpty>
+          </dynamic>
+          where ProducerId = #ProducerId#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from SubProducer where ProducerId = #ProducerId#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from SubProducer</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from SubProducer</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ProducerId, ProducerCode, LogoImagePath, SPContactName, SPContactAddress, SPWebsite, SPCompanyName, SPPhoneNumber, CallImagePath, IsActive, SPConatctEmailId from SubProducer where ProducerId = #ProducerId#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ProducerId, ProducerCode, LogoImagePath, SPContactName, SPContactAddress, SPWebsite, SPCompanyName, SPPhoneNumber, CallImagePath, IsActive, SPConatctEmailId from SubProducer</select>
+</sqlMap>
+

@@ -1,0 +1,89 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ElectronicInsurance">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ElectronicInsurance</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ElectronicInsurance</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ElectronicInsurance(
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy</isNotEmpty>
+               <isNotEmpty property="isElectronicInsurance" prepend=",">isElectronicInsurance</isNotEmpty>
+               <isNotEmpty property="isElectronicAndPaperDelivery" prepend=",">isElectronicAndPaperDelivery</isNotEmpty>
+               <isNotEmpty property="isElectronicDeliveryRejection" prepend=",">isElectronicDeliveryRejection</isNotEmpty>
+               <isNotEmpty property="isElectronicDeliveryWithdrawalConsent" prepend=",">isElectronicDeliveryWithdrawalConsent</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">#VersionKey#</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">#VersionSequence#</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">#RecordType#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">#CreatedDate#</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">#CreatedBy#</isNotEmpty>
+               <isNotEmpty property="isElectronicInsurance" prepend=",">#isElectronicInsurance#</isNotEmpty>
+               <isNotEmpty property="isElectronicAndPaperDelivery" prepend=",">#isElectronicAndPaperDelivery#</isNotEmpty>
+               <isNotEmpty property="isElectronicDeliveryRejection" prepend=",">#isElectronicDeliveryRejection#</isNotEmpty>
+               <isNotEmpty property="isElectronicDeliveryWithdrawalConsent" prepend=",">#isElectronicDeliveryWithdrawalConsent#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="ElectronicInsuranceKey">SELECT IDENT_CURRENT('ElectronicInsurance') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ElectronicInsuranceKey, PolicyKey, VersionKey, VersionSequence, RecordType, LastUpdateTimeStamp, LastUpdateUserID, CreatedDate, CreatedBy, isElectronicInsurance, isElectronicAndPaperDelivery, isElectronicDeliveryRejection, isElectronicDeliveryWithdrawalConsent from ElectronicInsurance where ElectronicInsuranceKey = #ElectronicInsuranceKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ElectronicInsurance set
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey = #VersionKey#</isNotEmpty>
+               <isEmpty property="VersionKey" prepend=",">VersionKey = null</isEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence = #VersionSequence#</isNotEmpty>
+               <isEmpty property="VersionSequence" prepend=",">VersionSequence = null</isEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType = #RecordType#</isNotEmpty>
+               <isEmpty property="RecordType" prepend=",">RecordType = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate = #CreatedDate#</isNotEmpty>
+               <isEmpty property="CreatedDate" prepend=",">CreatedDate = null</isEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy = #CreatedBy#</isNotEmpty>
+               <isEmpty property="CreatedBy" prepend=",">CreatedBy = null</isEmpty>
+               <isNotEmpty property="isElectronicInsurance" prepend=",">isElectronicInsurance = #isElectronicInsurance#</isNotEmpty>
+               <isEmpty property="isElectronicInsurance" prepend=",">isElectronicInsurance = null</isEmpty>
+               <isNotEmpty property="isElectronicAndPaperDelivery" prepend=",">isElectronicAndPaperDelivery = #isElectronicAndPaperDelivery#</isNotEmpty>
+               <isEmpty property="isElectronicAndPaperDelivery" prepend=",">isElectronicAndPaperDelivery = null</isEmpty>
+               <isNotEmpty property="isElectronicDeliveryRejection" prepend=",">isElectronicDeliveryRejection = #isElectronicDeliveryRejection#</isNotEmpty>
+               <isEmpty property="isElectronicDeliveryRejection" prepend=",">isElectronicDeliveryRejection = null</isEmpty>
+               <isNotEmpty property="isElectronicDeliveryWithdrawalConsent" prepend=",">isElectronicDeliveryWithdrawalConsent = #isElectronicDeliveryWithdrawalConsent#</isNotEmpty>
+               <isEmpty property="isElectronicDeliveryWithdrawalConsent" prepend=",">isElectronicDeliveryWithdrawalConsent = null</isEmpty>
+          </dynamic>
+          where ElectronicInsuranceKey = #ElectronicInsuranceKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ElectronicInsurance where ElectronicInsuranceKey = #ElectronicInsuranceKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ElectronicInsurance</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ElectronicInsurance</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ElectronicInsuranceKey, PolicyKey, VersionKey, VersionSequence, RecordType, LastUpdateTimeStamp, LastUpdateUserID, CreatedDate, CreatedBy, isElectronicInsurance, isElectronicAndPaperDelivery, isElectronicDeliveryRejection, isElectronicDeliveryWithdrawalConsent from ElectronicInsurance where ElectronicInsuranceKey = #ElectronicInsuranceKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ElectronicInsuranceKey, PolicyKey, VersionKey, VersionSequence, RecordType, LastUpdateTimeStamp, LastUpdateUserID, CreatedDate, CreatedBy, isElectronicInsurance, isElectronicAndPaperDelivery, isElectronicDeliveryRejection, isElectronicDeliveryWithdrawalConsent from ElectronicInsurance</select>
+     <parameterMap id="InsertElectronicInsurance_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isElectronicInsurance" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isElectronicAndPaperDelivery" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isElectronicDeliveryRejection" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isElectronicDeliveryWithdrawalConsent" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertElectronicInsurance_p" parameterMap="InsertElectronicInsurance_pMap">{ call InsertElectronicInsurance_p(?,?,?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

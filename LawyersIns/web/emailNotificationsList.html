@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Assign</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js"/>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<link href="css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<script src="js/producerOne.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<form>
+		<!-- Bootstrap Core JavaScript -->
+
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth">
+				<!---------Header Start---------->
+				<div id="header">
+					<span id="#Include:header.html#"></span>
+				</div>
+				<!---------Header End---------->
+
+				<div id="contentSection">
+					<div>
+						<h2 class="questionHeading">Assign Templates</h2>
+					</div>
+					<div class="form row">
+						<div class="block-form">
+							<div class="paddingTop10">
+									
+								<div class="buttons row">
+									<div class="floatRight">
+										<span >
+											<a class="btn next floatRight" href="javascript:submitform('emailNotifications.html','emailNotificationsList.addAssignTemp','','');">Assign New Templates</a>
+										</span>
+									</div> 
+								</div>
+								
+								<fieldset class="fieldsetTop" style="max-height: 500px; overflow: auto;">
+									<legend>Assign Templates List</legend>
+									<table id="EmailNotifications_list_1" class="gridTable" cellpadding="0" cellspacing="0" style="width: 100%;">
+										<thead>
+									
+											<tr id="EmailNotifications_list_header_1" class="tableheading">
+												<th width="10%" id="block_field_TemplateName">Template</th>
+												<th width="18%" id="block_field_event_name">Event</th>
+												<th id="block_field_description">Discription</th>
+												<!-- <th width="120px" id="block_field_description">Email Description</th> -->
+												<th width="20%" id="block_field_subject">Email Subject</th>
+												<!-- <th width="120px" id="block_field_last_updated_by">Last Updated By</th> -->
+												<th width="8%" id="block_field_EffectiveDate">Effective Date</th>
+												<!-- <th width="120px" id="block_field_IsCyber">IsCyber</th> -->
+												<th width="8%" id="block_field_Period">Days</th>
+												<th width="1%" id="block_field_editlink_row_link"></th>
+												<th width="16px" id="block_field_viewlink_row_link"></th>
+												 <th width="1%" id="block_field_deletelink_row_link"></th>
+												<th id="block_field_email_notification_id" style="display: none;"></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr id="EmailNotifications_list_mom_data_1">
+											
+											<td id="block_field_TemplateName"></td>
+											<td id="block_field_event_name"></td>
+												<!-- <td id="block_field_description"></td> -->
+												<td id="block_field_description"></td>
+												<td id="block_field_subject"></td>
+												<!-- <td id="block_field_last_updated_by"></td> -->
+												<td id="block_field_EffectiveDate"></td>
+												<!-- <td id="block_field_IsCyber"></td> -->
+												<td id="block_field_Period"></td>
+												
+												<td align="left" id="1eval:LawyersRule.isShowEditClaimIcon">
+													<div id="block_field_editlink_row_link">
+														<a href="javascript:submitform('emailNotifications.html','emailNotificationsList.emailNotificationsListEdit','','');" class="Link_blue">
+															<img src="img/edit.png" alt="Edit" border="0" />
+														</a>
+													</div>
+												</td>
+												<td align="left" nowrap="nowrap">
+													<div id="block_field_viewlink_row_link">
+														<a href="javascript:submitform('emailNotifications.html','emailNotificationsList.emailNotificationsListView','','');" class="Link_blue">
+															<img src="img/icon_select.png" alt="View" border="0" />
+														</a>
+													</div>
+												</td>
+												<td align="left" >
+													<div id="block_field_deletelink_row_link">
+														<a href="javascript:submitform('emailNotificationsList.html','emailNotificationsList.emailNotificationsListdelete','','');" class="Link_blue">
+															<img src="img/cross.gif" title="Delete template" border="0" />
+														</a>
+													</div>
+												</td>
+												<td id="block_field_email_notification_id" style="display: none;">
+													<input name="email_notification_id" id="email_notification_id" type="hidden" />
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</fieldset>
+							</div>
+							<div class="buttons row">
+								<div class="floatLeft">
+									<span >
+										<a class="btn back floatLeft" href="javascript:submitform('Lookup.html','emailNotificationsList.back','','','');"> Back </a>
+									</span>
+								</div> 
+							</div>
+						</div>
+					</div>
+					<!---------Footer Start---------->
+					<div id="footer" class="footer">
+						<span id="#Include:footer.html#"></span>
+					</div>
+					<!---------Footer End---------->
+					<table id="emailNotifications_freeform_contextdata_999">
+						<tr>
+							<td>
+								<input type="hidden" name="jsessionid" id="jsessionid" />
+								<input type="hidden" name="divHideShow" id="divHideShow" />
+								<input type="hidden" name="stateCodes" id="stateCodes"/>
+								<input type="hidden" name="DynamicContentNames" id="DynamicContentNames"/>
+								
+								
+								
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</form>
+	<script>
+	loadTemplate();
+</script>
+</body>
+
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+
+<script src="js/bootstrap_3-3-6.js"></script>
+<script src="js/bootstrap-select.js"></script>
+</html>

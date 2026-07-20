@@ -1,0 +1,43 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="limitsDeductibleOptions">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from limitsDeductibleOptions</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from limitsDeductibleOptions</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into limitsDeductibleOptions(
+          <dynamic prepend=" ">
+               <isNotEmpty property="limitEndorsementEffectiveDate" prepend=",">limitEndorsementEffectiveDate</isNotEmpty>
+               <isNotEmpty property="IsDollarDefense" prepend=",">IsDollarDefense</isNotEmpty>
+               <isNotEmpty property="IsClaimExpensesType" prepend=",">IsClaimExpensesType</isNotEmpty>
+               <isNotEmpty property="deductibleEndorsementEffectiveDate" prepend=",">deductibleEndorsementEffectiveDate</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="limitEndorsementEffectiveDate" prepend=",">#limitEndorsementEffectiveDate#</isNotEmpty>
+               <isNotEmpty property="IsDollarDefense" prepend=",">#IsDollarDefense#</isNotEmpty>
+               <isNotEmpty property="IsClaimExpensesType" prepend=",">#IsClaimExpensesType#</isNotEmpty>
+               <isNotEmpty property="deductibleEndorsementEffectiveDate" prepend=",">#deductibleEndorsementEffectiveDate#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select limitEndorsementEffectiveDate, IsDollarDefense, IsClaimExpensesType, deductibleEndorsementEffectiveDate from limitsDeductibleOptions</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update limitsDeductibleOptions set
+          <dynamic prepend=" ">
+               <isNotEmpty property="limitEndorsementEffectiveDate" prepend=",">limitEndorsementEffectiveDate = #limitEndorsementEffectiveDate#</isNotEmpty>
+               <isEmpty property="limitEndorsementEffectiveDate" prepend=",">limitEndorsementEffectiveDate = null</isEmpty>
+               <isNotEmpty property="IsDollarDefense" prepend=",">IsDollarDefense = #IsDollarDefense#</isNotEmpty>
+               <isEmpty property="IsDollarDefense" prepend=",">IsDollarDefense = null</isEmpty>
+               <isNotEmpty property="IsClaimExpensesType" prepend=",">IsClaimExpensesType = #IsClaimExpensesType#</isNotEmpty>
+               <isEmpty property="IsClaimExpensesType" prepend=",">IsClaimExpensesType = null</isEmpty>
+               <isNotEmpty property="deductibleEndorsementEffectiveDate" prepend=",">deductibleEndorsementEffectiveDate = #deductibleEndorsementEffectiveDate#</isNotEmpty>
+               <isEmpty property="deductibleEndorsementEffectiveDate" prepend=",">deductibleEndorsementEffectiveDate = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from limitsDeductibleOptions</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from limitsDeductibleOptions</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from limitsDeductibleOptions</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select limitEndorsementEffectiveDate, IsDollarDefense, IsClaimExpensesType, deductibleEndorsementEffectiveDate from limitsDeductibleOptions</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select limitEndorsementEffectiveDate, IsDollarDefense, IsClaimExpensesType, deductibleEndorsementEffectiveDate from limitsDeductibleOptions</select>
+</sqlMap>
+

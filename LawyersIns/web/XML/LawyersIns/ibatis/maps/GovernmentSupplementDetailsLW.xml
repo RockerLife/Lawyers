@@ -1,0 +1,43 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="GovernmentSupplementDetailsLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from GovernmentSupplementDetailsLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from GovernmentSupplementDetailsLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into GovernmentSupplementDetailsLW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="VersionKey" prepend=",">#VersionKey#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="GAOPID">SELECT IDENT_CURRENT('GovernmentSupplementDetailsLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionKey from GovernmentSupplementDetailsLW</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update GovernmentSupplementDetailsLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey = #VersionKey#</isNotEmpty>
+               <isEmpty property="VersionKey" prepend=",">VersionKey = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from GovernmentSupplementDetailsLW</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from GovernmentSupplementDetailsLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from GovernmentSupplementDetailsLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionKey from GovernmentSupplementDetailsLW</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionKey from GovernmentSupplementDetailsLW</select>
+     <parameterMap id="InsertUpdateGovernmentServicesDetails_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="providingBondWork" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="eminentDomainServices" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdateGovernmentServicesDetails_p" parameterMap="InsertUpdateGovernmentServicesDetails_pMap">{ call InsertUpdateGovernmentServicesDetails_p(?,?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

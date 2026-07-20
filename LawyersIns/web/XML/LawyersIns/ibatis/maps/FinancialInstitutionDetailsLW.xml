@@ -1,0 +1,64 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="FinancialInstitutionDetailsLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FinancialInstitutionDetailsLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FinancialInstitutionDetailsLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into FinancialInstitutionDetailsLW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="equityInterest" prepend=",">equityInterest</isNotEmpty>
+               <isNotEmpty property="servicesRelatedRegulatory" prepend=",">servicesRelatedRegulatory</isNotEmpty>
+               <isNotEmpty property="underRegulatoryReview" prepend=",">underRegulatoryReview</isNotEmpty>
+               <isNotEmpty property="haveBecomeBankruptInsolvent" prepend=",">haveBecomeBankruptInsolvent</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="equityInterest" prepend=",">#equityInterest#</isNotEmpty>
+               <isNotEmpty property="servicesRelatedRegulatory" prepend=",">#servicesRelatedRegulatory#</isNotEmpty>
+               <isNotEmpty property="underRegulatoryReview" prepend=",">#underRegulatoryReview#</isNotEmpty>
+               <isNotEmpty property="haveBecomeBankruptInsolvent" prepend=",">#haveBecomeBankruptInsolvent#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="FIAOPID">SELECT IDENT_CURRENT('FinancialInstitutionDetailsLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select equityInterest, servicesRelatedRegulatory, underRegulatoryReview, haveBecomeBankruptInsolvent, LastUpdateUserID, LastUpdateTimeStamp from FinancialInstitutionDetailsLW</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update FinancialInstitutionDetailsLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="equityInterest" prepend=",">equityInterest = #equityInterest#</isNotEmpty>
+               <isEmpty property="equityInterest" prepend=",">equityInterest = null</isEmpty>
+               <isNotEmpty property="servicesRelatedRegulatory" prepend=",">servicesRelatedRegulatory = #servicesRelatedRegulatory#</isNotEmpty>
+               <isEmpty property="servicesRelatedRegulatory" prepend=",">servicesRelatedRegulatory = null</isEmpty>
+               <isNotEmpty property="underRegulatoryReview" prepend=",">underRegulatoryReview = #underRegulatoryReview#</isNotEmpty>
+               <isEmpty property="underRegulatoryReview" prepend=",">underRegulatoryReview = null</isEmpty>
+               <isNotEmpty property="haveBecomeBankruptInsolvent" prepend=",">haveBecomeBankruptInsolvent = #haveBecomeBankruptInsolvent#</isNotEmpty>
+               <isEmpty property="haveBecomeBankruptInsolvent" prepend=",">haveBecomeBankruptInsolvent = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from FinancialInstitutionDetailsLW</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from FinancialInstitutionDetailsLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from FinancialInstitutionDetailsLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select equityInterest, servicesRelatedRegulatory, underRegulatoryReview, haveBecomeBankruptInsolvent, LastUpdateUserID, LastUpdateTimeStamp from FinancialInstitutionDetailsLW</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select equityInterest, servicesRelatedRegulatory, underRegulatoryReview, haveBecomeBankruptInsolvent, LastUpdateUserID, LastUpdateTimeStamp from FinancialInstitutionDetailsLW</select>
+     <parameterMap id="InsertUpdateFinancialInstitutionDetails_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="equityInterest" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="servicesRelatedRegulatory" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="underRegulatoryReview" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="haveBecomeBankruptInsolvent" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdateFinancialInstitutionDetails_p" parameterMap="InsertUpdateFinancialInstitutionDetails_pMap">{ call InsertUpdateFinancialInstitutionDetails_p(?,?,?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

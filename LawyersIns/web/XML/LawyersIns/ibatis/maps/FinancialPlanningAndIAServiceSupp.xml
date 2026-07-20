@@ -1,0 +1,60 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="FinancialPlanningAndIAServiceSupp">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FinancialPlanningAndIAServiceSupp</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FinancialPlanningAndIAServiceSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into FinancialPlanningAndIAServiceSupp(VersionSequence, PolicyKey
+          <isNotEmpty property="IsFinancialPlansPreparing" prepend=",">IsFinancialPlansPreparing</isNotEmpty>
+          <isNotEmpty property="IsDiscretionaryAssetMangt" prepend=",">IsDiscretionaryAssetMangt</isNotEmpty>
+          <isNotEmpty property="IsNonDiscretionaryAssetMangt" prepend=",">IsNonDiscretionaryAssetMangt</isNotEmpty>
+          <isNotEmpty property="IsSecuritiesSales" prepend=",">IsSecuritiesSales</isNotEmpty>
+          <isNotEmpty property="IsContractualRelationShip" prepend=",">IsContractualRelationShip</isNotEmpty>
+          <isNotEmpty property="IsOmissionsPolicy" prepend=",">IsOmissionsPolicy</isNotEmpty>
+          <isNotEmpty property="IsAnyNonPublicInvestments" prepend=",">IsAnyNonPublicInvestments</isNotEmpty>
+          <isNotEmpty property="IsAnyFirmAffiliateLicensed" prepend=",">IsAnyFirmAffiliateLicensed</isNotEmpty>
+          <isNotEmpty property="IsAnyEmployeeBenefitPlan" prepend=",">IsAnyEmployeeBenefitPlan</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="IsFinancialPlansPreparing" prepend=",">#IsFinancialPlansPreparing#</isNotEmpty>
+          <isNotEmpty property="IsDiscretionaryAssetMangt" prepend=",">#IsDiscretionaryAssetMangt#</isNotEmpty>
+          <isNotEmpty property="IsNonDiscretionaryAssetMangt" prepend=",">#IsNonDiscretionaryAssetMangt#</isNotEmpty>
+          <isNotEmpty property="IsSecuritiesSales" prepend=",">#IsSecuritiesSales#</isNotEmpty>
+          <isNotEmpty property="IsContractualRelationShip" prepend=",">#IsContractualRelationShip#</isNotEmpty>
+          <isNotEmpty property="IsOmissionsPolicy" prepend=",">#IsOmissionsPolicy#</isNotEmpty>
+          <isNotEmpty property="IsAnyNonPublicInvestments" prepend=",">#IsAnyNonPublicInvestments#</isNotEmpty>
+          <isNotEmpty property="IsAnyFirmAffiliateLicensed" prepend=",">#IsAnyFirmAffiliateLicensed#</isNotEmpty>
+          <isNotEmpty property="IsAnyEmployeeBenefitPlan" prepend=",">#IsAnyEmployeeBenefitPlan#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select IsFinancialPlansPreparing, IsDiscretionaryAssetMangt, IsNonDiscretionaryAssetMangt, IsSecuritiesSales, IsContractualRelationShip, IsOmissionsPolicy, IsAnyNonPublicInvestments, IsAnyFirmAffiliateLicensed, IsAnyEmployeeBenefitPlan, VersionSequence, PolicyKey from FinancialPlanningAndIAServiceSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update FinancialPlanningAndIAServiceSupp set
+          <dynamic prepend=" ">
+               <isNotEmpty property="IsFinancialPlansPreparing" prepend=",">IsFinancialPlansPreparing = #IsFinancialPlansPreparing#</isNotEmpty>
+               <isEmpty property="IsFinancialPlansPreparing" prepend=",">IsFinancialPlansPreparing = null</isEmpty>
+               <isNotEmpty property="IsDiscretionaryAssetMangt" prepend=",">IsDiscretionaryAssetMangt = #IsDiscretionaryAssetMangt#</isNotEmpty>
+               <isEmpty property="IsDiscretionaryAssetMangt" prepend=",">IsDiscretionaryAssetMangt = null</isEmpty>
+               <isNotEmpty property="IsNonDiscretionaryAssetMangt" prepend=",">IsNonDiscretionaryAssetMangt = #IsNonDiscretionaryAssetMangt#</isNotEmpty>
+               <isEmpty property="IsNonDiscretionaryAssetMangt" prepend=",">IsNonDiscretionaryAssetMangt = null</isEmpty>
+               <isNotEmpty property="IsSecuritiesSales" prepend=",">IsSecuritiesSales = #IsSecuritiesSales#</isNotEmpty>
+               <isEmpty property="IsSecuritiesSales" prepend=",">IsSecuritiesSales = null</isEmpty>
+               <isNotEmpty property="IsContractualRelationShip" prepend=",">IsContractualRelationShip = #IsContractualRelationShip#</isNotEmpty>
+               <isEmpty property="IsContractualRelationShip" prepend=",">IsContractualRelationShip = null</isEmpty>
+               <isNotEmpty property="IsOmissionsPolicy" prepend=",">IsOmissionsPolicy = #IsOmissionsPolicy#</isNotEmpty>
+               <isEmpty property="IsOmissionsPolicy" prepend=",">IsOmissionsPolicy = null</isEmpty>
+               <isNotEmpty property="IsAnyNonPublicInvestments" prepend=",">IsAnyNonPublicInvestments = #IsAnyNonPublicInvestments#</isNotEmpty>
+               <isEmpty property="IsAnyNonPublicInvestments" prepend=",">IsAnyNonPublicInvestments = null</isEmpty>
+               <isNotEmpty property="IsAnyFirmAffiliateLicensed" prepend=",">IsAnyFirmAffiliateLicensed = #IsAnyFirmAffiliateLicensed#</isNotEmpty>
+               <isEmpty property="IsAnyFirmAffiliateLicensed" prepend=",">IsAnyFirmAffiliateLicensed = null</isEmpty>
+               <isNotEmpty property="IsAnyEmployeeBenefitPlan" prepend=",">IsAnyEmployeeBenefitPlan = #IsAnyEmployeeBenefitPlan#</isNotEmpty>
+               <isEmpty property="IsAnyEmployeeBenefitPlan" prepend=",">IsAnyEmployeeBenefitPlan = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from FinancialPlanningAndIAServiceSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from FinancialPlanningAndIAServiceSupp</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from FinancialPlanningAndIAServiceSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select IsFinancialPlansPreparing, IsDiscretionaryAssetMangt, IsNonDiscretionaryAssetMangt, IsSecuritiesSales, IsContractualRelationShip, IsOmissionsPolicy, IsAnyNonPublicInvestments, IsAnyFirmAffiliateLicensed, IsAnyEmployeeBenefitPlan, VersionSequence, PolicyKey from FinancialPlanningAndIAServiceSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, IsFinancialPlansPreparing, IsDiscretionaryAssetMangt, IsNonDiscretionaryAssetMangt, IsSecuritiesSales, IsContractualRelationShip, IsOmissionsPolicy, IsAnyNonPublicInvestments, IsAnyFirmAffiliateLicensed, IsAnyEmployeeBenefitPlan from FinancialPlanningAndIAServiceSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

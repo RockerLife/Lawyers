@@ -1,0 +1,116 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="TitleSuppLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from TitleSuppLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from TitleSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into TitleSuppLW(VersionSequence, PolicyKey
+          <isNotEmpty property="IsApplMaintEquityInTitle" prepend=",">IsApplMaintEquityInTitle</isNotEmpty>
+          <isNotEmpty property="PercentageOfEquityInt" prepend=",">PercentageOfEquityInt</isNotEmpty>
+          <isNotEmpty property="IsTitleHaveProfLiabCoverage" prepend=",">IsTitleHaveProfLiabCoverage</isNotEmpty>
+          <isNotEmpty property="NumberOfTitleIssued" prepend=",">NumberOfTitleIssued</isNotEmpty>
+          <isNotEmpty property="NumberOfTitleAttInFirm" prepend=",">NumberOfTitleAttInFirm</isNotEmpty>
+          <isNotEmpty property="NumberOfTitleAttNotInFirm" prepend=",">NumberOfTitleAttNotInFirm</isNotEmpty>
+          <isNotEmpty property="NumberOfTitleNonAttInFirm" prepend=",">NumberOfTitleNonAttInFirm</isNotEmpty>
+          <isNotEmpty property="NumberOfTitleNonAttSubCont" prepend=",">NumberOfTitleNonAttSubCont</isNotEmpty>
+          <isNotEmpty property="IsApplObtCertOfInsOfTitle" prepend=",">IsApplObtCertOfInsOfTitle</isNotEmpty>
+          <isNotEmpty property="NumberOfRealEstTitleIns" prepend=",">NumberOfRealEstTitleIns</isNotEmpty>
+          <isNotEmpty property="PercentOfTitleFromResi" prepend=",">PercentOfTitleFromResi</isNotEmpty>
+          <isNotEmpty property="PercentOfTitleFromComm" prepend=",">PercentOfTitleFromComm</isNotEmpty>
+          <isNotEmpty property="PercentOfTitleFromAgri" prepend=",">PercentOfTitleFromAgri</isNotEmpty>
+          <isNotEmpty property="IsFirmUseEngageLetterOfTitle" prepend=",">IsFirmUseEngageLetterOfTitle</isNotEmpty>
+          <isNotEmpty property="IsTitleInsAgencyIssuePolicy" prepend=",">IsTitleInsAgencyIssuePolicy</isNotEmpty>
+          <isNotEmpty property="TitleInsuranceCompany" prepend=",">TitleInsuranceCompany</isNotEmpty>
+          <isNotEmpty property="IsTitleInsDeclineToAppl" prepend=",">IsTitleInsDeclineToAppl</isNotEmpty>
+          <isNotEmpty property="NameAndReasonOfTitle" prepend=",">NameAndReasonOfTitle</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="IsApplCovProfLiabPolicy" prepend=",">IsApplCovProfLiabPolicy</isNotEmpty>
+          <isNotEmpty property="PercentOfTitleFromOther" prepend=",">PercentOfTitleFromOther</isNotEmpty>
+          <isNotEmpty property="PercentOfTitleFromOther_CommentDesc" prepend=",">PercentOfTitleFromOther_CommentDesc</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="IsApplMaintEquityInTitle" prepend=",">#IsApplMaintEquityInTitle#</isNotEmpty>
+          <isNotEmpty property="PercentageOfEquityInt" prepend=",">#PercentageOfEquityInt#</isNotEmpty>
+          <isNotEmpty property="IsTitleHaveProfLiabCoverage" prepend=",">#IsTitleHaveProfLiabCoverage#</isNotEmpty>
+          <isNotEmpty property="NumberOfTitleIssued" prepend=",">#NumberOfTitleIssued#</isNotEmpty>
+          <isNotEmpty property="NumberOfTitleAttInFirm" prepend=",">#NumberOfTitleAttInFirm#</isNotEmpty>
+          <isNotEmpty property="NumberOfTitleAttNotInFirm" prepend=",">#NumberOfTitleAttNotInFirm#</isNotEmpty>
+          <isNotEmpty property="NumberOfTitleNonAttInFirm" prepend=",">#NumberOfTitleNonAttInFirm#</isNotEmpty>
+          <isNotEmpty property="NumberOfTitleNonAttSubCont" prepend=",">#NumberOfTitleNonAttSubCont#</isNotEmpty>
+          <isNotEmpty property="IsApplObtCertOfInsOfTitle" prepend=",">#IsApplObtCertOfInsOfTitle#</isNotEmpty>
+          <isNotEmpty property="NumberOfRealEstTitleIns" prepend=",">#NumberOfRealEstTitleIns#</isNotEmpty>
+          <isNotEmpty property="PercentOfTitleFromResi" prepend=",">#PercentOfTitleFromResi#</isNotEmpty>
+          <isNotEmpty property="PercentOfTitleFromComm" prepend=",">#PercentOfTitleFromComm#</isNotEmpty>
+          <isNotEmpty property="PercentOfTitleFromAgri" prepend=",">#PercentOfTitleFromAgri#</isNotEmpty>
+          <isNotEmpty property="IsFirmUseEngageLetterOfTitle" prepend=",">#IsFirmUseEngageLetterOfTitle#</isNotEmpty>
+          <isNotEmpty property="IsTitleInsAgencyIssuePolicy" prepend=",">#IsTitleInsAgencyIssuePolicy#</isNotEmpty>
+          <isNotEmpty property="TitleInsuranceCompany" prepend=",">#TitleInsuranceCompany#</isNotEmpty>
+          <isNotEmpty property="IsTitleInsDeclineToAppl" prepend=",">#IsTitleInsDeclineToAppl#</isNotEmpty>
+          <isNotEmpty property="NameAndReasonOfTitle" prepend=",">#NameAndReasonOfTitle#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="IsApplCovProfLiabPolicy" prepend=",">#IsApplCovProfLiabPolicy#</isNotEmpty>
+          <isNotEmpty property="PercentOfTitleFromOther" prepend=",">#PercentOfTitleFromOther#</isNotEmpty>
+          <isNotEmpty property="PercentOfTitleFromOther_CommentDesc" prepend=",">#PercentOfTitleFromOther_CommentDesc#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select IsApplMaintEquityInTitle, PercentageOfEquityInt, IsTitleHaveProfLiabCoverage, NumberOfTitleIssued, NumberOfTitleAttInFirm, NumberOfTitleAttNotInFirm, NumberOfTitleNonAttInFirm, NumberOfTitleNonAttSubCont, IsApplObtCertOfInsOfTitle, NumberOfRealEstTitleIns, PercentOfTitleFromResi, PercentOfTitleFromComm, PercentOfTitleFromAgri, IsFirmUseEngageLetterOfTitle, IsTitleInsAgencyIssuePolicy, TitleInsuranceCompany, IsTitleInsDeclineToAppl, NameAndReasonOfTitle, LastUpdateUserID, LastUpdateTimeStamp, IsApplCovProfLiabPolicy, PercentOfTitleFromOther, PercentOfTitleFromOther_CommentDesc, VersionSequence, PolicyKey from TitleSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update TitleSuppLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="IsApplMaintEquityInTitle" prepend=",">IsApplMaintEquityInTitle = #IsApplMaintEquityInTitle#</isNotEmpty>
+               <isEmpty property="IsApplMaintEquityInTitle" prepend=",">IsApplMaintEquityInTitle = null</isEmpty>
+               <isNotEmpty property="PercentageOfEquityInt" prepend=",">PercentageOfEquityInt = #PercentageOfEquityInt#</isNotEmpty>
+               <isEmpty property="PercentageOfEquityInt" prepend=",">PercentageOfEquityInt = null</isEmpty>
+               <isNotEmpty property="IsTitleHaveProfLiabCoverage" prepend=",">IsTitleHaveProfLiabCoverage = #IsTitleHaveProfLiabCoverage#</isNotEmpty>
+               <isEmpty property="IsTitleHaveProfLiabCoverage" prepend=",">IsTitleHaveProfLiabCoverage = null</isEmpty>
+               <isNotEmpty property="NumberOfTitleIssued" prepend=",">NumberOfTitleIssued = #NumberOfTitleIssued#</isNotEmpty>
+               <isEmpty property="NumberOfTitleIssued" prepend=",">NumberOfTitleIssued = null</isEmpty>
+               <isNotEmpty property="NumberOfTitleAttInFirm" prepend=",">NumberOfTitleAttInFirm = #NumberOfTitleAttInFirm#</isNotEmpty>
+               <isEmpty property="NumberOfTitleAttInFirm" prepend=",">NumberOfTitleAttInFirm = null</isEmpty>
+               <isNotEmpty property="NumberOfTitleAttNotInFirm" prepend=",">NumberOfTitleAttNotInFirm = #NumberOfTitleAttNotInFirm#</isNotEmpty>
+               <isEmpty property="NumberOfTitleAttNotInFirm" prepend=",">NumberOfTitleAttNotInFirm = null</isEmpty>
+               <isNotEmpty property="NumberOfTitleNonAttInFirm" prepend=",">NumberOfTitleNonAttInFirm = #NumberOfTitleNonAttInFirm#</isNotEmpty>
+               <isEmpty property="NumberOfTitleNonAttInFirm" prepend=",">NumberOfTitleNonAttInFirm = null</isEmpty>
+               <isNotEmpty property="NumberOfTitleNonAttSubCont" prepend=",">NumberOfTitleNonAttSubCont = #NumberOfTitleNonAttSubCont#</isNotEmpty>
+               <isEmpty property="NumberOfTitleNonAttSubCont" prepend=",">NumberOfTitleNonAttSubCont = null</isEmpty>
+               <isNotEmpty property="IsApplObtCertOfInsOfTitle" prepend=",">IsApplObtCertOfInsOfTitle = #IsApplObtCertOfInsOfTitle#</isNotEmpty>
+               <isEmpty property="IsApplObtCertOfInsOfTitle" prepend=",">IsApplObtCertOfInsOfTitle = null</isEmpty>
+               <isNotEmpty property="NumberOfRealEstTitleIns" prepend=",">NumberOfRealEstTitleIns = #NumberOfRealEstTitleIns#</isNotEmpty>
+               <isEmpty property="NumberOfRealEstTitleIns" prepend=",">NumberOfRealEstTitleIns = null</isEmpty>
+               <isNotEmpty property="PercentOfTitleFromResi" prepend=",">PercentOfTitleFromResi = #PercentOfTitleFromResi#</isNotEmpty>
+               <isEmpty property="PercentOfTitleFromResi" prepend=",">PercentOfTitleFromResi = null</isEmpty>
+               <isNotEmpty property="PercentOfTitleFromComm" prepend=",">PercentOfTitleFromComm = #PercentOfTitleFromComm#</isNotEmpty>
+               <isEmpty property="PercentOfTitleFromComm" prepend=",">PercentOfTitleFromComm = null</isEmpty>
+               <isNotEmpty property="PercentOfTitleFromAgri" prepend=",">PercentOfTitleFromAgri = #PercentOfTitleFromAgri#</isNotEmpty>
+               <isEmpty property="PercentOfTitleFromAgri" prepend=",">PercentOfTitleFromAgri = null</isEmpty>
+               <isNotEmpty property="IsFirmUseEngageLetterOfTitle" prepend=",">IsFirmUseEngageLetterOfTitle = #IsFirmUseEngageLetterOfTitle#</isNotEmpty>
+               <isEmpty property="IsFirmUseEngageLetterOfTitle" prepend=",">IsFirmUseEngageLetterOfTitle = null</isEmpty>
+               <isNotEmpty property="IsTitleInsAgencyIssuePolicy" prepend=",">IsTitleInsAgencyIssuePolicy = #IsTitleInsAgencyIssuePolicy#</isNotEmpty>
+               <isEmpty property="IsTitleInsAgencyIssuePolicy" prepend=",">IsTitleInsAgencyIssuePolicy = null</isEmpty>
+               <isNotEmpty property="TitleInsuranceCompany" prepend=",">TitleInsuranceCompany = #TitleInsuranceCompany#</isNotEmpty>
+               <isEmpty property="TitleInsuranceCompany" prepend=",">TitleInsuranceCompany = null</isEmpty>
+               <isNotEmpty property="IsTitleInsDeclineToAppl" prepend=",">IsTitleInsDeclineToAppl = #IsTitleInsDeclineToAppl#</isNotEmpty>
+               <isEmpty property="IsTitleInsDeclineToAppl" prepend=",">IsTitleInsDeclineToAppl = null</isEmpty>
+               <isNotEmpty property="NameAndReasonOfTitle" prepend=",">NameAndReasonOfTitle = #NameAndReasonOfTitle#</isNotEmpty>
+               <isEmpty property="NameAndReasonOfTitle" prepend=",">NameAndReasonOfTitle = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="IsApplCovProfLiabPolicy" prepend=",">IsApplCovProfLiabPolicy = #IsApplCovProfLiabPolicy#</isNotEmpty>
+               <isEmpty property="IsApplCovProfLiabPolicy" prepend=",">IsApplCovProfLiabPolicy = null</isEmpty>
+               <isNotEmpty property="PercentOfTitleFromOther" prepend=",">PercentOfTitleFromOther = #PercentOfTitleFromOther#</isNotEmpty>
+               <isEmpty property="PercentOfTitleFromOther" prepend=",">PercentOfTitleFromOther = null</isEmpty>
+               <isNotEmpty property="PercentOfTitleFromOther_CommentDesc" prepend=",">PercentOfTitleFromOther_CommentDesc = #PercentOfTitleFromOther_CommentDesc#</isNotEmpty>
+               <isEmpty property="PercentOfTitleFromOther_CommentDesc" prepend=",">PercentOfTitleFromOther_CommentDesc = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from TitleSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from TitleSuppLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from TitleSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select IsApplMaintEquityInTitle, PercentageOfEquityInt, IsTitleHaveProfLiabCoverage, NumberOfTitleIssued, NumberOfTitleAttInFirm, NumberOfTitleAttNotInFirm, NumberOfTitleNonAttInFirm, NumberOfTitleNonAttSubCont, IsApplObtCertOfInsOfTitle, NumberOfRealEstTitleIns, PercentOfTitleFromResi, PercentOfTitleFromComm, PercentOfTitleFromAgri, IsFirmUseEngageLetterOfTitle, IsTitleInsAgencyIssuePolicy, TitleInsuranceCompany, IsTitleInsDeclineToAppl, NameAndReasonOfTitle, LastUpdateUserID, LastUpdateTimeStamp, IsApplCovProfLiabPolicy, PercentOfTitleFromOther, PercentOfTitleFromOther_CommentDesc, VersionSequence, PolicyKey from TitleSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, IsApplMaintEquityInTitle, PercentageOfEquityInt, IsTitleHaveProfLiabCoverage, NumberOfTitleIssued, NumberOfTitleAttInFirm, NumberOfTitleAttNotInFirm, NumberOfTitleNonAttInFirm, NumberOfTitleNonAttSubCont, IsApplObtCertOfInsOfTitle, NumberOfRealEstTitleIns, PercentOfTitleFromResi, PercentOfTitleFromComm, PercentOfTitleFromAgri, IsFirmUseEngageLetterOfTitle, IsTitleInsAgencyIssuePolicy, TitleInsuranceCompany, IsTitleInsDeclineToAppl, NameAndReasonOfTitle, LastUpdateUserID, LastUpdateTimeStamp, IsApplCovProfLiabPolicy, PercentOfTitleFromOther, PercentOfTitleFromOther_CommentDesc from TitleSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

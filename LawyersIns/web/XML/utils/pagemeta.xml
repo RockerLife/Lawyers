@@ -1,0 +1,287 @@
+<pagemeta seq="0" project="UTILS">
+     <applinks seq="0" name="global_links">
+          <applink javascript="js_submitForm" skiprequest="Y" seq="0" description="Cancel" skipvalidation="N" skipcachecheck="N" name="cancel_link" />
+     </applinks>
+     <page title="XML Objects builder" seq="0" template="xslt/page.xslt" templatetype="xslt" name="xmlobjectbuilder" stackregister="Y">
+          <form action="xmlobjectbuilder.do" seq="0" name="xmlobjectbuilder_form" linksdirection="H">
+               <block headerdisplay="Y" blockview="xmlobjectbuilder_list_view" type="list" multirow="N" seq="0" childafterupdate="N" linksdirection="H" id="1" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+                    <blockviewworkflow seq="0" name="lookup_xmltemplates" lookup="N" />
+                    <blockfieldversion versionname="0" seq="0">
+	                    <blockfield headerdisplay="Y" seq="0" overlay="N" field="xml_template_description" requiredind="N" displaytype="label" />
+	                    <blockfield headerdisplay="Y" seq="1" overlay="N" field="xml_template" requiredind="N" displaytype="checkbox" />
+                    </blockfieldversion>
+                    <blocklink javascript="js_submitForm" form_event="save" seq="0" skipcachecheck="Y" skiprequest="N" description="Generate XML Objects" skipvalidation="N" name="save_link" defaultrequest="N">
+                         <blocklinkworkflow seq="0" name="generate_xmlobjects" lookup="N"/>
+                         <blocklinkforward seq="1" page="confirmation" name="confirmation" />
+                    </blocklink>
+               </block>
+               <formlink skiprequest="Y" seq="0" reflink="cancel_link" skipvalidation="N" skipcachecheck="N" name="cancel_link" />
+          </form>
+     </page>
+     <page title="XML To DB" seq="0" template="xslt/page.xslt" templatetype="xslt" name="xmltodb" stackregister="Y">
+          <form action="xmltodb.do" seq="0" name="xmltodb_form" linksdirection="H">
+               <block headerdisplay="Y" blockview="xmltodb_freeform_view" type="freeform" multirow="N" seq="0" childafterupdate="N" linksdirection="H" id="1" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               		<blockfieldversion versionname="0" seq="0">
+	                    <blockfield headerdisplay="Y" seq="0" overlay="N" field="system_project_id" requiredind="Y" displaytype="select" />
+	                    <blockfield headerdisplay="Y" seq="1" overlay="N" metaobject="xmltodb" field="defination" requiredind="N" displaytype="select" />
+	                    <blockfield headerdisplay="Y" seq="2" overlay="N" field="defination_fromfile" requiredind="N" displaytype="file" />
+                    </blockfieldversion>
+                    <blocklink javascript="js_submitForm" form_event="save" seq="0" skipcachecheck="Y" skiprequest="N" description="Load XML To DB" skipvalidation="N" name="save_link" defaultrequest="N">
+                         <blocklinkworkflow seq="0" name="xmltodb" lookup="N"/>
+                         <blocklinkforward seq="1" page="confirmation1" name="confirmation1" />
+                    </blocklink>
+               </block>
+               <formlink skiprequest="Y" seq="0" reflink="cancel_link" skipvalidation="N" skipcachecheck="N" name="cancel_link" />
+          </form>
+     </page>
+     <page title="DB To XML" seq="0" template="xslt/page.xslt" templatetype="xslt" name="dbtoxml" stackregister="Y">
+          <form action="dbtoxml.do" seq="0" name="dbtoxml_form" linksdirection="H">
+               <block headerdisplay="Y" blockview="dbtoxml_freeform_view" type="freeform" multirow="N" seq="0" childafterupdate="N" linksdirection="H" id="1" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               		<blockfieldversion versionname="0" seq="0">
+	               		<blockfield headerdisplay="Y" seq="0" overlay="N" metaobject="dbtoxml" field="project_id" requiredind="Y" displaytype="select" />
+	                    <blockfield headerdisplay="Y" seq="1" overlay="N" metaobject="dbtoxml" field="xml_template_to_pull" requiredind="Y" displaytype="select" />
+	                    <blockfield headerdisplay="Y" seq="2" overlay="N" metaobject="xmltodb" field="defination" requiredind="N" displaytype="select" />
+	                    <!--<blockfield headerdisplay="Y" seq="3" overlay="N" field="defination_fromfile" requiredind="N" displaytype="file" />
+                    --></blockfieldversion>
+                    <blocklink javascript="js_submitForm" form_event="save" seq="0" skipcachecheck="Y" skiprequest="N" description="Get XML From DB" skipvalidation="N" name="save_link" defaultrequest="N">
+                         <blocklinkworkflow seq="0" name="dbtoxml" lookup="N"/>
+                         <blocklinkforward seq="1" page="confirmation1" name="confirmation1" />
+                    </blocklink>
+               </block>
+               <formlink skiprequest="Y" seq="0" reflink="cancel_link" skipvalidation="N" skipcachecheck="N" name="cancel_link" />
+          </form>
+     </page>
+     <page title="Generate Schema for metadata" seq="0" template="xslt/page.xslt" templatetype="xslt" name="genschema" stackregister="Y">
+          <form action="genschema.do" seq="0" name="genschema_form" linksdirection="H">
+               <block headerdisplay="Y" blockview="genschema_freeform_view" type="freeform" multirow="N" seq="0" childafterupdate="N" linksdirection="H" id="1" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               		<blockviewworkflow seq="0" name="genschema" lookup="N"/>
+               		<blockfieldversion versionname="0" seq="0">
+	                    <blockfield headerdisplay="Y" seq="0" overlay="N" metaobject="genschema" field="genschema_project_id" requiredind="Y" displaytype="select" />
+	                    <blockfield headerdisplay="Y" seq="1" overlay="N" field="schemadef" requiredind="N" displaytype="textarea" textarearows="20" textareacols="80"/>
+                    </blockfieldversion>
+                    <blocklink javascript="js_submitForm" form_event="save" seq="0" skipcachecheck="Y" skiprequest="N" description="Get schema defination" skipvalidation="N" name="save_link" defaultrequest="N">
+                         <blocklinkforward seq="1" page="genschema" name="genschema" />
+                    </blocklink>
+               </block>
+               <formlink skiprequest="Y" seq="0" reflink="cancel_link" skipvalidation="N" skipcachecheck="N" name="cancel_link" />
+          </form>
+     </page>
+     <page title="Generate Metadata From DB (Reverse engineer)" seq="0" template="xslt/page.xslt" templatetype="xslt" name="genmetafromdb" stackregister="Y">
+          <form action="genmetafromdb.do" seq="0" name="genmetafromdb_form" linksdirection="H">
+               <block headerdisplay="Y" blockview="genschema_freeform_view" type="freeform" multirow="N" seq="0" childafterupdate="N" linksdirection="H" id="1" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               		<blockfieldversion versionname="0" seq="0">
+	               		<blockfield headerdisplay="Y" seq="0" overlay="N" field="db_driver" requiredind="Y" displaytype="select" />
+	                    <blockfield headerdisplay="Y" seq="1" overlay="N" field="db_url" requiredind="Y" displaytype="text" />
+	                    <blockfield headerdisplay="Y" seq="2" overlay="N" field="db_username" requiredind="Y" displaytype="text" />
+	                    <blockfield headerdisplay="Y" seq="3" overlay="N" field="db_password" requiredind="Y" displaytype="password" />
+	                    <blockfield headerdisplay="Y" seq="4" overlay="N" field="genmeta_project_id" requiredind="Y" displaytype="text" />
+	                    <blockfield headerdisplay="Y" seq="5" overlay="N" field="db_type" requiredind="Y" displaytype="select" />
+	                    <!-- <blockfield headerdisplay="Y" seq="6" overlay="N" field="metadata_file" requiredind="Y" displaytype="file" /> -->
+	                    <blockfield headerdisplay="Y" seq="6" overlay="N" field="dummy_metaobject" requiredind="Y" displaytype="select" />
+                    </blockfieldversion>
+                    <blocklink javascript="js_submitForm" form_event="save" seq="0" skipcachecheck="Y" skiprequest="N" description="Generate metadata" skipvalidation="N" name="save_link" defaultrequest="N">
+                    	 <blocklinkworkflow seq="0" name="genmetafromdb" lookup="N"/>
+                         <blocklinkforward seq="1" page="confirmation1" name="confirmation1" />
+                    </blocklink>
+               </block>
+               <formlink skiprequest="Y" seq="0" reflink="cancel_link" skipvalidation="N" skipcachecheck="N" name="cancel_link" />
+          </form>
+     </page>
+     
+     <page title="Application Generator" seq="0" template="xslt/page.xslt" templatetype="xslt" name="appgenerator" stackregister="Y">
+          <form action="appgenerator.do" seq="0" name="appgenerator_form" linksdirection="H">
+               <block headerdisplay="Y" blockview="appgenerator_freeform_view" type="freeform" multirow="N" seq="0" childafterupdate="N" linksdirection="H" id="1" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               		<blockfieldversion versionname="0" seq="0">
+	               		<blockfield headerdisplay="Y" seq="0" overlay="N" metaobject="dbtoxml" field="project_id" requiredind="Y" displaytype="select">
+	               			<fieldlink name="refresh_link" linkscope="field" skiprequest="N" skipvalidation="Y" form_event="refresh" js_event="onChange" javascript="js_submitForm">
+	               				<fieldlinkworkflow seq="0" name="appconfigrefresh" lookup="N"/>
+                         		<fieldlinkforward seq="1" page="appgenerator" name="appgenerator" />
+	               			</fieldlink>
+	               		</blockfield>
+	               		<blockfield headerdisplay="Y" seq="2" overlay="N" field="folder_name" requiredind="Y" displaytype="text" />
+	                    <blockfield headerdisplay="Y" seq="3" overlay="N" field="db_type" requiredind="Y" displaytype="select" />
+	                    <blockfield headerdisplay="Y" seq="4" overlay="N" field="db_driver" requiredind="Y" displaytype="select" />
+	                    <blockfield headerdisplay="Y" seq="5" overlay="N" field="db_url" requiredind="Y" displaytype="text" />
+	                    <blockfield headerdisplay="Y" seq="6" overlay="N" field="db_username" requiredind="Y" displaytype="text" />
+	                    <blockfield headerdisplay="Y" seq="7" overlay="N" field="db_password" requiredind="Y" displaytype="password" />
+	                    <blockfield headerdisplay="Y" seq="8" overlay="N" field="genschema_reqd" requiredind="N" displaytype="radio" displaydirection="H" defaultvalue="N"/>
+	                </blockfieldversion>
+                    <blocklink javascript="js_submitForm" form_event="save" seq="0" skipcachecheck="Y" skiprequest="N" description="Generate Application" skipvalidation="N" name="save_link" defaultrequest="N">
+                    	 <blocklinkworkflow seq="0" name="appgen" lookup="N"/>
+                         <blocklinkforward seq="1" page="confirmation" name="confirmation" />
+                    </blocklink>
+               </block>
+               <formlink skiprequest="Y" seq="0" reflink="cancel_link" skipvalidation="N" skipcachecheck="N" name="cancel_link" />
+          </form>
+     </page>
+
+     
+     <page title="Xml Metadata Interchange (XMI) Generator" seq="0" template="xslt/page.xslt" templatetype="xslt" name="xmigenerator" stackregister="Y">
+     <!-- 
+          <form action="xmigenerator.do" seq="0" name="xmigenerator_form" linksdirection="H">
+     -->
+          <form action="download.download" seq="0" name="xmigenerator_form" linksdirection="H">
+               <block headerdisplay="Y" blockview="xmigenerator_freeform_view" type="freeform" multirow="N" seq="0" childafterupdate="N" linksdirection="H" id="1" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               		<blockfieldversion versionname="0" seq="0">
+	               		<blockfield headerdisplay="Y" seq="0" overlay="N" metaobject="dbtoxml" field="project_id" requiredind="Y" displaytype="select">
+	               			<!--
+	               			<fieldlink name="refresh_link" linkscope="field" skiprequest="N" skipvalidation="Y" form_event="refresh" js_event="onChange" javascript="js_submitForm">
+	               				<fieldlinkworkflow seq="0" name="appconfigrefresh" lookup="N"/>
+                         		<fieldlinkforward seq="1" page="appgenerator" name="appgenerator" />
+	               			</fieldlink>
+	               			-->
+	               		</blockfield>
+	               		<blockfield headerdisplay="Y" seq="2" overlay="N" field="XMI" requiredind="N" displaytype="textarea" textareacols="60" textarearows="25"/>
+	                </blockfieldversion>
+                    <blocklink javascript="js_submitForm" form_event="save" seq="0" skipcachecheck="Y" skiprequest="N" description="Generate XMI" skipvalidation="N" name="save_link" defaultrequest="N">
+                    	 <blocklinkworkflow seq="0" name="xmigen" lookup="N"/>                    	  
+                         <blocklinkforward seq="1" page="xmigenerator" name="xmigenerator" />                         
+                    </blocklink>                    
+               </block>
+               <formlink skiprequest="Y" seq="0" reflink="cancel_link" skipvalidation="N" skipcachecheck="N" name="cancel_link" />	
+          </form>
+     </page>
+     
+     <page title="Populate deltalog from XML to DB" seq="0" template="xslt/page.xslt" templatetype="xslt" name="populate_delta_log" stackregister="Y">
+          <form action="populate_delta_log.do" seq="0" name="populate_delta_log_form" linksdirection="H">
+               <block headerdisplay="Y" blockview="populate_delta_log_freeform_view" type="freeform" multirow="N" seq="0" childafterupdate="N" linksdirection="H" id="1" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               		<blockfieldversion versionname="0" seq="0">
+	                    <blockfield headerdisplay="Y" seq="0" overlay="N" metaobject="populate_delta_log" field="xml_template" requiredind="Y" displaytype="select" />
+	                    <blockfield headerdisplay="Y" seq="1" overlay="N" field="genmeta_project_id" requiredind="Y" displaytype="text" />
+	                    <blockfield headerdisplay="Y" seq="2" overlay="N" field="delta_xml" requiredind="N" displaytype="textarea" textarearows="20" textareacols="80"/>
+                    </blockfieldversion>
+                    <blocklink javascript="js_submitForm" form_event="save" seq="0" skipcachecheck="Y" skiprequest="N" description="Populate" skipvalidation="N" name="save_link" defaultrequest="N">
+                    	 <blocklinkworkflow seq="0" name="populate_delta_log" lookup="N"/>
+                         <blocklinkforward seq="1" page="confirmation" name="confirmation" />
+                    </blocklink>
+               </block>
+               <formlink skiprequest="Y" seq="0" reflink="cancel_link" skipvalidation="N" skipcachecheck="N" name="cancel_link" />
+          </form>
+     </page>
+     
+     <page title="Application flow" seq="0" template="xslt/page.xslt" templatetype="xslt" name="application_flow" stackregister="Y">
+          <form action="application_flow.do" seq="0" name="application_flow_form" linksdirection="H">
+               <block headerdisplay="Y" blockview="application_flow_view" type="freeform" multirow="N" seq="0" childafterupdate="N" linksdirection="H" id="1" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               		<blockfieldversion versionname="0" seq="0">
+               			<blockfield headerdisplay="Y" seq="0" overlay="N" metaobject="dbtoxml" field="project_id" requiredind="Y" displaytype="select">
+	               			<fieldlink name="refresh_link" linkscope="field" skiprequest="N" skipvalidation="Y" form_event="refresh" js_event="onChange" javascript="js_submitForm">
+	               				<fieldlinkworkflow seq="0" name="retrieve_app_flow" lookup="N"/>
+                         		<fieldlinkforward seq="1" page="application_flow" name="application_flow" />
+	               			</fieldlink>
+	               		</blockfield>
+	                    <blockfield headerdisplay="Y" seq="1" overlay="N" field="flowxml" requiredind="Y" displaytype="textarea" textarearows="50" textareacols="150" />
+                    </blockfieldversion>
+                    <blocklink javascript="js_submitForm" form_event="save" seq="0" skipcachecheck="Y" skiprequest="N" description="Update App flow" skipvalidation="N" name="save_link" defaultrequest="N">
+                    	 <blocklinkworkflow seq="0" name="update_app_flow" lookup="N"/>
+                         <blocklinkforward seq="1" page="application_flow" name="application_flow" />
+                    </blocklink>
+               </block>
+               <formlink skiprequest="Y" seq="0" reflink="cancel_link" skipvalidation="N" skipcachecheck="N" name="cancel_link" />
+          </form>
+     </page>
+     
+     <page title="Function Test Harness" seq="0" template="xslt/functionstest.xslt" templatetype="xslt" name="functionstest" stackregister="Y">
+          <form action="functionstest.do" seq="0" name="functionstest_form" linksdirection="H">
+               <block title="Help" headerdisplay="Y" blockview="functions_view" type="freeform" multirow="N" seq="1" childafterupdate="N" linksdirection="H" id="1" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               		<blockfieldversion versionname="0" seq="0">
+	                    <blockfield headerdisplay="Y" seq="0" overlay="N" metaobject="functions" field="availablefunctions" requiredind="N" displaytype="select">
+	                    	<fieldlink name="refresh_link" linkscope="field" skiprequest="N" skipvalidation="Y" form_event="refresh" js_event="onChange" javascript="js_submitForm">
+	               				<fieldlinkforward seq="1" page="functionstest" name="functionstest" />
+	               			</fieldlink>
+	                    </blockfield>
+	                </blockfieldversion>
+               </block>
+               <block blockdescription="Below are the arguments list for the selected function" headerdisplay="Y" blockview="argsView" type="list" multirow="N" seq="2" childafterupdate="N" linksdirection="H" id="2" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               		<blockviewworkflow seq="0" name="WFArgsList" lookup="N"/>
+               		<blockfieldversion versionname="0" seq="0">
+	                    <blockfield headerdisplay="Y" seq="0" overlay="N" field="argname" requiredind="N" displaytype="label" />
+	                    <blockfield headerdisplay="Y" seq="1" overlay="N" field="argtype" requiredind="N" displaytype="label" />
+                    </blockfieldversion>
+               </block>
+               <block blockdescription="Below are the system defined variables and can be used while forming your expression." headerdisplay="Y" blockview="sysvariables_view" type="freeform" multirow="N" seq="3" childafterupdate="N" linksdirection="H" id="3" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               		<blockfieldversion versionname="0" seq="0">
+	                    <blockfield headerdisplay="Y" seq="0" overlay="N" field="sysvariables" requiredind="N" displaytype="select"/>
+	                </blockfieldversion>
+               </block>
+               <block headerdisplay="Y" blockview="rulesview" type="freeform" multirow="N" seq="4" childafterupdate="N" linksdirection="H" id="4" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               		<blockfieldversion versionname="0" seq="0">
+	                    <blockfield headerdisplay="Y" seq="0" overlay="N" field="rule" requiredind="N" displaytype="text" />
+	                    <blockfield headerdisplay="Y" seq="1" overlay="N" field="ruledata" requiredind="N" displaytype="textarea" textarearows="10" textareacols="40"/>
+                    </blockfieldversion>
+                    <blocklink javascript="js_submitForm" form_event="execute" seq="0" skipcachecheck="Y" skiprequest="N" description="Execute" skipvalidation="N" name="execute_link" defaultrequest="N">
+                    	 <blocklinkworkflow seq="0" name="WFExecuteExpr" lookup="N"/>
+                         <blocklinkforward seq="1" page="functionstest" name="functionstest" />
+                    </blocklink>
+               </block>
+               <block headerdisplay="Y" blockview="resultview" type="freeform" multirow="N" seq="5" childafterupdate="N" linksdirection="H" id="5" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               		<blockviewworkflow seq="0" name="WFExecuteExpr" lookup="N"/>
+               		<blockfieldversion versionname="0" seq="0">
+	                    <blockfield headerdisplay="Y" seq="0" overlay="N" field="result" requiredind="N" displaytype="label" />
+                    </blockfieldversion>
+               </block>
+               <block template="/utils/exprexamples.jsp" headerdisplay="Y" seq="6" childafterupdate="N" linksdirection="H" id="6" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               </block>
+               <formlink skiprequest="Y" seq="0" reflink="cancel_link" skipvalidation="N" skipcachecheck="N" name="cancel_link" />
+          </form>
+     </page>
+     
+     
+     <page title="Confirmation" seq="0" template="xslt/page.xslt" templatetype="xslt" name="confirmation" stackregister="Y">
+          <form action="confirmation.do" seq="0" name="confirmation_form" linksdirection="H">
+               <block headerdisplay="Y" blockview="confirmation_list_view" type="list" multirow="N" seq="0" childafterupdate="N" linksdirection="H" id="1" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               <!-- add new link for downloading the metadata.xml madhuv 30/05/07
+               <blocklink javascript="js_submitForm" seq="2" form_event="download" skipcachecheck="Y"  skiprequest="N" description="Download" skipvalidation="N" name="download_link" defaultrequest="N">
+                   <blocklinkworkflow seq="0" name="downloadfile" lookup="N"/>                    	  
+                   <blocklinkforward seq="1" page="confirmation" name="confirmation" />                              
+               </blocklink> -->
+               <!-- end -->
+               </block>
+               <formlink javascript="js_submitForm" form_event="continue" seq="0" skipcachecheck="Y" skiprequest="N" description="Continue" skipvalidation="N" name="continue_link">
+               		<formlinkforward seq="1" page="inetutils" name="inetutils" />
+               </formlink>
+          </form>
+     </page>
+     
+     <page title="Confirmation" seq="0" template="xslt/page.xslt" templatetype="xslt" name="confirmation1" stackregister="Y">
+          <form action="confirmation1.do" seq="0" name="confirmation1_form" linksdirection="H">
+               <block headerdisplay="Y" blockview="confirmation_freeform_view" type="freeform" multirow="N" seq="0" childafterupdate="N" linksdirection="H" id="1" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               <!-- add new link for downloading the metadata.xml madhuv 30/05/07 -->
+               <blockfieldversion versionname="0" seq="0">
+               <blockfield headerdisplay="Y" seq="4" overlay="N" field="genmeta_project_id"  readonly="Y" requiredind="Y" displaytype="text" />
+               </blockfieldversion>
+               <blocklink javascript="js_submitForm" seq="2" form_event="download" skipcachecheck="Y"  skiprequest="N" description="Download" skipvalidation="N" name="download_link" defaultrequest="N">
+                   <blocklinkworkflow seq="0" name="downloadfile" lookup="N"/>                    	  
+                   <blocklinkforward seq="1" page="confirmation1" name="confirmation1" />                              
+               </blocklink>
+               <!-- end -->
+               </block>
+               <formlink javascript="js_submitForm" form_event="continue" seq="0" skipcachecheck="Y" skiprequest="N" description="Continue" skipvalidation="N" name="continue_link">
+               		<formlinkforward seq="1" page="inetutils" name="inetutils" />
+               </formlink>
+          </form>
+     </page>
+     <page title="Utilities" seq="0" template="/inetutils.jsp" templatetype="jsp" name="inetutils" stackregister="Y">
+     	  <pageparam form="Y" seq="0" session="Y" paramid="param0" remove="N" scope="request" name="inet_project_id" post="N" pre="Y" />
+     	  <form action="inetutils.do" seq="0" name="inetutils_form" linksdirection="H" />
+     </page>
+     <page title="System Error" seq="32" template="/error.jsp" templatetype="jsp" name="error" stackregister="Y">
+          <form action="error.do" seq="0" name="error_form" linksdirection="H" />
+     </page>
+     
+      
+    <page title="UploadMetadata To Server" seq="0" template="xslt/page.xslt" templatetype="xslt" name="fileupload" stackregister="Y">
+          <form action="fileupload.do" seq="0" name="fileupload_form" linksdirection="H">
+                 <block headerdisplay="Y" blockview="fileupload_freeform_view" type="freeform" multirow="N" seq="0" childafterupdate="N" linksdirection="H" id="1" clearoncommit="N" childonsameview="N" retainrequest="N" skiprequest="N" overridereadonly="N">
+               		<blockfieldversion versionname="0" seq="0">
+	                     <blockfield headerdisplay="Y" seq="0" overlay="N" field="projectname" requiredind="Y" displaytype="text" /> 
+	                    <blockfield headerdisplay="Y" seq="2" overlay="N" field="defination_fromfile" requiredind="Y" displaytype="file" />
+                    </blockfieldversion>
+                    <blocklink javascript="js_submitForm" form_event="save" seq="0" skipcachecheck="Y" skiprequest="N" description="Load XML To DB" skipvalidation="N" name="save_link" defaultrequest="N">
+                         <blocklinkworkflow seq="0" name="uploadfile" lookup="N"/>
+                         <blocklinkforward seq="1" page="confirmation" name="confirmation" />
+                    </blocklink>
+               </block>
+               <formlink skiprequest="Y" seq="0" reflink="cancel_link" skipvalidation="N" skipcachecheck="N" name="cancel_link" />
+          </form>
+     </page>
+</pagemeta>

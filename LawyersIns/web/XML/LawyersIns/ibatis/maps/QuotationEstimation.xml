@@ -1,0 +1,121 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="QuotationEstimation">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from QuotationEstimation</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from QuotationEstimation</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into QuotationEstimation(
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence</isNotEmpty>
+               <isNotEmpty property="TransactionSequence" prepend=",">TransactionSequence</isNotEmpty>
+               <isNotEmpty property="TotalPremium" prepend=",">TotalPremium</isNotEmpty>
+               <isNotEmpty property="TotalPremiumFirstRange" prepend=",">TotalPremiumFirstRange</isNotEmpty>
+               <isNotEmpty property="TotalPolicyTaxAmount" prepend=",">TotalPolicyTaxAmount</isNotEmpty>
+               <isNotEmpty property="InvoicedPremium" prepend=",">InvoicedPremium</isNotEmpty>
+               <isNotEmpty property="TotalPolicyModifierPercentage" prepend=",">TotalPolicyModifierPercentage</isNotEmpty>
+               <isNotEmpty property="IsClaimOptionType" prepend=",">IsClaimOptionType</isNotEmpty>
+               <isNotEmpty property="IsClaimExpensesType" prepend=",">IsClaimExpensesType</isNotEmpty>
+               <isNotEmpty property="IsDollarDefense" prepend=",">IsDollarDefense</isNotEmpty>
+               <isNotEmpty property="AggregateLimit" prepend=",">AggregateLimit</isNotEmpty>
+               <isNotEmpty property="OccuranceLimit" prepend=",">OccuranceLimit</isNotEmpty>
+               <isNotEmpty property="AggregateDeductible" prepend=",">AggregateDeductible</isNotEmpty>
+               <isNotEmpty property="OccuranceDeductible" prepend=",">OccuranceDeductible</isNotEmpty>
+               <isNotEmpty property="IsMinimumPremium" prepend=",">IsMinimumPremium</isNotEmpty>
+               <isNotEmpty property="XmlOutputDatafromRating" prepend=",">XmlOutputDatafromRating</isNotEmpty>
+               <isNotEmpty property="XmlInputDatatoRating" prepend=",">XmlInputDatatoRating</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">#VersionSequence#</isNotEmpty>
+               <isNotEmpty property="TransactionSequence" prepend=",">#TransactionSequence#</isNotEmpty>
+               <isNotEmpty property="TotalPremium" prepend=",">#TotalPremium#</isNotEmpty>
+               <isNotEmpty property="TotalPremiumFirstRange" prepend=",">#TotalPremiumFirstRange#</isNotEmpty>
+               <isNotEmpty property="TotalPolicyTaxAmount" prepend=",">#TotalPolicyTaxAmount#</isNotEmpty>
+               <isNotEmpty property="InvoicedPremium" prepend=",">#InvoicedPremium#</isNotEmpty>
+               <isNotEmpty property="TotalPolicyModifierPercentage" prepend=",">#TotalPolicyModifierPercentage#</isNotEmpty>
+               <isNotEmpty property="IsClaimOptionType" prepend=",">#IsClaimOptionType#</isNotEmpty>
+               <isNotEmpty property="IsClaimExpensesType" prepend=",">#IsClaimExpensesType#</isNotEmpty>
+               <isNotEmpty property="IsDollarDefense" prepend=",">#IsDollarDefense#</isNotEmpty>
+               <isNotEmpty property="AggregateLimit" prepend=",">#AggregateLimit#</isNotEmpty>
+               <isNotEmpty property="OccuranceLimit" prepend=",">#OccuranceLimit#</isNotEmpty>
+               <isNotEmpty property="AggregateDeductible" prepend=",">#AggregateDeductible#</isNotEmpty>
+               <isNotEmpty property="OccuranceDeductible" prepend=",">#OccuranceDeductible#</isNotEmpty>
+               <isNotEmpty property="IsMinimumPremium" prepend=",">#IsMinimumPremium#</isNotEmpty>
+               <isNotEmpty property="XmlOutputDatafromRating" prepend=",">#XmlOutputDatafromRating#</isNotEmpty>
+               <isNotEmpty property="XmlInputDatatoRating" prepend=",">#XmlInputDatatoRating#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">#VersionKey#</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">#CreatedDate#</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">#CreatedBy#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="QuotationEstimationKey">SELECT IDENT_CURRENT('QuotationEstimation') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select QuotationEstimationKey, PolicyKey, VersionSequence, TransactionSequence, TotalPremium, TotalPremiumFirstRange, TotalPolicyTaxAmount, InvoicedPremium, TotalPolicyModifierPercentage, IsClaimOptionType, IsClaimExpensesType, IsDollarDefense, AggregateLimit, OccuranceLimit, AggregateDeductible, OccuranceDeductible, IsMinimumPremium, XmlOutputDatafromRating, XmlInputDatatoRating, LastUpdateUserID, LastUpdateTimeStamp, VersionKey, CreatedDate, CreatedBy from QuotationEstimation where QuotationEstimationKey = #QuotationEstimationKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update QuotationEstimation set
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence = #VersionSequence#</isNotEmpty>
+               <isEmpty property="VersionSequence" prepend=",">VersionSequence = null</isEmpty>
+               <isNotEmpty property="TransactionSequence" prepend=",">TransactionSequence = #TransactionSequence#</isNotEmpty>
+               <isEmpty property="TransactionSequence" prepend=",">TransactionSequence = null</isEmpty>
+               <isNotEmpty property="TotalPremium" prepend=",">TotalPremium = #TotalPremium#</isNotEmpty>
+               <isEmpty property="TotalPremium" prepend=",">TotalPremium = null</isEmpty>
+               <isNotEmpty property="TotalPremiumFirstRange" prepend=",">TotalPremiumFirstRange = #TotalPremiumFirstRange#</isNotEmpty>
+               <isEmpty property="TotalPremiumFirstRange" prepend=",">TotalPremiumFirstRange = null</isEmpty>
+               <isNotEmpty property="TotalPolicyTaxAmount" prepend=",">TotalPolicyTaxAmount = #TotalPolicyTaxAmount#</isNotEmpty>
+               <isEmpty property="TotalPolicyTaxAmount" prepend=",">TotalPolicyTaxAmount = null</isEmpty>
+               <isNotEmpty property="InvoicedPremium" prepend=",">InvoicedPremium = #InvoicedPremium#</isNotEmpty>
+               <isEmpty property="InvoicedPremium" prepend=",">InvoicedPremium = null</isEmpty>
+               <isNotEmpty property="TotalPolicyModifierPercentage" prepend=",">TotalPolicyModifierPercentage = #TotalPolicyModifierPercentage#</isNotEmpty>
+               <isEmpty property="TotalPolicyModifierPercentage" prepend=",">TotalPolicyModifierPercentage = null</isEmpty>
+               <isNotEmpty property="IsClaimOptionType" prepend=",">IsClaimOptionType = #IsClaimOptionType#</isNotEmpty>
+               <isEmpty property="IsClaimOptionType" prepend=",">IsClaimOptionType = null</isEmpty>
+               <isNotEmpty property="IsClaimExpensesType" prepend=",">IsClaimExpensesType = #IsClaimExpensesType#</isNotEmpty>
+               <isEmpty property="IsClaimExpensesType" prepend=",">IsClaimExpensesType = null</isEmpty>
+               <isNotEmpty property="IsDollarDefense" prepend=",">IsDollarDefense = #IsDollarDefense#</isNotEmpty>
+               <isEmpty property="IsDollarDefense" prepend=",">IsDollarDefense = null</isEmpty>
+               <isNotEmpty property="AggregateLimit" prepend=",">AggregateLimit = #AggregateLimit#</isNotEmpty>
+               <isEmpty property="AggregateLimit" prepend=",">AggregateLimit = null</isEmpty>
+               <isNotEmpty property="OccuranceLimit" prepend=",">OccuranceLimit = #OccuranceLimit#</isNotEmpty>
+               <isEmpty property="OccuranceLimit" prepend=",">OccuranceLimit = null</isEmpty>
+               <isNotEmpty property="AggregateDeductible" prepend=",">AggregateDeductible = #AggregateDeductible#</isNotEmpty>
+               <isEmpty property="AggregateDeductible" prepend=",">AggregateDeductible = null</isEmpty>
+               <isNotEmpty property="OccuranceDeductible" prepend=",">OccuranceDeductible = #OccuranceDeductible#</isNotEmpty>
+               <isEmpty property="OccuranceDeductible" prepend=",">OccuranceDeductible = null</isEmpty>
+               <isNotEmpty property="IsMinimumPremium" prepend=",">IsMinimumPremium = #IsMinimumPremium#</isNotEmpty>
+               <isEmpty property="IsMinimumPremium" prepend=",">IsMinimumPremium = null</isEmpty>
+               <isNotEmpty property="XmlOutputDatafromRating" prepend=",">XmlOutputDatafromRating = #XmlOutputDatafromRating#</isNotEmpty>
+               <isEmpty property="XmlOutputDatafromRating" prepend=",">XmlOutputDatafromRating = null</isEmpty>
+               <isNotEmpty property="XmlInputDatatoRating" prepend=",">XmlInputDatatoRating = #XmlInputDatatoRating#</isNotEmpty>
+               <isEmpty property="XmlInputDatatoRating" prepend=",">XmlInputDatatoRating = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey = #VersionKey#</isNotEmpty>
+               <isEmpty property="VersionKey" prepend=",">VersionKey = null</isEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate = #CreatedDate#</isNotEmpty>
+               <isEmpty property="CreatedDate" prepend=",">CreatedDate = null</isEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy = #CreatedBy#</isNotEmpty>
+               <isEmpty property="CreatedBy" prepend=",">CreatedBy = null</isEmpty>
+          </dynamic>
+          where QuotationEstimationKey = #QuotationEstimationKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from QuotationEstimation where QuotationEstimationKey = #QuotationEstimationKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from QuotationEstimation</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from QuotationEstimation</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select QuotationEstimationKey, PolicyKey, VersionSequence, TransactionSequence, TotalPremium, TotalPremiumFirstRange, TotalPolicyTaxAmount, InvoicedPremium, TotalPolicyModifierPercentage, IsClaimOptionType, IsClaimExpensesType, IsDollarDefense, AggregateLimit, OccuranceLimit, AggregateDeductible, OccuranceDeductible, IsMinimumPremium, XmlOutputDatafromRating, XmlInputDatatoRating, LastUpdateUserID, LastUpdateTimeStamp, VersionKey, CreatedDate, CreatedBy from QuotationEstimation where QuotationEstimationKey = #QuotationEstimationKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select QuotationEstimationKey, PolicyKey, VersionSequence, TransactionSequence, TotalPremium, TotalPremiumFirstRange, TotalPolicyTaxAmount, InvoicedPremium, TotalPolicyModifierPercentage, IsClaimOptionType, IsClaimExpensesType, IsDollarDefense, AggregateLimit, OccuranceLimit, AggregateDeductible, OccuranceDeductible, IsMinimumPremium, XmlOutputDatafromRating, XmlInputDatatoRating, LastUpdateUserID, LastUpdateTimeStamp, VersionKey, CreatedDate, CreatedBy from QuotationEstimation</select>
+</sqlMap>
+

@@ -1,0 +1,52 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AreaOfPracticeQuickQuoteLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AreaOfPracticeQuickQuoteLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AreaOfPracticeQuickQuoteLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and AOPKey = #AOPKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into AreaOfPracticeQuickQuoteLW(VersionSequence, PolicyKey, AOPKey
+          <isNotEmpty property="PercentageValue" prepend=",">PercentageValue</isNotEmpty>
+          <isNotEmpty property="AOPCommentDesc" prepend=",">AOPCommentDesc</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="VersionKey" prepend=",">VersionKey</isNotEmpty>
+          <isNotEmpty property="CreatedBy" prepend=",">CreatedBy</isNotEmpty>
+          <isNotEmpty property="CreatedDate" prepend=",">CreatedDate</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#, #AOPKey:NUMERIC#
+          <isNotEmpty property="PercentageValue" prepend=",">#PercentageValue#</isNotEmpty>
+          <isNotEmpty property="AOPCommentDesc" prepend=",">#AOPCommentDesc#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="VersionKey" prepend=",">#VersionKey#</isNotEmpty>
+          <isNotEmpty property="CreatedBy" prepend=",">#CreatedBy#</isNotEmpty>
+          <isNotEmpty property="CreatedDate" prepend=",">#CreatedDate#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PercentageValue, AOPCommentDesc, LastUpdateUserID, LastUpdateTimeStamp, VersionKey, CreatedBy, CreatedDate, VersionSequence, PolicyKey, AOPKey from AreaOfPracticeQuickQuoteLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and AOPKey = #AOPKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update AreaOfPracticeQuickQuoteLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="PercentageValue" prepend=",">PercentageValue = #PercentageValue#</isNotEmpty>
+               <isEmpty property="PercentageValue" prepend=",">PercentageValue = null</isEmpty>
+               <isNotEmpty property="AOPCommentDesc" prepend=",">AOPCommentDesc = #AOPCommentDesc#</isNotEmpty>
+               <isEmpty property="AOPCommentDesc" prepend=",">AOPCommentDesc = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey = #VersionKey#</isNotEmpty>
+               <isEmpty property="VersionKey" prepend=",">VersionKey = null</isEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy = #CreatedBy#</isNotEmpty>
+               <isEmpty property="CreatedBy" prepend=",">CreatedBy = null</isEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate = #CreatedDate#</isNotEmpty>
+               <isEmpty property="CreatedDate" prepend=",">CreatedDate = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and AOPKey = #AOPKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from AreaOfPracticeQuickQuoteLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and AOPKey = #AOPKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from AreaOfPracticeQuickQuoteLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AreaOfPracticeQuickQuoteLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and AOPKey = #AOPKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PercentageValue, AOPCommentDesc, LastUpdateUserID, LastUpdateTimeStamp, VersionKey, CreatedBy, CreatedDate, VersionSequence, PolicyKey, AOPKey from AreaOfPracticeQuickQuoteLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and AOPKey = #AOPKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, AOPKey, PercentageValue, AOPCommentDesc, LastUpdateUserID, LastUpdateTimeStamp, VersionKey, CreatedBy, CreatedDate from AreaOfPracticeQuickQuoteLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and AOPKey = #AOPKey#</select>
+</sqlMap>
+

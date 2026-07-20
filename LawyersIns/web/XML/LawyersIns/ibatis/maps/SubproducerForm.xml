@@ -1,0 +1,37 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="SubproducerForm">
+     <parameterMap id="SubproducerFormDetailsLW_pMap" class="java.util.HashMap">
+          <parameter property="ProducerName" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="NewCommission" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="RenewalCommission" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="State" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StreetAddress" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="SPZip" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="SPCity" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Producer_email" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="SPPhoneNumber" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProducerCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Date_added" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="SendQuoteLetter" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="SendRenewalSolicitation" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Archive" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="SubProducerAccess" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="sig_path" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="SPContactName" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="SPWebsite" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Fax" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="file_path" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IndicationAccess" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BillingContactName" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BillingContactNumber" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BillingContactEmail" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="creditCardAccess" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsDriect" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="SubProducerPolicyIssuedAccess" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProducerAbbr" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="SubproducerFormDetailsLW_p" parameterMap="SubproducerFormDetailsLW_pMap">{ call SubproducerFormDetailsLW_p(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <procedure id="GetSubProducerFormList" resultClass="java.util.HashMap">{ call GetSubProducerFormList( )}</procedure>
+</sqlMap>
+

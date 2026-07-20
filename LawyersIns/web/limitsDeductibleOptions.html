@@ -1,0 +1,474 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Endorsement</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/jquery.treeview.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/htmlMassking.js"></script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+<body onload="loadLimitEndorsement();setFieldsReadonly();showHideDeductibleEndorsementContent('ajax_field_limitDeuctibleEndorsementType');makeDefenseOutsideRuleEndorsement();">
+<form>
+<div id="cover"></div>
+<div id="popupsave2">
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog" style="width: 450px;">
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"/>
+			<h4 class="modal-title">Process Endorsement</h4>
+		  </div>
+		  <div class="modal-body" style="height: 64px;">
+			<p style="text-align: center; line-height: 25px;">Are you sure you want to process the endorsement </p>
+		  </div>
+		  <div class="modal-footer">
+			<div class="floatRight">
+				<a class="ovalbutton" 
+				href="javascript:submitform('Endorsement.html','limitsDeductibleOptions.processEndorsement','','');"
+				onclick="closePopUp('popupsave2');">Process Limit Endorsement</a>
+				
+				<a class="ovalbutton" onclick="closePopUp('popupsave2');">Cancel</a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</div>
+<!-- Bootstrap Core JavaScript -->
+
+<div class="container-fluid bootstrap-node-1">
+  <div class="tableWidth"> 
+    <!---------Header Start---------->  
+      <div id="header">
+		<span id="#Include:headerEndorsement.html#"></span>
+      </div>
+    <!---------Header End----------> 
+	
+   <div id="contentSection">
+		
+		<div>
+			<h2 class="questionHeading">Change Limits/Deductible Options</h2>
+		</div>
+		<div class="form row">
+			<div class="block-form">
+				<div class="freeFormDiv form-inline" id="limitDeuctibleEndorsement_freeform_contextdata_008">
+					<div class="freeFormListTdError paddingLeft3">
+										<span id="error_endorsementError" class="error"> </span> 
+					</div>
+					<ul class="inlineBlock">
+						<li class="inlineBlock_1_fix paddingTop10">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_endorsementError" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth txtbold">
+											Endorsement Type :
+										</div>
+									</div>
+									<div class="freeFormListTd mendatoryInput">
+										<select class="form-control" name="limitDeuctibleEndorsementType" id="ajax_field_limitDeuctibleEndorsementType" onChange="showHideDeductibleEndorsementContent('ajax_field_limitDeuctibleEndorsementType');resetFields();">
+											
+											<option value="LC">Limit Changes</option>
+											<option value="DC">Deductible Changes</option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			
+			<div id="changeLimits">
+				<div class="freeFormDiv form-inline" id="limitDeuctibleEndorsement_freeform_contextdata_001">
+					<ul class="inlineBlock">
+						<li class="inlineBlock_1_fix">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_limitEndorsementEffectiveDate" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth txtbold">
+											Endorsement Effective Date :
+										</div>
+									</div>
+									<div class="freeFormListTd mendatoryInput iconsStyle2">
+										<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+										<input type="text" class="form-control datepicker"
+											id="ajax_field_limitEndorsementEffectiveDate" 
+											name="limitEndorsementEffectiveDate" onkeyup="applyDateFormat(this,event);"/> 
+									</div>
+								</div>
+							</div>
+						</li>
+						
+						<li class="inlineBlock_1_fix paddingTop20">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth">
+											Current Limit :
+										</div>
+									</div>
+									<div class="freeFormListTd mendatoryInput">
+										<input class="form-control" type="text" disabled name="currentPolicyLimit" id="ajax_field_currentPolicyLimit"  />
+									</div>
+									<div class="freeFormListTd tdInput">
+ 										&nbsp;
+ 										 <input type="radio" disabled name="currentPolicyClaimExpensesType"id="ajax_field_currentPolicyClaimExpensesType" value="N" /> Defense Inside &nbsp;&nbsp;
+										<input type="radio" disabled name="currentPolicyClaimExpensesType"id="ajax_field_currentPolicyClaimExpensesTypeOutside" value="Y" /> Defense Outside &nbsp;&nbsp;
+										<input type="checkbox" disabled id="ajax_field_currentPolicyDollarDefense" value="Y" name="currentPolicyDollarDefense" /> First Dollar Defense &nbsp;&nbsp; 
+									</div>
+									
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_1_fix paddingTop5">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_LimitSequence" class="error"> </span> 
+									</div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_IsClaimExpenseType" class="error paddingLeft3"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth">
+											Requested  Limit :
+										</div>
+									</div>
+									<div class="freeFormListTd mendatoryInput">
+										<select  class="form-control" name="LimitSequence"
+														id="ajax_field_LimitSequence" onchange="makeDefenseOutsideRuleEndorsement();"> 
+														<option value="">- Select -</option>
+   
+										</select>
+									</div>
+									<div class="freeFormListTd tdInput">
+									
+ 										&nbsp;<input type="radio" name="IsClaimExpenseType" value="N" id="ajax_field_IsClaimExpenseType_N" /> Defense Inside &nbsp;&nbsp;
+										<input type="radio" name="IsClaimExpenseType" id="ajax_field_IsClaimExpenseType_Y" value="Y"/> Defense Outside &nbsp;&nbsp;
+										<input  type="checkbox" id="ajax_field_IsDollarDefense" value="Y" name="IsDollarDefense"/> First Dollar Defense &nbsp;&nbsp;
+									</div>
+								</div>
+								
+							</div>
+						</li>
+					</ul>
+					<div id="premiumCalculationLt">
+					<div class="buttonCalculate row">
+						<a class="ovalbutton" title="Calculate Premium" 
+						href="javascript:submitform('limitsDeductibleOptions.html','limitsDeductibleOptions.calculatePremium','','');">
+						 <i class="fa-calculator fa"></i> Calculate Premium</a>
+					</div>
+					<ul class="inlineBlock paddingTop10 totalPremium">
+						<li class="inlineBlock_3_fix">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_LimitpremiumError" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth">
+											Premium : $
+										</div>
+									</div>
+									<div class="freeFormListTd tdInput">
+										<input Readonly type="text" class="form-control" style="width: 100px;" name="litmitsEndorsementPremiumNew" id="ajax_field_litmitsEndorsementPremiumNew" />
+										<input Readonly type="hidden" class="form-control" style="width: 100px;" name="litmitsEndorsementPremium" id="ajax_field_litmitsEndorsementPremium" />
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_3_fix">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="">
+											Taxes : $
+										</div>
+									</div>
+									<div class="freeFormListTd tdInput">
+										 <input Readonly type="text" class="form-control" style="width: 100px;" name="litmitsEndorsementTaxNew" id="ajax_field_litmitsEndorsementTaxNew"/>
+										  <input Readonly type="hidden" class="form-control" style="width: 100px;" name="litmitsEndorsementTax" id="ajax_field_litmitsEndorsementTax"/>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_3_fix">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="txtbold">
+											Total : $
+										</div>
+									</div>
+									<div class="freeFormListTd tdInput">
+										 <input Readonly type="text" class="form-control" style="width: 100px;" name="litmitsEndorsementTotalPremiumNew" id="ajax_field_litmitsEndorsementTotalPremiumNew"/>
+										  <input Readonly type="hidden" class="form-control" style="width: 100px;" name="litmitsEndorsementTotalPremium" id="ajax_field_litmitsEndorsementTotalPremium"/>
+										  <input  type="hidden" class="form-control" style="width: 100px;" name="litmitsEndorsementTotalPremiumNew1" id="ajax_field_litmitsEndorsementTotalPremiumNew1"/>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_3_fix">
+						
+								
+									&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:submitform('limitsDeductibleOptions.html','limitsDeductibleOptions.downloadPremiumCalculationPdf','','');"
+										class="Link_blue"><img
+											src="img/icon_location.gif"
+											title="Download Premium Calculation"
+											alt="Download Calculation" width="30"
+											height="25" border="0" /> </a> 
+																			
+									
+								
+											
+						</li>
+					</ul>
+					</div>
+				</div>
+			</div>
+			
+		 	 <div id="changeDeductibles" style="display:none;">
+				<div class="freeFormDiv form-inline" id="limitDeuctibleEndorsement_freeform_contextdata_002">
+					<ul class="inlineBlock">
+						<li class="inlineBlock_1_fix">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_deductibleEndorsementEffectiveDate" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth txtbold">
+											Endorsement Effective Date :
+										</div>
+									</div>
+									<div class="freeFormListTd mendatoryInput iconsStyle2">
+										<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+										<input type="text" class="form-control datepicker"
+											id="ajax_field_deductibleEndorsementEffectiveDate" 
+											name="deductibleEndorsementEffectiveDate" onkeyup="applyDateFormat(this,event);"/> 
+									</div>
+								</div>
+							</div>
+						</li>
+						
+						<li class="inlineBlock_1_fix paddingTop20">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_currentPolicyClaimOptionType" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth">
+											Current Deductible :
+										</div>
+									</div>
+									<div class="freeFormListTd mendatoryInput">
+										<input disabled class="form-control" type="text" id="ajax_field_currentPolicyDeductible" name="currentPolicyDeductible" disabled/>
+									</div>
+									<div class="freeFormListTd tdInput">
+ 											
+ 											&nbsp;<input disabled type="radio" name="currentPolicyClaimOptionType" id="ajax_field_currentPolicyClaimOptionType" value="N" disabled/> Per Claim &nbsp;&nbsp;
+												<input disabled type="radio" name="currentPolicyClaimOptionType" id="ajax_field_currentPolicyClaimOptionType" value="Y" disabled/> Aggregate &nbsp;&nbsp;
+									</div>
+									
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_1_fix paddingTop5">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_DeductibleSequence" class="error"> </span> 
+									</div>
+									<div class="freeFormListTdError paddingLeft3">	
+										<span id="error_IsClaimOptionType" class="error paddingLeft3"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth">
+											Requested Deductible :
+										</div>
+									</div>
+									<div class="freeFormListTd mendatoryInput">
+										<select id="ajax_field_DeductibleSequence" name="DeductibleSequence" class="form-control" > 
+											<option value="">- Select -</option>
+  										</select>
+									</div>
+									<div class="freeFormListTd tdInput">
+										&nbsp;<input Readonly type="radio" name="IsClaimOptionType1" id="ajax_field_IsClaimOptionType1" value="N"/> Per Claim &nbsp;&nbsp;
+										<input Readonly type="radio" name="IsClaimOptionType1" id="ajax_field_IsClaimOptionType1" value="Y"/> Aggregate &nbsp;&nbsp;
+									</div>
+								</div>
+								
+							</div>
+						</li>						
+					</ul>
+					<div id="premiumCalculationDC">
+					<div class="buttonCalculate row">
+						<a class="ovalbutton" title="Calculate Premium"
+						href="javascript:submitform('limitsDeductibleOptions.html','limitsDeductibleOptions.calculatePremiumDeductible','','');"
+						> <i class="fa-calculator fa"></i> Calculate Premium</a>
+					</div>
+					<ul class="inlineBlock paddingTop10 totalPremium">
+						<li class="inlineBlock_3_fix">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_DeductiblepremiumError" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth">
+											Premium : $
+										</div>
+									</div>
+									<div class="freeFormListTd tdInput">
+										<input type="text" class="form-control" style="width: 100px;" id="ajax_field_deductibleEndorsementPremiumNew" name="deductibleEndorsementPremiumNew"/>
+										<input type="hidden" class="form-control" style="width: 100px;" id="ajax_field_deductibleEndorsementPremium" name="deductibleEndorsementPremium"/>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_3_fix">
+							
+									&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:submitform('limitsDeductibleOptions.html','limitsDeductibleOptions.downloadPremiumCalculationPdf','','');"
+										class="Link_blue"><img
+											src="img/icon_location.gif"
+											title="Download Calculation"
+											alt="Download Calculation" width="30"
+											height="25" border="0" /> </a> 
+								
+											
+						</li>
+					</ul>
+					</div>
+				</div>
+			</div>
+			<ul class="inlineBlock paddingTop10 totalPremium">
+						<li class="inlineBlock_3_fix">
+			<div class="freeFormListTr" id="limitDeuctibleEndorsement_freeform_contextdata_002">
+												<div
+													class="freeFormListTd labelAlign valignTop freeFormLabelWidth">
+													<span align="left"
+														id="">Rating
+														Output :</span> 
+
+												</div>
+												<div class="freeFormListTd tdInput">
+													<textarea name="XmlOutputDatafromRating" disabled
+														class="form-control" id="XmlOutputDatafromRating"
+														cols="10" rows="4" style="width: 744px; height: 80px"></textarea>
+												</div>
+											</div>
+											</li>
+											
+											
+											</ul>
+			</div>
+			
+			
+		</div>
+		
+		<div class="buttons borderTop row">
+			<a class="btn back floatLeft" href="javascript:submitform('Endorsement.html','limitsDeductibleOptions.back','','');"> Back </a>
+			<div class="floatRight">
+				<a class="btn button1" href="javascript:submitform('Endorsement.html','limitsDeductibleOptions.downloadReviewEndorsement','','');">Review Endorsement</a>
+				
+				<a class="btn button1 btnVal1"
+				 
+				onclick="showPopUp('popupsave2','500','400');">Process  Endorsement</a>
+				
+				
+				<!-- <a class="btn button1" href="#">Upload Documents</a>
+				<a class="btn button1" href="#">Email to Sub Producer</a> -->
+			</div>
+		</div>
+		
+	</div>
+   <div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				
+				<!---------Footer End---------->
+			</div>
+			<table id="limitsDeductibleOptions_freeform_contextdata_999">
+				<tr>
+					<td><input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />						
+						<input type="hidden" name="StateCode" id="StateCode" />
+						<input type="hidden" name="IsNewFiling" id="IsNewFiling" />
+						<input type="hidden" name="NMRatingVersion" id="NMRatingVersion" />
+						<input type="hidden" name="isEnforcedPolicy" id="isEnforcedPolicy" />
+						<input type="hidden" name="anyDecendentPolicy" id="anyDecendentPolicy" />
+						<input type="hidden" name="isExceptionalCase" id="isExceptionalCase" />
+						<input type="hidden" name="isShowPemiumCalculation" id="isShowPemiumCalculation" />
+						<input type="hidden" name="endorsementDataList" id="endorsementDataList" />
+						<input type="hidden" name="FYEndorsementPremium" id="FYEndorsementPremium" />
+						<input type="hidden" name="FYEndorsementTax" id="FYEndorsementTax" />
+							</td>
+				</tr>
+			</table>
+  </div>
+</div>
+</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

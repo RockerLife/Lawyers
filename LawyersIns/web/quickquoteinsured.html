@@ -1,0 +1,1311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Quick Quote</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/jquery.treeview.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+<body onload="showHideInsuranceHistoryQQ();toggleDivDisplay('ajaxxmlCountyDesc_CountyDesc');showHideClaimAgeFiled();" onclick="toggleDivDisplay('ajaxxmlCountyDesc_CountyDesc');">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- Bootstrap Core JavaScript -->
+<div id="cover"></div>
+
+<!-- Modal -->
+<div id="zohoNameClearance" class="modal">
+  <div class="modal-dialog" style="width: 700px">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+		<a class="close" href="#" onclick="closePopUp('zohoNameClearance')"><i class="fa fa-close">&nbsp;</i></a>
+        <h4 class="modal-title">Confirm</h4>
+	</div>
+      <div class="modal-body" style="height: 100px">
+		<span id="zohoNameClearanceFlag" >The risk exists in Protexure's CRM and will need to be Name Cleared by the Protexure Underwriter prior to pricing.</span>
+      </div>
+      <div class="modal-footer">
+		<div class="buttonwrapper">
+			<!-- //<a class="ovalbutton">Save</a> -->
+			<a class="ovalbutton" onclick="closePopUp('zohoNameClearance')">Close</a>
+		</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+	<form class="form-horizontal row quickQuote">
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth">
+				<table width="100%" border="0" align="center" cellspacing="0"
+					cellpadding="0">
+					<tr id="eval:LawyersRule.isAgent">
+						<td>
+							<div id="header">
+								<span id="#Include:header.html#"></span>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div id="contentSection">
+								<div>
+									<!-- <h2 class="questionHeading">A Little Information</h2> -->
+									<p id="eval:LawyersRule.isNameClearanceQQIndicationPopupFlag" style="color: red;" align="right">Underwriter Approval is required</p>
+								</div>
+								
+								<div class="newTemplate">
+									<div class="headerTemplate">
+										<div class="headerContainer">
+											<img src="img/logo_protexureaccountantsNew1.png" style="width: 600px;" />
+											<p>Getting coverage that works for you is easy.</p>
+										</div>
+									</div>
+									<div class="templateContent">
+										<div class="row tempContainer">
+											<div class="templateLeftContent">
+												<h1>GET AN ESTIMATE</h1>
+												<p>It will help to have your current policy declarations page and your income from different areas of practice available.</p>
+												<div class="form row">
+									<div class="block-form">
+										<div id="quickquote_freeform_contextdata_01" class="freeFormDiv form-inline">
+											<ul class="inlineBlock">
+												<li class="inlineBlock_1_fix paddingBottom10">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd">
+																<div class="">
+																	<div class="txtbold">1. How much coverage do you currently have or how much coverage do you think you need?</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												
+											</ul>
+											<div class="row">
+												
+													<ul class="inlineBlock">
+														<li class="inlineBlock_1_fix">
+															<div id="limitListNew" class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr" id="indicationCoverage">
+															<div id="firm_freeform_contextdata_1000" style="display: none">
+																<input type="hidden" name="IsNewFiling" id="IsNewFiling" />
+															</div>
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Limit of Liability :</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<select name="LimitSequence" id="LimitSequence" class="form-control" disabled="disabled">
+																	<option value="">Select</option>
+																</select>
+															</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<select name="LimitSequence" id="LimitSequence" class="form-control" autofocus onchange="makeDefenseOutsideRuleIndication(this.value);">
+																	<option value="">Select</option>
+																</select>
+															<div id="error_LimitSequence" class="error"></div>
+															</div>
+														</div>
+													</div>
+												</li>
+														<li class="inlineBlock_1_fix">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Deductible :</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																&nbsp;<select name="DeductibleSequence" id="DeductibleSequence" class="form-control" disabled="disabled">
+																	<option value="">Select</option>
+																</select>
+															</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<select name="DeductibleSequence" id="DeductibleSequence" class="form-control" >
+																	<option value="">Select</option>
+																</select>
+																<div id="error_DeductibleSequence" class="error" />
+															</div>
+														</div>
+													</div>
+												</li>
+													</ul>
+													
+													<ul class="inlineBlock paddingTop40">
+												<li class="inlineBlock_1_fix">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd">
+																<div class="">
+																	<div class="txtbold">2. Firm Details</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_1_fix">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="error_NewYorkStatePremiumError" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">In what state does your firm reside?</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<select name="StateCode" id="StateCode" disabled="disabled" class="form-control">
+																	<option value="">Select</option>
+																</select>
+															</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<select name="StateCode" id="StateCode" class="form-control" onchange="javascript:ajaxpageblocklink('quickquoteinsured.html','quickquoteinsured.refreshCounty','','','countyListNew');">
+																	<option value="">Select</option>
+																</select>
+																<div id="error_StateCode" class="error"></div>
+															</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+											<ul class="inlineBlock" id="countyListNew">
+											
+											
+												<li class="inlineBlock_1_fix" id="eval:LawyersRule.checkStateCodeCounty">
+												
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">County :</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageReadOnly" class="freeFormListTd tdInput" active="nonMandatory">
+																<span id="eval:LawyersRule.isCountySizeZero">
+																	<input type="text" class="form-control" name="CountyDesc" id="CountyDesc" disabled="disabled" size="30" />
+																</span>
+																<span id="eval:LawyersRule.isCountySizeNotZero">
+																	<span id="eval:LawyersRule.IsStateNotTexas">
+																		<select name="CountyDesc" id="ajax_field_CountyDesc" class="form-control selectBoxSelected" disabled="disabled">
+																			<option value="" >Select</option>
+																		</select>
+																	</span>
+																	<span id="eval:LawyersRule.IsStateTexas">
+																		<span class="searchFieldTD">
+																			<input type="text" class="form-control" name="CountyDesc" id="CountyDesc" autocomplete="OFF" disabled="disabled" />
+																		</span>
+																	</span>
+																</span>
+															</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly" class="freeFormListTd tdInput" active="nonMandatory">
+																<span id="eval:LawyersRule.isCountySizeZero">
+																	<input type="text" class="form-control" name="CountyDesc" id="CountyDesc" onblur="javascript:capitalizeSentences(this,1);" size="30" />
+																</span>
+																<span id="eval:LawyersRule.isCountySizeNotZero">
+																	<!-- <span id="eval:LawyersRule.IsStateNotTexas"> -->
+																		<select name="CountyDesc" id="ajax_field_CountyDesc" class="form-control selectBoxSelected"> <!-- onchange="javascript:ajaxpageblocklink('quickquoteinsured.html','quickquoteinsured.refreshCity','','','cityListNew');"> -->
+																			<option value="" >Select</option>
+																		</select>
+																	<!-- </span>
+																	<span id="eval:LawyersRule.IsStateTexas">
+																		<span class="searchFieldTD">
+																			<input type="text" class="form-control" name="CountyDesc" id="CountyDesc" autocomplete="OFF" onkeyup="javascript:ajaxpageblocklink('quickquoteinsured.html','quickquoteinsured.getCountyListTX','','','ajaxxmlCountyDesc_CountyDesc');" onclick="nottoggleDivDisplay(this,'CountyDesc','ajaxxmlCountyDesc_CountyDesc');" />
+																		</span>
+																	</span> -->
+																</span>
+																<div id="error_CountyDesc" class="error"></div>
+															</div>
+															<div id="ajaxxmlCountyDesc_CountyDesc" class="transparent fixcolumnHeaderSearch" style="display: none; border: solid 1px #cccccc; width: 242px;"></div>
+														</div>
+														
+													</div>
+													
+												</li>
+												<li class="inlineBlock_1_fix" id="eval:LawyersRule.checkStateCodeCounty">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr" id="cityListNew">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">City :</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageReadOnly" class="freeFormListTd tdInput" active="nonMandatory">
+																<!-- <span id="eval:LawyersRule.ShowCityDropDownList">
+																	<span id="eval:LawyersRule.isCitySizeZero">
+																		<input type="text" class="form-control" name="City" id="City" disabled="disabled" />
+																	</span>
+																	<span id="eval:LawyersRule.isCitySizeNotZero">
+																		<select name="City" id="City" class="form-control" disabled="disabled" >
+																			<option value="" >Select</option>
+																		</select>
+																	</span>
+																</span>
+																<span id="eval:LawyersRule.ShowNotCityDropDownList"> -->
+																	<input type="text" class="form-control" name="City" id="City" disabled="disabled" />
+																<!-- </span> -->
+															</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly" class="freeFormListTd tdInput" active="nonMandatory">
+																<!-- <span id="eval:LawyersRule.ShowCityDropDownList">
+																	<span id="eval:LawyersRule.isCitySizeZero">
+																		<input type="text" class="form-control" name="City" id="City" size="15" maxlength="35" onblur="javascript:capitalizeSentences(this,1);" />
+																	</span>
+																	<span id="eval:LawyersRule.isCitySizeNotZero">
+																		<select name="City" id="City" class="form-control" >
+																			<option value="" >Select</option>
+																		</select>
+																	</span>
+																</span>
+																<span id="eval:LawyersRule.ShowNotCityDropDownList"> -->
+																	<input type="text" class="form-control" name="City" id="City" size="15" maxlength="35" onblur="javascript:capitalizeSentences(this,1);" />
+																<!-- </span> -->
+																<div id="error_City" class="error"></div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_1_fix" id="companyList">
+													<input type="hidden" name="CompanyAsPerState" id="CompanyAsPerState"/>
+													<div class="freeFormList form-group"  id="showAgentOnly" >
+															
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr" id="CompanyCodeEdit_Security">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Company :</div>
+															<div id="" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<select name="CompanyKey" id="ajax_field_CompanyKey" class="form-control" 
+																onchange="javascript:ajaxpageblocklink('quickquoteinsured.html','quickquoteinsured.refreshLimit','','','limitListNew');javascript:resetLimitIndiaction();javascript:changeIndicationModifierLabel();">
+																	<option value="">Select</option>
+																</select>
+																<div id="error_CompanyKey" class="error" />
+															</div>
+														</div>
+														
+													</div>
+													
+												</li>
+											</ul>
+											<ul class="inlineBlock ">
+												<li class="inlineBlock_1_fix" id="readOnlySecurityQQ">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"> </span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">Do you currently have insurance?
+																</div>
+															</div>
+															<div class="freeFormListTd tdInput mendatoryInput">
+																&nbsp;<input style="margin-left: 2px;" type="radio" name="IsFirmHaveLawyersLiabilityInsurance" id="IsFirmHaveLawyersLiabilityInsurance" value="Y" onchange="showHideInsuranceHistoryQQ();"/> Yes
+																<input type="radio" name="IsFirmHaveLawyersLiabilityInsurance" id="IsFirmHaveLawyersLiabilityInsurance" value="N" onchange="showHideInsuranceHistoryQQ();"/> No
+																<div id="error_IsFirmHaveLawyersLiabilityInsurance" class="error"></div>
+															</div>
+														</div>
+													</div>
+												</li>
+												</ul>
+												<ul class="inlineBlock" id="effectiveDateDiv">
+												<li class="inlineBlock_1_fix">
+													<div class="freeFormList form-group" >
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"> </span>
+															</div>
+													</div>
+													<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign">
+																<div class="freeFormLabelWidth">If you have coverage, what is your current policy expiration date?
+																</div>
+															</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageReadOnly" class="freeFormListTd tdInput iconsStyle2">
+																<span class="input-group-addon">
+																	<i class="fa fa-calendar">&nbsp;</i>
+																</span>
+																<input type="text" class="form-control datepicker" name="PolicyEffectiveDate" id="PolicyEffectiveDate" disabled="disabled" size="15" />
+															</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly" class="freeFormListTd tdInput iconsStyle2">
+																<span class="input-group-addon ">
+																	<i class="fa fa-calendar">&nbsp;</i>
+																</span>
+																<input type="text" class="form-control datepicker" name="PolicyEffectiveDate" id="PolicyEffectiveDate" size="15" maxlength="10" 
+																onkeyup="applyDateFormat(this,event);" placeholder="(MM/DD/YYYY)"
+																onchange="javascript:ajaxpageblocklink('quickquoteinsured.html','quickquoteinsured.refreshCompany','','','companyList');"
+																 />
+																<div id="error_PolicyEffectiveDate" class="error"></div>
+															</div>
+														</div>
+														
+														
+													</div>
+												</li>
+												<li class="inlineBlock_1">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Carrier :</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageReadOnly" class="freeFormListTd tdInput" active="nonMandatory">
+																<input type="text" class="form-control" name="InsuranceCompanyNamePross" id="InsuranceCompanyNamePross" disabled="disabled" size="15" maxlength="35" value="">
+															</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly" class="freeFormListTd tdInput" active="nonMandatory">
+																<input type="text" class="form-control" name="InsuranceCompanyNamePross" id="InsuranceCompanyNamePross" size="15" maxlength="35" value="">
+																<div id="error_InsuranceCompanyNamePross" class="error"></div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_1">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Expiring Premium :</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageReadOnly" class="freeFormListTd tdInput" active="nonMandatory">
+																<input name="ProInsPremium" type="text" class="form-control" id="ProInsPremium" onblur="loadAppointmentFeeInformation('ProInsPremium');" size="15" maxlength="100" disabled="disabled" />
+															</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly" class="freeFormListTd tdInput" active="nonMandatory">
+																<input name="ProInsPremium" type="text" class="form-control" id="ProInsPremium" onblur="loadAppointmentFeeInformation('ProInsPremium');" size="15" maxlength="100" />
+																<div id="error_ProInsPremium" class="error"></div>
+															</div>
+														</div>
+													</div>
+												</li>
+												
+											
+											</ul>
+											<ul class="inlineBlock ">
+												<li class="inlineBlock_1_fix">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Number of Full Time Attys :</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<!-- <input type="text" size="15" class="form-control" maxlength="2" name="NumberOfLawyers" id="NumberOfLawyers" disabled="disabled"/> -->
+																<select name="NumberOfLawyers" id="NumberOfLawyers" disabled="disabled">
+																  <option value="1">1</option>
+																  <option value="2">2</option>
+																  <option value="3">3</option>
+																  <option value="4">4</option>
+																  <option value="5">5</option>
+																  <option value="6">6</option>
+																  <option value="7">7</option>
+																  <option value="8">8</option>
+																  <option value="9">9</option>
+																  <option value="10">10</option>
+																  <option value="11">11</option>
+																  <option value="12">12</option>
+																  <option value="13">13</option>
+																  <option value="14">14</option>
+																  <option value="15">15</option>
+																  <option value="16">16</option>
+																  <option value="17">17</option>
+																  <option value="18">18</option>
+																  <option value="19">19</option>
+																  <option value="20">20</option>
+																  <option value="21">21</option>
+																  <option value="22">22</option>
+																  <option value="23">23</option>
+																  <option value="24">24</option>
+																  <option value="25">25</option>
+																</select>
+															</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<!-- <input type="text" size="15" class="form-control" maxlength="2" name="NumberOfLawyers" id="NumberOfLawyers"/> -->
+																<select name="NumberOfLawyers" id="NumberOfLawyers" onchange="showHideClaimAgeFiled();">
+																  <option value="1">1</option>
+																  <option value="2">2</option>
+																  <option value="3">3</option>
+																  <option value="4">4</option>
+																  <option value="5">5</option>
+																  <option value="6">6</option>
+																  <option value="7">7</option>
+																  <option value="8">8</option>
+																  <option value="9">9</option>
+																  <option value="10">10</option>
+																  <option value="11">11</option>
+																  <option value="12">12</option>
+																  <option value="13">13</option>
+																  <option value="14">14</option>
+																  <option value="15">15</option>
+																  <option value="16">16</option>
+																  <option value="17">17</option>
+																  <option value="18">18</option>
+																  <option value="19">19</option>
+																  <option value="20">20</option>
+																  <option value="21">21</option>
+																  <option value="22">22</option>
+																  <option value="23">23</option>
+																  <option value="24">24</option>
+																  <option value="25">25</option>
+																</select>
+																<div id="error_NumberOfLawyers" class="error" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_1_fix">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Number of years with the firm&nbsp;&nbsp;(0-99) : </div>
+															<div id="eval:LawyersRule.IsQuickQuotePageReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<ul class="smallbox">
+																	<li id="ClaimAge_l1" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_1" id="ClaimAge_1" /></li>
+																	<li id="ClaimAge_l2" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_2" id="ClaimAge_2" /></li>
+																	<li id="ClaimAge_l3" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_3" id="ClaimAge_3" /></li>
+																	<li id="ClaimAge_l4" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_4" id="ClaimAge_4" /></li>
+																	<li id="ClaimAge_l5" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_5" id="ClaimAge_5" /></li>
+																	<li id="ClaimAge_l6" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_6" id="ClaimAge_6" /></li>
+																</ul>
+																<ul class="smallbox">
+																	<li id="ClaimAge_l7" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_7" id="ClaimAge_7" /></li>
+																	<li id="ClaimAge_l8" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_8" id="ClaimAge_8" /></li>
+																	<li id="ClaimAge_l9" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_9" id="ClaimAge_9" /></li>
+																	<li id="ClaimAge_l10" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_10" id="ClaimAge_10" /></li>
+																	<li id="ClaimAge_l11" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_11" id="ClaimAge_11" /></li>
+																	<li id="ClaimAge_l12" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_12" id="ClaimAge_12" /></li>
+																</ul>
+																<ul class="smallbox">
+																	<li id="ClaimAge_l13" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_13" id="ClaimAge_13" /></li>
+																	<li id="ClaimAge_l14" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_14" id="ClaimAge_14" /></li>
+																	<li id="ClaimAge_l15" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_15" id="ClaimAge_15" /></li>
+																	<li id="ClaimAge_l16" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_16" id="ClaimAge_16" /></li>
+																	<li id="ClaimAge_l17" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_17" id="ClaimAge_17" /></li>
+																	<li id="ClaimAge_l18" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_18" id="ClaimAge_18" /></li>
+																</ul>
+																<ul class="smallbox">
+																	<li id="ClaimAge_l19" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_19" id="ClaimAge_19" /></li>
+																	<li id="ClaimAge_l20" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_20" id="ClaimAge_20" /></li>
+																	<li id="ClaimAge_l21" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_21" id="ClaimAge_21" /></li>
+																	<li id="ClaimAge_l22" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_22" id="ClaimAge_22" /></li>
+																	<li id="ClaimAge_l23" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_23" id="ClaimAge_23" /></li>
+																	<li id="ClaimAge_l24" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_24" id="ClaimAge_24" /></li>
+																</ul>
+																<ul class="smallbox">
+																	<li id="ClaimAge_l25" class="hideClaimAge"><input disabled="disabled" type="text" size="3" maxlength="2"
+																		name="ClaimAge_25" id="ClaimAge_25" /></li>
+																</ul>
+															</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly" class="freeFormListTd tdInput  mendatoryInput" active="nonMandatory">
+																<ul class="smallbox">
+																	<li id="ClaimAge_l1" class="hideClaimAge"><input type="text" size="3" maxlength="2"
+																		name="ClaimAge_1" id="ClaimAge_1" /></li>
+																	<li id="ClaimAge_l2" class="hideClaimAge"><input type="text" size="3" maxlength="2"
+																		name="ClaimAge_2" id="ClaimAge_2" /></li>
+																	<li id="ClaimAge_l3" class="hideClaimAge"><input type="text" size="3" maxlength="2"
+																		name="ClaimAge_3" id="ClaimAge_3" /></li>
+																	<li id="ClaimAge_l4" class="hideClaimAge"><input type="text" size="3" maxlength="2"
+																		name="ClaimAge_4" id="ClaimAge_4" /></li>
+																	<li id="ClaimAge_l5" class="hideClaimAge"><input type="text" size="3" maxlength="2"
+																		name="ClaimAge_5" id="ClaimAge_5" /></li>
+																	<li id="ClaimAge_l6" class="hideClaimAge"><input type="text" size="3" maxlength="2"
+																		name="ClaimAge_6" id="ClaimAge_6" /></li>
+																</ul>
+																<ul class="smallbox">
+																	<li id="ClaimAge_l7" class="hideClaimAge"><input type="text" size="3" maxlength="2"
+																		name="ClaimAge_7" id="ClaimAge_7" /></li>
+																	<li id="ClaimAge_l8" class="hideClaimAge"><input type="text" size="3" maxlength="2"
+																		name="ClaimAge_8" id="ClaimAge_8" /></li>
+																	<li id="ClaimAge_l9" class="hideClaimAge"><input type="text" size="3" maxlength="2"
+																		name="ClaimAge_9" id="ClaimAge_9" /></li>
+																	<li id="ClaimAge_l10" class="hideClaimAge"><input type="text" size="3" maxlength="2"
+																		name="ClaimAge_10" id="ClaimAge_10" /></li>
+																	<li id="ClaimAge_l11" class="hideClaimAge"><input type="text" size="3" maxlength="2"
+																		name="ClaimAge_11" id="ClaimAge_11" /></li>
+																	<li id="ClaimAge_l12" class="hideClaimAge"><input type="text" size="3" maxlength="2"
+																		name="ClaimAge_12" id="ClaimAge_12" /></li>
+																</ul>
+																<ul class="smallbox">
+																	<li id="ClaimAge_l13" class="hideClaimAge"><input  type="text" size="3" maxlength="2"
+																		name="ClaimAge_13" id="ClaimAge_13" /></li>
+																	<li id="ClaimAge_l14" class="hideClaimAge"><input  type="text" size="3" maxlength="2"
+																		name="ClaimAge_14" id="ClaimAge_14" /></li>
+																	<li id="ClaimAge_l15" class="hideClaimAge"><input  type="text" size="3" maxlength="2"
+																		name="ClaimAge_15" id="ClaimAge_15" /></li>
+																	<li id="ClaimAge_l16" class="hideClaimAge"><input  type="text" size="3" maxlength="2"
+																		name="ClaimAge_16" id="ClaimAge_16" /></li>
+																	<li id="ClaimAge_l17" class="hideClaimAge"><input  type="text" size="3" maxlength="2"
+																		name="ClaimAge_17" id="ClaimAge_17" /></li>
+																	<li id="ClaimAge_l18" class="hideClaimAge"><input  type="text" size="3" maxlength="2"
+																		name="ClaimAge_18" id="ClaimAge_18" /></li>
+																</ul>
+																<ul class="smallbox">
+																	<li id="ClaimAge_l19" class="hideClaimAge"><input  type="text" size="3" maxlength="2"
+																		name="ClaimAge_19" id="ClaimAge_19" /></li>
+																	<li id="ClaimAge_l20" class="hideClaimAge"><input  type="text" size="3" maxlength="2"
+																		name="ClaimAge_20" id="ClaimAge_20" /></li>
+																	<li id="ClaimAge_l21" class="hideClaimAge"><input  type="text" size="3" maxlength="2"
+																		name="ClaimAge_21" id="ClaimAge_21" /></li>
+																	<li id="ClaimAge_l22" class="hideClaimAge"><input  type="text" size="3" maxlength="2"
+																		name="ClaimAge_22" id="ClaimAge_22" /></li>
+																	<li id="ClaimAge_l23" class="hideClaimAge"><input  type="text" size="3" maxlength="2"
+																		name="ClaimAge_23" id="ClaimAge_23" /></li>
+																	<li id="ClaimAge_l24" class="hideClaimAge"><input  type="text" size="3" maxlength="2"
+																		name="ClaimAge_24" id="ClaimAge_24" /></li>
+																</ul>
+																<ul class="smallbox">
+																	<li id="ClaimAge_l25" class="hideClaimAge"><input  type="text" size="3" maxlength="2"
+																		name="ClaimAge_25" id="ClaimAge_25" /></li>
+																</ul>
+																<div id="error_totalLawyers" class="error" />
+															</div>
+														</div>
+													</div>
+												</li>
+												
+												<li class="inlineBlock_1_fix">
+													<div class="freeFormList form-group" id="readOnlySecurityQQ">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="error_NewYorkStatePremiumError" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign ">Within the past five (5) years has any firm personnel reported claims or been the subject of a disciplinary matter?</div>
+															
+															<div id="eval:LawyersRule.IsQuickQuotePageReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<input style="margin-left: 15px;" type="radio" name="hasAnyFirmPersonnelReported" id="hasAnyFirmPersonnelReported" value="Y"/> Yes
+																<input type="radio" name="hasAnyFirmPersonnelReported" id="hasAnyFirmPersonnelReported" value="N" /> No
+																
+															</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<input style="margin-left: 15px;" type="radio" name="hasAnyFirmPersonnelReported" id="hasAnyFirmPersonnelReported" value="Y"/> Yes
+																<input type="radio" name="hasAnyFirmPersonnelReported" id="hasAnyFirmPersonnelReported" value="N" /> No
+																<div id="error_hasAnyFirmPersonnelReported" class="error"></div>
+															</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+											
+												
+											</div>
+											
+											<ul class="inlineBlock paddingTop40">
+												<li class="inlineBlock_1_fix">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd">
+																<div class="">
+																	<div class="txtbold">3. Area of Practice</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<div class="section">
+											<div class="sectionInner">
+												<div class="questionBlock">
+													<table class="form-table" style="padding-top: 0px" width="100%"
+														cellpadding="0" cellspacing="0">
+														<tr>
+															<td valign="top" align="right"><table cellpadding="0"
+																	cellspacing="0" width="100%">
+																	<tr>
+																		<td align="left">
+																			<div id="error_TotalAOP_Percentage" class="error"></div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td align="left">
+																			<div id="error_SelectAOP"></div>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td class=""><span class="mendatory">*</span>Please select your Area of Practice and provide the approximate percentage for each.</td>
+																	</tr>
+																	<tr>
+																		<td style="padding-top: 0px;" valign="top"><div>
+																				<ul class="nav nav-tabs">
+																					<li id="aop_list_btn" class="active"><a data-toggle="tab">AOP List</a></li>
+																				</ul>
+																				<div class="tab-content">
+																					<div id="aop_list" class="tab-pane fade active">
+																						<table cellpadding="0" cellspacing="0" width="100%">
+																							<tr>
+																								<td valign="top">
+																									<table cellpadding="0" cellspacing="0" width="100%">
+																										<tr>
+																											<td colspan="2">
+																												<div>
+																													<table cellpadding="0" cellspacing="0" class="gridTable" align="left" style="width: 99.5%; margin-left: 4px;">
+																														<thead>
+																															<tr>
+																																<th width="69%" height="25px">Area of Practice</th>
+																																<th width="20%">Percentage</th>
+																																<th width="5%"></th>
+																															</tr>
+																														</thead>
+																														<thead>
+																															<tr>
+																																<td colspan="3" style="padding: 0px;">
+																																	<div class="law_scroll law_scrollQuickQuote" tabindex="-1">
+																																		<table cellpadding="0" cellspacing="0" width="100%">
+																																			<tbody id="rightaoplist_list"></tbody>
+																																			<tbody id="rightaopstatic_list">
+																																				<tr id="24">
+																																					<td class="aopName" width="75%">
+																																						<input id="AOPDesc_24" value="Trusts / Estates / Wills / Probate" name="AOPDesc_24" type="hidden"/>
+																																						<label id="AOPDesc" name="AOPDesc">Trusts / Estates / Wills / Probate</label>
+																																					</td>
+																																					<td class="aopPercentage" valign="middle" width="20%">
+																																						<div id="eval:LawyersRule.IsQuickQuotePageReadOnly">
+																																							<input id="AOP_Percentage_24" style="width: 70px; height: auto;" name="AOP_Percentage_24" type="text" disabled="disabled"/>
+																																						</div>
+																																						<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly">
+																																							<input id="AOP_Percentage_24" value="" style="width: 70px; height: auto;" onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage');" onkeypress="return IsNumeric(this, event, true, true, '');" ondrop="return false;" onpaste="return false;" maxlength="3" placeholder="%" name="AOP_Percentage_24" type="text"/>
+																																						</div>
+																																					</td>
+																																					<td class="aopPageSave" width="5%">
+																																						<!-- <a class="Link_blue" onclick="removeAOP('24');">
+																																							<i class="fa fa-times delete_icon"> </i>
+																																						</a> -->
+																																					</td>
+																																				</tr>
+																																				<tr id="62">
+																																					<td class="aopName" width="75%">
+																																						<input id="AOPDesc_62" value="Personal Injury Litigation - Plaintiff" name="AOPDesc_62" type="hidden"/>
+																																						<label id="AOPDesc" name="AOPDesc">Personal Injury Litigation - Plaintiff</label>
+																																					</td>
+																																					<td class="aopPercentage" valign="middle" width="20%">
+																																						<div id="eval:LawyersRule.IsQuickQuotePageReadOnly">
+																																							<input id="AOP_Percentage_62" style="width: 70px; height: auto;" name="AOP_Percentage_62" type="text" disabled="disabled"/>
+																																						</div>
+																																						<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly">
+																																							<input id="AOP_Percentage_62" value="" style="width: 70px; height: auto;" onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage');" onkeypress="return IsNumeric(this, event, true, true, '');" ondrop="return false;" onpaste="return false;" maxlength="3" placeholder="%" name="AOP_Percentage_62" type="text"/>
+																																						</div>
+																																					</td>
+																																					<td class="aopPageSave" width="5%">
+																																						<!-- <a class="Link_blue" onclick="removeAOP('62');">
+																																							<i class="fa fa-times delete_icon"> </i>
+																																						</a> -->
+																																					</td>
+																																				</tr>
+																																				<tr id="35">
+																																					<td class="aopName" width="75%">
+																																						<input id="AOPDesc_35" value="Criminal Defense" name="AOPDesc_35" type="hidden"/>
+																																						<label id="AOPDesc" name="AOPDesc">Criminal Defense</label>
+																																					</td>
+																																					<td class="aopPercentage" valign="middle" width="20%">
+																																						<div id="eval:LawyersRule.IsQuickQuotePageReadOnly">
+																																							<input id="AOP_Percentage_35" style="width: 70px; height: auto;" name="AOP_Percentage_35" type="text" disabled="disabled"/>
+																																						</div>
+																																						<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly">
+																																							<input id="AOP_Percentage_35" value="" style="width: 70px; height: auto;" onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage');" onkeypress="return IsNumeric(this, event, true, true, '');" ondrop="return false;" onpaste="return false;" maxlength="3" placeholder="%" name="AOP_Percentage_35" type="text"/>
+																																						</div>
+																																					</td>
+																																					<td class="aopPageSave" width="5%">
+																																						<!-- <a class="Link_blue" onclick="removeAOP('35');">
+																																							<i class="fa fa-times delete_icon"> </i>
+																																						</a> -->
+																																					</td>
+																																				</tr>
+																																				<tr id="8">
+																																					<td class="aopName" width="75%">
+																																						<input id="AOPDesc_8" value="Family Law" name="AOPDesc_8" type="hidden"/>
+																																						<label id="AOPDesc" name="AOPDesc">Family Law</label>
+																																					</td>
+																																					<td class="aopPercentage" valign="middle" width="20%">
+																																						<div id="eval:LawyersRule.IsQuickQuotePageReadOnly">
+																																							<input id="AOP_Percentage_8" style="width: 70px; height: auto;" name="AOP_Percentage_8" type="text" disabled="disabled"/>
+																																						</div>
+																																						<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly">
+																																							<input id="AOP_Percentage_8" value="" style="width: 70px; height: auto;" onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage');" onkeypress="return IsNumeric(this, event, true, true, '');" ondrop="return false;" onpaste="return false;" maxlength="3" placeholder="%" name="AOP_Percentage_8" type="text"/>
+																																						</div>
+																																					</td>
+																																					<td class="aopPageSave" width="5%">
+																																						<!-- <a class="Link_blue" onclick="removeAOP('8');">
+																																							<i class="fa fa-times delete_icon"> </i>
+																																						</a> -->
+																																					</td>
+																																				</tr>
+																																				<tr id="5">
+																																					<td class="aopName" width="75%">
+																																						<input id="AOPDesc_5" value="Corporate / Commercial/Business" name="AOPDesc_5" type="hidden"/>
+																																						<label id="AOPDesc" name="AOPDesc">Corporate / Commercial/Business</label>
+																																					</td>
+																																					<td class="aopPercentage" valign="middle" width="20%">
+																																						<div id="eval:LawyersRule.IsQuickQuotePageReadOnly">
+																																							<input id="AOP_Percentage_5" style="width: 70px; height: auto;" name="AOP_Percentage_5" type="text" disabled="disabled"/>
+																																						</div>
+																																						<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly">
+																																							<input id="AOP_Percentage_5" value="" style="width: 70px; height: auto;" onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage');" onkeypress="return IsNumeric(this, event, true, true, '');" ondrop="return false;" onpaste="return false;" maxlength="3" placeholder="%" name="AOP_Percentage_5" type="text"/>
+																																						</div>
+																																					</td>
+																																					<td class="aopPageSave" width="5%">
+																																						<!-- <a class="Link_blue" onclick="removeAOP('5');">
+																																							<i class="fa fa-times delete_icon"> </i>
+																																						</a> -->
+																																					</td>
+																																				</tr>
+																																				<tr id="27">
+																																					<td class="aopName" width="75%">
+																																						<input id="AOPDesc_27" value="Real Estate Residential" name="AOPDesc_27" type="hidden"/>
+																																						<label id="AOPDesc" name="AOPDesc">Real Estate Residential</label>
+																																					</td>
+																																					<td class="aopPercentage" valign="middle" width="20%">
+																																						<div id="eval:LawyersRule.IsQuickQuotePageReadOnly">
+																																							<input id="AOP_Percentage_27" style="width: 70px; height: auto;" name="AOP_Percentage_27" type="text" disabled="disabled"/>
+																																						</div>
+																																						<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly">
+																																							<input id="AOP_Percentage_27" value="" style="width: 70px; height: auto;" onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage');" onkeypress="return IsNumeric(this, event, true, true, '');" ondrop="return false;" onpaste="return false;" maxlength="3" placeholder="%" name="AOP_Percentage_27" type="text"/>
+																																						</div>
+																																					</td>
+																																					<td class="aopPageSave" width="5%">
+																																						<!-- <a class="Link_blue" onclick="removeAOP('27');">
+																																							<i class="fa fa-times delete_icon"> </i>
+																																						</a> -->
+																																					</td>
+																																				</tr>
+																																				<tr id="20">
+																																					<td class="aopName" width="75%">
+																																						<input id="AOPDesc_20" value="Real Estate Commercial" name="AOPDesc_20" type="hidden"/>
+																																						<label id="AOPDesc" name="AOPDesc">Real Estate Commercial</label>
+																																					</td>
+																																					<td class="aopPercentage" valign="middle" width="20%">
+																																						<div id="eval:LawyersRule.IsQuickQuotePageReadOnly">
+																																							<input id="AOP_Percentage_20" style="width: 70px; height: auto;" name="AOP_Percentage_20" type="text" disabled="disabled"/>
+																																						</div>
+																																						<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly">
+																																							<input id="AOP_Percentage_20" value="" style="width: 70px; height: auto;" onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage');" onkeypress="return IsNumeric(this, event, true, true, '');" ondrop="return false;" onpaste="return false;" maxlength="3" placeholder="%" name="AOP_Percentage_20" type="text"/>
+																																						</div>
+																																					</td>
+																																					<td class="aopPageSave" width="5%">
+																																						<!-- <a class="Link_blue" onclick="removeAOP('20');">
+																																							<i class="fa fa-times delete_icon"> </i>
+																																						</a> -->
+																																					</td>
+																																				</tr>
+																																				<tr id="3">
+																																					<td class="aopName" width="75%">
+																																						<input id="AOPDesc_3" value="Bankruptcy / Insolvency and Reorganization" name="AOPDesc_3" type="hidden"/>
+																																						<label id="AOPDesc" name="AOPDesc">Bankruptcy / Insolvency and Reorganization</label>
+																																					</td>
+																																					<td class="aopPercentage" valign="middle" width="20%">
+																																						<div id="eval:LawyersRule.IsQuickQuotePageReadOnly">
+																																							<input id="AOP_Percentage_3" style="width: 70px; height: auto;" name="AOP_Percentage_3" type="text" disabled="disabled"/>
+																																						</div>
+																																						<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly">
+																																							<input id="AOP_Percentage_3" value="" style="width: 70px; height: auto;" onblur="populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage');" onkeypress="return IsNumeric(this, event, true, true, '');" ondrop="return false;" onpaste="return false;" maxlength="3" placeholder="%" name="AOP_Percentage_3" type="text"/>
+																																						</div>
+																																					</td>
+																																					<td class="aopPageSave" width="5%">
+																																						<!-- <a class="Link_blue" onclick="removeAOP('3');">
+																																							<i class="fa fa-times delete_icon"> </i>
+																																						</a> -->
+																																					</td>
+																																				</tr>
+																																			</tbody>
+																																		</table>
+																																	</div>
+																																</td>
+																															</tr>
+																														</thead>
+																														
+																														
+																													</table>
+																												</div>
+																											</td>
+																										</tr>
+																										<tr id="row1">
+																											<td style="text-align: right; border-bottom: none;">Total <i class="italic">(must equal 100%)</i>
+																											</td>
+																											<td valign="middle" nowrap style="border-bottom: none;">
+																												<label id="TotalAOP_Percentage" name="TotalAOP_Percentage" style="width: 70px;"></label> &nbsp;
+																											</td>
+																										</tr>
+																										<tr id="litigationDefensefDescId">
+																											<td colspan="2" align="right">
+																												<table id="lawPractice_freeform_contextdata_011">
+																													<tr>
+																														<td/>
+																														<td colspan="2">
+																															<div id="error_litDefenseOtherDescError" class="error" />
+																														</td>
+																													</tr>
+																													<tr>
+																														<td>Litigation defense other Description :</td>
+																														<td>
+																															<textarea rows="2" cols="30" style="width: 300px; height: 70px;" name="AOPCommentDesc_58" id="AOPCommentDesc_58"/>
+																														</td>
+																													</tr>
+																												</table>
+																											</td>
+																										</tr>
+																										<tr id="litigationPlaintiffDescId">
+																											<td colspan="2" align="right">
+																												<table id="lawPractice_freeform_contextdata_021">
+																													<tr>
+																														<td/>
+																														<td colspan="2">
+																															<div id="error_litPlaintiffotherDescError" class="error" />
+																														</td>
+																													</tr>
+																													<tr>
+																														<td>Litigation plaintiff other Description :</td>
+																														<td>
+																															<textarea rows="2" cols="30" style="width: 300px; height: 70px;" name="AOPCommentDesc_67" id="AOPCommentDesc_67"/>
+																														</td>
+																													</tr>
+																												</table>
+																											</td>
+																										</tr>
+																										<tr id="otherDescId">
+																											<td colspan="2" align="right">
+																												<table id="lawPractice_freeform_contextdata_031">
+																													<tr>
+																														<td/>
+																														<td colspan="2">
+																															<div id="error_otherAopDescError" class="error" />
+																														</td>
+																													</tr>
+																													<tr>
+																														<td>Other Aop Description :</td>
+																														<td>
+																															<textarea rows="2" cols="30" style="width: 300px; height: 70px;" name="AOPCommentDesc_25" id="AOPCommentDesc_25"></textarea>
+																														</td>
+																													</tr>
+																												</table>
+																											</td>
+																										</tr>
+																									</table>
+																								</td>
+																							</tr>
+																							<tr>
+																								<td valign="top"> 
+																									<table cellpadding="0" cellspacing="0" width="100%" style="padding-top: 34px">
+																										<tr>
+																											<td>
+																												<table cellpadding="0" cellspacing="0"
+																													width="100%">
+																													<tr>
+																														<!-- td valign="middle">&nbsp;What are your Areas of Practice?</td> -->
+																														<td><div class="floatRight" id="eval:LawyersRule.IsQuickQuotePageNotReadOnly">
+																																<span id="showPageSave"> 
+																															<a id="aoplist_button" class="btn add" onclick="toggleDisplay('aoplist_div');">Find additional areas of practice</a>
+																															</span>
+																															</div></td>
+																													</tr>
+																												</table>
+																											</td>
+																										</tr>
+																										<tr>
+																											<td>
+																												<div id="aoplist_div">
+																												<table cellpadding="0" cellspacing="0" width="100%" id="aoplist_list_1" class="gridTable">
+																													<tr class="tableheading" id="aoplist_list_header_1">
+																														<th width="5%" class="HeaderStyle" id="block_field_AOPKey"/>
+																														<th width="95%" height="25px" class="HeaderStyle" id="block_field_AOPDesc">Area of Practice</th>
+																													</tr>
+																													<tr>
+																														<td colspan="2" style="padding: 0px;">
+																															<div class="law_scroll law_scrollQuickQuote" tabindex="-1">
+																																<table id="leftAOPList" cellpadding="0" cellspacing="0" width="100%" class="add_claim borderNone no-borders">
+																																	<tr id="aoplist_list_data_1">
+																																		<td width="5%" id="block_field_AOPKey">
+																																			<input type="checkbox" id="AOPKey" name="AOPKey" />
+																																		</td>
+																																		<td class="RowStyle" id="block_field_AOPDesc" />
+																																	</tr>
+																																</table>
+																															</div>
+																														</td>
+																													</tr>
+																													<tr>
+																														<td colspan="2">
+																															<div class="floatRight">
+																																			<span id="showPageSave"> 
+																																		<a id="addRightAOPQQ" class="btn save" onclick="addRightAOP();toggleDisplay('aoplist_div');" onkeypress="aopKeyPressEvent(event);">Save</a>
+																																		</span>
+																																		</div>
+																														</td>
+																													</tr>
+																												</table>
+																												</div>
+																											</td>
+																										</tr>
+																										
+																									</table>
+																								</td>
+																							</tr>
+																						</table>
+																						
+																						
+																						
+																					</div>
+																				</div>
+																			</div>
+																		</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+													</table>
+												</div>
+											</div>
+										</div>
+										<div class="freeFormDiv paddingTop20 form-inline">
+											<ul class="inlineBlock" id="quickquote_freeform_contextdata_01">
+												<li class="inlineBlock_1">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd">
+																<div class="">
+																	<div class="txtbold">4. Please provide your contact information</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_1">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Firm Name :</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<input type="text" class="form-control" name="AccountName" id="AccountName" disabled="disabled" size="15" maxlength="35" value="">
+															</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<input type="text" class="form-control" name="AccountName" id="AccountName" size="15" maxlength="35" value="">
+																<div id="error_AccountName" class="error"></div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_1">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Email :</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<input name="AccountEmail" type="text" class="form-control" id="AccountEmail" size="15" maxlength="100" disabled="disabled" />
+															</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<input name="AccountEmail" type="text" class="form-control" id="AccountEmail" size="15" maxlength="100" onblur="validateEmail(this.value,this);" />
+																<div id="error_AccountEmail" class="error"></div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_1">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Phone Number :</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<input name="WorkPhone" type="text" class="form-control" id="WorkPhone" size="15" maxlength="13" disabled="disabled" />
+															</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<input name="WorkPhone" type="text" class="form-control" id="WorkPhone" size="15" maxlength="13" />
+																<div id="error_WorkPhone" class="error"></div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="inlineBlock_1">
+													<div class="freeFormList form-group">
+														<div class="freeFormListTr">
+															<div class="freeFormListTdError">
+																<h6>&nbsp;</h6>
+															</div>
+															<div class="freeFormListTdError paddingLeft3">
+																<span id="" class="error"></span>
+															</div>
+														</div>
+														<div class="freeFormListTr">
+															<div class="freeFormListTd labelAlign freeFormLabelWidth">Primary Contact Name :</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<input type="text" class="form-control" name="ContactPerson" id="ContactPerson" disabled="disabled" size="15" maxlength="35" value="">
+															</div>
+															<div id="eval:LawyersRule.IsQuickQuotePageNotReadOnly" class="freeFormListTd tdInput mendatoryInput" active="nonMandatory">
+																<input type="text" class="form-control" name="ContactPerson" id="ContactPerson" size="15" maxlength="35" value="">
+																<div id="error_ContactPerson" class="error"></div>
+															</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+										<div class="buttons borderTop row">
+									<div class="floatRight">
+										<span id="eval:LawyersRule.isNotNameClearanceQQIndicationPopupFlag">
+											<span id="eval:LawyersRule.IsQuickQuotePageNotReadOnly">
+												<span id="eval:LawyersRule.showQuickQuotePageRequestTypeContent">
+													<a onclick="getPercentageValue();" class="btn premiumEstimate" href="javascript:submitform('quickquoteinsured.html|indexThanksQQ.html|quickquoteoptionlist.html','quickquoteinsured.save','forwardeval','LawyersRule.isNameClearanceFirmNewAppPopupFlag|LawyersRule.isIndexThanksQQShow_New|LawyersRule.isQuickQuoteOptionListPageShow');" tabindex="350" >Get a Premium Estimate</a> 
+												</span>
+												<span id="eval:LawyersRule.showRiskManagementPageRequestTypeContent">
+													<a onclick="getPercentageValue();" class="btn save" href="javascript:submitform('quickquoteinsured.html|indexThanksQQ.html|quickquoteoptionlist.html','quickquoteinsured.save','forwardeval','LawyersRule.isNameClearanceFirmNewAppPopupFlag|LawyersRule.isIndexThanksQQShow_New|LawyersRule.isQuickQuoteOptionListPageShow');" tabindex="350" >Get Risk Assessment</a>
+												</span>
+											</span>
+											<span id="eval:LawyersRule.IsQuickQuotePageReadOnly">
+												<a onclick="getPercentageValue();" class="btn next" href="javascript:submitform('indexThanksQQ.html|quickquoteoptionlist.html','quickquoteinsured.saveContinue','forwardeval','LawyersRule.isIndexThanksQQShow_New|LawyersRule.isQuickQuoteOptionListPageShow');" tabindex="360" >Continue</a> 
+											</span>
+										</span>
+										<span id="eval:LawyersRule.isNameClearanceQQIndicationPopupFlag">
+											<span id="eval:LawyersRule.isShowIndicationUWLink">
+												<a class="btn button1" href="javascript:submitform('UWReview.html','quickquoteinsured.underwriter',' ','');">UnderWriter </a>
+											</span>
+										</span>
+									</div>
+								</div>
+									</div>
+								</div>
+											</div>
+											<div class="templateRightContent">
+												<div class="innerRightContent">
+												<h1>WHAT HAPPENS AFTER I GET AN ESTIMATE?</h1>
+												<script type="text/javascript" async src="https://play.vidyard.com/embed/v4.js"></script>
+
+													<img
+													style="width: 90%; margin: auto; display: block; height: 100px"
+													class="vidyard-player-embed"
+													src="https://play.vidyard.com/D9oCWSLtpRKM3ZkdajfHxh.jpg"
+													data-uuid="D9oCWSLtpRKM3ZkdajfHxh"
+													data-v="4"
+													data-type="inline"
+													/> 
+													<p>We aren't going to spam you with emails or call you a thousand times.
+														 After you get an estimate, one of our insurance specialists will reach out and talk to you.</p>
+														 <p>Call <strong>1-877-569-4111</strong> for assistance.
+													</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								
+								
+							</div>
+							<div id="content">
+								<div id="footer" class="footer">
+									<span id="#Include:footer.html#"></span>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<span id="eval:LawyersRule.IsQuickQuotePageReadOnly">
+			<input type="hidden" name="filedDisabled" id="filedDisabled" value="YES" />
+		</span>
+		<span id="eval:LawyersRule.IsQuickQuotePageNotReadOnly">
+			<input type="hidden" name="filedDisabled" id="filedDisabled" value="NO" />
+		</span>
+		<div id="contextLinks"></div>
+		<table id="quickquoteinsured_freeform_contextdata_999">
+			<tr>
+				<td>
+					<input type="hidden" name="jsessionid" id="jsessionid" />
+					<input type="hidden" name="divHideShow" id="divHideShow" value="" />
+					<input type="hidden" name="ctxmenuparam" id="ctxmenuparam" value="" />
+					<input type="hidden" id="AOP_values" name="AOP_values" /> 
+					<input type="hidden" name="totalNoOfPersonnel" id="ajax_field_totalNoOfPersonnel" value="" />
+					<input type="hidden" name="aopPercentageValue" id="aopPercentageValue" value="" /> 
+					<input type="hidden" name="aopPercentageTRValue" id="aopPercentageTRValue" value="" /> 
+					<input type="text" name="QQRMLink" id="QQRMLink" style="display: none;" /> 
+					<input type="hidden" name="AOPCommentDesc_25" id="AOPCommentDesc" value="" />
+					<input type="text" name="PolicyKey" id="PolicyKey" value="" style="display: none;" /> 
+					<input type="text" name="AccountKey" id="AccountKey" value="" style="display: none;" /> 
+					<input type="text" name="TransactionSequence" id="TransactionSequence" value="" style="display: none;" /> 
+					<input type="text" name="VersionSequence" id="VersionSequence" value="" style="display: none;" /> 
+					<input type="text" name="CoverageSequence" id="CoverageSequence" value="" style="display: none;" />
+					<input type="hidden" id="ajax_field_totalAopListSize" name="totalAopListSize" />
+					<input type="hidden" id="ajax_field_PriorAopListSize" name="PriorAopListSize" />
+					<input type="hidden" id="IsQuickQuotePage" name="IsQuickQuotePage" />
+					<input type="hidden" name="isNameClearanceRequired" id="isNameClearanceRequired" />
+					<input type="hidden" name="NameClearanceIndicationFlag" id="NameClearanceIndicationFlag" />
+						
+					
+				
+				</td>
+			</tr>
+		</table>
+		<div id="StatusValidation_freeform_contextdata_9990">
+			<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+			<input type="hidden" name="ZohoStatusDescUpdated" id="ZohoStatusDescUpdated" value="QuickQuoteZohoStatus"/>
+			
+		</div>
+	</form>
+</body>
+<script type="text/javascript">
+	var nameClearanceIndicationFlag = $("#NameClearanceIndicationFlag").val();
+	if(nameClearanceIndicationFlag == "Y"){
+		showPopUpOverloaded('zohoNameClearance','500','400');
+	}
+	onPageLoad();
+	document.getElementById("AOPCommentDesc_25").value = document.getElementById("AOPCommentDesc").value;
+	//document.getElementById("ajax_field_PolicyEffectiveDate").focus();
+</script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+<script>
+	//setScroll();
+	loadQuickQuoteInsured();
+	populateTotalFieldValue('AOP_Percentage_', 'TotalAOP_Percentage');
+	//setScrollTop();
+</script>
+</html>

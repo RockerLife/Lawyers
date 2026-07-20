@@ -1,0 +1,32 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AccountAddress">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AccountAddress</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AccountAddress where AccountKey = #AccountKey# and AddressKey = #AddressKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into AccountAddress(AddressKey, AccountKey
+          <isNotEmpty property="CreatedDate" prepend=",">CreatedDate</isNotEmpty>
+          <isNotEmpty property="CreatedBy" prepend=",">CreatedBy</isNotEmpty>
+          ) values (#AddressKey:NUMERIC#, #AccountKey:NUMERIC#
+          <isNotEmpty property="CreatedDate" prepend=",">#CreatedDate#</isNotEmpty>
+          <isNotEmpty property="CreatedBy" prepend=",">#CreatedBy#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CreatedDate, CreatedBy, AddressKey, AccountKey from AccountAddress where AddressKey = #AddressKey# and AccountKey = #AccountKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update AccountAddress set
+          <dynamic prepend=" ">
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate = #CreatedDate#</isNotEmpty>
+               <isEmpty property="CreatedDate" prepend=",">CreatedDate = null</isEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy = #CreatedBy#</isNotEmpty>
+               <isEmpty property="CreatedBy" prepend=",">CreatedBy = null</isEmpty>
+          </dynamic>
+          where AddressKey = #AddressKey# and AccountKey = #AccountKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from AccountAddress where AddressKey = #AddressKey# and AccountKey = #AccountKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from AccountAddress</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AccountAddress where AccountKey = #AccountKey# and AddressKey = #AddressKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CreatedDate, CreatedBy, AddressKey, AccountKey from AccountAddress where AddressKey = #AddressKey# and AccountKey = #AccountKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AddressKey, AccountKey, CreatedDate, CreatedBy from AccountAddress where AccountKey = #AccountKey# and AddressKey = #AddressKey#</select>
+</sqlMap>
+

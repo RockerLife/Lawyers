@@ -1,0 +1,101 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="PaymentDetail">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PaymentDetail</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PaymentDetail where TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into PaymentDetail(TransactionSequence, PolicyKey
+          <isNotEmpty property="BankerName" prepend=",">BankerName</isNotEmpty>
+          <isNotEmpty property="RoutingNumber" prepend=",">RoutingNumber</isNotEmpty>
+          <isNotEmpty property="AccountNumber" prepend=",">AccountNumber</isNotEmpty>
+          <isNotEmpty property="ChequeNumber" prepend=",">ChequeNumber</isNotEmpty>
+          <isNotEmpty property="Amount" prepend=",">Amount</isNotEmpty>
+          <isNotEmpty property="ContactPerson" prepend=",">ContactPerson</isNotEmpty>
+          <isNotEmpty property="ContactPhone" prepend=",">ContactPhone</isNotEmpty>
+          <isNotEmpty property="FinanceCompanyName" prepend=",">FinanceCompanyName</isNotEmpty>
+          <isNotEmpty property="Detail" prepend=",">Detail</isNotEmpty>
+          <isNotEmpty property="TransactionID" prepend=",">TransactionID</isNotEmpty>
+          <isNotEmpty property="TransactionDate" prepend=",">TransactionDate</isNotEmpty>
+          <isNotEmpty property="TransactionStatus" prepend=",">TransactionStatus</isNotEmpty>
+          <isNotEmpty property="PaymentMode" prepend=",">PaymentMode</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="FinanceInterval" prepend=",">FinanceInterval</isNotEmpty>
+          <isNotEmpty property="FinanceDownPayment" prepend=",">FinanceDownPayment</isNotEmpty>
+          <isNotEmpty property="CreatedDate" prepend=",">CreatedDate</isNotEmpty>
+          <isNotEmpty property="CreatedBy" prepend=",">CreatedBy</isNotEmpty>
+          ) values (#TransactionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="BankerName" prepend=",">#BankerName#</isNotEmpty>
+          <isNotEmpty property="RoutingNumber" prepend=",">#RoutingNumber#</isNotEmpty>
+          <isNotEmpty property="AccountNumber" prepend=",">#AccountNumber#</isNotEmpty>
+          <isNotEmpty property="ChequeNumber" prepend=",">#ChequeNumber#</isNotEmpty>
+          <isNotEmpty property="Amount" prepend=",">#Amount#</isNotEmpty>
+          <isNotEmpty property="ContactPerson" prepend=",">#ContactPerson#</isNotEmpty>
+          <isNotEmpty property="ContactPhone" prepend=",">#ContactPhone#</isNotEmpty>
+          <isNotEmpty property="FinanceCompanyName" prepend=",">#FinanceCompanyName#</isNotEmpty>
+          <isNotEmpty property="Detail" prepend=",">#Detail#</isNotEmpty>
+          <isNotEmpty property="TransactionID" prepend=",">#TransactionID#</isNotEmpty>
+          <isNotEmpty property="TransactionDate" prepend=",">#TransactionDate#</isNotEmpty>
+          <isNotEmpty property="TransactionStatus" prepend=",">#TransactionStatus#</isNotEmpty>
+          <isNotEmpty property="PaymentMode" prepend=",">#PaymentMode#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="FinanceInterval" prepend=",">#FinanceInterval#</isNotEmpty>
+          <isNotEmpty property="FinanceDownPayment" prepend=",">#FinanceDownPayment#</isNotEmpty>
+          <isNotEmpty property="CreatedDate" prepend=",">#CreatedDate#</isNotEmpty>
+          <isNotEmpty property="CreatedBy" prepend=",">#CreatedBy#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="PaymentDetailId">SELECT IDENT_CURRENT('PaymentDetail') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select BankerName, RoutingNumber, AccountNumber, ChequeNumber, Amount, ContactPerson, ContactPhone, FinanceCompanyName, Detail, TransactionID, TransactionDate, TransactionStatus, PaymentMode, LastUpdateUserID, LastUpdateTimeStamp, PaymentDetailId, FinanceInterval, FinanceDownPayment, CreatedDate, CreatedBy, TransactionSequence, PolicyKey from PaymentDetail where PaymentDetailId = #PaymentDetailId# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update PaymentDetail set
+          <dynamic prepend=" ">
+               <isNotEmpty property="BankerName" prepend=",">BankerName = #BankerName#</isNotEmpty>
+               <isEmpty property="BankerName" prepend=",">BankerName = null</isEmpty>
+               <isNotEmpty property="RoutingNumber" prepend=",">RoutingNumber = #RoutingNumber#</isNotEmpty>
+               <isEmpty property="RoutingNumber" prepend=",">RoutingNumber = null</isEmpty>
+               <isNotEmpty property="AccountNumber" prepend=",">AccountNumber = #AccountNumber#</isNotEmpty>
+               <isEmpty property="AccountNumber" prepend=",">AccountNumber = null</isEmpty>
+               <isNotEmpty property="ChequeNumber" prepend=",">ChequeNumber = #ChequeNumber#</isNotEmpty>
+               <isEmpty property="ChequeNumber" prepend=",">ChequeNumber = null</isEmpty>
+               <isNotEmpty property="Amount" prepend=",">Amount = #Amount#</isNotEmpty>
+               <isEmpty property="Amount" prepend=",">Amount = null</isEmpty>
+               <isNotEmpty property="ContactPerson" prepend=",">ContactPerson = #ContactPerson#</isNotEmpty>
+               <isEmpty property="ContactPerson" prepend=",">ContactPerson = null</isEmpty>
+               <isNotEmpty property="ContactPhone" prepend=",">ContactPhone = #ContactPhone#</isNotEmpty>
+               <isEmpty property="ContactPhone" prepend=",">ContactPhone = null</isEmpty>
+               <isNotEmpty property="FinanceCompanyName" prepend=",">FinanceCompanyName = #FinanceCompanyName#</isNotEmpty>
+               <isEmpty property="FinanceCompanyName" prepend=",">FinanceCompanyName = null</isEmpty>
+               <isNotEmpty property="Detail" prepend=",">Detail = #Detail#</isNotEmpty>
+               <isEmpty property="Detail" prepend=",">Detail = null</isEmpty>
+               <isNotEmpty property="TransactionID" prepend=",">TransactionID = #TransactionID#</isNotEmpty>
+               <isEmpty property="TransactionID" prepend=",">TransactionID = null</isEmpty>
+               <isNotEmpty property="TransactionDate" prepend=",">TransactionDate = #TransactionDate#</isNotEmpty>
+               <isEmpty property="TransactionDate" prepend=",">TransactionDate = null</isEmpty>
+               <isNotEmpty property="TransactionStatus" prepend=",">TransactionStatus = #TransactionStatus#</isNotEmpty>
+               <isEmpty property="TransactionStatus" prepend=",">TransactionStatus = null</isEmpty>
+               <isNotEmpty property="PaymentMode" prepend=",">PaymentMode = #PaymentMode#</isNotEmpty>
+               <isEmpty property="PaymentMode" prepend=",">PaymentMode = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="FinanceInterval" prepend=",">FinanceInterval = #FinanceInterval#</isNotEmpty>
+               <isEmpty property="FinanceInterval" prepend=",">FinanceInterval = null</isEmpty>
+               <isNotEmpty property="FinanceDownPayment" prepend=",">FinanceDownPayment = #FinanceDownPayment#</isNotEmpty>
+               <isEmpty property="FinanceDownPayment" prepend=",">FinanceDownPayment = null</isEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate = #CreatedDate#</isNotEmpty>
+               <isEmpty property="CreatedDate" prepend=",">CreatedDate = null</isEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy = #CreatedBy#</isNotEmpty>
+               <isEmpty property="CreatedBy" prepend=",">CreatedBy = null</isEmpty>
+          </dynamic>
+          where PaymentDetailId = #PaymentDetailId# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from PaymentDetail where PaymentDetailId = #PaymentDetailId# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from PaymentDetail</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from PaymentDetail where TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select BankerName, RoutingNumber, AccountNumber, ChequeNumber, Amount, ContactPerson, ContactPhone, FinanceCompanyName, Detail, TransactionID, TransactionDate, TransactionStatus, PaymentMode, LastUpdateUserID, LastUpdateTimeStamp, PaymentDetailId, FinanceInterval, FinanceDownPayment, CreatedDate, CreatedBy, TransactionSequence, PolicyKey from PaymentDetail where PaymentDetailId = #PaymentDetailId# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PaymentDetailId, TransactionSequence, PolicyKey, BankerName, RoutingNumber, AccountNumber, ChequeNumber, Amount, ContactPerson, ContactPhone, FinanceCompanyName, Detail, TransactionID, TransactionDate, TransactionStatus, PaymentMode, LastUpdateUserID, LastUpdateTimeStamp, FinanceInterval, FinanceDownPayment, CreatedDate, CreatedBy from PaymentDetail where TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

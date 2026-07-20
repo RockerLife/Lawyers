@@ -1,0 +1,40 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="WillsEstateServicesLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from WillsEstateServicesLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from WillsEstateServicesLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and WESKey = #WESKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into WillsEstateServicesLW(VersionSequence, PolicyKey, WESKey
+          <isNotEmpty property="CheckedValue" prepend=",">CheckedValue</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="WESCommentDesc" prepend=",">WESCommentDesc</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#, #WESKey:NUMERIC#
+          <isNotEmpty property="CheckedValue" prepend=",">#CheckedValue#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="WESCommentDesc" prepend=",">#WESCommentDesc#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CheckedValue, LastUpdateUserID, LastUpdateTimeStamp, WESCommentDesc, VersionSequence, PolicyKey, WESKey from WillsEstateServicesLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and WESKey = #WESKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update WillsEstateServicesLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="CheckedValue" prepend=",">CheckedValue = #CheckedValue#</isNotEmpty>
+               <isEmpty property="CheckedValue" prepend=",">CheckedValue = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="WESCommentDesc" prepend=",">WESCommentDesc = #WESCommentDesc#</isNotEmpty>
+               <isEmpty property="WESCommentDesc" prepend=",">WESCommentDesc = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and WESKey = #WESKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from WillsEstateServicesLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and WESKey = #WESKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from WillsEstateServicesLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from WillsEstateServicesLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and WESKey = #WESKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CheckedValue, LastUpdateUserID, LastUpdateTimeStamp, WESCommentDesc, VersionSequence, PolicyKey, WESKey from WillsEstateServicesLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and WESKey = #WESKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, WESKey, CheckedValue, LastUpdateUserID, LastUpdateTimeStamp, WESCommentDesc from WillsEstateServicesLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and WESKey = #WESKey#</select>
+</sqlMap>
+

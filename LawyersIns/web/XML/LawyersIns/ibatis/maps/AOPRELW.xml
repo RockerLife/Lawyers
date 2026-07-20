@@ -1,0 +1,61 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AOPRELW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AOPRELW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AOPRELW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into AOPRELW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPREDesc" prepend=",">AOPREDesc</isNotEmpty>
+               <isNotEmpty property="AOPREType" prepend=",">AOPREType</isNotEmpty>
+               <isNotEmpty property="AOPSequence" prepend=",">AOPSequence</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPREDesc" prepend=",">#AOPREDesc#</isNotEmpty>
+               <isNotEmpty property="AOPREType" prepend=",">#AOPREType#</isNotEmpty>
+               <isNotEmpty property="AOPSequence" prepend=",">#AOPSequence#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="AOPREKey">SELECT IDENT_CURRENT('AOPRELW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOPREKey, AOPREDesc, AOPREType, AOPSequence, LastUpdateUserID, LastUpdateTimeStamp from AOPRELW where AOPREKey = #AOPREKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update AOPRELW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPREDesc" prepend=",">AOPREDesc = #AOPREDesc#</isNotEmpty>
+               <isEmpty property="AOPREDesc" prepend=",">AOPREDesc = null</isEmpty>
+               <isNotEmpty property="AOPREType" prepend=",">AOPREType = #AOPREType#</isNotEmpty>
+               <isEmpty property="AOPREType" prepend=",">AOPREType = null</isEmpty>
+               <isNotEmpty property="AOPSequence" prepend=",">AOPSequence = #AOPSequence#</isNotEmpty>
+               <isEmpty property="AOPSequence" prepend=",">AOPSequence = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where AOPREKey = #AOPREKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from AOPRELW where AOPREKey = #AOPREKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from AOPRELW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AOPRELW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOPREKey, AOPREDesc, AOPREType, AOPSequence, LastUpdateUserID, LastUpdateTimeStamp from AOPRELW where AOPREKey = #AOPREKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOPREKey, AOPREDesc, AOPREType, AOPSequence, LastUpdateUserID, LastUpdateTimeStamp from AOPRELW</select>
+     <parameterMap id="realEstateCommercial_SPMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="realEstateCommercial_SP" parameterMap="realEstateCommercial_SPMap" resultClass="java.util.HashMap">{ call realEstateCommercial_SP(?)}</procedure>
+     <parameterMap id="DisplayRealEstateData_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="DisplayRealEstateData_p" parameterMap="DisplayRealEstateData_pMap" resultClass="java.util.HashMap">{ call DisplayRealEstateData_p(?)}</procedure>
+     <parameterMap id="DisplayWillsTrustProbationSupplmentData_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="DisplayWillsTrustProbationSupplmentData_p" parameterMap="DisplayWillsTrustProbationSupplmentData_pMap" resultClass="java.util.HashMap">{ call DisplayWillsTrustProbationSupplmentData_p(?)}</procedure>
+</sqlMap>
+

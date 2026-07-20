@@ -1,0 +1,10 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="RuleComment;rulepolicytransaction;">
+     <parameterMap id="GetAllCommentList_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="RuleId" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="GetAllCommentList_p" parameterMap="GetAllCommentList_pMap" resultClass="java.util.HashMap">{ call GetAllCommentList_p(?,?)}</procedure>
+</sqlMap>
+

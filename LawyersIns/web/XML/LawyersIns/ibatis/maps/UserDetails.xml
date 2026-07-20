@@ -1,0 +1,57 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="UserDetails">
+     <select id="EligibleFirstReviewerSubProducer_dropdown" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ud.UserNo as reviewerId, ud.AgentName as reviewerName from userdetails ud inner join SubproducerUserdetails subd on ud.UserNo=subd.UserNo where subd.ProducerCode=#ProducerCode# and ud.EligibleFirstReviewer='Y' order by ud.AgentName</select>
+     <select id="EligibleFirstReviewer_dropdown" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  UserNo as reviewerId, AgentName as reviewerName from UserDetails where EligibleFirstReviewer='Y' and UserNo not in(select UserNo from SubproducerUserdetails)  order by AgentName</select>
+     <select id="getEligibleFirstReviewerListfilter" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  UserNo as reviewerId, AgentName as reviewerName from UserDetails where EligibleFirstReviewer='Y' order by AgentName</select>
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from UserDetails</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from UserDetails</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into UserDetails(
+          <dynamic prepend=" ">
+               <isNotEmpty property="AgentEmail" prepend=",">AgentEmail</isNotEmpty>
+               <isNotEmpty property="AgentState" prepend=",">AgentState</isNotEmpty>
+               <isNotEmpty property="PassWord" prepend=",">PassWord</isNotEmpty>
+               <isNotEmpty property="AgentName" prepend=",">AgentName</isNotEmpty>
+               <isNotEmpty property="LicenseNumber" prepend=",">LicenseNumber</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="AgentEmail" prepend=",">#AgentEmail#</isNotEmpty>
+               <isNotEmpty property="AgentState" prepend=",">#AgentState#</isNotEmpty>
+               <isNotEmpty property="PassWord" prepend=",">#PassWord#</isNotEmpty>
+               <isNotEmpty property="AgentName" prepend=",">#AgentName#</isNotEmpty>
+               <isNotEmpty property="LicenseNumber" prepend=",">#LicenseNumber#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="UserNo">SELECT IDENT_CURRENT('UserDetails') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AgentEmail, AgentState, PassWord, UserNo, AgentName, LicenseNumber from UserDetails where UserNo = #UserNo#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update UserDetails set
+          <dynamic prepend=" ">
+               <isNotEmpty property="AgentEmail" prepend=",">AgentEmail = #AgentEmail#</isNotEmpty>
+               <isEmpty property="AgentEmail" prepend=",">AgentEmail = null</isEmpty>
+               <isNotEmpty property="AgentState" prepend=",">AgentState = #AgentState#</isNotEmpty>
+               <isEmpty property="AgentState" prepend=",">AgentState = null</isEmpty>
+               <isNotEmpty property="PassWord" prepend=",">PassWord = #PassWord#</isNotEmpty>
+               <isEmpty property="PassWord" prepend=",">PassWord = null</isEmpty>
+               <isNotEmpty property="AgentName" prepend=",">AgentName = #AgentName#</isNotEmpty>
+               <isEmpty property="AgentName" prepend=",">AgentName = null</isEmpty>
+               <isNotEmpty property="LicenseNumber" prepend=",">LicenseNumber = #LicenseNumber#</isNotEmpty>
+               <isEmpty property="LicenseNumber" prepend=",">LicenseNumber = null</isEmpty>
+          </dynamic>
+          where UserNo = #UserNo#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from UserDetails where UserNo = #UserNo#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from UserDetails</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from UserDetails</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AgentEmail, AgentState, PassWord, UserNo, AgentName, LicenseNumber from UserDetails where UserNo = #UserNo#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select UserNo, AgentEmail, AgentState, PassWord, AgentName, LicenseNumber from UserDetails</select>
+     <select id="getUserDetails1" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AgentEmail,AgentState,PassWord,UserNo,AgentName,LicenseNumber,IsActiveAgent,EligibleFirstReviewer,AliasEmail,ZohoUserID,IsActiveZohoUser from UserDetails where IsActiveAgent='Y' order by AgentName</select>
+     <parameterMap id="UserLoginSecurity_pMap" class="java.util.HashMap">
+          <parameter property="role_id" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UserLoginSecurity_p" parameterMap="UserLoginSecurity_pMap" resultClass="java.util.HashMap">{ call UserLoginSecurity_p(?)}</procedure>
+</sqlMap>
+

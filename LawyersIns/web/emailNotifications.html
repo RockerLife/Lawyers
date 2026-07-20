@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Assign</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js"/>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<link href="css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<script src="js/producerOne.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+
+<body onload="loadTemplate();">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<form enctype="multipart/form-data">
+		<!-- Bootstrap Core JavaScript -->
+
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth">
+				<!---------Header Start---------->
+				<div id="header">
+					<span id="#Include:header.html#"></span>
+				</div>
+				<!---------Header End---------->
+
+				<div id="contentSection">
+					<div>
+						<h2 class="questionHeading">Assign New Templates</h2>
+					</div>
+					<div class="form row">
+						<div class="block-form">
+							<div class="paddingTop10">
+								<div id="readOnlySecurityAsignPage">
+									<div id="emailNotifications_freeform_contextdata_01" class="freeFormDiv form-inline">
+										<ul class="inlineBlock">
+											<li class="inlineBlock_2_fix">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>&nbsp;</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<h6>&nbsp;</h6>
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign freeFormLabelWidth">Template :</div>
+														<div class="freeFormListTd tdInput">
+															<select name="email_template" id="email_template" class="form-control">
+																<option value="">Select</option>
+															</select>
+															<div id="error_email_template" class="error" />
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="inlineBlock_2_fix">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>&nbsp;</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<h6>&nbsp;</h6>
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign freeFormLabelWidth">Event name :</div>
+														<div class="freeFormListTd tdInput">
+															<select name="event_name" id="event_name" class="form-control" >
+																<option value="">Select</option>
+															</select>
+															<div id="error_event_name" class="error" />
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="inlineBlock_2_fix">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>&nbsp;</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<h6>&nbsp;</h6>
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign freeFormLabelWidth">Effective Date :</div>
+														<div class="freeFormListTd tdInput iconsStyle2">
+															<span class="input-group-addon">
+																<i class="fa fa-calendar">&nbsp;</i>
+															</span>
+															<input type="text" class="form-control datepicker" name="EffectiveDate" id="EffectiveDate" size="15" />
+															<div id="error_EffectiveDate" class="error" />
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="inlineBlock_2_fix">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>&nbsp;</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<h6>&nbsp;</h6>
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign freeFormLabelWidth">Days :</div>
+														<div class="freeFormListTd tdInput">
+															<select name="Period" id="Period" class="form-control">
+																<option value="30">0-30</option>
+																<option value="31">31-90</option>
+															</select>
+															<div id="error_Period" class="error" />
+														</div>
+													</div>
+												</div>
+											</li>
+											<li class="inlineBlock_1_fix">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>&nbsp;</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<h6>&nbsp;</h6>
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign freeFormLabelWidth">Email Subject :</div>
+														<div class="freeFormListTd tdInput">
+															<input type="text" name="subject" style="width: 592px;" id="subject" class="form-control" />
+															<div id="error_subject" class="error" />
+														</div>
+													</div>
+												</div>
+											</li>
+											
+											<li class="inlineBlock_1_fix">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>&nbsp;</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<h6>&nbsp;</h6>
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign valignTop freeFormLabelWidth">Email Description :</div>
+														<div class="freeFormListTd tdInput">
+															<textarea name="description" style="width: 600px; height: 80px" class="form-control" id="description" ></textarea>
+															<div id="error_description" class="error" />
+														</div>
+													</div>
+												</div>
+											</li>
+											
+											
+											<li class="inlineBlock_1_fix">
+											<div class="freeFormList form-group">
+												
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth" >
+														State :
+													</div>
+												</div>
+												<div class="freeFormListTd tdInput multiSelectSingle">
+													<select name="StateCode" class="selectpicker"
+														multiple id="StateCode">
+															<option value="">All</option>
+													</select>
+													<div id="error_StateCode" class="error" />
+												</div>
+											</div>
+											</div>
+										</li>
+										<li class="inlineBlock_1_fix">
+											<div class="freeFormList form-group">
+												
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth" >
+														Dynamic Content:
+													</div>
+												</div>
+												<div class="freeFormListTd tdInput">
+													<select name="body_dynamicvalues" class="form-control"
+														id="body_dynamicvalues">
+															<option value="">Select</option>
+													</select>
+													<div id="error_body_dynamicvalues" class="error" />
+												</div>
+											</div>
+											</div>
+										 </li>
+										<li class="inlineBlock_1_fix">
+											<div class="freeFormList form-group">
+												
+											<div class="freeFormListTr">
+												<div class="freeFormListTd labelAlign">
+													<div class="freeFormLabelWidth" >
+														Attachment Document:
+													</div>
+												</div>
+												<div class="freeFormListTd tdInput multiSelectSingle">
+													<select name="attachment_content"	class="selectpicker"
+														multiple id="attachment_content">
+															<option value="">Select</option>
+													</select>
+													<div id="error_attachment_content" class="error" />
+												</div>
+											</div>
+											</div>
+										 </li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="buttons borderTop row">
+							<a class="btn back floatLeft" href="javascript:submitform('emailNotificationsList.html','emailNotifications.back','','','');">Back</a>
+							<div class="floatRight">
+								<span id="eval:events.saveEventNotReadOnly" onclick="setInputValuesForTemplates();" >
+									<a class="btn next" href="javascript:submitform('emailNotificationsList.html','emailNotifications.save','','','');" >Save</a>
+								</span>
+								<span id="eval:events.editEvent" onclick="setInputValuesForTemplates();">
+									<a class="btn next" href="javascript:submitform('emailNotificationsList.html','emailNotifications.Modify','','','');" >Update</a>
+								</span>
+							</div>
+						</div>
+					</div>
+					<!---------Footer Start---------->
+					<div id="footer" class="footer">
+						<span id="#Include:footer.html#"></span>
+					</div>
+					<!---------Footer End---------->
+					<table id="emailNotifications_freeform_contextdata_999">
+						<tr>
+							<td>
+								<input type="hidden" name="jsessionid" id="jsessionid" />
+								<input type="hidden" name="divHideShow" id="divHideShow" />
+								<input type="hidden" name="stateCodes" id="stateCodes"/>
+								<input type="hidden" name="DynamicContentNames" id="DynamicContentNames"/>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</form>
+	<script>
+	loadTemplate();
+</script>
+</body>
+
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+
+<script src="js/bootstrap_3-3-6.js"></script>
+<script src="js/bootstrap-select.js"></script>
+</html>

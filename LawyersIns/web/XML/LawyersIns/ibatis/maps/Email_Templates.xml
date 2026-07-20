@@ -1,0 +1,76 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Email_Templates">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Email_Templates</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Email_Templates</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into Email_Templates(
+          <dynamic prepend=" ">
+               <isNotEmpty property="TemplateName" prepend=",">TemplateName</isNotEmpty>
+               <isNotEmpty property="TemplateStatus" prepend=",">TemplateStatus</isNotEmpty>
+               <isNotEmpty property="EmailType" prepend=",">EmailType</isNotEmpty>
+               <isNotEmpty property="TemplateCode" prepend=",">TemplateCode</isNotEmpty>
+               <isNotEmpty property="TemplateCategory" prepend=",">TemplateCategory</isNotEmpty>
+               <isNotEmpty property="AppType" prepend=",">AppType</isNotEmpty>
+               <isNotEmpty property="TemplateDescription" prepend=",">TemplateDescription</isNotEmpty>
+               <isNotEmpty property="TemplateBody" prepend=",">TemplateBody</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="TemplateName" prepend=",">#TemplateName#</isNotEmpty>
+               <isNotEmpty property="TemplateStatus" prepend=",">#TemplateStatus#</isNotEmpty>
+               <isNotEmpty property="EmailType" prepend=",">#EmailType#</isNotEmpty>
+               <isNotEmpty property="TemplateCode" prepend=",">#TemplateCode#</isNotEmpty>
+               <isNotEmpty property="TemplateCategory" prepend=",">#TemplateCategory#</isNotEmpty>
+               <isNotEmpty property="AppType" prepend=",">#AppType#</isNotEmpty>
+               <isNotEmpty property="TemplateDescription" prepend=",">#TemplateDescription#</isNotEmpty>
+               <isNotEmpty property="TemplateBody" prepend=",">#TemplateBody#</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">#RecordType#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="EmailTemplateID">SELECT IDENT_CURRENT('Email_Templates') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EmailTemplateID, TemplateName, TemplateStatus, EmailType, TemplateCode, TemplateCategory, AppType, TemplateDescription, TemplateBody, RecordType, LastUpdateUserID, LastUpdateTimeStamp from Email_Templates where EmailTemplateID = #EmailTemplateID#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update Email_Templates set
+          <dynamic prepend=" ">
+               <isNotEmpty property="TemplateName" prepend=",">TemplateName = #TemplateName#</isNotEmpty>
+               <isEmpty property="TemplateName" prepend=",">TemplateName = null</isEmpty>
+               <isNotEmpty property="TemplateStatus" prepend=",">TemplateStatus = #TemplateStatus#</isNotEmpty>
+               <isEmpty property="TemplateStatus" prepend=",">TemplateStatus = null</isEmpty>
+               <isNotEmpty property="EmailType" prepend=",">EmailType = #EmailType#</isNotEmpty>
+               <isEmpty property="EmailType" prepend=",">EmailType = null</isEmpty>
+               <isNotEmpty property="TemplateCode" prepend=",">TemplateCode = #TemplateCode#</isNotEmpty>
+               <isEmpty property="TemplateCode" prepend=",">TemplateCode = null</isEmpty>
+               <isNotEmpty property="TemplateCategory" prepend=",">TemplateCategory = #TemplateCategory#</isNotEmpty>
+               <isEmpty property="TemplateCategory" prepend=",">TemplateCategory = null</isEmpty>
+               <isNotEmpty property="AppType" prepend=",">AppType = #AppType#</isNotEmpty>
+               <isEmpty property="AppType" prepend=",">AppType = null</isEmpty>
+               <isNotEmpty property="TemplateDescription" prepend=",">TemplateDescription = #TemplateDescription#</isNotEmpty>
+               <isEmpty property="TemplateDescription" prepend=",">TemplateDescription = null</isEmpty>
+               <isNotEmpty property="TemplateBody" prepend=",">TemplateBody = #TemplateBody#</isNotEmpty>
+               <isEmpty property="TemplateBody" prepend=",">TemplateBody = null</isEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType = #RecordType#</isNotEmpty>
+               <isEmpty property="RecordType" prepend=",">RecordType = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where EmailTemplateID = #EmailTemplateID#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from Email_Templates where EmailTemplateID = #EmailTemplateID#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from Email_Templates</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from Email_Templates</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EmailTemplateID, TemplateName, TemplateStatus, EmailType, TemplateCode, TemplateCategory, AppType, TemplateDescription, TemplateBody, RecordType, LastUpdateUserID, LastUpdateTimeStamp from Email_Templates where EmailTemplateID = #EmailTemplateID#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EmailTemplateID, TemplateName, TemplateStatus, EmailType, TemplateCode, TemplateCategory, AppType, TemplateDescription, TemplateBody, RecordType, LastUpdateUserID, LastUpdateTimeStamp from Email_Templates</select>
+     <select id="getAllEmailTemplatesList" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select TemplateCode,TemplateName from Email_Templates where RecordType != 'D' and EmailType='Body'</select>
+     <select id="getAllEmailAttachmentList" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select TemplateCode,TemplateName from Email_Templates where RecordType != 'D' and EmailType='Attachment'</select>
+     <procedure id="FetchAllemailsTemplatesData" resultClass="java.util.HashMap">{ call FetchAllemailsTemplatesData( )}</procedure>
+</sqlMap>
+

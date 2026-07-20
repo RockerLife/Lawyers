@@ -1,0 +1,105 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ClaimIncidentSupp">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ClaimIncidentSupp</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ClaimIncidentSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ClaimIncidentSupp(
+          <dynamic prepend=" ">
+               <isNotEmpty property="NameOfClaimantCi" prepend=",">NameOfClaimantCi</isNotEmpty>
+               <isNotEmpty property="IsClientCi" prepend=",">IsClientCi</isNotEmpty>
+               <isNotEmpty property="IsNonClientCi" prepend=",">IsNonClientCi</isNotEmpty>
+               <isNotEmpty property="IsThisClaimReportedCi" prepend=",">IsThisClaimReportedCi</isNotEmpty>
+               <isNotEmpty property="NameOfInsuranceCompanyCi" prepend=",">NameOfInsuranceCompanyCi</isNotEmpty>
+               <isNotEmpty property="ReportedCiDate" prepend=",">ReportedCiDate</isNotEmpty>
+               <isNotEmpty property="ClaimNotifiedCiDate" prepend=",">ClaimNotifiedCiDate</isNotEmpty>
+               <isNotEmpty property="AllegedErrorCiDate" prepend=",">AllegedErrorCiDate</isNotEmpty>
+               <isNotEmpty property="NameOfFirmPersonnelCi" prepend=",">NameOfFirmPersonnelCi</isNotEmpty>
+               <isNotEmpty property="InsurerLossReserveCi" prepend=",">InsurerLossReserveCi</isNotEmpty>
+               <isNotEmpty property="LastSettlementOfferCi" prepend=",">LastSettlementOfferCi</isNotEmpty>
+               <isNotEmpty property="ClaimantLastDemandCi" prepend=",">ClaimantLastDemandCi</isNotEmpty>
+               <isNotEmpty property="ClosingCiDate" prepend=",">ClosingCiDate</isNotEmpty>
+               <isNotEmpty property="TotalClaimExpensesCi" prepend=",">TotalClaimExpensesCi</isNotEmpty>
+               <isNotEmpty property="DescOfClaimCi" prepend=",">DescOfClaimCi</isNotEmpty>
+               <isNotEmpty property="StepsTakenToPreventClaimCi" prepend=",">StepsTakenToPreventClaimCi</isNotEmpty>
+               <isNotEmpty property="CurrentStatus" prepend=",">CurrentStatus</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="NameOfClaimantCi" prepend=",">#NameOfClaimantCi#</isNotEmpty>
+               <isNotEmpty property="IsClientCi" prepend=",">#IsClientCi#</isNotEmpty>
+               <isNotEmpty property="IsNonClientCi" prepend=",">#IsNonClientCi#</isNotEmpty>
+               <isNotEmpty property="IsThisClaimReportedCi" prepend=",">#IsThisClaimReportedCi#</isNotEmpty>
+               <isNotEmpty property="NameOfInsuranceCompanyCi" prepend=",">#NameOfInsuranceCompanyCi#</isNotEmpty>
+               <isNotEmpty property="ReportedCiDate" prepend=",">#ReportedCiDate#</isNotEmpty>
+               <isNotEmpty property="ClaimNotifiedCiDate" prepend=",">#ClaimNotifiedCiDate#</isNotEmpty>
+               <isNotEmpty property="AllegedErrorCiDate" prepend=",">#AllegedErrorCiDate#</isNotEmpty>
+               <isNotEmpty property="NameOfFirmPersonnelCi" prepend=",">#NameOfFirmPersonnelCi#</isNotEmpty>
+               <isNotEmpty property="InsurerLossReserveCi" prepend=",">#InsurerLossReserveCi#</isNotEmpty>
+               <isNotEmpty property="LastSettlementOfferCi" prepend=",">#LastSettlementOfferCi#</isNotEmpty>
+               <isNotEmpty property="ClaimantLastDemandCi" prepend=",">#ClaimantLastDemandCi#</isNotEmpty>
+               <isNotEmpty property="ClosingCiDate" prepend=",">#ClosingCiDate#</isNotEmpty>
+               <isNotEmpty property="TotalClaimExpensesCi" prepend=",">#TotalClaimExpensesCi#</isNotEmpty>
+               <isNotEmpty property="DescOfClaimCi" prepend=",">#DescOfClaimCi#</isNotEmpty>
+               <isNotEmpty property="StepsTakenToPreventClaimCi" prepend=",">#StepsTakenToPreventClaimCi#</isNotEmpty>
+               <isNotEmpty property="CurrentStatus" prepend=",">#CurrentStatus#</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">#VersionSequence#</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="ClaimIncidentSuppKey">SELECT IDENT_CURRENT('ClaimIncidentSupp') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ClaimIncidentSuppKey, NameOfClaimantCi, IsClientCi, IsNonClientCi, IsThisClaimReportedCi, NameOfInsuranceCompanyCi, ReportedCiDate, ClaimNotifiedCiDate, AllegedErrorCiDate, NameOfFirmPersonnelCi, InsurerLossReserveCi, LastSettlementOfferCi, ClaimantLastDemandCi, ClosingCiDate, TotalClaimExpensesCi, DescOfClaimCi, StepsTakenToPreventClaimCi, CurrentStatus, VersionSequence, PolicyKey from ClaimIncidentSupp where ClaimIncidentSuppKey = #ClaimIncidentSuppKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ClaimIncidentSupp set
+          <dynamic prepend=" ">
+               <isNotEmpty property="NameOfClaimantCi" prepend=",">NameOfClaimantCi = #NameOfClaimantCi#</isNotEmpty>
+               <isEmpty property="NameOfClaimantCi" prepend=",">NameOfClaimantCi = null</isEmpty>
+               <isNotEmpty property="IsClientCi" prepend=",">IsClientCi = #IsClientCi#</isNotEmpty>
+               <isEmpty property="IsClientCi" prepend=",">IsClientCi = null</isEmpty>
+               <isNotEmpty property="IsNonClientCi" prepend=",">IsNonClientCi = #IsNonClientCi#</isNotEmpty>
+               <isEmpty property="IsNonClientCi" prepend=",">IsNonClientCi = null</isEmpty>
+               <isNotEmpty property="IsThisClaimReportedCi" prepend=",">IsThisClaimReportedCi = #IsThisClaimReportedCi#</isNotEmpty>
+               <isEmpty property="IsThisClaimReportedCi" prepend=",">IsThisClaimReportedCi = null</isEmpty>
+               <isNotEmpty property="NameOfInsuranceCompanyCi" prepend=",">NameOfInsuranceCompanyCi = #NameOfInsuranceCompanyCi#</isNotEmpty>
+               <isEmpty property="NameOfInsuranceCompanyCi" prepend=",">NameOfInsuranceCompanyCi = null</isEmpty>
+               <isNotEmpty property="ReportedCiDate" prepend=",">ReportedCiDate = #ReportedCiDate#</isNotEmpty>
+               <isEmpty property="ReportedCiDate" prepend=",">ReportedCiDate = null</isEmpty>
+               <isNotEmpty property="ClaimNotifiedCiDate" prepend=",">ClaimNotifiedCiDate = #ClaimNotifiedCiDate#</isNotEmpty>
+               <isEmpty property="ClaimNotifiedCiDate" prepend=",">ClaimNotifiedCiDate = null</isEmpty>
+               <isNotEmpty property="AllegedErrorCiDate" prepend=",">AllegedErrorCiDate = #AllegedErrorCiDate#</isNotEmpty>
+               <isEmpty property="AllegedErrorCiDate" prepend=",">AllegedErrorCiDate = null</isEmpty>
+               <isNotEmpty property="NameOfFirmPersonnelCi" prepend=",">NameOfFirmPersonnelCi = #NameOfFirmPersonnelCi#</isNotEmpty>
+               <isEmpty property="NameOfFirmPersonnelCi" prepend=",">NameOfFirmPersonnelCi = null</isEmpty>
+               <isNotEmpty property="InsurerLossReserveCi" prepend=",">InsurerLossReserveCi = #InsurerLossReserveCi#</isNotEmpty>
+               <isEmpty property="InsurerLossReserveCi" prepend=",">InsurerLossReserveCi = null</isEmpty>
+               <isNotEmpty property="LastSettlementOfferCi" prepend=",">LastSettlementOfferCi = #LastSettlementOfferCi#</isNotEmpty>
+               <isEmpty property="LastSettlementOfferCi" prepend=",">LastSettlementOfferCi = null</isEmpty>
+               <isNotEmpty property="ClaimantLastDemandCi" prepend=",">ClaimantLastDemandCi = #ClaimantLastDemandCi#</isNotEmpty>
+               <isEmpty property="ClaimantLastDemandCi" prepend=",">ClaimantLastDemandCi = null</isEmpty>
+               <isNotEmpty property="ClosingCiDate" prepend=",">ClosingCiDate = #ClosingCiDate#</isNotEmpty>
+               <isEmpty property="ClosingCiDate" prepend=",">ClosingCiDate = null</isEmpty>
+               <isNotEmpty property="TotalClaimExpensesCi" prepend=",">TotalClaimExpensesCi = #TotalClaimExpensesCi#</isNotEmpty>
+               <isEmpty property="TotalClaimExpensesCi" prepend=",">TotalClaimExpensesCi = null</isEmpty>
+               <isNotEmpty property="DescOfClaimCi" prepend=",">DescOfClaimCi = #DescOfClaimCi#</isNotEmpty>
+               <isEmpty property="DescOfClaimCi" prepend=",">DescOfClaimCi = null</isEmpty>
+               <isNotEmpty property="StepsTakenToPreventClaimCi" prepend=",">StepsTakenToPreventClaimCi = #StepsTakenToPreventClaimCi#</isNotEmpty>
+               <isEmpty property="StepsTakenToPreventClaimCi" prepend=",">StepsTakenToPreventClaimCi = null</isEmpty>
+               <isNotEmpty property="CurrentStatus" prepend=",">CurrentStatus = #CurrentStatus#</isNotEmpty>
+               <isEmpty property="CurrentStatus" prepend=",">CurrentStatus = null</isEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence = #VersionSequence#</isNotEmpty>
+               <isEmpty property="VersionSequence" prepend=",">VersionSequence = null</isEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+          </dynamic>
+          where ClaimIncidentSuppKey = #ClaimIncidentSuppKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ClaimIncidentSupp where ClaimIncidentSuppKey = #ClaimIncidentSuppKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ClaimIncidentSupp</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ClaimIncidentSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ClaimIncidentSuppKey, NameOfClaimantCi, IsClientCi, IsNonClientCi, IsThisClaimReportedCi, NameOfInsuranceCompanyCi, ReportedCiDate, ClaimNotifiedCiDate, AllegedErrorCiDate, NameOfFirmPersonnelCi, InsurerLossReserveCi, LastSettlementOfferCi, ClaimantLastDemandCi, ClosingCiDate, TotalClaimExpensesCi, DescOfClaimCi, StepsTakenToPreventClaimCi, CurrentStatus, VersionSequence, PolicyKey from ClaimIncidentSupp where ClaimIncidentSuppKey = #ClaimIncidentSuppKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ClaimIncidentSuppKey, NameOfClaimantCi, IsClientCi, IsNonClientCi, IsThisClaimReportedCi, NameOfInsuranceCompanyCi, ReportedCiDate, ClaimNotifiedCiDate, AllegedErrorCiDate, NameOfFirmPersonnelCi, InsurerLossReserveCi, LastSettlementOfferCi, ClaimantLastDemandCi, ClosingCiDate, TotalClaimExpensesCi, DescOfClaimCi, StepsTakenToPreventClaimCi, CurrentStatus from ClaimIncidentSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

@@ -1,0 +1,991 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>List</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<link rel="STYLESHEET" type="text/css" href="calendar/rich_calendar.css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js">
+	
+</script>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript">
+	function checks() {
+		document.getElementById("EffectiveDate").disabled = true;
+		alert(document.getElementById("EffectiveDate").style.readOnly);
+	}
+</script>
+
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/managetestharness.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+<body>
+	<form name="myForm">
+		<div id="contextLinks"></div>
+		<table width="99%" border="0" align="center" cellspacing="0"
+			cellpadding="0">
+			<tr>
+				<td>
+					<div >
+						<table width="100%" border="0" cellpadding="0" cellspacing="0">
+							<tr>
+								<td height="50">
+									<table width="98%" border="0" align="center" cellpadding="0"
+										cellspacing="0">
+										<tr>
+											<td valign="bottom"><img
+												src="image/logo_protexureaccountants1.png" width="325"
+												height="64" /></td>
+											<td align="right">
+												<table border="0" cellspacing="0" cellpadding="0">
+
+													<tr>
+													<td align="center" valign="bottom"
+																id="eval:LawyersRule.isShowUserLoginDetails">
+																<table id="workq_freeform_contextdata_555" Border="0"
+																	cellpadding="0" cellspacing="0">
+																	<tr>
+																		<td><label class="txt11BoldBlack" nowrap
+																			style="font-size: 11px">Welcome&nbsp;&nbsp;</label></td>
+																		<td align="right" style="font-size: 11px" nowrap><label name="AgentName"
+																			style="font-size: 10px" id="AgentName"
+																			class="txt11BoldBlack"></label> (<label
+																			name="UserRoleName" style="font-size: 10px"
+																			id="UserRoleName" class="txt11BoldBlack"></label>)&nbsp;&nbsp;</td>
+				
+																	</tr>
+																</table>
+															</td>
+														<td align="center" valign="bottom">
+															<table width="100%" border="0" cellspacing="0"
+																cellpadding="0">
+																<tr>
+																	<td colspan="2" align="center"><img
+																		src="img/backPortal1.jpg" width="20" height="22" /></td>
+																</tr>
+																<tr>
+																	<td nowrap="nowrap" class="topLink"><a
+																		href="javascript:submitform('workq.html','list.changepassword','','');"
+																		class="topLink">Change Password</a></td>
+																</tr>
+															</table>
+														</td>
+															
+														<td align="center" valign="bottom" class="txtBold11Maroon">
+															&nbsp; |&nbsp;</td>
+														<td align="center">
+															<table width="100%" border="0" cellspacing="0"
+																cellpadding="0">
+																<tr>
+																	<td align="center"><img src="img/backPortal1.jpg"
+																		width="20" height="22" /></td>
+																</tr>
+																<tr>
+																	<td nowrap="nowrap" class="topLink"><a
+																		href="javascript:submitform('indexagent.html','list.homepage','','');"
+																		class="topLink">Back to Portal</a></td>
+																</tr>
+															</table>
+														</td>
+														<td align="center" valign="bottom" class="txtBold11Maroon">
+															&nbsp; |&nbsp;</td>
+														<td align="center" id="eval:LawyersRule.isAgentState">
+															<table width="100%" border="0" cellspacing="0"
+																cellpadding="0">
+																<tr>
+																	<td align="center"><img src="img/backWorkq1.jpg"
+																		width="20" height="22" /></td>
+																</tr>
+																<tr>
+																	<td nowrap="nowrap" class="topLink"><a
+																		href="javascript:submitform('workq.html','list.backtoworkq','','');"
+																		class="topLink">Back to workq</a></td>
+																</tr>
+															</table>
+														</td>
+														<td align="center" valign="bottom" 	class="txtBold11Maroon"
+																			id="eval:LawyersRule.showBackToList">|</td>
+																		<td align="center" id="eval:LawyersRule.showBackToList">
+																			<table width="100%" border="0" cellspacing="0"
+																				cellpadding="0">
+																				<tr>
+																					<td align="center"><img
+																						src="img/backList1.jpg" width="20" height="22" />
+																					</td>
+																				</tr>
+																				<tr>
+																					<td class="topLink"><a
+																						href="javascript:submitform('list.html','list.backtolist','','');"
+																						class="topLink">Back to List</a></td>
+																				</tr>
+																			</table>
+																		</td>
+																		
+														<td id="eval:LawyersRule.isComingFromBrokerageList" align="center" valign="bottom" class="txtBold11Maroon">
+															&nbsp; |&nbsp;</td>				
+														<td align="center" id="">
+																<div id="eval:LawyersRule.isComingFromBrokerageList">
+																
+																	<table id="eval:LawyersRule.hideBackToListOnSubProducerFormPage" width="100%" border="0" cellspacing="0"
+																		cellpadding="0">
+																		<tr>
+																			<td align="center"><img src="img/backList1.jpg"
+																				width="20" height="22" /></td>
+																		</tr>
+																		<tr>
+																			<td class="topLink"><a
+																				href="javascript:submitform('addEditBrokeragePolicyList.html','list.backtobrokeragePoliylist','','');"
+																				class="topLink">Back to Brokerage List</a></td>
+																		</tr>
+																	</table>
+																	
+																	</div>
+																</td>				
+														
+														<td id="eval:LawyersRule.isAgentStatelostworkq" align="center" valign="bottom" class="txtBold11Maroon">
+															&nbsp; |&nbsp;</td>
+														
+														<td align="center" id="eval:LawyersRule.isAgentStatelostworkq">
+															<table width="100%" border="0" cellspacing="0"
+																cellpadding="0">
+																<tr>
+																	<td align="center"><img src="img/backWorkq1.jpg"
+																		width="20" height="22" /></td>
+																</tr>
+																<tr>
+																	<td nowrap="nowrap" class="topLink"><a
+																		href="javascript:submitform('lostWorkq.html','list.backtolostworkq','','');"
+																		class="topLink">Back to lostWorkq</a></td>
+																</tr>
+															</table>
+														</td>
+														<td align="center" valign="bottom" class="txtBold11Maroon">
+															&nbsp; &nbsp;</td>
+														<td align="center">
+															<table width="100%" border="0" cellspacing="0"
+																cellpadding="0">
+																<tr id="eval:LawyersRule.isAgent">
+																	<td align="center"></td>
+																</tr>
+																<tr id="eval:LawyersRule.isAgent">
+																	<td class="topLink"><a
+																		href="javascript:submitform('sessionList.html','list.showSessionList','','');"
+																		class="topLink"></a></td>
+																	
+																</tr>
+															</table>
+														</td>
+														
+													</tr>
+
+
+												</table>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="15" class="redLeft"></td>
+											<td align="right" class="redCenter">
+												<table width="100%" border="0" cellspacing="0"
+													cellpadding="0">
+													<tr>
+														<td align="left"><img src="img/getting_coverage.jpg"
+															width="597" height="33" /></td>
+														<td align="right"><img src="img/call.jpg" width="289"
+															height="24" /></td>
+													</tr>
+												</table>
+											</td>
+											<td width="15" class="redRight"></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="15" class="grayLeft"><img src="img/space.gif"
+												width="15" height="1" /></td>
+											<td class="grayCenter">&nbsp;</td>
+											<td width="15" class="grayRight"><img
+												src="img/space.gif" width="15" height="1" /></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td width="15" class="grayRoundLeft"></td>
+											<td align="right" class="grayRepeat"><span
+												class="grayRoundRight">&nbsp;</span></td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							
+							
+							<tr>
+								<td align="right"></td>
+							</tr>
+
+						</table>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<h2 id="eval:LawyersRule.isNotShowHistoryList" class="questionHeading">List</h2>
+					<h2 id="eval:LawyersRule.isShowHistoryList" class="questionHeading">History List</h2>
+				</td>
+								
+
+							</tr>
+							<tr>
+													<td align="center" height="20"></td>
+												</tr>
+			<tr>
+				<td>
+					<div id="contentList" class="listPage">
+						<div id="ajax_sorting">
+							<table width="100%" border="0" align="center" cellpadding="0"
+								cellspacing="0">
+								<tr>
+									<td valign="top">
+										<div>
+											<table width="100%" border="0" align="center"
+												cellspacing="10" cellpadding="10">
+												
+											</table>
+										</div>
+										<div>
+											<div id="eval:LawyersRule.isSearchListEmpty">
+												<table width="100%" border="0" align="center"
+													cellspacing="10" cellpadding="10">
+													<tr>
+														<td align="center" valign="middle" height="320">No
+															search result found.</td>
+													</tr>
+												</table>
+											</div>
+											
+											<div id="eval:LawyersRule.isSearchListNotEmpty">
+												<div id="ajax_sorting">
+													<table width="100%" border="0" align="center"
+														cellpadding="0" cellspacing="0" class="border1"
+														id="Search_firm_list_01">
+														<tr class="paddingListing pagination">
+															<td colspan="30">
+																<table width="100%" border="0" cellpadding="0"
+																	cellspacing="5">
+																	<tr id="Search_firm_pagination_01">
+																		<td class="linright">Page:</td>
+																		<td width="50"><select id="pagenumber"
+																			onchange="ajax_sorting" name="pagenumber"
+																			class="inputbox">
+																		</select></td>
+																		<td nowrap="nowrap" class="linright">Records per
+																			Page:</td>
+																		<td width="75%"><select id="recordsperpage"
+																			onchange="ajax_sorting" name="recordsperpage"
+																			class="inputbox">
+																		</select></td>
+																		<td id="Search_firm_firstpagelink_01"><a
+																			href="javascript:ajaxpagination('list.html','ajax_sorting','','');"
+																			title="FirstPage" tabindex="21"> <img
+																				src="img/button_sort_first.gif" width="25"
+																				height="20" border="0" />
+																		</a></td>
+																		<td id="Search_firm_previouspagelink_01"><a
+																			href="javascript:ajaxpagination('list.html','ajax_sorting','','');"
+																			title="Previous" tabindex="21"> <img
+																				src="img/button_sort_back.gif" width="25"
+																				height="20" border="0" />
+																		</a></td>
+																		<td class="linright">Viewing</td>
+																		<td id="Search_firm_recordsfrom_01"
+																			class=" txtBold13Maroon"></td>
+																		<td class="linright">to</td>
+																		<td id="Search_firm_recordsto_01"
+																			class=" txtBold13Maroon"></td>
+																		<td class="linright">from</td>
+																		<td id="Search_firm_totalrecords_01"
+																			class=" txtBold13Maroon"></td>
+																		<td id="Search_firm_nextpagelink_01"><a
+																			href="javascript:ajaxpagination('list.html','ajax_sorting','','');"
+																			title="NextPage" tabindex="21"> <img
+																				src="img/button_sort_next.gif" width="25"
+																				height="20" border="0" />
+																		</a></td>
+																		<td id="Search_firm_lastpagelink_01"><a
+																			href="javascript:ajaxpagination('list.html','ajax_sorting','','');"
+																			title="LastPage" tabindex="21"> <img
+																				src="img/button_sort_last.gif" width="25"
+																				height="20" border="0" />
+																		</a></td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+													
+														<tr class="tableheading" id="Search_firm_list_header_01">
+															
+															<td width="16" align="left" class="tablehead">
+															<span id="internalUsers_security">
+															<span  id="eval:LawyersRule.isBridgeApp">
+																<span id="block_field_isBridgeApp_row_link">&nbsp;</span></span></span>
+															</td>
+																	
+															<td width="16" align="left" class="tablehead">
+															<span id="internalUsers_security">
+															<span  id="eval:LawyersRule.isShowEndorsement">
+																<span id="block_field_PolicyEndorsement_row_link">&nbsp;</span></span></span>
+															</td>
+
+															<td align="left" class="tablehead">
+															
+																<span id="block_field_sendquotationmail_row_link"> &nbsp;</span>
+															
+															</td>
+															<td align="left" class="tablehead"> <span
+																	id="completeAppLink_security"> <span
+																		id="block_field_sendcompleteapplinkmail_row_link" />
+																
+															</span></td>
+															<td width="" align="left" nowrap class="left-link"
+																id="block_field_IsApplicationCompleted" height="30px">															
+															</td>
+
+															<td width="" align="left" nowrap class="left-link"
+																id="block_field_QuoteNotViewed" height="30px"></td>
+
+															<!-- <td width="6%" align="left" nowrap class="left-link"
+																id="block_field_AppDays" height="30px"></td> -->
+															<td width="" align="left" nowrap class="left-link"
+																id="block_field_IsIndicationMailSent" height="30px"></td>																
+															
+															<td width="8%" align="left" nowrap class="left-link"
+																id="sorting(,A,ajax_sorting):block_field_QuoteNumber"
+																style="border-right: 1px solid #ffffff; padding: 0px 2px;">
+																Quote No.</td>
+															<td width="25%" align="left" class="left-link"
+																id="sorting(,A,ajax_sorting):block_field_AccountName"
+																style="border-right: 1px solid #ffffff; padding: 0px 2px;">
+																Firm Name</td>
+															<td width="8%" align="left" class="left-link"
+																id="sorting(,A,ajax_sorting):block_field_PolicyNumber"
+																style="border-right: 1px solid #ffffff; padding: 0px 2px;">
+																Policy Number</td>
+															<td width="9%" align="left" class="left-link"
+																id="sorting(,A,ajax_sorting):block_field_StateDesc"
+																style="border-right: 1px solid #ffffff; padding: 0px 2px;">
+																State</td>
+															<td width="7%" align="left" nowrap class="left-link"
+																id="sorting(,A,ajax_sorting):block_field_PolicyEffectiveDate"
+																style="border-right: 1px solid #ffffff; padding: 0px 2px;">
+																Effective Date</td>
+															
+															<td width="7%" align="left" nowrap class="left-link"
+																id="sorting(,A,ajax_sorting):block_field_AppCreatedDate"
+																style="border-right: 1px solid #ffffff; padding: 0px 2px;">
+																Creation Date</td>
+															<td width="10%" align="left" nowrap class="left-link"
+																id="sorting(,A,ajax_sorting):block_field_AgentName"
+																style="border-right: 1px solid #ffffff; padding: 0px 2px;">
+																1st Reviewer</td>
+															<td width="8%" nowrap="nowrap" align="left" class="left-link"
+																id="sorting(,A,ajax_sorting):block_field_StatusDesc"
+																style="border-right: 1px solid #ffffff; padding: 0px 2px;">
+																Status</td>
+															<td width="8%" align="left" class="left-link"
+																id="sorting(,A,ajax_sorting):block_field_Premium"
+																style="border-right: 1px solid #ffffff; padding: 0px 2px;">
+																Premium</td>
+															<td width="6%" align="left" class="left-link"
+																id="sorting(,A,ajax_sorting):block_field_FullQuick"
+																style="border-right: 1px solid #ffffff; padding: 0px 2px;">
+																QuoteType</td>
+															<td width="6%" align="left" class="left-link"
+																id="sorting(,A,ajax_sorting):block_field_LOBDesc"
+																style="border-right: 1px solid #ffffff; padding: 0px 2px;">
+																LOB</td>
+															<td width="" align="left" class="tablehead"
+																id="block_field_edit_row_link">&nbsp;</td>
+
+															<!--
+																<td width="16" align="left" class="tablehead"
+																	id="block_field_downloadexcel_row_link">
+																	&nbsp;
+
+																</td>
+																
+																 -->
+															<!-- <td width="16" align="left" class="tablehead"><span
+																id="block_field_downloadexcel_row_link"></span> &nbsp;</td> -->
+															<td width="16" align="left" class="tablehead"><span
+																id="block_field_downloadpdf_row_link"> &nbsp;</span></td>
+															<!--
+															<td width="16" align="left" class="tablehead">
+																<span id="block_field_downloadquoteletterpdf_row_link">
+																	&nbsp;</span>
+															</td>
+															 -->
+															<td width="16" align="left" class="tablehead"><span
+																id="block_field_changestatus_row_link">&nbsp;</span></td>
+															
+															
+															<!--  
+																<td width="16" align="left" class="tablehead">
+																	<span id="block_field_premium_row_link"></span> &nbsp;
+
+																</td>
+																-->
+
+															<td width="" align="left" class="tablehead"
+																id="block_field_deletePolicy_row_link">&nbsp;</td>
+
+															<td width="" align="left" class="tablehead"><span
+																id="block_field_document_row_link">&nbsp;</span></td>
+															<td width="" align="left" class="tablehead" ><span
+																id="block_field_comment_row_link">&nbsp;</span></td>
+															<td width="" align="left" class="tablehead"><span
+																id="block_field_renew_row_link">&nbsp;</span></td>
+															<td width="" align="left" class="tablehead">
+																<span id="block_field_claim_row_link">&nbsp;</span>
+															</td>
+															<td width="" align="left" class="tablehead">
+															<span id="eval:LawyersRule.showHistoryLink">
+															<span
+																id="block_field_history_row_link"> &nbsp;</span></span></td>
+															<td align="left" class="tablehead">
+															<span id="underwriterLinkListPage_security">
+															<span
+																id="block_field_underwriter_row_link"> &nbsp;</span></span>
+															</td>
+															<td align="left" class="tablehead">
+															<span id="eval:LawyersRule.isShowAdditionalInformationIcon"> &nbsp;</span>
+															</td>	
+															
+														 <td width="" align="left" class="tablehead"><span
+																id="block_field_renewalreview_row_link">&nbsp;</span>
+														</td>
+                                                             
+															<td id="actionLinkListPage_security">
+															<span id="block_field_filableApplicationPdf_row_link"></span>
+															<span id="block_field_sendregistrationmail_row_link"></span>
+															<span id="block_field_resetpassword_row_link"></span>
+															<span id="block_field_firstreviewer_row_link"></span>
+															<span id="block_field_copyData_row_link"></span>
+															<span id="block_field_changelostworkq_row_link"></span>
+															<span id="block_field_brokeragePolicy_row_link"></span>
+															<span id="block_field_renewBrokeragePolicy_row_link"></span>
+															</td>
+														
+															<td></td>
+															
+														</tr>
+														<tbody id="Search_firm_list_data_2">
+															<tr class="bglightGray">
+																
+																<td align="center" valign="middle" nowrap="nowrap">
+																<span id="internalUsers_security">
+																		
+																		<span id="eval:LawyersRule.isBridgeApp">
+																		<span id="block_field_isBridgeApp_row_link">
+																			<img title="BridgeApp" src="img/icon_bridge.png" width="18px" height="18px"/> </a> </span>
+																	</span>
+																	</span>
+																</td>
+																	
+																<td align="center" valign="middle" nowrap="nowrap">
+																<span id="internalUsers_security">
+																		<span id="eval:LawyersRule.isShowEndorsement">
+																		<span id="eval:LawyersRule.HideERPEndorsementlogo">
+																		<span id="block_field_PolicyEndorsement_row_link">
+																			<a	href="javascript:submitform('Endorsement.html','list.policyEndorsement','','');"
+																						class="Link_blue"><img title="Endorsement" src="img/endrosement.png" width="18px" height="18px"/> </a> </span>
+																	</span>
+																	</span></span>
+																</td>
+
+
+																<td align="center" valign="middle" nowrap="nowrap"> 
+																	<span id="eval:LawyersRule.isCFAllowedToIssuePolicy">                                   
+                                        								<span id="PricingCompany_Security">
+                                        								<span  id="eval:LawyersRule.showSendSignAndPayEmail">
+                                        								<span 	id="block_field_sendquotationmail_row_link"><a
+																			href="javascript:submitform('list.html','list.sendsignandpaymail','','');"
+																			class="Link_blue"><img width="16px" height="16px"
+																				src="img/signandpay.png" title="Sign And Pay Email"
+																				border="0" /></a></span></span>
+																				</span></span>
+																</td>
+                                        						<td align="center" valign="middle" nowrap="nowrap">  
+                                        							  <span id="completeAppLink_security">            
+                                        								<span	id="eval:LawyersRule.showCompleteAppLinkEmail"><span
+																		id="block_field_sendcompleteapplinkmail_row_link"><a
+																			href="javascript:submitform('list.html','list.completeAppLink','','');"
+																			class="Link_blue"><img width="16px" height="16px"
+																				src="img/mail.jpg"
+																				title="Send Complete App Link Email" border="0" /></a></span></span>
+																				</span>
+																</td>	
+
+																<td align="left" id="block_field_IsApplicationCompleted"
+																	height="30px" style="border-bottom: 1px solid #ffffff;">
+																	<span id="eval:LawyersRule.IsApplicationCompleted"><img
+																		src="img/completed.png" height="16px" width="16px"
+																		alt="Completed" title="Completed Application" /> </span>
+																</td>
+
+																<td align="left" id="sorting:block_field_QuoteNotViewed"
+																	height="30px" style="border-bottom: 1px solid #ffffff;">
+																	<span id="eval:LawyersRule.QuoteNotViewed"><img
+																		src="img/ico_bulbOn.jpg" title="Quote Not Viewed" /> </span>
+																</td>
+
+																<!-- <td align="left" id="sorting:block_field_AppDays"
+																	height="30px" style="border-bottom: 1px solid #ffffff;">
+																	<span id="eval:LawyersRule.isViewedNot"><img
+																		src="img/icon_hot.jpg" title="Hot Application"/> </span>
+																</td> -->
+																<td align="left" id="block_field_IsIndicationMailSent"
+																	height="30px" style="border-bottom: 1px solid #ffffff;">
+																	<span id="eval:LawyersRule.showIndicationMailSent"><img
+																		src="img/email_notsent.png" height="16px" width="16px" alt="Indication mail sent" title="Indication mail sent" /> </span>
+																</td>
+																<td align="left" nowrap
+																	id="sorting:block_field_QuoteNumber"
+																	style="border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 0px 2px;"></td>
+																<td align="left" id="sorting:block_field_AccountName"
+																	style="border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 0px 2px;"></td>
+																<td align="left" id="sorting:block_field_PolicyNumber"
+																	style="border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 0px 2px;"></td>
+																<td align="left" id="sorting:block_field_StateDesc"
+																	style="border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 0px 2px;"></td>
+																<td align="left"
+																	id="sorting:block_field_PolicyEffectiveDate"
+																	style="border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 0px 2px;"></td>
+																
+																<td align="left" id="sorting:block_field_AppCreatedDate"
+																	style="border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 0px 2px;"></td>
+																<td align="left" id="sorting:block_field_AgentName"
+																	style="border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 0px 2px;"></td>
+																<!-- <td nowrap="nowrap" align="left" id="sorting:block_field_StatusDesc"
+																	style="border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 0px 2px;"></td>-->
+																<td id="policyStatusDesc" align="left"
+																	style="border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 0px 2px;" nowrap>
+																	<span id="1eval:LawyersRule.showStatus">
+																		<span id="sorting:block_field_StatusDesc"></span>
+																</span>
+																</td>
+																<td align="left"
+																	style="border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 0px 2px;">
+																	<span id="eval:LawyersRule.ShowInvoicedPremium">
+																		<span id="sorting:block_field_Premium"></span>
+																</span>
+																</td>
+
+
+																<td align="left" id="sorting:block_field_FullQuick"
+																	style="border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 0px 2px;"></td>
+																
+																<td> 
+																<span id="">
+																<align="left" id="sorting:block_field_LOBDesc"
+																 style="border-right: 1px solid #ffffff; border-bottom: 1px solid #ffffff; padding: 0px 2px;">
+																</align></span>
+																 </td>
+																
+																<td align="center" valign="middle" nowrap="nowrap"
+																	id="block_field_edit_row_link"
+																	style="border-bottom: 1px solid #ffffff;"><!--<a
+																	href="javascript:submitform('FirmNewApp.html|RenewFirm.html|firm.html|quickquoteinsured.html','list.Edit','forwardeval','LawyersRule.showFullQuoteNewAppFlow|LawyersRule.IsRenewalPolicy|LawyersRule.showFullQuoteOldAppFlow|LawyersRule.showQuickQuote');"
+																	class="Link_blue"> -->
+																	<a
+																	href="javascript:submitform('FirmNewApp.html|RenewFirm.html|firm.html|indicationinjack.html|quickquoteinsured.html|addEditBrokeragePolicy.html','list.Edit','forwardeval','LawyersRule.showFullQuoteNewAppFlow|LawyersRule.IsRenewalPolicyNoBroker|LawyersRule.showFullQuoteOldAppFlowNoBroker|LawyersRule.showQuickQuoteIndicationNoBroker|LawyersRule.showQuickQuotePageNoBroker|LawyersRule.isBrokeragePolicy');"
+																	class="Link_blue">
+																	<span id="eval:LawyersRule.showFullQuote"> 
+																		<span
+																			id="eval:LawyersRule.ShowFullQuoteEdit"> <img
+																				src="img/edit.png" title="Edit" border="0" />
+																		</span> 
+																		<span id="eval:LawyersRule.ShowView"> <img
+																				src="img/icon_select.png" title="View" border="0" />
+																		</span>
+																	</span> 
+																	<span id="eval:LawyersRule.showQuickQuoteAndIndication"> <span
+																			id="eval:LawyersRule.ShowQuickQuoteEdit"> <img
+																				src="img/edit.png" title="Edit" border="0" />
+																		</span> <!--   
+																			 <span id="eval:LawyersRule.ShowQuickQuoteView">
+																			  	<img	src="img/icon_select.png" title="View" border="0" />
+																			</span> -->
+																	</span> <!--  
+																	 <span id="eval:LawyersRule.ShowViewOrEdit">
+																			  <span	id="eval:LawyersRule.isQuickQuote"> 
+																			  	<img	src="img/edit.png" title="Edit" border="0" />
+																			  </span>
+																			   <span id="eval:LawyersRule.isFullQuote">
+																			    	<img src="img/icon_select.png" title="View" border="0" />
+																			</span> 
+																	</span>-->
+																</a></td>
+
+																<!-- <td align="center" valign="middle" nowrap="nowrap"
+																	style="border-bottom: 1px solid #ffffff;"><span
+																	id="eval:LawyersRule.showNotQuickQuote"> <span
+																		id="eval:LawyersRule.showExcelDownload"> <span
+																			id="block_field_downloadexcel_row_link"> <a
+																				href="javascript:submitform('list.html','list.downloadexcel','','');"
+																				class="Link_blue"><img src="img/icon_excelD.jpg"
+																					title="Download Excel" border="0" /> </a>
+																		</span>
+																	</span>
+																</span></td> -->
+																<td align="center" valign="middle" nowrap="nowrap"
+																	style="border-bottom: 1px solid #ffffff;"><span
+																	id="downloadAppListPage_security"> <span><span
+																			id="block_field_downloadpdf_row_link"><a
+																				href="javascript:submitform('list.html','list.downloadpdf','','');"
+																				class="Link_blue"><img src="img/icon_pdf.jpg"
+																					title="Download PDF" border="0" /> </a> </span> </span>
+																</span></td>
+																<!-- 
+																<td align="center" valign="middle" nowrap="nowrap">
+																	<span id="eval:LawyersRule.ShowDownloadQLDoc"><span
+																		id="block_field_downloadquoteletterpdf_row_link"><a
+																			href="javascript:submitform('list.html','list.downloadquoteletterpdf','','');"
+																			class="Link_blue"><img
+																					src="img/icon_location.gif"
+																					alt="Download Quote Letter" width="15" height="17"
+																					border="0" />
+																		</a>
+																	</span>
+																	</span>
+																</td>
+																 -->
+																<td align="center" valign="middle" nowrap="nowrap"
+																	style="border-bottom: 1px solid #ffffff;">
+																	<span id="eval:LawyersRule.isChangeStatusVisibile">
+																	<span
+																	id="eval:LawyersRule.showNotQuickQuote"> <span
+																		id="eval:LawyersRule.ShowChangeStatus"> 
+																		<span
+																		id="eval:LawyersRule.ShowChangeStatusVisibleForSubproducer">
+																		<span
+																			id="block_field_changestatus_row_link"> <a
+																				href="javascript:rightclickmenu('status_freeform.html','status_freeform.ChangeStatus','','','div_ajaxpostionpremium_freeform:SN');"
+																				onclick="showDivArea(['divAy'], ['divAn']);showDivArea(['divBn'], ['divBy']);"
+																				class="Link_blue"> <img
+																					src="img/icon_status.jpg" title="Change Status"
+																					border="0" />
+																			</a>
+																			
+																		</span>
+																		</span>
+																		</span>
+																	</span>
+																</span>
+																
+																</td>
+																
+																<td align="center" valign="middle" nowrap="nowrap"
+																	style="border-bottom: 1px solid #ffffff;"><span
+																	id="eval:LawyersRule.showDeactivatePolicy"><span
+																		id="block_field_deletePolicy_row_link"><a
+																			href="javascript:submitform('list.html','list.deletePolicy','','');"
+																			class="Link_blue" onclick="return confirmDelete('policy');"><img src="img/cross.gif"
+																				title="Delete Policy" border="0" /> </a> </span> </span></td>
+
+																<td align="center" valign="middle" nowrap="nowrap">
+
+																	<span id="1eval:LawyersRule.showNotQuickQuote"> <span
+																		id="1eval:LawyersRule.ShowDocumentUploadLink"> <span
+																			id="block_field_document_row_link"><a
+																				href="javascript:submitform('uploadexcelpopup.html','list.uploadexcel','','');"
+																				class="Link_blue"><img src="img/new.png"
+																					alt="Documents" width="16" height="16" border="0"
+																					title="Documents" /> </a> </span></span>
+																</span>
+																</td>
+																<td align="center"> 
+																<!-- <span id="eval:LawyersRule.isBrokeragePolicy">
+																			<img src=""
+																				width="16" height="13" border="0" title="" />
+																</span> -->
+																<span id="showCommentListPage_security">
+																<span id="block_field_comment_row_link"><a
+																			href="javascript:submitform('comment.html','list.comment','','');"
+																			class="Link_blue"><img
+																				src="image/icon_comment.png" title="Comments"
+																				width="16" height="16" /></a>
+																</span>
+																</span>
+																</td>
+																<td width=""></td>
+																<td id="" align="center"><span
+																	id="eval:LawyersRule.isShowRenewalPolicyLink"> <span
+																		id="block_field_renew_row_link"><a
+																			href="javascript:submitform('FirmNewApp.html|RenewFirm.html|addEditBrokeragePolicy.html','list.renew','forwardeval','LawyersRule.showFullQuoteNewAppFlow|LawyersRule.IsRenewalPolicy|LawyersRule.isBrokeragePolicy');"
+																			class="Link_blue"><img src="image/icon_Renew.png"
+																				width="16" height="17" border="0" title="Renew" /></a>
+																	</span>
+																</span></td>
+																<td id="" align="center">
+																<!-- <span id="eval:LawyersRule.isBrokeragePolicy">
+																			<img src=""
+																				width="16" height="13" border="0" title="" />
+																</span> -->
+																	<span id="eval:LawyersRule.isShowClaimIcon">
+																		<span id="block_field_claim_row_link">
+																			<a href="javascript:submitform('claimsSummaryList.html','list.claim','','');" 
+																			class="Link_blue">
+																			<span id="eval:LawyersRule.isShowBlueIcon">
+																			<img src="image/ClaimBlue.png"
+																				width="16" height="13" border="0" title="Claim" />
+																				</span>
+																				<span id="eval:LawyersRule.isShowGreenIcon">
+																			<img src="image/ClaimGreen.png"
+																				width="16" height="13" border="0" title="Claim" />
+																				</span>
+																				<span id="eval:LawyersRule.isShowRedIcon">
+																			<img src="image/ClaimRed.png"
+																				width="16" height="13" border="1" title="Claim" />
+																				</span>
+																			</a>
+																		</span>
+																	</span>
+																</td>
+																<td align="center" >
+																	<span id="eval:LawyersRule.showHistoryLink">
+																	<span id="block_field_history_row_link"><a
+																		href="javascript:submitform('list.html','list.history',' ','');"
+																		class="Link_blue"><img src="image/history.png"
+																			width="16" height="17" border="0" title="History" /></a>
+																</span>
+																</span>
+																</td>
+																<td align="center">
+																<!-- <span id="eval:LawyersRule.isBrokeragePolicy">
+																			<img src=""
+																				width="16" height="13" border="0" title="" />
+																</span> -->
+																<span id="underwriterLinkListPage_security">
+																	<span id="block_field_underwriter_row_link"><a
+																		href="javascript:submitform('UWReview.html','list.underwriter',' ','');"
+																		class="Link_blue"><img src="img/ico_UW_2.png"
+																			 border="0" title="Under Writer" /></a>
+																</span>
+																</span>
+																</td>
+																	<td align="center" >
+																<span id="eval:LawyersRule.isShowAdditionalInformationIcon">
+																	<img src="img/ico_Add_Info.png"
+																			 border="0" title="Additional Information Required" />
+																</span>
+															
+																</td>
+															
+																<td align="center" valign="middle" nowrap="nowrap">
+																	<span id="eval:LawyersRule.showRenewalReviewLink"><span
+																		id="block_field_renewalreview_row_link"><a
+																			href="javascript:rightclickmenu('renewalReview_freeform.html','renewalReview_freeform.renewReview','','','div_ajaxpostionpremium_freeform:SN');showHideCommentDiv();"
+																			class="Link_blue"><img
+																				src="image/icon_pause.png" title="Renewal Review"
+																				border="0" /></a></span></span>
+																</td>
+																 
+																<td nowrap="nowrap" id="actionLinkListPage_security">
+							                                    	<div id="" class="dropdown icon-dropdown">
+																	 <a class="dropdown-toggle" data-toggle="dropdown">Action
+																	  <span class="caret">&nbsp;</span></a>
+																	  <ul class="dropdown-menu" style="margin:5px;">
+																	  
+																	  
+																	  <li>
+																	    	<span id="internalUsers_security" style="align:left;">
+																	    	<span>
+																	    	<span id="block_field_filableApplicationPdf_row_link">
+																	    	<a href="javascript:submitform('list.html','list.downloadFillablePdf','','');">
+																				<img src="img/icon_pdf.jpg"
+																				title="Mail" border="0" width="18px" /><span>Download Fillable PDF</span> </a>
+																			</span>
+																			</span>
+																			</span>
+																	    </li>
+																	    <li>
+																	    	<span id="internalUsers_security">
+																	    	<span id="eval:LawyersRule.IsNotIssued">
+																	    	<span id="block_field_sendregistrationmail_row_link">
+																	    	<a
+																			href="javascript:submitform('list.html','list.sendregistrationmail','','');">
+																				<img src="img/mail.jpg"
+																				title="Mail" border="0" width="18px" /><span>Registration Email</span> </a>
+																			</span>
+																			</span></span>
+																	    </li>
+																	    <li>
+																	    	<span id="internalUsers_security">
+																	    	<span id="eval:LawyersRule.isNotCFOrInsured">
+																		  		<span id="block_field_resetpassword_row_link"><a
+																				href="javascript:submitform('resetPassword.html','list.goToResetPassword','','');">
+																				<img height="18px" width="18px" alt="Completed" title="Reset Password" 
+																				src="image/reset.png"><span>Reset Password</span> </a></span>
+																	    	</span></span>
+																	    </li>
+																	   <li>
+																	   <span>
+																	   	<span id="eval:LawyersRule.isInternalOrPartenerUser">
+																	   	<span id="block_field_firstreviewer_row_link">
+																	    	  <a
+																				href="javascript:rightclickmenu('changeFirstReviewer.html','changeFirstReviewer.updateReviewer','','','div_ajaxpostionpremium_freeform:SN');"> <img
+																					src="img/reviewer.png" title="Update First Reviewer"
+																					border="0" style="height: 16px; width: 18px;"/><span>Update First Reviewer</span>
+																			</a>
+																		</span>
+																		</span></span>
+																	    </li> 
+																	    
+																	     <li>
+																	   	<span id="internalUsers_security">
+																	     <span id="copyPolicyData_security">
+																	   		<span id="block_field_copyData_row_link">
+																	    	  <a
+																					href="javascript:submitform('FirmNewApp.html','list.copyPolicyData','','');">
+																					 <img src="img/copyDataImg.png" title="copy function"
+																					border="0" style="height: 16px; width: 18px;"/><span>Copy Policy Data</span>
+																			</a>
+																		</span>
+																		</span>
+																		</span>
+																	    </li> 
+																	     <li>
+																	    	<span id="internalUsers_security">
+																	     <span id="eval:LawyersRule.ShowlostWorkqButton">
+																	      	<span id="block_field_changelostworkq_row_link">
+																	    	  <a
+																				href="javascript:rightclickmenu('changelostworkq.html','changelostworkq.updatelostworkq','','','div_ajaxpostionpremium_freeform:SN');"> <img
+																					src="img/lost.png" title="Update lost workq"
+																					border="0" style="height: 16px; width: 18px;"/><span>Move to LostWorkq</span>
+																			</a>
+																		</span>
+																		</span></span>
+																	    </li> 
+																	     <li>
+																	     	<span id="internalUsers_security">
+																	     <span id="NewBrokerageLinkListPage_security">
+																	      	<span id="block_field_brokeragePolicy_row_link">
+																	    	  <a
+																				href="javascript:submitform('addEditBrokeragePolicy.html','list.createBrokerage','','','');"> <img
+																					src="img/lost.png" title="Update lost workq"
+																					border="0" style="height: 16px; width: 18px;"/><span>New Brokerage Policy</span>
+																			</a>
+																				</span>														</span>
+																		</span>
+																	    </li> 
+																	   
+																	    <li>
+																	    	<span id="internalUsers_security">
+																	     <span id="RenewBrokerageLinkListPage_security">
+																	      	<span id="block_field_renewBrokeragePolicy_row_link">
+																	    	  <a
+																				href="javascript:submitform('addEditBrokeragePolicy.html','list.renewAsBrokerage','','','');"> <img
+																					src="img/lost.png" title="Update lost workq"
+																					border="0" style="height: 16px; width: 18px;"/><span>Renew as Brokerage</span>
+																			</a>
+																		</span>
+																		</span>
+																		</span>
+																	    </li> 
+																	   
+																	  </ul>
+																	</div> 
+							                                    </td>
+
+															</tr>
+															<tr id="search_ajaxpostion_list_01">
+																<td colspan="40" align="left">
+																
+																	<div id="div_ajaxpostionpremium_freeform:SN"></div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										
+											</div>
+									</td>
+								</tr>
+							</table>
+
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr><td>&nbsp;</td></tr>
+			
+		</table>
+		<!---------Footer Start---------->
+				<div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<!---------Footer End---------->
+		<div class="calendar_widget" id="calendar_widget">
+			<iframe id="calendar_widget_iframe" name="calendar_widget_iframe" src="calendar_widget.html" frameborder="0"></iframe>
+		</div>
+		<table id="list_freeform_contextdata_999">
+			<tr>
+				<td>
+					<input type="hidden" name="jsessionid" id="jsessionid" />
+					<input type="hidden" id="ajax_field_AccountID_search" name="AccountID_search"/>
+					<input type="hidden" id="ajax_field_StatusKey_search" name="StatusKey_search"/>
+					<input type="hidden" id="ajax_field_AccountNamesearch" name="AccountNamesearch"/>
+					<input type="hidden" id="ajax_field_PolicyEffectiveDate_search" name="PolicyEffectiveDate_search"/>
+					<input type="hidden" id="ajax_field_PolicyEffectiveDate_searchTo" name="PolicyEffectiveDate_searchTo"/>
+					<input type="hidden" id="ajax_field_StateCode_search" name="StateCode_search"/>
+					<input type="hidden" id="ajax_field_StatusKey_search" name="StatusKey_search"/>
+					<input type="hidden" id="ajax_field_QuoteNumber_search" name="QuoteNumber_search"/>
+					<input type="hidden" id="ajax_field_PolicyNumber_search" name="PolicyNumber_search"/>
+					<input type="hidden" id="ajax_field_NumberOfDays_search" name="NumberOfDays_search"/>
+					<input type="hidden" id="ajax_field_IsRenewed_search" name="IsRenewed_search"/>
+					<input type="hidden" id="ajax_field_showhistorylist" name="showhistorylist"/>
+					<input type="hidden" name="ProducerCode" id="ProducerCode" />
+					
+				</td>
+			</tr>
+		</table>
+		<input type="hidden" name="divHideShow" id="divHideShow" value="" /> 
+		<input type="hidden" name="ctxmenuparam" value="" />
+		
+		
+	</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+<script type="text/javascript">
+	//loadList();
+	$(window).load(function() {
+ // executes when complete page is fully loaded, including all frames, objects and images
+	changeStatusColor();
+});
+</script>
+</html>

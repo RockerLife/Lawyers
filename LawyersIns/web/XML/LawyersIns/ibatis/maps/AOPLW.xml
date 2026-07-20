@@ -1,0 +1,64 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AOPLW">
+     <select id="getAopList" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOPKey,AOPDescNew as AOPDesc from AOPLW where aopkey not in(17,18,23,7,40,19) order by AOPDesc</select>
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AOPLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AOPLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into AOPLW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPDesc" prepend=",">AOPDesc</isNotEmpty>
+               <isNotEmpty property="AOPDescNew" prepend=",">AOPDescNew</isNotEmpty>
+               <isNotEmpty property="IndicationSequence" prepend=",">IndicationSequence</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPDesc" prepend=",">#AOPDesc#</isNotEmpty>
+               <isNotEmpty property="AOPDescNew" prepend=",">#AOPDescNew#</isNotEmpty>
+               <isNotEmpty property="IndicationSequence" prepend=",">#IndicationSequence#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="AOPKey">SELECT IDENT_CURRENT('AOPLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOPKey, AOPDesc, AOPDescNew, IndicationSequence, LastUpdateUserID, LastUpdateTimeStamp from AOPLW where AOPKey = #AOPKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update AOPLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPDesc" prepend=",">AOPDesc = #AOPDesc#</isNotEmpty>
+               <isEmpty property="AOPDesc" prepend=",">AOPDesc = null</isEmpty>
+               <isNotEmpty property="AOPDescNew" prepend=",">AOPDescNew = #AOPDescNew#</isNotEmpty>
+               <isEmpty property="AOPDescNew" prepend=",">AOPDescNew = null</isEmpty>
+               <isNotEmpty property="IndicationSequence" prepend=",">IndicationSequence = #IndicationSequence#</isNotEmpty>
+               <isEmpty property="IndicationSequence" prepend=",">IndicationSequence = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where AOPKey = #AOPKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from AOPLW where AOPKey = #AOPKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from AOPLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AOPLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOPKey, AOPDesc, AOPDescNew, IndicationSequence, LastUpdateUserID, LastUpdateTimeStamp from AOPLW where AOPKey = #AOPKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOPKey, AOPDesc, AOPDescNew, IndicationSequence, LastUpdateUserID, LastUpdateTimeStamp from AOPLW</select>
+     <parameterMap id="ViewAopList_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="litigationNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="ViewAopList_p" parameterMap="ViewAopList_pMap" resultClass="java.util.HashMap">{ call ViewAopList_p(?,?)}</procedure>
+     <parameterMap id="DisplayAOPDetails_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AOPRenewalDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="DisplayAOPDetails_p" parameterMap="DisplayAOPDetails_pMap" resultClass="java.util.HashMap">{ call DisplayAOPDetails_p(?,?)}</procedure>
+     <parameterMap id="PriorYearAopData_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="PriorYearAopData_p" parameterMap="PriorYearAopData_pMap" resultClass="java.util.HashMap">{ call PriorYearAopData_p(?)}</procedure>
+</sqlMap>
+

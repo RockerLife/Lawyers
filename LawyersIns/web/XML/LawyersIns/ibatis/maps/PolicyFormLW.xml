@@ -1,0 +1,74 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="PolicyFormLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PolicyFormLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PolicyFormLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into PolicyFormLW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="FormID" prepend=",">FormID</isNotEmpty>
+               <isNotEmpty property="StateCode" prepend=",">StateCode</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+               <isNotEmpty property="FormName" prepend=",">FormName</isNotEmpty>
+               <isNotEmpty property="FormDesc" prepend=",">FormDesc</isNotEmpty>
+               <isNotEmpty property="FormFooter" prepend=",">FormFooter</isNotEmpty>
+               <isNotEmpty property="FormType" prepend=",">FormType</isNotEmpty>
+               <isNotEmpty property="FormSequence" prepend=",">FormSequence</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="FormID" prepend=",">#FormID#</isNotEmpty>
+               <isNotEmpty property="StateCode" prepend=",">#StateCode#</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+               <isNotEmpty property="FormName" prepend=",">#FormName#</isNotEmpty>
+               <isNotEmpty property="FormDesc" prepend=",">#FormDesc#</isNotEmpty>
+               <isNotEmpty property="FormFooter" prepend=",">#FormFooter#</isNotEmpty>
+               <isNotEmpty property="FormType" prepend=",">#FormType#</isNotEmpty>
+               <isNotEmpty property="FormSequence" prepend=",">#FormSequence#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FormID, StateCode, PolicyKey, FormName, FormDesc, FormFooter, FormType, FormSequence, LastUpdateUserID, LastUpdateTimeStamp from PolicyFormLW</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update PolicyFormLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="FormID" prepend=",">FormID = #FormID#</isNotEmpty>
+               <isEmpty property="FormID" prepend=",">FormID = null</isEmpty>
+               <isNotEmpty property="StateCode" prepend=",">StateCode = #StateCode#</isNotEmpty>
+               <isEmpty property="StateCode" prepend=",">StateCode = null</isEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+               <isNotEmpty property="FormName" prepend=",">FormName = #FormName#</isNotEmpty>
+               <isEmpty property="FormName" prepend=",">FormName = null</isEmpty>
+               <isNotEmpty property="FormDesc" prepend=",">FormDesc = #FormDesc#</isNotEmpty>
+               <isEmpty property="FormDesc" prepend=",">FormDesc = null</isEmpty>
+               <isNotEmpty property="FormFooter" prepend=",">FormFooter = #FormFooter#</isNotEmpty>
+               <isEmpty property="FormFooter" prepend=",">FormFooter = null</isEmpty>
+               <isNotEmpty property="FormType" prepend=",">FormType = #FormType#</isNotEmpty>
+               <isEmpty property="FormType" prepend=",">FormType = null</isEmpty>
+               <isNotEmpty property="FormSequence" prepend=",">FormSequence = #FormSequence#</isNotEmpty>
+               <isEmpty property="FormSequence" prepend=",">FormSequence = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from PolicyFormLW</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from PolicyFormLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from PolicyFormLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FormID, StateCode, PolicyKey, FormName, FormDesc, FormFooter, FormType, FormSequence, LastUpdateUserID, LastUpdateTimeStamp from PolicyFormLW</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FormID, StateCode, PolicyKey, FormName, FormDesc, FormFooter, FormType, FormSequence, LastUpdateUserID, LastUpdateTimeStamp from PolicyFormLW</select>
+     <parameterMap id="LawyersFormAttachmentAuto_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey_form" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StateCode_form" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyEffectiveDate_form" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsNewFiling_form" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="LawyersFormAttachmentAuto_p" parameterMap="LawyersFormAttachmentAuto_pMap" resultClass="java.util.HashMap">{ call LawyersFormAttachmentAuto_p(?,?,?,?)}</procedure>
+</sqlMap>
+

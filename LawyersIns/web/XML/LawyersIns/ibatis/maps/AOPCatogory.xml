@@ -1,0 +1,33 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AOPCatogory">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AOPCatogory</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AOPCatogory</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into AOPCatogory(
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPCategoryDesc" prepend=",">AOPCategoryDesc</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPCategoryDesc" prepend=",">#AOPCategoryDesc#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="AOPCategoryKey">SELECT IDENT_CURRENT('AOPCatogory') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOPCategoryDesc, AOPCategoryKey from AOPCatogory where AOPCategoryKey = #AOPCategoryKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update AOPCatogory set
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPCategoryDesc" prepend=",">AOPCategoryDesc = #AOPCategoryDesc#</isNotEmpty>
+               <isEmpty property="AOPCategoryDesc" prepend=",">AOPCategoryDesc = null</isEmpty>
+          </dynamic>
+          where AOPCategoryKey = #AOPCategoryKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from AOPCatogory where AOPCategoryKey = #AOPCategoryKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from AOPCatogory</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AOPCatogory</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOPCategoryDesc, AOPCategoryKey from AOPCatogory where AOPCategoryKey = #AOPCategoryKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOPCategoryKey, AOPCategoryDesc from AOPCatogory</select>
+</sqlMap>
+

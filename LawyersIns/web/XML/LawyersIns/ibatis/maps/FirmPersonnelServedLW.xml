@@ -1,0 +1,65 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="FirmPersonnelServedLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FirmPersonnelServedLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FirmPersonnelServedLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into FirmPersonnelServedLW(VersionSequence, PolicyKey
+          <isNotEmpty property="FirmMember" prepend=",">FirmMember</isNotEmpty>
+          <isNotEmpty property="EntityName" prepend=",">EntityName</isNotEmpty>
+          <isNotEmpty property="PositionHeld" prepend=",">PositionHeld</isNotEmpty>
+          <isNotEmpty property="PercentEquityInterest" prepend=",">PercentEquityInterest</isNotEmpty>
+          <isNotEmpty property="IsDirOffInsInForce" prepend=",">IsDirOffInsInForce</isNotEmpty>
+          <isNotEmpty property="FirmServices" prepend=",">FirmServices</isNotEmpty>
+          <isNotEmpty property="IsIndividualPerformServices" prepend=",">IsIndividualPerformServices</isNotEmpty>
+          <isNotEmpty property="NatureOfClientBusiness" prepend=",">NatureOfClientBusiness</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="FirmMember" prepend=",">#FirmMember#</isNotEmpty>
+          <isNotEmpty property="EntityName" prepend=",">#EntityName#</isNotEmpty>
+          <isNotEmpty property="PositionHeld" prepend=",">#PositionHeld#</isNotEmpty>
+          <isNotEmpty property="PercentEquityInterest" prepend=",">#PercentEquityInterest#</isNotEmpty>
+          <isNotEmpty property="IsDirOffInsInForce" prepend=",">#IsDirOffInsInForce#</isNotEmpty>
+          <isNotEmpty property="FirmServices" prepend=",">#FirmServices#</isNotEmpty>
+          <isNotEmpty property="IsIndividualPerformServices" prepend=",">#IsIndividualPerformServices#</isNotEmpty>
+          <isNotEmpty property="NatureOfClientBusiness" prepend=",">#NatureOfClientBusiness#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="FirmPersonnelServedKey">SELECT IDENT_CURRENT('FirmPersonnelServedLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirmPersonnelServedKey, FirmMember, EntityName, PositionHeld, PercentEquityInterest, IsDirOffInsInForce, FirmServices, IsIndividualPerformServices, NatureOfClientBusiness, LastUpdateUserID, LastUpdateTimeStamp, VersionSequence, PolicyKey from FirmPersonnelServedLW where FirmPersonnelServedKey = #FirmPersonnelServedKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update FirmPersonnelServedLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="FirmMember" prepend=",">FirmMember = #FirmMember#</isNotEmpty>
+               <isEmpty property="FirmMember" prepend=",">FirmMember = null</isEmpty>
+               <isNotEmpty property="EntityName" prepend=",">EntityName = #EntityName#</isNotEmpty>
+               <isEmpty property="EntityName" prepend=",">EntityName = null</isEmpty>
+               <isNotEmpty property="PositionHeld" prepend=",">PositionHeld = #PositionHeld#</isNotEmpty>
+               <isEmpty property="PositionHeld" prepend=",">PositionHeld = null</isEmpty>
+               <isNotEmpty property="PercentEquityInterest" prepend=",">PercentEquityInterest = #PercentEquityInterest#</isNotEmpty>
+               <isEmpty property="PercentEquityInterest" prepend=",">PercentEquityInterest = null</isEmpty>
+               <isNotEmpty property="IsDirOffInsInForce" prepend=",">IsDirOffInsInForce = #IsDirOffInsInForce#</isNotEmpty>
+               <isEmpty property="IsDirOffInsInForce" prepend=",">IsDirOffInsInForce = null</isEmpty>
+               <isNotEmpty property="FirmServices" prepend=",">FirmServices = #FirmServices#</isNotEmpty>
+               <isEmpty property="FirmServices" prepend=",">FirmServices = null</isEmpty>
+               <isNotEmpty property="IsIndividualPerformServices" prepend=",">IsIndividualPerformServices = #IsIndividualPerformServices#</isNotEmpty>
+               <isEmpty property="IsIndividualPerformServices" prepend=",">IsIndividualPerformServices = null</isEmpty>
+               <isNotEmpty property="NatureOfClientBusiness" prepend=",">NatureOfClientBusiness = #NatureOfClientBusiness#</isNotEmpty>
+               <isEmpty property="NatureOfClientBusiness" prepend=",">NatureOfClientBusiness = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where FirmPersonnelServedKey = #FirmPersonnelServedKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from FirmPersonnelServedLW where FirmPersonnelServedKey = #FirmPersonnelServedKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from FirmPersonnelServedLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from FirmPersonnelServedLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirmPersonnelServedKey, FirmMember, EntityName, PositionHeld, PercentEquityInterest, IsDirOffInsInForce, FirmServices, IsIndividualPerformServices, NatureOfClientBusiness, LastUpdateUserID, LastUpdateTimeStamp, VersionSequence, PolicyKey from FirmPersonnelServedLW where FirmPersonnelServedKey = #FirmPersonnelServedKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirmPersonnelServedKey, VersionSequence, PolicyKey, FirmMember, EntityName, PositionHeld, PercentEquityInterest, IsDirOffInsInForce, FirmServices, IsIndividualPerformServices, NatureOfClientBusiness, LastUpdateUserID, LastUpdateTimeStamp from FirmPersonnelServedLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

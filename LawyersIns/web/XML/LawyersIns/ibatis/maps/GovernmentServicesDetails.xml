@@ -1,0 +1,31 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="GovernmentServicesDetails">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from GovernmentServicesDetails</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from GovernmentServicesDetails</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into GovernmentServicesDetails(
+          <dynamic prepend=" ">
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="VersionKey" prepend=",">#VersionKey#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionKey from GovernmentServicesDetails</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update GovernmentServicesDetails set
+          <dynamic prepend=" ">
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey = #VersionKey#</isNotEmpty>
+               <isEmpty property="VersionKey" prepend=",">VersionKey = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from GovernmentServicesDetails</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from GovernmentServicesDetails</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from GovernmentServicesDetails</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionKey from GovernmentServicesDetails</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionKey from GovernmentServicesDetails</select>
+</sqlMap>
+

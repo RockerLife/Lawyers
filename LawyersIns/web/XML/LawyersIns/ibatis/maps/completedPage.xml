@@ -1,0 +1,31 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="completedPage">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from completedPage</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from completedPage</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into completedPage(
+          <dynamic prepend=" ">
+               <isNotEmpty property="needCyberCoverage" prepend=",">needCyberCoverage</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="needCyberCoverage" prepend=",">#needCyberCoverage#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select needCyberCoverage from completedPage</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update completedPage set
+          <dynamic prepend=" ">
+               <isNotEmpty property="needCyberCoverage" prepend=",">needCyberCoverage = #needCyberCoverage#</isNotEmpty>
+               <isEmpty property="needCyberCoverage" prepend=",">needCyberCoverage = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from completedPage</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from completedPage</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from completedPage</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select needCyberCoverage from completedPage</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select needCyberCoverage from completedPage</select>
+</sqlMap>
+

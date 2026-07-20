@@ -1,0 +1,262 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Claims</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/jquery.treeview.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+	<body onload="loadClaimSupplement();">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+		<form >
+			<div id="claimsSummaryDetail_freeform_contextdata_992">
+				<div id="claimsSummaryDetail">
+					<div id="ReadOnlyClaimsSummary">
+						<div class="questionBlock">
+							<table cellpadding="0" cellspacing="0" width="100%">
+								<tr>
+									<td colspan="2">
+										<div class="row">
+											<table class="claimQuestion" cellspacing="0" cellpadding="0" width="85%">
+												<tr>
+													<td width="35%" class="labelAlign">
+														<div id="ajax_error_NameOfClaimant" class="error"/>
+														Full name of claimant or potential claimant :
+													</td>
+													<td class="mendatoryInput">
+														<div>
+															<input type="text" class="form-control-150" name="NameOfClaimant" id="ajax_field_NameOfClaimant"/>
+														</div>
+													</td>
+													<td width="25%">
+														<div id="ajax_error_IsClient" class="error"/>
+														<input name="IsClient" id="ajax_field_IsClient" value="Y" type="radio" />Client &nbsp;&nbsp;&nbsp;
+														<input name="IsClient" id="ajax_field_IsClient" value="N" type="radio" />Non Client
+													</td>
+													<td>
+													</td>
+												</tr>
+												<tr>
+													<td class="labelAlign">
+														<div id="ajax_error_ClaimNumber" class="error"/>
+														Claim Number :
+													</td>
+													<td>
+														<div>
+															<input type="text" class="form-control-150" name="ClaimNumber" id="ajax_field_ClaimNumber" readonly="readonly"/>
+														</div>
+													</td>
+													<td class="labelAlign">
+														<div id="ajax_error_Signal" class="error"/>
+														Signal :
+													</td>
+													<td>
+														<div>
+															<input type="text" class="form-control-150" name="Signal" id="ajax_field_Signal" readonly="readonly"/>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="labelAlign">
+														<div id="ajax_error_IsClaimInSuit" class="error"/>
+														Is the claim in suit? :
+													</td>
+													<td class="mendatoryInput" colspan="3">
+														<div style="padding-left: 5px;">
+															<input name="IsClaimInSuit" id="ajax_field_IsClaimInSuit" value="X" type="radio" />NA &nbsp;&nbsp;&nbsp;
+															<input name="IsClaimInSuit" id="ajax_field_IsClaimInSuit" value="Y" type="radio" />Yes &nbsp;&nbsp;&nbsp;
+															<input name="IsClaimInSuit" id="ajax_field_IsClaimInSuit" value="N"  type="radio" />No
+														</div>
+													</td>
+												</tr>
+												<tr >
+													<td class="labelAlign">
+														<div id="ajax_error_ClaimNotifiedDate" class="error"/>
+														Date you were notified of claim or became aware of error/incident :
+													</td>
+													<td class="iconsStyle2 mendatoryInput">
+														<div>
+															<input type="text" class="form-control-150" name="ClaimNotifiedDate" placeholder="MM/DD/YYYY"
+																id="ajax_field_ClaimNotifiedDate" onkeyup="applyDateFormat(this,event);" />
+														</div>
+													</td>
+													<td class="labelAlign">
+														<div id="ajax_error_DateOfAllegedError" class="error"/>
+														Date of alleged error :
+													</td>
+													<td class="iconsStyle2 mendatoryInput">
+														<div>
+															<input type="text" class="form-control-150" name="DateOfAllegedError" placeholder="MM/DD/YYYY"
+															style="width:100px;" id="ajax_field_DateOfAllegedError" onkeyup="applyDateFormat(this,event);" />
+														</div>
+													</td>
+												</tr>
+												<tr >
+													<td class="labelAlign valignTop paddingTop4" nowrap="nowrap">
+														<div id="ajax_error_NameOfPersonnelINClaim" class="error"/>
+														Names of the firm personnel involved in the claim or potential claim :</td>
+													<td class="mendatoryInput"  colspan="3">
+														<div>
+															<!-- <input type="text" style="width: 636px;" class="form-control-150" name="NameOfPersonnelINClaim" id="ajax_field_NameOfPersonnelINClaim" /> -->
+															<textarea cols="40" rows="5" style="width: 99%; height: 50px"  
+															name="NameOfPersonnelINClaim" id="ajax_field_NameOfPersonnelINClaim"
+															onkeyup="limitText(this,1,500);" class="form-control-150" maxlength="500"></textarea>
+															</div>
+													</td>
+													
+												</tr>
+												<tr>
+													<td class="labelAlign valignTop paddingTop4">
+														<div id="ajax_error_DescOfClaim" class="error"/>
+														Description of claim or potential claim :
+													</td>
+													<td class="mendatoryInput"  colspan="3">
+														<div>
+															<!-- <input type="text"  style="width: 636px;" class="form-control-150" name="DescOfClaim" id="ajax_field_DescOfClaim" /> -->
+															<textarea cols="40" rows="5" style="width: 99%; height: 50px"  name="DescOfClaim" id="ajax_field_DescOfClaim" maxlength="500"
+															onkeyup="limitText(this,1,500);" class="form-control-150"
+															></textarea>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="labelAlign">
+														<div>
+														<div id="ajax_error_IsClaimReportedToInsComp" class="error"/>
+															Has this claim or potential claim
+															been reported to the firm's professional liability
+															insurer? :
+														</div>
+													</td>
+													<td class="mendatoryInput"  colspan="3">
+														<div style="padding-left: 5px">
+															<input id="ajax_field_IsClaimReportedToInsComp" name="IsClaimReportedToInsComp" value="Y" type="radio" />Yes &nbsp;&nbsp;&nbsp;
+															<input id="ajax_field_IsClaimReportedToInsComp"	name="IsClaimReportedToInsComp" value="N" type="radio" />No
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<td class="labelAlign">
+													<div id="ajax_error_NameOfInsComp" class="error"/>
+													Name of the Insurance Company :</td>
+													<td class="mendatoryInput">
+													<div>
+													<input type="text" name="NameOfInsComp" id="ajax_field_NameOfInsComp" class="form-control-150" /></div>
+													</td>
+													<td class="labelAlign">
+													<div id="ajax_error_DateReportedToInsComp" class="error"/>
+														Date reported to insurance company :
+													</td>
+													<td class="iconsStyle2 tdInput">
+														<input type="text" class="form-control-150" name="DateReportedToInsComp" placeholder="MM/DD/YYYY"
+															style="width:100px;" id="ajax_field_DateReportedToInsComp" onkeyup="applyDateFormat(this,event);" />
+													</td>
+												</tr>
+												<tr>
+													<td class="labelAlign">
+													<div id="ajax_error_InsurerLoss" class="error"/>
+														If claim is now open, provide <i class="italic">(Insurer's loss reserve $)</i> :</td>
+													<td class="tdInput"><input name="InsurerLoss" type="text" size="20" maxlength="15" class="form-control-150" id="ajax_field_InsurerLoss" onclick="loadClaimSupplement()" />
+													</td>
+													<td class="labelAlign">
+														<div id="ajax_error_ClaimantLastDemand" class="error"/>
+														Claimant's last demand $ :
+													</td>
+													<td class="tdInput">
+														<input name="ClaimantLastDemand" type="text" class="form-control-150"
+														size="20" maxlength="15" id="ajax_field_ClaimantLastDemand" style="width: 100px"
+														 onclick="loadClaimSupplement()" />
+													</td>
+												</tr>
+												<tr>
+													<td class="labelAlign">
+													<div id="ajax_error_CurrentStatus" class="error"/>
+														Current Status :
+													</td>
+													<td class="mendatoryInput" colspan="3">
+														<div>
+															<select name="CurrentStatus" id="ajax_field_CurrentStatus" class="form-control" style="width: 16%;">
+																<option value="" selected="selected">Select</option>
+															</select>
+														</div>
+													</td> 
+
+												</tr>
+												<tr>
+													<td class="labelAlign">
+													<div id="ajax_error_ClaimClosingDate" class="error"/>
+													 If closed, provide the date closed :</td>
+													<td class="iconsStyle2 tdInput">
+														<!-- <span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span> -->
+														<input type="text"  name="ClaimClosingDate" placeholder="MM/DD/YYYY" class="form-control-150"
+															id="ajax_field_ClaimClosingDate" onkeyup="applyDateFormat(this,event);" />
+													</td>
+													<td class="labelAlign">
+													<div id="ajax_error_TotalAmountPaid" class="error"/>
+														Total amount paid <i class="italic">(including damages and defense expenses)</i> :
+													</td>
+													<td class="tdInput">
+														<input name="TotalAmountPaid" type="text" id="ajax_field_TotalAmountPaid"  class="form-control-150"
+														onclick="loadClaimSupplement()" style="width: 100px"/>
+													</td>
+												</tr>
+												
+												<tr>
+													<td class="labelAlign">
+														
+														<div id="ajax_error_StepsTakenToPreventClaims" class="error"/>
+														What steps have been taken by the
+														firm to prevent similar allegations from being made in
+														future claims/incidents? :
+														
+													</td>
+													<td colspan="3" class="mendatoryInput">
+														<div>
+															<textarea name="StepsTakenToPreventClaims" onkeyup="limitText(this,1,500);" class="form-control-150"
+															id="ajax_field_StepsTakenToPreventClaims" cols="40" rows="5" style="width: 99%; height: 50px" maxlength="500" />
+														</div>
+													</td>
+												</tr>
+											</table>
+										</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="button_claim row">
+						<div class="floatRight">
+							<!-- <span id="eval:events.saveEvent">
+								<a class="btn next" href="javascript:ajaxsubmitform('claimsSummaryList.html',' claimsSummaryDetail.save','','','suppClaimDiv');" >Save</a>
+							</span> -->
+							<!-- <span id="eval:LawyersRule.showClaimModify"> -->
+								<span id="eval:events.editEvent">
+									<a class="btn next" href="javascript:ajaxsubmitform('claimsSummaryList.html','claimsSummaryDetail.update','','','suppClaimDiv');adjustFocus();" onClick="adjustFocus();">Modify</a>
+								</span>
+							<!-- </span> -->
+							<a class="btn next" href="javascript:ajaxsubmitform('claimsSummaryList.html','claimsSummaryDetail.close','','','suppClaimDiv');">Cancel</a> 
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

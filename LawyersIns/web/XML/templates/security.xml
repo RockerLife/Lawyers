@@ -1,0 +1,57 @@
+<security project="" version="">
+	<nodeinfo uniqueid="project">
+		<implements interface="com.util.IResourceKeys"/>
+	</nodeinfo>
+	
+	<protectedresource uniquename="" description="" type="" accesstype="">
+		<nodeinfo uniqueid="uniquename"/>
+		
+		<businessrole roleid="" isencrypt="" isdecrypt="" isreadonly="" unmaskdigits="">
+			<nodeinfo uniqueid="roleid"/>
+			<roleaccesslevel accesstype="">
+				<nodeinfo uniqueid="accesstype">
+					<extends class="Accesslevel"/>
+					<attribute name="accesstype" datatype="int"/>
+				</nodeinfo>
+			</roleaccesslevel>
+		</businessrole>
+		
+		<appuser userid="" isencrypt="" isdecrypt="" isreadonly="" unmaskdigits="">
+			<nodeinfo uniqueid="userid"/>
+			<useraccesslevel accesstype="">
+				<nodeinfo uniqueid="accesstype">
+					<extends class="Accesslevel"/>
+					<attribute name="accesstype" datatype="int"/>
+				</nodeinfo>
+			</useraccesslevel>
+		</appuser>
+		
+		<userdefined ruleid="" isencrypt="" isdecrypt="" isreadonly="" unmaskdigits="">
+			<nodeinfo uniqueid="ruleid"/>
+			<userdefinedaccesslevel accesstype="">
+				<nodeinfo uniqueid="accesstype">
+					<extends class="Accesslevel"/>
+					<attribute name="accesstype" datatype="int"/>
+				</nodeinfo>
+			</userdefinedaccesslevel>
+		</userdefined>
+		
+		<validaccesslevels>
+			<validaccesslevel accesstype="">
+				<nodeinfo uniqueid="accesstype">
+					<extends class="Accesslevel"/>
+					<attribute name="accesstype" datatype="int"/>
+				</nodeinfo>
+			</validaccesslevel>
+		</validaccesslevels>
+	</protectedresource>
+	
+	<allaccesslevels>
+		<allaccesslevel accesstype="">
+			<nodeinfo uniqueid="accesstype">
+				<extends class="Accesslevel"/>
+				<attribute name="accesstype" datatype="int"/>
+			</nodeinfo>
+		</allaccesslevel>
+	</allaccesslevels>
+</security>

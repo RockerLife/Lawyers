@@ -1,0 +1,71 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AreaOfLitigationForFirmLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AreaOfLitigationForFirmLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AreaOfLitigationForFirmLW where AOLKey = #AOLKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into AreaOfLitigationForFirmLW(AOLKey, VersionSequence, PolicyKey
+          <isNotEmpty property="PercentageOfRevenue" prepend=",">PercentageOfRevenue</isNotEmpty>
+          <isNotEmpty property="AverageCaseSize" prepend=",">AverageCaseSize</isNotEmpty>
+          <isNotEmpty property="LargestCaseSize" prepend=",">LargestCaseSize</isNotEmpty>
+          <isNotEmpty property="AOLCommentDesc" prepend=",">AOLCommentDesc</isNotEmpty>
+          <isNotEmpty property="PercentageOfDefense" prepend=",">PercentageOfDefense</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          ) values (#AOLKey:NUMERIC#, #VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="PercentageOfRevenue" prepend=",">#PercentageOfRevenue#</isNotEmpty>
+          <isNotEmpty property="AverageCaseSize" prepend=",">#AverageCaseSize#</isNotEmpty>
+          <isNotEmpty property="LargestCaseSize" prepend=",">#LargestCaseSize#</isNotEmpty>
+          <isNotEmpty property="AOLCommentDesc" prepend=",">#AOLCommentDesc#</isNotEmpty>
+          <isNotEmpty property="PercentageOfDefense" prepend=",">#PercentageOfDefense#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PercentageOfRevenue, AverageCaseSize, LargestCaseSize, AOLCommentDesc, PercentageOfDefense, LastUpdateUserID, LastUpdateTimeStamp, AOLKey, VersionSequence, PolicyKey from AreaOfLitigationForFirmLW where AOLKey = #AOLKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update AreaOfLitigationForFirmLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="PercentageOfRevenue" prepend=",">PercentageOfRevenue = #PercentageOfRevenue#</isNotEmpty>
+               <isEmpty property="PercentageOfRevenue" prepend=",">PercentageOfRevenue = null</isEmpty>
+               <isNotEmpty property="AverageCaseSize" prepend=",">AverageCaseSize = #AverageCaseSize#</isNotEmpty>
+               <isEmpty property="AverageCaseSize" prepend=",">AverageCaseSize = null</isEmpty>
+               <isNotEmpty property="LargestCaseSize" prepend=",">LargestCaseSize = #LargestCaseSize#</isNotEmpty>
+               <isEmpty property="LargestCaseSize" prepend=",">LargestCaseSize = null</isEmpty>
+               <isNotEmpty property="AOLCommentDesc" prepend=",">AOLCommentDesc = #AOLCommentDesc#</isNotEmpty>
+               <isEmpty property="AOLCommentDesc" prepend=",">AOLCommentDesc = null</isEmpty>
+               <isNotEmpty property="PercentageOfDefense" prepend=",">PercentageOfDefense = #PercentageOfDefense#</isNotEmpty>
+               <isEmpty property="PercentageOfDefense" prepend=",">PercentageOfDefense = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where AOLKey = #AOLKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from AreaOfLitigationForFirmLW where AOLKey = #AOLKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from AreaOfLitigationForFirmLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AreaOfLitigationForFirmLW where AOLKey = #AOLKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PercentageOfRevenue, AverageCaseSize, LargestCaseSize, AOLCommentDesc, PercentageOfDefense, LastUpdateUserID, LastUpdateTimeStamp, AOLKey, VersionSequence, PolicyKey from AreaOfLitigationForFirmLW where AOLKey = #AOLKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOLKey, VersionSequence, PolicyKey, PercentageOfRevenue, AverageCaseSize, LargestCaseSize, AOLCommentDesc, PercentageOfDefense, LastUpdateUserID, LastUpdateTimeStamp from AreaOfLitigationForFirmLW where AOLKey = #AOLKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <parameterMap id="InsertUpdateLitigationSuppliment_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="NumberOfSuppotedStaffToPlantiff" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="NumberOfInjuryCasesIn12Month" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PerOfCasesSettledBeforeTrail" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="IsAppAcceptRefersFromOtherFirms" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsRefAggrementReferToAppl" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsAppReferToOtherLawFirms" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsRefAggrementReferToApplRefersOut" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsAppConfirmCarryProfLiabIns" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsSettlementAggrementsUsed" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="massTortOrClassAction" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdateLitigationSuppliment_p" parameterMap="InsertUpdateLitigationSuppliment_pMap">{ call InsertUpdateLitigationSuppliment_p(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

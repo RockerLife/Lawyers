@@ -1,0 +1,19 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="NonPublicAuditClientIndustryDetails">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from NonPublicAuditClientIndustryDetails</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from NonPublicAuditClientIndustryDetails where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and NonPublicAuditClientIndustryKey = #NonPublicAuditClientIndustryKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">insert into NonPublicAuditClientIndustryDetails(VersionSequence, PolicyKey, NonPublicAuditClientIndustryKey) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#, #NonPublicAuditClientIndustryKey:NUMERIC# )</insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, NonPublicAuditClientIndustryKey from NonPublicAuditClientIndustryDetails where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and NonPublicAuditClientIndustryKey = #NonPublicAuditClientIndustryKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update NonPublicAuditClientIndustryDetails set
+          <dynamic prepend=" " />
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and NonPublicAuditClientIndustryKey = #NonPublicAuditClientIndustryKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from NonPublicAuditClientIndustryDetails where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and NonPublicAuditClientIndustryKey = #NonPublicAuditClientIndustryKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from NonPublicAuditClientIndustryDetails</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from NonPublicAuditClientIndustryDetails where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and NonPublicAuditClientIndustryKey = #NonPublicAuditClientIndustryKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, NonPublicAuditClientIndustryKey from NonPublicAuditClientIndustryDetails where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and NonPublicAuditClientIndustryKey = #NonPublicAuditClientIndustryKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, NonPublicAuditClientIndustryKey from NonPublicAuditClientIndustryDetails where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and NonPublicAuditClientIndustryKey = #NonPublicAuditClientIndustryKey#</select>
+</sqlMap>
+

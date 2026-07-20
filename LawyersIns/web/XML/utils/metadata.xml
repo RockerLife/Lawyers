@@ -1,0 +1,152 @@
+<structure seq="0" project="UTILS">
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="2000" name="flowxml" displayname="flow" />
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="16" name="availablefunctions" displayname="Available Functions" />
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="16" name="argname" displayname="Argument name" />
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="16" name="argtype" displayname="Argument type" />
+	<field dropdown="Y" type="V" decimallength="0" seq="0" length="16" name="sysvariables" displayname="System variables">
+		<rangevalue low="$SYSDATE" seq="0" meaning="$SYSDATE" high="$SYSDATE"/>
+		<rangevalue low="$SYSDATETIME" seq="1" meaning="$SYSDATETIME" high="$SYSDATETIME"/>
+	</field>
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="64" name="rule" displayname="Expression" />
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="256" name="ruledata" displayname="Data" />
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="16" name="result" displayname="Result" />
+	
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="16" name="xml_template" displayname="" />
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="16" name="xml_template_description" displayname="XML Template" />
+	
+	<field name="system_project_id" length="24" type="V" displayname="Meta Project ID" dropdown="Y" seq="-1">
+        <rangevalue low="METAAPP" seq="0" meaning="Metadata" high="METAAPP"/>
+        <rangevalue low="WORKFLOWAPP" seq="1" meaning="Workflow" high="WORKFLOWAPP"/>
+        <rangevalue low="SECURITYAPP" seq="2" meaning="Security" high="SECURITYAPP"/>
+    </field>
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="128" name="defination" displayname="Defination" />
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="128" name="defination_fromfile" displayname="" />
+	
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="32" name="project_id" displayname="Select project to pull from database" />
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="32" name="xml_template_to_pull" displayname="Select template type" />
+	
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="32" name="genschema_project_id" displayname="Select project for schema defination" />
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="2048" name="schemadef" displayname="Schema defination" />
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="2048" name="delta_xml" displayname="Delta XML" />
+	
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="128" name="db_driver" displayname="Database Driver">
+		<rangevalue low="com.microsoft.jdbc.sqlserver.SQLServerDriver" seq="0" meaning="com.microsoft.jdbc.sqlserver.SQLServerDriver" high="com.microsoft.jdbc.sqlserver.SQLServerDriver"/>
+	</field>
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="96" name="db_url" displayname="URL" />
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="32" name="db_username" displayname="Username" />
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="32" name="db_password" displayname="Password" />
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="128" name="metadata_file" displayname="Save metadata in file" />
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="32" name="db_type" displayname="DB Type">
+		<rangevalue low="SQLSERVER" seq="0" meaning="SQLSERVER" high="SQLSERVER"/>
+	</field>
+	<!-- madhu for dummy metaobject required -->
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="32" name="dummy_metaobject" displayname="Dummy MetaObject Required ">
+		<rangevalue low="Y" seq="0" meaning="Yes" high="Y"/>
+        <rangevalue low="N" seq="1" meaning="No" high="N"/>
+	</field>
+	<!-- end madhu -->
+	 <!-- add for new page upload and download of metadata.xml  Madhu V -->
+	 <field dropdown="N" type="V" decimallength="0" seq="0" length="64" name="file" displayname="Filename" />
+     <field dropdown="N" type="V" decimallength="0" seq="0" length="40" name="projectname" displayname="Project Name" />
+    <!-- <field dropdown="N" type="V" decimallength="0" seq="0" length="64" name="filePath" displayname="File Path" /> 
+     <field dropdown="N" type="V" decimallength="0" seq="0" length="64" name="displayfileName" displayname="displayfileName" /> -->
+	<!--  madhu v -->
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="32" name="genmeta_project_id" displayname="Project Id" />
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="32" name="folder_name" displayname="Folder name" />
+	<field dropdown="N" type="V" decimallength="0" seq="0" length="0" name="dummy"/>
+	<field dropdown="N" type="C" decimallength="0" seq="0" length="1" name="genschema_reqd" displayname="Generate schema">
+		<rangevalue low="Y" seq="0" meaning="Yes" high="Y"/>
+        <rangevalue low="N" seq="1" meaning="No" high="N"/>
+	</field>
+	
+	<field name="delta_record_no" length="4" type="I" displayname="Delta Record No" seq="0"></field>
+    <field name="xml_template" length="50" type="V" displayname="XML Template" dropdown="Y" seq="0">
+        <rangevalue low="WORKFLOWAPP" seq="1" meaning="WORKFLOWAPP" high="WORKFLOWAPP"/>
+    </field>
+    <field name="node_name" length="50" type="V" displayname="Node" seq="0"></field>
+    <field name="keys" length="256" type="V" displayname="Keys" seq="0"></field>
+    <field name="attributes" length="2048" type="V" displayname="Attributes" seq="0"></field>
+    <field name="actioncode" length="1" type="V" displayname="Action Code" dropdown="Y" seq="0">
+        <rangevalue low="I" seq="0" meaning="Insert" high="I"/>
+        <rangevalue low="M" seq="1" meaning="Modify" high="M"/>
+        <rangevalue low="D" seq="2" meaning="Delete" high="D"/>
+    </field>
+    <field name="logtime" length="8" type="D" displayname="Logtime" seq="0">
+       
+    </field>
+   
+	<metaobject seq="0" persistent="N" name="xmltodb" motype="N">
+		<propertyversion versionname="0" seq="0">
+		<property formdisplay="Y" field="defination" seq="0">
+			<dropdown name="defination_dropdown" dataobject="com.powerrad.utils.bo.WFXMLToDB" dropdowntype="bo">
+				<valuefield field="defination_value" />
+				<displayfield field="defination_meaning" />
+			</dropdown>
+		</property>
+		</propertyversion>
+	</metaobject>
+	
+	<metaobject seq="1" persistent="N" name="dbtoxml" motype="N">
+		<propertyversion versionname="0" seq="0">
+		<property formdisplay="Y" field="project_id" seq="0">
+			<dropdown name="project_id_dropdown" dataobject="com.powerrad.utils.bo.WFDBToXML" dropdowntype="bo">
+				<valuefield field="project" />
+				<displayfield field="project" />
+			</dropdown>
+		</property>
+		<property formdisplay="Y" field="xml_template_to_pull" seq="0">
+			<dropdown name="xml_template_to_pull_dropdown" dataobject="com.powerrad.utils.bo.WFXMLObjectBuilder" dropdowntype="bo">
+				<valuefield field="xml_template" />
+				<displayfield field="xml_template" />
+			</dropdown>
+		</property>	
+		</propertyversion>
+	</metaobject>
+	
+	<metaobject seq="2" persistent="N" name="genschema" motype="N">
+		<propertyversion versionname="0" seq="0">
+		<property formdisplay="Y" field="genschema_project_id" seq="0">
+			<dropdown name="genschema_project_id_dropdown" dataobject="com.powerrad.utils.bo.WFGenSchema" dropdowntype="bo">
+				<valuefield field="project" />
+				<displayfield field="project" />
+			</dropdown>
+		</property>
+		</propertyversion>
+	</metaobject>
+	
+	<metaobject seq="3" persistent="N" name="populate_delta_log" motype="N">
+		<propertyversion versionname="0" seq="0">
+		<property formdisplay="Y" field="xml_template" seq="0">
+			<dropdown name="xml_template_dropdown" dataobject="com.powerrad.utils.bo.WFXMLObjectBuilder" dropdowntype="bo">
+				<valuefield field="xml_template" />
+				<displayfield field="xml_template" />
+			</dropdown>
+		</property>
+		</propertyversion>
+	</metaobject>
+	
+	<metaobject seq="4" persistent="N" name="functions" motype="N">
+		<propertyversion versionname="0" seq="0">
+			<property formdisplay="Y" field="availablefunctions" seq="0">
+				<dropdown name="availablefunctions_dropdown" dataobject="com.powerrad.functions.WFFunctions" dropdowntype="bo" sorted="Y">
+					<valuefield field="functionname" />
+					<displayfield field="functionname" />
+				</dropdown>
+			</property>
+		</propertyversion>
+	</metaobject>
+	
+	<metaobject seq="5" persistent="Y" name="delta_log" motype="N">
+		<propertyversion versionname="0" seq="0">
+	        <property autoincrement="IDENTITY" listdisplay="N" field="delta_record_no" keyconstraint="PRIMARY KEY" seq="0"/>
+	        <property listdisplay="Y" field="project_id" seq="1"/>
+	        <property listdisplay="Y" field="xml_template" seq="2"/>
+	        <property listdisplay="Y" field="node_name" seq="3"/>
+	        <property listdisplay="Y" field="keys" seq="4"/>
+	        <property listdisplay="Y" field="attributes" seq="5"/>
+	        <property listdisplay="Y" field="actioncode" seq="6"/>
+	        <property listdisplay="Y" field="logtime" seq="7" defaultvaluetype="sysvar_default" defaultvalue="SYSDATETIME" />
+        </propertyversion>
+    </metaobject>
+     
+</structure>

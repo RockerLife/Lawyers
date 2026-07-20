@@ -1,0 +1,82 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="BankruptcyDetailsLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from BankruptcyDetailsLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from BankruptcyDetailsLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into BankruptcyDetailsLW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="personalBankrupties" prepend=",">personalBankrupties</isNotEmpty>
+               <isNotEmpty property="commercialBankruptcies" prepend=",">commercialBankruptcies</isNotEmpty>
+               <isNotEmpty property="representedDebtors" prepend=",">representedDebtors</isNotEmpty>
+               <isNotEmpty property="preBankruptcyServices" prepend=",">preBankruptcyServices</isNotEmpty>
+               <isNotEmpty property="dueDiligenceProcess" prepend=",">dueDiligenceProcess</isNotEmpty>
+               <isNotEmpty property="reviewProcedureForCertification" prepend=",">reviewProcedureForCertification</isNotEmpty>
+               <isNotEmpty property="disclosureStatementExplaining" prepend=",">disclosureStatementExplaining</isNotEmpty>
+               <isNotEmpty property="conspicuousStatement" prepend=",">conspicuousStatement</isNotEmpty>
+               <isNotEmpty property="companyFinance" prepend=",">companyFinance</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="personalBankrupties" prepend=",">#personalBankrupties#</isNotEmpty>
+               <isNotEmpty property="commercialBankruptcies" prepend=",">#commercialBankruptcies#</isNotEmpty>
+               <isNotEmpty property="representedDebtors" prepend=",">#representedDebtors#</isNotEmpty>
+               <isNotEmpty property="preBankruptcyServices" prepend=",">#preBankruptcyServices#</isNotEmpty>
+               <isNotEmpty property="dueDiligenceProcess" prepend=",">#dueDiligenceProcess#</isNotEmpty>
+               <isNotEmpty property="reviewProcedureForCertification" prepend=",">#reviewProcedureForCertification#</isNotEmpty>
+               <isNotEmpty property="disclosureStatementExplaining" prepend=",">#disclosureStatementExplaining#</isNotEmpty>
+               <isNotEmpty property="conspicuousStatement" prepend=",">#conspicuousStatement#</isNotEmpty>
+               <isNotEmpty property="companyFinance" prepend=",">#companyFinance#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="BankruptcyDetailsID">SELECT IDENT_CURRENT('BankruptcyDetailsLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select BankruptcyDetailsID, personalBankrupties, commercialBankruptcies, representedDebtors, preBankruptcyServices, dueDiligenceProcess, reviewProcedureForCertification, disclosureStatementExplaining, conspicuousStatement, companyFinance from BankruptcyDetailsLW where BankruptcyDetailsID = #BankruptcyDetailsID#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update BankruptcyDetailsLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="personalBankrupties" prepend=",">personalBankrupties = #personalBankrupties#</isNotEmpty>
+               <isEmpty property="personalBankrupties" prepend=",">personalBankrupties = null</isEmpty>
+               <isNotEmpty property="commercialBankruptcies" prepend=",">commercialBankruptcies = #commercialBankruptcies#</isNotEmpty>
+               <isEmpty property="commercialBankruptcies" prepend=",">commercialBankruptcies = null</isEmpty>
+               <isNotEmpty property="representedDebtors" prepend=",">representedDebtors = #representedDebtors#</isNotEmpty>
+               <isEmpty property="representedDebtors" prepend=",">representedDebtors = null</isEmpty>
+               <isNotEmpty property="preBankruptcyServices" prepend=",">preBankruptcyServices = #preBankruptcyServices#</isNotEmpty>
+               <isEmpty property="preBankruptcyServices" prepend=",">preBankruptcyServices = null</isEmpty>
+               <isNotEmpty property="dueDiligenceProcess" prepend=",">dueDiligenceProcess = #dueDiligenceProcess#</isNotEmpty>
+               <isEmpty property="dueDiligenceProcess" prepend=",">dueDiligenceProcess = null</isEmpty>
+               <isNotEmpty property="reviewProcedureForCertification" prepend=",">reviewProcedureForCertification = #reviewProcedureForCertification#</isNotEmpty>
+               <isEmpty property="reviewProcedureForCertification" prepend=",">reviewProcedureForCertification = null</isEmpty>
+               <isNotEmpty property="disclosureStatementExplaining" prepend=",">disclosureStatementExplaining = #disclosureStatementExplaining#</isNotEmpty>
+               <isEmpty property="disclosureStatementExplaining" prepend=",">disclosureStatementExplaining = null</isEmpty>
+               <isNotEmpty property="conspicuousStatement" prepend=",">conspicuousStatement = #conspicuousStatement#</isNotEmpty>
+               <isEmpty property="conspicuousStatement" prepend=",">conspicuousStatement = null</isEmpty>
+               <isNotEmpty property="companyFinance" prepend=",">companyFinance = #companyFinance#</isNotEmpty>
+               <isEmpty property="companyFinance" prepend=",">companyFinance = null</isEmpty>
+          </dynamic>
+          where BankruptcyDetailsID = #BankruptcyDetailsID#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from BankruptcyDetailsLW where BankruptcyDetailsID = #BankruptcyDetailsID#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from BankruptcyDetailsLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from BankruptcyDetailsLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select BankruptcyDetailsID, personalBankrupties, commercialBankruptcies, representedDebtors, preBankruptcyServices, dueDiligenceProcess, reviewProcedureForCertification, disclosureStatementExplaining, conspicuousStatement, companyFinance from BankruptcyDetailsLW where BankruptcyDetailsID = #BankruptcyDetailsID#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select BankruptcyDetailsID, personalBankrupties, commercialBankruptcies, representedDebtors, preBankruptcyServices, dueDiligenceProcess, reviewProcedureForCertification, disclosureStatementExplaining, conspicuousStatement, companyFinance from BankruptcyDetailsLW</select>
+     <parameterMap id="SaveUpdateBankruptcyMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="personalBankrupties" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="commercialBankruptcies" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="representedDebtors" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="preBankruptcyServices" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="dueDiligenceProcess" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="reviewProcedureForCertification" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="disclosureStatementExplaining" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="conspicuousStatement" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="companyFinance" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="SaveUpdateBankruptcy" parameterMap="SaveUpdateBankruptcyMap">{ call SaveUpdateBankruptcy(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

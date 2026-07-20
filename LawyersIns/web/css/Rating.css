@@ -1,0 +1,50 @@
+#calendar_widget_iframe{
+	border: none;
+	width:166px;
+	height:145px;
+	overflow:hidden;
+}
+div.calendar_widget { position: absolute; background-color:#ffffff; top: 0px; left: 100px; width:166px; height: 145px; frame-border:0px; display: none; border:0; overflow: hidden; }
+
+.errors_list{
+	color:#ff0000;
+	font-weight:bold;
+}
+.button4 {
+  xmargin: 1em 0;
+  width: 80px;
+  font-family: Arial;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #A5C0EB;
+  color:#FFFFFF;
+}
+.button4 a {
+  display: block;
+  padding:5px;
+  text-align:center;
+  background-color: #A5C0EB;
+  color:#FFFFFF;
+  
+}
+.button4 a:link,
+.button4 a:visited,
+.button4 a:hover {
+  background-color: #A5C0EB;
+  color:#000000;
+  text-decoration: none;
+}
+.button4 a:link,
+.button4 a:visited {
+  border-top: 1px solid #cecece;
+  border-bottom: 2px solid #cecece;
+  border-left: 1px solid #cecece;
+  border-right: 2px solid #cecece;
+}
+.button4 a:hover {
+	color:#FFFFFF;
+  border-bottom: 1px solid #000000;
+  border-top: 2px solid #000000;
+  border-right: 1px solid #000000;
+  border-left: 2px solid #000000;
+}

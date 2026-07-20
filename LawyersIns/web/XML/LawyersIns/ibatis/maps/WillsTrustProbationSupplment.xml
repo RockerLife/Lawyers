@@ -1,0 +1,24 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="WillsTrustProbationSupplment">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from WillsTrustProbationSupplment</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from WillsTrustProbationSupplment</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into WillsTrustProbationSupplment(
+          <dynamic prepend=" " />
+          ) values (
+          <dynamic prepend=" " />
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  from WillsTrustProbationSupplment</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update WillsTrustProbationSupplment set
+          <dynamic prepend=" " />
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from WillsTrustProbationSupplment</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from WillsTrustProbationSupplment</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from WillsTrustProbationSupplment</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  from WillsTrustProbationSupplment</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  from WillsTrustProbationSupplment</select>
+</sqlMap>
+

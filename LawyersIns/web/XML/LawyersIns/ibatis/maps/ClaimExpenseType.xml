@@ -1,0 +1,37 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ClaimExpenseType">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ClaimExpenseType</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ClaimExpenseType where LOBKey = #LOBKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ClaimExpenseType(
+          <dynamic prepend=" ">
+               <isNotEmpty property="ClaimExpenseTypeDesc" prepend=",">ClaimExpenseTypeDesc</isNotEmpty>
+               <isNotEmpty property="LOBKey" prepend=",">LOBKey</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="ClaimExpenseTypeDesc" prepend=",">#ClaimExpenseTypeDesc#</isNotEmpty>
+               <isNotEmpty property="LOBKey" prepend=",">#LOBKey#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="ClaimExpenseTypeKey">SELECT IDENT_CURRENT('ClaimExpenseType') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ClaimExpenseTypeKey, ClaimExpenseTypeDesc, LOBKey from ClaimExpenseType where ClaimExpenseTypeKey = #ClaimExpenseTypeKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ClaimExpenseType set
+          <dynamic prepend=" ">
+               <isNotEmpty property="ClaimExpenseTypeDesc" prepend=",">ClaimExpenseTypeDesc = #ClaimExpenseTypeDesc#</isNotEmpty>
+               <isEmpty property="ClaimExpenseTypeDesc" prepend=",">ClaimExpenseTypeDesc = null</isEmpty>
+               <isNotEmpty property="LOBKey" prepend=",">LOBKey = #LOBKey#</isNotEmpty>
+               <isEmpty property="LOBKey" prepend=",">LOBKey = null</isEmpty>
+          </dynamic>
+          where ClaimExpenseTypeKey = #ClaimExpenseTypeKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ClaimExpenseType where ClaimExpenseTypeKey = #ClaimExpenseTypeKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ClaimExpenseType</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ClaimExpenseType where LOBKey = #LOBKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ClaimExpenseTypeKey, ClaimExpenseTypeDesc, LOBKey from ClaimExpenseType where ClaimExpenseTypeKey = #ClaimExpenseTypeKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ClaimExpenseTypeKey, ClaimExpenseTypeDesc from ClaimExpenseType where LOBKey = #LOBKey#</select>
+</sqlMap>
+

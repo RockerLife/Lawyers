@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dynamic Content</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<!-- <script src="js/jquery.js"></script> -->
+<script src="js/jquery.treeview.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+
+<script src="js/jquery.dataTables1.10.19.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-te/1.4.0/jquery-te.js"></script>
+<!-- <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script> -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-te/1.4.0/jquery-te.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<form>
+		<!-- Bootstrap Core JavaScript -->
+
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth">
+				<!---------Header Start---------->
+				<div id="header">
+					<span id="#Include:header.html#"></span>
+				</div>
+				<!---------Header End---------->
+
+				<div id="contentSection">
+					<div>
+						<h2 class="questionHeading">Dynamic Content</h2>
+					</div>
+					<div class="form row">
+						<div class="block-form">
+							<div class="paddingTop10">
+								<div id="emailNotifications_freeform_contextdata_01" class="freeFormDiv form-inline">
+									<ul class="inlineBlock">
+										<li class="inlineBlock_1_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError">
+														<h6>&nbsp;</h6>
+													</div>
+													<div class="freeFormListTdError paddingLeft3">
+														<h6>&nbsp;</h6>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign freeFormLabelWidth">Name :</div>
+													<div class="freeFormListTd tdInput">
+														<input type="text" name="DynamicContent_Name" class="form-control" id="DynamicContent_Name" style="width: 500px">
+														<div id="error_DynamicContent_Name" class="error" />
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="inlineBlock_1_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError">
+														<h6>&nbsp;</h6>
+													</div>
+													<div class="freeFormListTdError paddingLeft3">
+														<h6>&nbsp;</h6>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign freeFormLabelWidth">Code :</div>
+													<div class="freeFormListTd tdInput">
+														<span id="eval:events.addEvent">
+															<input type="text" name="DynamicContent_Code" class="form-control" id="DynamicContent_Code" style="width: 500px"/>
+														</span>
+														<span id="eval:events.editEvent">
+															<input type="text" name="DynamicContent_Code" readonly="readonly" class="form-control" id="DynamicContent_Code" style="width: 500px"/>
+														</span>
+														<div id="error_DynamicContent_Code" class="error" />
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="inlineBlock_1_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError">
+														<h6>&nbsp;</h6>
+													</div>
+													<div class="freeFormListTdError paddingLeft3">
+														<h6>&nbsp;</h6>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign freeFormLabelWidth valignTop">Description :</div>
+													<div class="freeFormListTd tdInput">
+														<textarea name="DynamicContent_Description" class="form-control" style="height:80px; width: 600px" id="DynamicContent_Description" ></textarea>
+														<div id="error_DynamicContent_Description" class="error"> </div>
+													</div>
+												</div>
+											</div>
+										</li>
+										
+										<li class="inlineBlock_1_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError">
+														<h6>&nbsp;</h6>
+													</div>
+													<div class="freeFormListTdError paddingLeft3">
+														<h6>&nbsp;</h6>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign freeFormLabelWidth valignTop">Body :</div>
+													<div class="freeFormListTd tdInput">
+														<textarea name="DynamicContent_Body" class="form-control" style="height:80px; width: 600px" id="DynamicContent_Body" ></textarea>
+														<div id="error_DynamicContent_Body" class="error"> </div>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="buttons borderTop row">
+							<a class="btn back floatLeft" href="javascript:submitform('emailDynamicContentLookupList.html','emailDynamicContentLookup.back','','','');">Back</a>
+							<div class="floatRight">
+								<span id="eval:events.addEvent">
+									<a class="btn next" href="javascript:submitform('emailDynamicContentLookupList.html','emailDynamicContentLookup.save','','','');" >Save</a>
+								</span>
+								<span id="eval:events.editEvent">
+									<a class="btn next" href="javascript:submitform('emailDynamicContentLookupList.html','emailDynamicContentLookup.Modify','','','');" >Update</a>
+								</span>
+								
+							</div>
+						</div>
+					</div>
+					<!---------Footer Start---------->
+					<div id="footer" class="footer">
+						<span id="#Include:footer.html#"></span>
+					</div>
+					<!---------Footer End---------->
+					<table id="emailNotifications_freeform_contextdata_999">
+						<tr>
+							<td>
+								<input type="hidden" name="jsessionid" id="jsessionid" />
+								<input type="hidden" name="divHideShow" id="divHideShow" />
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

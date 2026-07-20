@@ -1,0 +1,49 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Coverages">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Coverages</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Coverages where LOBKey = #LOBKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into Coverages(
+          <dynamic prepend=" ">
+               <isNotEmpty property="CoverageDesc" prepend=",">CoverageDesc</isNotEmpty>
+               <isNotEmpty property="CoverageAbreviation" prepend=",">CoverageAbreviation</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="LOBKey" prepend=",">LOBKey</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="CoverageDesc" prepend=",">#CoverageDesc#</isNotEmpty>
+               <isNotEmpty property="CoverageAbreviation" prepend=",">#CoverageAbreviation#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="LOBKey" prepend=",">#LOBKey#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="CoverageKey">SELECT IDENT_CURRENT('Coverages') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CoverageKey, CoverageDesc, CoverageAbreviation, LastUpdateUserID, LastUpdateTimeStamp, LOBKey from Coverages where CoverageKey = #CoverageKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update Coverages set
+          <dynamic prepend=" ">
+               <isNotEmpty property="CoverageDesc" prepend=",">CoverageDesc = #CoverageDesc#</isNotEmpty>
+               <isEmpty property="CoverageDesc" prepend=",">CoverageDesc = null</isEmpty>
+               <isNotEmpty property="CoverageAbreviation" prepend=",">CoverageAbreviation = #CoverageAbreviation#</isNotEmpty>
+               <isEmpty property="CoverageAbreviation" prepend=",">CoverageAbreviation = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="LOBKey" prepend=",">LOBKey = #LOBKey#</isNotEmpty>
+               <isEmpty property="LOBKey" prepend=",">LOBKey = null</isEmpty>
+          </dynamic>
+          where CoverageKey = #CoverageKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from Coverages where CoverageKey = #CoverageKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from Coverages</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from Coverages where LOBKey = #LOBKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CoverageKey, CoverageDesc, CoverageAbreviation, LastUpdateUserID, LastUpdateTimeStamp, LOBKey from Coverages where CoverageKey = #CoverageKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CoverageKey, CoverageDesc, CoverageAbreviation, LastUpdateUserID, LastUpdateTimeStamp from Coverages where LOBKey = #LOBKey#</select>
+</sqlMap>
+

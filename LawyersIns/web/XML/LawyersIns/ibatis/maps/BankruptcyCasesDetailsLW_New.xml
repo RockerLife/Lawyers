@@ -1,0 +1,60 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="BankruptcyCasesDetailsLW_New">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from BankruptcyCasesDetailsLW_New</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from BankruptcyCasesDetailsLW_New</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into BankruptcyCasesDetailsLW_New(
+          <dynamic prepend=" ">
+               <isNotEmpty property="bankruptcyKey" prepend=",">bankruptcyKey</isNotEmpty>
+               <isNotEmpty property="Percentage" prepend=",">Percentage</isNotEmpty>
+               <isNotEmpty property="AverageCaseValue" prepend=",">AverageCaseValue</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="bankruptcyKey" prepend=",">#bankruptcyKey#</isNotEmpty>
+               <isNotEmpty property="Percentage" prepend=",">#Percentage#</isNotEmpty>
+               <isNotEmpty property="AverageCaseValue" prepend=",">#AverageCaseValue#</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">#VersionSequence#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select bankruptcyKey, Percentage, AverageCaseValue, PolicyKey, VersionSequence, LastUpdateUserID, LastUpdateTimeStamp from BankruptcyCasesDetailsLW_New</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update BankruptcyCasesDetailsLW_New set
+          <dynamic prepend=" ">
+               <isNotEmpty property="bankruptcyKey" prepend=",">bankruptcyKey = #bankruptcyKey#</isNotEmpty>
+               <isEmpty property="bankruptcyKey" prepend=",">bankruptcyKey = null</isEmpty>
+               <isNotEmpty property="Percentage" prepend=",">Percentage = #Percentage#</isNotEmpty>
+               <isEmpty property="Percentage" prepend=",">Percentage = null</isEmpty>
+               <isNotEmpty property="AverageCaseValue" prepend=",">AverageCaseValue = #AverageCaseValue#</isNotEmpty>
+               <isEmpty property="AverageCaseValue" prepend=",">AverageCaseValue = null</isEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence = #VersionSequence#</isNotEmpty>
+               <isEmpty property="VersionSequence" prepend=",">VersionSequence = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from BankruptcyCasesDetailsLW_New</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from BankruptcyCasesDetailsLW_New</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from BankruptcyCasesDetailsLW_New</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select bankruptcyKey, Percentage, AverageCaseValue, PolicyKey, VersionSequence, LastUpdateUserID, LastUpdateTimeStamp from BankruptcyCasesDetailsLW_New</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select bankruptcyKey, Percentage, AverageCaseValue, PolicyKey, VersionSequence, LastUpdateUserID, LastUpdateTimeStamp from BankruptcyCasesDetailsLW_New</select>
+     <parameterMap id="DisplayBankruptcyCasesDetails_New_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="DisplayBankruptcyCasesDetails_New_p" parameterMap="DisplayBankruptcyCasesDetails_New_pMap" resultClass="java.util.HashMap">{ call DisplayBankruptcyCasesDetails_New_p(?,?)}</procedure>
+</sqlMap>
+

@@ -1,0 +1,899 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Brokerage Policy</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/jquery.treeview.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script type="text/javascript" src="script/htmlMassking.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+<body onload="loadBrokeragePage();showHidePLSetion();checksBrokeragePolicy();">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<form class="form-horizontal row" enctype="multipart/form-data">
+	<div id="cover"></div>
+<div id="popupsave2">
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog" style="width: 550px;">
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"/>
+			<h4 class="modal-title">Contract Comments</h4>
+		  </div>
+		  <div class="modal-body" style="">
+			<textarea rows="8" cols="70" id="ajax_field_CComents"/>
+		  </div>
+		  <div class="modal-footer">
+			<div class="floatRight">
+			
+				<a class="ovalbutton"
+							onclick="setContractComments();closePopUp('popupsave2');">Save</a>
+					<a class="ovalbutton" onclick="closePopUp('popupsave2');">Cancel</a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</div>
+<div id="popupsave1" style="display:none;">
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog" style="width: 500px;">
+		<!-- Modal content-->
+		 	<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"/>
+			<h4 class="modal-title">Confirm</h4>
+		  </div>
+		  <div class="modal-body" style="height: 64px;">
+			<p style="text-align: center; line-height: 25px;">Do you want to create another brokerage policy for this insured?</p>
+		  </div>
+		  <div class="modal-footer">
+			<div class="floatRight">
+				<a class="ovalbutton" 
+				href="javascript:submitform('addEditBrokeragePolicy.html','addEditBrokeragePolicy.copyOverBrokeragePolicy','','');"
+				onclick="closePopUp('popupsave1');">Yes</a>
+				
+				<a class="ovalbutton" onclick="closePopUp('popupsave1');">No</a>
+			</div>
+		  </div>
+		</div>
+	 
+		 
+		 </div>
+	</div>
+</div>
+
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth" id="BrokerAppIssued_Security">
+				<div id="header">
+					<table width="100%" border="0" align="center" cellpadding="0"
+				cellspacing="0" id="workq_freeform_contextdata_05">
+				<tr>
+					<td height="50">
+						<table width="98%" border="0" align="center" cellpadding="0"
+							cellspacing="0">
+							<tr>
+								<td id="eval:LawyersRule.isOtherThanSubproducerFormLogo" valign="bottom" width="300px"><a
+									href="http://www.protexurelawyers.com"><img
+										src="image/logo_protexureaccountants1.png" width="325"
+										height="64" /></a></td>
+								<td id="eval:LawyersRule.isSubproducerFormLogo"
+								valign="bottom" width="300px"><a
+									id="context_SPWebsite1">
+									<img id="contexturl" src="LogoImagePath" name="LogoImagePath" />
+										</a></td>
+								<!-- <td valign="bottom" align="left"
+									id="producerlogo_freeform_contextdata_image">
+									<span id="eval:LawyersRule.isNotSubproducerFormLogo" >
+									<span id="eval:LawyersRule.IsSubProducerFlow"><a
+										id="context_SPWebsite1"><img id="contexturl"
+											src="LogoImagePath" /></a></span>
+											</span></td> -->
+								<td align="right">
+									<table border="0" cellspacing="1" cellpadding="1">
+										<tr>
+											<td align="center"
+												id="eval:LawyersRule.isInsuredandRegistered">
+												<table width="100%" border="0" cellspacing="0"
+													cellpadding="0">
+													<tr>
+														<td align="center"><img src="img/backPortal1.jpg"
+															width="20" height="22" /></td>
+
+													</tr>
+													<tr>
+
+														<td class="topLink"><span><a
+																href="javascript:submitform('changepassword.html','firm.changepassword','','');"
+																class="topLink">Change Password</a> </span> <span
+															id="eval:LawyersRule.showBackToInsuredOnlyPortal">
+																| <a
+																href="https://www.protexurelawyers.com"
+																class="topLink">Back to Insured Only Portal</a>
+														</span></td>
+													</tr>
+												</table>
+											</td>
+											<td align="center" valign="bottom"
+												id="eval:LawyersRule.isShowUserLoginDetails">
+												<table id="workq_freeform_contextdata_555" Border="0"
+													cellpadding="0" cellspacing="0">
+													<tr>
+														<td><label class="txt11BoldBlack" nowrap
+															style="font-size: 11px">Welcome&nbsp;&nbsp;</label></td>
+														<td align="right" style="font-size: 11px" nowrap><label name="AgentName"
+															style="font-size: 10px" id="AgentName"
+															class="txt11BoldBlack"></label> (<label
+															name="UserRoleName" style="font-size: 10px"
+															id="UserRoleName" class="txt11BoldBlack"></label>)&nbsp;&nbsp;</td>
+
+													</tr>
+												</table>
+											</td>
+											<td align="center">
+												<table width="100%" border="0" cellspacing="0"
+													cellpadding="0">
+													<tr>
+														<td align="center">
+															<div id="eval:LawyersRule.IsManagementRoleTest">
+																<img src="img/backPortal1.jpg" width="20" height="22" />
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td class="topLink">
+															<div id="eval:LawyersRule.IsManagementRoleTest">
+																<a
+																	href="javascript:submitform('indexinsured.html|indexagent.html','header.homepage','forwardeval','LawyersRule.isInsured|LawyersRule.isAgent');"
+																	class="topLink">Back to Portal</a>
+															</div>
+														</td>
+													</tr>
+												</table>
+											</td>
+											<td align="center" valign="bottom" class="txtBold11Maroon"
+												id="eval:LawyersRule.isAgentState">
+												<span id="BackToList_security">
+												<span id="eval:LawyersRule.hideBackToListOnSubProducerFormPage">|</span>
+												</span>
+												</td>
+											<td align="center" id="BackToList_security">
+											<div id="brokerScreenHeader2_security">
+											<div id="eval:LawyersRule.isNotShowBackToList">
+												<table id="eval:LawyersRule.hideBackToListOnSubProducerFormPage" width="100%" border="0" cellspacing="0"
+													cellpadding="0">
+													<tr>
+														<td align="center"><img src="img/backList1.jpg"
+															width="20" height="22" /></td>
+													</tr>
+													<tr>
+														<td class="topLink"><a
+															href="javascript:submitform('list.html','addEditBrokeragePolicy.backtolist','','');"
+															class="topLink">Back to List</a></td>
+													</tr>
+												</table>
+												</div>
+												</div>
+											</td>
+											
+											
+											<td width="5" align="center" valign="bottom"
+												class="txtBold11Maroon" id="eval:LawyersRule.isAgentState">												&nbsp;|&nbsp;</td>
+											<td align="center" id="eval:LawyersRule.isAgentState">
+												<table width="100%" border="0" cellspacing="0"
+													cellpadding="0">
+													<tr>
+														<td align="center"><img src="img/backWorkq1.jpg"
+															width="20" height="22" /></td>
+													</tr>
+													<tr>
+														<td class="topLink"><a
+															href="javascript:submitform('workq.html','header.backtoworkq','','');"
+															class="topLink">Back to workq</a></td>
+													</tr>
+												</table>
+											</td>
+											
+											<td id="eval:LawyersRule.isAgent" align="center"
+												valign="bottom" class="txtBold11Maroon">&nbsp; &nbsp;</td>
+											<td align="center">
+												<table width="100%" border="0" cellspacing="0"
+													cellpadding="0">
+													<tr id="eval:LawyersRule.isAgent">
+														<td align="center"></td>
+													</tr>
+													
+														<td class="topLink">
+														<div id="eval:LawyersRule.isNotProdEnvironment">
+														<div id="eval:LawyersRule.isAgent">
+														
+														<a
+															href="javascript:submitform('sessionList.html','header.showSessionList','','');"
+															class="topLink"></a>
+															</div>
+															</div>
+															</td>
+
+													</tr>
+												</table>
+											</td>
+
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="15" class="redLeft"></td>
+								<td align="right" class="redCenter"
+									id="quickquoteoption_freeform_contextdata_callimage">
+									<table id="workq_freeform_contextdata_06" width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td align="left"><img src="img/getting_coverage.jpg"
+												width="597" height="33" /></td>
+											<td align="right" id="eval:LawyersRule.isOtherThanSubproducerFormLogo">
+											<span id="eval:LawyersRule.IsNotSubProducerFlow"><img
+												src="img/call.jpg" width="289" height="24" /></span></td>
+											
+											<td align="right" id="eval:LawyersRule.isSubproducerFormLogo">
+											<span id="eval:LawyersRule.IsNotSubProducerFlow">
+											<label class="txt11Bold" width="289" height="24" style="color:#fff">Call</label>
+											<label class="txt11Bold" id="ajax_field_SPPhoneNumber" name="SPPhoneNumber"
+													  width="289" height="24" style="color:#fff;font-size:19px"></label>
+											<label class="txt11Bold" width="289" height="24" style="color:#fff">for Assistance</label>
+													  </span></td>
+											
+											<td align="right" id="eval:LawyersRule.IsSubProducerFlow">
+											<label class="txt11Bold" width="289" height="24" style="color:#fff">Call</label>
+											<label class="txt11Bold" id="ajax_field_SPPhoneNumber" name="SPPhoneNumber"
+													  width="289" height="24" style="color:#fff;font-size:19px" />
+											<label class="txt11Bold" width="289" height="24" style="color:#fff">for Assistance</label>
+											</td>
+										</tr>
+									</table>
+								</td>
+								<td width="15" class="redRight"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<!-- <tr id="showAgentOnly"> -->
+				<tr>
+					<td>
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="15" class="grayLeft"></td>
+								<td class="grayCenter">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td align="right">
+												<table border="0" cellspacing="2" cellpadding="2"
+													id="labels_freeform_contextdata_99" class="new_head_info">
+													<tr id="">
+													
+														<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+															id="eval:LawyersRule.isAccountNameNotEmpty">Firm
+															Name :</td>
+														<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+															id="eval:LawyersRule.isAccountNameNotEmpty"><label
+															name="AccountName" id="AccountName"
+															class="txt11BoldBlack"> </label></td>
+														
+														<!-- <td align="right" nowrap="nowrap" class="txtBold11Maroon"
+															id="eval:LawyersRule.isStatusNotEmpty">Status :</td>
+														<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+															id="eval:LawyersRule.isStatusNotEmpty"><label
+															id="headerStatusDesc" name="headerStatusDesc" class="txt11BoldBlack">
+														</label> <span id="eval:LawyersRule.ShowRenew">(R)</span></td>
+														<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+															id="eval:LawyersRule.isPolicyNumberNotEmpty">
+															Policy# :</td>
+														<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+															id="eval:LawyersRule.isPolicyNumberNotEmpty"><label
+															id="PolicyNumber" name="PolicyNumber"
+															class="txt11BoldBlack"> </label></td>
+														<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+															id="eval:LawyersRule.isEffectiveDateNotEmpty">
+															Effective Date :</td>
+														<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+															id="eval:LawyersRule.isEffectiveDateNotEmpty"><label
+															name="PolicyEffectiveDate" id="PolicyEffectiveDate"
+															class="txt11BoldBlack"> </label></td> -->
+														<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+															id="eval:LawyersRule.isStateCodeNotEmpty">State :</td>
+														<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+															id="eval:LawyersRule.isStateCodeNotEmpty"><label
+															id="StateDesc" name="StateDesc" class="txt11BoldBlack">
+														</label></td>
+														<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+															id="eval:LawyersRule.isContextPremiumNotEmpty">
+															Premium :</td>
+														<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+															id="eval:LawyersRule.isContextPremiumNotEmpty"><label
+															id="ContextPremium" name="ContextPremium"
+															class="txt11BoldBlack"> </label></td>
+															
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+									<table align="right" class="downloadDocuments" cellpadding="1" cellspacing="0" id="eval:LawyersRule.isAgent">
+							<tr id="eval:LawyersRule.isShowDocumentSectionBrokerage">
+								<td>
+								
+								<span id=""><a
+									href="javascript:submitform('uploadexcelpopup.html','firm.uploadexcel','','');">Documents
+								</a></span>
+										</td>
+							</tr>
+						</table>
+								</td>
+								<td width="15" class="grayRight"></td>
+							</tr>
+
+						</table>
+					</td>
+				</tr>
+				
+				</table>
+				</div>
+				<div>
+						<h2 class="questionHeading">
+							<span>2.</span> Brokerage
+						</h2>
+					</div>
+				<div id="contentSection">
+					<div class="confirmationMsgAlign" id="addEditBrokeragePolicy_freeform_contextdata_100">
+						<span class="Confirmation">
+							<label style="padding-left:5px;font-weight:bold;line-height:20px;color:green;"  name="pageMsg" id="pageMsg" />
+						</span>
+					</div>
+					<div class="form">
+					<div class="row insuranceFloat" style="padding-top: 15px;" id="addEditBrokeragePolicy_freeform_contextdata_1">
+								<div id="div2">
+									<div class="freeFormDiv">
+										<div class="row newFreeForm_UI" style="width: 100%">
+											
+											
+												<div class="row">
+													
+													<div class="headingNew2">Firm Information</div> 
+												</div>
+												<div class="row">
+														<div class="col-sm-6">
+															<div class="form-group form-group2">
+																<label class="asterisk">Firm Name :</label>
+																<input class="form-control" type="text" name="AccountName" id="ajax_field_AccountName" maxlength="100"/>
+																<div id="error_AccountName" class="error"> </div>
+															</div>
+														</div>
+														<div class="col-sm-6" id ="">
+															<div class="form-group form-group2" >
+																<label class="asterisk">Address :</label>
+																<input class="form-control"  type="text" name="Address" id="ajax_field_Address" maxlength="100"/>
+																<div id="error_Address" class="error"> </div>
+															</div>
+														</div>
+													</div>
+													<div  class="row">
+													<div class="col-sm-6" id ="">
+															<div class="form-group form-group2" >
+																<label class="">Address 2 :</label>
+																<input class="form-control"  type="text" name="Address2" id="ajax_field_Address2" maxlength="100"/>
+																<div id="error_Address2" class="error"> </div>
+															</div>
+														</div>
+														<div class="col-sm-6">
+																<div class="form-group form-group2" id="State">
+																		<label class="asterisk">State :</label>
+																		<select name="State" id="ajax_field_State"
+																			class="form-control" onchange="loadBrokeragePage();">
+																				<option value="">Select</option>
+																		</select>
+																		<div id="error_State" class="error"> </div>
+																	</div>
+																</div>
+																
+														
+														</div>
+														<div  class="row">	
+														<div class="col-sm-6">
+																	<div class="form-group form-group2">
+																		<label class="asterisk">City :</label>
+																		<input class="form-control" type="text" name="City" id="ajax_field_City"/>
+																		 <div id="error_City" class="error"> </div>
+																	</div>
+															</div>
+															<div class="col-sm-6">
+																<div class="form-group form-group2">
+																	<label class="asterisk">Zip Code :</label>
+																	<input class="form-control" type="text" name="Zip" id="ajax_field_Zip"  onkeydown="loadBrokeragePage();"/>
+																	 <div id="error_Zip" class="error"> </div>
+																</div>
+															</div>
+															
+															
+														
+													</div>
+													<div  class="row">	
+													<div class="col-sm-6">
+																<div class="form-group form-group2">
+																	<label class="asterisk">Phone :</label>
+																	<input class="form-control" type="text" name="Phone" id="ajax_field_Phone" onkeydown="loadBrokeragePage();"/>
+																	<div id="error_Phone" class="error"> </div>
+																</div>
+															</div>
+															<div class="col-sm-6">
+																<div class="form-group form-group2">
+																	<label class="asterisk">Email :</label> 
+																	<input class="form-control" type="text" name="Email" id="ajax_field_Email" onblur="validateEmail(this.value,this);" />
+																	<div id="error_Email" class="error"></div>
+																</div>
+															</div>
+														
+														
+													</div>
+													
+													<div class="row">
+													<div class="col-sm-6">
+																	<div class="form-group form-group2" >
+																		<label class="asterisk">Status :</label>
+																		<select name="StatusKey" id="ajax_field_StatusKey"
+																			class="form-control" onchange="loadBrokeragePage();">
+																				<option value="">Select</option>
+																		</select>
+																		<div id="error_StatusKey" class="error"> </div>
+																	</div>
+																</div>
+														<div class="col-sm-6">
+																		<div class="form-group form-group2" id="">
+																			<label class="asterisk">Line of Business :</label>
+																			
+																			<select name="LOBKey" id="ajax_field_LOBKey" onchange="manageLOB('ajax_field_BrokeragePolicyKey');showHideOther();"
+																				class="form-control">
+																					<option value="">Select</option>
+																			</select>
+																			
+																			<div id="error_LOBKey" class="error"> </div>
+																		</div>
+																		
+																		<div class="form-group form-group2" id="otherLOBDescID">
+																			<label class="asterisk">Description :</label>
+																			<textarea rows="2" cols="50" name="otherLOBDesc" id="ajax_field_otherLOBDesc"></textarea>
+																			<div id="error_otherLOBDesc" class="error"> </div>
+																		</div>
+																	</div>
+																	
+																	
+																	
+															<div class="col-sm-6">
+																<div class="form-group form-group2" >
+																	<label class="asterisk">New / Renew :</label>
+																	<select name="TransactionTypeKey" id="ajax_field_TransactionTypeKey"
+																		class="form-control" onchange="showHideExpiringInfoBrokerage();">
+																			<option value="">Select</option>
+																		</select>
+																	<div id="error_TransactionTypeKey" class="error"> </div>
+																</div>
+															</div>
+															<div class="col-sm-6">
+																<div class="form-group form-group2" >
+																	<label class="asterisk">Sub-producer :</label>
+																	<select name="ProducerCode" id="ajax_field_ProducerCode"
+																		class="form-control">
+																			<option value="">Select</option>
+																		</select>
+																	<div id="error_ProducerCode" class="error"> </div>
+																</div>
+															</div>
+														
+													
+												</div>
+												
+												<div id="priorInsuranceDiv">
+											<div class="row">
+													
+													<div class="headingNew2">Insurance History</div> 
+												</div>
+											<div class="row" id="">
+								
+													<div class="col-sm-12" id="">
+														<div class="form-group form-group2" >
+															<label class="asterisk">Currently Insured :</label>
+															<input type="radio" name="haveProfessionalLiabilityInsurance" id="ajax_field_haveProfessionalLiabilityInsuranceY"
+																	value="Y" onchange="showHidePLSetion()" /> Yes &nbsp;&nbsp;
+															<input type="radio" name="haveProfessionalLiabilityInsurance" id="ajax_field_haveProfessionalLiabilityInsuranceN"
+																	value="N" onchange="showHidePLSetion()" /> No
+															<div id="error_haveProfessionalLiabilityInsurance" class="error"> </div>
+														</div>
+													</div>	
+												</div>	
+												<div id="PLSetion">
+												<div class="row">	
+														<div class="col-sm-6">
+															<div class="form-group form-group2">
+																<label class="asterisk">Professional Liability Policy Number :</label>
+																<input type="text" name="PLPolicyNumber" id="ajax_field_PLPolicyNumber" class="form-control" 
+																onchange="javascript:submitform('addEditBrokeragePolicy.html','addEditBrokeragePolicy.validateBrokeragePLPolicyNumber','','');"
+																/> 
+																<div id="error_PLPolicyNumber" class="error"> </div>
+																<div id="error_InvalidPLPolicyNumberError" class="error"> </div> 
+															</div>
+														</div>
+														
+														<div class="col-sm-6">
+															<div class="form-group form-group2" id="StreetAddress">
+																<label class="asterisk">Professional Liability Effective Date :</label>
+																<input class="form-control datepicker" type="text" name="PLEffectiveDate" id="ajax_field_PLEffectiveDate" onchange="setBrokerPolicyDates('ajax_field_PLEffectiveDate','ajax_field_PLExpirationDate');"  onkeyup="applyDateFormat(this,event);"  placeholder="MM/DD/YYYY"/>
+																<div id="error_PLEffectiveDate" class="error"> </div>
+															</div>
+														</div>
+													</div>
+													<div class="row" >
+									
+									
+														
+														<div class="col-sm-6">
+															<div class="form-group form-group2" id="StreetAddress">
+																<label class="asterisk">Professional Liability Expiration Date :</label>
+																<input class="form-control datepicker" type="text" name="PLExpirationDate" id="ajax_field_PLExpirationDate" onkeyup="applyDateFormat(this,event);"  placeholder="MM/DD/YYYY"/>
+																<div id="error_PLExpirationDate" class="error"> </div>
+															</div>
+														</div>
+													</div>	
+													
+													</div>
+													</div>
+																	<div id="div10" >
+															
+																			<div class="headingNew2">Limits & Deductible</div> 
+																		
+																		<div class="row">	
+																				<div class="col-sm-6">
+																					<div class="form-group form-group2">
+																						<label class="asterisk">Limits :</label>
+																						<select name="LimitSequence" id="LimitSequence"
+																							class="form-control">
+																							<option value="">Select</option>
+																						</select>
+																						<div id="error_LimitSequence" class="error"></div>
+																					</div>
+																				</div>
+																				
+																				<div class="col-sm-6">
+																					<div class="form-group form-group2" id="">
+																						<label class="asterisk">Deductible :</label>
+																						<select name="DeductibleSequence" id="DeductibleSequence"
+																								class="form-control" >
+																								<option value="">Select</option>
+																								
+																							</select>
+																						<div id="error_DeductibleSequence" class="error" />
+																					</div>
+																				</div>
+																			</div>
+																		<div class="row">
+																					<div class="col-sm-6">
+																						<div class="form-group form-group-last">
+																							
+																							<div>
+																								<span class="spanBlock">
+																								 <input type="radio" 	class="inputMargin" name="IsClaimExpensesType" value="N" id="ajax_field_IsClaimExpensesType" />
+																								 <span id="lb1">Defense expenses reduce your limit</span>
+																								 	  </span> 
+																								 <span	class="spanBlock">
+																								 	 <input type="radio" class="inputMargin"  name="IsClaimExpensesType" value="Y" id="ajax_field_IsClaimExpensesType" /> 
+																								 	 Defense expenses are in addition to your limit </span>
+																								<div id="error_IsClaimExpensesType" class="error"></div>
+																							</div>
+																						</div>
+																					</div>
+																					
+																					<div class="col-sm-6">
+																						<div class="form-group form-group-last">
+																							
+																							<div>
+																								<span class="spanBlock">  
+																								<input class="inputMargin" type="radio" name="IsClaimOptionType" id="ajax_field_IsClaimOptionType" value="N" />
+																								 Per Claim
+																									<i class="italic"> - The deductible is paid for each
+																										claim during the policy period</i> </span> 
+																								<span class="spanBlock"> <input class="inputMargin"
+																									type="radio" name="IsClaimOptionType"
+																									id="ajax_field_IsClaimOptionType" value="Y" /> Annual
+																									Aggregate <i class="italic">- this deductible is paid
+																										only once for the first claim</i> </span>
+																							</div>
+																							<div>
+																								<input class="inputMargin" type="checkbox"
+																									id="ajax_field_IsDollarDefense" value="Y"
+																									name="IsDollarDefense" /> First Dollar Defense <i
+																									class="italic"> - Your deductible is not used for
+																									defense expenses</i>
+																							</div>
+																							<div id="error_IsClaimOptionType" class="error"> </div>
+																						</div>
+																					</div>
+																				</div>
+															
+																</div>
+									
+												</div>
+									</div>								
+								</div>
+								<div id="div1">
+									<div class="freeFormDiv borderRight">
+											<div class="row newFreeForm_UI" style="width: 100%">
+												<div class="row">
+													<!-- <div class="headingNew2">How much insurance do you want?</div> -->
+													<div class="headingNew2">Broker Information</div> 
+													<!--  Tell us about your current insurer -->
+												</div>
+												<div class="firmNewApp">
+													<div class="row">
+														<div class="col-sm-6">
+																
+																<div class="form-group form-group2" >
+																		<label class="asterisk">Carrier :</label>
+																		<select name="CarrierKey" id="ajax_field_CarrierKey"
+																			class="form-control">
+																				<option value="">Select</option>
+																			</select>
+																		<div id="error_CarrierKey" class="error"> </div>
+																	</div>
+																
+															</div>
+															<div class="col-sm-6">
+																<div class="form-group form-group2">
+																	<label class="asterisk">Brokered policy number :</label>
+																	<input class="form-control" type="text" name="BrokeredPolicyNumber" id="ajax_field_BrokeredPolicyNumber" maxlength="100" onblur="updateBrokerStatus(this.id);"/>
+																	<div id="error_BrokeredPolicyNumber" class="error"> </div>
+																	<div id="error_PolicyNumberPrefixError" class="error"> </div>
+																</div>
+															</div>
+															
+															
+													</div>
+													<div class="row">
+														<div class="col-sm-6">
+																<div class="form-group form-group2">
+																	<label class="asterisk">Brokered Policy Effective Date :</label>
+																	<input class="form-control datepicker" type="text" name="BrokerPolicyEffectiveDate" id="ajax_field_BrokerPolicyEffectiveDate"  onchange="setBrokerPolicyDates('ajax_field_BrokerPolicyEffectiveDate','ajax_field_BrokerPolicyExpirationDate');" onkeyup="applyDateFormat(this,event);"   placeholder="MM/DD/YYYY"/>
+																	 <div id="error_BrokerPolicyEffectiveDate" class="error"> </div>
+																</div>
+															</div>
+															<div class="col-sm-6">
+																<div class="form-group form-group2">
+																	<label class="asterisk">Brokered Policy Expiration Date :</label>
+																	<input class="form-control" type="text" name="BrokerPolicyExpirationDate" id="ajax_field_BrokerPolicyExpirationDate"   onkeyup="applyDateFormat(this,event);"   placeholder="MM/DD/YYYY" />
+																	 <div id="error_BrokerPolicyExpirationDate" class="error"> </div>
+																</div>
+															</div>
+													</div>
+													<div class="row">
+															<div class="col-sm-6">
+																																			
+																<div class="form-group form-group2" >
+																	<label class="asterisk">Broker :</label>
+																	<select name="BrokerKey" id="ajax_field_BrokerKey"
+																		class="form-control" 
+																		onchange="javascript:submitform('addEditBrokeragePolicy.html','addEditBrokeragePolicy.populateCommissionRate','','');"
+																		>
+																			<option value="">Select</option>
+																		</select>
+																	<div id="error_BrokerKey" class="error"> </div>
+																</div>
+															</div>
+															<div class="col-sm-6">
+																<div class="form-group form-group2">
+																	<label class="">Contract Comments :</label>
+																	<input type="text" name="ContractComments" id="ajax_field_ContractComments" class="form-control" onclick="loadCComments();showPopUp('popupsave2','500','400');"/> 
+																	<div id="error_ContractComments" class="error"> </div> 
+																</div>
+															</div>
+															
+															
+													</div>		
+													
+													
+													<div class="row">
+															
+									
+															<div class="col-sm-3">
+																<div class="form-group form-group2">
+																	<label class="" id="comissionNI">Commission :</label>
+																	<label class="asterisk" id="comissionI">Commission :</label>
+																	<input class="form-control" type="text" name="Commission" id="ajax_field_Commission" placeholder="%" onblur="setPercentageFormat('ajax_field_Commission');" maxlength="6"  
+																	/>
+																	 <div id="error_Commission" class="error"> </div>
+																</div>
+															</div>
+															
+															<div class="col-sm-3">
+																
+																	<div class="form-group form-group2">
+																		<label class="" id="premiumNI"> Premium :</label>
+																		<label class="asterisk" id="premiumI"> Premium :</label>
+																		<input class="form-control" type="text" name="Premium" id="ajax_field_Premium" maxlength="12"  onchange="setDecimalMasking(this.id);calculateTotalPremium();"  placeholder="$"/>
+																		<div id="error_Premium" class="error"> </div>
+																	</div>
+																</div>	
+															<div class="col-sm-3">
+																<div class="form-group form-group2">
+																	
+																	<label class="" id="PremiumTaxNI">Taxes :</label>
+																	<input class="form-control" type="text" name="PremiumTax" id="ajax_field_PremiumTax" maxlength="12"  onchange="setDecimalMasking(this.id);calculateTotalPremium();" placeholder="$"/>
+																	<div id="error_PremiumTax" class="error"> </div>
+																</div>
+															</div>
+															<div class="col-sm-3">
+																<div class="form-group form-group2">
+																	
+																	<label class="" id="PremiumTaxNI">Fees :</label>
+																	<input class="form-control money" type="text" name="Fees" id="ajax_field_Fees" maxlength="12"  onchange="setDecimalMasking(this.id);calculateTotalPremium();" placeholder="$"/>
+																	<div id="error_Fees" class="error"> </div>
+																</div>
+															</div>
+															</div>
+															<div class="row">
+																<div class="col-sm-6">
+																	<div class="form-group form-group2">
+																		
+																		<label class="" id="PremiumTaxNI">Total :</label> 
+																		<input class="form-control" type="text" name="TotalCalculatedPremium" id="ajax_field_TotalCalculatedPremium" maxlength="12" onkeydown="loadBrokeragePage();" placeholder="$" readonly="readonly"/>
+																		<div id="error_Fees" class="error"> </div>
+																	</div>
+																</div>
+																
+																<div class="col-sm-6">
+																	<div class="form-group form-group2" >
+																		<label class="asterisk">Payment Type :</label>
+																		<select name="BrokeragePaymentType" id="ajax_field_BrokeragePaymentType"
+																			class="form-control">
+																				<option value="">Select</option>
+																			</select>
+																		<div id="error_BrokeragePaymentType" class="error"> </div>
+																	</div>
+																</div>
+														</div>
+													
+												
+													<div id="expiringInfoDiv">
+													<div class="row">
+													<!-- <div class="headingNew2">How much insurance do you want?</div> -->
+													<div class="headingNew2">Tell us about your expiring policy</div> 
+													<!--  Tell us about your current insurer -->
+												</div>
+													<div class="row">
+								
+														<div class="col-sm-6">
+																<div class="form-group form-group2">
+																	<label class="">Expiring Carrier :</label>
+																	<input class="form-control" type="text" name="ExpiringCarrier" id="ajax_field_ExpiringCarrier" maxlength="100"/>
+																	<div id="error_ExpiringCarrier" class="error"> </div>
+																</div>
+															</div>
+															<div class="col-sm-6">
+																	<div class="form-group form-group2">
+																		<label class="asterisk">Expiring policy number :</label>
+																		<input class="form-control" type="text" name="ExpiringPolicyNumber" id="ajax_field_ExpiringPolicyNumber" maxlength="100"/>
+																		<div id="error_ExpiringPolicyNumber" class="error"> </div>
+																	</div>
+																</div>
+															</div>
+															<div class="row">
+																<div class="col-sm-6">
+																	<div class="form-group form-group2" id="StreetAddress">
+																		<label class="asterisk">Expiring Policy Effective Date :</label>
+																		<input class="form-control datepicker" type="text" name="ExpiringPolicyEffectiveDate" id="ajax_field_ExpiringPolicyEffectiveDate" onchange="setBrokerPolicyDates('ajax_field_ExpiringPolicyEffectiveDate','ajax_field_ExpiringPolicyExpirationDate');" onkeyup="applyDateFormat(this,event);"  placeholder="MM/DD/YYYY"/>
+																		<div id="error_ExpiringPolicyEffectiveDate" class="error"> </div>
+																	</div>
+																</div>
+																<div class="col-sm-6">
+																	<div class="form-group form-group2" id="StreetAddress">
+																		<label class="asterisk">Expiring Policy Expiration Date :</label>
+																		<input class="form-control datepicker" type="text" name="ExpiringPolicyExpirationDate" id="ajax_field_ExpiringPolicyExpirationDate" onkeyup="applyDateFormat(this,event);"  placeholder="MM/DD/YYYY"/>
+																		<div id="error_ExpiringPolicyExpirationDate" class="error"> </div>
+																	</div>
+																</div>
+																</div>
+																<div class="row">
+																<div class="col-sm-6">
+																	<div class="form-group form-group2">
+																		<label class="asterisk">Expiring Premium :</label>
+																		<input class="form-control" type="text" name="ExpiringPremium" id="ajax_field_ExpiringPremium" maxlength="12" onkeydown="loadBrokeragePage();" placeholder="$"/>
+																		<div id="error_ExpiringPremium" class="error"> </div>
+																	</div>
+																</div>
+																
+																
+																
+															
+															</div>
+													</div>
+													 
+												</div>
+											</div>
+											
+									</div>		
+								</div>
+								
+								
+							</div>
+					</div>
+					<div class="buttons borderTop row marginsBtn">
+						<div>
+							<div class="">
+								<span id="BrokerAppIssuedSave_Security">
+									<a class="btn save floatRight" href="javascript:submitform('addEditBrokeragePolicy.html','addEditBrokeragePolicy.save','','');" >Save</a>
+								</span>
+								<a class="btn back floatLeft" href="javascript:submitform('addEditBrokeragePolicyList.html|list.html','addEditBrokeragePolicy.back','forwardeval','LawyersRule.isBackPageNotList|LawyersRule.isBackPageList');">Back</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!---------Footer Start---------->
+				<div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<!---------Footer End---------->
+			</div>
+			<table id="addEditBrokeragePolicy__freeform_contextdata_999">
+				<tr>
+					<td>
+						<input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />
+						<input type="hidden" name="AccountID" id="AccountID" />
+						<input type="hidden" name="isBrokerPolicy" id="isBrokerPolicy" />
+						<input type="hidden" name="previousPage" id="previousPage" />
+						<input type="hidden" name="isNewBrokerPolicy" id="isNewBrokerPolicy" />
+						<input type="hidden" name="BrokeragePolicyKey" id="ajax_field_BrokeragePolicyKey" />
+						<input type="hidden" name="isConvertedPolicy" id="ajax_field_isConvertedPolicy" />
+						<input type="hidden" name="RenewAsBrokerage" id="ajax_field_RenewAsBrokerage" />
+						<input type="hidden" name="PolicyKey" id="PolicyKey" />
+						<input type="hidden" name="StatusKeySaved" id="StatusKeySaved" />
+						<input type="hidden" name="isShowDocUpload" id="isShowDocUpload" />
+						<!-- <input type="text" name="NB_Percentage" id="NB_Percentage" />
+						<input type="text" name="BrokerkeyNew" id="BrokerkeyNew" /> -->
+						
+						
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+
+</body>
+	<script type="text/javascript" src="script/manageTab.js"></script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

@@ -1,0 +1,122 @@
+
+<html>
+<head>
+
+<script type="text/javascript" src="script/calendar_conf.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><style type="text/css">
+<!--
+body{
+	background-color: #ffffff;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+table.calendar_widget { font-family: 'Arial'; font-size: 10px; cell-padding: 0px ; cell-spacing: 0px; position:absolute;background-color: #ffffff;}
+table.calendar_widget td a:link { text-decoration: none; color: black; }
+table.calendar_widget td a:visited { text-decoration: none; color: black; }
+td { border-width: 1px; text-align: center; font-weight:bold;}
+td.month_year_display { text-align: center; }
+td.button_display { text-align: none; width:100%; }
+td.clear_button_display { text-align: left; font-size:10px; color:#FFFFFF;}
+td.clear_button_display a { text-align: left; font-size:10px; color:#FFFFFF;}
+td.close_button_display { text-align: right; font-size:10px; color:#FFFFFF;}
+td.weekday { background-color: #007bc3; color:#FFFFFF; font-weight:bold; }
+td.weekend { background-color: #fe0302; color:#FFFFFF; font-weight:bold;  }
+span.today { background-color: #cccccc; border: 1px solid #999999;}
+span.other_month { color: #b0b0b0; }
+span.current_selection { color: #CC0000; font-weight:bold; font-size:14; }
+td.number { cursor: default; }
+td.number:hover { background-color: #c0c0c0; }
+.arrow{	background-color:#FFFFFF; cursor:pointer; }
+.calendar-link{ position:absolute;}
+-->
+</style>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+<body onLoad="display_month(display_day)">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<table width="150" cellpadding="0" cellspacing="0" class="calendar_widget" id="calendar_widget" style="border:1px dotted #cccccc;">
+<tr>
+	<td id='year_left' class="arrow"><a onClick="javascript:year_left_click(this)"><img src="img/previous2.jpg" alt="previous Year" width="20" height="22" border="0"></a></td>
+    <td id='month_left' class="arrow"><a onClick="javascript:month_left_click(this)" ><img src="img/previous1.jpg" alt="previous Month" width="20" height="22" border="0"></a></td>
+    <td  colspan=3 align="center" nowrap class="month_year_display" id='month_year_display' width="60">Month</td>
+    <td id='month_right' class="arrow"><a onClick="javascript:month_right_click(this)"><img src="img/forword1.jpg" alt="forword Month" width="20" height="22" border="0"></a></td>
+  <td id='year_right' class="arrow"><a onClick="javascript:year_right_click(this)" ><img src="img/forword2.jpg" alt="forword Year" width="20" height="22" border="0"></a></td>
+</tr>
+<tr><td class="weekday">M</td>
+<td class="weekday">T</td>
+<td class="weekday">W</td>
+<td class="weekday">T</td>
+<td class="weekday">F</td>
+<td class="weekend">S</td>
+<td class="weekend">S</td>
+</tr>
+<tr>
+  <td nowrap class="number">01</td>
+  <td nowrap class="number">02</td>
+  <td nowrap class="number">03</td>
+  <td nowrap class="number">04</td>
+<td nowrap class="number">05</td>
+<td nowrap class="number">06</td>
+<td nowrap class="number">07</td>
+</tr>
+<tr>
+  <td nowrap class="number">08</td>
+  <td nowrap class="number">09</td>
+  <td nowrap class="number">10</td>
+  <td nowrap class="number">11</td>
+  <td nowrap class="number">12</td>
+  <td nowrap class="number">13</td>
+  <td nowrap class="number">14</td>
+</tr>
+<tr><td nowrap class="number">15</td>
+<td nowrap class="number">16</td>
+<td nowrap class="number">17</td>
+<td nowrap class="number">18</td>
+<td nowrap class="number">19</td>
+<td nowrap class="number">20</td>
+<td nowrap class="number">21</td>
+</tr>
+<tr><td nowrap class="number">22</td>
+<td nowrap class="number">23</td>
+<td nowrap class="number"><span class="current_selection">24</span></td>
+<td nowrap class="number">25</td>
+<td nowrap class="number">26</td>
+<td nowrap class="number"><span class="today">27</span></td>
+<td nowrap class="number">28</td>
+</tr>
+<tr><td nowrap class="number">29</td>
+<td nowrap class="number">30</td>
+<td nowrap class="number">31</td>
+<td nowrap class="number">32</td>
+<td nowrap class="number">33</td>
+<td nowrap class="number">34</td>
+<td nowrap class="number">35</td>
+</tr>
+<tr><td nowrap class="number">36</td>
+<td nowrap class="number">37</td>
+<td nowrap class="number">38</td>
+<td nowrap class="number">39</td>
+<td nowrap class="number">40</td>
+<td nowrap class="number">41</td>
+<td nowrap class="number">42</td>
+</tr>
+<tr>
+  <td colspan=7 bgcolor="#f3f3f3" class="clear_button_display"><table width="154" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td width="73" class="clear_button_display"><a href="#" onClick="javascript:clear_button_click(this)">[clear]</a></td>
+      <td width="81" class="close_button_display"><a href="#" onClick="javascript:close_button_click(this)">[close]</a></td>
+    </tr>
+  </table></td>
+  </tr>
+</table>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

@@ -1,0 +1,179 @@
+<html>
+<head>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+		<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<form action="">
+		<div id="addNewPricingComment">
+			<div id="pricingCommentListDiv">
+			<table cellpadding="0" cellspacing="0" width="100%">
+				<tr>
+					<td>
+						<table border="0" cellpadding="0" cellspacing="0" width="100%">
+							<tr id="1eval:LawyersRule.isCommentListEmpty">
+								<td colspan="2">
+									<table id="PricingComments_list_01" cellpadding="0" cellspacing="0" width="100%">
+										
+										<tr id="PricingComments_list_header_01" style="display:none">
+											<td>
+												
+													<span id="block_field_UploadedBy">
+														<span class="commentorName"></span>
+													</span>
+													<span id="block_field_TimeStamp">
+														<span class="commentorTime"></span>
+													</span>
+													<div id="block_field_PricingComment">
+														
+													</div>
+													
+												
+											</td>
+										</tr>
+										<tr id="PricingComments_list_data_01">
+											<td>
+												<blockquote class="commentor">
+													<span id="block_field_UploadedBy" class="commentorName">
+														<span ></span>
+													</span>
+													<span id="block_field_TimeStamp" class="commentorTime">
+														<span ></span>
+													</span>
+													<div>
+													<span id="block_field_PricingComment">
+														
+													</span></div>
+													</blockquote>
+												
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr id="pricingcomment_freeform_contextdata_125">
+								<td colspan="2">
+									<div style="margin-left: 12px;" class="error11" id="ajax_error_PricingComment"></div>
+								</td>
+							</tr>
+							<tr id="pricingcomment_freeform_contextdata_02">
+								<td>
+									<table cellpadding="3" cellspacing="0" width="100%">
+										<tr id="eval:LawyersRule.isShowPricingCommentArea">
+											
+											<td id="block_field_PricingComment" width="580px"><div style="float:left">
+													<textarea
+													name="PricingComment"  rows="3" class="textarea leftTextarea" maxlength="500"
+													onkeyup="limitText(this,1,3000);" id="ajax_field_PricingComment" style="width:562px"></textarea>
+                                                    </div>
+                                                    <div style="float:left;padding-left:10px;">
+                                                    <span id="eval:LawyersRule.isShowApprove"> 
+															<input
+																type="radio" name="pricingClearStatus"
+																 id="pricingClearStatus" value="Y"
+																onclick="getPricingApproval('pricingClearStatus')"
+																	 />
+																
+																 <span>Approve</span>
+														</span>
+													<span id="eval:LawyersRule.isShowApprove"> 
+														<span id="eval:LawyersRule.isNotShowAIIconForPricing"> 
+															<input
+																type="radio" name="pricingClearStatus"
+																 id="pricingClearStatus" value="AI"
+																onclick="getPricingApproval('pricingClearStatus')"
+															 />
+																
+																 <span>Additional Info</span>
+														</span>			 
+														</span>	
+                                                    </div>
+                                                    </td>
+											<td  align="right" nowrap="nowrap" valign="bottom">
+														 
+														
+														<div style="padding-top:5px; width:150px; float: left;padding-bottom:20px;" id="UWReview_freeform_contextdata_112" >
+															<div id="eval:LawyersRule.isShowSave">
+																<div id="divshow" class="button4" style="width: 70px; float: left; margin-right:5px;">
+																	<a
+																		href="javascript:ajaxsubmitform('UWReview.html','addNewPricingComment.save','','','pricingCommentListDiv');">Save</a>
+																		
+																</div>
+															</div>
+																
+																<div id="divshow" class="button4" style="width: 70px; float: left">
+																	<a href="javascript:submitform('UWReview.html','addNewPricingComment.cancel','','');">Cancel</a>
+																</div>
+															
+														</div>
+													</td>
+										</tr>
+										<tr id="eval:LawyersRule.isNotisShowPricingCommentArea">
+											<td align="center" colspan="3"> 
+												<table   border="0" cellspacing="3px">
+												<tr>
+														<td>
+															<div id="divshow" class="button4" style="width:80px;  margin-left:10px;">
+																	<a  href="javascript:submitform('UWReview.html','addNewPricingComment.cancel','','');">Close</a>
+															</div>
+														</td>
+														<td id="eval:LawyersRule.isShowUpdateComment">
+														
+															<div id="eval:LawyersRule.isManagementOrUnderwriter">
+																		<div id="divshow" class="button4" style="width:80px; margin-right:10px;">
+																				<a href="javascript:submitform('UWReview.html','addNewPricingComment.update','','');">Update</a>
+																		</div>
+															</div>
+														
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+											<tr>
+					
+												<td>
+													<table cellpadding="0" cellspacing="0" id="pricingComment_list_freeform_contextdata_444">
+														<tr>
+																	 <td> <input type="hidden" id="ajax_field_pricingClearStatus" name="pricingClearStatus" /> 
+																<!-- 	<input type="text" id="role_id" name="role_id" /> --> 
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+											
+											
+											</table>
+												
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+
+							
+						</table>
+
+
+					</td>
+
+				</tr>
+			</table>
+			<table cellpadding="0" cellspacing="0">
+				
+			</table>
+			</div>
+		</div>
+
+	</form>
+
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+
+</html>

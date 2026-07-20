@@ -1,0 +1,49 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="computerule">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from computerule</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from computerule where propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into computerule(propertyno, propertyversionno, metaobjectno, structureno
+          <isNotEmpty property="name" prepend=",">name</isNotEmpty>
+          <isNotEmpty property="expression" prepend=",">expression</isNotEmpty>
+          <isNotEmpty property="event" prepend=",">event</isNotEmpty>
+          <isNotEmpty property="eval" prepend=",">eval</isNotEmpty>
+          <isNotEmpty property="description" prepend=",">description</isNotEmpty>
+          <isNotEmpty property="executionseq" prepend=",">executionseq</isNotEmpty>
+          ) values (#propertyno:NUMERIC#, #propertyversionno:NUMERIC#, #metaobjectno:NUMERIC#, #structureno:NUMERIC#
+          <isNotEmpty property="name" prepend=",">#name#</isNotEmpty>
+          <isNotEmpty property="expression" prepend=",">#expression#</isNotEmpty>
+          <isNotEmpty property="event" prepend=",">#event#</isNotEmpty>
+          <isNotEmpty property="eval" prepend=",">#eval#</isNotEmpty>
+          <isNotEmpty property="description" prepend=",">#description#</isNotEmpty>
+          <isNotEmpty property="executionseq" prepend=",">#executionseq#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="computeruleno">SELECT IDENT_CURRENT('computerule') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select computeruleno, name, expression, event, eval, description, executionseq, propertyno, propertyversionno, metaobjectno, structureno from computerule where computeruleno = #computeruleno# and propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update computerule set
+          <dynamic prepend=" ">
+               <isNotEmpty property="name" prepend=",">name = #name#</isNotEmpty>
+               <isEmpty property="name" prepend=",">name = null</isEmpty>
+               <isNotEmpty property="expression" prepend=",">expression = #expression#</isNotEmpty>
+               <isEmpty property="expression" prepend=",">expression = null</isEmpty>
+               <isNotEmpty property="event" prepend=",">event = #event#</isNotEmpty>
+               <isEmpty property="event" prepend=",">event = null</isEmpty>
+               <isNotEmpty property="eval" prepend=",">eval = #eval#</isNotEmpty>
+               <isEmpty property="eval" prepend=",">eval = null</isEmpty>
+               <isNotEmpty property="description" prepend=",">description = #description#</isNotEmpty>
+               <isEmpty property="description" prepend=",">description = null</isEmpty>
+               <isNotEmpty property="executionseq" prepend=",">executionseq = #executionseq#</isNotEmpty>
+               <isEmpty property="executionseq" prepend=",">executionseq = null</isEmpty>
+          </dynamic>
+          where computeruleno = #computeruleno# and propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from computerule where computeruleno = #computeruleno# and propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from computerule</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from computerule where propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select computeruleno, name, expression, event, eval, description, executionseq, propertyno, propertyversionno, metaobjectno, structureno from computerule where computeruleno = #computeruleno# and propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select computeruleno, propertyno, propertyversionno, metaobjectno, structureno, name, expression, event, eval, description, executionseq from computerule where propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+</sqlMap>
+

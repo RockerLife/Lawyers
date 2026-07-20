@@ -1,0 +1,75 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="FirmInitLawsuitsLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FirmInitLawsuitsLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FirmInitLawsuitsLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and FeeSuitDispositionKey = #FeeSuitDispositionKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into FirmInitLawsuitsLW(VersionSequence, PolicyKey
+          <isNotEmpty property="AmountOfFeesSued" prepend=",">AmountOfFeesSued</isNotEmpty>
+          <isNotEmpty property="DueDateFees" prepend=",">DueDateFees</isNotEmpty>
+          <isNotEmpty property="SuitFilesDateFees" prepend=",">SuitFilesDateFees</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="IsFavOutInUnderMatter" prepend=",">IsFavOutInUnderMatter</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="IsAllegOfLegalMalPrac" prepend=",">IsAllegOfLegalMalPrac</isNotEmpty>
+          <isNotEmpty property="FeesAreaOfPractice" prepend=",">FeesAreaOfPractice</isNotEmpty>
+          <isNotEmpty property="FeeSuitDispositionKey" prepend=",">FeeSuitDispositionKey</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="AmountOfFeesSued" prepend=",">#AmountOfFeesSued#</isNotEmpty>
+          <isNotEmpty property="DueDateFees" prepend=",">#DueDateFees#</isNotEmpty>
+          <isNotEmpty property="SuitFilesDateFees" prepend=",">#SuitFilesDateFees#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="IsFavOutInUnderMatter" prepend=",">#IsFavOutInUnderMatter#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="IsAllegOfLegalMalPrac" prepend=",">#IsAllegOfLegalMalPrac#</isNotEmpty>
+          <isNotEmpty property="FeesAreaOfPractice" prepend=",">#FeesAreaOfPractice#</isNotEmpty>
+          <isNotEmpty property="FeeSuitDispositionKey" prepend=",">#FeeSuitDispositionKey#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="FirminitLawsuitsKey">SELECT IDENT_CURRENT('FirmInitLawsuitsLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirminitLawsuitsKey, AmountOfFeesSued, DueDateFees, SuitFilesDateFees, LastUpdateUserID, IsFavOutInUnderMatter, LastUpdateTimeStamp, IsAllegOfLegalMalPrac, FeesAreaOfPractice, FeeSuitDispositionKey, VersionSequence, PolicyKey from FirmInitLawsuitsLW where FirminitLawsuitsKey = #FirminitLawsuitsKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update FirmInitLawsuitsLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="AmountOfFeesSued" prepend=",">AmountOfFeesSued = #AmountOfFeesSued#</isNotEmpty>
+               <isEmpty property="AmountOfFeesSued" prepend=",">AmountOfFeesSued = null</isEmpty>
+               <isNotEmpty property="DueDateFees" prepend=",">DueDateFees = #DueDateFees#</isNotEmpty>
+               <isEmpty property="DueDateFees" prepend=",">DueDateFees = null</isEmpty>
+               <isNotEmpty property="SuitFilesDateFees" prepend=",">SuitFilesDateFees = #SuitFilesDateFees#</isNotEmpty>
+               <isEmpty property="SuitFilesDateFees" prepend=",">SuitFilesDateFees = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="IsFavOutInUnderMatter" prepend=",">IsFavOutInUnderMatter = #IsFavOutInUnderMatter#</isNotEmpty>
+               <isEmpty property="IsFavOutInUnderMatter" prepend=",">IsFavOutInUnderMatter = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="IsAllegOfLegalMalPrac" prepend=",">IsAllegOfLegalMalPrac = #IsAllegOfLegalMalPrac#</isNotEmpty>
+               <isEmpty property="IsAllegOfLegalMalPrac" prepend=",">IsAllegOfLegalMalPrac = null</isEmpty>
+               <isNotEmpty property="FeesAreaOfPractice" prepend=",">FeesAreaOfPractice = #FeesAreaOfPractice#</isNotEmpty>
+               <isEmpty property="FeesAreaOfPractice" prepend=",">FeesAreaOfPractice = null</isEmpty>
+               <isNotEmpty property="FeeSuitDispositionKey" prepend=",">FeeSuitDispositionKey = #FeeSuitDispositionKey#</isNotEmpty>
+               <isEmpty property="FeeSuitDispositionKey" prepend=",">FeeSuitDispositionKey = null</isEmpty>
+          </dynamic>
+          where FirminitLawsuitsKey = #FirminitLawsuitsKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from FirmInitLawsuitsLW where FirminitLawsuitsKey = #FirminitLawsuitsKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from FirmInitLawsuitsLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from FirmInitLawsuitsLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and FeeSuitDispositionKey = #FeeSuitDispositionKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirminitLawsuitsKey, AmountOfFeesSued, DueDateFees, SuitFilesDateFees, LastUpdateUserID, IsFavOutInUnderMatter, LastUpdateTimeStamp, IsAllegOfLegalMalPrac, FeesAreaOfPractice, FeeSuitDispositionKey, VersionSequence, PolicyKey from FirmInitLawsuitsLW where FirminitLawsuitsKey = #FirminitLawsuitsKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirminitLawsuitsKey, VersionSequence, PolicyKey, AmountOfFeesSued, DueDateFees, SuitFilesDateFees, LastUpdateUserID, IsFavOutInUnderMatter, LastUpdateTimeStamp, IsAllegOfLegalMalPrac, FeesAreaOfPractice, FeeSuitDispositionKey from FirmInitLawsuitsLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and FeeSuitDispositionKey = #FeeSuitDispositionKey#</select>
+     <parameterMap id="InsertUpdateFeeSuitSupplement_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdateFeeSuitSupplement_p" parameterMap="InsertUpdateFeeSuitSupplement_pMap">{ call InsertUpdateFeeSuitSupplement_p(?,?,?,?,?,?)}</procedure>
+     <parameterMap id="DisplayFeeSuitData_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="DisplayFeeSuitData_p" parameterMap="DisplayFeeSuitData_pMap" resultClass="java.util.HashMap">{ call DisplayFeeSuitData_p(?,?)}</procedure>
+</sqlMap>
+

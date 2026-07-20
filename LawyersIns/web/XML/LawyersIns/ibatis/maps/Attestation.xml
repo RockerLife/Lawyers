@@ -1,0 +1,56 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Attestation">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Attestation</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Attestation where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into Attestation(VersionSequence, PolicyKey
+          <isNotEmpty property="FirmRenderedAuditAtt" prepend=",">FirmRenderedAuditAtt</isNotEmpty>
+          <isNotEmpty property="IsFirmHaveAWrittenPolicyAtt" prepend=",">IsFirmHaveAWrittenPolicyAtt</isNotEmpty>
+          <isNotEmpty property="IsSecondPartnerReviewAtt" prepend=",">IsSecondPartnerReviewAtt</isNotEmpty>
+          <isNotEmpty property="IsAuditEngagementsAtt" prepend=",">IsAuditEngagementsAtt</isNotEmpty>
+          <isNotEmpty property="IsAualityReviewAtt" prepend=",">IsAualityReviewAtt</isNotEmpty>
+          <isNotEmpty property="IsLastPeerReviewAtt" prepend=",">IsLastPeerReviewAtt</isNotEmpty>
+          <isNotEmpty property="IndicatedRevenueInAttestation" prepend=",">IndicatedRevenueInAttestation</isNotEmpty>
+          <isNotEmpty property="LastPeerReviewAttComment" prepend=",">LastPeerReviewAttComment</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="FirmRenderedAuditAtt" prepend=",">#FirmRenderedAuditAtt#</isNotEmpty>
+          <isNotEmpty property="IsFirmHaveAWrittenPolicyAtt" prepend=",">#IsFirmHaveAWrittenPolicyAtt#</isNotEmpty>
+          <isNotEmpty property="IsSecondPartnerReviewAtt" prepend=",">#IsSecondPartnerReviewAtt#</isNotEmpty>
+          <isNotEmpty property="IsAuditEngagementsAtt" prepend=",">#IsAuditEngagementsAtt#</isNotEmpty>
+          <isNotEmpty property="IsAualityReviewAtt" prepend=",">#IsAualityReviewAtt#</isNotEmpty>
+          <isNotEmpty property="IsLastPeerReviewAtt" prepend=",">#IsLastPeerReviewAtt#</isNotEmpty>
+          <isNotEmpty property="IndicatedRevenueInAttestation" prepend=",">#IndicatedRevenueInAttestation#</isNotEmpty>
+          <isNotEmpty property="LastPeerReviewAttComment" prepend=",">#LastPeerReviewAttComment#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirmRenderedAuditAtt, IsFirmHaveAWrittenPolicyAtt, IsSecondPartnerReviewAtt, IsAuditEngagementsAtt, IsAualityReviewAtt, IsLastPeerReviewAtt, IndicatedRevenueInAttestation, LastPeerReviewAttComment, VersionSequence, PolicyKey from Attestation where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update Attestation set
+          <dynamic prepend=" ">
+               <isNotEmpty property="FirmRenderedAuditAtt" prepend=",">FirmRenderedAuditAtt = #FirmRenderedAuditAtt#</isNotEmpty>
+               <isEmpty property="FirmRenderedAuditAtt" prepend=",">FirmRenderedAuditAtt = null</isEmpty>
+               <isNotEmpty property="IsFirmHaveAWrittenPolicyAtt" prepend=",">IsFirmHaveAWrittenPolicyAtt = #IsFirmHaveAWrittenPolicyAtt#</isNotEmpty>
+               <isEmpty property="IsFirmHaveAWrittenPolicyAtt" prepend=",">IsFirmHaveAWrittenPolicyAtt = null</isEmpty>
+               <isNotEmpty property="IsSecondPartnerReviewAtt" prepend=",">IsSecondPartnerReviewAtt = #IsSecondPartnerReviewAtt#</isNotEmpty>
+               <isEmpty property="IsSecondPartnerReviewAtt" prepend=",">IsSecondPartnerReviewAtt = null</isEmpty>
+               <isNotEmpty property="IsAuditEngagementsAtt" prepend=",">IsAuditEngagementsAtt = #IsAuditEngagementsAtt#</isNotEmpty>
+               <isEmpty property="IsAuditEngagementsAtt" prepend=",">IsAuditEngagementsAtt = null</isEmpty>
+               <isNotEmpty property="IsAualityReviewAtt" prepend=",">IsAualityReviewAtt = #IsAualityReviewAtt#</isNotEmpty>
+               <isEmpty property="IsAualityReviewAtt" prepend=",">IsAualityReviewAtt = null</isEmpty>
+               <isNotEmpty property="IsLastPeerReviewAtt" prepend=",">IsLastPeerReviewAtt = #IsLastPeerReviewAtt#</isNotEmpty>
+               <isEmpty property="IsLastPeerReviewAtt" prepend=",">IsLastPeerReviewAtt = null</isEmpty>
+               <isNotEmpty property="IndicatedRevenueInAttestation" prepend=",">IndicatedRevenueInAttestation = #IndicatedRevenueInAttestation#</isNotEmpty>
+               <isEmpty property="IndicatedRevenueInAttestation" prepend=",">IndicatedRevenueInAttestation = null</isEmpty>
+               <isNotEmpty property="LastPeerReviewAttComment" prepend=",">LastPeerReviewAttComment = #LastPeerReviewAttComment#</isNotEmpty>
+               <isEmpty property="LastPeerReviewAttComment" prepend=",">LastPeerReviewAttComment = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from Attestation where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from Attestation</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from Attestation where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FirmRenderedAuditAtt, IsFirmHaveAWrittenPolicyAtt, IsSecondPartnerReviewAtt, IsAuditEngagementsAtt, IsAualityReviewAtt, IsLastPeerReviewAtt, IndicatedRevenueInAttestation, LastPeerReviewAttComment, VersionSequence, PolicyKey from Attestation where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, FirmRenderedAuditAtt, IsFirmHaveAWrittenPolicyAtt, IsSecondPartnerReviewAtt, IsAuditEngagementsAtt, IsAualityReviewAtt, IsLastPeerReviewAtt, IndicatedRevenueInAttestation, LastPeerReviewAttComment from Attestation where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

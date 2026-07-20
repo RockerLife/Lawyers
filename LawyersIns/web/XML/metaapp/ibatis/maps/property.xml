@@ -1,0 +1,138 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="property">
+     <select id="movalidationrule_dropdown" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select distinct field from property where structureno = #structureno# and metaobjectno = #metaobjectno# order by field</select>
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from property</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from property where propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into property(propertyversionno, metaobjectno, structureno
+          <isNotEmpty property="field" prepend=",">field</isNotEmpty>
+          <isNotEmpty property="persistent" prepend=",">persistent</isNotEmpty>
+          <isNotEmpty property="nullconstraint" prepend=",">nullconstraint</isNotEmpty>
+          <isNotEmpty property="keyconstraint" prepend=",">keyconstraint</isNotEmpty>
+          <isNotEmpty property="autoincrement" prepend=",">autoincrement</isNotEmpty>
+          <isNotEmpty property="defaultvalue" prepend=",">defaultvalue</isNotEmpty>
+          <isNotEmpty property="defaultvaluetype" prepend=",">defaultvaluetype</isNotEmpty>
+          <isNotEmpty property="listdisplay" prepend=",">listdisplay</isNotEmpty>
+          <isNotEmpty property="formdisplay" prepend=",">formdisplay</isNotEmpty>
+          <isNotEmpty property="searchfield" prepend=",">searchfield</isNotEmpty>
+          <isNotEmpty property="contextfield" prepend=",">contextfield</isNotEmpty>
+          <isNotEmpty property="resolvedisplay" prepend=",">resolvedisplay</isNotEmpty>
+          <isNotEmpty property="deleteind" prepend=",">deleteind</isNotEmpty>
+          <isNotEmpty property="seq" prepend=",">seq</isNotEmpty>
+          <isNotEmpty property="developercomments" prepend=",">developercomments</isNotEmpty>
+          <isNotEmpty property="helptext" prepend=",">helptext</isNotEmpty>
+          <isNotEmpty property="tiptext" prepend=",">tiptext</isNotEmpty>
+          <isNotEmpty property="type" prepend=",">type</isNotEmpty>
+          <isNotEmpty property="propertylength" prepend=",">propertylength</isNotEmpty>
+          <isNotEmpty property="align" prepend=",">align</isNotEmpty>
+          <isNotEmpty property="viewlength" prepend=",">viewlength</isNotEmpty>
+          <isNotEmpty property="isEncrypt" prepend=",">isEncrypt</isNotEmpty>
+          <isNotEmpty property="userdefineunittestcase" prepend=",">userdefineunittestcase</isNotEmpty>
+          <isNotEmpty property="alias" prepend=",">alias</isNotEmpty>
+          <isNotEmpty property="decimallength" prepend=",">decimallength</isNotEmpty>
+          <isNotEmpty property="eval" prepend=",">eval</isNotEmpty>
+          ) values (#propertyversionno:NUMERIC#, #metaobjectno:NUMERIC#, #structureno:NUMERIC#
+          <isNotEmpty property="field" prepend=",">#field#</isNotEmpty>
+          <isNotEmpty property="persistent" prepend=",">#persistent#</isNotEmpty>
+          <isNotEmpty property="nullconstraint" prepend=",">#nullconstraint#</isNotEmpty>
+          <isNotEmpty property="keyconstraint" prepend=",">#keyconstraint#</isNotEmpty>
+          <isNotEmpty property="autoincrement" prepend=",">#autoincrement#</isNotEmpty>
+          <isNotEmpty property="defaultvalue" prepend=",">#defaultvalue#</isNotEmpty>
+          <isNotEmpty property="defaultvaluetype" prepend=",">#defaultvaluetype#</isNotEmpty>
+          <isNotEmpty property="listdisplay" prepend=",">#listdisplay#</isNotEmpty>
+          <isNotEmpty property="formdisplay" prepend=",">#formdisplay#</isNotEmpty>
+          <isNotEmpty property="searchfield" prepend=",">#searchfield#</isNotEmpty>
+          <isNotEmpty property="contextfield" prepend=",">#contextfield#</isNotEmpty>
+          <isNotEmpty property="resolvedisplay" prepend=",">#resolvedisplay#</isNotEmpty>
+          <isNotEmpty property="deleteind" prepend=",">#deleteind#</isNotEmpty>
+          <isNotEmpty property="seq" prepend=",">#seq#</isNotEmpty>
+          <isNotEmpty property="developercomments" prepend=",">#developercomments#</isNotEmpty>
+          <isNotEmpty property="helptext" prepend=",">#helptext#</isNotEmpty>
+          <isNotEmpty property="tiptext" prepend=",">#tiptext#</isNotEmpty>
+          <isNotEmpty property="type" prepend=",">#type#</isNotEmpty>
+          <isNotEmpty property="propertylength" prepend=",">#propertylength#</isNotEmpty>
+          <isNotEmpty property="align" prepend=",">#align#</isNotEmpty>
+          <isNotEmpty property="viewlength" prepend=",">#viewlength#</isNotEmpty>
+          <isNotEmpty property="isEncrypt" prepend=",">#isEncrypt#</isNotEmpty>
+          <isNotEmpty property="userdefineunittestcase" prepend=",">#userdefineunittestcase#</isNotEmpty>
+          <isNotEmpty property="alias" prepend=",">#alias#</isNotEmpty>
+          <isNotEmpty property="decimallength" prepend=",">#decimallength#</isNotEmpty>
+          <isNotEmpty property="eval" prepend=",">#eval#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="propertyno">SELECT IDENT_CURRENT('property') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select propertyno, field, persistent, nullconstraint, keyconstraint, autoincrement, defaultvalue, defaultvaluetype, listdisplay, formdisplay, searchfield, contextfield, resolvedisplay, deleteind, seq, developercomments, helptext, tiptext, type, propertylength, align, viewlength, isEncrypt, userdefineunittestcase, alias, decimallength, eval, propertyversionno, metaobjectno, structureno from property where propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update property set
+          <dynamic prepend=" ">
+               <isNotEmpty property="field" prepend=",">field = #field#</isNotEmpty>
+               <isEmpty property="field" prepend=",">field = null</isEmpty>
+               <isNotEmpty property="persistent" prepend=",">persistent = #persistent#</isNotEmpty>
+               <isEmpty property="persistent" prepend=",">persistent = null</isEmpty>
+               <isNotEmpty property="nullconstraint" prepend=",">nullconstraint = #nullconstraint#</isNotEmpty>
+               <isEmpty property="nullconstraint" prepend=",">nullconstraint = null</isEmpty>
+               <isNotEmpty property="keyconstraint" prepend=",">keyconstraint = #keyconstraint#</isNotEmpty>
+               <isEmpty property="keyconstraint" prepend=",">keyconstraint = null</isEmpty>
+               <isNotEmpty property="autoincrement" prepend=",">autoincrement = #autoincrement#</isNotEmpty>
+               <isEmpty property="autoincrement" prepend=",">autoincrement = null</isEmpty>
+               <isNotEmpty property="defaultvalue" prepend=",">defaultvalue = #defaultvalue#</isNotEmpty>
+               <isEmpty property="defaultvalue" prepend=",">defaultvalue = null</isEmpty>
+               <isNotEmpty property="defaultvaluetype" prepend=",">defaultvaluetype = #defaultvaluetype#</isNotEmpty>
+               <isEmpty property="defaultvaluetype" prepend=",">defaultvaluetype = null</isEmpty>
+               <isNotEmpty property="listdisplay" prepend=",">listdisplay = #listdisplay#</isNotEmpty>
+               <isEmpty property="listdisplay" prepend=",">listdisplay = null</isEmpty>
+               <isNotEmpty property="formdisplay" prepend=",">formdisplay = #formdisplay#</isNotEmpty>
+               <isEmpty property="formdisplay" prepend=",">formdisplay = null</isEmpty>
+               <isNotEmpty property="searchfield" prepend=",">searchfield = #searchfield#</isNotEmpty>
+               <isEmpty property="searchfield" prepend=",">searchfield = null</isEmpty>
+               <isNotEmpty property="contextfield" prepend=",">contextfield = #contextfield#</isNotEmpty>
+               <isEmpty property="contextfield" prepend=",">contextfield = null</isEmpty>
+               <isNotEmpty property="resolvedisplay" prepend=",">resolvedisplay = #resolvedisplay#</isNotEmpty>
+               <isEmpty property="resolvedisplay" prepend=",">resolvedisplay = null</isEmpty>
+               <isNotEmpty property="deleteind" prepend=",">deleteind = #deleteind#</isNotEmpty>
+               <isEmpty property="deleteind" prepend=",">deleteind = null</isEmpty>
+               <isNotEmpty property="seq" prepend=",">seq = #seq#</isNotEmpty>
+               <isEmpty property="seq" prepend=",">seq = null</isEmpty>
+               <isNotEmpty property="developercomments" prepend=",">developercomments = #developercomments#</isNotEmpty>
+               <isEmpty property="developercomments" prepend=",">developercomments = null</isEmpty>
+               <isNotEmpty property="helptext" prepend=",">helptext = #helptext#</isNotEmpty>
+               <isEmpty property="helptext" prepend=",">helptext = null</isEmpty>
+               <isNotEmpty property="tiptext" prepend=",">tiptext = #tiptext#</isNotEmpty>
+               <isEmpty property="tiptext" prepend=",">tiptext = null</isEmpty>
+               <isNotEmpty property="type" prepend=",">type = #type#</isNotEmpty>
+               <isEmpty property="type" prepend=",">type = null</isEmpty>
+               <isNotEmpty property="propertylength" prepend=",">propertylength = #propertylength#</isNotEmpty>
+               <isEmpty property="propertylength" prepend=",">propertylength = null</isEmpty>
+               <isNotEmpty property="align" prepend=",">align = #align#</isNotEmpty>
+               <isEmpty property="align" prepend=",">align = null</isEmpty>
+               <isNotEmpty property="viewlength" prepend=",">viewlength = #viewlength#</isNotEmpty>
+               <isEmpty property="viewlength" prepend=",">viewlength = null</isEmpty>
+               <isNotEmpty property="isEncrypt" prepend=",">isEncrypt = #isEncrypt#</isNotEmpty>
+               <isEmpty property="isEncrypt" prepend=",">isEncrypt = null</isEmpty>
+               <isNotEmpty property="userdefineunittestcase" prepend=",">userdefineunittestcase = #userdefineunittestcase#</isNotEmpty>
+               <isEmpty property="userdefineunittestcase" prepend=",">userdefineunittestcase = null</isEmpty>
+               <isNotEmpty property="alias" prepend=",">alias = #alias#</isNotEmpty>
+               <isEmpty property="alias" prepend=",">alias = null</isEmpty>
+               <isNotEmpty property="decimallength" prepend=",">decimallength = #decimallength#</isNotEmpty>
+               <isEmpty property="decimallength" prepend=",">decimallength = null</isEmpty>
+               <isNotEmpty property="eval" prepend=",">eval = #eval#</isNotEmpty>
+               <isEmpty property="eval" prepend=",">eval = null</isEmpty>
+          </dynamic>
+          where propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from property where propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from property</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from property where propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select propertyno, field, persistent, nullconstraint, keyconstraint, autoincrement, defaultvalue, defaultvaluetype, listdisplay, formdisplay, searchfield, contextfield, resolvedisplay, deleteind, seq, developercomments, helptext, tiptext, type, propertylength, align, viewlength, isEncrypt, userdefineunittestcase, alias, decimallength, eval, propertyversionno, metaobjectno, structureno from property where propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+          select propertyno, propertyversionno, metaobjectno, structureno, field, nullconstraint, listdisplay, formdisplay, searchfield, contextfield, resolvedisplay, deleteind, seq, isEncrypt, alias from property where propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#
+          <dynamic>
+               <isNotEmpty property="field" prepend=" and ">field like #field# + '%'</isNotEmpty>
+               <isNotEmpty property="tiptext" prepend=" and ">tiptext like #tiptext# + '%'</isNotEmpty>
+          </dynamic>
+     </select>
+     <select id="parentprop_dropdown" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select distinct field from property where structureno = #structureno# and metaobjectno = #metaobjectno# and propertyversionno = #propertyversionno# order by field</select>
+     <select id="index_prop_dropdown" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select distinct field from property where metaobjectno = #metaobjectno# and structureno = #structureno# order by field</select>
+</sqlMap>
+

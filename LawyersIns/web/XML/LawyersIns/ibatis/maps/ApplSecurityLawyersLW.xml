@@ -1,0 +1,49 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ApplSecurityLawyersLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ApplSecurityLawyersLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ApplSecurityLawyersLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ApplSecurityLawyersLW(VersionSequence, PolicyKey
+          <isNotEmpty property="AttroneyName" prepend=",">AttroneyName</isNotEmpty>
+          <isNotEmpty property="NumberOfYrSECExp" prepend=",">NumberOfYrSECExp</isNotEmpty>
+          <isNotEmpty property="BillHrsInPast12Months" prepend=",">BillHrsInPast12Months</isNotEmpty>
+          <isNotEmpty property="BillHrsInPrior12Months" prepend=",">BillHrsInPrior12Months</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="AttroneyName" prepend=",">#AttroneyName#</isNotEmpty>
+          <isNotEmpty property="NumberOfYrSECExp" prepend=",">#NumberOfYrSECExp#</isNotEmpty>
+          <isNotEmpty property="BillHrsInPast12Months" prepend=",">#BillHrsInPast12Months#</isNotEmpty>
+          <isNotEmpty property="BillHrsInPrior12Months" prepend=",">#BillHrsInPrior12Months#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="ApplSecurityLawyersKey">SELECT IDENT_CURRENT('ApplSecurityLawyersLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ApplSecurityLawyersKey, AttroneyName, NumberOfYrSECExp, BillHrsInPast12Months, BillHrsInPrior12Months, LastUpdateTimeStamp, LastUpdateUserID, VersionSequence, PolicyKey from ApplSecurityLawyersLW where ApplSecurityLawyersKey = #ApplSecurityLawyersKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ApplSecurityLawyersLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="AttroneyName" prepend=",">AttroneyName = #AttroneyName#</isNotEmpty>
+               <isEmpty property="AttroneyName" prepend=",">AttroneyName = null</isEmpty>
+               <isNotEmpty property="NumberOfYrSECExp" prepend=",">NumberOfYrSECExp = #NumberOfYrSECExp#</isNotEmpty>
+               <isEmpty property="NumberOfYrSECExp" prepend=",">NumberOfYrSECExp = null</isEmpty>
+               <isNotEmpty property="BillHrsInPast12Months" prepend=",">BillHrsInPast12Months = #BillHrsInPast12Months#</isNotEmpty>
+               <isEmpty property="BillHrsInPast12Months" prepend=",">BillHrsInPast12Months = null</isEmpty>
+               <isNotEmpty property="BillHrsInPrior12Months" prepend=",">BillHrsInPrior12Months = #BillHrsInPrior12Months#</isNotEmpty>
+               <isEmpty property="BillHrsInPrior12Months" prepend=",">BillHrsInPrior12Months = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+          </dynamic>
+          where ApplSecurityLawyersKey = #ApplSecurityLawyersKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ApplSecurityLawyersLW where ApplSecurityLawyersKey = #ApplSecurityLawyersKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ApplSecurityLawyersLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ApplSecurityLawyersLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ApplSecurityLawyersKey, AttroneyName, NumberOfYrSECExp, BillHrsInPast12Months, BillHrsInPrior12Months, LastUpdateTimeStamp, LastUpdateUserID, VersionSequence, PolicyKey from ApplSecurityLawyersLW where ApplSecurityLawyersKey = #ApplSecurityLawyersKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ApplSecurityLawyersKey, VersionSequence, PolicyKey, AttroneyName, NumberOfYrSECExp, BillHrsInPast12Months, BillHrsInPrior12Months, LastUpdateTimeStamp, LastUpdateUserID from ApplSecurityLawyersLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

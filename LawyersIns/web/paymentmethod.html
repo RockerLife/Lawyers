@@ -1,0 +1,704 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="cache-control" content="max-age=0"/>
+		<meta http-equiv="cache-control" content="no-cache"/>
+		<meta http-equiv="expires" content="0"/>
+		<meta http-equiv="pragma" content="no-cache"/>
+		<title>Payment Method</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="js/jquery.js"/>
+		<script type="text/javascript" src="script/common.js"/>
+		<script type="text/javascript" src="script/account.js"/>
+		<script language="javascript" src="script/lawyers.js"/>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+		<link href="css/newappstyle.css" rel="stylesheet" type="text/css"/>
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+		<script type="text/javascript" src="script/tabber.js"/>
+		<script type="text/javascript" src="script/test_new.js"/>
+		<script type="text/javascript" src="script/manage.js"/>
+		<script type="text/javascript" src="script/masks.js"/>
+		<script type="text/javascript" src="script/popup.js"/>
+		<script type="text/javascript" src="script/utility.js"/>
+		<script type="text/javascript" src="script/date-picker.js"/>
+		<script type="text/javascript" src="script/htmlMassking.js"/>
+		<script type="text/javascript">
+			function checks() {
+				document.getElementById("EffectiveDate").disabled = true;
+			}
+		</script>
+		<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"/>
+	</head>
+	<body onload="setPaymentModeType();">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+		<form>
+			<div id="cover" style="width: 100%; height: 100%"/>
+			<div id="popup" style="width: 430px;">
+				<table width="75%" border="0" align="center" cellpadding="10"
+					cellspacing="0" height="120px">
+					<tr>
+						<td align="center"><b>Please be patient while your policy is being issued.</b></td>
+					</tr>
+				</table>
+			</div>
+			<div class="container-fluid bootstrap-node-1">
+				<div class="tableWidth">
+					<div id="header">
+						<span id="#Include:header.html#"/>
+					</div>
+					<table width="100%" border="0" align="center" cellspacing="0" cellpadding="0">
+						<tr>
+							<td id="paymentmethod_freeform_contextdata_6000">
+								<div id="error_StatusUpdate" class="error11Bold"> </div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="">
+									<h2 class="questionHeading">Payment Information</h2>
+								</div>
+							</td>
+						</tr>
+						<tr id="eval:LawyersRule.IsInsuredSubProducerPolicy">
+							<td>
+								<div id="payment_freeform_contextdata_000" class="padding20">
+									<p>Thank you for signing your application electronically.</p>
+									<p>Please remit or coordinate payment via our contact information below.
+										<blockquote style="line-height: 10px">
+											<div>
+												<p><label id="ajax_field_ProducerName" name="ProducerName" width="289" height="24"/></p>
+												<p><label id="ajax_field_CompleteAddress" name="CompleteAddress" width="289" height="24"/></p>
+												<p><label id="ajax_field_Fax" name="Fax" width="289" height="24"/></p>
+												<p><label id="ajax_field_Producer_email" name="Producer_email" width="289" height="24"/></p>
+											</div>
+										</blockquote>
+									</p>
+								</div>
+							</td>
+							<td>
+								<div id="eval:LawyersRule.IsNotSubProducerFlow">
+									<div id="eval:LawyersRule.isQAEnvironment">
+										<a href="../index.html" class="btn next">Exit</a>
+									</div>
+									<div id="eval:LawyersRule.isUATEnvironment">
+										<a href="http://www.protexurelawyers.com" class="btn next">Exit</a>
+									</div>
+									<div id="eval:LawyersRule.isProdEnvironment">
+										<a href="http://www.protexurelawyers.com" class="btn next">Exit</a>
+									</div>
+								</div>
+								<div id="eval:LawyersRule.IsSubProducerFlow">
+									<div id="weblink_freeform_contextdata_001">
+										<a href="context_SPWebsite" class="btn next">Exit</a>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<tr id="eval:LawyersRule.IsNotInsuredSubProducerPolicy">
+							<td>
+								<div id="eval:LawyersRule.showPaymentPageSubProducerPolicyIssuedAccess">
+									<div id="contentSection1">
+										<div class="form">
+											<div id="payment_freeform_contextdata_01" class="padding20">
+												<div align="center">
+													<table border="0" align="center" width="100%" cellpadding="4" cellspacing="0">
+														<tr>
+															<td class="padding10">
+																<style type="text/css">
+																	ul li{
+																		padding: 5px;
+																	}
+																</style>
+																<ul>
+																	<li>
+																	If you need assistance please contact Protexure Insurance Agency, Inc. at 877-569-4111 and we will happily provide you with any assistance needed.
+																	</li>
+																</ul>
+															</td>
+														</tr>
+													</table>
+												</div>
+											</div>
+											<div id="eval:LawyersRule.Accept_Status">
+												<table id="payment_freeform_contextdata_001" border="0" align="center" cellpadding="2" cellspacing="2">
+													<tbody id="eval:LawyersRule.isFinalisedQuoteSelected">
+														<tr>
+															<td colspan="3" align="center">
+																<div id="error_PaymentMode" class="defult_tr_errors"/>
+															</td>
+														</tr>
+														<tr id="eval:LawyersRule.showOtherPaymentMode">
+															<td>
+																<table border="0" cellpadding="20px" height="150px" width="100%">
+																	<tr id="">
+																		<td width="" align="center" nowrap="nowrap" class="label">
+																			<b>Payment Mode</b>
+																			<span class="label" style="padding-left: 20px;">
+																				<span id="eval:LawyersRule.isPaymentPageNotReadOnly">
+																					<span id="eval:LawyersRule.isAgent">
+																						<select name="PaymentMode" class="form-control" style="width:200px;" id="PaymentMode" onchange="setPaymentModeType();">
+																							<option value="">Select</option>
+																							<option value="eft">Manual Check</option>
+																							<option id="eval:LawyersRule.IsNotSubProducerPolicy" value="finance">Financing</option>
+																							<option value="totalPay">Total Pay</option>
+																						</select>
+																					</span>
+																					<span id="eval:LawyersRule.isInsured">
+																						<select name="PaymentMode" class="form-control" style="width:200px;" id="PaymentMode" onchange="setPaymentModeType();">
+																							<option value="">Select</option>
+																							<option value="eft">Manual Check</option>
+																							<option id="eval:LawyersRule.showPaypalDiv29Days" value="paypal">Debit/Credit Card</option>
+																							<option id="eval:LawyersRule.showACHDiv29Days" value="ach">ACH</option>
+																							<option id="eval:LawyersRule.isIPFSShowToInsured29Days" value="finance">Financing</option>
+																						</select>
+																					</span>
+																				</span>
+																				<span id="eval:LawyersRule.isPaymentPageReadOnly">
+																					<span>
+																						<select name="PaymentMode" class="form-control" style="width:200px;" id="PaymentMode" disabled="disabled">
+																							<option value="">Select</option>
+																							<option value="eft">Manual Check</option>
+																							<option value="paypal">Debit/Credit Card</option>
+																							<option value="ach">ACH</option>
+																							<option value="finance">Financing</option>
+																							<option value="totalPay">Total Pay</option>
+																						</select>
+																					</span>
+																				</span>
+																			</span>
+																		</td>
+																	</tr>
+																	<tr id="otherPaymentButtonDiv" style="display: none;">
+																		<td>
+																			<div id="eval:LawyersRule.isAgentNotSubproducer">
+																				<table align="center">
+																					<tr>
+																						<td>
+																							<a class="btn next" href="javascript:submitform('paymentmethod.html','paymentmethod.saveOther','','');">Save</a>
+																						</td>
+																						<td>
+																							<div id="eval:LawyersRule.IsNotSubProducerFlow">
+																								<div id="eval:LawyersRule.isQAEnvironment">
+																									<a href="../index.html" class="btn next">Exit</a>
+																								</div>
+																								<div id="eval:LawyersRule.isUATEnvironment">
+																									<a href="http://www.protexurelawyers.com" class="btn next">Exit</a>
+																								</div>
+																								<div id="eval:LawyersRule.isProdEnvironment">
+																									<a href="http://www.protexurelawyers.com" class="btn next">Exit</a>
+																								</div>
+																							</div>
+																							<div id="eval:LawyersRule.IsSubProducerFlow">
+																								<div id="weblink_freeform_contextdata_001">
+																									<a href="context_SPWebsite" class="btn next">Exit</a>
+																								</div>
+																							</div>
+																						</td>
+																					</tr>
+																				</table>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr id="EFTPaymentButtonDiv" style="display: none;">
+																		<td>
+																			<div class="paddingTop20">
+																				<table border="0" align="center" cellspacing="0" cellpadding="0" id="eval:LawyersRule.isPaymentPageNotReadOnly">
+																					<tr>
+																						<td nowrap="nowrap">
+																							<div id="eval:LawyersRule.isInsured">
+																								<a class="btn next" href="javascript:submitform('indexThanksPayment.html','paymentmethod.saveEFT','','');">Save and Continue</a>
+																							</div>
+																						</td>
+																						<td nowrap="nowrap">
+																							<div id="eval:LawyersRule.isAgent">
+																								<table border="0" cellspacing="1" cellpadding="0">
+																									<tr>
+																										<td>
+																											<a class="btn next" href="javascript:submitform('paymentmethod.html','paymentmethod.save','','');">Save</a>
+																										</td>
+																										<td>
+																											<div id="eval:LawyersRule.IsNotSubProducerFlow">
+																												<div id="eval:LawyersRule.isQAEnvironment">
+																													<a class="btn next" href="../index.html" tabindex="42">Exit</a>
+																												</div>
+																												<div id="eval:LawyersRule.isUATEnvironment">
+																													<a href="http://www.protexurelawyers.com" class="btn next">Exit</a>
+																												</div>
+																												<div id="eval:LawyersRule.isProdEnvironment">
+																													<a href="http://www.protexurelawyers.com" class="btn next">Exit</a>
+																												</div>
+																											</div>
+																											<div id="eval:LawyersRule.IsSubProducerFlow">
+																												<div id="weblink_freeform_contextdata_001">
+																													<a href="context_SPWebsite" class="btn next">Exit</a>
+																												</div>
+																											</div>
+																										</td>
+																									</tr>
+																								</table>
+																							</div>
+																						</td>
+																					</tr>
+																				</table>
+																				<table border="0" align="center" cellspacing="0" cellpadding="0" id="eval:LawyersRule.isPaymentPageReadOnly">
+																					<tr>
+																						<td>
+																							<div id="eval:LawyersRule.IsNotSubProducerFlow">
+																								<div id="eval:LawyersRule.isQAEnvironment">
+																									<a href="../index.html" class="btn next">Exit</a>
+																								</div>
+																								<div id="eval:LawyersRule.isUATEnvironment">
+																									<a href="http://lawyer.rscube.com:8080" class="btn next">Exit</a>
+																								</div>
+																								<div id="eval:LawyersRule.isProdEnvironment">
+																									<a href="http://www.protexurelawyers.com" class="btn next">Exit</a>
+																								</div>
+																							</div>
+																							<div id="eval:LawyersRule.IsSubProducerFlow">
+																								<div id="weblink_freeform_contextdata_001">
+																									<a href="context_SPWebsite" class="btn next">Exit</a>
+																								</div>
+																							</div>
+																						</td>
+																					</tr>
+																				</table>
+																			</div>
+																		</td>
+																	</tr>
+																	<tr id="otherIPFSDiv" style="display: none;">
+																		<td>
+																			<div class="paddingTop20" id="1eval:LawyersRule.IsPremiumGreaterThanFinanceLimit">
+																				<table border="0" align="center" cellspacing="0" cellpadding="0" id="eval:LawyersRule.isPaymentPageNotReadOnly">
+																					<tr>
+																						<td nowrap="nowrap">
+																							<div id="eval:LawyersRule.isIPFSShowToInsured29Days">
+																								<div id="eval:LawyersRule.isIPFSERRORSNot">
+																									<table align="center">
+																										<tr>
+																											<td colspan="2" style="font-weight: bold;">
+																												<div style="font-weight: 550;">Step 1</div>
+																											</td>
+																										</tr>
+																										<tr>
+																											<td style="font-weight: bold; padding-top: 5px; padding-left: 45px;" colspan="2" >
+																												<b>Please select your Payment Schedule Below.</b>
+																											</td>
+																										</tr>
+																										<tr>
+																											<td style="padding-top: 5px; padding-left: 45px;">
+																												<table>
+																													<tr>
+																														<td align="center" width="150px">
+																															<input type="radio" name="IPFSFinanceQurMon" id="IPFSFinanceQuarterly" value="IPFSFinanceQuarterly"/> Quarterly
+																															<div style="width: 77px; padding-top: 8px"> 30% down 3 payments</div>
+																														</td>
+																														<td align="center">
+																															<span class="label" style="text-align: left;">
+																																<input type="radio" name="IPFSFinanceQurMon" id="IPFSFinanceMonthly" value="IPFSFinanceMonthly"/> Monthly
+																															</span>
+																															<div style="width: 77px; padding-top: 8px"> 20% down 9 payments</div>
+																														</td>
+																													</tr>
+																												</table>
+																											</td>
+																										</tr>
+																										<tr>
+																											<td style="padding-top: 5px; padding-left: 45px;">
+																												<div id="error_IPFSFinanceQurMon" class="defult_tr_errors"/>
+																											</td>
+																										</tr>
+																										<tr id="eval:LawyersRule.isIPFSPFAURLNot">
+																											<td align="center" style="padding-top: 5px;">
+																												<a class="btn next" href="javascript:submitform('paymentmethod.html','paymentmethod.generateIPFSPFA','','');">Press Continue</a>
+																											</td>
+																										</tr>
+																										<tr id="eval:LawyersRule.isIPFSPFAURL">
+																											<td align="left" colspan="2" style="font-weight: bold;">
+																												<div style="font-weight: 550;">Step 2</div>
+																											</td>
+																										</tr>
+																										<tr id="eval:LawyersRule.isIPFSPFAURL">
+																											<td style="font-weight: bold; padding-top: 5px; padding-left: 45px;" colspan="2" >
+																												<b>Select Down Payment Method Below.</b>
+																											</td>
+																										</tr>
+																										<tr id="eval:LawyersRule.isIPFSPFAURL">
+																											<td style="padding-top: 5px; padding-left: 45px;">
+																												<table>
+																													<tr>
+																														<td align="center" width="150px">
+																															<input type="radio" name="IPFSFinanceCCACHMC" id="IPFSFinanceCCACH" value="IPFSFinanceCCACH"/> Credit Card / ACH
+																														</td>
+																														<td align="center">
+																															<span class="label" style="text-align: left; display: none;">
+																																<input type="radio" name="IPFSFinanceCCACHMC" id="IPFSFinanceManualCheck" value="IPFSFinanceManualCheck"/> Manual Check
+																															</span>
+																														</td>
+																													</tr>
+																												</table>
+																											</td>
+																										</tr>
+																										<tr id="eval:LawyersRule.isIPFSPFAURL">
+																											<td style="padding-top: 5px; padding-left: 45px;">
+																												<div id="error_IPFSFinanceCCACHMC" class="defult_tr_errors"/>
+																											</td>
+																										</tr>
+																										<tr id="eval:LawyersRule.isIPFSPFAURL">
+																											<td align="left" colspan="2" style="font-weight: bold;">
+																												<div style="font-weight: 550;">Step 3</div>
+																											</td>
+																										</tr>
+																										<tr id="eval:LawyersRule.isIPFSPFAURL">
+																											<td colspan="2" style="padding-top: 5px; padding-left: 45px;">
+																												<input type="checkbox" name="isIPFSPFA" id="isIPFSPFA"/>&nbsp;&nbsp;I have read the Premium Finance Agreement (PFA) as shown in the link.
+																											</td>
+																										</tr>
+																										<tr id="eval:LawyersRule.isIPFSPFAURL">
+																											<td style="padding-top: 5px; padding-left: 45px;">
+																												<div id="error_isIPFSPFA" class="defult_tr_errors"/>
+																											</td>
+																										</tr>
+																										<tr id="eval:LawyersRule.isIPFSPFAURL">
+																											<td style="padding-top: 20px">
+																												<a class="btn next" onclick="ipfsPFAPreview();">Please review PFA</a>
+																												<a class="btn next" href="javascript:submitform('indexThanksPayment.html','paymentmethod.saveContinue','','');">Save and Continue</a>
+																											</td>
+																										</tr>
+																									</table>
+																								</div>
+																								<div id="eval:LawyersRule.isIPFSERRORS">
+																									<div id="error_ipfsErrorsDesc" class="defult_tr_errors"/>
+																								</div>
+																							</div>
+																						</td>
+																						<td nowrap="nowrap">
+																							<div id="eval:LawyersRule.isAgentNotSubproducer">
+																								<table border="0" cellspacing="1" cellpadding="0">
+																									<tr>
+																										<td>Please enter the IPFS Quote Number&nbsp;&nbsp;
+																											<input type="text" style="height: 24px;" name="ipfsQuoteNumber" id="ipfsQuoteNumber"/>
+																										</td>
+																									</tr>
+																									<tr>
+																										<td colspan="2">&nbsp;</td>
+																									</tr>
+																									<tr>
+																										<td>
+																											<table align="center">
+																												<tr>
+																													<td>
+																														<a class="btn next" href="javascript:submitform('paymentmethod.html','paymentmethod.save','','');">Save</a>
+																													</td>
+																													<td>
+																														<div id="eval:LawyersRule.IsNotSubProducerFlow">
+																															<div id="eval:LawyersRule.isQAEnvironment">
+																																<a href="../index.html" class="btn next">Exit</a>
+																															</div>
+																															<div id="eval:LawyersRule.isUATEnvironment">
+																																<a href="http://www.protexurelawyers.com" class="btn next">Exit</a>
+																															</div>
+																															<div id="eval:LawyersRule.isProdEnvironment">
+																																<a href="http://www.protexurelawyers.com" class="btn next">Exit</a>
+																															</div>
+																														</div>
+																														<div id="eval:LawyersRule.IsSubProducerFlow">
+																															<div id="weblink_freeform_contextdata_001">
+																																<a href="context_SPWebsite" class="btn next">Exit</a>
+																															</div>
+																														</div>
+																													</td>
+																												</tr>
+																											</table>
+																										</td>
+																									</tr>
+																								</table>
+																							</div>
+																						</td>
+																					</tr>
+																				</table>
+																				<table border="0" align="center" cellspacing="0" cellpadding="0" id="eval:LawyersRule.isPaymentPageReadOnly">
+																					<tr>
+																						<td>Please enter the IPFS Quote Number&nbsp;&nbsp;</td>
+																						<td>
+																							<input type="text" name="ipfsQuoteNumber" style="height: 24px;" readonly="readonly" id="ipfsQuoteNumber"/>
+																						</td>
+																					</tr>
+																					<tr>
+																						<td colspan="2">&nbsp;</td>
+																					</tr>
+																					<tr>
+																						<td/>
+																						<td>
+																							<div id="eval:LawyersRule.IsNotSubProducerFlow">
+																								<div id="eval:LawyersRule.isQAEnvironment">
+																									<a href="../index.html" class="btn next">Exit</a>
+																								</div>
+																								<div id="eval:LawyersRule.isUATEnvironment">
+																									<a href="http://lawyer.rscube.com:8080" class="btn next">Exit</a>
+																								</div>
+																								<div id="eval:LawyersRule.isProdEnvironment">
+																									<a href="http://www.protexurelawyers.com" class="btn next">Exit</a>
+																								</div>
+																							</div>
+																							<div id="eval:LawyersRule.IsSubProducerFlow">
+																								<div id="weblink_freeform_contextdata_001">
+																									<a href="context_SPWebsite" class="btn next">Exit</a>
+																								</div>
+																							</div>
+																						</td>
+																					</tr>
+																				</table>
+																			</div>
+																			<!-- <div class="paddingTop20" id="eval:LawyersRule.IsNotPremiumGreaterThanFinanceLimit">
+																				<div class="defult_tr_errors" style="text-align: center;">The maximum premium in a financing case should be greater than $800.</div>
+																			</div> -->
+																		</td>
+																	</tr>
+																	<tr id="CC_ACHPaymentDiv" style="display: none;">
+																		<td>
+																			<div class="paddingTop20">
+																				<table border="0" align="center" cellspacing="0" cellpadding="0" id="eval:LawyersRule.isPaymentPageNotReadOnly">
+																					<tr>
+																						<td nowrap="nowrap">
+																							<div id="eval:LawyersRule.isInsured">
+																								<table align="center">
+																									<tr>
+																										<td>
+																											<a class="btn next" href="javascript:submitform('andDone.html','paymentmethod.saveAndDone','','');">Proceed To Payment</a>
+																										</td>
+																										<td>
+																											<div id="eval:LawyersRule.IsNotSubProducerFlow">
+																												<div id="eval:LawyersRule.isQAEnvironment">
+																													<a href="../index.html" class="btn next">Exit</a>
+																												</div>
+																												<div id="eval:LawyersRule.isUATEnvironment">
+																													<a href="http://www.protexurelawyers.com" class="btn next">Exit</a>
+																												</div>
+																												<div id="eval:LawyersRule.isProdEnvironment">
+																													<a href="http://www.protexurelawyers.com" class="btn next">Exit</a>
+																												</div>
+																											</div>
+																											<div id="eval:LawyersRule.IsSubProducerFlow">
+																												<div id="weblink_freeform_contextdata_001">
+																													<a href="context_SPWebsite" class="btn next">Exit</a>
+																												</div>
+																											</div>
+																										</td>
+																									</tr>
+																								</table>
+																							</div>
+																						</td>
+																						<td nowrap="nowrap">
+																							<div id="eval:LawyersRule.isAgent">
+																							</div>
+																						</td>
+																					</tr>
+																				</table>
+																				<table border="0" align="center" cellspacing="0" cellpadding="0" id="eval:LawyersRule.isPaymentPageReadOnly">
+																					<tr>
+																						<td>
+																							<div id="eval:LawyersRule.IsNotSubProducerFlow">
+																								<div id="eval:LawyersRule.isQAEnvironment">
+																									<a href="../index.html" class="btn next">Exit</a>
+																								</div>
+																								<div id="eval:LawyersRule.isUATEnvironment">
+																									<a href="http://lawyer.rscube.com:8080" class="btn next">Exit</a>
+																								</div>
+																								<div id="eval:LawyersRule.isProdEnvironment">
+																									<a href="http://www.protexurelawyers.com" class="btn next">Exit</a>
+																								</div>
+																							</div>
+																							<div id="eval:LawyersRule.IsSubProducerFlow">
+																								<div id="weblink_freeform_contextdata_001">
+																									<a href="context_SPWebsite" class="btn next">Exit</a>
+																								</div>
+																							</div>
+																						</td>
+																					</tr>
+																				</table>
+																			</div>
+																		</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td style="padding-top: 25px; padding-bottom: 20px;">
+																<table width="100%">
+																	<tr>
+																		<td align="center" colspan="3">
+																			<div id="error_AcceptanceDate" class="defult_tr_errors"/>
+																		</td>
+																	</tr>
+																	<tr id="CFPolicyIssuance_Security">
+																		<td colspan="2" nowrap="nowrap" align="center">
+																			<div id="eval:LawyersRule.isPaymentPageNotReadOnly" class="paddingTop20">
+																				<div id="">
+																					<div id="eval:LawyersRule.showIssuePolicy">
+																						<table border="0" cellspacing="5" cellpadding="0">
+																							<tr>
+																								<td>
+																									<div id="error_issuanceError" class="errorHeading"/>
+																								</td>
+																							</tr>
+																							<tr>
+																								<td id="eval:LawyersRule.IsDaysNotMoreThan90" align="center">
+																									PLEASE BE SURE THIS IS THE RIGHT POLICY! ONCE ISSUED, THIS POLICY WILL HAVE TO BE CANCELLED AND REWRITTEN.
+																								</td>
+																							</tr>
+																							<tr>
+																								<td style="color: red" id="eval:LawyersRule.IsDaysMoreThan90" align="center">
+																									<div id="eval:LawyersRule.IsNotRenewalPolicy">
+																										CANNOT ISSUE THE POLICY FOR MORE THAN 60 DAYS OUT.
+																									</div>
+																									<div id="eval:LawyersRule.IsRenewalPolicy">
+																										CANNOT ISSUE THE POLICY FOR MORE THAN 90 DAYS OUT.
+																									</div>
+																								</td>
+																							</tr>
+																							<tr>
+																								<td style="color: red" id="eval:LawyersRule.ApproveSubjective_Status" align="center">
+																									CANNOT ISSUE DUE TO SUBJECTIVITY IN UNDERWRITING.
+																								</td>
+																							</tr>
+																							<tr>
+																								<td align="center">
+																									<div id="error_policyInsuranceValidation" class="error11Bold"/>
+																								</td>
+																							</tr>
+																							<tr>
+																								<td align="center" id="eval:LawyersRule.IsDaysNotMoreThan90" class="paddingTop10">
+																									<span id="eval:LawyersRule.isPolicySendQuoteOrIssueForCompany">
+																										<a onclick="showPopUpConfirmation('popup',434,450);" class="btn next" href="javascript:submitform('paymentmethod.html','paymentmethod.issuePolicy','','');">Issue Policy</a>
+																									</span>
+																								</td>
+																								<td align="center" id="eval:LawyersRule.IsDaysMoreThan90">
+																									<div id="eval:LawyersRule.IsNotSubProducerFlow">
+																										<div id="eval:LawyersRule.isQAEnvironment">
+																											<a class="btn next" href="../index.html">Exit</a>
+																										</div>
+																										<div id="eval:LawyersRule.isUATEnvironment">
+																											<a href="http://lawyer.rscube.com:8080" class="btn next">Exit</a>
+																										</div>
+																										<div id="eval:LawyersRule.isProdEnvironment">
+																											<a href="http://www.protexurelawyers.com" class="btn next">Exit</a>
+																										</div>
+																									</div>
+																									<div id="eval:LawyersRule.IsSubProducerFlow">
+																										<div id="weblink_freeform_contextdata_001">
+																											<a href="context_SPWebsite" class="btn next">Exit</a>
+																										</div>
+																									</div>
+																								</td>
+																							</tr>
+																						</table>
+																					</div>
+																				</div>
+																			</div>
+																		</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+													</tbody>
+													<tfoot id="eval:LawyersRule.isFinalisedQuoteNotSelected">
+														<div id="error_FinalisedQuoteError" class="defult_tr_errors" style="text-align: center;"> </div>
+														<div id="error_isQuoteExpired" class="defult_tr_errors" style="text-align: center;"> </div>
+													</tfoot>
+												</table>
+											</div>
+											<div id="eval:LawyersRule.IssuedAcceptNot_Status">
+												<div class="defult_tr_errors" style="text-align: center;">This Policy is not Accepted.</br>For any questions or assistance please call 877-569-4111 to reach your Protexure Agent.</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="eval:LawyersRule.showThanksPageSubProducerPolicyIssuedAccess">
+									<div class="">
+										<h2 class="questionHeading">Thank You!</h2>
+									</div>
+									<div class="paddingTop40">
+										<table width="95%" border="0" align="center" cellpadding="5" cellspacing="0">
+											<tr>
+												<td/>
+												<td>
+													<table width="80%" border="0" cellspacing="1" cellpadding="6" id="labels_freeform_contextdata_99" style="background-color: #fae5ac; line-height: 22px; text-align: justify; color: #990033; border: 1px solid #c8a43c" class="padding10">
+														<tr>
+															<td align="center">
+																<strong>
+																	We received your
+																	electronically signed application and appreciate
+																	your business. The decision you have made will give
+																	you both savings and peace of mind. If you would
+																	prefer not to use a credit card for payment, you
+																	send a check for payment of your premium, please remit payment to: 
+																	<span style="font-size: 14px;" id="eval:LawyersRule.IsNotSubproducerLoggedInsured"> 
+																		 <b>Protexure Insurance/MPA </b> and mail to: <b>PO Box 773197, Detroit, Michigan 48277-3197</b>
+																		  You may also call us toll-free at 1-877-569-4111 to discuss other
+																		financing options.
+																	</span>
+																	<span style="font-size: 14px;" id="eval:LawyersRule.isSubproducerLogin">
+																		<label id="ajax_field_ProducerName" name="ProducerName"/>
+																		<label id="ajax_field_CompleteAddress" name="CompleteAddress"/>
+																		You may also call us at 
+																		<label id="ajax_field_SPPhoneNumber" name="SPPhoneNumber"/>
+																		to discuss other financing options.
+																	</span>
+																</strong>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</div>
+									<div class="buttons row borderTop" style="border-right: none">
+										<a id="eval:LawyersRule.showNotSupplementsTab" class="btn back floatLeft" href="javascript:submitform('coverage.html|housekeeping.html|AboutFirmRenewal.html|RenewFirm.html','indexThanks.cancel','forwardeval','LawyersRule.IsNotRenewalPolicyOldApp|LawyersRule.IsNotRenewalPolicyNewApp|LawyersRule.IsRenewalPolicyNewApp|LawyersRule.IsRenewalPolicy');">Back</a>
+										<a id="eval:LawyersRule.showSupplementsTab" class="btn back floatLeft" href="javascript:submitform('realEstateResi.html|realEstateCommercial.html|plaintiffSupp.html|willsEstateSupp.html','indexThanks.cancelSupplement','forwardeval','LawyersRule.IsRealEstateResidentialAOP|LawyersRule.IsRealEstateCommercialAOP|LawyersRule.IsPlaintiffAOP|LawyersRule.IsWillsEstateAOP');">Back</a>
+										<div class="floatRight" id="exit_freeform_contextdata_012">
+											<div id="eval:LawyersRule.IsNotSubProducerFlow">
+												<a id="eval:LawyersRule.isQAEnvironment" href="../index.html" class="btn next">Exit</a>
+												<a id="eval:LawyersRule.isUATEnvironment" href="http://lawyer.rscube.com:8080" class="btn next">Exit</a>
+												<a id="eval:LawyersRule.isProdEnvironment" href="http://www.protexurelawyers.com" class="btn next">Exit</a>
+											</div>
+											<div id="eval:LawyersRule.IsSubProducerFlow">
+												<a id="context_SPWebsite" class="btn next">Exit</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div id="footer">
+									<span id="#Include:footer.html#"/>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<table id="paymentmethod_freeform_contextdata_999">
+				<tr>
+					<td>
+						<input type="hidden" name="jsessionid" id="jsessionid"/>
+						<input type="hidden" name="divHideShow" value=""/>
+						<input type="hidden" name="ctxmenuparam" value=""/>
+						<input type="hidden" name="IPFSPFAURL" id="IPFSPFAURL" value=""/>
+						<input type="hidden" name="ipfsQuoteNumber" id="ipfsQuoteNumber" value=""/>
+						<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated"/>
+						<input type="hidden" name="newPolicyForms" id="newPolicyForms"/>
+						<input type="hidden" name="priorPolicyForms" id="priorPolicyForms"/>
+					</td>
+				</tr>
+			</table>
+			<div class="calendar_widget" id="calendar_widget">
+				<iframe id="calendar_widget_iframe" name="calendar_widget_iframe" src="calendar_widget.html" frameborder="0"/>
+			</div>
+		</form>
+	</body>
+	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"/>
+</html>

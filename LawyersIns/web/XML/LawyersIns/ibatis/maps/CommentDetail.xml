@@ -1,0 +1,69 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="CommentDetail">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from CommentDetail</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from CommentDetail</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into CommentDetail(
+          <dynamic prepend=" ">
+               <isNotEmpty property="CommentUploaded" prepend=",">CommentUploaded</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="CommentUploadedBy" prepend=",">CommentUploadedBy</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+               <isNotEmpty property="UploadedTime" prepend=",">UploadedTime</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy</isNotEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="CommentUploaded" prepend=",">#CommentUploaded#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="CommentUploadedBy" prepend=",">#CommentUploadedBy#</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+               <isNotEmpty property="UploadedTime" prepend=",">#UploadedTime#</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">#CreatedDate#</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">#CreatedBy#</isNotEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">#VersionKey#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="CommentKey">SELECT IDENT_CURRENT('CommentDetail') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CommentKey, CommentUploaded, LastUpdateTimeStamp, CommentUploadedBy, PolicyKey, UploadedTime, CreatedDate, CreatedBy, VersionKey from CommentDetail where CommentKey = #CommentKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update CommentDetail set
+          <dynamic prepend=" ">
+               <isNotEmpty property="CommentUploaded" prepend=",">CommentUploaded = #CommentUploaded#</isNotEmpty>
+               <isEmpty property="CommentUploaded" prepend=",">CommentUploaded = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="CommentUploadedBy" prepend=",">CommentUploadedBy = #CommentUploadedBy#</isNotEmpty>
+               <isEmpty property="CommentUploadedBy" prepend=",">CommentUploadedBy = null</isEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+               <isNotEmpty property="UploadedTime" prepend=",">UploadedTime = #UploadedTime#</isNotEmpty>
+               <isEmpty property="UploadedTime" prepend=",">UploadedTime = null</isEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate = #CreatedDate#</isNotEmpty>
+               <isEmpty property="CreatedDate" prepend=",">CreatedDate = null</isEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy = #CreatedBy#</isNotEmpty>
+               <isEmpty property="CreatedBy" prepend=",">CreatedBy = null</isEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey = #VersionKey#</isNotEmpty>
+               <isEmpty property="VersionKey" prepend=",">VersionKey = null</isEmpty>
+          </dynamic>
+          where CommentKey = #CommentKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from CommentDetail where CommentKey = #CommentKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from CommentDetail</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from CommentDetail</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CommentKey, CommentUploaded, LastUpdateTimeStamp, CommentUploadedBy, PolicyKey, UploadedTime, CreatedDate, CreatedBy, VersionKey from CommentDetail where CommentKey = #CommentKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CommentKey, CommentUploaded, LastUpdateTimeStamp, CommentUploadedBy, PolicyKey, UploadedTime, CreatedDate, CreatedBy, VersionKey from CommentDetail</select>
+     <parameterMap id="AddMultipleAop_ProcMap" class="java.util.HashMap">
+          <parameter property="AOP_values" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="AddMultipleAop_Proc" parameterMap="AddMultipleAop_ProcMap">{ call AddMultipleAop_Proc(?,?,?,?,?)}</procedure>
+</sqlMap>
+

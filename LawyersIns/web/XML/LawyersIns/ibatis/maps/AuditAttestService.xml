@@ -1,0 +1,52 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AuditAttestService">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AuditAttestService</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AuditAttestService where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into AuditAttestService(VersionSequence, PolicyKey
+          <isNotEmpty property="ClientNameAas" prepend=",">ClientNameAas</isNotEmpty>
+          <isNotEmpty property="ClientIndustryAasKey" prepend=",">ClientIndustryAasKey</isNotEmpty>
+          <isNotEmpty property="ServiceIndustryAasKey" prepend=",">ServiceIndustryAasKey</isNotEmpty>
+          <isNotEmpty property="TypeOfServiceAas" prepend=",">TypeOfServiceAas</isNotEmpty>
+          <isNotEmpty property="TypeOfAuditOpinionAas" prepend=",">TypeOfAuditOpinionAas</isNotEmpty>
+          <isNotEmpty property="GoingConcernReferenceAas" prepend=",">GoingConcernReferenceAas</isNotEmpty>
+          <isNotEmpty property="NonMonetaryCompensationAas" prepend=",">NonMonetaryCompensationAas</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="ClientNameAas" prepend=",">#ClientNameAas#</isNotEmpty>
+          <isNotEmpty property="ClientIndustryAasKey" prepend=",">#ClientIndustryAasKey#</isNotEmpty>
+          <isNotEmpty property="ServiceIndustryAasKey" prepend=",">#ServiceIndustryAasKey#</isNotEmpty>
+          <isNotEmpty property="TypeOfServiceAas" prepend=",">#TypeOfServiceAas#</isNotEmpty>
+          <isNotEmpty property="TypeOfAuditOpinionAas" prepend=",">#TypeOfAuditOpinionAas#</isNotEmpty>
+          <isNotEmpty property="GoingConcernReferenceAas" prepend=",">#GoingConcernReferenceAas#</isNotEmpty>
+          <isNotEmpty property="NonMonetaryCompensationAas" prepend=",">#NonMonetaryCompensationAas#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ClientNameAas, ClientIndustryAasKey, ServiceIndustryAasKey, TypeOfServiceAas, TypeOfAuditOpinionAas, GoingConcernReferenceAas, NonMonetaryCompensationAas, VersionSequence, PolicyKey from AuditAttestService where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update AuditAttestService set
+          <dynamic prepend=" ">
+               <isNotEmpty property="ClientNameAas" prepend=",">ClientNameAas = #ClientNameAas#</isNotEmpty>
+               <isEmpty property="ClientNameAas" prepend=",">ClientNameAas = null</isEmpty>
+               <isNotEmpty property="ClientIndustryAasKey" prepend=",">ClientIndustryAasKey = #ClientIndustryAasKey#</isNotEmpty>
+               <isEmpty property="ClientIndustryAasKey" prepend=",">ClientIndustryAasKey = null</isEmpty>
+               <isNotEmpty property="ServiceIndustryAasKey" prepend=",">ServiceIndustryAasKey = #ServiceIndustryAasKey#</isNotEmpty>
+               <isEmpty property="ServiceIndustryAasKey" prepend=",">ServiceIndustryAasKey = null</isEmpty>
+               <isNotEmpty property="TypeOfServiceAas" prepend=",">TypeOfServiceAas = #TypeOfServiceAas#</isNotEmpty>
+               <isEmpty property="TypeOfServiceAas" prepend=",">TypeOfServiceAas = null</isEmpty>
+               <isNotEmpty property="TypeOfAuditOpinionAas" prepend=",">TypeOfAuditOpinionAas = #TypeOfAuditOpinionAas#</isNotEmpty>
+               <isEmpty property="TypeOfAuditOpinionAas" prepend=",">TypeOfAuditOpinionAas = null</isEmpty>
+               <isNotEmpty property="GoingConcernReferenceAas" prepend=",">GoingConcernReferenceAas = #GoingConcernReferenceAas#</isNotEmpty>
+               <isEmpty property="GoingConcernReferenceAas" prepend=",">GoingConcernReferenceAas = null</isEmpty>
+               <isNotEmpty property="NonMonetaryCompensationAas" prepend=",">NonMonetaryCompensationAas = #NonMonetaryCompensationAas#</isNotEmpty>
+               <isEmpty property="NonMonetaryCompensationAas" prepend=",">NonMonetaryCompensationAas = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from AuditAttestService where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from AuditAttestService</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AuditAttestService where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ClientNameAas, ClientIndustryAasKey, ServiceIndustryAasKey, TypeOfServiceAas, TypeOfAuditOpinionAas, GoingConcernReferenceAas, NonMonetaryCompensationAas, VersionSequence, PolicyKey from AuditAttestService where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, ClientNameAas, ClientIndustryAasKey, ServiceIndustryAasKey, TypeOfServiceAas, TypeOfAuditOpinionAas, GoingConcernReferenceAas, NonMonetaryCompensationAas from AuditAttestService where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

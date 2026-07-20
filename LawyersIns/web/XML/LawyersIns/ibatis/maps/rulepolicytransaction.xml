@@ -1,0 +1,266 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="rulepolicytransaction">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from rulepolicytransaction</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from rulepolicytransaction</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into rulepolicytransaction(
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+               <isNotEmpty property="ClearStatus" prepend=",">ClearStatus</isNotEmpty>
+               <isNotEmpty property="Description" prepend=",">Description</isNotEmpty>
+               <isNotEmpty property="ToolTipDescription" prepend=",">ToolTipDescription</isNotEmpty>
+               <isNotEmpty property="RuleId" prepend=",">RuleId</isNotEmpty>
+               <isNotEmpty property="ActionTakenBy" prepend=",">ActionTakenBy</isNotEmpty>
+               <isNotEmpty property="isArchived" prepend=",">isArchived</isNotEmpty>
+               <isNotEmpty property="TimeStamp" prepend=",">TimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+               <isNotEmpty property="ClearStatus" prepend=",">#ClearStatus#</isNotEmpty>
+               <isNotEmpty property="Description" prepend=",">#Description#</isNotEmpty>
+               <isNotEmpty property="ToolTipDescription" prepend=",">#ToolTipDescription#</isNotEmpty>
+               <isNotEmpty property="RuleId" prepend=",">#RuleId#</isNotEmpty>
+               <isNotEmpty property="ActionTakenBy" prepend=",">#ActionTakenBy#</isNotEmpty>
+               <isNotEmpty property="isArchived" prepend=",">#isArchived#</isNotEmpty>
+               <isNotEmpty property="TimeStamp" prepend=",">#TimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="RulePolicyId">SELECT IDENT_CURRENT('rulepolicytransaction') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select RulePolicyId, PolicyKey, ClearStatus, Description, ToolTipDescription, RuleId, ActionTakenBy, isArchived, TimeStamp from rulepolicytransaction where RulePolicyId = #RulePolicyId#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update rulepolicytransaction set
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+               <isNotEmpty property="ClearStatus" prepend=",">ClearStatus = #ClearStatus#</isNotEmpty>
+               <isEmpty property="ClearStatus" prepend=",">ClearStatus = null</isEmpty>
+               <isNotEmpty property="Description" prepend=",">Description = #Description#</isNotEmpty>
+               <isEmpty property="Description" prepend=",">Description = null</isEmpty>
+               <isNotEmpty property="ToolTipDescription" prepend=",">ToolTipDescription = #ToolTipDescription#</isNotEmpty>
+               <isEmpty property="ToolTipDescription" prepend=",">ToolTipDescription = null</isEmpty>
+               <isNotEmpty property="RuleId" prepend=",">RuleId = #RuleId#</isNotEmpty>
+               <isEmpty property="RuleId" prepend=",">RuleId = null</isEmpty>
+               <isNotEmpty property="ActionTakenBy" prepend=",">ActionTakenBy = #ActionTakenBy#</isNotEmpty>
+               <isEmpty property="ActionTakenBy" prepend=",">ActionTakenBy = null</isEmpty>
+               <isNotEmpty property="isArchived" prepend=",">isArchived = #isArchived#</isNotEmpty>
+               <isEmpty property="isArchived" prepend=",">isArchived = null</isEmpty>
+               <isNotEmpty property="TimeStamp" prepend=",">TimeStamp = #TimeStamp#</isNotEmpty>
+               <isEmpty property="TimeStamp" prepend=",">TimeStamp = null</isEmpty>
+          </dynamic>
+          where RulePolicyId = #RulePolicyId#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from rulepolicytransaction where RulePolicyId = #RulePolicyId#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from rulepolicytransaction</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from rulepolicytransaction</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select RulePolicyId, PolicyKey, ClearStatus, Description, ToolTipDescription, RuleId, ActionTakenBy, isArchived, TimeStamp from rulepolicytransaction where RulePolicyId = #RulePolicyId#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select RulePolicyId, PolicyKey, ClearStatus from rulepolicytransaction</select>
+     <parameterMap id="RESETFlagsLawyers_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="ruleId" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="RESETFlagsLawyers_p" parameterMap="RESETFlagsLawyers_pMap">{ call RESETFlagsLawyers_p(?,?)}</procedure>
+     <parameterMap id="UWRules_CollectionsSupplement_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_CollectionsSupplement_LW" parameterMap="UWRules_CollectionsSupplement_LWMap">{ call UWRules_CollectionsSupplement_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_CopyrightTrademarkSupplement_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_CopyrightTrademarkSupplement_LW" parameterMap="UWRules_CopyrightTrademarkSupplement_LWMap">{ call UWRules_CopyrightTrademarkSupplement_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_BankruptcySupplement_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_BankruptcySupplement_LW" parameterMap="UWRules_BankruptcySupplement_LWMap">{ call UWRules_BankruptcySupplement_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="AutoQuote_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="InvoicedPremium" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="FullTimeEquivalent" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="AutoQuote_LW" parameterMap="AutoQuote_LWMap" resultClass="java.util.HashMap">{ call AutoQuote_LW(?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_InsuranceHistory_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_InsuranceHistory_LW" parameterMap="UWRules_InsuranceHistory_LWMap">{ call UWRules_InsuranceHistory_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_CorporateCommercialSupplement_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_CorporateCommercialSupplement_LW" parameterMap="UWRules_CorporateCommercialSupplement_LWMap">{ call UWRules_CorporateCommercialSupplement_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_GovernmentSupplement_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_GovernmentSupplement_LW" parameterMap="UWRules_GovernmentSupplement_LWMap">{ call UWRules_GovernmentSupplement_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_Attorneys_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_Attorneys_LW" parameterMap="UWRules_Attorneys_LWMap">{ call UWRules_Attorneys_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_WillsTrustsEstatesSupplement_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_WillsTrustsEstatesSupplement_LW" parameterMap="UWRules_WillsTrustsEstatesSupplement_LWMap">{ call UWRules_WillsTrustsEstatesSupplement_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_QuoteOptions_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_QuoteOptions_LW" parameterMap="UWRules_QuoteOptions_LWMap">{ call UWRules_QuoteOptions_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="SETFlagsLawyers_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="ruleId" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="question" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="hint" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ActionTakenBy" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="SETFlagsLawyers_p" parameterMap="SETFlagsLawyers_pMap">{ call SETFlagsLawyers_p(?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_FinancialInstitutionSupplement_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_FinancialInstitutionSupplement_LW" parameterMap="UWRules_FinancialInstitutionSupplement_LWMap">{ call UWRules_FinancialInstitutionSupplement_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_FamilyLawSupplement_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_FamilyLawSupplement_LW" parameterMap="UWRules_FamilyLawSupplement_LWMap">{ call UWRules_FamilyLawSupplement_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_TaxSupplement_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_TaxSupplement_LW" parameterMap="UWRules_TaxSupplement_LWMap">{ call UWRules_TaxSupplement_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_LawPractice_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_LawPractice_LW" parameterMap="UWRules_LawPractice_LWMap">{ call UWRules_LawPractice_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_ElectronicsSelectionRejection_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_ElectronicsSelectionRejection_LW" parameterMap="UWRules_ElectronicsSelectionRejection_LWMap">{ call UWRules_ElectronicsSelectionRejection_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_PLaintiffSupplement_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_PLaintiffSupplement_LW" parameterMap="UWRules_PLaintiffSupplement_LWMap">{ call UWRules_PLaintiffSupplement_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_AboutYou_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_AboutYou_LW" parameterMap="UWRules_AboutYou_LWMap">{ call UWRules_AboutYou_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_FirmInfo_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_FirmInfo_LW" parameterMap="UWRules_FirmInfo_LWMap">{ call UWRules_FirmInfo_LW(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UWRules_RealEstateSupplement_LWMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UWRules_RealEstateSupplement_LW" parameterMap="UWRules_RealEstateSupplement_LWMap">{ call UWRules_RealEstateSupplement_LW(?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

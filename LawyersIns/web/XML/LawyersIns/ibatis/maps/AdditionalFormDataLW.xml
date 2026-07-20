@@ -1,0 +1,141 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AdditionalFormDataLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AdditionalFormDataLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AdditionalFormDataLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into AdditionalFormDataLW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+               <isNotEmpty property="PredecessorFirmName_1" prepend=",">PredecessorFirmName_1</isNotEmpty>
+               <isNotEmpty property="PredecessorFirmName_2" prepend=",">PredecessorFirmName_2</isNotEmpty>
+               <isNotEmpty property="PriorActsDate_1" prepend=",">PriorActsDate_1</isNotEmpty>
+               <isNotEmpty property="PriorActsDate_2" prepend=",">PriorActsDate_2</isNotEmpty>
+               <isNotEmpty property="PriorActsDate_3" prepend=",">PriorActsDate_3</isNotEmpty>
+               <isNotEmpty property="IsPredecessorFormSelected" prepend=",">IsPredecessorFormSelected</isNotEmpty>
+               <isNotEmpty property="IsSpecifiedAttorneySelected" prepend=",">IsSpecifiedAttorneySelected</isNotEmpty>
+               <isNotEmpty property="PersonOrEntity_1" prepend=",">PersonOrEntity_1</isNotEmpty>
+               <isNotEmpty property="PersonOrEntity_2" prepend=",">PersonOrEntity_2</isNotEmpty>
+               <isNotEmpty property="PersonOrEntity_3" prepend=",">PersonOrEntity_3</isNotEmpty>
+               <isNotEmpty property="DisputeRenderedOnBehalfOf" prepend=",">DisputeRenderedOnBehalfOf</isNotEmpty>
+               <isNotEmpty property="ClaimRenderedOnBehalfOf" prepend=",">ClaimRenderedOnBehalfOf</isNotEmpty>
+               <isNotEmpty property="IsSpecificProfServicesSelected" prepend=",">IsSpecificProfServicesSelected</isNotEmpty>
+               <isNotEmpty property="IsPreviouFirmFormSelected" prepend=",">IsPreviouFirmFormSelected</isNotEmpty>
+               <isNotEmpty property="PreviousAttorneyName_1" prepend=",">PreviousAttorneyName_1</isNotEmpty>
+               <isNotEmpty property="PreviousFirmName" prepend=",">PreviousFirmName</isNotEmpty>
+               <isNotEmpty property="IsSuitForFeesAction" prepend=",">IsSuitForFeesAction</isNotEmpty>
+               <isNotEmpty property="PreviousAttorneyName_2" prepend=",">PreviousAttorneyName_2</isNotEmpty>
+               <isNotEmpty property="PreviousAttorneyName_3" prepend=",">PreviousAttorneyName_3</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="IsCoverageExtensionsChanges" prepend=",">IsCoverageExtensionsChanges</isNotEmpty>
+               <isNotEmpty property="IsSpecifiedAttorneyCareerEndorsement" prepend=",">IsSpecifiedAttorneyCareerEndorsement</isNotEmpty>
+               <isNotEmpty property="IsTitleAgencyEndorsement" prepend=",">IsTitleAgencyEndorsement</isNotEmpty>
+               <isNotEmpty property="IsProfessionalServicesExclusionEndorsement" prepend=",">IsProfessionalServicesExclusionEndorsement</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+               <isNotEmpty property="PredecessorFirmName_1" prepend=",">#PredecessorFirmName_1#</isNotEmpty>
+               <isNotEmpty property="PredecessorFirmName_2" prepend=",">#PredecessorFirmName_2#</isNotEmpty>
+               <isNotEmpty property="PriorActsDate_1" prepend=",">#PriorActsDate_1#</isNotEmpty>
+               <isNotEmpty property="PriorActsDate_2" prepend=",">#PriorActsDate_2#</isNotEmpty>
+               <isNotEmpty property="PriorActsDate_3" prepend=",">#PriorActsDate_3#</isNotEmpty>
+               <isNotEmpty property="IsPredecessorFormSelected" prepend=",">#IsPredecessorFormSelected#</isNotEmpty>
+               <isNotEmpty property="IsSpecifiedAttorneySelected" prepend=",">#IsSpecifiedAttorneySelected#</isNotEmpty>
+               <isNotEmpty property="PersonOrEntity_1" prepend=",">#PersonOrEntity_1#</isNotEmpty>
+               <isNotEmpty property="PersonOrEntity_2" prepend=",">#PersonOrEntity_2#</isNotEmpty>
+               <isNotEmpty property="PersonOrEntity_3" prepend=",">#PersonOrEntity_3#</isNotEmpty>
+               <isNotEmpty property="DisputeRenderedOnBehalfOf" prepend=",">#DisputeRenderedOnBehalfOf#</isNotEmpty>
+               <isNotEmpty property="ClaimRenderedOnBehalfOf" prepend=",">#ClaimRenderedOnBehalfOf#</isNotEmpty>
+               <isNotEmpty property="IsSpecificProfServicesSelected" prepend=",">#IsSpecificProfServicesSelected#</isNotEmpty>
+               <isNotEmpty property="IsPreviouFirmFormSelected" prepend=",">#IsPreviouFirmFormSelected#</isNotEmpty>
+               <isNotEmpty property="PreviousAttorneyName_1" prepend=",">#PreviousAttorneyName_1#</isNotEmpty>
+               <isNotEmpty property="PreviousFirmName" prepend=",">#PreviousFirmName#</isNotEmpty>
+               <isNotEmpty property="IsSuitForFeesAction" prepend=",">#IsSuitForFeesAction#</isNotEmpty>
+               <isNotEmpty property="PreviousAttorneyName_2" prepend=",">#PreviousAttorneyName_2#</isNotEmpty>
+               <isNotEmpty property="PreviousAttorneyName_3" prepend=",">#PreviousAttorneyName_3#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="IsCoverageExtensionsChanges" prepend=",">#IsCoverageExtensionsChanges#</isNotEmpty>
+               <isNotEmpty property="IsSpecifiedAttorneyCareerEndorsement" prepend=",">#IsSpecifiedAttorneyCareerEndorsement#</isNotEmpty>
+               <isNotEmpty property="IsTitleAgencyEndorsement" prepend=",">#IsTitleAgencyEndorsement#</isNotEmpty>
+               <isNotEmpty property="IsProfessionalServicesExclusionEndorsement" prepend=",">#IsProfessionalServicesExclusionEndorsement#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="FormDataKey">SELECT IDENT_CURRENT('AdditionalFormDataLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FormDataKey, PolicyKey, PredecessorFirmName_1, PredecessorFirmName_2, PriorActsDate_1, PriorActsDate_2, PriorActsDate_3, IsPredecessorFormSelected, IsSpecifiedAttorneySelected, PersonOrEntity_1, PersonOrEntity_2, PersonOrEntity_3, DisputeRenderedOnBehalfOf, ClaimRenderedOnBehalfOf, IsSpecificProfServicesSelected, IsPreviouFirmFormSelected, PreviousAttorneyName_1, PreviousFirmName, IsSuitForFeesAction, PreviousAttorneyName_2, PreviousAttorneyName_3, LastUpdateUserID, LastUpdateTimeStamp, IsCoverageExtensionsChanges, IsSpecifiedAttorneyCareerEndorsement, IsTitleAgencyEndorsement, IsProfessionalServicesExclusionEndorsement from AdditionalFormDataLW where FormDataKey = #FormDataKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update AdditionalFormDataLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+               <isNotEmpty property="PredecessorFirmName_1" prepend=",">PredecessorFirmName_1 = #PredecessorFirmName_1#</isNotEmpty>
+               <isEmpty property="PredecessorFirmName_1" prepend=",">PredecessorFirmName_1 = null</isEmpty>
+               <isNotEmpty property="PredecessorFirmName_2" prepend=",">PredecessorFirmName_2 = #PredecessorFirmName_2#</isNotEmpty>
+               <isEmpty property="PredecessorFirmName_2" prepend=",">PredecessorFirmName_2 = null</isEmpty>
+               <isNotEmpty property="PriorActsDate_1" prepend=",">PriorActsDate_1 = #PriorActsDate_1#</isNotEmpty>
+               <isEmpty property="PriorActsDate_1" prepend=",">PriorActsDate_1 = null</isEmpty>
+               <isNotEmpty property="PriorActsDate_2" prepend=",">PriorActsDate_2 = #PriorActsDate_2#</isNotEmpty>
+               <isEmpty property="PriorActsDate_2" prepend=",">PriorActsDate_2 = null</isEmpty>
+               <isNotEmpty property="PriorActsDate_3" prepend=",">PriorActsDate_3 = #PriorActsDate_3#</isNotEmpty>
+               <isEmpty property="PriorActsDate_3" prepend=",">PriorActsDate_3 = null</isEmpty>
+               <isNotEmpty property="IsPredecessorFormSelected" prepend=",">IsPredecessorFormSelected = #IsPredecessorFormSelected#</isNotEmpty>
+               <isEmpty property="IsPredecessorFormSelected" prepend=",">IsPredecessorFormSelected = null</isEmpty>
+               <isNotEmpty property="IsSpecifiedAttorneySelected" prepend=",">IsSpecifiedAttorneySelected = #IsSpecifiedAttorneySelected#</isNotEmpty>
+               <isEmpty property="IsSpecifiedAttorneySelected" prepend=",">IsSpecifiedAttorneySelected = null</isEmpty>
+               <isNotEmpty property="PersonOrEntity_1" prepend=",">PersonOrEntity_1 = #PersonOrEntity_1#</isNotEmpty>
+               <isEmpty property="PersonOrEntity_1" prepend=",">PersonOrEntity_1 = null</isEmpty>
+               <isNotEmpty property="PersonOrEntity_2" prepend=",">PersonOrEntity_2 = #PersonOrEntity_2#</isNotEmpty>
+               <isEmpty property="PersonOrEntity_2" prepend=",">PersonOrEntity_2 = null</isEmpty>
+               <isNotEmpty property="PersonOrEntity_3" prepend=",">PersonOrEntity_3 = #PersonOrEntity_3#</isNotEmpty>
+               <isEmpty property="PersonOrEntity_3" prepend=",">PersonOrEntity_3 = null</isEmpty>
+               <isNotEmpty property="DisputeRenderedOnBehalfOf" prepend=",">DisputeRenderedOnBehalfOf = #DisputeRenderedOnBehalfOf#</isNotEmpty>
+               <isEmpty property="DisputeRenderedOnBehalfOf" prepend=",">DisputeRenderedOnBehalfOf = null</isEmpty>
+               <isNotEmpty property="ClaimRenderedOnBehalfOf" prepend=",">ClaimRenderedOnBehalfOf = #ClaimRenderedOnBehalfOf#</isNotEmpty>
+               <isEmpty property="ClaimRenderedOnBehalfOf" prepend=",">ClaimRenderedOnBehalfOf = null</isEmpty>
+               <isNotEmpty property="IsSpecificProfServicesSelected" prepend=",">IsSpecificProfServicesSelected = #IsSpecificProfServicesSelected#</isNotEmpty>
+               <isEmpty property="IsSpecificProfServicesSelected" prepend=",">IsSpecificProfServicesSelected = null</isEmpty>
+               <isNotEmpty property="IsPreviouFirmFormSelected" prepend=",">IsPreviouFirmFormSelected = #IsPreviouFirmFormSelected#</isNotEmpty>
+               <isEmpty property="IsPreviouFirmFormSelected" prepend=",">IsPreviouFirmFormSelected = null</isEmpty>
+               <isNotEmpty property="PreviousAttorneyName_1" prepend=",">PreviousAttorneyName_1 = #PreviousAttorneyName_1#</isNotEmpty>
+               <isEmpty property="PreviousAttorneyName_1" prepend=",">PreviousAttorneyName_1 = null</isEmpty>
+               <isNotEmpty property="PreviousFirmName" prepend=",">PreviousFirmName = #PreviousFirmName#</isNotEmpty>
+               <isEmpty property="PreviousFirmName" prepend=",">PreviousFirmName = null</isEmpty>
+               <isNotEmpty property="IsSuitForFeesAction" prepend=",">IsSuitForFeesAction = #IsSuitForFeesAction#</isNotEmpty>
+               <isEmpty property="IsSuitForFeesAction" prepend=",">IsSuitForFeesAction = null</isEmpty>
+               <isNotEmpty property="PreviousAttorneyName_2" prepend=",">PreviousAttorneyName_2 = #PreviousAttorneyName_2#</isNotEmpty>
+               <isEmpty property="PreviousAttorneyName_2" prepend=",">PreviousAttorneyName_2 = null</isEmpty>
+               <isNotEmpty property="PreviousAttorneyName_3" prepend=",">PreviousAttorneyName_3 = #PreviousAttorneyName_3#</isNotEmpty>
+               <isEmpty property="PreviousAttorneyName_3" prepend=",">PreviousAttorneyName_3 = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="IsCoverageExtensionsChanges" prepend=",">IsCoverageExtensionsChanges = #IsCoverageExtensionsChanges#</isNotEmpty>
+               <isEmpty property="IsCoverageExtensionsChanges" prepend=",">IsCoverageExtensionsChanges = null</isEmpty>
+               <isNotEmpty property="IsSpecifiedAttorneyCareerEndorsement" prepend=",">IsSpecifiedAttorneyCareerEndorsement = #IsSpecifiedAttorneyCareerEndorsement#</isNotEmpty>
+               <isEmpty property="IsSpecifiedAttorneyCareerEndorsement" prepend=",">IsSpecifiedAttorneyCareerEndorsement = null</isEmpty>
+               <isNotEmpty property="IsTitleAgencyEndorsement" prepend=",">IsTitleAgencyEndorsement = #IsTitleAgencyEndorsement#</isNotEmpty>
+               <isEmpty property="IsTitleAgencyEndorsement" prepend=",">IsTitleAgencyEndorsement = null</isEmpty>
+               <isNotEmpty property="IsProfessionalServicesExclusionEndorsement" prepend=",">IsProfessionalServicesExclusionEndorsement = #IsProfessionalServicesExclusionEndorsement#</isNotEmpty>
+               <isEmpty property="IsProfessionalServicesExclusionEndorsement" prepend=",">IsProfessionalServicesExclusionEndorsement = null</isEmpty>
+          </dynamic>
+          where FormDataKey = #FormDataKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from AdditionalFormDataLW where FormDataKey = #FormDataKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from AdditionalFormDataLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AdditionalFormDataLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FormDataKey, PolicyKey, PredecessorFirmName_1, PredecessorFirmName_2, PriorActsDate_1, PriorActsDate_2, PriorActsDate_3, IsPredecessorFormSelected, IsSpecifiedAttorneySelected, PersonOrEntity_1, PersonOrEntity_2, PersonOrEntity_3, DisputeRenderedOnBehalfOf, ClaimRenderedOnBehalfOf, IsSpecificProfServicesSelected, IsPreviouFirmFormSelected, PreviousAttorneyName_1, PreviousFirmName, IsSuitForFeesAction, PreviousAttorneyName_2, PreviousAttorneyName_3, LastUpdateUserID, LastUpdateTimeStamp, IsCoverageExtensionsChanges, IsSpecifiedAttorneyCareerEndorsement, IsTitleAgencyEndorsement, IsProfessionalServicesExclusionEndorsement from AdditionalFormDataLW where FormDataKey = #FormDataKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FormDataKey, PolicyKey, PredecessorFirmName_1, PredecessorFirmName_2, PriorActsDate_1, PriorActsDate_2, PriorActsDate_3, IsPredecessorFormSelected, IsSpecifiedAttorneySelected, PersonOrEntity_1, PersonOrEntity_2, PersonOrEntity_3, DisputeRenderedOnBehalfOf, ClaimRenderedOnBehalfOf, IsSpecificProfServicesSelected, IsPreviouFirmFormSelected, PreviousAttorneyName_1, PreviousFirmName, IsSuitForFeesAction, PreviousAttorneyName_2, PreviousAttorneyName_3, LastUpdateUserID, LastUpdateTimeStamp, IsCoverageExtensionsChanges, IsSpecifiedAttorneyCareerEndorsement, IsTitleAgencyEndorsement, IsProfessionalServicesExclusionEndorsement from AdditionalFormDataLW</select>
+     <parameterMap id="LawyersFormAttachment_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey_form" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StateCode_form" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyEffectiveDate_form" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsFinalisedOption_form" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsNewFiling_form" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="LawyersFormAttachment_p" parameterMap="LawyersFormAttachment_pMap" resultClass="java.util.HashMap">{ call LawyersFormAttachment_p(?,?,?,?,?)}</procedure>
+</sqlMap>
+

@@ -1,0 +1,67 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="TaxSuppDetailsLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from TaxSuppDetailsLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from TaxSuppDetailsLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into TaxSuppDetailsLW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="TaxAOPKey" prepend=",">TaxAOPKey</isNotEmpty>
+               <isNotEmpty property="TaxAopDesc" prepend=",">TaxAopDesc</isNotEmpty>
+               <isNotEmpty property="revenuePercentage" prepend=",">revenuePercentage</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="TaxAOPKey" prepend=",">#TaxAOPKey#</isNotEmpty>
+               <isNotEmpty property="TaxAopDesc" prepend=",">#TaxAopDesc#</isNotEmpty>
+               <isNotEmpty property="revenuePercentage" prepend=",">#revenuePercentage#</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">#VersionSequence#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select TaxAOPKey, TaxAopDesc, revenuePercentage, PolicyKey, VersionSequence, LastUpdateUserID, LastUpdateTimeStamp from TaxSuppDetailsLW</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update TaxSuppDetailsLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="TaxAOPKey" prepend=",">TaxAOPKey = #TaxAOPKey#</isNotEmpty>
+               <isEmpty property="TaxAOPKey" prepend=",">TaxAOPKey = null</isEmpty>
+               <isNotEmpty property="TaxAopDesc" prepend=",">TaxAopDesc = #TaxAopDesc#</isNotEmpty>
+               <isEmpty property="TaxAopDesc" prepend=",">TaxAopDesc = null</isEmpty>
+               <isNotEmpty property="revenuePercentage" prepend=",">revenuePercentage = #revenuePercentage#</isNotEmpty>
+               <isEmpty property="revenuePercentage" prepend=",">revenuePercentage = null</isEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence = #VersionSequence#</isNotEmpty>
+               <isEmpty property="VersionSequence" prepend=",">VersionSequence = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from TaxSuppDetailsLW</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from TaxSuppDetailsLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from TaxSuppDetailsLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select TaxAOPKey, TaxAopDesc, revenuePercentage, PolicyKey, VersionSequence, LastUpdateUserID, LastUpdateTimeStamp from TaxSuppDetailsLW</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select TaxAOPKey, TaxAopDesc, revenuePercentage, PolicyKey, VersionSequence, LastUpdateUserID, LastUpdateTimeStamp from TaxSuppDetailsLW</select>
+     <parameterMap id="InsertUpdateTaxSupplement_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdateTaxSupplement_p" parameterMap="InsertUpdateTaxSupplement_pMap">{ call InsertUpdateTaxSupplement_p(?,?,?,?,?)}</procedure>
+     <parameterMap id="DisplayTaxSupplmentData_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="DisplayTaxSupplmentData_p" parameterMap="DisplayTaxSupplmentData_pMap" resultClass="java.util.HashMap">{ call DisplayTaxSupplmentData_p(?)}</procedure>
+</sqlMap>
+

@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<title>SubproducerUWReview</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js">
+	
+</script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<style>
+.completepageMenu{
+	padding-bottom: 20px;
+	margin-top: 10px;
+	background-color: #fbcccc;
+    border-color: #fbcccc;
+}
+.completepageMenu strong{
+	display: block;
+	padding-bottom: 5px;
+	padding-left: 52px;
+}
+.completepageMenu span a{
+	font-size: 12px;
+    padding: 0 5px;
+    color: #a94442;
+}
+.completepageMenu span a:hover{
+	text-decoration: underline;
+}
+.completepageMenu .fa-times-circle{
+	color: red;
+    display: block;
+    float: left;
+    font-size: 43px;
+    margin: 0;
+    padding: 0;
+}
+</style>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+<body
+	onload="showPopUpList('popupNew','eval:LawyersRule.isShowSublist');"
+	onclick="toggleDivDisplay('ajaxxmlCountyDesc_CountyDesc');">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+	<form> 
+	<div id="UWReview">
+	<div id="header">
+					<span id="#Include:header.html#"></span>
+				</div>
+			<div class="alert alert-danger completepageMenu"  id="eval:LawyersRule.isNotCompletlyFilledRule">
+					  <i class="fa-times-circle fa">&nbsp;</i>
+					  <strong>Please complete provide required information in the following sections: </strong> 
+					  <span id="eval:LawyersRule.firmNewAppPageNotFilled"><a class="topLink" href="javascript:submitform('FirmNewApp.html','tabs.backToFirm','','');">Will hold firm name</a></span>
+						<span id="eval:LawyersRule.insuranceHistoryPageNotFilled">
+							<span id="eval:LawyersRule.IsNotRenewalPolicy">
+								|<a class="topLink" href="javascript:submitform('insuranceHistory.html','tabs.backToInsuranceHistory','','');">Insurance History / Coverage</a></span>
+							</span>
+						<span id="eval:LawyersRule.attorneysPageNotFilled">|<a class="topLink" href="javascript:submitform('Attorneys.html','tabs.backToAttorneys','','');">Attorneys</a></span>
+						<span id="eval:LawyersRule.lawPracticePageNotFilled">|<a class="topLink" href="javascript:submitform('lawPractice.html','tabs.backToLawPractice','','');">Area of Practice</a></span>
+						<span id="eval:LawyersRule.aboutFirmPageNotFilled">|<a class="topLink" href="javascript:submitform('aboutFirm.html','tabs.backToAboutFirm','','');">About Firm</a></span>
+						<span id="eval:LawyersRule.ShowRenew">
+							<span id="eval:LawyersRule.aboutFirmRenewalPageNotFilled">
+								|<a class="topLink" href="javascript:submitform('AboutFirmRenewal.html','tabs.backToAboutFirmRenewal','','');">About Firm</a>
+							</span>
+						</span>
+						<span id="eval:LawyersRule.IsNotRenewalPolicy">
+						<span id="eval:LawyersRule.practiceManagementPageNotFilled">|<a class="topLink" href="javascript:submitform('practiceManagement.html','tabs.backTopracticeManagement','','');">Practice Management</a></span>
+						<span id="eval:LawyersRule.morePracticeManagementPageNotFilled">|<a class="topLink" href="javascript:submitform('morePracticeManagement.html','tabs.backTomorePracticeManagement','','');">MorePracticeManagement</a></span>
+						<span id="eval:LawyersRule.underWritingInfoPageNotFilled">|<a class="topLink" href="javascript:submitform('underwritingInfo.html','tabs.backToUnderwritingInfo','','');">Underwriting Information</a></span>
+						<span id="eval:LawyersRule.houseKeepingPageNotFilled">|<a class="topLink" href="javascript:submitform('housekeeping.html','tabs.backToHousekeeping','','');">HouseKeeping</a></span>
+						</span>
+						<span id="eval:LawyersRule.pastClaimsPageNotFilled">|<a class="topLink" href="javascript:submitform('pastClaims.html','tabs.backToPastClaim','','');">Past Claims</a></span>
+						<span id="eval:LawyersRule.isElectronicInsurancePageNotFilled">|<a class="topLink" href="javascript:submitform('electronicInsurance.html','tabs.backToElectronicInsurance','','');">Electronic Selection / Rejection</a></span>
+						
+						<span id="eval:LawyersRule.bankruptcySuppPageNotFilled">|<a class="topLink" href="javascript:submitform('bankruptcySupplement.html','tabs.backToBankruptcySupplement','','');">Bankruptcy Supplement</a></span>
+						<span id="eval:LawyersRule.collectionSuppPageNotFilled">|<a class="topLink" href="javascript:submitform('collectionSupplement.html','tabs.backToCollectionSupplement','','');">Collection Supplement</a></span>
+						<span id="eval:LawyersRule.copyrightSuppPageNotFilled">|<a class="topLink" href="javascript:submitform('copyRightTrademarkSupplement.html','tabs.backToCopyRightTrademarkSupplement','','');">Copyright Trademark Supplement</a></span>
+						<span id="eval:LawyersRule.familyLawSuppPageNotFilled">|<a class="topLink" href="javascript:submitform('familylawsupplement.html','tabs.backToFamilylawsupplement','','');">FamilyLaw Supplement</a></span>
+						<span id="eval:LawyersRule.financialSuppPageNotFilled">|<a class="topLink" href="javascript:submitform('FinancialInstitutionSupplement.html','tabs.FinancialInstitutionSupplement','','');">Financial Institution Supplement</a></span>
+						<span id="eval:LawyersRule.governmentSuppPageNotFilled">|<a class="topLink" href="javascript:submitform('GovernmentSupplement.html','tabs.backToGovernmentSupplement','','');">Government Supplement</a></span>
+						<span id="eval:LawyersRule.litigationSuppPageNotFilled">|<a class="topLink" href="javascript:submitform('litigationSupplement.html','tabs.backToLitigationSupplement','','');">Litigation Supplement</a></span>
+						<span id="eval:LawyersRule.realEstateSuppPageNotFilled">|<a class="topLink" href="javascript:submitform('RealEstateSupplement.html','tabs.backToRealEstateSupplement','','');">RealEstate Supplement</a>|</span>
+						<span id="eval:LawyersRule.willStateSuppTrustPageNotFilled">|<a class="topLink" href="javascript:submitform('WillsTrustProbationSupplment.html','tabs.backToWillsTrustProbationSupplment','','');">Wills/Trust/Probation Supplement</a></span>
+						<span id="eval:LawyersRule.taxSuppPageNotFilled">|<a class="topLink" href="javascript:submitform('taxSupplement.html','tabs.backToTaxSupplement','','');">Tax Supplement</a></span>
+					</div>
+		
+			
+				<table style="width: 99.7%" border="0" align="center" cellspacing="0"
+			cellpadding="0">
+			
+			<tr>
+				<td><div id="contentList" >
+						<table cellpadding="0" cellspacing="0" width="100%">
+							<tr>
+								<td align="center"> 
+								<span id="eval:LawyersRule.isAllFlagsNotCleared" >
+									<span style="padding-left:5px;font-weight:bold;line-height:20px;"
+											id="error_flagsNotCleard" class="error11Bold">
+									</span>
+								</span>
+								
+								<span class="Confirmation"	id="UWReview_freeform_contextdata_100">
+										<label style="padding-left:5px;font-weight:bold;line-height:20px;color:green;"  name="pageMsg" id="pageMsg" />
+								</span>
+									</td>
+									
+							</tr>
+						</table>
+						<table width="100%" border="0" align="center" cellpadding="0"
+							cellspacing="0" class="border2">
+
+							<tr>
+								<td><table width="100%" border="0" align="center"
+										cellpadding="0" cellspacing="5">
+											
+													<tr>
+														<td class="headerfont" align="center">
+															<label><br/>If you have any questions or comments please enter them below and one of our colleagues will get back to you shortly.
+															</label>
+															
+														</td>
+													</tr>
+													<tr>
+														<td class="headerfont" align="center">
+															<label>
+															When you are ready to proceed, click the Submit button and we will process your application.
+															</label>		
+															
+														</td>
+													</tr>
+													
+													<!-- <tr>
+														<td align="center" class="headerfont" >
+															
+															<div style="margin-top: 15px;">
+															<p>
+																Please add any additional information or comments.
+															</p>
+															</div>
+														</td>
+													
+													</tr> -->
+													
+													<tr>
+													<td align="center">
+													<span class="Confirmation"	id="UWReview_freeform_contextdata_1000">
+																<label style="padding-left:5px;font-weight:bold;color:green;"  name="pageMsgCommentUW" id="pageMsgCommentUW" />
+													</span>
+													
+													</td>
+													
+										</tr>
+													
+													<td>
+																<div id="">
+																	<table border="0" align="center" cellpadding="0"
+																		cellspacing="0"
+																		id="UWReview_freeform_contextdata_999">
+																		<tr>
+																			<td nowrap>Comment :&nbsp;</td>
+																			<td id="">
+																				<textarea name="SubProducerComment" style="height: 120px"
+																					id="SubProducerComment" class="inputbox" cols="90"
+																					rows="3" onKeyUp="limitText(this,1,8000);" />
+																			</td>
+																			
+																			<td>&nbsp;&nbsp;</td>
+																			
+																			<td
+																							id="">
+																							<!-- <div style="margin-top: 15px;">
+																								<div class="button4" style="width: 98px;">
+																									<a
+																										href="javascript:submitform('SubproducerUWReview.html','SubproducerUWReview.saveCommentForSubproducer','','');"
+																										tabindex="43">Save</a>
+																								</div>
+																							</div> -->
+																			</td>
+																		</tr>
+																	</table>
+																</div>
+															</td>
+										
+										<!-- New comment box ends -->
+										
+										
+										
+										
+										
+										
+										<tr>
+											<td align="center"><table align="center" border="0" width="auto"
+													cellpadding="3" cellspacing="0"  style="margin-top: 15px; margin-bottom: 15px">
+													<tr>
+														
+														<td align="center">
+															<div id="divshow1" class="button4"
+																style="width: 100px">
+																	
+																<a class="btn next" 
+																	href="javascript:submitform('housekeeping.html|AboutFirmRenewal.html','SubproducerUWReview.back','forwardeval','LawyersRule.isShowHousekeepingPage|LawyersRule.isShowAboutFirmRenewal');" >
+					
+																	Back</a>
+															</div></td>
+															<td>
+																<div id="divshow1" class="button4"
+																style="width: 100px">
+																<a class="btn next"
+																	href="javascript:submitform('workq.html','SubproducerUWReview.submit','','');">Submit</a>
+																</div>
+															</td>
+															
+													</tr>
+													
+												</table> 
+												</td>
+										</tr>
+										<tr class="border0"
+																id="UWReview_freeform_contextdata_112">
+																<td align="left" border="0" style="border-bottom:solid 1px #dedede;">
+																	<div
+																		id="div_ajaxpostion_DeclineStatusOnUW:DeclineStatus">
+																	</div>
+																</td>
+															</tr>
+										<tr>
+											<td><table id="UWReview_list_freeform_contextdata_333">
+													<tr>
+														<!-- <td> <input type="text" id="PolicyKey" name="PolicyKey"/> </td> -->
+														<!-- <td><input type="text" name="page" id="page" /></td> -->
+													</tr>
+												</table></td>
+										</tr>
+									</table></td>
+							</tr>
+
+						</table>
+					</div></td>
+			</tr>
+			<tr>
+				<td>
+					<table id="firm_freeform_contextdata_999">
+						<tr>
+							<td><input type="hidden" name="jsessionid" id="jsessionid" />
+								<input type="hidden" name="divHideShow" id="divHideShow" />
+								
+								<input type="hidden" name="firmNewAppPage" id="firmNewAppPage"/>
+								<input type="hidden" name="insuranceHistoryPage" id="insuranceHistoryPage" />						
+								
+								<input type="hidden" name="bankruptcySuppPage" id="bankruptcySuppPage" />
+								<input type="hidden" name="collectionSuppPage" id="collectionSuppPage" />
+								<input type="hidden" name="copyrightSuppPage" id="copyrightSuppPage" />
+								<input type="hidden" name="familyLawSuppPage" id="familyLawSuppPage" />
+								<input type="hidden" name="financialSuppPage" id="financialSuppPage" />
+								<input type="hidden" name="governmentSuppPage" id="governmentSuppPage" />
+								<input type="hidden" name="litigationSuppPage" id="litigationSuppPage" />
+								<input type="hidden" name="realEstateSuppPage" id="realEstateSuppPage" />
+								<input type="hidden" name="willStateSuppTrustPage" id="willStateSuppTrustPage"/>
+								<input type="hidden" name="taxSuppPage" id="taxSuppPage" />
+														
+								<input type="hidden" name="aboutFirmPage" id="aboutFirmPage" />
+								<input type="hidden" name="practiceManagementPage" id="practiceManagementPage" />
+								<input type="hidden" name="morePracticeManagementPage" id="morePracticeManagementPage"/>
+								<input type="hidden" name="underWritingInfoPage" id="underWritingInfoPage" />
+								<input type="hidden" name="pastClaimsPage" id="pastClaimsPage" />
+								<input type="hidden" name="isElectronicInsurancePage" id="isElectronicInsurancePage" />
+								<script type="text/javascript" src="script/manageTab.js"></script>
+								</td>
+						</tr>
+					</table></td>
+			</tr>
+		</table>
+		</div>
+		<!---------Footer Start---------->
+				<div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<!---------Footer End---------->
+	</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>
+ 

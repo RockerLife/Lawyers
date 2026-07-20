@@ -1,0 +1,771 @@
+<projectcomponents  project="METAAPP">
+	<component name="structure" metaobject="structure;field;systemrule;metaobject" seq="1">
+		<action name="getProject">		
+			<workflow>
+			     <databaseoperation name="findStructureByProjectId" sqlstmt="select * from structure where project = #project#" metaobject="structure" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectstructure" eval="" metaobject="structure" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectstructure"  metaobject="structure" operation="8" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="getfield">		
+			 
+		</action>
+		<action name="getsystemrule">		
+			 
+		</action>
+		<action name="getmetaobject">		
+			 
+		</action>
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewstructure"  metaobject="structure" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editstructure"  metaobject="structure" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deletestructure"  metaobject="structure" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifystructure"  metaobject="structure" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchstructure"  metaobject="structure" operation="9" executionsequence="1"  />
+			</workflow>
+		</action>
+		
+	</component>
+	<component name="metaobject" metaobject="metaobject;propertyversion;depobject;reference;metaindex;movalidationrule;metatrigger" seq="2">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectmetaobject" eval=""  metaobject="metaobject" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectmetaobject" eval=""  metaobject="metaobject" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		<action name="getpropertyversion">		
+			 
+		</action>
+		<action name="getdepobject">		
+			 
+		</action>
+		<action name="getreference">		
+			 
+		</action>
+		<action name="getmetaindex">		
+			 
+		</action>
+		<action name="getmovalidationrule">		
+			 
+		</action>
+		<action name="getmetatrigger">		
+			 
+		</action>
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewmetaobject"  metaobject="metaobject" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editmetaobject"  metaobject="metaobject" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deletemetaobject"  metaobject="metaobject" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifymetaobject"  metaobject="metaobject" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchmetaobject"  metaobject="metaobject" operation="9" executionsequence="1"  />
+			</workflow>
+		</action>
+	</component>
+	<component name="field" metaobject="field;rangevalue" seq="3">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectfield" eval="" metaobject="field" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectfield" eval="" metaobject="field" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		<action name="getrangevalue">		
+			 
+		</action>
+		 <action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewfield"  metaobject="field" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editfield"  metaobject="field" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deletefield"  metaobject="field" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifyfield"  metaobject="field" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchfield"  metaobject="field" operation="9" executionsequence="1"  />
+			</workflow>
+		</action>
+	</component>
+	<component name="propertyversion" metaobject="propertyversion" seq="4">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectpropertyversion" eval="" metaobject="propertyversion" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectpropertyversion" eval="" metaobject="propertyversion" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		<action name="getproperty">		
+			  
+		</action>
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewpropertyversion"  metaobject="propertyversion" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editpropertyversion"  metaobject="propertyversion" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deletepropertyversion"  metaobject="propertyversion" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifypropertyversion"  metaobject="propertyversion" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchpropertyversion"  metaobject="propertyversion" operation="9" executionsequence="1"  />
+			</workflow>
+		</action>
+	</component>
+	<component name="property" metaobject="property;parentprop;dropdown;propvalidation" seq="5">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectproperty"  eval="" metaobject="property" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectproperty" eval=""  metaobject="property" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		<action name="getparentprop">		
+			 
+		</action>
+		<action name="getdropdown">		
+			 
+		</action>
+		<action name="getpropvalidation">		
+			 
+		</action>
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewproperty"  metaobject="property" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editproperty"  metaobject="property" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deleteproperty"  metaobject="property" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifyproperty"  metaobject="property" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchproperty"  metaobject="property" operation="9" executionsequence="1"  />
+			</workflow>
+		</action>
+	</component>
+	<component name="parentprop" metaobject="parentprop" seq="6">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectparentprop" eval="" metaobject="parentprop" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectparentprop" eval="" metaobject="parentprop" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewparentprop"  metaobject="parentprop" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editparentprop"  metaobject="parentprop" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deleteparentprop"  metaobject="parentprop" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifyparentprop"  metaobject="parentprop" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchparentprop"  metaobject="parentprop" operation="9" executionsequence="1"  />
+			</workflow>
+		</action>
+    </component>
+	<component name="dropdown" metaobject="dropdown;valuefield;displayfield;partialkey" seq="7">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectdropdown" eval=""  metaobject="dropdown" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectdropdown" eval=""  metaobject="dropdown" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		<action name="getvaluefield">		
+			 
+		</action>
+		<action name="getdisplayfield">		
+			 
+		</action>
+		<action name="getpartialkey">		
+		 
+		</action>
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewdropdown"  metaobject="dropdown" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editdropdown"  metaobject="dropdown" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deletedropdown"  metaobject="dropdown" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifydropdown"  metaobject="dropdown" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchdropdown"  metaobject="dropdown" operation="9" executionsequence="1"  />
+			</workflow>
+		</action> 
+    </component>
+    <component name="propvalidation" metaobject="propvalidation" seq="8">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectpropvalidation" eval="" metaobject="propvalidation" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectpropvalidation" eval="" metaobject="propvalidation" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewpropvalidation"  metaobject="propvalidation" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editpropvalidation"  metaobject="propvalidation" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deletepropvalidation"  metaobject="propvalidation" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifypropvalidation"  metaobject="propvalidation" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchpropvalidation"  metaobject="propvalidation" operation="9" executionsequence="1"  />
+			</workflow>
+		</action> 
+	</component>
+	 <component name="depobject" metaobject="depobject" seq="9">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectdepobject" eval="" metaobject="depobject" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectdepobject" eval="" metaobject="depobject" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewdepobject"  metaobject="depobject" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editdepobject"  metaobject="depobject" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deletedepobject"  metaobject="depobject" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifydepobject"  metaobject="depobject" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchdepobject"  metaobject="depobject" operation="9" executionsequence="1"  />
+			</workflow>
+		</action> 
+	</component>
+	 <component name="reference" metaobject="reference;refdropdown" seq="10">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectreference" eval="" metaobject="reference" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectreference" eval=""  metaobject="reference" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		<action name="getrefdropdown">		
+			 
+		</action>
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewreference"  metaobject="reference" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editreference"  metaobject="reference" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deletereference"  metaobject="reference" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifyreference"  metaobject="reference" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchreference"  metaobject="reference" operation="9" executionsequence="1"  />
+			</workflow>
+		</action> 
+	</component>
+	<component name="refdropdown" metaobject="refdropdown" seq="11">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectrefdropdown" eval="" metaobject="refdropdown" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectrefdropdown" eval="" metaobject="refdropdown" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewrefdropdown"  metaobject="refdropdown" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editrefdropdown"  metaobject="refdropdown" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deleterefdropdown"  metaobject="refdropdown" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifyrefdropdown"  metaobject="refdropdown" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchrefdropdown"  metaobject="refdropdown" operation="9" executionsequence="1"  />
+			</workflow>
+		</action> 
+	</component>
+	 
+	<component name="metaindex" metaobject="metaindex;indexcol" seq="12">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectmetaindex" eval="" metaobject="metaindex" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectmetaindex" eval="" metaobject="metaindex" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		<action name="getindexcol">		
+			 
+		</action>
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewmetaindex"  metaobject="metaindex" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editmetaindex"  metaobject="metaindex" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deletemetaindex"  metaobject="metaindex" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifymetaindex"  metaobject="metaindex" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchmetaindex"  metaobject="metaindex" operation="9" executionsequence="1"  />
+			</workflow>
+		</action>  
+	</component>
+	<component name="valuefield" metaobject="valuefield" seq="13">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectvaluefield" eval="" metaobject="valuefield" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectvaluefield" eval="" metaobject="valuefield" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		 
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewvaluefield"  metaobject="valuefield" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editvaluefield"  metaobject="valuefield" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deletevaluefield"  metaobject="valuefield" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifyvaluefield"  metaobject="valuefield" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchvaluefield"  metaobject="valuefield" operation="9" executionsequence="1"  />
+			</workflow>
+		</action>  
+	</component>
+	<component name="indexcol" metaobject="indexcol" seq="14">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectindexcol" eval="" metaobject="indexcol" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectindexcol" eval="" metaobject="indexcol" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		 
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewindexcol"  metaobject="indexcol" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editindexcol"  metaobject="indexcol" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deleteindexcol"  metaobject="indexcol" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifyindexcol"  metaobject="indexcol" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchindexcol"  metaobject="indexcol" operation="9" executionsequence="1"  />
+			</workflow>
+		</action>  
+	</component>
+	<component name="metatrigger" metaobject="metatrigger" seq="15">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectmetatrigger" eval="" metaobject="metatrigger" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectmetatrigger" eval="" metaobject="metatrigger" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		 
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewmetatrigger"  metaobject="metatrigger" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editmetatrigger"  metaobject="metatrigger" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deletemetatrigger"  metaobject="metatrigger" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifymetatrigger"  metaobject="metatrigger" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchmetatrigger"  metaobject="metatrigger" operation="9" executionsequence="1"  />
+			</workflow>
+		</action>  
+	</component>
+	<component name="movalidationrule" metaobject="movalidationrule;movalidationevent" seq="16">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectmovalidationrule" eval="" metaobject="movalidationrule" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectmovalidationrule" eval="" metaobject="movalidationrule" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		 <action name="getmovalidationevent">		
+			 
+		</action>
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewmovalidationrule"  metaobject="movalidationrule" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editmovalidationrule"  metaobject="movalidationrule" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deletemovalidationrule"  metaobject="movalidationrule" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifymovalidationrule"  metaobject="movalidationrule" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchmovalidationrule"  metaobject="movalidationrule" operation="9" executionsequence="1"  />
+			</workflow>
+		</action>  
+	</component>
+	<component name="movalidationevent" metaobject="movalidationevent" seq="17">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectmovalidationevent" eval="" metaobject="movalidationevent" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectmovalidationevent" eval="" metaobject="movalidationevent" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		 
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewmovalidationevent"  metaobject="movalidationevent" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editmovalidationevent"  metaobject="movalidationevent" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deletemovalidationevent"  metaobject="movalidationevent" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifymovalidationevent"  metaobject="movalidationevent" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchmovalidationevent"  metaobject="movalidationevent" operation="9" executionsequence="1"  />
+			</workflow>
+		</action>  
+	</component>
+	<component name="systemrule" metaobject="systemrule" seq="18">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectsystemrule" eval="" metaobject="systemrule" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectsystemrule" eval="" metaobject="systemrule" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		 
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewsystemrule"  metaobject="systemrule" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editsystemrule"  metaobject="systemrule" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deletesystemrule"  metaobject="systemrule" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifysystemrule"  metaobject="systemrule" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchsystemrule"  metaobject="systemrule" operation="9" executionsequence="1"  />
+			</workflow>
+		</action>  
+	</component>
+	<component name="rangevalue" metaobject="rangevalue" seq="19">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectrangevalue" eval="" metaobject="rangevalue" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectrangevalue" eval="" metaobject="rangevalue" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		 
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewrangevalue"  metaobject="rangevalue" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editrangevalue"  metaobject="rangevalue" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deleterangevalue"  metaobject="rangevalue" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifyrangevalue"  metaobject="rangevalue" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchrangevalue"  metaobject="rangevalue" operation="9" executionsequence="1"  />
+			</workflow>
+		</action>  
+	</component>
+	<component name="displayfield" metaobject="displayfield" seq="20">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectdisplayfield" eval="" metaobject="displayfield" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectdisplayfield" eval="" metaobject="displayfield" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		 
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewdisplayfield"  metaobject="displayfield" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editdisplayfield"  metaobject="displayfield" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deletedisplayfield"  metaobject="displayfield" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifydisplayfield"  metaobject="displayfield" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchdisplayfield"  metaobject="displayfield" operation="9" executionsequence="1"  />
+			</workflow>
+		</action>  
+	</component>
+	<component name="partialkey" metaobject="partialkey" seq="21">
+		<action name="view">		
+			<workflow>
+			     <databaseoperation name="selectpartialkey" eval="" metaobject="partialkey" operation="3" executionsequence="1"  />
+			     <databaseoperation name="selectpartialkey" eval="" metaobject="partialkey" operation="8" executionsequence="1"  />
+			</workflow>	
+		</action>
+		 
+		<action name="AddNew">		
+			 <workflow>
+			     <databaseoperation name="AddNewpartialkey"  metaobject="partialkey" operation="1" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Edit">		
+			 <workflow>
+			     <databaseoperation name="Editpartialkey"  metaobject="partialkey" operation="3" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="delete">		
+			 <workflow>
+			     <databaseoperation name="deletepartialkey"  metaobject="partialkey" operation="2" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Modify">		
+			 <workflow>
+			     <databaseoperation name="Modifypartialkey"  metaobject="partialkey" operation="4" executionsequence="1"  />
+			</workflow>
+		</action>
+		<action name="Search">		
+			 <workflow>
+			     <databaseoperation name="Searchpartialkey"  metaobject="partialkey" operation="9" executionsequence="1"  />
+			</workflow>
+		</action>  
+	</component>
+	
+</projectcomponents>

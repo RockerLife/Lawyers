@@ -1,0 +1,29 @@
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN" "C://OutlineSys//AccountantInsurance//src//XML//dtd//sql-map-config-2.dtd">
+
+<sqlMapConfig>
+     <settings useStatementNamespaces="true" />
+     <transactionManager type="JDBC">
+          <dataSource type="SIMPLE">
+               <property name="JDBC.Driver" value="${appl.UTILS.db.driver}" />
+               <property name="JDBC.ConnectionURL" value="${appl.UTILS.db.url}" />
+               <property name="JDBC.Username" value="${appl.UTILS.db.username}" />
+               <property name="JDBC.Password" value="${appl.UTILS.db.password}" />
+               <property name="JDBC.DefaultAutoCommit" value="true" />
+               <property name="Pool.MaximumActiveConnections" value="10" />
+               <property name="Pool.MaximumIdleConnections" value="5" />
+               <property name="Pool.MaximumCheckoutTime" value="120000" />
+               <property name="Pool.TimeToWait" value="500" />
+               <property name="Pool.PingQuery" value="select 1 from metaobject" />
+               <property name="Pool.PingEnabled" value="false" />
+               <property name="Pool.PingConnectionsOlderThan" value="1" />
+               <property name="Pool.PingConnectionsNotUsedFor" value="1" />
+               <property name="Pool.QuietMode" value="true" />
+          </dataSource>
+     </transactionManager>
+     <sqlMap url="file:///${xml.basedir}utils/ibatis/maps/SQLServerMeta.xml" />
+     <sqlMap url="file:///${xml.basedir}utils/ibatis/maps/metadata.xml" />
+     <sqlMap url="file:///${xml.basedir}utils/ibatis/maps/pagemeta.xml" />
+     <sqlMap url="file:///${xml.basedir}utils/ibatis/maps/workflow.xml" />
+     <sqlMap url="file:///${xml.basedir}utils/ibatis/maps/security.xml" />
+     <sqlMap url="file:///${xml.basedir}utils/ibatis/maps/deltalog.xml" />
+</sqlMapConfig>

@@ -1,0 +1,90 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AttorneyDetailsLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AttorneyDetailsLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AttorneyDetailsLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and DesignationId = #DesignationId#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into AttorneyDetailsLW(VersionSequence, PolicyKey
+          <isNotEmpty property="AttorneyName" prepend=",">AttorneyName</isNotEmpty>
+          <isNotEmpty property="DesignationId" prepend=",">DesignationId</isNotEmpty>
+          <isNotEmpty property="LicensedStates" prepend=",">LicensedStates</isNotEmpty>
+          <isNotEmpty property="AnnualWorkedHours" prepend=",">AnnualWorkedHours</isNotEmpty>
+          <isNotEmpty property="NumberOfYearsInPractice" prepend=",">NumberOfYearsInPractice</isNotEmpty>
+          <isNotEmpty property="NumberOfYearsWithFirm" prepend=",">NumberOfYearsWithFirm</isNotEmpty>
+          <isNotEmpty property="NumberOfYearsMalpracticeCov" prepend=",">NumberOfYearsMalpracticeCov</isNotEmpty>
+          <isNotEmpty property="AttorneyPriorActDate" prepend=",">AttorneyPriorActDate</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="PriorActDate" prepend=",">PriorActDate</isNotEmpty>
+          <isNotEmpty property="IsNonRatedAttorney" prepend=",">IsNonRatedAttorney</isNotEmpty>
+          <isNotEmpty property="VersionKey" prepend=",">VersionKey</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="AttorneyName" prepend=",">#AttorneyName#</isNotEmpty>
+          <isNotEmpty property="DesignationId" prepend=",">#DesignationId#</isNotEmpty>
+          <isNotEmpty property="LicensedStates" prepend=",">#LicensedStates#</isNotEmpty>
+          <isNotEmpty property="AnnualWorkedHours" prepend=",">#AnnualWorkedHours#</isNotEmpty>
+          <isNotEmpty property="NumberOfYearsInPractice" prepend=",">#NumberOfYearsInPractice#</isNotEmpty>
+          <isNotEmpty property="NumberOfYearsWithFirm" prepend=",">#NumberOfYearsWithFirm#</isNotEmpty>
+          <isNotEmpty property="NumberOfYearsMalpracticeCov" prepend=",">#NumberOfYearsMalpracticeCov#</isNotEmpty>
+          <isNotEmpty property="AttorneyPriorActDate" prepend=",">#AttorneyPriorActDate#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="PriorActDate" prepend=",">#PriorActDate#</isNotEmpty>
+          <isNotEmpty property="IsNonRatedAttorney" prepend=",">#IsNonRatedAttorney#</isNotEmpty>
+          <isNotEmpty property="VersionKey" prepend=",">#VersionKey#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="AttorneyKey">SELECT IDENT_CURRENT('AttorneyDetailsLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AttorneyKey, AttorneyName, DesignationId, LicensedStates, AnnualWorkedHours, NumberOfYearsInPractice, NumberOfYearsWithFirm, NumberOfYearsMalpracticeCov, AttorneyPriorActDate, LastUpdateUserID, LastUpdateTimeStamp, PriorActDate, IsNonRatedAttorney, VersionKey, VersionSequence, PolicyKey from AttorneyDetailsLW where AttorneyKey = #AttorneyKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update AttorneyDetailsLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="AttorneyName" prepend=",">AttorneyName = #AttorneyName#</isNotEmpty>
+               <isEmpty property="AttorneyName" prepend=",">AttorneyName = null</isEmpty>
+               <isNotEmpty property="DesignationId" prepend=",">DesignationId = #DesignationId#</isNotEmpty>
+               <isEmpty property="DesignationId" prepend=",">DesignationId = null</isEmpty>
+               <isNotEmpty property="LicensedStates" prepend=",">LicensedStates = #LicensedStates#</isNotEmpty>
+               <isEmpty property="LicensedStates" prepend=",">LicensedStates = null</isEmpty>
+               <isNotEmpty property="AnnualWorkedHours" prepend=",">AnnualWorkedHours = #AnnualWorkedHours#</isNotEmpty>
+               <isEmpty property="AnnualWorkedHours" prepend=",">AnnualWorkedHours = null</isEmpty>
+               <isNotEmpty property="NumberOfYearsInPractice" prepend=",">NumberOfYearsInPractice = #NumberOfYearsInPractice#</isNotEmpty>
+               <isEmpty property="NumberOfYearsInPractice" prepend=",">NumberOfYearsInPractice = null</isEmpty>
+               <isNotEmpty property="NumberOfYearsWithFirm" prepend=",">NumberOfYearsWithFirm = #NumberOfYearsWithFirm#</isNotEmpty>
+               <isEmpty property="NumberOfYearsWithFirm" prepend=",">NumberOfYearsWithFirm = null</isEmpty>
+               <isNotEmpty property="NumberOfYearsMalpracticeCov" prepend=",">NumberOfYearsMalpracticeCov = #NumberOfYearsMalpracticeCov#</isNotEmpty>
+               <isEmpty property="NumberOfYearsMalpracticeCov" prepend=",">NumberOfYearsMalpracticeCov = null</isEmpty>
+               <isNotEmpty property="AttorneyPriorActDate" prepend=",">AttorneyPriorActDate = #AttorneyPriorActDate#</isNotEmpty>
+               <isEmpty property="AttorneyPriorActDate" prepend=",">AttorneyPriorActDate = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="PriorActDate" prepend=",">PriorActDate = #PriorActDate#</isNotEmpty>
+               <isEmpty property="PriorActDate" prepend=",">PriorActDate = null</isEmpty>
+               <isNotEmpty property="IsNonRatedAttorney" prepend=",">IsNonRatedAttorney = #IsNonRatedAttorney#</isNotEmpty>
+               <isEmpty property="IsNonRatedAttorney" prepend=",">IsNonRatedAttorney = null</isEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey = #VersionKey#</isNotEmpty>
+               <isEmpty property="VersionKey" prepend=",">VersionKey = null</isEmpty>
+          </dynamic>
+          where AttorneyKey = #AttorneyKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from AttorneyDetailsLW where AttorneyKey = #AttorneyKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from AttorneyDetailsLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AttorneyDetailsLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and DesignationId = #DesignationId#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AttorneyKey, AttorneyName, DesignationId, LicensedStates, AnnualWorkedHours, NumberOfYearsInPractice, NumberOfYearsWithFirm, NumberOfYearsMalpracticeCov, AttorneyPriorActDate, LastUpdateUserID, LastUpdateTimeStamp, PriorActDate, IsNonRatedAttorney, VersionKey, VersionSequence, PolicyKey from AttorneyDetailsLW where AttorneyKey = #AttorneyKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AttorneyKey, VersionSequence, PolicyKey, AttorneyName, DesignationId, LicensedStates, AnnualWorkedHours, NumberOfYearsInPractice, NumberOfYearsWithFirm, NumberOfYearsMalpracticeCov, AttorneyPriorActDate, LastUpdateUserID, LastUpdateTimeStamp, PriorActDate, IsNonRatedAttorney, VersionKey from AttorneyDetailsLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and DesignationId = #DesignationId#</select>
+     <parameterMap id="GetCarrearCoverageAttorneyData_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="GetCarrearCoverageAttorneyData_p" parameterMap="GetCarrearCoverageAttorneyData_pMap" resultClass="java.util.HashMap">{ call GetCarrearCoverageAttorneyData_p(?)}</procedure>
+     <parameterMap id="GetAttorneyData_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="GetAttorneyData_p" parameterMap="GetAttorneyData_pMap" resultClass="java.util.HashMap">{ call GetAttorneyData_p(?)}</procedure>
+     <parameterMap id="GetDeletedAttorneysDetailsLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="deletedAttorneys" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="GetDeletedAttorneysDetailsLW_p" parameterMap="GetDeletedAttorneysDetailsLW_pMap" resultClass="java.util.HashMap">{ call GetDeletedAttorneysDetailsLW_p(?,?)}</procedure>
+</sqlMap>
+

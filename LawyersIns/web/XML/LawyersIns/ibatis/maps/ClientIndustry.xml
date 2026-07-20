@@ -1,0 +1,37 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ClientIndustry">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ClientIndustry</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ClientIndustry</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ClientIndustry(
+          <dynamic prepend=" ">
+               <isNotEmpty property="ClientIndustryDesc" prepend=",">ClientIndustryDesc</isNotEmpty>
+               <isNotEmpty property="ClientIndustrySrNo" prepend=",">ClientIndustrySrNo</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="ClientIndustryDesc" prepend=",">#ClientIndustryDesc#</isNotEmpty>
+               <isNotEmpty property="ClientIndustrySrNo" prepend=",">#ClientIndustrySrNo#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="ClientIndustryKey">SELECT IDENT_CURRENT('ClientIndustry') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ClientIndustryKey, ClientIndustryDesc, ClientIndustrySrNo from ClientIndustry where ClientIndustryKey = #ClientIndustryKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ClientIndustry set
+          <dynamic prepend=" ">
+               <isNotEmpty property="ClientIndustryDesc" prepend=",">ClientIndustryDesc = #ClientIndustryDesc#</isNotEmpty>
+               <isEmpty property="ClientIndustryDesc" prepend=",">ClientIndustryDesc = null</isEmpty>
+               <isNotEmpty property="ClientIndustrySrNo" prepend=",">ClientIndustrySrNo = #ClientIndustrySrNo#</isNotEmpty>
+               <isEmpty property="ClientIndustrySrNo" prepend=",">ClientIndustrySrNo = null</isEmpty>
+          </dynamic>
+          where ClientIndustryKey = #ClientIndustryKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ClientIndustry where ClientIndustryKey = #ClientIndustryKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ClientIndustry</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ClientIndustry</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ClientIndustryKey, ClientIndustryDesc, ClientIndustrySrNo from ClientIndustry where ClientIndustryKey = #ClientIndustryKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ClientIndustryKey, ClientIndustryDesc, ClientIndustrySrNo from ClientIndustry</select>
+</sqlMap>
+

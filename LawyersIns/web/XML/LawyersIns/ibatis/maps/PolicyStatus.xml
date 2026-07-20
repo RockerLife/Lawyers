@@ -1,0 +1,34 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="PolicyStatus">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PolicyStatus</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PolicyStatus</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into PolicyStatus(
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyStatusDesc" prepend=",">PolicyStatusDesc</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyStatusDesc" prepend=",">#PolicyStatusDesc#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="PolicyStatusKey">SELECT IDENT_CURRENT('PolicyStatus') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PolicyStatusKey, PolicyStatusDesc from PolicyStatus where PolicyStatusKey = #PolicyStatusKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update PolicyStatus set
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyStatusDesc" prepend=",">PolicyStatusDesc = #PolicyStatusDesc#</isNotEmpty>
+               <isEmpty property="PolicyStatusDesc" prepend=",">PolicyStatusDesc = null</isEmpty>
+          </dynamic>
+          where PolicyStatusKey = #PolicyStatusKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from PolicyStatus where PolicyStatusKey = #PolicyStatusKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from PolicyStatus</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from PolicyStatus</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PolicyStatusKey, PolicyStatusDesc from PolicyStatus where PolicyStatusKey = #PolicyStatusKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PolicyStatusKey, PolicyStatusDesc from PolicyStatus</select>
+     <select id="getPolicyStatusForfilter" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PolicyStatusKey,PolicyStatusDesc,Name,Code from PolicyStatus where policyStatusKey in(1,2)</select>
+</sqlMap>
+

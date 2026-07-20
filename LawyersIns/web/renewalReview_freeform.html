@@ -1,0 +1,142 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>Search</title>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<form>
+		<div id="renewalReview_freeform">
+			<table width="70%" border="0" align="center" cellpadding="2"
+				cellspacing="0">
+				<tr>
+					<td class="bgrowyellow">
+
+						<table width="80%" border="0" align="center" cellpadding="2"
+							cellspacing="0" id="renewal_freeform_contextdata_01">
+
+							<tr>
+								<td colspan="2" nowrap="nowrap">
+									<table width="100%" border="0" align="center" cellpadding="2"
+										cellspacing="0">
+										<tr>
+											<td>&nbsp;</td>
+											<td colspan="2"><div class="defult_tr_errors"
+													id="ajax_error_IsRenewalReview"></div></td>
+
+										</tr>
+										<tr>
+											<td width="10%">&nbsp;</td>
+											<td width="18%" nowrap="nowrap">Set as Renewal Review</td>
+											<td><input type="radio" id="ajax_field_IsRenewalReview"
+												name="IsRenewalReview" value="Y"
+												onclick="showDivArea(['divRenewalReviewY'], ['divRenewalReviewN']);">
+												Yes &nbsp; <input type="radio"
+												id="ajax_field_IsRenewalReview" name="IsRenewalReview"
+												value="N"
+												onclick="showDivArea(['divRenewalReviewN'], ['divRenewalReviewY']);">
+												No</td>
+
+
+										</tr>
+										<tr>
+											<td width="30%">&nbsp;</td>
+											<td colspan="2">
+												<div id="divRenewalReviewY">
+													<table cellpadding="1" cellspacing="0">
+
+														<tr>
+															<td></td>
+															<td colspan="2">
+																<div class="defult_tr_errors"
+																	id="ajax_error_RenewalReviewComments"></div>
+															</td>
+														</tr>
+														<tr>
+
+															<td width="35%" nowrap="nowrap" valign="top">
+																Provide Comments :</td>
+
+															<td><span id="eval:LawyersRule.IsRenewalReviewYes"><textarea
+																		name="RenewalReviewComments" rows="5" cols="30"
+																		id="ajax_field_RenewalReviewComments"
+																		readonly="readonly" onKeyUp="limitText(this,1,2500);"></textarea>
+															</span> <span id="eval:LawyersRule.IsRenewalReviewNo"><textarea
+																		name="RenewalReviewComments" rows="5" cols="30"
+																		id="ajax_field_RenewalReviewComments"
+																		onKeyUp="limitText(this,1,2500);"></textarea> </span></td>
+														</tr>
+
+
+													</table>
+
+												</div>
+												<div id="divRenewalReviewN"></div>
+											</td>
+
+										</tr>
+									</table>
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+
+											<td colspan="2" align="center" style="padding-top:5px;">
+												<table border="0" align="center" cellpadding="2"
+													cellspacing="0">
+													<tr>
+														<td nowrap="nowrap">
+															<div class="button4" style="width: 150px">
+																<a
+																	href="javascript:ajaxsubmitform('list.html','renewalReview_freeform.saveRenewReview','','','ajax_sorting');">Submit</a>
+															</div>
+
+														</td>
+														<td nowrap="nowrap">
+															<div class="button4" style="width: 150px">
+																<a
+																	href="javascript:ajaxsubmitform('list.html','renewalReview_freeform.close','','','ajax_sorting');">Cancel</a>
+															</div>
+
+														</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+								</td>
+
+							</tr>
+
+							<tr>
+								<td width="200">&nbsp;</td>
+								<td align="left">&nbsp;</td>
+							</tr>
+						</table>
+					</td>
+
+				</tr>
+			</table>
+		</div>
+		<table id="renewal_freeform_contextdata_15">
+			<tr>
+				<td><input type="hidden" name="jsessionid" id="jsessionid" />
+				</td>
+			</tr>
+		</table>
+
+	</form>
+
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+<script type="text/javascript">
+	showReviewCommentsBlock();
+</script>
+
+</html>

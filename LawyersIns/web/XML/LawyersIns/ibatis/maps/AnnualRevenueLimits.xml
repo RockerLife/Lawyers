@@ -1,0 +1,27 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AnnualRevenueLimits">
+     <select id="getAnnualRevenueList" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select seq,(case when higherLimit is not null then lowerLimit+'-'+higherLimit else lowerLimit end) as RevenueDesc from AnnualRevenueLimits where coveragekey=3</select>
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AnnualRevenueLimits</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AnnualRevenueLimits</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into AnnualRevenueLimits(
+          <dynamic prepend=" " />
+          ) values (
+          <dynamic prepend=" " />
+          )
+          <selectKey resultClass="int" keyProperty="RevenueKey">SELECT IDENT_CURRENT('AnnualRevenueLimits') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  from AnnualRevenueLimits where RevenueKey = #RevenueKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update AnnualRevenueLimits set
+          <dynamic prepend=" " />
+          where RevenueKey = #RevenueKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from AnnualRevenueLimits where RevenueKey = #RevenueKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from AnnualRevenueLimits</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AnnualRevenueLimits</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  from AnnualRevenueLimits where RevenueKey = #RevenueKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select RevenueKey from AnnualRevenueLimits</select>
+</sqlMap>
+

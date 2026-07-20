@@ -1,0 +1,115 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="CorporateCommBusineesSupplementLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from CorporateCommBusineesSupplementLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from CorporateCommBusineesSupplementLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into CorporateCommBusineesSupplementLW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="OtherLegalCorporateServices" prepend=",">OtherLegalCorporateServices</isNotEmpty>
+               <isNotEmpty property="CorporateServiceDesc1" prepend=",">CorporateServiceDesc1</isNotEmpty>
+               <isNotEmpty property="CorporateServiceDesc2" prepend=",">CorporateServiceDesc2</isNotEmpty>
+               <isNotEmpty property="CorporateServiceDesc3" prepend=",">CorporateServiceDesc3</isNotEmpty>
+               <isNotEmpty property="CorporateServicePercentage1" prepend=",">CorporateServicePercentage1</isNotEmpty>
+               <isNotEmpty property="CorporateServicePercentage2" prepend=",">CorporateServicePercentage2</isNotEmpty>
+               <isNotEmpty property="CorporateServicePercentage3" prepend=",">CorporateServicePercentage3</isNotEmpty>
+               <isNotEmpty property="PubliclyRenderedServices" prepend=",">PubliclyRenderedServices</isNotEmpty>
+               <isNotEmpty property="PubliclyRenderedServicesDesc" prepend=",">PubliclyRenderedServicesDesc</isNotEmpty>
+               <isNotEmpty property="LegalBusinessRelationshipServices" prepend=",">LegalBusinessRelationshipServices</isNotEmpty>
+               <isNotEmpty property="AuthorityToDisburseFunds" prepend=",">AuthorityToDisburseFunds</isNotEmpty>
+               <isNotEmpty property="AcceptCompensation" prepend=",">AcceptCompensation</isNotEmpty>
+               <isNotEmpty property="LegalServicesSecuritiesPayment" prepend=",">LegalServicesSecuritiesPayment</isNotEmpty>
+               <isNotEmpty property="PerformDueDiligence" prepend=",">PerformDueDiligence</isNotEmpty>
+               <isNotEmpty property="DetailedDescCorporateServices" prepend=",">DetailedDescCorporateServices</isNotEmpty>
+               <isNotEmpty property="LegalServicesBankruptLiquidation" prepend=",">LegalServicesBankruptLiquidation</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="OtherLegalCorporateServices" prepend=",">#OtherLegalCorporateServices#</isNotEmpty>
+               <isNotEmpty property="CorporateServiceDesc1" prepend=",">#CorporateServiceDesc1#</isNotEmpty>
+               <isNotEmpty property="CorporateServiceDesc2" prepend=",">#CorporateServiceDesc2#</isNotEmpty>
+               <isNotEmpty property="CorporateServiceDesc3" prepend=",">#CorporateServiceDesc3#</isNotEmpty>
+               <isNotEmpty property="CorporateServicePercentage1" prepend=",">#CorporateServicePercentage1#</isNotEmpty>
+               <isNotEmpty property="CorporateServicePercentage2" prepend=",">#CorporateServicePercentage2#</isNotEmpty>
+               <isNotEmpty property="CorporateServicePercentage3" prepend=",">#CorporateServicePercentage3#</isNotEmpty>
+               <isNotEmpty property="PubliclyRenderedServices" prepend=",">#PubliclyRenderedServices#</isNotEmpty>
+               <isNotEmpty property="PubliclyRenderedServicesDesc" prepend=",">#PubliclyRenderedServicesDesc#</isNotEmpty>
+               <isNotEmpty property="LegalBusinessRelationshipServices" prepend=",">#LegalBusinessRelationshipServices#</isNotEmpty>
+               <isNotEmpty property="AuthorityToDisburseFunds" prepend=",">#AuthorityToDisburseFunds#</isNotEmpty>
+               <isNotEmpty property="AcceptCompensation" prepend=",">#AcceptCompensation#</isNotEmpty>
+               <isNotEmpty property="LegalServicesSecuritiesPayment" prepend=",">#LegalServicesSecuritiesPayment#</isNotEmpty>
+               <isNotEmpty property="PerformDueDiligence" prepend=",">#PerformDueDiligence#</isNotEmpty>
+               <isNotEmpty property="DetailedDescCorporateServices" prepend=",">#DetailedDescCorporateServices#</isNotEmpty>
+               <isNotEmpty property="LegalServicesBankruptLiquidation" prepend=",">#LegalServicesBankruptLiquidation#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select OtherLegalCorporateServices, CorporateServiceDesc1, CorporateServiceDesc2, CorporateServiceDesc3, CorporateServicePercentage1, CorporateServicePercentage2, CorporateServicePercentage3, PubliclyRenderedServices, PubliclyRenderedServicesDesc, LegalBusinessRelationshipServices, AuthorityToDisburseFunds, AcceptCompensation, LegalServicesSecuritiesPayment, PerformDueDiligence, DetailedDescCorporateServices, LegalServicesBankruptLiquidation from CorporateCommBusineesSupplementLW</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update CorporateCommBusineesSupplementLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="OtherLegalCorporateServices" prepend=",">OtherLegalCorporateServices = #OtherLegalCorporateServices#</isNotEmpty>
+               <isEmpty property="OtherLegalCorporateServices" prepend=",">OtherLegalCorporateServices = null</isEmpty>
+               <isNotEmpty property="CorporateServiceDesc1" prepend=",">CorporateServiceDesc1 = #CorporateServiceDesc1#</isNotEmpty>
+               <isEmpty property="CorporateServiceDesc1" prepend=",">CorporateServiceDesc1 = null</isEmpty>
+               <isNotEmpty property="CorporateServiceDesc2" prepend=",">CorporateServiceDesc2 = #CorporateServiceDesc2#</isNotEmpty>
+               <isEmpty property="CorporateServiceDesc2" prepend=",">CorporateServiceDesc2 = null</isEmpty>
+               <isNotEmpty property="CorporateServiceDesc3" prepend=",">CorporateServiceDesc3 = #CorporateServiceDesc3#</isNotEmpty>
+               <isEmpty property="CorporateServiceDesc3" prepend=",">CorporateServiceDesc3 = null</isEmpty>
+               <isNotEmpty property="CorporateServicePercentage1" prepend=",">CorporateServicePercentage1 = #CorporateServicePercentage1#</isNotEmpty>
+               <isEmpty property="CorporateServicePercentage1" prepend=",">CorporateServicePercentage1 = null</isEmpty>
+               <isNotEmpty property="CorporateServicePercentage2" prepend=",">CorporateServicePercentage2 = #CorporateServicePercentage2#</isNotEmpty>
+               <isEmpty property="CorporateServicePercentage2" prepend=",">CorporateServicePercentage2 = null</isEmpty>
+               <isNotEmpty property="CorporateServicePercentage3" prepend=",">CorporateServicePercentage3 = #CorporateServicePercentage3#</isNotEmpty>
+               <isEmpty property="CorporateServicePercentage3" prepend=",">CorporateServicePercentage3 = null</isEmpty>
+               <isNotEmpty property="PubliclyRenderedServices" prepend=",">PubliclyRenderedServices = #PubliclyRenderedServices#</isNotEmpty>
+               <isEmpty property="PubliclyRenderedServices" prepend=",">PubliclyRenderedServices = null</isEmpty>
+               <isNotEmpty property="PubliclyRenderedServicesDesc" prepend=",">PubliclyRenderedServicesDesc = #PubliclyRenderedServicesDesc#</isNotEmpty>
+               <isEmpty property="PubliclyRenderedServicesDesc" prepend=",">PubliclyRenderedServicesDesc = null</isEmpty>
+               <isNotEmpty property="LegalBusinessRelationshipServices" prepend=",">LegalBusinessRelationshipServices = #LegalBusinessRelationshipServices#</isNotEmpty>
+               <isEmpty property="LegalBusinessRelationshipServices" prepend=",">LegalBusinessRelationshipServices = null</isEmpty>
+               <isNotEmpty property="AuthorityToDisburseFunds" prepend=",">AuthorityToDisburseFunds = #AuthorityToDisburseFunds#</isNotEmpty>
+               <isEmpty property="AuthorityToDisburseFunds" prepend=",">AuthorityToDisburseFunds = null</isEmpty>
+               <isNotEmpty property="AcceptCompensation" prepend=",">AcceptCompensation = #AcceptCompensation#</isNotEmpty>
+               <isEmpty property="AcceptCompensation" prepend=",">AcceptCompensation = null</isEmpty>
+               <isNotEmpty property="LegalServicesSecuritiesPayment" prepend=",">LegalServicesSecuritiesPayment = #LegalServicesSecuritiesPayment#</isNotEmpty>
+               <isEmpty property="LegalServicesSecuritiesPayment" prepend=",">LegalServicesSecuritiesPayment = null</isEmpty>
+               <isNotEmpty property="PerformDueDiligence" prepend=",">PerformDueDiligence = #PerformDueDiligence#</isNotEmpty>
+               <isEmpty property="PerformDueDiligence" prepend=",">PerformDueDiligence = null</isEmpty>
+               <isNotEmpty property="DetailedDescCorporateServices" prepend=",">DetailedDescCorporateServices = #DetailedDescCorporateServices#</isNotEmpty>
+               <isEmpty property="DetailedDescCorporateServices" prepend=",">DetailedDescCorporateServices = null</isEmpty>
+               <isNotEmpty property="LegalServicesBankruptLiquidation" prepend=",">LegalServicesBankruptLiquidation = #LegalServicesBankruptLiquidation#</isNotEmpty>
+               <isEmpty property="LegalServicesBankruptLiquidation" prepend=",">LegalServicesBankruptLiquidation = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from CorporateCommBusineesSupplementLW</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from CorporateCommBusineesSupplementLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from CorporateCommBusineesSupplementLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select OtherLegalCorporateServices, CorporateServiceDesc1, CorporateServiceDesc2, CorporateServiceDesc3, CorporateServicePercentage1, CorporateServicePercentage2, CorporateServicePercentage3, PubliclyRenderedServices, PubliclyRenderedServicesDesc, LegalBusinessRelationshipServices, AuthorityToDisburseFunds, AcceptCompensation, LegalServicesSecuritiesPayment, PerformDueDiligence, DetailedDescCorporateServices, LegalServicesBankruptLiquidation from CorporateCommBusineesSupplementLW</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select OtherLegalCorporateServices, CorporateServiceDesc1, CorporateServiceDesc2, CorporateServiceDesc3, CorporateServicePercentage1, CorporateServicePercentage2, CorporateServicePercentage3, PubliclyRenderedServices, PubliclyRenderedServicesDesc, LegalBusinessRelationshipServices, AuthorityToDisburseFunds, AcceptCompensation, LegalServicesSecuritiesPayment, PerformDueDiligence, DetailedDescCorporateServices, LegalServicesBankruptLiquidation from CorporateCommBusineesSupplementLW</select>
+     <parameterMap id="InsertUpdateCorporateCommBusineesSupplementLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="OtherLegalCorporateServices" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CorporateServiceDesc1" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CorporateServiceDesc2" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CorporateServiceDesc3" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CorporateServicePercentage1" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="CorporateServicePercentage2" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="CorporateServicePercentage3" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="PubliclyRenderedServices" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PubliclyRenderedServicesDesc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LegalBusinessRelationshipServices" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="AuthorityToDisburseFunds" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="AcceptCompensation" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LegalServicesSecuritiesPayment" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PerformDueDiligence" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="DetailedDescCorporateServices" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LegalServicesBankruptLiquidation" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdateCorporateCommBusineesSupplementLW_p" parameterMap="InsertUpdateCorporateCommBusineesSupplementLW_pMap">{ call InsertUpdateCorporateCommBusineesSupplementLW_p(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

@@ -1,0 +1,83 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="RealEastateDetailsLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from RealEastateDetailsLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from RealEastateDetailsLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into RealEastateDetailsLW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="transactionsHandled12MonthsResi" prepend=",">transactionsHandled12MonthsResi</isNotEmpty>
+               <isNotEmpty property="transactionsHandled12MonthsComm" prepend=",">transactionsHandled12MonthsComm</isNotEmpty>
+               <isNotEmpty property="largestTransaction12MonthsResi" prepend=",">largestTransaction12MonthsResi</isNotEmpty>
+               <isNotEmpty property="largestTransaction12MonthsComm" prepend=",">largestTransaction12MonthsComm</isNotEmpty>
+               <isNotEmpty property="attendClosings" prepend=",">attendClosings</isNotEmpty>
+               <isNotEmpty property="includeSecuringFinancing" prepend=",">includeSecuringFinancing</isNotEmpty>
+               <isNotEmpty property="useDisclosureForm" prepend=",">useDisclosureForm</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="transactionsHandled12MonthsResi" prepend=",">#transactionsHandled12MonthsResi#</isNotEmpty>
+               <isNotEmpty property="transactionsHandled12MonthsComm" prepend=",">#transactionsHandled12MonthsComm#</isNotEmpty>
+               <isNotEmpty property="largestTransaction12MonthsResi" prepend=",">#largestTransaction12MonthsResi#</isNotEmpty>
+               <isNotEmpty property="largestTransaction12MonthsComm" prepend=",">#largestTransaction12MonthsComm#</isNotEmpty>
+               <isNotEmpty property="attendClosings" prepend=",">#attendClosings#</isNotEmpty>
+               <isNotEmpty property="includeSecuringFinancing" prepend=",">#includeSecuringFinancing#</isNotEmpty>
+               <isNotEmpty property="useDisclosureForm" prepend=",">#useDisclosureForm#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select transactionsHandled12MonthsResi, transactionsHandled12MonthsComm, largestTransaction12MonthsResi, largestTransaction12MonthsComm, attendClosings, includeSecuringFinancing, useDisclosureForm, LastUpdateUserID, LastUpdateTimeStamp from RealEastateDetailsLW</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update RealEastateDetailsLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="transactionsHandled12MonthsResi" prepend=",">transactionsHandled12MonthsResi = #transactionsHandled12MonthsResi#</isNotEmpty>
+               <isEmpty property="transactionsHandled12MonthsResi" prepend=",">transactionsHandled12MonthsResi = null</isEmpty>
+               <isNotEmpty property="transactionsHandled12MonthsComm" prepend=",">transactionsHandled12MonthsComm = #transactionsHandled12MonthsComm#</isNotEmpty>
+               <isEmpty property="transactionsHandled12MonthsComm" prepend=",">transactionsHandled12MonthsComm = null</isEmpty>
+               <isNotEmpty property="largestTransaction12MonthsResi" prepend=",">largestTransaction12MonthsResi = #largestTransaction12MonthsResi#</isNotEmpty>
+               <isEmpty property="largestTransaction12MonthsResi" prepend=",">largestTransaction12MonthsResi = null</isEmpty>
+               <isNotEmpty property="largestTransaction12MonthsComm" prepend=",">largestTransaction12MonthsComm = #largestTransaction12MonthsComm#</isNotEmpty>
+               <isEmpty property="largestTransaction12MonthsComm" prepend=",">largestTransaction12MonthsComm = null</isEmpty>
+               <isNotEmpty property="attendClosings" prepend=",">attendClosings = #attendClosings#</isNotEmpty>
+               <isEmpty property="attendClosings" prepend=",">attendClosings = null</isEmpty>
+               <isNotEmpty property="includeSecuringFinancing" prepend=",">includeSecuringFinancing = #includeSecuringFinancing#</isNotEmpty>
+               <isEmpty property="includeSecuringFinancing" prepend=",">includeSecuringFinancing = null</isEmpty>
+               <isNotEmpty property="useDisclosureForm" prepend=",">useDisclosureForm = #useDisclosureForm#</isNotEmpty>
+               <isEmpty property="useDisclosureForm" prepend=",">useDisclosureForm = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from RealEastateDetailsLW</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from RealEastateDetailsLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from RealEastateDetailsLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select transactionsHandled12MonthsResi, transactionsHandled12MonthsComm, largestTransaction12MonthsResi, largestTransaction12MonthsComm, attendClosings, includeSecuringFinancing, useDisclosureForm, LastUpdateUserID, LastUpdateTimeStamp from RealEastateDetailsLW</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select transactionsHandled12MonthsResi, transactionsHandled12MonthsComm, largestTransaction12MonthsResi, largestTransaction12MonthsComm, attendClosings, includeSecuringFinancing, useDisclosureForm, LastUpdateUserID, LastUpdateTimeStamp from RealEastateDetailsLW</select>
+     <parameterMap id="InsertUpdateRealEstateDetails_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="transactionsHandled12MonthsResi" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="transactionsHandled12MonthsComm" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="largestTransaction12MonthsResi" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="largestTransaction12MonthsComm" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="attendClosings" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="includeSecuringFinancing" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="useDisclosureForm" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdateRealEstateDetails_p" parameterMap="InsertUpdateRealEstateDetails_pMap">{ call InsertUpdateRealEstateDetails_p(?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="DisplayRealEstateAmountForPDF_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="DisplayRealEstateAmountForPDF_p" parameterMap="DisplayRealEstateAmountForPDF_pMap" resultClass="java.util.HashMap">{ call DisplayRealEstateAmountForPDF_p(?)}</procedure>
+</sqlMap>
+

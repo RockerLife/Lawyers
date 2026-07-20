@@ -1,0 +1,38 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AttorneyDesignationLW">
+     <select id="getAttorneyDesigList" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select DesignationId,DesignationDescription from AttorneyDesignationLW order by DesignationDescription</select>
+     <select id="getAttorneyNameList" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AttorneyKey,AttorneyName from AttorneyDetailsLW where policykey=#PolicyKey# and VersionSequence=(select max(VersionSequence) from firmlw where PolicyKey=#PolicyKey#) and isAttorneyEndorsed='N'</select>
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AttorneyDesignationLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AttorneyDesignationLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into AttorneyDesignationLW(DesignationId
+          <isNotEmpty property="DesignationDescription" prepend=",">DesignationDescription</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          ) values (#DesignationId:NUMERIC#
+          <isNotEmpty property="DesignationDescription" prepend=",">#DesignationDescription#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select DesignationId, DesignationDescription, LastUpdateUserID, LastUpdateTimeStamp from AttorneyDesignationLW where DesignationId = #DesignationId#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update AttorneyDesignationLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="DesignationDescription" prepend=",">DesignationDescription = #DesignationDescription#</isNotEmpty>
+               <isEmpty property="DesignationDescription" prepend=",">DesignationDescription = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where DesignationId = #DesignationId#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from AttorneyDesignationLW where DesignationId = #DesignationId#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from AttorneyDesignationLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AttorneyDesignationLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select DesignationId, DesignationDescription, LastUpdateUserID, LastUpdateTimeStamp from AttorneyDesignationLW where DesignationId = #DesignationId#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select DesignationId, DesignationDescription, LastUpdateUserID, LastUpdateTimeStamp from AttorneyDesignationLW</select>
+</sqlMap>
+

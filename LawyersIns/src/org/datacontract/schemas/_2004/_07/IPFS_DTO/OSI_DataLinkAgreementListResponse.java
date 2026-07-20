@@ -1,0 +1,184 @@
+/**
+ * OSI_DataLinkAgreementListResponse.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
+ */
+
+package org.datacontract.schemas._2004._07.IPFS_DTO;
+
+public class OSI_DataLinkAgreementListResponse  extends org.datacontract.schemas._2004._07.IPFS_DTO.OSI_IntegrationResponse  implements java.io.Serializable {
+    private org.datacontract.schemas._2004._07.IPFS_DTO.OSI_AgreementData[] agreementList;
+
+    private org.datacontract.schemas._2004._07.IPFS_DTO.OSI_Error[] errors;
+
+    public OSI_DataLinkAgreementListResponse() {
+    }
+
+    public OSI_DataLinkAgreementListResponse(
+           java.lang.String message,
+           java.lang.String request,
+           java.lang.String response,
+           java.lang.Boolean success,
+           org.datacontract.schemas._2004._07.IPFS_DTO.OSI_AgreementData[] agreementList,
+           org.datacontract.schemas._2004._07.IPFS_DTO.OSI_Error[] errors) {
+        super(
+            message,
+            request,
+            response,
+            success);
+        this.agreementList = agreementList;
+        this.errors = errors;
+    }
+
+
+    /**
+     * Gets the agreementList value for this OSI_DataLinkAgreementListResponse.
+     * 
+     * @return agreementList
+     */
+    public org.datacontract.schemas._2004._07.IPFS_DTO.OSI_AgreementData[] getAgreementList() {
+        return agreementList;
+    }
+
+
+    /**
+     * Sets the agreementList value for this OSI_DataLinkAgreementListResponse.
+     * 
+     * @param agreementList
+     */
+    public void setAgreementList(org.datacontract.schemas._2004._07.IPFS_DTO.OSI_AgreementData[] agreementList) {
+        this.agreementList = agreementList;
+    }
+
+
+    /**
+     * Gets the errors value for this OSI_DataLinkAgreementListResponse.
+     * 
+     * @return errors
+     */
+    public org.datacontract.schemas._2004._07.IPFS_DTO.OSI_Error[] getErrors() {
+        return errors;
+    }
+
+
+    /**
+     * Sets the errors value for this OSI_DataLinkAgreementListResponse.
+     * 
+     * @param errors
+     */
+    public void setErrors(org.datacontract.schemas._2004._07.IPFS_DTO.OSI_Error[] errors) {
+        this.errors = errors;
+    }
+
+    private java.lang.Object __equalsCalc = null;
+    public synchronized boolean equals(java.lang.Object obj) {
+        if (!(obj instanceof OSI_DataLinkAgreementListResponse)) return false;
+        OSI_DataLinkAgreementListResponse other = (OSI_DataLinkAgreementListResponse) obj;
+        if (obj == null) return false;
+        if (this == obj) return true;
+        if (__equalsCalc != null) {
+            return (__equalsCalc == obj);
+        }
+        __equalsCalc = obj;
+        boolean _equals;
+        _equals = super.equals(obj) && 
+            ((this.agreementList==null && other.getAgreementList()==null) || 
+             (this.agreementList!=null &&
+              java.util.Arrays.equals(this.agreementList, other.getAgreementList()))) &&
+            ((this.errors==null && other.getErrors()==null) || 
+             (this.errors!=null &&
+              java.util.Arrays.equals(this.errors, other.getErrors())));
+        __equalsCalc = null;
+        return _equals;
+    }
+
+    private boolean __hashCodeCalc = false;
+    public synchronized int hashCode() {
+        if (__hashCodeCalc) {
+            return 0;
+        }
+        __hashCodeCalc = true;
+        int _hashCode = super.hashCode();
+        if (getAgreementList() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getAgreementList());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getAgreementList(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        if (getErrors() != null) {
+            for (int i=0;
+                 i<java.lang.reflect.Array.getLength(getErrors());
+                 i++) {
+                java.lang.Object obj = java.lang.reflect.Array.get(getErrors(), i);
+                if (obj != null &&
+                    !obj.getClass().isArray()) {
+                    _hashCode += obj.hashCode();
+                }
+            }
+        }
+        __hashCodeCalc = false;
+        return _hashCode;
+    }
+
+    // Type metadata
+    private static org.apache.axis.description.TypeDesc typeDesc =
+        new org.apache.axis.description.TypeDesc(OSI_DataLinkAgreementListResponse.class, true);
+
+    static {
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/IPFS.DTO", "OSI_DataLinkAgreementListResponse"));
+        org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("agreementList");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/IPFS.DTO", "AgreementList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/IPFS.DTO", "OSI_AgreementData"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
+        elemField.setItemQName(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/IPFS.DTO", "OSI_AgreementData"));
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("errors");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/IPFS.DTO", "Errors"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/IPFS.DTO", "OSI_Error"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(true);
+        elemField.setItemQName(new javax.xml.namespace.QName("http://schemas.datacontract.org/2004/07/IPFS.DTO", "OSI_Error"));
+        typeDesc.addFieldDesc(elemField);
+    }
+
+    /**
+     * Return type metadata object
+     */
+    public static org.apache.axis.description.TypeDesc getTypeDesc() {
+        return typeDesc;
+    }
+
+    /**
+     * Get Custom Serializer
+     */
+    public static org.apache.axis.encoding.Serializer getSerializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanSerializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+    /**
+     * Get Custom Deserializer
+     */
+    public static org.apache.axis.encoding.Deserializer getDeserializer(
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
+           javax.xml.namespace.QName _xmlType) {
+        return 
+          new  org.apache.axis.encoding.ser.BeanDeserializer(
+            _javaType, _xmlType, typeDesc);
+    }
+
+}

@@ -1,0 +1,1099 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="FirmLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FirmLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from FirmLW where PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into FirmLW(PolicyKey
+          <isNotEmpty property="ContactPerson" prepend=",">ContactPerson</isNotEmpty>
+          <isNotEmpty property="ContactPhone" prepend=",">ContactPhone</isNotEmpty>
+          <isNotEmpty property="IsFirmCarryingProfLiabilityIns" prepend=",">IsFirmCarryingProfLiabilityIns</isNotEmpty>
+          <isNotEmpty property="IsPolicyExcludesCoverage" prepend=",">IsPolicyExcludesCoverage</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="IsQuickQuoteByEmail" prepend=",">IsQuickQuoteByEmail</isNotEmpty>
+          <isNotEmpty property="IsAnAgentCall" prepend=",">IsAnAgentCall</isNotEmpty>
+          <isNotEmpty property="ContactPhoneExt" prepend=",">ContactPhoneExt</isNotEmpty>
+          <isNotEmpty property="IsBasicPage" prepend=",">IsBasicPage</isNotEmpty>
+          <isNotEmpty property="IsGeneralPage" prepend=",">IsGeneralPage</isNotEmpty>
+          <isNotEmpty property="IsEntertainmentPage" prepend=",">IsEntertainmentPage</isNotEmpty>
+          <isNotEmpty property="IsClientTerminated" prepend=",">IsClientTerminated</isNotEmpty>
+          <isNotEmpty property="FirstReviewUserID" prepend=",">FirstReviewUserID</isNotEmpty>
+          <isNotEmpty property="LicenseNumber" prepend=",">LicenseNumber</isNotEmpty>
+          <isNotEmpty property="IsQuotePage" prepend=",">IsQuotePage</isNotEmpty>
+          <isNotEmpty property="YearOfFirmEstablished" prepend=",">YearOfFirmEstablished</isNotEmpty>
+          <isNotEmpty property="IsFirmPracticeInOtherState" prepend=",">IsFirmPracticeInOtherState</isNotEmpty>
+          <isNotEmpty property="IsFirmHaveClientInEntertainmentInd" prepend=",">IsFirmHaveClientInEntertainmentInd</isNotEmpty>
+          <isNotEmpty property="IsFirmInvolvedInClassActionCase" prepend=",">IsFirmInvolvedInClassActionCase</isNotEmpty>
+          <isNotEmpty property="IsFirmProvidedLegalServiceToSecurity" prepend=",">IsFirmProvidedLegalServiceToSecurity</isNotEmpty>
+          <isNotEmpty property="IsFirmHaveClientMoreThan25PercentOfBilling" prepend=",">IsFirmHaveClientMoreThan25PercentOfBilling</isNotEmpty>
+          <isNotEmpty property="PercentFromFirstLargestRevenueClient" prepend=",">PercentFromFirstLargestRevenueClient</isNotEmpty>
+          <isNotEmpty property="PercentFromSecondLargestRevenueClient" prepend=",">PercentFromSecondLargestRevenueClient</isNotEmpty>
+          <isNotEmpty property="ServicesRenderedFirstLargestRevenueClient" prepend=",">ServicesRenderedFirstLargestRevenueClient</isNotEmpty>
+          <isNotEmpty property="ServicesRenderedSecondLargestRevenueClient" prepend=",">ServicesRenderedSecondLargestRevenueClient</isNotEmpty>
+          <isNotEmpty property="IsFirmHaveLawyersLiabilityInsurance" prepend=",">IsFirmHaveLawyersLiabilityInsurance</isNotEmpty>
+          <isNotEmpty property="PolicyExcludeCoverageForAffiliatesDesc" prepend=",">PolicyExcludeCoverageForAffiliatesDesc</isNotEmpty>
+          <isNotEmpty property="IsFirmCoverageForPreceedorFirms" prepend=",">IsFirmCoverageForPreceedorFirms</isNotEmpty>
+          <isNotEmpty property="IsFirmHaveEquityIntGrtThan10" prepend=",">IsFirmHaveEquityIntGrtThan10</isNotEmpty>
+          <isNotEmpty property="IsFirmPersServedAsOfficerInJointVenture" prepend=",">IsFirmPersServedAsOfficerInJointVenture</isNotEmpty>
+          <isNotEmpty property="IsApplicantProvidesLegalServices" prepend=",">IsApplicantProvidesLegalServices</isNotEmpty>
+          <isNotEmpty property="ApplicantProvidesLegalServicesDesc" prepend=",">ApplicantProvidesLegalServicesDesc</isNotEmpty>
+          <isNotEmpty property="IsAttorneyNotCoveredByProfLiability" prepend=",">IsAttorneyNotCoveredByProfLiability</isNotEmpty>
+          <isNotEmpty property="IsAppOfficeSharedWithAttorney" prepend=",">IsAppOfficeSharedWithAttorney</isNotEmpty>
+          <isNotEmpty property="TotalNumOfNonAttorneyStaff" prepend=",">TotalNumOfNonAttorneyStaff</isNotEmpty>
+          <isNotEmpty property="IsFirmHaveIndepDockets" prepend=",">IsFirmHaveIndepDockets</isNotEmpty>
+          <isNotEmpty property="IsFirmRequireEngagementLetter" prepend=",">IsFirmRequireEngagementLetter</isNotEmpty>
+          <isNotEmpty property="IsNonEngagementLetterIssueToFirm" prepend=",">IsNonEngagementLetterIssueToFirm</isNotEmpty>
+          <isNotEmpty property="IsPolicyProhibitAttorneyWithInvestment" prepend=",">IsPolicyProhibitAttorneyWithInvestment</isNotEmpty>
+          <isNotEmpty property="IsEmplRelativeToConfInfomation" prepend=",">IsEmplRelativeToConfInfomation</isNotEmpty>
+          <isNotEmpty property="PercentofApplAcctRcbl" prepend=",">PercentofApplAcctRcbl</isNotEmpty>
+          <isNotEmpty property="IsApplInitiatedLawsuitForFirm" prepend=",">IsApplInitiatedLawsuitForFirm</isNotEmpty>
+          <isNotEmpty property="IsAttorneyDeclineForProfLiability" prepend=",">IsAttorneyDeclineForProfLiability</isNotEmpty>
+          <isNotEmpty property="AttorneyDeclineForProfLiabilityDates" prepend=",">AttorneyDeclineForProfLiabilityDates</isNotEmpty>
+          <isNotEmpty property="AttorneyDeclineForProfLiabilityReasons" prepend=",">AttorneyDeclineForProfLiabilityReasons</isNotEmpty>
+          <isNotEmpty property="IsIndependentContractor" prepend=",">IsIndependentContractor</isNotEmpty>
+          <isNotEmpty property="IsFirmHaveBackupAttorney" prepend=",">IsFirmHaveBackupAttorney</isNotEmpty>
+          <isNotEmpty property="PerOfGrossBillingsUnderContract" prepend=",">PerOfGrossBillingsUnderContract</isNotEmpty>
+          <isNotEmpty property="BackupAttorneyName" prepend=",">BackupAttorneyName</isNotEmpty>
+          <isNotEmpty property="BackupAttorneyAddress" prepend=",">BackupAttorneyAddress</isNotEmpty>
+          <isNotEmpty property="BackupAttorneyPhoneNumber" prepend=",">BackupAttorneyPhoneNumber</isNotEmpty>
+          <isNotEmpty property="IsFirmHaveProcForFormersClients" prepend=",">IsFirmHaveProcForFormersClients</isNotEmpty>
+          <isNotEmpty property="IsLawyerProfLiabClaimAgntAppl" prepend=",">IsLawyerProfLiabClaimAgntAppl</isNotEmpty>
+          <isNotEmpty property="IsPersonnelBeSubOfAnyInvest" prepend=",">IsPersonnelBeSubOfAnyInvest</isNotEmpty>
+          <isNotEmpty property="IsAnyActOmmBecomeClaimAgntFirm" prepend=",">IsAnyActOmmBecomeClaimAgntFirm</isNotEmpty>
+          <isNotEmpty property="ApplicantName" prepend=",">ApplicantName</isNotEmpty>
+          <isNotEmpty property="IsApplRestWithManagement" prepend=",">IsApplRestWithManagement</isNotEmpty>
+          <isNotEmpty property="ApplRestWithManagementDesc" prepend=",">ApplRestWithManagementDesc</isNotEmpty>
+          <isNotEmpty property="PersonnelBeSubOfAnyInvestDate" prepend=",">PersonnelBeSubOfAnyInvestDate</isNotEmpty>
+          <isNotEmpty property="PersonnelBeSubOfAnyInvestDetails" prepend=",">PersonnelBeSubOfAnyInvestDetails</isNotEmpty>
+          <isNotEmpty property="IsTaxPage" prepend=",">IsTaxPage</isNotEmpty>
+          <isNotEmpty property="IsEnvironmentalPage" prepend=",">IsEnvironmentalPage</isNotEmpty>
+          <isNotEmpty property="IsSecuritiesPage" prepend=",">IsSecuritiesPage</isNotEmpty>
+          <isNotEmpty property="IsTitlePage" prepend=",">IsTitlePage</isNotEmpty>
+          <isNotEmpty property="IsWillsEstatePage" prepend=",">IsWillsEstatePage</isNotEmpty>
+          <isNotEmpty property="IsPlaintiffPage" prepend=",">IsPlaintiffPage</isNotEmpty>
+          <isNotEmpty property="IsRealEstatePage" prepend=",">IsRealEstatePage</isNotEmpty>
+          <isNotEmpty property="IsFinancialInsPage" prepend=",">IsFinancialInsPage</isNotEmpty>
+          <isNotEmpty property="IsIntellectPropPage" prepend=",">IsIntellectPropPage</isNotEmpty>
+          <isNotEmpty property="IsCorporatePage" prepend=",">IsCorporatePage</isNotEmpty>
+          <isNotEmpty property="IsFirmMergedWithOtherFirm" prepend=",">IsFirmMergedWithOtherFirm</isNotEmpty>
+          <isNotEmpty property="IsAopPage" prepend=",">IsAopPage</isNotEmpty>
+          <isNotEmpty property="IsPracticePage" prepend=",">IsPracticePage</isNotEmpty>
+          <isNotEmpty property="IsFirmPage" prepend=",">IsFirmPage</isNotEmpty>
+          <isNotEmpty property="IsCoveragePage" prepend=",">IsCoveragePage</isNotEmpty>
+          <isNotEmpty property="IsApplIntToFinanAssests" prepend=",">IsApplIntToFinanAssests</isNotEmpty>
+          <isNotEmpty property="IsPolicyIncludeLateralHireCov" prepend=",">IsPolicyIncludeLateralHireCov</isNotEmpty>
+          <isNotEmpty property="IsFirmProvidedLegalServiceToInvestment" prepend=",">IsFirmProvidedLegalServiceToInvestment</isNotEmpty>
+          <isNotEmpty property="IsFirmProvidedLegalServiceToMoney" prepend=",">IsFirmProvidedLegalServiceToMoney</isNotEmpty>
+          <isNotEmpty property="IsFirmProvidedLegalServiceToInvClient" prepend=",">IsFirmProvidedLegalServiceToInvClient</isNotEmpty>
+          <isNotEmpty property="BackupAttorneyAddress2" prepend=",">BackupAttorneyAddress2</isNotEmpty>
+          <isNotEmpty property="CommentsByInsured" prepend=",">CommentsByInsured</isNotEmpty>
+          <isNotEmpty property="CommentsByAgent" prepend=",">CommentsByAgent</isNotEmpty>
+          <isNotEmpty property="IsLoginMailSent" prepend=",">IsLoginMailSent</isNotEmpty>
+          <isNotEmpty property="IsMailSent" prepend=",">IsMailSent</isNotEmpty>
+          <isNotEmpty property="IsRegistrationPage" prepend=",">IsRegistrationPage</isNotEmpty>
+          <isNotEmpty property="IsRetreivalMailSent" prepend=",">IsRetreivalMailSent</isNotEmpty>
+          <isNotEmpty property="IsQuickQuotePage" prepend=",">IsQuickQuotePage</isNotEmpty>
+          <isNotEmpty property="IsClaimInLastFiveYears" prepend=",">IsClaimInLastFiveYears</isNotEmpty>
+          <isNotEmpty property="IsReceiveNewsLetter" prepend=",">IsReceiveNewsLetter</isNotEmpty>
+          <isNotEmpty property="IsFirmReferred" prepend=",">IsFirmReferred</isNotEmpty>
+          <isNotEmpty property="QuoteEffectiveDate" prepend=",">QuoteEffectiveDate</isNotEmpty>
+          <isNotEmpty property="QuoteExpiryDate" prepend=",">QuoteExpiryDate</isNotEmpty>
+          <isNotEmpty property="Comment" prepend=",">Comment</isNotEmpty>
+          <isNotEmpty property="ModifierComment" prepend=",">ModifierComment</isNotEmpty>
+          <isNotEmpty property="CreatedBy" prepend=",">CreatedBy</isNotEmpty>
+          <isNotEmpty property="IsQuoteViewedByInsured" prepend=",">IsQuoteViewedByInsured</isNotEmpty>
+          <isNotEmpty property="AcceptanceDate" prepend=",">AcceptanceDate</isNotEmpty>
+          <isNotEmpty property="QuoteSentDate" prepend=",">QuoteSentDate</isNotEmpty>
+          <isNotEmpty property="IsTaxCalculation" prepend=",">IsTaxCalculation</isNotEmpty>
+          <isNotEmpty property="IsViewed" prepend=",">IsViewed</isNotEmpty>
+          <isNotEmpty property="QuoteComment" prepend=",">QuoteComment</isNotEmpty>
+          <isNotEmpty property="IsQuickQuoteMailSent" prepend=",">IsQuickQuoteMailSent</isNotEmpty>
+          <isNotEmpty property="IsLicenseNumberUpdated" prepend=",">IsLicenseNumberUpdated</isNotEmpty>
+          <isNotEmpty property="IssuedDate" prepend=",">IssuedDate</isNotEmpty>
+          <isNotEmpty property="IsRealEstateResidentialPage" prepend=",">IsRealEstateResidentialPage</isNotEmpty>
+          <isNotEmpty property="IsRealEstateCommercialPage" prepend=",">IsRealEstateCommercialPage</isNotEmpty>
+          <isNotEmpty property="IsApplFirmWithDifferentLegalName" prepend=",">IsApplFirmWithDifferentLegalName</isNotEmpty>
+          <isNotEmpty property="ApplLegalNameAddressDesc" prepend=",">ApplLegalNameAddressDesc</isNotEmpty>
+          <isNotEmpty property="IsFirmEquityInterestInTitleInsurance" prepend=",">IsFirmEquityInterestInTitleInsurance</isNotEmpty>
+          <isNotEmpty property="MarketingId" prepend=",">MarketingId</isNotEmpty>
+          <isNotEmpty property="IsFirmProvidedLegalServiceDesc" prepend=",">IsFirmProvidedLegalServiceDesc</isNotEmpty>
+          <isNotEmpty property="IsAttorneyAddedDeleted" prepend=",">IsAttorneyAddedDeleted</isNotEmpty>
+          <isNotEmpty property="IsFirmProvidedLegalService" prepend=",">IsFirmProvidedLegalService</isNotEmpty>
+          <isNotEmpty property="IsRenewFirmPage" prepend=",">IsRenewFirmPage</isNotEmpty>
+          <isNotEmpty property="IsFirmProvideInvestmentAdvice" prepend=",">IsFirmProvideInvestmentAdvice</isNotEmpty>
+          <isNotEmpty property="ClientNameFirstLargestRevenueClient" prepend=",">ClientNameFirstLargestRevenueClient</isNotEmpty>
+          <isNotEmpty property="Is9010Policy" prepend=",">Is9010Policy</isNotEmpty>
+          <isNotEmpty property="IsSpecialIssuance" prepend=",">IsSpecialIssuance</isNotEmpty>
+          <isNotEmpty property="GrossFeesPaidRenew" prepend=",">GrossFeesPaidRenew</isNotEmpty>
+          <isNotEmpty property="DateRenderedFirstLargestRevenueClient" prepend=",">DateRenderedFirstLargestRevenueClient</isNotEmpty>
+          <isNotEmpty property="ClientNameSecondLargestRevenueClient" prepend=",">ClientNameSecondLargestRevenueClient</isNotEmpty>
+          <isNotEmpty property="IsRenewalReview" prepend=",">IsRenewalReview</isNotEmpty>
+          <isNotEmpty property="SpecialIssuanceComments" prepend=",">SpecialIssuanceComments</isNotEmpty>
+          <isNotEmpty property="ipfsQuoteNumber" prepend=",">ipfsQuoteNumber</isNotEmpty>
+          <isNotEmpty property="RenewalReviewComments" prepend=",">RenewalReviewComments</isNotEmpty>
+          <isNotEmpty property="DateRenderedSecondLargestRevenueClient" prepend=",">DateRenderedSecondLargestRevenueClient</isNotEmpty>
+          <isNotEmpty property="IsOffRiskLetterUploaded" prepend=",">IsOffRiskLetterUploaded</isNotEmpty>
+          <isNotEmpty property="isPricingApproved" prepend=",">isPricingApproved</isNotEmpty>
+          <isNotEmpty property="isComingFromUWFlow" prepend=",">isComingFromUWFlow</isNotEmpty>
+          <isNotEmpty property="UnderwriterComment" prepend=",">UnderwriterComment</isNotEmpty>
+          <isNotEmpty property="FollowUnderwriterFlow" prepend=",">FollowUnderwriterFlow</isNotEmpty>
+          <isNotEmpty property="ReferralCountHistory" prepend=",">ReferralCountHistory</isNotEmpty>
+          <isNotEmpty property="NumberOfLawyers" prepend=",">NumberOfLawyers</isNotEmpty>
+          <isNotEmpty property="NumberOfLawyers500" prepend=",">NumberOfLawyers500</isNotEmpty>
+          <isNotEmpty property="NumberOfLawyers1000" prepend=",">NumberOfLawyers1000</isNotEmpty>
+          <isNotEmpty property="IsIndicationPage" prepend=",">IsIndicationPage</isNotEmpty>
+          <isNotEmpty property="IsFormDocumentSigned" prepend=",">IsFormDocumentSigned</isNotEmpty>
+          <isNotEmpty property="SubProducerComment" prepend=",">SubProducerComment</isNotEmpty>
+          <isNotEmpty property="IsThankYouEmailSend" prepend=",">IsThankYouEmailSend</isNotEmpty>
+          <isNotEmpty property="QQRMLink" prepend=",">QQRMLink</isNotEmpty>
+          <isNotEmpty property="isFirmCoverageForPreceedorFirmsDescription" prepend=",">isFirmCoverageForPreceedorFirmsDescription</isNotEmpty>
+          <isNotEmpty property="FirmInvestmentAdviceDesc" prepend=",">FirmInvestmentAdviceDesc</isNotEmpty>
+          <isNotEmpty property="isServedAsCEOChairmanPresident" prepend=",">isServedAsCEOChairmanPresident</isNotEmpty>
+          <isNotEmpty property="isPolicyExcludeCoverageDescription" prepend=",">isPolicyExcludeCoverageDescription</isNotEmpty>
+          <isNotEmpty property="isPolicyExcludeCoverage" prepend=",">isPolicyExcludeCoverage</isNotEmpty>
+          <isNotEmpty property="disbursementTransaction" prepend=",">disbursementTransaction</isNotEmpty>
+          <isNotEmpty property="peopleToDisburseFunds" prepend=",">peopleToDisburseFunds</isNotEmpty>
+          <isNotEmpty property="instructionsDocumentedReceivingParty" prepend=",">instructionsDocumentedReceivingParty</isNotEmpty>
+          <isNotEmpty property="doucumentedProtocolsAndAuthority" prepend=",">doucumentedProtocolsAndAuthority</isNotEmpty>
+          <isNotEmpty property="IsIndicationMailSent" prepend=",">IsIndicationMailSent</isNotEmpty>
+          <isNotEmpty property="IsCantSeeQuote" prepend=",">IsCantSeeQuote</isNotEmpty>
+          <isNotEmpty property="IsAOPChange" prepend=",">IsAOPChange</isNotEmpty>
+          <isNotEmpty property="ZohoAccountID" prepend=",">ZohoAccountID</isNotEmpty>
+          <isNotEmpty property="VersionKey" prepend=",">VersionKey</isNotEmpty>
+          <isNotEmpty property="isNewApp" prepend=",">isNewApp</isNotEmpty>
+          <isNotEmpty property="hasAnyFirmPersonnelReported" prepend=",">hasAnyFirmPersonnelReported</isNotEmpty>
+          ) values (#PolicyKey:NUMERIC#
+          <isNotEmpty property="ContactPerson" prepend=",">#ContactPerson#</isNotEmpty>
+          <isNotEmpty property="ContactPhone" prepend=",">#ContactPhone#</isNotEmpty>
+          <isNotEmpty property="IsFirmCarryingProfLiabilityIns" prepend=",">#IsFirmCarryingProfLiabilityIns#</isNotEmpty>
+          <isNotEmpty property="IsPolicyExcludesCoverage" prepend=",">#IsPolicyExcludesCoverage#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="IsQuickQuoteByEmail" prepend=",">#IsQuickQuoteByEmail#</isNotEmpty>
+          <isNotEmpty property="IsAnAgentCall" prepend=",">#IsAnAgentCall#</isNotEmpty>
+          <isNotEmpty property="ContactPhoneExt" prepend=",">#ContactPhoneExt#</isNotEmpty>
+          <isNotEmpty property="IsBasicPage" prepend=",">#IsBasicPage#</isNotEmpty>
+          <isNotEmpty property="IsGeneralPage" prepend=",">#IsGeneralPage#</isNotEmpty>
+          <isNotEmpty property="IsEntertainmentPage" prepend=",">#IsEntertainmentPage#</isNotEmpty>
+          <isNotEmpty property="IsClientTerminated" prepend=",">#IsClientTerminated#</isNotEmpty>
+          <isNotEmpty property="FirstReviewUserID" prepend=",">#FirstReviewUserID#</isNotEmpty>
+          <isNotEmpty property="LicenseNumber" prepend=",">#LicenseNumber#</isNotEmpty>
+          <isNotEmpty property="IsQuotePage" prepend=",">#IsQuotePage#</isNotEmpty>
+          <isNotEmpty property="YearOfFirmEstablished" prepend=",">#YearOfFirmEstablished#</isNotEmpty>
+          <isNotEmpty property="IsFirmPracticeInOtherState" prepend=",">#IsFirmPracticeInOtherState#</isNotEmpty>
+          <isNotEmpty property="IsFirmHaveClientInEntertainmentInd" prepend=",">#IsFirmHaveClientInEntertainmentInd#</isNotEmpty>
+          <isNotEmpty property="IsFirmInvolvedInClassActionCase" prepend=",">#IsFirmInvolvedInClassActionCase#</isNotEmpty>
+          <isNotEmpty property="IsFirmProvidedLegalServiceToSecurity" prepend=",">#IsFirmProvidedLegalServiceToSecurity#</isNotEmpty>
+          <isNotEmpty property="IsFirmHaveClientMoreThan25PercentOfBilling" prepend=",">#IsFirmHaveClientMoreThan25PercentOfBilling#</isNotEmpty>
+          <isNotEmpty property="PercentFromFirstLargestRevenueClient" prepend=",">#PercentFromFirstLargestRevenueClient#</isNotEmpty>
+          <isNotEmpty property="PercentFromSecondLargestRevenueClient" prepend=",">#PercentFromSecondLargestRevenueClient#</isNotEmpty>
+          <isNotEmpty property="ServicesRenderedFirstLargestRevenueClient" prepend=",">#ServicesRenderedFirstLargestRevenueClient#</isNotEmpty>
+          <isNotEmpty property="ServicesRenderedSecondLargestRevenueClient" prepend=",">#ServicesRenderedSecondLargestRevenueClient#</isNotEmpty>
+          <isNotEmpty property="IsFirmHaveLawyersLiabilityInsurance" prepend=",">#IsFirmHaveLawyersLiabilityInsurance#</isNotEmpty>
+          <isNotEmpty property="PolicyExcludeCoverageForAffiliatesDesc" prepend=",">#PolicyExcludeCoverageForAffiliatesDesc#</isNotEmpty>
+          <isNotEmpty property="IsFirmCoverageForPreceedorFirms" prepend=",">#IsFirmCoverageForPreceedorFirms#</isNotEmpty>
+          <isNotEmpty property="IsFirmHaveEquityIntGrtThan10" prepend=",">#IsFirmHaveEquityIntGrtThan10#</isNotEmpty>
+          <isNotEmpty property="IsFirmPersServedAsOfficerInJointVenture" prepend=",">#IsFirmPersServedAsOfficerInJointVenture#</isNotEmpty>
+          <isNotEmpty property="IsApplicantProvidesLegalServices" prepend=",">#IsApplicantProvidesLegalServices#</isNotEmpty>
+          <isNotEmpty property="ApplicantProvidesLegalServicesDesc" prepend=",">#ApplicantProvidesLegalServicesDesc#</isNotEmpty>
+          <isNotEmpty property="IsAttorneyNotCoveredByProfLiability" prepend=",">#IsAttorneyNotCoveredByProfLiability#</isNotEmpty>
+          <isNotEmpty property="IsAppOfficeSharedWithAttorney" prepend=",">#IsAppOfficeSharedWithAttorney#</isNotEmpty>
+          <isNotEmpty property="TotalNumOfNonAttorneyStaff" prepend=",">#TotalNumOfNonAttorneyStaff#</isNotEmpty>
+          <isNotEmpty property="IsFirmHaveIndepDockets" prepend=",">#IsFirmHaveIndepDockets#</isNotEmpty>
+          <isNotEmpty property="IsFirmRequireEngagementLetter" prepend=",">#IsFirmRequireEngagementLetter#</isNotEmpty>
+          <isNotEmpty property="IsNonEngagementLetterIssueToFirm" prepend=",">#IsNonEngagementLetterIssueToFirm#</isNotEmpty>
+          <isNotEmpty property="IsPolicyProhibitAttorneyWithInvestment" prepend=",">#IsPolicyProhibitAttorneyWithInvestment#</isNotEmpty>
+          <isNotEmpty property="IsEmplRelativeToConfInfomation" prepend=",">#IsEmplRelativeToConfInfomation#</isNotEmpty>
+          <isNotEmpty property="PercentofApplAcctRcbl" prepend=",">#PercentofApplAcctRcbl#</isNotEmpty>
+          <isNotEmpty property="IsApplInitiatedLawsuitForFirm" prepend=",">#IsApplInitiatedLawsuitForFirm#</isNotEmpty>
+          <isNotEmpty property="IsAttorneyDeclineForProfLiability" prepend=",">#IsAttorneyDeclineForProfLiability#</isNotEmpty>
+          <isNotEmpty property="AttorneyDeclineForProfLiabilityDates" prepend=",">#AttorneyDeclineForProfLiabilityDates#</isNotEmpty>
+          <isNotEmpty property="AttorneyDeclineForProfLiabilityReasons" prepend=",">#AttorneyDeclineForProfLiabilityReasons#</isNotEmpty>
+          <isNotEmpty property="IsIndependentContractor" prepend=",">#IsIndependentContractor#</isNotEmpty>
+          <isNotEmpty property="IsFirmHaveBackupAttorney" prepend=",">#IsFirmHaveBackupAttorney#</isNotEmpty>
+          <isNotEmpty property="PerOfGrossBillingsUnderContract" prepend=",">#PerOfGrossBillingsUnderContract#</isNotEmpty>
+          <isNotEmpty property="BackupAttorneyName" prepend=",">#BackupAttorneyName#</isNotEmpty>
+          <isNotEmpty property="BackupAttorneyAddress" prepend=",">#BackupAttorneyAddress#</isNotEmpty>
+          <isNotEmpty property="BackupAttorneyPhoneNumber" prepend=",">#BackupAttorneyPhoneNumber#</isNotEmpty>
+          <isNotEmpty property="IsFirmHaveProcForFormersClients" prepend=",">#IsFirmHaveProcForFormersClients#</isNotEmpty>
+          <isNotEmpty property="IsLawyerProfLiabClaimAgntAppl" prepend=",">#IsLawyerProfLiabClaimAgntAppl#</isNotEmpty>
+          <isNotEmpty property="IsPersonnelBeSubOfAnyInvest" prepend=",">#IsPersonnelBeSubOfAnyInvest#</isNotEmpty>
+          <isNotEmpty property="IsAnyActOmmBecomeClaimAgntFirm" prepend=",">#IsAnyActOmmBecomeClaimAgntFirm#</isNotEmpty>
+          <isNotEmpty property="ApplicantName" prepend=",">#ApplicantName#</isNotEmpty>
+          <isNotEmpty property="IsApplRestWithManagement" prepend=",">#IsApplRestWithManagement#</isNotEmpty>
+          <isNotEmpty property="ApplRestWithManagementDesc" prepend=",">#ApplRestWithManagementDesc#</isNotEmpty>
+          <isNotEmpty property="PersonnelBeSubOfAnyInvestDate" prepend=",">#PersonnelBeSubOfAnyInvestDate#</isNotEmpty>
+          <isNotEmpty property="PersonnelBeSubOfAnyInvestDetails" prepend=",">#PersonnelBeSubOfAnyInvestDetails#</isNotEmpty>
+          <isNotEmpty property="IsTaxPage" prepend=",">#IsTaxPage#</isNotEmpty>
+          <isNotEmpty property="IsEnvironmentalPage" prepend=",">#IsEnvironmentalPage#</isNotEmpty>
+          <isNotEmpty property="IsSecuritiesPage" prepend=",">#IsSecuritiesPage#</isNotEmpty>
+          <isNotEmpty property="IsTitlePage" prepend=",">#IsTitlePage#</isNotEmpty>
+          <isNotEmpty property="IsWillsEstatePage" prepend=",">#IsWillsEstatePage#</isNotEmpty>
+          <isNotEmpty property="IsPlaintiffPage" prepend=",">#IsPlaintiffPage#</isNotEmpty>
+          <isNotEmpty property="IsRealEstatePage" prepend=",">#IsRealEstatePage#</isNotEmpty>
+          <isNotEmpty property="IsFinancialInsPage" prepend=",">#IsFinancialInsPage#</isNotEmpty>
+          <isNotEmpty property="IsIntellectPropPage" prepend=",">#IsIntellectPropPage#</isNotEmpty>
+          <isNotEmpty property="IsCorporatePage" prepend=",">#IsCorporatePage#</isNotEmpty>
+          <isNotEmpty property="IsFirmMergedWithOtherFirm" prepend=",">#IsFirmMergedWithOtherFirm#</isNotEmpty>
+          <isNotEmpty property="IsAopPage" prepend=",">#IsAopPage#</isNotEmpty>
+          <isNotEmpty property="IsPracticePage" prepend=",">#IsPracticePage#</isNotEmpty>
+          <isNotEmpty property="IsFirmPage" prepend=",">#IsFirmPage#</isNotEmpty>
+          <isNotEmpty property="IsCoveragePage" prepend=",">#IsCoveragePage#</isNotEmpty>
+          <isNotEmpty property="IsApplIntToFinanAssests" prepend=",">#IsApplIntToFinanAssests#</isNotEmpty>
+          <isNotEmpty property="IsPolicyIncludeLateralHireCov" prepend=",">#IsPolicyIncludeLateralHireCov#</isNotEmpty>
+          <isNotEmpty property="IsFirmProvidedLegalServiceToInvestment" prepend=",">#IsFirmProvidedLegalServiceToInvestment#</isNotEmpty>
+          <isNotEmpty property="IsFirmProvidedLegalServiceToMoney" prepend=",">#IsFirmProvidedLegalServiceToMoney#</isNotEmpty>
+          <isNotEmpty property="IsFirmProvidedLegalServiceToInvClient" prepend=",">#IsFirmProvidedLegalServiceToInvClient#</isNotEmpty>
+          <isNotEmpty property="BackupAttorneyAddress2" prepend=",">#BackupAttorneyAddress2#</isNotEmpty>
+          <isNotEmpty property="CommentsByInsured" prepend=",">#CommentsByInsured#</isNotEmpty>
+          <isNotEmpty property="CommentsByAgent" prepend=",">#CommentsByAgent#</isNotEmpty>
+          <isNotEmpty property="IsLoginMailSent" prepend=",">#IsLoginMailSent#</isNotEmpty>
+          <isNotEmpty property="IsMailSent" prepend=",">#IsMailSent#</isNotEmpty>
+          <isNotEmpty property="IsRegistrationPage" prepend=",">#IsRegistrationPage#</isNotEmpty>
+          <isNotEmpty property="IsRetreivalMailSent" prepend=",">#IsRetreivalMailSent#</isNotEmpty>
+          <isNotEmpty property="IsQuickQuotePage" prepend=",">#IsQuickQuotePage#</isNotEmpty>
+          <isNotEmpty property="IsClaimInLastFiveYears" prepend=",">#IsClaimInLastFiveYears#</isNotEmpty>
+          <isNotEmpty property="IsReceiveNewsLetter" prepend=",">#IsReceiveNewsLetter#</isNotEmpty>
+          <isNotEmpty property="IsFirmReferred" prepend=",">#IsFirmReferred#</isNotEmpty>
+          <isNotEmpty property="QuoteEffectiveDate" prepend=",">#QuoteEffectiveDate#</isNotEmpty>
+          <isNotEmpty property="QuoteExpiryDate" prepend=",">#QuoteExpiryDate#</isNotEmpty>
+          <isNotEmpty property="Comment" prepend=",">#Comment#</isNotEmpty>
+          <isNotEmpty property="ModifierComment" prepend=",">#ModifierComment#</isNotEmpty>
+          <isNotEmpty property="CreatedBy" prepend=",">#CreatedBy#</isNotEmpty>
+          <isNotEmpty property="IsQuoteViewedByInsured" prepend=",">#IsQuoteViewedByInsured#</isNotEmpty>
+          <isNotEmpty property="AcceptanceDate" prepend=",">#AcceptanceDate#</isNotEmpty>
+          <isNotEmpty property="QuoteSentDate" prepend=",">#QuoteSentDate#</isNotEmpty>
+          <isNotEmpty property="IsTaxCalculation" prepend=",">#IsTaxCalculation#</isNotEmpty>
+          <isNotEmpty property="IsViewed" prepend=",">#IsViewed#</isNotEmpty>
+          <isNotEmpty property="QuoteComment" prepend=",">#QuoteComment#</isNotEmpty>
+          <isNotEmpty property="IsQuickQuoteMailSent" prepend=",">#IsQuickQuoteMailSent#</isNotEmpty>
+          <isNotEmpty property="IsLicenseNumberUpdated" prepend=",">#IsLicenseNumberUpdated#</isNotEmpty>
+          <isNotEmpty property="IssuedDate" prepend=",">#IssuedDate#</isNotEmpty>
+          <isNotEmpty property="IsRealEstateResidentialPage" prepend=",">#IsRealEstateResidentialPage#</isNotEmpty>
+          <isNotEmpty property="IsRealEstateCommercialPage" prepend=",">#IsRealEstateCommercialPage#</isNotEmpty>
+          <isNotEmpty property="IsApplFirmWithDifferentLegalName" prepend=",">#IsApplFirmWithDifferentLegalName#</isNotEmpty>
+          <isNotEmpty property="ApplLegalNameAddressDesc" prepend=",">#ApplLegalNameAddressDesc#</isNotEmpty>
+          <isNotEmpty property="IsFirmEquityInterestInTitleInsurance" prepend=",">#IsFirmEquityInterestInTitleInsurance#</isNotEmpty>
+          <isNotEmpty property="MarketingId" prepend=",">#MarketingId#</isNotEmpty>
+          <isNotEmpty property="IsFirmProvidedLegalServiceDesc" prepend=",">#IsFirmProvidedLegalServiceDesc#</isNotEmpty>
+          <isNotEmpty property="IsAttorneyAddedDeleted" prepend=",">#IsAttorneyAddedDeleted#</isNotEmpty>
+          <isNotEmpty property="IsFirmProvidedLegalService" prepend=",">#IsFirmProvidedLegalService#</isNotEmpty>
+          <isNotEmpty property="IsRenewFirmPage" prepend=",">#IsRenewFirmPage#</isNotEmpty>
+          <isNotEmpty property="IsFirmProvideInvestmentAdvice" prepend=",">#IsFirmProvideInvestmentAdvice#</isNotEmpty>
+          <isNotEmpty property="ClientNameFirstLargestRevenueClient" prepend=",">#ClientNameFirstLargestRevenueClient#</isNotEmpty>
+          <isNotEmpty property="Is9010Policy" prepend=",">#Is9010Policy#</isNotEmpty>
+          <isNotEmpty property="IsSpecialIssuance" prepend=",">#IsSpecialIssuance#</isNotEmpty>
+          <isNotEmpty property="GrossFeesPaidRenew" prepend=",">#GrossFeesPaidRenew#</isNotEmpty>
+          <isNotEmpty property="DateRenderedFirstLargestRevenueClient" prepend=",">#DateRenderedFirstLargestRevenueClient#</isNotEmpty>
+          <isNotEmpty property="ClientNameSecondLargestRevenueClient" prepend=",">#ClientNameSecondLargestRevenueClient#</isNotEmpty>
+          <isNotEmpty property="IsRenewalReview" prepend=",">#IsRenewalReview#</isNotEmpty>
+          <isNotEmpty property="SpecialIssuanceComments" prepend=",">#SpecialIssuanceComments#</isNotEmpty>
+          <isNotEmpty property="ipfsQuoteNumber" prepend=",">#ipfsQuoteNumber#</isNotEmpty>
+          <isNotEmpty property="RenewalReviewComments" prepend=",">#RenewalReviewComments#</isNotEmpty>
+          <isNotEmpty property="DateRenderedSecondLargestRevenueClient" prepend=",">#DateRenderedSecondLargestRevenueClient#</isNotEmpty>
+          <isNotEmpty property="IsOffRiskLetterUploaded" prepend=",">#IsOffRiskLetterUploaded#</isNotEmpty>
+          <isNotEmpty property="isPricingApproved" prepend=",">#isPricingApproved#</isNotEmpty>
+          <isNotEmpty property="isComingFromUWFlow" prepend=",">#isComingFromUWFlow#</isNotEmpty>
+          <isNotEmpty property="UnderwriterComment" prepend=",">#UnderwriterComment#</isNotEmpty>
+          <isNotEmpty property="FollowUnderwriterFlow" prepend=",">#FollowUnderwriterFlow#</isNotEmpty>
+          <isNotEmpty property="ReferralCountHistory" prepend=",">#ReferralCountHistory#</isNotEmpty>
+          <isNotEmpty property="NumberOfLawyers" prepend=",">#NumberOfLawyers#</isNotEmpty>
+          <isNotEmpty property="NumberOfLawyers500" prepend=",">#NumberOfLawyers500#</isNotEmpty>
+          <isNotEmpty property="NumberOfLawyers1000" prepend=",">#NumberOfLawyers1000#</isNotEmpty>
+          <isNotEmpty property="IsIndicationPage" prepend=",">#IsIndicationPage#</isNotEmpty>
+          <isNotEmpty property="IsFormDocumentSigned" prepend=",">#IsFormDocumentSigned#</isNotEmpty>
+          <isNotEmpty property="SubProducerComment" prepend=",">#SubProducerComment#</isNotEmpty>
+          <isNotEmpty property="IsThankYouEmailSend" prepend=",">#IsThankYouEmailSend#</isNotEmpty>
+          <isNotEmpty property="QQRMLink" prepend=",">#QQRMLink#</isNotEmpty>
+          <isNotEmpty property="isFirmCoverageForPreceedorFirmsDescription" prepend=",">#isFirmCoverageForPreceedorFirmsDescription#</isNotEmpty>
+          <isNotEmpty property="FirmInvestmentAdviceDesc" prepend=",">#FirmInvestmentAdviceDesc#</isNotEmpty>
+          <isNotEmpty property="isServedAsCEOChairmanPresident" prepend=",">#isServedAsCEOChairmanPresident#</isNotEmpty>
+          <isNotEmpty property="isPolicyExcludeCoverageDescription" prepend=",">#isPolicyExcludeCoverageDescription#</isNotEmpty>
+          <isNotEmpty property="isPolicyExcludeCoverage" prepend=",">#isPolicyExcludeCoverage#</isNotEmpty>
+          <isNotEmpty property="disbursementTransaction" prepend=",">#disbursementTransaction#</isNotEmpty>
+          <isNotEmpty property="peopleToDisburseFunds" prepend=",">#peopleToDisburseFunds#</isNotEmpty>
+          <isNotEmpty property="instructionsDocumentedReceivingParty" prepend=",">#instructionsDocumentedReceivingParty#</isNotEmpty>
+          <isNotEmpty property="doucumentedProtocolsAndAuthority" prepend=",">#doucumentedProtocolsAndAuthority#</isNotEmpty>
+          <isNotEmpty property="IsIndicationMailSent" prepend=",">#IsIndicationMailSent#</isNotEmpty>
+          <isNotEmpty property="IsCantSeeQuote" prepend=",">#IsCantSeeQuote#</isNotEmpty>
+          <isNotEmpty property="IsAOPChange" prepend=",">#IsAOPChange#</isNotEmpty>
+          <isNotEmpty property="ZohoAccountID" prepend=",">#ZohoAccountID#</isNotEmpty>
+          <isNotEmpty property="VersionKey" prepend=",">#VersionKey#</isNotEmpty>
+          <isNotEmpty property="isNewApp" prepend=",">#isNewApp#</isNotEmpty>
+          <isNotEmpty property="hasAnyFirmPersonnelReported" prepend=",">#hasAnyFirmPersonnelReported#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="VersionSequence">SELECT IDENT_CURRENT('FirmLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ContactPerson, ContactPhone, IsFirmCarryingProfLiabilityIns, IsPolicyExcludesCoverage, LastUpdateUserID, LastUpdateTimeStamp, IsQuickQuoteByEmail, IsAnAgentCall, ContactPhoneExt, IsBasicPage, IsGeneralPage, IsEntertainmentPage, IsClientTerminated, FirstReviewUserID, VersionSequence, LicenseNumber, IsQuotePage, YearOfFirmEstablished, IsFirmPracticeInOtherState, IsFirmHaveClientInEntertainmentInd, IsFirmInvolvedInClassActionCase, IsFirmProvidedLegalServiceToSecurity, IsFirmHaveClientMoreThan25PercentOfBilling, PercentFromFirstLargestRevenueClient, PercentFromSecondLargestRevenueClient, ServicesRenderedFirstLargestRevenueClient, ServicesRenderedSecondLargestRevenueClient, IsFirmHaveLawyersLiabilityInsurance, PolicyExcludeCoverageForAffiliatesDesc, IsFirmCoverageForPreceedorFirms, IsFirmHaveEquityIntGrtThan10, IsFirmPersServedAsOfficerInJointVenture, IsApplicantProvidesLegalServices, ApplicantProvidesLegalServicesDesc, IsAttorneyNotCoveredByProfLiability, IsAppOfficeSharedWithAttorney, TotalNumOfNonAttorneyStaff, IsFirmHaveIndepDockets, IsFirmRequireEngagementLetter, IsNonEngagementLetterIssueToFirm, IsPolicyProhibitAttorneyWithInvestment, IsEmplRelativeToConfInfomation, PercentofApplAcctRcbl, IsApplInitiatedLawsuitForFirm, IsAttorneyDeclineForProfLiability, AttorneyDeclineForProfLiabilityDates, AttorneyDeclineForProfLiabilityReasons, IsIndependentContractor, IsFirmHaveBackupAttorney, PerOfGrossBillingsUnderContract, BackupAttorneyName, BackupAttorneyAddress, BackupAttorneyPhoneNumber, IsFirmHaveProcForFormersClients, IsLawyerProfLiabClaimAgntAppl, IsPersonnelBeSubOfAnyInvest, IsAnyActOmmBecomeClaimAgntFirm, ApplicantName, IsApplRestWithManagement, ApplRestWithManagementDesc, PersonnelBeSubOfAnyInvestDate, PersonnelBeSubOfAnyInvestDetails, IsTaxPage, IsEnvironmentalPage, IsSecuritiesPage, IsTitlePage, IsWillsEstatePage, IsPlaintiffPage, IsRealEstatePage, IsFinancialInsPage, IsIntellectPropPage, IsCorporatePage, IsFirmMergedWithOtherFirm, IsAopPage, IsPracticePage, IsFirmPage, IsCoveragePage, IsApplIntToFinanAssests, IsPolicyIncludeLateralHireCov, IsFirmProvidedLegalServiceToInvestment, IsFirmProvidedLegalServiceToMoney, IsFirmProvidedLegalServiceToInvClient, BackupAttorneyAddress2, CommentsByInsured, CommentsByAgent, IsLoginMailSent, IsMailSent, IsRegistrationPage, IsRetreivalMailSent, IsQuickQuotePage, IsClaimInLastFiveYears, IsReceiveNewsLetter, IsFirmReferred, QuoteEffectiveDate, QuoteExpiryDate, Comment, ModifierComment, CreatedBy, IsQuoteViewedByInsured, AcceptanceDate, QuoteSentDate, IsTaxCalculation, IsViewed, QuoteComment, IsQuickQuoteMailSent, IsLicenseNumberUpdated, IssuedDate, IsRealEstateResidentialPage, IsRealEstateCommercialPage, IsApplFirmWithDifferentLegalName, ApplLegalNameAddressDesc, IsFirmEquityInterestInTitleInsurance, MarketingId, IsFirmProvidedLegalServiceDesc, IsAttorneyAddedDeleted, IsFirmProvidedLegalService, IsRenewFirmPage, IsFirmProvideInvestmentAdvice, ClientNameFirstLargestRevenueClient, Is9010Policy, IsSpecialIssuance, GrossFeesPaidRenew, DateRenderedFirstLargestRevenueClient, ClientNameSecondLargestRevenueClient, IsRenewalReview, SpecialIssuanceComments, ipfsQuoteNumber, RenewalReviewComments, DateRenderedSecondLargestRevenueClient, IsOffRiskLetterUploaded, isPricingApproved, isComingFromUWFlow, UnderwriterComment, FollowUnderwriterFlow, ReferralCountHistory, NumberOfLawyers, NumberOfLawyers500, NumberOfLawyers1000, IsIndicationPage, IsFormDocumentSigned, SubProducerComment, IsThankYouEmailSend, QQRMLink, isFirmCoverageForPreceedorFirmsDescription, FirmInvestmentAdviceDesc, isServedAsCEOChairmanPresident, isPolicyExcludeCoverageDescription, isPolicyExcludeCoverage, disbursementTransaction, peopleToDisburseFunds, instructionsDocumentedReceivingParty, doucumentedProtocolsAndAuthority, IsIndicationMailSent, IsCantSeeQuote, IsAOPChange, ZohoAccountID, VersionKey, isNewApp, hasAnyFirmPersonnelReported, PolicyKey from FirmLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update FirmLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="ContactPerson" prepend=",">ContactPerson = #ContactPerson#</isNotEmpty>
+               <isEmpty property="ContactPerson" prepend=",">ContactPerson = null</isEmpty>
+               <isNotEmpty property="ContactPhone" prepend=",">ContactPhone = #ContactPhone#</isNotEmpty>
+               <isEmpty property="ContactPhone" prepend=",">ContactPhone = null</isEmpty>
+               <isNotEmpty property="IsFirmCarryingProfLiabilityIns" prepend=",">IsFirmCarryingProfLiabilityIns = #IsFirmCarryingProfLiabilityIns#</isNotEmpty>
+               <isEmpty property="IsFirmCarryingProfLiabilityIns" prepend=",">IsFirmCarryingProfLiabilityIns = null</isEmpty>
+               <isNotEmpty property="IsPolicyExcludesCoverage" prepend=",">IsPolicyExcludesCoverage = #IsPolicyExcludesCoverage#</isNotEmpty>
+               <isEmpty property="IsPolicyExcludesCoverage" prepend=",">IsPolicyExcludesCoverage = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="IsQuickQuoteByEmail" prepend=",">IsQuickQuoteByEmail = #IsQuickQuoteByEmail#</isNotEmpty>
+               <isEmpty property="IsQuickQuoteByEmail" prepend=",">IsQuickQuoteByEmail = null</isEmpty>
+               <isNotEmpty property="IsAnAgentCall" prepend=",">IsAnAgentCall = #IsAnAgentCall#</isNotEmpty>
+               <isEmpty property="IsAnAgentCall" prepend=",">IsAnAgentCall = null</isEmpty>
+               <isNotEmpty property="ContactPhoneExt" prepend=",">ContactPhoneExt = #ContactPhoneExt#</isNotEmpty>
+               <isEmpty property="ContactPhoneExt" prepend=",">ContactPhoneExt = null</isEmpty>
+               <isNotEmpty property="IsBasicPage" prepend=",">IsBasicPage = #IsBasicPage#</isNotEmpty>
+               <isEmpty property="IsBasicPage" prepend=",">IsBasicPage = null</isEmpty>
+               <isNotEmpty property="IsGeneralPage" prepend=",">IsGeneralPage = #IsGeneralPage#</isNotEmpty>
+               <isEmpty property="IsGeneralPage" prepend=",">IsGeneralPage = null</isEmpty>
+               <isNotEmpty property="IsEntertainmentPage" prepend=",">IsEntertainmentPage = #IsEntertainmentPage#</isNotEmpty>
+               <isEmpty property="IsEntertainmentPage" prepend=",">IsEntertainmentPage = null</isEmpty>
+               <isNotEmpty property="IsClientTerminated" prepend=",">IsClientTerminated = #IsClientTerminated#</isNotEmpty>
+               <isEmpty property="IsClientTerminated" prepend=",">IsClientTerminated = null</isEmpty>
+               <isNotEmpty property="FirstReviewUserID" prepend=",">FirstReviewUserID = #FirstReviewUserID#</isNotEmpty>
+               <isEmpty property="FirstReviewUserID" prepend=",">FirstReviewUserID = null</isEmpty>
+               <isNotEmpty property="LicenseNumber" prepend=",">LicenseNumber = #LicenseNumber#</isNotEmpty>
+               <isEmpty property="LicenseNumber" prepend=",">LicenseNumber = null</isEmpty>
+               <isNotEmpty property="IsQuotePage" prepend=",">IsQuotePage = #IsQuotePage#</isNotEmpty>
+               <isEmpty property="IsQuotePage" prepend=",">IsQuotePage = null</isEmpty>
+               <isNotEmpty property="YearOfFirmEstablished" prepend=",">YearOfFirmEstablished = #YearOfFirmEstablished#</isNotEmpty>
+               <isEmpty property="YearOfFirmEstablished" prepend=",">YearOfFirmEstablished = null</isEmpty>
+               <isNotEmpty property="IsFirmPracticeInOtherState" prepend=",">IsFirmPracticeInOtherState = #IsFirmPracticeInOtherState#</isNotEmpty>
+               <isEmpty property="IsFirmPracticeInOtherState" prepend=",">IsFirmPracticeInOtherState = null</isEmpty>
+               <isNotEmpty property="IsFirmHaveClientInEntertainmentInd" prepend=",">IsFirmHaveClientInEntertainmentInd = #IsFirmHaveClientInEntertainmentInd#</isNotEmpty>
+               <isEmpty property="IsFirmHaveClientInEntertainmentInd" prepend=",">IsFirmHaveClientInEntertainmentInd = null</isEmpty>
+               <isNotEmpty property="IsFirmInvolvedInClassActionCase" prepend=",">IsFirmInvolvedInClassActionCase = #IsFirmInvolvedInClassActionCase#</isNotEmpty>
+               <isEmpty property="IsFirmInvolvedInClassActionCase" prepend=",">IsFirmInvolvedInClassActionCase = null</isEmpty>
+               <isNotEmpty property="IsFirmProvidedLegalServiceToSecurity" prepend=",">IsFirmProvidedLegalServiceToSecurity = #IsFirmProvidedLegalServiceToSecurity#</isNotEmpty>
+               <isEmpty property="IsFirmProvidedLegalServiceToSecurity" prepend=",">IsFirmProvidedLegalServiceToSecurity = null</isEmpty>
+               <isNotEmpty property="IsFirmHaveClientMoreThan25PercentOfBilling" prepend=",">IsFirmHaveClientMoreThan25PercentOfBilling = #IsFirmHaveClientMoreThan25PercentOfBilling#</isNotEmpty>
+               <isEmpty property="IsFirmHaveClientMoreThan25PercentOfBilling" prepend=",">IsFirmHaveClientMoreThan25PercentOfBilling = null</isEmpty>
+               <isNotEmpty property="PercentFromFirstLargestRevenueClient" prepend=",">PercentFromFirstLargestRevenueClient = #PercentFromFirstLargestRevenueClient#</isNotEmpty>
+               <isEmpty property="PercentFromFirstLargestRevenueClient" prepend=",">PercentFromFirstLargestRevenueClient = null</isEmpty>
+               <isNotEmpty property="PercentFromSecondLargestRevenueClient" prepend=",">PercentFromSecondLargestRevenueClient = #PercentFromSecondLargestRevenueClient#</isNotEmpty>
+               <isEmpty property="PercentFromSecondLargestRevenueClient" prepend=",">PercentFromSecondLargestRevenueClient = null</isEmpty>
+               <isNotEmpty property="ServicesRenderedFirstLargestRevenueClient" prepend=",">ServicesRenderedFirstLargestRevenueClient = #ServicesRenderedFirstLargestRevenueClient#</isNotEmpty>
+               <isEmpty property="ServicesRenderedFirstLargestRevenueClient" prepend=",">ServicesRenderedFirstLargestRevenueClient = null</isEmpty>
+               <isNotEmpty property="ServicesRenderedSecondLargestRevenueClient" prepend=",">ServicesRenderedSecondLargestRevenueClient = #ServicesRenderedSecondLargestRevenueClient#</isNotEmpty>
+               <isEmpty property="ServicesRenderedSecondLargestRevenueClient" prepend=",">ServicesRenderedSecondLargestRevenueClient = null</isEmpty>
+               <isNotEmpty property="IsFirmHaveLawyersLiabilityInsurance" prepend=",">IsFirmHaveLawyersLiabilityInsurance = #IsFirmHaveLawyersLiabilityInsurance#</isNotEmpty>
+               <isEmpty property="IsFirmHaveLawyersLiabilityInsurance" prepend=",">IsFirmHaveLawyersLiabilityInsurance = null</isEmpty>
+               <isNotEmpty property="PolicyExcludeCoverageForAffiliatesDesc" prepend=",">PolicyExcludeCoverageForAffiliatesDesc = #PolicyExcludeCoverageForAffiliatesDesc#</isNotEmpty>
+               <isEmpty property="PolicyExcludeCoverageForAffiliatesDesc" prepend=",">PolicyExcludeCoverageForAffiliatesDesc = null</isEmpty>
+               <isNotEmpty property="IsFirmCoverageForPreceedorFirms" prepend=",">IsFirmCoverageForPreceedorFirms = #IsFirmCoverageForPreceedorFirms#</isNotEmpty>
+               <isEmpty property="IsFirmCoverageForPreceedorFirms" prepend=",">IsFirmCoverageForPreceedorFirms = null</isEmpty>
+               <isNotEmpty property="IsFirmHaveEquityIntGrtThan10" prepend=",">IsFirmHaveEquityIntGrtThan10 = #IsFirmHaveEquityIntGrtThan10#</isNotEmpty>
+               <isEmpty property="IsFirmHaveEquityIntGrtThan10" prepend=",">IsFirmHaveEquityIntGrtThan10 = null</isEmpty>
+               <isNotEmpty property="IsFirmPersServedAsOfficerInJointVenture" prepend=",">IsFirmPersServedAsOfficerInJointVenture = #IsFirmPersServedAsOfficerInJointVenture#</isNotEmpty>
+               <isEmpty property="IsFirmPersServedAsOfficerInJointVenture" prepend=",">IsFirmPersServedAsOfficerInJointVenture = null</isEmpty>
+               <isNotEmpty property="IsApplicantProvidesLegalServices" prepend=",">IsApplicantProvidesLegalServices = #IsApplicantProvidesLegalServices#</isNotEmpty>
+               <isEmpty property="IsApplicantProvidesLegalServices" prepend=",">IsApplicantProvidesLegalServices = null</isEmpty>
+               <isNotEmpty property="ApplicantProvidesLegalServicesDesc" prepend=",">ApplicantProvidesLegalServicesDesc = #ApplicantProvidesLegalServicesDesc#</isNotEmpty>
+               <isEmpty property="ApplicantProvidesLegalServicesDesc" prepend=",">ApplicantProvidesLegalServicesDesc = null</isEmpty>
+               <isNotEmpty property="IsAttorneyNotCoveredByProfLiability" prepend=",">IsAttorneyNotCoveredByProfLiability = #IsAttorneyNotCoveredByProfLiability#</isNotEmpty>
+               <isEmpty property="IsAttorneyNotCoveredByProfLiability" prepend=",">IsAttorneyNotCoveredByProfLiability = null</isEmpty>
+               <isNotEmpty property="IsAppOfficeSharedWithAttorney" prepend=",">IsAppOfficeSharedWithAttorney = #IsAppOfficeSharedWithAttorney#</isNotEmpty>
+               <isEmpty property="IsAppOfficeSharedWithAttorney" prepend=",">IsAppOfficeSharedWithAttorney = null</isEmpty>
+               <isNotEmpty property="TotalNumOfNonAttorneyStaff" prepend=",">TotalNumOfNonAttorneyStaff = #TotalNumOfNonAttorneyStaff#</isNotEmpty>
+               <isEmpty property="TotalNumOfNonAttorneyStaff" prepend=",">TotalNumOfNonAttorneyStaff = null</isEmpty>
+               <isNotEmpty property="IsFirmHaveIndepDockets" prepend=",">IsFirmHaveIndepDockets = #IsFirmHaveIndepDockets#</isNotEmpty>
+               <isEmpty property="IsFirmHaveIndepDockets" prepend=",">IsFirmHaveIndepDockets = null</isEmpty>
+               <isNotEmpty property="IsFirmRequireEngagementLetter" prepend=",">IsFirmRequireEngagementLetter = #IsFirmRequireEngagementLetter#</isNotEmpty>
+               <isEmpty property="IsFirmRequireEngagementLetter" prepend=",">IsFirmRequireEngagementLetter = null</isEmpty>
+               <isNotEmpty property="IsNonEngagementLetterIssueToFirm" prepend=",">IsNonEngagementLetterIssueToFirm = #IsNonEngagementLetterIssueToFirm#</isNotEmpty>
+               <isEmpty property="IsNonEngagementLetterIssueToFirm" prepend=",">IsNonEngagementLetterIssueToFirm = null</isEmpty>
+               <isNotEmpty property="IsPolicyProhibitAttorneyWithInvestment" prepend=",">IsPolicyProhibitAttorneyWithInvestment = #IsPolicyProhibitAttorneyWithInvestment#</isNotEmpty>
+               <isEmpty property="IsPolicyProhibitAttorneyWithInvestment" prepend=",">IsPolicyProhibitAttorneyWithInvestment = null</isEmpty>
+               <isNotEmpty property="IsEmplRelativeToConfInfomation" prepend=",">IsEmplRelativeToConfInfomation = #IsEmplRelativeToConfInfomation#</isNotEmpty>
+               <isEmpty property="IsEmplRelativeToConfInfomation" prepend=",">IsEmplRelativeToConfInfomation = null</isEmpty>
+               <isNotEmpty property="PercentofApplAcctRcbl" prepend=",">PercentofApplAcctRcbl = #PercentofApplAcctRcbl#</isNotEmpty>
+               <isEmpty property="PercentofApplAcctRcbl" prepend=",">PercentofApplAcctRcbl = null</isEmpty>
+               <isNotEmpty property="IsApplInitiatedLawsuitForFirm" prepend=",">IsApplInitiatedLawsuitForFirm = #IsApplInitiatedLawsuitForFirm#</isNotEmpty>
+               <isEmpty property="IsApplInitiatedLawsuitForFirm" prepend=",">IsApplInitiatedLawsuitForFirm = null</isEmpty>
+               <isNotEmpty property="IsAttorneyDeclineForProfLiability" prepend=",">IsAttorneyDeclineForProfLiability = #IsAttorneyDeclineForProfLiability#</isNotEmpty>
+               <isEmpty property="IsAttorneyDeclineForProfLiability" prepend=",">IsAttorneyDeclineForProfLiability = null</isEmpty>
+               <isNotEmpty property="AttorneyDeclineForProfLiabilityDates" prepend=",">AttorneyDeclineForProfLiabilityDates = #AttorneyDeclineForProfLiabilityDates#</isNotEmpty>
+               <isEmpty property="AttorneyDeclineForProfLiabilityDates" prepend=",">AttorneyDeclineForProfLiabilityDates = null</isEmpty>
+               <isNotEmpty property="AttorneyDeclineForProfLiabilityReasons" prepend=",">AttorneyDeclineForProfLiabilityReasons = #AttorneyDeclineForProfLiabilityReasons#</isNotEmpty>
+               <isEmpty property="AttorneyDeclineForProfLiabilityReasons" prepend=",">AttorneyDeclineForProfLiabilityReasons = null</isEmpty>
+               <isNotEmpty property="IsIndependentContractor" prepend=",">IsIndependentContractor = #IsIndependentContractor#</isNotEmpty>
+               <isEmpty property="IsIndependentContractor" prepend=",">IsIndependentContractor = null</isEmpty>
+               <isNotEmpty property="IsFirmHaveBackupAttorney" prepend=",">IsFirmHaveBackupAttorney = #IsFirmHaveBackupAttorney#</isNotEmpty>
+               <isEmpty property="IsFirmHaveBackupAttorney" prepend=",">IsFirmHaveBackupAttorney = null</isEmpty>
+               <isNotEmpty property="PerOfGrossBillingsUnderContract" prepend=",">PerOfGrossBillingsUnderContract = #PerOfGrossBillingsUnderContract#</isNotEmpty>
+               <isEmpty property="PerOfGrossBillingsUnderContract" prepend=",">PerOfGrossBillingsUnderContract = null</isEmpty>
+               <isNotEmpty property="BackupAttorneyName" prepend=",">BackupAttorneyName = #BackupAttorneyName#</isNotEmpty>
+               <isEmpty property="BackupAttorneyName" prepend=",">BackupAttorneyName = null</isEmpty>
+               <isNotEmpty property="BackupAttorneyAddress" prepend=",">BackupAttorneyAddress = #BackupAttorneyAddress#</isNotEmpty>
+               <isEmpty property="BackupAttorneyAddress" prepend=",">BackupAttorneyAddress = null</isEmpty>
+               <isNotEmpty property="BackupAttorneyPhoneNumber" prepend=",">BackupAttorneyPhoneNumber = #BackupAttorneyPhoneNumber#</isNotEmpty>
+               <isEmpty property="BackupAttorneyPhoneNumber" prepend=",">BackupAttorneyPhoneNumber = null</isEmpty>
+               <isNotEmpty property="IsFirmHaveProcForFormersClients" prepend=",">IsFirmHaveProcForFormersClients = #IsFirmHaveProcForFormersClients#</isNotEmpty>
+               <isEmpty property="IsFirmHaveProcForFormersClients" prepend=",">IsFirmHaveProcForFormersClients = null</isEmpty>
+               <isNotEmpty property="IsLawyerProfLiabClaimAgntAppl" prepend=",">IsLawyerProfLiabClaimAgntAppl = #IsLawyerProfLiabClaimAgntAppl#</isNotEmpty>
+               <isEmpty property="IsLawyerProfLiabClaimAgntAppl" prepend=",">IsLawyerProfLiabClaimAgntAppl = null</isEmpty>
+               <isNotEmpty property="IsPersonnelBeSubOfAnyInvest" prepend=",">IsPersonnelBeSubOfAnyInvest = #IsPersonnelBeSubOfAnyInvest#</isNotEmpty>
+               <isEmpty property="IsPersonnelBeSubOfAnyInvest" prepend=",">IsPersonnelBeSubOfAnyInvest = null</isEmpty>
+               <isNotEmpty property="IsAnyActOmmBecomeClaimAgntFirm" prepend=",">IsAnyActOmmBecomeClaimAgntFirm = #IsAnyActOmmBecomeClaimAgntFirm#</isNotEmpty>
+               <isEmpty property="IsAnyActOmmBecomeClaimAgntFirm" prepend=",">IsAnyActOmmBecomeClaimAgntFirm = null</isEmpty>
+               <isNotEmpty property="ApplicantName" prepend=",">ApplicantName = #ApplicantName#</isNotEmpty>
+               <isEmpty property="ApplicantName" prepend=",">ApplicantName = null</isEmpty>
+               <isNotEmpty property="IsApplRestWithManagement" prepend=",">IsApplRestWithManagement = #IsApplRestWithManagement#</isNotEmpty>
+               <isEmpty property="IsApplRestWithManagement" prepend=",">IsApplRestWithManagement = null</isEmpty>
+               <isNotEmpty property="ApplRestWithManagementDesc" prepend=",">ApplRestWithManagementDesc = #ApplRestWithManagementDesc#</isNotEmpty>
+               <isEmpty property="ApplRestWithManagementDesc" prepend=",">ApplRestWithManagementDesc = null</isEmpty>
+               <isNotEmpty property="PersonnelBeSubOfAnyInvestDate" prepend=",">PersonnelBeSubOfAnyInvestDate = #PersonnelBeSubOfAnyInvestDate#</isNotEmpty>
+               <isEmpty property="PersonnelBeSubOfAnyInvestDate" prepend=",">PersonnelBeSubOfAnyInvestDate = null</isEmpty>
+               <isNotEmpty property="PersonnelBeSubOfAnyInvestDetails" prepend=",">PersonnelBeSubOfAnyInvestDetails = #PersonnelBeSubOfAnyInvestDetails#</isNotEmpty>
+               <isEmpty property="PersonnelBeSubOfAnyInvestDetails" prepend=",">PersonnelBeSubOfAnyInvestDetails = null</isEmpty>
+               <isNotEmpty property="IsTaxPage" prepend=",">IsTaxPage = #IsTaxPage#</isNotEmpty>
+               <isEmpty property="IsTaxPage" prepend=",">IsTaxPage = null</isEmpty>
+               <isNotEmpty property="IsEnvironmentalPage" prepend=",">IsEnvironmentalPage = #IsEnvironmentalPage#</isNotEmpty>
+               <isEmpty property="IsEnvironmentalPage" prepend=",">IsEnvironmentalPage = null</isEmpty>
+               <isNotEmpty property="IsSecuritiesPage" prepend=",">IsSecuritiesPage = #IsSecuritiesPage#</isNotEmpty>
+               <isEmpty property="IsSecuritiesPage" prepend=",">IsSecuritiesPage = null</isEmpty>
+               <isNotEmpty property="IsTitlePage" prepend=",">IsTitlePage = #IsTitlePage#</isNotEmpty>
+               <isEmpty property="IsTitlePage" prepend=",">IsTitlePage = null</isEmpty>
+               <isNotEmpty property="IsWillsEstatePage" prepend=",">IsWillsEstatePage = #IsWillsEstatePage#</isNotEmpty>
+               <isEmpty property="IsWillsEstatePage" prepend=",">IsWillsEstatePage = null</isEmpty>
+               <isNotEmpty property="IsPlaintiffPage" prepend=",">IsPlaintiffPage = #IsPlaintiffPage#</isNotEmpty>
+               <isEmpty property="IsPlaintiffPage" prepend=",">IsPlaintiffPage = null</isEmpty>
+               <isNotEmpty property="IsRealEstatePage" prepend=",">IsRealEstatePage = #IsRealEstatePage#</isNotEmpty>
+               <isEmpty property="IsRealEstatePage" prepend=",">IsRealEstatePage = null</isEmpty>
+               <isNotEmpty property="IsFinancialInsPage" prepend=",">IsFinancialInsPage = #IsFinancialInsPage#</isNotEmpty>
+               <isEmpty property="IsFinancialInsPage" prepend=",">IsFinancialInsPage = null</isEmpty>
+               <isNotEmpty property="IsIntellectPropPage" prepend=",">IsIntellectPropPage = #IsIntellectPropPage#</isNotEmpty>
+               <isEmpty property="IsIntellectPropPage" prepend=",">IsIntellectPropPage = null</isEmpty>
+               <isNotEmpty property="IsCorporatePage" prepend=",">IsCorporatePage = #IsCorporatePage#</isNotEmpty>
+               <isEmpty property="IsCorporatePage" prepend=",">IsCorporatePage = null</isEmpty>
+               <isNotEmpty property="IsFirmMergedWithOtherFirm" prepend=",">IsFirmMergedWithOtherFirm = #IsFirmMergedWithOtherFirm#</isNotEmpty>
+               <isEmpty property="IsFirmMergedWithOtherFirm" prepend=",">IsFirmMergedWithOtherFirm = null</isEmpty>
+               <isNotEmpty property="IsAopPage" prepend=",">IsAopPage = #IsAopPage#</isNotEmpty>
+               <isEmpty property="IsAopPage" prepend=",">IsAopPage = null</isEmpty>
+               <isNotEmpty property="IsPracticePage" prepend=",">IsPracticePage = #IsPracticePage#</isNotEmpty>
+               <isEmpty property="IsPracticePage" prepend=",">IsPracticePage = null</isEmpty>
+               <isNotEmpty property="IsFirmPage" prepend=",">IsFirmPage = #IsFirmPage#</isNotEmpty>
+               <isEmpty property="IsFirmPage" prepend=",">IsFirmPage = null</isEmpty>
+               <isNotEmpty property="IsCoveragePage" prepend=",">IsCoveragePage = #IsCoveragePage#</isNotEmpty>
+               <isEmpty property="IsCoveragePage" prepend=",">IsCoveragePage = null</isEmpty>
+               <isNotEmpty property="IsApplIntToFinanAssests" prepend=",">IsApplIntToFinanAssests = #IsApplIntToFinanAssests#</isNotEmpty>
+               <isEmpty property="IsApplIntToFinanAssests" prepend=",">IsApplIntToFinanAssests = null</isEmpty>
+               <isNotEmpty property="IsPolicyIncludeLateralHireCov" prepend=",">IsPolicyIncludeLateralHireCov = #IsPolicyIncludeLateralHireCov#</isNotEmpty>
+               <isEmpty property="IsPolicyIncludeLateralHireCov" prepend=",">IsPolicyIncludeLateralHireCov = null</isEmpty>
+               <isNotEmpty property="IsFirmProvidedLegalServiceToInvestment" prepend=",">IsFirmProvidedLegalServiceToInvestment = #IsFirmProvidedLegalServiceToInvestment#</isNotEmpty>
+               <isEmpty property="IsFirmProvidedLegalServiceToInvestment" prepend=",">IsFirmProvidedLegalServiceToInvestment = null</isEmpty>
+               <isNotEmpty property="IsFirmProvidedLegalServiceToMoney" prepend=",">IsFirmProvidedLegalServiceToMoney = #IsFirmProvidedLegalServiceToMoney#</isNotEmpty>
+               <isEmpty property="IsFirmProvidedLegalServiceToMoney" prepend=",">IsFirmProvidedLegalServiceToMoney = null</isEmpty>
+               <isNotEmpty property="IsFirmProvidedLegalServiceToInvClient" prepend=",">IsFirmProvidedLegalServiceToInvClient = #IsFirmProvidedLegalServiceToInvClient#</isNotEmpty>
+               <isEmpty property="IsFirmProvidedLegalServiceToInvClient" prepend=",">IsFirmProvidedLegalServiceToInvClient = null</isEmpty>
+               <isNotEmpty property="BackupAttorneyAddress2" prepend=",">BackupAttorneyAddress2 = #BackupAttorneyAddress2#</isNotEmpty>
+               <isEmpty property="BackupAttorneyAddress2" prepend=",">BackupAttorneyAddress2 = null</isEmpty>
+               <isNotEmpty property="CommentsByInsured" prepend=",">CommentsByInsured = #CommentsByInsured#</isNotEmpty>
+               <isEmpty property="CommentsByInsured" prepend=",">CommentsByInsured = null</isEmpty>
+               <isNotEmpty property="CommentsByAgent" prepend=",">CommentsByAgent = #CommentsByAgent#</isNotEmpty>
+               <isEmpty property="CommentsByAgent" prepend=",">CommentsByAgent = null</isEmpty>
+               <isNotEmpty property="IsLoginMailSent" prepend=",">IsLoginMailSent = #IsLoginMailSent#</isNotEmpty>
+               <isEmpty property="IsLoginMailSent" prepend=",">IsLoginMailSent = null</isEmpty>
+               <isNotEmpty property="IsMailSent" prepend=",">IsMailSent = #IsMailSent#</isNotEmpty>
+               <isEmpty property="IsMailSent" prepend=",">IsMailSent = null</isEmpty>
+               <isNotEmpty property="IsRegistrationPage" prepend=",">IsRegistrationPage = #IsRegistrationPage#</isNotEmpty>
+               <isEmpty property="IsRegistrationPage" prepend=",">IsRegistrationPage = null</isEmpty>
+               <isNotEmpty property="IsRetreivalMailSent" prepend=",">IsRetreivalMailSent = #IsRetreivalMailSent#</isNotEmpty>
+               <isEmpty property="IsRetreivalMailSent" prepend=",">IsRetreivalMailSent = null</isEmpty>
+               <isNotEmpty property="IsQuickQuotePage" prepend=",">IsQuickQuotePage = #IsQuickQuotePage#</isNotEmpty>
+               <isEmpty property="IsQuickQuotePage" prepend=",">IsQuickQuotePage = null</isEmpty>
+               <isNotEmpty property="IsClaimInLastFiveYears" prepend=",">IsClaimInLastFiveYears = #IsClaimInLastFiveYears#</isNotEmpty>
+               <isEmpty property="IsClaimInLastFiveYears" prepend=",">IsClaimInLastFiveYears = null</isEmpty>
+               <isNotEmpty property="IsReceiveNewsLetter" prepend=",">IsReceiveNewsLetter = #IsReceiveNewsLetter#</isNotEmpty>
+               <isEmpty property="IsReceiveNewsLetter" prepend=",">IsReceiveNewsLetter = null</isEmpty>
+               <isNotEmpty property="IsFirmReferred" prepend=",">IsFirmReferred = #IsFirmReferred#</isNotEmpty>
+               <isEmpty property="IsFirmReferred" prepend=",">IsFirmReferred = null</isEmpty>
+               <isNotEmpty property="QuoteEffectiveDate" prepend=",">QuoteEffectiveDate = #QuoteEffectiveDate#</isNotEmpty>
+               <isEmpty property="QuoteEffectiveDate" prepend=",">QuoteEffectiveDate = null</isEmpty>
+               <isNotEmpty property="QuoteExpiryDate" prepend=",">QuoteExpiryDate = #QuoteExpiryDate#</isNotEmpty>
+               <isEmpty property="QuoteExpiryDate" prepend=",">QuoteExpiryDate = null</isEmpty>
+               <isNotEmpty property="Comment" prepend=",">Comment = #Comment#</isNotEmpty>
+               <isEmpty property="Comment" prepend=",">Comment = null</isEmpty>
+               <isNotEmpty property="ModifierComment" prepend=",">ModifierComment = #ModifierComment#</isNotEmpty>
+               <isEmpty property="ModifierComment" prepend=",">ModifierComment = null</isEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy = #CreatedBy#</isNotEmpty>
+               <isEmpty property="CreatedBy" prepend=",">CreatedBy = null</isEmpty>
+               <isNotEmpty property="IsQuoteViewedByInsured" prepend=",">IsQuoteViewedByInsured = #IsQuoteViewedByInsured#</isNotEmpty>
+               <isEmpty property="IsQuoteViewedByInsured" prepend=",">IsQuoteViewedByInsured = null</isEmpty>
+               <isNotEmpty property="AcceptanceDate" prepend=",">AcceptanceDate = #AcceptanceDate#</isNotEmpty>
+               <isEmpty property="AcceptanceDate" prepend=",">AcceptanceDate = null</isEmpty>
+               <isNotEmpty property="QuoteSentDate" prepend=",">QuoteSentDate = #QuoteSentDate#</isNotEmpty>
+               <isEmpty property="QuoteSentDate" prepend=",">QuoteSentDate = null</isEmpty>
+               <isNotEmpty property="IsTaxCalculation" prepend=",">IsTaxCalculation = #IsTaxCalculation#</isNotEmpty>
+               <isEmpty property="IsTaxCalculation" prepend=",">IsTaxCalculation = null</isEmpty>
+               <isNotEmpty property="IsViewed" prepend=",">IsViewed = #IsViewed#</isNotEmpty>
+               <isEmpty property="IsViewed" prepend=",">IsViewed = null</isEmpty>
+               <isNotEmpty property="QuoteComment" prepend=",">QuoteComment = #QuoteComment#</isNotEmpty>
+               <isEmpty property="QuoteComment" prepend=",">QuoteComment = null</isEmpty>
+               <isNotEmpty property="IsQuickQuoteMailSent" prepend=",">IsQuickQuoteMailSent = #IsQuickQuoteMailSent#</isNotEmpty>
+               <isEmpty property="IsQuickQuoteMailSent" prepend=",">IsQuickQuoteMailSent = null</isEmpty>
+               <isNotEmpty property="IsLicenseNumberUpdated" prepend=",">IsLicenseNumberUpdated = #IsLicenseNumberUpdated#</isNotEmpty>
+               <isEmpty property="IsLicenseNumberUpdated" prepend=",">IsLicenseNumberUpdated = null</isEmpty>
+               <isNotEmpty property="IssuedDate" prepend=",">IssuedDate = #IssuedDate#</isNotEmpty>
+               <isEmpty property="IssuedDate" prepend=",">IssuedDate = null</isEmpty>
+               <isNotEmpty property="IsRealEstateResidentialPage" prepend=",">IsRealEstateResidentialPage = #IsRealEstateResidentialPage#</isNotEmpty>
+               <isEmpty property="IsRealEstateResidentialPage" prepend=",">IsRealEstateResidentialPage = null</isEmpty>
+               <isNotEmpty property="IsRealEstateCommercialPage" prepend=",">IsRealEstateCommercialPage = #IsRealEstateCommercialPage#</isNotEmpty>
+               <isEmpty property="IsRealEstateCommercialPage" prepend=",">IsRealEstateCommercialPage = null</isEmpty>
+               <isNotEmpty property="IsApplFirmWithDifferentLegalName" prepend=",">IsApplFirmWithDifferentLegalName = #IsApplFirmWithDifferentLegalName#</isNotEmpty>
+               <isEmpty property="IsApplFirmWithDifferentLegalName" prepend=",">IsApplFirmWithDifferentLegalName = null</isEmpty>
+               <isNotEmpty property="ApplLegalNameAddressDesc" prepend=",">ApplLegalNameAddressDesc = #ApplLegalNameAddressDesc#</isNotEmpty>
+               <isEmpty property="ApplLegalNameAddressDesc" prepend=",">ApplLegalNameAddressDesc = null</isEmpty>
+               <isNotEmpty property="IsFirmEquityInterestInTitleInsurance" prepend=",">IsFirmEquityInterestInTitleInsurance = #IsFirmEquityInterestInTitleInsurance#</isNotEmpty>
+               <isEmpty property="IsFirmEquityInterestInTitleInsurance" prepend=",">IsFirmEquityInterestInTitleInsurance = null</isEmpty>
+               <isNotEmpty property="MarketingId" prepend=",">MarketingId = #MarketingId#</isNotEmpty>
+               <isEmpty property="MarketingId" prepend=",">MarketingId = null</isEmpty>
+               <isNotEmpty property="IsFirmProvidedLegalServiceDesc" prepend=",">IsFirmProvidedLegalServiceDesc = #IsFirmProvidedLegalServiceDesc#</isNotEmpty>
+               <isEmpty property="IsFirmProvidedLegalServiceDesc" prepend=",">IsFirmProvidedLegalServiceDesc = null</isEmpty>
+               <isNotEmpty property="IsAttorneyAddedDeleted" prepend=",">IsAttorneyAddedDeleted = #IsAttorneyAddedDeleted#</isNotEmpty>
+               <isEmpty property="IsAttorneyAddedDeleted" prepend=",">IsAttorneyAddedDeleted = null</isEmpty>
+               <isNotEmpty property="IsFirmProvidedLegalService" prepend=",">IsFirmProvidedLegalService = #IsFirmProvidedLegalService#</isNotEmpty>
+               <isEmpty property="IsFirmProvidedLegalService" prepend=",">IsFirmProvidedLegalService = null</isEmpty>
+               <isNotEmpty property="IsRenewFirmPage" prepend=",">IsRenewFirmPage = #IsRenewFirmPage#</isNotEmpty>
+               <isEmpty property="IsRenewFirmPage" prepend=",">IsRenewFirmPage = null</isEmpty>
+               <isNotEmpty property="IsFirmProvideInvestmentAdvice" prepend=",">IsFirmProvideInvestmentAdvice = #IsFirmProvideInvestmentAdvice#</isNotEmpty>
+               <isEmpty property="IsFirmProvideInvestmentAdvice" prepend=",">IsFirmProvideInvestmentAdvice = null</isEmpty>
+               <isNotEmpty property="ClientNameFirstLargestRevenueClient" prepend=",">ClientNameFirstLargestRevenueClient = #ClientNameFirstLargestRevenueClient#</isNotEmpty>
+               <isEmpty property="ClientNameFirstLargestRevenueClient" prepend=",">ClientNameFirstLargestRevenueClient = null</isEmpty>
+               <isNotEmpty property="Is9010Policy" prepend=",">Is9010Policy = #Is9010Policy#</isNotEmpty>
+               <isEmpty property="Is9010Policy" prepend=",">Is9010Policy = null</isEmpty>
+               <isNotEmpty property="IsSpecialIssuance" prepend=",">IsSpecialIssuance = #IsSpecialIssuance#</isNotEmpty>
+               <isEmpty property="IsSpecialIssuance" prepend=",">IsSpecialIssuance = null</isEmpty>
+               <isNotEmpty property="GrossFeesPaidRenew" prepend=",">GrossFeesPaidRenew = #GrossFeesPaidRenew#</isNotEmpty>
+               <isEmpty property="GrossFeesPaidRenew" prepend=",">GrossFeesPaidRenew = null</isEmpty>
+               <isNotEmpty property="DateRenderedFirstLargestRevenueClient" prepend=",">DateRenderedFirstLargestRevenueClient = #DateRenderedFirstLargestRevenueClient#</isNotEmpty>
+               <isEmpty property="DateRenderedFirstLargestRevenueClient" prepend=",">DateRenderedFirstLargestRevenueClient = null</isEmpty>
+               <isNotEmpty property="ClientNameSecondLargestRevenueClient" prepend=",">ClientNameSecondLargestRevenueClient = #ClientNameSecondLargestRevenueClient#</isNotEmpty>
+               <isEmpty property="ClientNameSecondLargestRevenueClient" prepend=",">ClientNameSecondLargestRevenueClient = null</isEmpty>
+               <isNotEmpty property="IsRenewalReview" prepend=",">IsRenewalReview = #IsRenewalReview#</isNotEmpty>
+               <isEmpty property="IsRenewalReview" prepend=",">IsRenewalReview = null</isEmpty>
+               <isNotEmpty property="SpecialIssuanceComments" prepend=",">SpecialIssuanceComments = #SpecialIssuanceComments#</isNotEmpty>
+               <isEmpty property="SpecialIssuanceComments" prepend=",">SpecialIssuanceComments = null</isEmpty>
+               <isNotEmpty property="ipfsQuoteNumber" prepend=",">ipfsQuoteNumber = #ipfsQuoteNumber#</isNotEmpty>
+               <isEmpty property="ipfsQuoteNumber" prepend=",">ipfsQuoteNumber = null</isEmpty>
+               <isNotEmpty property="RenewalReviewComments" prepend=",">RenewalReviewComments = #RenewalReviewComments#</isNotEmpty>
+               <isEmpty property="RenewalReviewComments" prepend=",">RenewalReviewComments = null</isEmpty>
+               <isNotEmpty property="DateRenderedSecondLargestRevenueClient" prepend=",">DateRenderedSecondLargestRevenueClient = #DateRenderedSecondLargestRevenueClient#</isNotEmpty>
+               <isEmpty property="DateRenderedSecondLargestRevenueClient" prepend=",">DateRenderedSecondLargestRevenueClient = null</isEmpty>
+               <isNotEmpty property="IsOffRiskLetterUploaded" prepend=",">IsOffRiskLetterUploaded = #IsOffRiskLetterUploaded#</isNotEmpty>
+               <isEmpty property="IsOffRiskLetterUploaded" prepend=",">IsOffRiskLetterUploaded = null</isEmpty>
+               <isNotEmpty property="isPricingApproved" prepend=",">isPricingApproved = #isPricingApproved#</isNotEmpty>
+               <isEmpty property="isPricingApproved" prepend=",">isPricingApproved = null</isEmpty>
+               <isNotEmpty property="isComingFromUWFlow" prepend=",">isComingFromUWFlow = #isComingFromUWFlow#</isNotEmpty>
+               <isEmpty property="isComingFromUWFlow" prepend=",">isComingFromUWFlow = null</isEmpty>
+               <isNotEmpty property="UnderwriterComment" prepend=",">UnderwriterComment = #UnderwriterComment#</isNotEmpty>
+               <isEmpty property="UnderwriterComment" prepend=",">UnderwriterComment = null</isEmpty>
+               <isNotEmpty property="FollowUnderwriterFlow" prepend=",">FollowUnderwriterFlow = #FollowUnderwriterFlow#</isNotEmpty>
+               <isEmpty property="FollowUnderwriterFlow" prepend=",">FollowUnderwriterFlow = null</isEmpty>
+               <isNotEmpty property="ReferralCountHistory" prepend=",">ReferralCountHistory = #ReferralCountHistory#</isNotEmpty>
+               <isEmpty property="ReferralCountHistory" prepend=",">ReferralCountHistory = null</isEmpty>
+               <isNotEmpty property="NumberOfLawyers" prepend=",">NumberOfLawyers = #NumberOfLawyers#</isNotEmpty>
+               <isEmpty property="NumberOfLawyers" prepend=",">NumberOfLawyers = null</isEmpty>
+               <isNotEmpty property="NumberOfLawyers500" prepend=",">NumberOfLawyers500 = #NumberOfLawyers500#</isNotEmpty>
+               <isEmpty property="NumberOfLawyers500" prepend=",">NumberOfLawyers500 = null</isEmpty>
+               <isNotEmpty property="NumberOfLawyers1000" prepend=",">NumberOfLawyers1000 = #NumberOfLawyers1000#</isNotEmpty>
+               <isEmpty property="NumberOfLawyers1000" prepend=",">NumberOfLawyers1000 = null</isEmpty>
+               <isNotEmpty property="IsIndicationPage" prepend=",">IsIndicationPage = #IsIndicationPage#</isNotEmpty>
+               <isEmpty property="IsIndicationPage" prepend=",">IsIndicationPage = null</isEmpty>
+               <isNotEmpty property="IsFormDocumentSigned" prepend=",">IsFormDocumentSigned = #IsFormDocumentSigned#</isNotEmpty>
+               <isEmpty property="IsFormDocumentSigned" prepend=",">IsFormDocumentSigned = null</isEmpty>
+               <isNotEmpty property="SubProducerComment" prepend=",">SubProducerComment = #SubProducerComment#</isNotEmpty>
+               <isEmpty property="SubProducerComment" prepend=",">SubProducerComment = null</isEmpty>
+               <isNotEmpty property="IsThankYouEmailSend" prepend=",">IsThankYouEmailSend = #IsThankYouEmailSend#</isNotEmpty>
+               <isEmpty property="IsThankYouEmailSend" prepend=",">IsThankYouEmailSend = null</isEmpty>
+               <isNotEmpty property="QQRMLink" prepend=",">QQRMLink = #QQRMLink#</isNotEmpty>
+               <isEmpty property="QQRMLink" prepend=",">QQRMLink = null</isEmpty>
+               <isNotEmpty property="isFirmCoverageForPreceedorFirmsDescription" prepend=",">isFirmCoverageForPreceedorFirmsDescription = #isFirmCoverageForPreceedorFirmsDescription#</isNotEmpty>
+               <isEmpty property="isFirmCoverageForPreceedorFirmsDescription" prepend=",">isFirmCoverageForPreceedorFirmsDescription = null</isEmpty>
+               <isNotEmpty property="FirmInvestmentAdviceDesc" prepend=",">FirmInvestmentAdviceDesc = #FirmInvestmentAdviceDesc#</isNotEmpty>
+               <isEmpty property="FirmInvestmentAdviceDesc" prepend=",">FirmInvestmentAdviceDesc = null</isEmpty>
+               <isNotEmpty property="isServedAsCEOChairmanPresident" prepend=",">isServedAsCEOChairmanPresident = #isServedAsCEOChairmanPresident#</isNotEmpty>
+               <isEmpty property="isServedAsCEOChairmanPresident" prepend=",">isServedAsCEOChairmanPresident = null</isEmpty>
+               <isNotEmpty property="isPolicyExcludeCoverageDescription" prepend=",">isPolicyExcludeCoverageDescription = #isPolicyExcludeCoverageDescription#</isNotEmpty>
+               <isEmpty property="isPolicyExcludeCoverageDescription" prepend=",">isPolicyExcludeCoverageDescription = null</isEmpty>
+               <isNotEmpty property="isPolicyExcludeCoverage" prepend=",">isPolicyExcludeCoverage = #isPolicyExcludeCoverage#</isNotEmpty>
+               <isEmpty property="isPolicyExcludeCoverage" prepend=",">isPolicyExcludeCoverage = null</isEmpty>
+               <isNotEmpty property="disbursementTransaction" prepend=",">disbursementTransaction = #disbursementTransaction#</isNotEmpty>
+               <isEmpty property="disbursementTransaction" prepend=",">disbursementTransaction = null</isEmpty>
+               <isNotEmpty property="peopleToDisburseFunds" prepend=",">peopleToDisburseFunds = #peopleToDisburseFunds#</isNotEmpty>
+               <isEmpty property="peopleToDisburseFunds" prepend=",">peopleToDisburseFunds = null</isEmpty>
+               <isNotEmpty property="instructionsDocumentedReceivingParty" prepend=",">instructionsDocumentedReceivingParty = #instructionsDocumentedReceivingParty#</isNotEmpty>
+               <isEmpty property="instructionsDocumentedReceivingParty" prepend=",">instructionsDocumentedReceivingParty = null</isEmpty>
+               <isNotEmpty property="doucumentedProtocolsAndAuthority" prepend=",">doucumentedProtocolsAndAuthority = #doucumentedProtocolsAndAuthority#</isNotEmpty>
+               <isEmpty property="doucumentedProtocolsAndAuthority" prepend=",">doucumentedProtocolsAndAuthority = null</isEmpty>
+               <isNotEmpty property="IsIndicationMailSent" prepend=",">IsIndicationMailSent = #IsIndicationMailSent#</isNotEmpty>
+               <isEmpty property="IsIndicationMailSent" prepend=",">IsIndicationMailSent = null</isEmpty>
+               <isNotEmpty property="IsCantSeeQuote" prepend=",">IsCantSeeQuote = #IsCantSeeQuote#</isNotEmpty>
+               <isEmpty property="IsCantSeeQuote" prepend=",">IsCantSeeQuote = null</isEmpty>
+               <isNotEmpty property="IsAOPChange" prepend=",">IsAOPChange = #IsAOPChange#</isNotEmpty>
+               <isEmpty property="IsAOPChange" prepend=",">IsAOPChange = null</isEmpty>
+               <isNotEmpty property="ZohoAccountID" prepend=",">ZohoAccountID = #ZohoAccountID#</isNotEmpty>
+               <isEmpty property="ZohoAccountID" prepend=",">ZohoAccountID = null</isEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey = #VersionKey#</isNotEmpty>
+               <isEmpty property="VersionKey" prepend=",">VersionKey = null</isEmpty>
+               <isNotEmpty property="isNewApp" prepend=",">isNewApp = #isNewApp#</isNotEmpty>
+               <isEmpty property="isNewApp" prepend=",">isNewApp = null</isEmpty>
+               <isNotEmpty property="hasAnyFirmPersonnelReported" prepend=",">hasAnyFirmPersonnelReported = #hasAnyFirmPersonnelReported#</isNotEmpty>
+               <isEmpty property="hasAnyFirmPersonnelReported" prepend=",">hasAnyFirmPersonnelReported = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from FirmLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from FirmLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from FirmLW where PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ContactPerson, ContactPhone, IsFirmCarryingProfLiabilityIns, IsPolicyExcludesCoverage, LastUpdateUserID, LastUpdateTimeStamp, IsQuickQuoteByEmail, IsAnAgentCall, ContactPhoneExt, IsBasicPage, IsGeneralPage, IsEntertainmentPage, IsClientTerminated, FirstReviewUserID, VersionSequence, LicenseNumber, IsQuotePage, YearOfFirmEstablished, IsFirmPracticeInOtherState, IsFirmHaveClientInEntertainmentInd, IsFirmInvolvedInClassActionCase, IsFirmProvidedLegalServiceToSecurity, IsFirmHaveClientMoreThan25PercentOfBilling, PercentFromFirstLargestRevenueClient, PercentFromSecondLargestRevenueClient, ServicesRenderedFirstLargestRevenueClient, ServicesRenderedSecondLargestRevenueClient, IsFirmHaveLawyersLiabilityInsurance, PolicyExcludeCoverageForAffiliatesDesc, IsFirmCoverageForPreceedorFirms, IsFirmHaveEquityIntGrtThan10, IsFirmPersServedAsOfficerInJointVenture, IsApplicantProvidesLegalServices, ApplicantProvidesLegalServicesDesc, IsAttorneyNotCoveredByProfLiability, IsAppOfficeSharedWithAttorney, TotalNumOfNonAttorneyStaff, IsFirmHaveIndepDockets, IsFirmRequireEngagementLetter, IsNonEngagementLetterIssueToFirm, IsPolicyProhibitAttorneyWithInvestment, IsEmplRelativeToConfInfomation, PercentofApplAcctRcbl, IsApplInitiatedLawsuitForFirm, IsAttorneyDeclineForProfLiability, AttorneyDeclineForProfLiabilityDates, AttorneyDeclineForProfLiabilityReasons, IsIndependentContractor, IsFirmHaveBackupAttorney, PerOfGrossBillingsUnderContract, BackupAttorneyName, BackupAttorneyAddress, BackupAttorneyPhoneNumber, IsFirmHaveProcForFormersClients, IsLawyerProfLiabClaimAgntAppl, IsPersonnelBeSubOfAnyInvest, IsAnyActOmmBecomeClaimAgntFirm, ApplicantName, IsApplRestWithManagement, ApplRestWithManagementDesc, PersonnelBeSubOfAnyInvestDate, PersonnelBeSubOfAnyInvestDetails, IsTaxPage, IsEnvironmentalPage, IsSecuritiesPage, IsTitlePage, IsWillsEstatePage, IsPlaintiffPage, IsRealEstatePage, IsFinancialInsPage, IsIntellectPropPage, IsCorporatePage, IsFirmMergedWithOtherFirm, IsAopPage, IsPracticePage, IsFirmPage, IsCoveragePage, IsApplIntToFinanAssests, IsPolicyIncludeLateralHireCov, IsFirmProvidedLegalServiceToInvestment, IsFirmProvidedLegalServiceToMoney, IsFirmProvidedLegalServiceToInvClient, BackupAttorneyAddress2, CommentsByInsured, CommentsByAgent, IsLoginMailSent, IsMailSent, IsRegistrationPage, IsRetreivalMailSent, IsQuickQuotePage, IsClaimInLastFiveYears, IsReceiveNewsLetter, IsFirmReferred, QuoteEffectiveDate, QuoteExpiryDate, Comment, ModifierComment, CreatedBy, IsQuoteViewedByInsured, AcceptanceDate, QuoteSentDate, IsTaxCalculation, IsViewed, QuoteComment, IsQuickQuoteMailSent, IsLicenseNumberUpdated, IssuedDate, IsRealEstateResidentialPage, IsRealEstateCommercialPage, IsApplFirmWithDifferentLegalName, ApplLegalNameAddressDesc, IsFirmEquityInterestInTitleInsurance, MarketingId, IsFirmProvidedLegalServiceDesc, IsAttorneyAddedDeleted, IsFirmProvidedLegalService, IsRenewFirmPage, IsFirmProvideInvestmentAdvice, ClientNameFirstLargestRevenueClient, Is9010Policy, IsSpecialIssuance, GrossFeesPaidRenew, DateRenderedFirstLargestRevenueClient, ClientNameSecondLargestRevenueClient, IsRenewalReview, SpecialIssuanceComments, ipfsQuoteNumber, RenewalReviewComments, DateRenderedSecondLargestRevenueClient, IsOffRiskLetterUploaded, isPricingApproved, isComingFromUWFlow, UnderwriterComment, FollowUnderwriterFlow, ReferralCountHistory, NumberOfLawyers, NumberOfLawyers500, NumberOfLawyers1000, IsIndicationPage, IsFormDocumentSigned, SubProducerComment, IsThankYouEmailSend, QQRMLink, isFirmCoverageForPreceedorFirmsDescription, FirmInvestmentAdviceDesc, isServedAsCEOChairmanPresident, isPolicyExcludeCoverageDescription, isPolicyExcludeCoverage, disbursementTransaction, peopleToDisburseFunds, instructionsDocumentedReceivingParty, doucumentedProtocolsAndAuthority, IsIndicationMailSent, IsCantSeeQuote, IsAOPChange, ZohoAccountID, VersionKey, isNewApp, hasAnyFirmPersonnelReported, PolicyKey from FirmLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, ContactPerson, ContactPhone, IsFirmCarryingProfLiabilityIns, IsPolicyExcludesCoverage, LastUpdateUserID, LastUpdateTimeStamp, IsQuickQuoteByEmail, IsAnAgentCall, ContactPhoneExt, IsBasicPage, IsGeneralPage, IsEntertainmentPage, IsClientTerminated, FirstReviewUserID, LicenseNumber, IsQuotePage, YearOfFirmEstablished, IsFirmPracticeInOtherState, IsFirmHaveClientInEntertainmentInd, IsFirmInvolvedInClassActionCase, IsFirmProvidedLegalServiceToSecurity, IsFirmHaveClientMoreThan25PercentOfBilling, PercentFromFirstLargestRevenueClient, PercentFromSecondLargestRevenueClient, ServicesRenderedFirstLargestRevenueClient, ServicesRenderedSecondLargestRevenueClient, IsFirmHaveLawyersLiabilityInsurance, PolicyExcludeCoverageForAffiliatesDesc, IsFirmCoverageForPreceedorFirms, IsFirmHaveEquityIntGrtThan10, IsFirmPersServedAsOfficerInJointVenture, IsApplicantProvidesLegalServices, ApplicantProvidesLegalServicesDesc, IsAttorneyNotCoveredByProfLiability, IsAppOfficeSharedWithAttorney, TotalNumOfNonAttorneyStaff, IsFirmHaveIndepDockets, IsFirmRequireEngagementLetter, IsNonEngagementLetterIssueToFirm, IsPolicyProhibitAttorneyWithInvestment, IsEmplRelativeToConfInfomation, PercentofApplAcctRcbl, IsApplInitiatedLawsuitForFirm, IsAttorneyDeclineForProfLiability, AttorneyDeclineForProfLiabilityDates, AttorneyDeclineForProfLiabilityReasons, IsIndependentContractor, IsFirmHaveBackupAttorney, PerOfGrossBillingsUnderContract, BackupAttorneyName, BackupAttorneyAddress, BackupAttorneyPhoneNumber, IsFirmHaveProcForFormersClients, IsLawyerProfLiabClaimAgntAppl, IsPersonnelBeSubOfAnyInvest, IsAnyActOmmBecomeClaimAgntFirm, ApplicantName, IsApplRestWithManagement, ApplRestWithManagementDesc, PersonnelBeSubOfAnyInvestDate, PersonnelBeSubOfAnyInvestDetails, IsTaxPage, IsEnvironmentalPage, IsSecuritiesPage, IsTitlePage, IsWillsEstatePage, IsPlaintiffPage, IsRealEstatePage, IsFinancialInsPage, IsIntellectPropPage, IsCorporatePage, IsFirmMergedWithOtherFirm, IsAopPage, IsPracticePage, IsFirmPage, IsCoveragePage, IsApplIntToFinanAssests, IsPolicyIncludeLateralHireCov, IsFirmProvidedLegalServiceToInvestment, IsFirmProvidedLegalServiceToMoney, IsFirmProvidedLegalServiceToInvClient, BackupAttorneyAddress2, CommentsByInsured, CommentsByAgent, IsLoginMailSent, IsMailSent, IsRegistrationPage, IsRetreivalMailSent, IsQuickQuotePage, IsClaimInLastFiveYears, IsReceiveNewsLetter, IsFirmReferred, QuoteEffectiveDate, QuoteExpiryDate, Comment, ModifierComment, CreatedBy, IsQuoteViewedByInsured, AcceptanceDate, QuoteSentDate, IsTaxCalculation, IsViewed, QuoteComment, IsQuickQuoteMailSent, IsLicenseNumberUpdated, IssuedDate, IsRealEstateResidentialPage, IsRealEstateCommercialPage, IsApplFirmWithDifferentLegalName, ApplLegalNameAddressDesc, IsFirmEquityInterestInTitleInsurance, MarketingId, IsFirmProvidedLegalServiceDesc, IsAttorneyAddedDeleted, IsFirmProvidedLegalService, IsRenewFirmPage, IsFirmProvideInvestmentAdvice, ClientNameFirstLargestRevenueClient, Is9010Policy, IsSpecialIssuance, GrossFeesPaidRenew, DateRenderedFirstLargestRevenueClient, ClientNameSecondLargestRevenueClient, IsRenewalReview, SpecialIssuanceComments, ipfsQuoteNumber, RenewalReviewComments, DateRenderedSecondLargestRevenueClient, IsOffRiskLetterUploaded, isPricingApproved, isComingFromUWFlow, UnderwriterComment, FollowUnderwriterFlow, ReferralCountHistory, NumberOfLawyers, NumberOfLawyers500, NumberOfLawyers1000, IsIndicationPage, IsFormDocumentSigned, SubProducerComment, IsThankYouEmailSend, QQRMLink, isFirmCoverageForPreceedorFirmsDescription, FirmInvestmentAdviceDesc, isServedAsCEOChairmanPresident, isPolicyExcludeCoverageDescription, isPolicyExcludeCoverage, disbursementTransaction, peopleToDisburseFunds, instructionsDocumentedReceivingParty, doucumentedProtocolsAndAuthority, IsIndicationMailSent, IsCantSeeQuote, IsAOPChange, ZohoAccountID, VersionKey, isNewApp, hasAnyFirmPersonnelReported from FirmLW where PolicyKey = #PolicyKey#</select>
+     <parameterMap id="SkipOrFollowUWFlow_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PolicyStatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="isPricingApproved" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="FollowUnderwriterFlow" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isRatingsChnaged" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="SkipOrFollowUWFlow_p" parameterMap="SkipOrFollowUWFlow_pMap" resultClass="java.util.HashMap">{ call SkipOrFollowUWFlow_p(?,?,?,?,?)}</procedure>
+     <parameterMap id="UpdateCoverageMokdifiersLW_PMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="StateCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="UpdateCoverageMokdifiersLW_P" parameterMap="UpdateCoverageMokdifiersLW_PMap">{ call UpdateCoverageMokdifiersLW_P(?,?,?)}</procedure>
+     <parameterMap id="UpdateAppCompletedFlag_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="litigationNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="RenewalSupplementNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="isCannibSuppFlow" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ElectronicInsuranceImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="BankruptcySuppImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="UpdateAppCompletedFlag_p" parameterMap="UpdateAppCompletedFlag_pMap" resultClass="java.util.HashMap">{ call UpdateAppCompletedFlag_p(?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="SetQuoteDates_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="Comment" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="SetQuoteDates_p" parameterMap="SetQuoteDates_pMap">{ call SetQuoteDates_p(?,?,?)}</procedure>
+     <parameterMap id="InsertReferralCountHistory_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertReferralCountHistory_p" parameterMap="InsertReferralCountHistory_pMap">{ call InsertReferralCountHistory_p(?,?,?)}</procedure>
+     <parameterMap id="UpdateClaimSuppWithQQ_lwMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="hasAnyFirmPersonnelReported" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UpdateClaimSuppWithQQ_lw" parameterMap="UpdateClaimSuppWithQQ_lwMap">{ call UpdateClaimSuppWithQQ_lw(?,?,?,?,?,?)}</procedure>
+     <parameterMap id="InsertInsureDetailsLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountName" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Address1" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Street" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StateCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CountyDesc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="City" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Zip" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyEffectiveDate" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="WorkPhone" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProducerCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Address2" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="NameClearType" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="NameClearDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="isNameClearanceRequired" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="User" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountEmail" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CompanyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="CompanyAsPerState" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="ElectronicInsuranceImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertInsureDetailsLW_p" parameterMap="InsertInsureDetailsLW_pMap">{ call InsertInsureDetailsLW_p(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="LinkPoliciesAccountLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="WorkPhone" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyEffectiveDate" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="AccountEmail" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="AccountName" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StateCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="LinkPoliciesAccountLW_p" parameterMap="LinkPoliciesAccountLW_pMap">{ call LinkPoliciesAccountLW_p(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="InsertInsuredRenewaletailsLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountName" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Address1" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Street" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StateCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CountyDesc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="City" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="secondaryEmail" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Address2" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Zip" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isQuoteByEmail" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ContactPerson" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="WorkPhone" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="AccountEmail" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Website" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="secondayContactPerson" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="otherPhone" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProducerCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsClaimExpensesType" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsDollarDefense" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="User" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="CompanyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="CompanyAsPerState" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="ElectronicInsuranceImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertInsuredRenewaletailsLW_p" parameterMap="InsertInsuredRenewaletailsLW_pMap">{ call InsertInsuredRenewaletailsLW_p(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="SyncVersionSequenceForPolicyLW_PMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="SyncVersionSequenceForPolicyLW_P" parameterMap="SyncVersionSequenceForPolicyLW_PMap">{ call SyncVersionSequenceForPolicyLW_P(?)}</procedure>
+     <parameterMap id="UpdateCoverageMokdifiersQQLW_PMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="StateCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UpdateCoverageMokdifiersQQLW_P" parameterMap="UpdateCoverageMokdifiersQQLW_PMap">{ call UpdateCoverageMokdifiersQQLW_P(?,?,?,?,?)}</procedure>
+     <parameterMap id="policyCancellationReinstatementEndorsementLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CancellationEffectiveDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="cancellationReason" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="cancellationType" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isEnforcedPolicy" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="policyCancellationReinstatementEndorsementLW_p" parameterMap="policyCancellationReinstatementEndorsementLW_pMap">{ call policyCancellationReinstatementEndorsementLW_p(?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="ValidateAppCompletionLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="litigationNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="RenewalSupplementNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="BankruptcySuppImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="ValidateAppCompletionLW_p" parameterMap="ValidateAppCompletionLW_pMap">{ call ValidateAppCompletionLW_p(?,?,?,?,?)}</procedure>
+     <parameterMap id="LimitDeductiblesEndorsementLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="endorsementEffectiveDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="TypeOfEndorsement" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="IsClaimOptionType" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsClaimExpenseType" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="AggregateLimit" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="OccuranceLimit" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AggregateDeductible" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="IsDollarDefense" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isEnforcedPolicy" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="LimitDeductiblesEndorsementLW_p" parameterMap="LimitDeductiblesEndorsementLW_pMap">{ call LimitDeductiblesEndorsementLW_p(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UpdateAboutFirm_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="YearOfFirmEstablished" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AnnualRevenueSequence" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="TotalNumOfNonAttorneyStaff" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="IsApplicantProvidesLegalServices" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsFirmHaveBackupAttorney" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsFirmMergedWithOtherFirm" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ApplicantProvidesLegalServicesDesc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsApplIntToFinanAssests" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsFirmCoverageForPreceedorFirms" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="needCyberCoverage" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isCannibSuppPage" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UpdateAboutFirm_p" parameterMap="UpdateAboutFirm_pMap">{ call UpdateAboutFirm_p(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UpdateMorePracticeManagement_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="IsFirmProvideInvestmentAdvice" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsFirmHaveClientMoreThan25PercentOfBilling" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsFirmHaveClientInEntertainmentInd" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsFirmProvidedLegalService" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsAppOfficeSharedWithAttorney" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="FirmInvestmentAdviceDesc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isServedAsCEOChairmanPresident" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsFirmProvidedLegalServiceDesc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ClientNameFirstLargestRevenueClient" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ServicesRenderedFirstLargestRevenueClient" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PercentFromFirstLargestRevenueClient" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="DateRenderedFirstLargestRevenueClient" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="ClientNameSecondLargestRevenueClient" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ServicesRenderedSecondLargestRevenueClient" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PercentFromSecondLargestRevenueClient" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="DateRenderedSecondLargestRevenueClient" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="actAgentForPublicFigures" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="provideProfessionalContract" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="provideMoneyManagementServices" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UpdateMorePracticeManagement_p" parameterMap="UpdateMorePracticeManagement_pMap">{ call UpdateMorePracticeManagement_p(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="insertUpdateERPEndorsementDateLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="endorsementEffectiveDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="nameOfAttorney" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ceasedDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="isInsuredWithUsFromPast" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isDeathDisabilityERP" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="deathDisabilityFirmOrAttorneyName" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="deathDiablityCeasedDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="isFirmERP" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="yearsOfERP" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="ERPPremium" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="ERPTax" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="ERPTotalPremium" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="isAttorneyRetiring" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="practicePortitonOfAttorney" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="StateCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="insertUpdateERPEndorsementDateLW_p" parameterMap="insertUpdateERPEndorsementDateLW_pMap">{ call insertUpdateERPEndorsementDateLW_p(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="ProcessERPEndorsementLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="endorsementEffectiveDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="TransactionTypeKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="ProcessERPEndorsementLW_p" parameterMap="ProcessERPEndorsementLW_pMap">{ call ProcessERPEndorsementLW_p(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UpdatePastClaims_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="IsPersonnelBeSubOfAnyInvest" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsLawyerProfLiabClaimAgntAppl" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsAnyActOmmBecomeClaimAgntFirm" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsAttorneyDeclineForProfLiability" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsPolicyExcludesCoverage" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PersonnelBeSubOfAnyInvestDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="PersonnelBeSubOfAnyInvestDetails" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="AttorneyDeclineForProfLiabilityDates" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="AttorneyDeclineForProfLiabilityReasons" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UpdatePastClaims_p" parameterMap="UpdatePastClaims_pMap">{ call UpdatePastClaims_p(?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UpdatePracticeManagement_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="IsFirmHaveIndepDockets" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsFirmHaveProcForFormersClients" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsFirmRequireEngagementLetter" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsNonEngagementLetterIssueToFirm" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="withdrawOrDisengaged" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsApplInitiatedLawsuitForFirm" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UpdatePracticeManagement_p" parameterMap="UpdatePracticeManagement_pMap">{ call UpdatePracticeManagement_p(?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="ManageUserDetails_pMap" class="java.util.HashMap">
+          <parameter property="ProducerCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="AccountEmail" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="AgentName" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="ManageUserDetails_p" parameterMap="ManageUserDetails_pMap">{ call ManageUserDetails_p(?,?,?)}</procedure>
+     <parameterMap id="ValidateIndivisualPageData_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="litigationNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="IsCCBFlag" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="RenewalSupplementNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="isCannibSuppFlow" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ElectronicInsuranceImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="BankruptcySuppImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="ValidateIndivisualPageData_p" parameterMap="ValidateIndivisualPageData_pMap" resultClass="java.util.HashMap">{ call ValidateIndivisualPageData_p(?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="ValidateIndivisualPageCompletion_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="litigationNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="IsCCBFlag" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="RenewalSupplementNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="isCannibSuppFlow" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ElectronicInsuranceImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="BankruptcySuppImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="ValidateIndivisualPageCompletion_p" parameterMap="ValidateIndivisualPageCompletion_pMap" resultClass="java.util.HashMap">{ call ValidateIndivisualPageCompletion_p(?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="ValidateAllPagesSaved_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="ValidateAllPagesSaved_p" parameterMap="ValidateAllPagesSaved_pMap">{ call ValidateAllPagesSaved_p(?,?)}</procedure>
+     <parameterMap id="TabsWorkFlow_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="litigationDateNEW" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsCCBFlag" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="RenewalSupplementNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="ElectronicInsuranceImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="TabsWorkFlow_p" parameterMap="TabsWorkFlow_pMap" resultClass="java.util.HashMap,java.util.HashMap,java.util.HashMap,java.util.HashMap,java.util.HashMap,java.util.HashMap,java.util.HashMap,java.util.HashMap,java.util.HashMap,java.util.HashMap">{ call TabsWorkFlow_p(?,?,?,?,?)}</procedure>
+     <parameterMap id="ClearSupplementFlagsLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="litigationNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="RenewalSupplementNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="ClearSupplementFlagsLW_p" parameterMap="ClearSupplementFlagsLW_pMap" resultClass="java.util.HashMap">{ call ClearSupplementFlagsLW_p(?,?,?)}</procedure>
+     <parameterMap id="GetCybercoverageEmailDataLW_pMap" class="java.util.HashMap">
+          <parameter property="StateCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="GetCybercoverageEmailDataLW_p" parameterMap="GetCybercoverageEmailDataLW_pMap" resultClass="java.util.HashMap">{ call GetCybercoverageEmailDataLW_p(?)}</procedure>
+     <parameterMap id="SupplementFlowControlRenewal_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="litigationNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="IsCCBFlag" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="RenewalSupplementNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="SupplementFlowControlRenewal_p" parameterMap="SupplementFlowControlRenewal_pMap" resultClass="java.util.HashMap">{ call SupplementFlowControlRenewal_p(?,?,?,?)}</procedure>
+     <parameterMap id="ValidateQuoteLimitIncrease_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LimitSequence" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="ValidateQuoteLimitIncrease_p" parameterMap="ValidateQuoteLimitIncrease_pMap" resultClass="java.util.HashMap">{ call ValidateQuoteLimitIncrease_p(?,?)}</procedure>
+     <parameterMap id="ValidateQuoteAddition_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LimitSequence" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="DeductibleSequence" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CoverageKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="IsClaimExpensesType" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsDollarDefense" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsClaimOptionType" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsManualPremium" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="ValidateQuoteAddition_p" parameterMap="ValidateQuoteAddition_pMap" resultClass="java.util.HashMap">{ call ValidateQuoteAddition_p(?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="ValidateIsAppCompleted_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="litigationNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="RenewalSupplementNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="isCannibSuppFlow" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ElectronicInsuranceImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+          <parameter property="BankruptcySuppImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="ValidateIsAppCompleted_p" parameterMap="ValidateIsAppCompleted_pMap" resultClass="java.util.HashMap">{ call ValidateIsAppCompleted_p(?,?,?,?,?,?,?)}</procedure>
+     <procedure id="GetMeasurementReportForLW_p" resultClass="java.util.HashMap">{ call GetMeasurementReportForLW_p( )}</procedure>
+     <parameterMap id="RequoteReportDataLW_pMap" class="java.util.HashMap">
+          <parameter property="EffectiveDateFrom" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="EffectiveDateTo" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="stateCodes" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="aopCodes" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="requote_numberOfAttorneys" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="reQuoteURL" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="requoteTransactionType" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="requote_dircectSubproduced" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="RequoteReportDataLW_p" parameterMap="RequoteReportDataLW_pMap" resultClass="java.util.HashMap">{ call RequoteReportDataLW_p(?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="EndorsementOptionsDisplayLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="EndorsementOptionsDisplayLW_p" parameterMap="EndorsementOptionsDisplayLW_pMap" resultClass="java.util.HashMap">{ call EndorsementOptionsDisplayLW_p(?)}</procedure>
+     <parameterMap id="UpdateunderwritingInfo_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="isPolicyExcludeCoverage" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isPolicyExcludeCoverageDescription" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsPolicyIncludeLateralHireCov" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="custodyOrControlFunds" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="securityAwareness" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="disbursementTransaction" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="peopleToDisburseFunds" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="instructionsDocumentedReceivingParty" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="doucumentedProtocolsAndAuthority" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UpdateunderwritingInfo_p" parameterMap="UpdateunderwritingInfo_pMap">{ call UpdateunderwritingInfo_p(?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="UpdateReferralCountHistory_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UpdateReferralCountHistory_p" parameterMap="UpdateReferralCountHistory_pMap">{ call UpdateReferralCountHistory_p(?,?)}</procedure>
+     <parameterMap id="SavePublicFiguresAjaxExpansions_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="actAgentForPublicFigures" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="provideProfessionalContract" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="provideMoneyManagementServices" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="SavePublicFiguresAjaxExpansions_p" parameterMap="SavePublicFiguresAjaxExpansions_pMap">{ call SavePublicFiguresAjaxExpansions_p(?,?,?,?,?,?)}</procedure>
+     <parameterMap id="HouseKeepingUpdate_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="AddressKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="ContactPerson" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Website" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="secondayContactPerson" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="otherPhone" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="secondaryEmail" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isQuoteByEmail" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BankruptcySuppImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="HouseKeepingUpdate_p" parameterMap="HouseKeepingUpdate_pMap">{ call HouseKeepingUpdate_p(?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="RestToPriorYearsAOPMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="RestToPriorYearsAOP" parameterMap="RestToPriorYearsAOPMap">{ call RestToPriorYearsAOP(?,?,?,?)}</procedure>
+     <parameterMap id="UpdateCyberInformation_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="disbursementTransaction" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="peopleToDisburseFunds" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="instructionsDocumentedReceivingParty" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="doucumentedProtocolsAndAuthority" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UpdateCyberInformation_p" parameterMap="UpdateCyberInformation_pMap">{ call UpdateCyberInformation_p(?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="revenueClientsAjaxExpansions_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="ClientNameFirstLargestRevenueClient" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ServicesRenderedFirstLargestRevenueClient" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PercentFromFirstLargestRevenueClient" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="DateRenderedFirstLargestRevenueClient" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="ClientNameSecondLargestRevenueClient" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ServicesRenderedSecondLargestRevenueClient" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PercentFromSecondLargestRevenueClient" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="DateRenderedSecondLargestRevenueClient" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="revenueClientsAjaxExpansions_p" parameterMap="revenueClientsAjaxExpansions_pMap">{ call revenueClientsAjaxExpansions_p(?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

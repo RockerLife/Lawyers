@@ -1,0 +1,572 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Rerating</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js"/>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"/>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+<script type="text/javascript">
+	function checks() {
+		document.getElementById("EffectiveDate").disabled = true;
+		//alert(document.getElementById("EffectiveDate").style.readOnly);
+	}
+</script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<form name="myForm">
+		<!-- <input type="hidden" name="divHideShow" value="" /> <input
+			type="hidden" name="ctxmenuparam" value="" />
+		 -->
+		<table width="96%" border="0" align="center" cellspacing="0"
+			cellpadding="0">
+			<tr>
+			<div id="header">
+					<span id="#Include:header.html#"></span>
+				</div> 
+				</tr>
+			<tr>
+							<td ><h2 class="questionHeading">Lawyers Batch</h2></td>
+							
+						</tr>
+						<tr><td>&nbsp;</td></tr>
+			<tr>
+				<td align="center">
+					<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+						<tr>
+							<td>
+								<table width="100%" border="0" align="center" cellpadding="0"
+									cellspacing="0">
+									<tr>
+										<td valign="top">
+											<table width="100%" border="0" cellpadding="5"
+												cellspacing="0" class="border1">
+												<tr>
+													<td height="35" align="left" class="tableheading">
+														Rating Batch</td>
+													<td align="right" class="tableheading">&nbsp;</td>
+												</tr>
+												
+												<tr>
+													<td height="200" colspan="2" valign="top">
+														<table width="100%" border="0" cellspacing="0"
+															cellpadding="5">
+															
+															<tr>
+																<td align="center">
+																	<table align="center">
+																		<tr>
+																			<td>&nbsp;</td>
+																		</tr>
+																		<tr>
+																			<td>
+																				<fieldset class="fieldsetTop">
+																					<legend>Filter Criteria</legend>
+																					<table border="0" cellspacing="0"
+																		cellpadding="2" id="lawyersbatch_freeform_contextdata_01"  class="tdPadding">
+
+																		
+																		<tr class="td_error0">
+																		<td></td>
+																		<td>
+																		<div class="freeFormListTdError paddingLeft3">
+																			<div id="error_validatesuccessmessage" class="error"></div>
+																			<div id="ajax_error_validatesuccessmessage" class="error"></div>
+														
+																		</div>
+																		<div class="freeFormListTdError paddingLeft3">
+																			<div id="error_successmessage" class="error"></div>
+																			<div id="ajax_error_successmessage" class="error"></div>
+														
+																		</div>
+																		</td>
+																		</tr>
+																		
+																		<!-- <tr class="td_error0">
+																		<td></td>
+																		<td>
+																		<div class="freeFormListTdError paddingLeft3">
+																			<div id="error_LBEffectiveDate_searchFrom" class="error"></div>
+																			<div id="ajax_error_LBEffectiveDate_searchFrom" class="error"></div>
+														
+																		</div>
+																		</td>
+																		</tr> -->
+																		<tr>
+																			<td colspan="2" align="left">
+																			<div class="freeFormList form-group">
+																					<div class="freeFormListTr">
+																						<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																						<div class="freeFormListTdError paddingLeft3">
+																							<div id="error_LBEffectiveDate_searchFrom" class="error"></div>
+																							<div id="ajax_error_LBEffectiveDate_searchFrom" class="error"></div>
+																						</div>
+																					</div>
+																					<div class="freeFormListTr">
+																						<div class="freeFormListTd labelAlign">
+																							<div class="freeFormLabelWidth" >
+																								Effective Date From :
+																							</div>
+																							
+																						</div>
+																						<div class="freeFormListTd tdInput iconsStyle2">
+																							<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+																							<input type="text" class="form-control datepicker" style="height:26px;width:215px"
+																								id="LBEffectiveDate_searchFrom" 
+																								name=LBEffectiveDate_searchFrom onkeyup="applyDateFormat(this,event);"/> 
+																						</div>
+																					</div>
+																				</div>
+																		<td>
+																		</tr>
+																		
+																		
+																		
+																		<!-- <tr class="td_error0">
+																		<td></td>
+																		<td>
+																		<div class="freeFormListTdError paddingLeft3">
+																		<div id="ajax_error_LBEffectiveDate_searchTo" class="error"></div>
+														                <div id="error_LBEffectiveDate_searchTo" class="error"> </div> 
+																		</div>
+																		</td>
+																		</tr> -->
+																		
+																		<tr>
+																		<td colspan="2">
+																			<div class="freeFormList form-group">
+																					<div class="freeFormListTr">
+																						<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																						<div class="freeFormListTdError paddingLeft3">
+																							<div id="ajax_error_LBEffectiveDate_searchTo" class="error"></div>
+																			                <div id="error_LBEffectiveDate_searchTo" class="error"> </div> 
+																							</div>
+																					</div>
+																					<div class="freeFormListTr">
+																						<div class="freeFormListTd labelAlign">
+																							<div class="freeFormLabelWidth" >
+																								Effective Date To :
+																							</div>
+																							
+																						</div>
+																						<div class="freeFormListTd tdInput iconsStyle2">
+																							<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+																							<input type="text" class="form-control datepicker" style="height:26px;width:215px"
+																								id="LBEffectiveDate_searchTo" 
+																								name=LBEffectiveDate_searchTo onkeyup="applyDateFormat(this,event);"/> 
+																						</div>
+																					</div>
+																				</div>
+																		<td>
+																			<!-- <td align="right" nowrap="nowrap">Effective Date To :</td>
+																			<td>
+																				<div align="left">
+																					<table border="0" cellspacing="0" cellpadding="0">
+																						<tr>
+																							<td align="left" nowrap="nowrap"><input
+																								name="LBEffectiveDate_searchTo" type="text"
+																								class="form-control" style="height:26px;width:215px"
+																								onkeyup="applyDateFormat(this,event);"
+																								id="LBEffectiveDate_searchTo" maxlength="8" />
+																								<a title="Select Date" class="calendar-link"
+																								id="date_link"
+																								onClick="show_calendar_widget(this);"><img
+																									src="img/icon_calendar.gif" alt="calendar"
+																									width="12" height="12" hspace="4" border="0" />
+																							</a></td>
+																							<td align="left" nowrap="nowrap"><span
+																								class="example">(MM/DD/YYYY)</span></td>
+																						</tr>
+																					</table>
+																				</div>
+																				<div id="error_LBEffectiveDate_searchTo" class="error"> </div>
+																			</td> -->
+																		</tr>
+																		<!-- <tr class="td_error0">
+																		<td></td>
+																		<td>
+																		<div class="freeFormListTdError paddingLeft3">
+																			<div id="error_LBIssuedDate_search" class="error"></div>
+																			<div id="ajax_error_LBIssuedDate_search" class="error"></div>
+														
+																		</div>
+																		</td>
+																		</tr>
+																		<tr>
+																			<td align="right" nowrap="nowrap">Issued Date
+																				From :</td>
+																			<td>
+																				<div align="left">
+																					<table border="0" cellspacing="0" cellpadding="0">
+																						<tr>
+																							<td align="left" nowrap="nowrap"><input
+																								name="LBIssuedDate_search" type="text"
+																								class="form-control" style="height:24px;width:156px"
+																								onkeyup="applyDateFormat(this,event);"
+																								id="LBIssuedDate_search" maxlength="8" />
+																								<a title="Select Date" class="calendar-link"
+																								id="date_link"
+																								onClick="show_calendar_widget(this);"><img
+																									src="img/icon_calendar.gif" alt="calendar"
+																									width="12" height="12" hspace="4" border="0" />
+																							</a></td>
+																							<td align="left" nowrap="nowrap"><span
+																								class="example">(MM/DD/YYYY)</span></td>
+																						</tr>
+																					</table>
+																				</div>
+																			</td>
+																		</tr>
+																		<tr class="td_error0">
+																		<td></td>
+																		<td>
+																		<div class="freeFormListTdError paddingLeft3">
+																			<div id="error_LBIssuedDate_searchTo" class="error"></div>
+																			<div id="ajax_error_LBIssuedDate_searchTo" class="error"></div>
+														
+																		</div>
+																		</td>
+																		</tr>
+																		<tr>
+																		
+																			<td align="right" nowrap="nowrap">Issued Date
+																				To :</td>
+																			<td>
+																				<div align="left">
+																				
+																					<table border="0" cellspacing="0" cellpadding="0">
+																						<tr>
+																							<td align="left" nowrap="nowrap"><input
+																								name="LBIssuedDate_searchTo" type="text"
+																								class="form-control" style="height:24px;width:156px"
+																								onkeyup="applyDateFormat(this,event);"
+																								id="LBIssuedDate_searchTo" maxlength="8" />
+																								<a title="Select Date" class="calendar-link"
+																								id="date_link"
+																								onClick="show_calendar_widget(this);"><img
+																									src="img/icon_calendar.gif" alt="calendar"
+																									width="12" height="12" hspace="4" border="0" />
+																							</a></td>
+																							<td align="left" nowrap="nowrap"><span
+																								class="example">(MM/DD/YYYY)</span></td>
+																						</tr>
+																					</table>
+																				</div>
+																			</td>
+																		</tr> -->
+																		
+																	<!--	<tr class="td_error0">
+																		<td></td>
+																		<td>
+																		<div class="freeFormListTdError paddingLeft3">
+																			<div id="error_LimitSequence" class="error"></div>
+																			<div id="ajax_error_LimitSequence" class="error"></div>
+														
+																		</div>
+																		</td>
+																		</tr>
+																																				
+																		 <tr>
+																			<td align="right">Limit :</td>
+																			<td>
+																			<select class="form-control" name="LimitSequence"
+																					id="ajax_field_LimitSequence" style="height:24px;width:156px">
+																				<option value="">- Select -</option>
+																			</select>
+																			</td>
+																		</tr>
+																		<tr class="td_error0">
+																			<td></td>
+																			<td>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td align="right">Policy Type :</td>
+																			<td><select name="LBpolicy_type"
+																				style="height:24px;width:156px" id="LBpolicy_type">
+																					<option value="">-Select-</option>
+																					<option value="NB">New</option>
+																					<option value="RB">Renew</option>
+																			</select></td>
+																		</tr>
+																		<tr class="td_error0">
+																			<td></td>
+																			<td>
+																			</td>
+																		</tr> -->
+																		<tr>
+																		<td>
+																			
+																			<div class="freeFormList form-group">
+																					<div class="freeFormListTr">
+																						<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																						<div class="freeFormListTdError paddingLeft3">
+																							<div id="" class="error"> </div>
+																						</div>
+																					</div>
+																					<div class="freeFormListTr">
+																						<div class="freeFormListTd labelAlign">
+																							<div class="freeFormLabelWidth" >
+																								State :
+																							</div>
+																							
+																						</div>
+																						<div class="freeFormListTd tdInput multiSelectSingle">
+																							<select name="WQStateCode_search"	  class="selectpicker" 
+																								multiple id="WQStateCode_search">
+																									<option value="">ALL</option>
+																							</select>
+																						</div>
+																					</div>
+																				</div>
+																			
+																			
+																			
+																			<!-- <select name="WQStateCode_search"	  class="selectpicker" 
+																				multiple id="WQStateCode_search">
+																					<option value="">ALL</option>
+																			</select> -->
+																																				
+																			</td>
+																		</tr>
+																		<tr class="td_error0">
+																			<td></td>
+																			<td>
+																			</td>
+																		</tr>
+																		<tr>
+																		<td>
+																			<div class="freeFormList form-group">
+																				<div class="freeFormListTr">
+																					<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+																					<div class="freeFormListTdError paddingLeft3">
+																						<div id="" class="error"> </div>
+																					</div>
+																				</div>
+																				<div class="freeFormListTr">
+																					<div class="freeFormListTd labelAlign">
+																						<div class="freeFormLabelWidth" >
+																							Direct or Sub-produced :
+																						</div>
+																						
+																					</div>
+																					<div class="freeFormListTd tdInput">
+																						<select name="LBSubProduced" class="form-control"
+																								 id="LBSubProduced" >
+																									<option value="">ALL</option>
+																									<option value="Direct">Direct</option>
+																									<option value="SubProduced">Sub-produced</option>
+																							</select>
+																					</div>
+																				</div>
+																			</div>
+																		</td>
+																			<!-- <td align="right">Sub Produced :</td>
+																			<td><select name="LBSubProduced"
+																				style="height:26px;width:215px" id="LBSubProduced" onchange="subprodnum();">
+																					<option value="">-Select-</option>
+																					<option value="N">Direct</option>
+																					<option value="Y">Sub Producer</option>
+																			</select></td> -->
+																		</tr>
+																		<tr class="td_error0" id="SubProducerNum1">
+																			<td></td>
+																			<td>
+																			</td>
+																		</tr>
+																		<!-- <tr id="SubProducerNum">
+																			<td align="right">Sub Producer Number :</td>
+																			<td>
+																			<div class="multiSelectSingle">
+																			<select name="ProducerCode_search" style="height:24px;width:215px" id="ProducerCode_search">
+																					<option value="">ALL</option>
+																			</select>
+																			</div>
+																			</td>
+																		</tr> -->
+																		
+																		
+																		
+																	</table>
+																				</fieldset>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td>
+																				<fieldset class="fieldsetTop">
+																					<legend>Update Criteria</legend>
+																					<table border="0" cellspacing="0"
+																		cellpadding="2" id="lawyersbatch_freeform_contextdata_01" align="center" class="tdPadding">
+
+																		<!-- <tr class="td_error0">
+																			<td></td>
+																			<td>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td align="right" nowrap="nowrap"> Policy Effective Date :</td>
+																			<td>
+																				<div align="left">
+																					<table border="0" cellspacing="0" cellpadding="0">
+																						<tr>
+																							<td align="left" nowrap="nowrap"><input
+																								name="LBEffectiveDate_update" type="text"
+																								class="form-control" style="height:24px;width:156px"
+																								onkeyup="applyDateFormat(this,event);"
+																								id="LBEffectiveDate_update" maxlength="8" />
+																								<a title="Select Date" class="calendar-link"
+																								id="date_link"
+																								onClick="show_calendar_widget(this);"><img
+																									src="img/icon_calendar.gif" alt="calendar"
+																									width="12" height="12" hspace="4" border="0" />
+																							</a></td>
+																							<td align="left" nowrap="nowrap"><span
+																								class="example">(MM/DD/YYYY)</span></td>
+																						</tr>
+																					</table>
+																				</div>
+																			</td>
+																		</tr> -->
+																		<tr class="td_error0">
+																			<td></td>
+																			<td>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td align="right">Modifier :</td>
+																			<td><input name="Modifier"
+																				style="height:26px;width:215px" id="Modifier" type="text"  />
+																				</td>
+																		</tr>
+																		<tr>
+																		<td>&nbsp;</td>
+																		<td>
+																		<div class="buttons" style="text-align:left;">	
+																		<a class="btn back floatLeft"	href="javascript:submitform('workq.html','LawyersBatch.back','','');">Back</a>																				
+																			<a class="btn button1" href="javascript:submitform('LawyersBatch.html','LawyersBatch.validatebatch','','');">Validate</a>
+																			<a class="btn button1" id="eval:LawyersRule.showCallRatingbutton" href="javascript:submitform('LawyersBatch.html','LawyersBatch.downloadbatch','','');">Download</a>
+																			<a class="btn button1" id="eval:LawyersRule.showCallRatingbutton" href="javascript:submitform('LawyersBatch.html','LawyersBatch.downloadcallRating','','');">Call Rating</a>
+																		</div>
+																		</td>
+																		</tr>
+																		<tr>
+																			<td>&nbsp;</td>
+																		</tr>
+																		
+																		
+																	</table>
+																				</fieldset>
+																			</td>
+																		</tr>
+																	</table>
+																	
+																</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+										</td>
+										<td>&nbsp;&nbsp;</td>
+										
+									</tr>
+									<tr><td>&nbsp;</td></tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<table id="Lawyersbatch_freeform_contextdata_999">
+				<tr>
+					<td>
+					<!-- <input type="text" name="PolicyEffectiveDate_search" id="PolicyEffectiveDate_search" />
+					<input type="text" name="PolicyEffectiveDate_searchTo" id="PolicyEffectiveDate_searchTo" />
+					<input type="text" name="StateCode_search" id="StateCode_search" />
+					<input type="text" name="IsRenewed_search" id="IsRenewed_search" />
+					<input type="text" name="ProducerCodefilter" id="ProducerCodefilter" />
+					<input type="text" name="FirstReviewerfilter" id="PolicyStatusDesc" /> -->
+					
+					
+					</td>
+				</tr>
+			</table>
+									
+				</td>
+			</tr>
+		</table>
+		
+		<table id="workq_freeform_contextdata_92">
+			<tr>
+				<td><input type="hidden" name="jsessionid" id="ajax_field_jsessionid" />
+				<input type="hidden" name="ProducerCode" id="ProducerCode" />
+				<!-- <input type="text" name="showCallRating" id="showCallRating" /> -->
+				
+				</td>
+				<td style="display: none;"><a href="javascript:submitform('renewThanks.html','workq.showRenewThanks','','');"></a>
+				</td>
+			</tr>
+		</table>
+		<div class="calendar_widget" id="calendar_widget" style="width:auto;height:auto!important;">
+			<iframe id='calendar_widget_iframe' name='calendar_widget_iframe' src="calendar_widget.html" frameborder="0" style="height:139px!important" />
+		</div>
+		<!---------Footer Start---------->
+				<div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<!---------Footer End---------->
+	</form>
+
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+<script>
+	setCSSForAccountType2();
+</script>
+<script type="text/javascript">
+	//rearrange();
+	//loadList();
+	if($("#LBSubProduced").val()=="N" || $("#LBSubProduced").val()=="") {
+		$("#SubProducerNum, #SubProducerNum1").hide();
+	}
+	if($("#UploadExcelFlag").val()!="1"){
+		$("#uplodbatchbutton").hide();
+	}
+	if($("#RatingExcelFlag").val()!="1"){
+		$("#rattingbatchbutton").hide();
+	}
+	
+	
+	function subprodnum(){
+		if($("#LBSubProduced").val()=="Y"){
+			$("#SubProducerNum, #SubProducerNum1").show();
+		}
+		else{
+			$("#SubProducerNum").hide();
+		}
+	}
+	
+</script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script src="js/bootstrap-select.js"></script>
+</html>

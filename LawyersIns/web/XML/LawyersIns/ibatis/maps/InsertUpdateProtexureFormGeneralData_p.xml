@@ -1,0 +1,35 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="InsertUpdateProtexureFormGeneralData_p">
+     <parameterMap id="InsertUpdateProtexureFormGeneralData_pMap" class="java.util.HashMap">
+          <parameter property="LimitSequence" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="DeductibleSequence" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsClaimExpensesType" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsClaimOptionType" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsDollarDefense" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="AccountEmail" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="InsuranceCompanyNamePross" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyExpirationDatePross" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="ProInsPremium" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="IsPriorActDateFull" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PriorActDatePross" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="FirmYear" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="hasAnyFirmPersonnelReported" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="AccountName" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ContactPerson" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Address1" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StateCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CountyDesc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="City" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Zip" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="WorkPhone" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="addAttorneys" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="outputList1" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="MarketableProductKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdateProtexureFormGeneralData_p" parameterMap="InsertUpdateProtexureFormGeneralData_pMap">{ call InsertUpdateProtexureFormGeneralData_p(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

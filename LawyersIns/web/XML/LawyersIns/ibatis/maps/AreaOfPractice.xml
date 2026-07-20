@@ -1,0 +1,32 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AreaOfPractice">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AreaOfPractice</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from AreaOfPractice where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and AOPKey = #AOPKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into AreaOfPractice(VersionSequence, PolicyKey, AOPKey
+          <isNotEmpty property="PercentageValue" prepend=",">PercentageValue</isNotEmpty>
+          <isNotEmpty property="AOPCommentDesc" prepend=",">AOPCommentDesc</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#, #AOPKey:NUMERIC#
+          <isNotEmpty property="PercentageValue" prepend=",">#PercentageValue#</isNotEmpty>
+          <isNotEmpty property="AOPCommentDesc" prepend=",">#AOPCommentDesc#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PercentageValue, AOPCommentDesc, VersionSequence, PolicyKey, AOPKey from AreaOfPractice where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and AOPKey = #AOPKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update AreaOfPractice set
+          <dynamic prepend=" ">
+               <isNotEmpty property="PercentageValue" prepend=",">PercentageValue = #PercentageValue#</isNotEmpty>
+               <isEmpty property="PercentageValue" prepend=",">PercentageValue = null</isEmpty>
+               <isNotEmpty property="AOPCommentDesc" prepend=",">AOPCommentDesc = #AOPCommentDesc#</isNotEmpty>
+               <isEmpty property="AOPCommentDesc" prepend=",">AOPCommentDesc = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and AOPKey = #AOPKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from AreaOfPractice where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and AOPKey = #AOPKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from AreaOfPractice</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AreaOfPractice where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and AOPKey = #AOPKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PercentageValue, AOPCommentDesc, VersionSequence, PolicyKey, AOPKey from AreaOfPractice where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and AOPKey = #AOPKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, AOPKey, PercentageValue, AOPCommentDesc from AreaOfPractice where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and AOPKey = #AOPKey#</select>
+</sqlMap>
+

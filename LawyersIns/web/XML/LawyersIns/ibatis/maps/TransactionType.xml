@@ -1,0 +1,33 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="TransactionType">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from TransactionType</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from TransactionType</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into TransactionType(
+          <dynamic prepend=" ">
+               <isNotEmpty property="TransactionTypeDesc" prepend=",">TransactionTypeDesc</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="TransactionTypeDesc" prepend=",">#TransactionTypeDesc#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="TransactionTypeKey">SELECT IDENT_CURRENT('TransactionType') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select TransactionTypeKey, TransactionTypeDesc from TransactionType where TransactionTypeKey = #TransactionTypeKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update TransactionType set
+          <dynamic prepend=" ">
+               <isNotEmpty property="TransactionTypeDesc" prepend=",">TransactionTypeDesc = #TransactionTypeDesc#</isNotEmpty>
+               <isEmpty property="TransactionTypeDesc" prepend=",">TransactionTypeDesc = null</isEmpty>
+          </dynamic>
+          where TransactionTypeKey = #TransactionTypeKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from TransactionType where TransactionTypeKey = #TransactionTypeKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from TransactionType</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from TransactionType</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select TransactionTypeKey, TransactionTypeDesc from TransactionType where TransactionTypeKey = #TransactionTypeKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select TransactionTypeKey, TransactionTypeDesc from TransactionType</select>
+</sqlMap>
+

@@ -1,0 +1,80 @@
+<messages  project="LawyersIns">
+	<message msglevel="W" msgkey="showMsgAnnualHouredWorked" message="Part time solo attorneys are not eligible"/>
+	<message msglevel="W" msgkey="showMsgWithoutBackupAttorney" message="Solo practitioners without backup are not eligible - review with management"/>
+	<message msglevel="W" msgkey="showMsgPrincipalLocation" message="Review additional information and determine how the additional location is managed - review with management"/>
+	<message msglevel="W" msgkey="showMsgOfficeSuitShared" message="Attach the Office Sharing  Exclusion"/>
+	<message msglevel="W" msgkey="showMsgLegalEntities" message="Review list of other entities - contact applicant to understand what services the entities are providing and that the services provided are defined as a legal service - review with management - referral to C &amp; F required"/>
+	<message msglevel="W" msgkey="showMsgApplicantProfessionalServices" message="Contact applicant to understand the nature of the work - review with management - referral to C &amp; F required"/>
+	<message msglevel="W" msgkey="showMsgPublicFiguresAsClient" message="Review the Public Figures supplement and review with management  - referral to C &amp; F required"/>
+	<message msglevel="W" msgkey="showMsgAOPCopyRightTrademark" message="Review with management"/>
+	<message msglevel="W" msgkey="showMsgAOPEnvironmental" message="Review Environment Supplement - review with management  - referral to C &amp; F required"/>
+	<message msglevel="W" msgkey="showMsgAOPPension" message="Review with management"/>
+	<message msglevel="W" msgkey="showMsgAOPFinancialInstitution" message="Review Supplement and review with management  - referral to C &amp; F required"/>
+	<message msglevel="W" msgkey="showMsgAOPInvestmentCounselling" message="Review with management"/>
+	<message msglevel="W" msgkey="showMsgAOPPlaintiffLegitation" message="Review Supplement and review with management"/>
+	<message msglevel="W" msgkey="showMsgAOPRealEstate" message="Review Supplement and review with management"/>
+	<message msglevel="W" msgkey="showMsgAOPSecuritiesBonds" message="Review with management"/>
+	<message msglevel="W" msgkey="showMsgAOPTitle" message="Review Supplement and review with management"/>
+	<message msglevel="W" msgkey="showMsgAOPOther" message="Review description and contact applicant to understand the services described - review with management"/>
+	<message msglevel="W" msgkey="showMsgRepresentedAnnualRevenue" message="Determine the stability of the relationship and the firm's ability to withstand loss of such a key client - review with management - referral to C &amp; F required"/>
+	<message msglevel="W" msgkey="showMsgCombinedEquityInterest" message="Determine the extent of the equity interest and the nature of the enterprise -  review with management - referral to C &amp; F required"/>
+	<message msglevel="W" msgkey="showMsgApplicantAsCommitteeMember" message="Review additional information - if depository institution or public entity - review with management - referral to C &amp; F required"/>
+	<message msglevel="W" msgkey="showMsgApplicantCentralizedProcedures" message="Contact Applicant to determine what process is in place - review with management"/>
+	<message msglevel="W" msgkey="showMsgApplicantMaintedDocketDiary" message="Review AOP's, contact client to get additional information if required - review with management"/>
+	<message msglevel="W" msgkey="showMsgApplicantEngagementLetters" message="Contact Applicant to understand what type of engagement process is used - review with management"/>
+	<message msglevel="W" msgkey="showMsgApplicantPolicyProhibiting" message="Contact Applicant to understand how investment in clients are handled - review with management"/>
+	<message msglevel="W" msgkey="showMsgProcedureHandlingConfidentialInfo" message="Contact Applicant to understand how client confidentiality is handled - review with management"/>
+	<message msglevel="W" msgkey="showMsgOutstandingAccountReceived" message="Determine how long receivables have been at this level.  Is this circumstance improving or getting worse? - review with management"/>
+	<message msglevel="W" msgkey="showMsgApplicantInitiatedLawSuit" message="Review number of fee suits - discuss with client - review with management - referral to C &amp; F required if over 1"/>
+	<message msglevel="W" msgkey="showMsgApllicantConvictedOfFelonyCharge" message="Review details - discuss with client if required - review with management"/>
+	<message msglevel="W" msgkey="showMsgApplicantLiabilityClaim" message="Review claims information - review UW guidelines provided by C &amp; F - review with management - may be a referral to C &amp; F"/>
+	<message msglevel="W" msgkey="showMsgClaimAgainstApplicant" message="Review incident information - review UW guidelines provided by C &amp; F - review with management"/>
+	<message msglevel="W" msgkey="showMsgAttorneyDeclinedOrCancelled" message="Review additional information provided - review with management"/>
+	<message msglevel="W" msgkey="showMsgLateralHireCoverage" message="Contact Applicant to get the details on the lateral hires that are covered - review with management - referral to C &amp; F required"/>
+	<message msglevel="W" msgkey="showMsgExcludeCoverageForAnyAttorney" message="Contact Applicant to get the details and copy of the exclusion - review with management"/>
+	<message msglevel="W" msgkey="showMsgAccuiredOrMerge" message="Determine details of merger: when, with whom, number of attorneys involved, nature of practices - review with management"/>
+	<message msglevel="W" msgkey="showMsgApplicantProvidedLegalServices" message="Determine specific nature of services and how many times it occurred.  - Review information with management"/>
+	<message msglevel="W" msgkey="showMsgApplicantRenderedLegalOpinion" message="Determine nature and scope of activity - Review information with management"/>
+	<message msglevel="W" msgkey="showMsgInvestigationOfRisks" message="Discuss details with Applicant - Review information with management"/>
+	<message msglevel="W" msgkey="showMsgStatueOfLimitation" message="Review case intake procedures: Issues include management of statutes of limitations, conflicts, clear communication of roles and responsibilities - review information with management"/>
+	<message msglevel="W" msgkey="showMsgApplicantAcceptReferral" message="Discuss controls with applicant - review with management"/>
+	<message msglevel="W" msgkey="showMsgSettlementAuthorityAgreementForms" message="Discuss controls with applicant - review with management"/>
+	<message msglevel="W" msgkey="showMsgFinancialInstitutionQ1ae" message="Review any provided additional information - review with management"/>
+	<message msglevel="W" msgkey="showMsgFinancialInstitutionQ2" message="Discuss details with Applicant - Review information with management"/>
+	<message msglevel="W" msgkey="showMsgFinancialInstitutionQ3" message="Review claims supplement - review with management"/>
+	<message msglevel="W" msgkey="showMsgAuthorityToWriteChecks" message="Determine nature and extent of services and applicants experience in such - Review information with management"/>
+
+	<message msglevel="W" msgkey="showMsgApplicantLegalServices" message="Review with management  - referral to C &amp; F required"/>	
+	<message msglevel="W" msgkey="showMsgAOPTaxQ1" message="Determine nature and extent of services and applicants experience in such.  - Review information with management"/>
+	<message msglevel="W" msgkey="showMsgServicesProvidedToClients" message="Determine nature and extent of services and applicants experience in such - Review information with management"/>
+	<message msglevel="W" msgkey="showMsgFinancialQ2" message="Discuss details with Applicant - Review information with management"/>
+	<message msglevel="W" msgkey="showMsgWillsQ2" message="Discuss details with Applicant - Review information with management"/>
+	<message msglevel="W" msgkey="showHelpMsgPlantiffQ1" message="Determine nature and extent of representation - Review with management"/>
+	<message msglevel="W" msgkey="showHelpMsgRealEstateQ1" message="Discuss details with Applicant - Review information with management"/>
+	<message msglevel="W" msgkey="showHelpMsgIsFirmHaveLawyersLiabilityInsurance_2" message="Determine if there has been a lapse in coverage - review with management"/>
+	<message msglevel="W" msgkey="showHelpMsgIsStateLincensedToLaw" message="At least one of the attorney's has to be licensed in the location state"/>
+	<message msglevel="W" msgkey="showHelpMsgIsRatioOfStaffGreater" message="Support staff ratio greater than 3 to 1 - review with management"/>
+	<message msglevel="W" msgkey="showHelpMsgGrossFluctuation" message="Contact applicant to understand the change in revenue - review with management"/>
+	<message msglevel="W" msgkey="showHelpMsgCoverageSelectionLimit" message="Contact applicant to determine why the change in limit or why a solo needs the higher limit - review with management"/>
+	<message msglevel="W" msgkey="showHelpMsgCoverageSelectionDeductable" message="Contact applicant to determine why the change in deductible or why a solo needs the higher deductible - review with management"/>
+	<message msglevel="W" msgkey="showHelpMsgDatesAreDifferent" message="Determine if there has been a lapse in coverage - review with management"/>
+	<message msglevel="W" msgkey="showHelpMsgFirmYearGreater" message="Contact Applicant to determine if they have a prior acts date - get copy of  declarations page of current policy"/>
+	<message msglevel="W" msgkey="showHelpMsgDaysDifferent" message="Contact Applicant to determine if they have a prior acts date - get copy of  declarations page of current policy"/>
+	<message msglevel="W" msgkey="isCommentEmpty" message="Comment is required"/>
+	<message msglevel="W" msgkey="StatusSuccessFullyUpdateMsg" message="Policy Status has been updated successfully"/>
+	<message msglevel="W" msgkey="StatusSuccessCommentMsg" message="Conditions have been saved successfully"/>
+	<message msglevel="W" msgkey="showPageDataSavedSuccessfuly" message="Data has been saved successfully"></message>
+	<message msglevel="W" msgkey="selectRadioOption" message="Please select yes or no."></message>
+	<message msglevel="W" msgkey="StatusSuccessCommentMsgUnderwriter" message="Comment has been saved successfully"/>
+	<message msglevel="W" msgkey="ClearAdditionalFlag" message="Please clear Additional Info Flag"/>
+	<message msglevel="W" msgkey="NameClearanceMsgKey" message="Please Select Clearance Name Option"/>
+	<message msglevel="W" msgkey="SubproducerFormSuccessFullyUpdateMsg" message="Subproducer Information has been saved successfully"/>
+	<message msglevel="W" msgkey="EffectiveDateToEmptyMsg" message="PolicyEffectiveDateTo should not be empty"/>
+	<message msglevel="W" msgkey="EffectiveDateFromEmptyMsg" message="PolicyEffectiveDateFrom should not be empty"/>
+	<message msglevel="W" msgkey="DeploySuccessMsg" message="Atomation Started."/>
+	<message msglevel="W" msgkey="UploadExcelMsgKey" message="Sucessfully Uploaded."/>
+	<message msglevel="W" msgkey="QuoteEffectiveDateMsgNB" message="CANNOT SEND THE QUOTE FOR MORE THAN 45 DAYS OUT "/>
+	<message msglevel="W" msgkey="QuoteEffectiveDateMsgRB" message="CANNOT SEND THE QUOTE FOR MORE THAN 70 DAYS OUT "/>
+	<message msglevel="W" msgkey="QuotelimitMsgRB" message="C &amp; F is not allowing any increase in limit."/>
+	<message msglevel="W" msgkey="PageSaveMessage" message="Policy data has been updated successfully"/>
+</messages>

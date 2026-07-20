@@ -1,0 +1,7 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="security">
+     <select id="findSecurityByProjectId" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select * from security where project = #project#
+     </select>
+</sqlMap>

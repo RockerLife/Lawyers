@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Lawyers</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap-select.css" rel="stylesheet" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/bootstrap-select.js"></script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+<body>
+<div id="cover"></div>
+<div id="popupsave2">
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog" style="width: 450px;">
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			<h4 class="modal-title">Process Endorsement</h4>
+		  </div>
+		  <div class="modal-body" style="height: 64px;">
+			<p style="text-align: center; line-height: 25px;">Are you sure you want to process the <br />[type of endorsement] for [Insured name].</p>
+		  </div>
+		  <div class="modal-footer">
+			<div class="floatRight">
+				<a class="ovalbutton" onclick="closePopUp('popupsave2');">Process Endorsement</a>
+				<a class="ovalbutton" onclick="closePopUp('popupsave2');">Cancel</a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</div>
+<!-- Bootstrap Core JavaScript -->
+
+<div class="container-fluid bootstrap-node-1">
+  <div class="tableWidth"> 
+    <!---------Header Start---------->  
+      <div id="header">
+		<div >
+			<iframe src="header.html" class="header" frameborder="0"></iframe>
+		  </div>
+      </div>
+    <!---------Header End----------> 
+	<div class="menuTab">
+		<ul class="menu">
+			<li class="dropdown active">
+				<a href="#" data-toggle="dropdown"><i class="fa-info-circle fa"></i> About You <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="FirmName.html">Will hold Firm Name</a></li>
+					<li><a href="insuranceHistory.html">Insurance History/Coverage</a></li>
+				</ul>
+			</li>
+			<li class=""><a href="attys.html"><i class="fa-balance-scale fa"></i> Attorneys </a></li>
+			<li><a href="lawPractice.html"><i class="fa-cogs fa"></i> Areas of Practice</a></li>
+			<li class="dropdown">
+				<a href="#" data-toggle="dropdown"><i class="fa-cubes fa"></i> Firm Information <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="aboutFirm.html">About Your Firm</a></li>
+					<li><a href="practiceManagement.html">Practice Management</a></li>
+					<li><a href="morePracticeManagement.html">More Practice Management</a></li>
+					<li><a href="pastClaims.html">Past Claims</a></li>
+				</ul>
+			</li>
+			<li><a href="housekeeping.html"><i class="fa-industry fa"></i> Housekeeping</a></li>
+			<li class="dropdown">
+				<a href="#" data-toggle="dropdown"><i class="fa-info-circle fa"></i> Supplements <span class="caret"></span></a>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="#">Supplements 1</a></li>
+					<li><a href="#">Supplements 2</a></li>
+					<li><a href="#">Supplements 3</a></li>
+					<li><a href="#">Supplements 4</a></li>
+				</ul>
+			</li>
+			<li><a href="#"><i class="fa-quote-right fa"></i> Quote </a></li>
+			
+		</ul>
+	</div> 
+	
+   <div id="contentSection">
+		
+		<div>
+			<h2 class="questionHeading">Claim Summary Screen</h2>
+		</div>
+		<div class="form row">
+			<div class="block-form">
+				
+				<div class="paddingTop10">
+					<table class="gridTable" cellpadding="0" cellspacing="0" style="width: 100%;">
+						<thead>
+							<tr>
+								
+								<th width="200px">Watch List</th>
+								<th width="150px">Incurred</th>
+								<th width="120px">Date Reported</th>
+								<th width="140px">Current Status</th>
+								<th width="120px">Policy Number</th>
+								<th width="120px">Policy Effective Date</th>
+								<th width="120px">Closed Date</th>
+								<th width="120px">Insurance Company</th>
+							
+							</tr>
+						</thead>
+						<tbody id="rowMake">
+							
+						</tbody>
+						<tbody>
+						
+							<tr id="row1">
+							
+								<td style=""><input type="checkbox" id="attorney" class="" /></td>
+								<td><input type="text" id="" class="form-control" /></td>
+								<td nowrap>
+									<div class="input-group">
+										<div class="input-group-addon">
+										<i class="fa fa-calendar"></i>
+									  </div>
+									  <input type="text" id="datep" class="form-control pull-left form-control-date datepicker"/>
+									</div>
+							      </td>
+								
+								<td>
+									<select class="selectpicker form-control" multiple data-selected-text-format="count > 1">
+										<option value="AL">Select</option>
+										<option value="AK">Open</option>
+										<option value="AZ">Closed</option>
+										<option value="AR">Reopen</option>
+										<option value="CA">Incident</option>
+									
+									
+									</select>
+								
+								</td>
+							
+								
+								<td><input type="text" id="practice" /></td>
+								<td nowrap>
+									<div class="input-group">
+										<div class="input-group-addon">
+										<i class="fa fa-calendar"></i>
+									  </div>
+									  <input type="text" id="datep" style="width: 80px;" class="form-control pull-left form-control-date datepicker"/>
+									</div></td>
+									<td nowrap>
+									<div class="input-group">
+										<div class="input-group-addon">
+										<i class="fa fa-calendar"></i>
+									  </div>
+									  <input type="text" id="datep" style="width: 80px;" class="form-control pull-left form-control-date datepicker"/>
+									</div></td>
+								<td><input type="text" id="" class="" /></td>
+							</tr>
+							
+						</tbody>
+					</table>
+					
+				</div>
+			<br><br><br><br>
+			
+		</div>
+		<div class="buttons borderTop row">
+			<a class="btn back floatLeft" href="endorsement.html"> Back </a>
+		
+		</div>
+		
+	</div>
+   <!---------Footer Start---------->
+				<div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<!---------Footer End---------->
+  </div>
+</div>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

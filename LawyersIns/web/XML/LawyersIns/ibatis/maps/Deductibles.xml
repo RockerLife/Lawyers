@@ -1,0 +1,38 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Deductibles">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Deductibles</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Deductibles where CoverageKey = #CoverageKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into Deductibles(AggregateDeductible, OccuranceDeductible, CoverageKey
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="DeductibleSequence" prepend=",">DeductibleSequence</isNotEmpty>
+          ) values (#AggregateDeductible:NUMERIC#, #OccuranceDeductible:NUMERIC#, #CoverageKey:NUMERIC#
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="DeductibleSequence" prepend=",">#DeductibleSequence#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AggregateDeductible, OccuranceDeductible, LastUpdateUserID, LastUpdateTimeStamp, DeductibleSequence, CoverageKey from Deductibles where AggregateDeductible = #AggregateDeductible# and OccuranceDeductible = #OccuranceDeductible# and CoverageKey = #CoverageKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update Deductibles set
+          <dynamic prepend=" ">
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="DeductibleSequence" prepend=",">DeductibleSequence = #DeductibleSequence#</isNotEmpty>
+               <isEmpty property="DeductibleSequence" prepend=",">DeductibleSequence = null</isEmpty>
+          </dynamic>
+          where AggregateDeductible = #AggregateDeductible# and OccuranceDeductible = #OccuranceDeductible# and CoverageKey = #CoverageKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from Deductibles where AggregateDeductible = #AggregateDeductible# and OccuranceDeductible = #OccuranceDeductible# and CoverageKey = #CoverageKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from Deductibles</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from Deductibles where CoverageKey = #CoverageKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AggregateDeductible, OccuranceDeductible, LastUpdateUserID, LastUpdateTimeStamp, DeductibleSequence, CoverageKey from Deductibles where AggregateDeductible = #AggregateDeductible# and OccuranceDeductible = #OccuranceDeductible# and CoverageKey = #CoverageKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AggregateDeductible, OccuranceDeductible, CoverageKey, LastUpdateUserID, LastUpdateTimeStamp, DeductibleSequence from Deductibles where CoverageKey = #CoverageKey#</select>
+     <select id="getDeductiblesListBrokerage" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select DeductibleSequence,PARSENAME(Convert(varchar,Convert(money,AggregateDeductible),1),2) as DeductibleAmount from  BrokerageDeductibles</select>
+     <select id="getDeductiblesList" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PARSENAME(Convert(varchar,Convert(money,d.AggregateDeductible),1),2) as DeductibleAmount,d.DeductibleSequence from  Deductibles d where CoverageKey=#CoverageKey#</select>
+</sqlMap>
+

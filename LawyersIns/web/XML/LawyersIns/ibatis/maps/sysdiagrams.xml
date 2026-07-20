@@ -1,0 +1,37 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="sysdiagrams">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from sysdiagrams</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from sysdiagrams</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into sysdiagrams(
+          <dynamic prepend=" ">
+               <isNotEmpty property="principal_id" prepend=",">principal_id</isNotEmpty>
+               <isNotEmpty property="version" prepend=",">version</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="principal_id" prepend=",">#principal_id#</isNotEmpty>
+               <isNotEmpty property="version" prepend=",">#version#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="diagram_id">SELECT IDENT_CURRENT('sysdiagrams') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select principal_id, diagram_id, version from sysdiagrams where diagram_id = #diagram_id#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update sysdiagrams set
+          <dynamic prepend=" ">
+               <isNotEmpty property="principal_id" prepend=",">principal_id = #principal_id#</isNotEmpty>
+               <isEmpty property="principal_id" prepend=",">principal_id = null</isEmpty>
+               <isNotEmpty property="version" prepend=",">version = #version#</isNotEmpty>
+               <isEmpty property="version" prepend=",">version = null</isEmpty>
+          </dynamic>
+          where diagram_id = #diagram_id#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from sysdiagrams where diagram_id = #diagram_id#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from sysdiagrams</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from sysdiagrams</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select principal_id, diagram_id, version from sysdiagrams where diagram_id = #diagram_id#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select diagram_id, principal_id, version from sysdiagrams</select>
+</sqlMap>
+

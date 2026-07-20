@@ -1,0 +1,32 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="PolicyForm">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PolicyForm</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PolicyForm where FormID = #FormID# and PolicyKey = #PolicyKey# and FormID = #FormID# and StateCode = #StateCode#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into PolicyForm(FormID, PolicyKey, StateCode
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          ) values (#FormID:NUMERIC#, #PolicyKey:NUMERIC#, #StateCode#
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select LastUpdateUserID, LastUpdateTimeStamp, FormID, PolicyKey, StateCode from PolicyForm where FormID = #FormID# and PolicyKey = #PolicyKey# and StateCode = #StateCode#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update PolicyForm set
+          <dynamic prepend=" ">
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where FormID = #FormID# and PolicyKey = #PolicyKey# and StateCode = #StateCode#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from PolicyForm where FormID = #FormID# and PolicyKey = #PolicyKey# and StateCode = #StateCode#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from PolicyForm</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from PolicyForm where FormID = #FormID# and PolicyKey = #PolicyKey# and FormID = #FormID# and StateCode = #StateCode#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select LastUpdateUserID, LastUpdateTimeStamp, FormID, PolicyKey, StateCode from PolicyForm where FormID = #FormID# and PolicyKey = #PolicyKey# and StateCode = #StateCode#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FormID, PolicyKey, StateCode, LastUpdateUserID, LastUpdateTimeStamp from PolicyForm where FormID = #FormID# and PolicyKey = #PolicyKey# and FormID = #FormID# and StateCode = #StateCode#</select>
+</sqlMap>
+

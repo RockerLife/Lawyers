@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Electronic Selection / Rejection Option</title>
+		<link href="css/newappstyle.css" rel="stylesheet" type="text/css"/>
+		<link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+		<link href="css/datepicker.css" rel="stylesheet" type="text/css"/>
+		<script src="js/jquery.js"/>
+		<script src="js/bootstrap_3-3-6.js"/>
+		<script type="text/javascript" src="script/common.js"/>
+		<script language="javascript" src="script/lawyers.js"/>
+		<script type="text/javascript" src="script/manage.js"/>
+		<script type="text/javascript" src="script/date-picker.js"/>
+		<script type="text/javascript" src="script/masks.js"/>
+		<script type="text/javascript" src="script/popup.js"/>
+		<script type="text/javascript" src="script/capitalizeSentences.js"/>
+		<script src="js/producerOne.js"/>
+		<script src="js/bootstrap-datepicker.js"/>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+		<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"/>
+	</head>
+	<body onload="loadAboutFirm();setEwrp();">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+		<form>
+			<!-- Bootstrap Core JavaScript -->
+			<div class="container-fluid bootstrap-node-1">
+				<div class="tableWidth" id="AppCompleted">
+					<!---------Header Start---------->
+					<div id="header">
+						<span id="#Include:header.html#"/>
+					</div>
+					<!---------Header End---------->
+					<div class="menuTab">
+						<span id="#Include:tabs.html#"/>
+					</div>
+					<div id="contentSection">
+						<div id="electronic_freeform_contextdata_1100">
+							<div>
+								<h2 class="questionHeading">Electronic Selection / Rejection Option</h2>
+							</div>
+							<div class="form">
+								<table class="question practiceManagement" width="80%" cellpadding="0" cellspacing="0">
+									<tr>
+										<td colspan="3">Your insurer may be required by law to obtain consent from insureds prior to engaging in any electronic delivery of insurance policies and/or other supporting documents in connection with the policy. You have the right to:</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td colspan="2">Select electronic delivery.</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td colspan="2">Select electronic delivery and paper delivery.</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td colspan="2">Reject electronic delivery.</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td colspan="2">Withdraw your consent if you decide you no longer want to receive electronic delivery of your insurance policy and/or other supporting documents in connection with your insurance policy.</td>
+									</tr>
+									<tr>
+										<td>1.</td>
+										<td>
+											<div id="error_isElectronicInsurance" class="error"></div>
+											<span class="mendatory">*</span>SELECTION OF ELECTRONIC INSURANCE POLICY DELIVERY OPTION
+										</td>
+										<td nowrap>
+											<span class="radio-inline"><input type="radio" name="isElectronicInsurance" id="isElectronicInsuranceY" value="Y" onclick="policyDocumentsDeliveryOption(this.name);"/>Yes</span>
+											<span class="radio-inline"><input type="radio" name="isElectronicInsurance" id="isElectronicInsuranceN" value="N" onclick="policyDocumentsDeliveryOption(this.name);"/>No</span>
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>
+											<div style="width: 90%">I select the option to receive the following documents in connection with my insurance policy electronically, for myself and all those covered under the policy. I acknowledge I may no longer receive paper copies of my insurance policy, unless I advise my insurer to continue to provide paper copies in addition to electronic copies.</div>
+										</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td colspan="2">Insurance Policy Identification.</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td colspan="2">Card Notices of Cancellation.</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td colspan="2">Notices of Nonrenewal.</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td colspan="2">Other supporting documents in connection with my insurance policy.</td>
+									</tr>
+									
+									<tr>
+										<td>2.</td>
+										<td>
+											<div id="error_isElectronicAndPaperDelivery" class="error"/>
+											<span class="mendatory">*</span>SELECTION OF ELECTRONIC DELIVERY AND PAPER DELIVERY OPTION
+										</td>
+										<td>
+											<span class="radio-inline"><input type="radio" name="isElectronicAndPaperDelivery" id="isElectronicAndPaperDeliveryY" value="Y" onclick="policyDocumentsDeliveryOption(this.name);"/>Yes</span>
+											<span class="radio-inline"><input type="radio" name="isElectronicAndPaperDelivery" id="isElectronicAndPaperDeliveryN" value="N" onclick="policyDocumentsDeliveryOption(this.name);"/>No</span>
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>
+											<div style="width: 90%">I select the option to receive both electronic and paper copies of my insurance policy and/or other supporting documents in connection with my insurance policy, for myself and all those covered under the policy.</div>
+										</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>3.</td>
+										<td>
+											<div id="error_isElectronicDeliveryRejection" class="error"/>
+											<span class="mendatory">*</span>REJECTION OF ELECTRONIC DELIVERY OPTION
+										</td>
+										<td>
+											<span class="radio-inline"><input type="radio" name="isElectronicDeliveryRejection" id="isElectronicDeliveryRejectionY" value="Y" onclick="policyDocumentsDeliveryOption(this.name);"/>Yes</span>
+											<span class="radio-inline"><input type="radio" name="isElectronicDeliveryRejection" id="isElectronicDeliveryRejectionN" value="N" onclick="policyDocumentsDeliveryOption(this.name);"/>No</span>
+										</td>
+									</tr>
+									<tr>
+										<td></td>
+										<td>
+											<div style="width: 90%">I reject the option to receive my insurance policy and/or other supporting documents in connection with my insurance policy electronically, for myself and all those covered under the policy. I will continue to receive paper copies of such documents.</div>
+										</td>
+										<td></td>
+									</tr>
+									<tr id="RenewBusiness" style="display: none;">
+										<td>4.</td>
+										<td>
+											<div id="error_isElectronicDeliveryWithdrawalConsent" class="error"/>
+											<span class="mendatory">*</span>WITHDRAWAL OF CONSENT OF ELECTRONIC DELIVERY
+										</td>
+										<td>
+											<span class="radio-inline"><input type="radio" name="isElectronicDeliveryWithdrawalConsent" id="isElectronicDeliveryWithdrawalConsentY" value="Y" onclick="policyDocumentsDeliveryOption(this.name);"/>Yes</span>
+											<span class="radio-inline"><input type="radio" name="isElectronicDeliveryWithdrawalConsent" id="isElectronicDeliveryWithdrawalConsentN" value="N" onclick="policyDocumentsDeliveryOption(this.name);"/>No</span>
+										</td>
+									</tr>
+									<tr id="RenewBusiness"  style="display: none;">
+										<td></td>
+										<td>
+											<div style="width: 90%">I withdraw my previous consent of electronic delivery of my insurance policy and/or other supporting documents in connection with my insurance policy, for myself and all those covered under the policy. I elect to receive paper copies of such documents in the future.</div>
+										</td>
+										<td></td>
+									</tr>
+									<tr>&nbsp;</tr>
+									<tr>&nbsp;</tr>
+									<tr>
+										<td colspan="3" align="center" style="font-weight: bold;">ELECTRONIC DELIVERY DISCLOSURE </td>
+									</tr>
+									<tr>
+										<td colspan="3">The policyholder who elects to allow for insurance policy and/or other supporting documents in connection with the insurance policy to be sent to the electronic mail address provided should be diligent in updating the electronic mail address provided to the insurer in the event that the address should change.</td>
+									</tr>
+								</table>
+								<div class="buttons borderTop row" id="NewBusiness">
+									<a href="javascript:submitform('underwritingInfo.html','electronicInsurance.back','','');" class="btn back floatLeft">Back</a>
+									<div class="floatRight">
+										<span id="showPageSave">
+											<a class="btn save" href="javascript:submitform('pastClaims.html|workq.html','electronicInsurance.save','forwardeval','LawyersRule.isPolicyStatusNotUpdated|LawyersRule.isPolicyStatusUpdated');">Save&nbsp;&&nbsp;Continue</a>
+										</span>
+										<span id="showContinue">
+											<a class="btn next" href="javascript:submitform('pastClaims.html|workq.html','electronicInsurance.continue','forwardeval','LawyersRule.isPolicyStatusNotUpdated|LawyersRule.isPolicyStatusUpdated');">Continue</a>
+										</span>
+									</div>
+								</div>
+								<div class="buttons borderTop row" id="RenewBusiness">
+									<a href="javascript:submitform('pastClaims.html','electronicInsurance.renewBack','','');" 
+										class="btn back floatLeft">Back</a>
+									<div class="floatRight">
+										<span id="showPageSave">
+											<a class="btn save" href="javascript:submitform('AboutFirmRenewal.html|workq.html','electronicInsurance.renewSave','forwardeval','LawyersRule.isPolicyStatusNotUpdated|LawyersRule.isPolicyStatusUpdated');">Save&nbsp;&&nbsp;Continue</a>
+										</span>
+										<span id="showContinue">
+											<a class="btn next" href="javascript:submitform('AboutFirmRenewal.html|workq.html','electronicInsurance.renewContinue','forwardeval','LawyersRule.isPolicyStatusNotUpdated|LawyersRule.isPolicyStatusUpdated');">Continue</a>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="footer" class="footer">
+							<span id="#Include:footer.html#"/>
+						</div>
+					</div>
+					<table id="electronic_freeform_contextdata_999">
+						<tr>
+							<td>
+								<input type="hidden" name="hideisLiabilityInsuranceNo" id="ajax_field_hideisLiabilityInsuranceNo"/>
+								<input type="hidden" name="jsessionid" id="jsessionid"/>
+								<input type="hidden" name="divHideShow" id="divHideShow"/>
+								<input type="hidden" name="firmNewAppPage" id="firmNewAppPage"/>
+								<input type="hidden" name="insuranceHistoryPage" id="insuranceHistoryPage"/>
+								<input type="hidden" name="bankruptcySuppPage" id="bankruptcySuppPage"/>
+								<input type="hidden" name="collectionSuppPage" id="collectionSuppPage"/>
+								<input type="hidden" name="copyrightSuppPage" id="copyrightSuppPage"/>
+								<input type="hidden" name="familyLawSuppPage" id="familyLawSuppPage"/>
+								<input type="hidden" name="financialSuppPage" id="financialSuppPage"/>
+								<input type="hidden" name="governmentSuppPage" id="governmentSuppPage"/>
+								<input type="hidden" name="litigationSuppPage" id="litigationSuppPage"/>
+								<input type="hidden" name="realEstateSuppPage" id="realEstateSuppPage"/>
+								<input type="hidden" name="willStateSuppTrustPage" id="willStateSuppTrustPage"/>
+								<input type="hidden" name="taxSuppPage" id="taxSuppPage"/>
+								<input type="hidden" name="aboutFirmPage" id="aboutFirmPage"/>
+								<input type="hidden" name="aboutFirmRenewalPage" id="aboutFirmRenewalPage"/>
+								<input type="hidden" name="PolicyStatusKey" id="PolicyStatusKey"/>
+								<input type="hidden" name="practiceManagementPage" id="practiceManagementPage"/>
+								<input type="hidden" name="morePracticeManagementPage" id="morePracticeManagementPage"/>
+								<input type="hidden" name="underWritingInfoPage" id="underWritingInfoPage"/>
+								<input type="hidden" name="pastClaimsPage" id="pastClaimsPage"/>
+								<input type="hidden" name="isElectronicInsurancePage" id="isElectronicInsurancePage"/>
+								<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated"/>
+								<script type="text/javascript" src="script/manageTab.js"/>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</form>
+	</body>
+	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"/>
+</html>

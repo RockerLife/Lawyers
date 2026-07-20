@@ -1,0 +1,53 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ClaimAgeEstimation">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ClaimAgeEstimation</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ClaimAgeEstimation</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ClaimAgeEstimation(
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence</isNotEmpty>
+               <isNotEmpty property="NumberOfYearsWithFirm" prepend=",">NumberOfYearsWithFirm</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">#VersionSequence#</isNotEmpty>
+               <isNotEmpty property="NumberOfYearsWithFirm" prepend=",">#NumberOfYearsWithFirm#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">#VersionKey#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="ClaimAgeEstimationKey">SELECT IDENT_CURRENT('ClaimAgeEstimation') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ClaimAgeEstimationKey, PolicyKey, VersionSequence, NumberOfYearsWithFirm, LastUpdateUserID, LastUpdateTimeStamp, VersionKey from ClaimAgeEstimation where ClaimAgeEstimationKey = #ClaimAgeEstimationKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ClaimAgeEstimation set
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence = #VersionSequence#</isNotEmpty>
+               <isEmpty property="VersionSequence" prepend=",">VersionSequence = null</isEmpty>
+               <isNotEmpty property="NumberOfYearsWithFirm" prepend=",">NumberOfYearsWithFirm = #NumberOfYearsWithFirm#</isNotEmpty>
+               <isEmpty property="NumberOfYearsWithFirm" prepend=",">NumberOfYearsWithFirm = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey = #VersionKey#</isNotEmpty>
+               <isEmpty property="VersionKey" prepend=",">VersionKey = null</isEmpty>
+          </dynamic>
+          where ClaimAgeEstimationKey = #ClaimAgeEstimationKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ClaimAgeEstimation where ClaimAgeEstimationKey = #ClaimAgeEstimationKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ClaimAgeEstimation</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ClaimAgeEstimation</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ClaimAgeEstimationKey, PolicyKey, VersionSequence, NumberOfYearsWithFirm, LastUpdateUserID, LastUpdateTimeStamp, VersionKey from ClaimAgeEstimation where ClaimAgeEstimationKey = #ClaimAgeEstimationKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ClaimAgeEstimationKey, PolicyKey, VersionSequence, NumberOfYearsWithFirm, LastUpdateUserID, LastUpdateTimeStamp, VersionKey from ClaimAgeEstimation</select>
+</sqlMap>
+

@@ -1,0 +1,111 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="WillsTrustsEstateSuppLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from WillsTrustsEstateSuppLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from WillsTrustsEstateSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into WillsTrustsEstateSuppLW(VersionSequence, PolicyKey
+          <isNotEmpty property="NumberOfEstateOver1Million" prepend=",">NumberOfEstateOver1Million</isNotEmpty>
+          <isNotEmpty property="NumberOfEstateOver5Million" prepend=",">NumberOfEstateOver5Million</isNotEmpty>
+          <isNotEmpty property="NumberOfEstateOver10Million" prepend=",">NumberOfEstateOver10Million</isNotEmpty>
+          <isNotEmpty property="IsApplProvideInvestAdviceToClient" prepend=",">IsApplProvideInvestAdviceToClient</isNotEmpty>
+          <isNotEmpty property="IsMemCertLegalSpecialist" prepend=",">IsMemCertLegalSpecialist</isNotEmpty>
+          <isNotEmpty property="IsApplPolicyReviewBySecondAttorney" prepend=",">IsApplPolicyReviewBySecondAttorney</isNotEmpty>
+          <isNotEmpty property="IsApplTaxInConjucWithTrustWork" prepend=",">IsApplTaxInConjucWithTrustWork</isNotEmpty>
+          <isNotEmpty property="IsApplEmployAccountants" prepend=",">IsApplEmployAccountants</isNotEmpty>
+          <isNotEmpty property="IsApplEmployTaxAttorney" prepend=",">IsApplEmployTaxAttorney</isNotEmpty>
+          <isNotEmpty property="IsFirmNotRequireTaxAdvice" prepend=",">IsFirmNotRequireTaxAdvice</isNotEmpty>
+          <isNotEmpty property="IsApplObtainCertificate" prepend=",">IsApplObtainCertificate</isNotEmpty>
+          <isNotEmpty property="ListOfAttWithNameServicesClient" prepend=",">ListOfAttWithNameServicesClient</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="IsApplHaveControlOverFunds" prepend=",">IsApplHaveControlOverFunds</isNotEmpty>
+          <isNotEmpty property="IsCounterSignatureRequired" prepend=",">IsCounterSignatureRequired</isNotEmpty>
+          <isNotEmpty property="IsApplAuthorizeToWithdrawFromBank" prepend=",">IsApplAuthorizeToWithdrawFromBank</isNotEmpty>
+          <isNotEmpty property="IsApplCarryEmployeeDishonestyCoverage" prepend=",">IsApplCarryEmployeeDishonestyCoverage</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="NumberOfEstateOver1Million" prepend=",">#NumberOfEstateOver1Million#</isNotEmpty>
+          <isNotEmpty property="NumberOfEstateOver5Million" prepend=",">#NumberOfEstateOver5Million#</isNotEmpty>
+          <isNotEmpty property="NumberOfEstateOver10Million" prepend=",">#NumberOfEstateOver10Million#</isNotEmpty>
+          <isNotEmpty property="IsApplProvideInvestAdviceToClient" prepend=",">#IsApplProvideInvestAdviceToClient#</isNotEmpty>
+          <isNotEmpty property="IsMemCertLegalSpecialist" prepend=",">#IsMemCertLegalSpecialist#</isNotEmpty>
+          <isNotEmpty property="IsApplPolicyReviewBySecondAttorney" prepend=",">#IsApplPolicyReviewBySecondAttorney#</isNotEmpty>
+          <isNotEmpty property="IsApplTaxInConjucWithTrustWork" prepend=",">#IsApplTaxInConjucWithTrustWork#</isNotEmpty>
+          <isNotEmpty property="IsApplEmployAccountants" prepend=",">#IsApplEmployAccountants#</isNotEmpty>
+          <isNotEmpty property="IsApplEmployTaxAttorney" prepend=",">#IsApplEmployTaxAttorney#</isNotEmpty>
+          <isNotEmpty property="IsFirmNotRequireTaxAdvice" prepend=",">#IsFirmNotRequireTaxAdvice#</isNotEmpty>
+          <isNotEmpty property="IsApplObtainCertificate" prepend=",">#IsApplObtainCertificate#</isNotEmpty>
+          <isNotEmpty property="ListOfAttWithNameServicesClient" prepend=",">#ListOfAttWithNameServicesClient#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="IsApplHaveControlOverFunds" prepend=",">#IsApplHaveControlOverFunds#</isNotEmpty>
+          <isNotEmpty property="IsCounterSignatureRequired" prepend=",">#IsCounterSignatureRequired#</isNotEmpty>
+          <isNotEmpty property="IsApplAuthorizeToWithdrawFromBank" prepend=",">#IsApplAuthorizeToWithdrawFromBank#</isNotEmpty>
+          <isNotEmpty property="IsApplCarryEmployeeDishonestyCoverage" prepend=",">#IsApplCarryEmployeeDishonestyCoverage#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select NumberOfEstateOver1Million, NumberOfEstateOver5Million, NumberOfEstateOver10Million, IsApplProvideInvestAdviceToClient, IsMemCertLegalSpecialist, IsApplPolicyReviewBySecondAttorney, IsApplTaxInConjucWithTrustWork, IsApplEmployAccountants, IsApplEmployTaxAttorney, IsFirmNotRequireTaxAdvice, IsApplObtainCertificate, ListOfAttWithNameServicesClient, LastUpdateUserID, LastUpdateTimeStamp, IsApplHaveControlOverFunds, IsCounterSignatureRequired, IsApplAuthorizeToWithdrawFromBank, IsApplCarryEmployeeDishonestyCoverage, VersionSequence, PolicyKey from WillsTrustsEstateSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update WillsTrustsEstateSuppLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="NumberOfEstateOver1Million" prepend=",">NumberOfEstateOver1Million = #NumberOfEstateOver1Million#</isNotEmpty>
+               <isEmpty property="NumberOfEstateOver1Million" prepend=",">NumberOfEstateOver1Million = null</isEmpty>
+               <isNotEmpty property="NumberOfEstateOver5Million" prepend=",">NumberOfEstateOver5Million = #NumberOfEstateOver5Million#</isNotEmpty>
+               <isEmpty property="NumberOfEstateOver5Million" prepend=",">NumberOfEstateOver5Million = null</isEmpty>
+               <isNotEmpty property="NumberOfEstateOver10Million" prepend=",">NumberOfEstateOver10Million = #NumberOfEstateOver10Million#</isNotEmpty>
+               <isEmpty property="NumberOfEstateOver10Million" prepend=",">NumberOfEstateOver10Million = null</isEmpty>
+               <isNotEmpty property="IsApplProvideInvestAdviceToClient" prepend=",">IsApplProvideInvestAdviceToClient = #IsApplProvideInvestAdviceToClient#</isNotEmpty>
+               <isEmpty property="IsApplProvideInvestAdviceToClient" prepend=",">IsApplProvideInvestAdviceToClient = null</isEmpty>
+               <isNotEmpty property="IsMemCertLegalSpecialist" prepend=",">IsMemCertLegalSpecialist = #IsMemCertLegalSpecialist#</isNotEmpty>
+               <isEmpty property="IsMemCertLegalSpecialist" prepend=",">IsMemCertLegalSpecialist = null</isEmpty>
+               <isNotEmpty property="IsApplPolicyReviewBySecondAttorney" prepend=",">IsApplPolicyReviewBySecondAttorney = #IsApplPolicyReviewBySecondAttorney#</isNotEmpty>
+               <isEmpty property="IsApplPolicyReviewBySecondAttorney" prepend=",">IsApplPolicyReviewBySecondAttorney = null</isEmpty>
+               <isNotEmpty property="IsApplTaxInConjucWithTrustWork" prepend=",">IsApplTaxInConjucWithTrustWork = #IsApplTaxInConjucWithTrustWork#</isNotEmpty>
+               <isEmpty property="IsApplTaxInConjucWithTrustWork" prepend=",">IsApplTaxInConjucWithTrustWork = null</isEmpty>
+               <isNotEmpty property="IsApplEmployAccountants" prepend=",">IsApplEmployAccountants = #IsApplEmployAccountants#</isNotEmpty>
+               <isEmpty property="IsApplEmployAccountants" prepend=",">IsApplEmployAccountants = null</isEmpty>
+               <isNotEmpty property="IsApplEmployTaxAttorney" prepend=",">IsApplEmployTaxAttorney = #IsApplEmployTaxAttorney#</isNotEmpty>
+               <isEmpty property="IsApplEmployTaxAttorney" prepend=",">IsApplEmployTaxAttorney = null</isEmpty>
+               <isNotEmpty property="IsFirmNotRequireTaxAdvice" prepend=",">IsFirmNotRequireTaxAdvice = #IsFirmNotRequireTaxAdvice#</isNotEmpty>
+               <isEmpty property="IsFirmNotRequireTaxAdvice" prepend=",">IsFirmNotRequireTaxAdvice = null</isEmpty>
+               <isNotEmpty property="IsApplObtainCertificate" prepend=",">IsApplObtainCertificate = #IsApplObtainCertificate#</isNotEmpty>
+               <isEmpty property="IsApplObtainCertificate" prepend=",">IsApplObtainCertificate = null</isEmpty>
+               <isNotEmpty property="ListOfAttWithNameServicesClient" prepend=",">ListOfAttWithNameServicesClient = #ListOfAttWithNameServicesClient#</isNotEmpty>
+               <isEmpty property="ListOfAttWithNameServicesClient" prepend=",">ListOfAttWithNameServicesClient = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="IsApplHaveControlOverFunds" prepend=",">IsApplHaveControlOverFunds = #IsApplHaveControlOverFunds#</isNotEmpty>
+               <isEmpty property="IsApplHaveControlOverFunds" prepend=",">IsApplHaveControlOverFunds = null</isEmpty>
+               <isNotEmpty property="IsCounterSignatureRequired" prepend=",">IsCounterSignatureRequired = #IsCounterSignatureRequired#</isNotEmpty>
+               <isEmpty property="IsCounterSignatureRequired" prepend=",">IsCounterSignatureRequired = null</isEmpty>
+               <isNotEmpty property="IsApplAuthorizeToWithdrawFromBank" prepend=",">IsApplAuthorizeToWithdrawFromBank = #IsApplAuthorizeToWithdrawFromBank#</isNotEmpty>
+               <isEmpty property="IsApplAuthorizeToWithdrawFromBank" prepend=",">IsApplAuthorizeToWithdrawFromBank = null</isEmpty>
+               <isNotEmpty property="IsApplCarryEmployeeDishonestyCoverage" prepend=",">IsApplCarryEmployeeDishonestyCoverage = #IsApplCarryEmployeeDishonestyCoverage#</isNotEmpty>
+               <isEmpty property="IsApplCarryEmployeeDishonestyCoverage" prepend=",">IsApplCarryEmployeeDishonestyCoverage = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from WillsTrustsEstateSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from WillsTrustsEstateSuppLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from WillsTrustsEstateSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select NumberOfEstateOver1Million, NumberOfEstateOver5Million, NumberOfEstateOver10Million, IsApplProvideInvestAdviceToClient, IsMemCertLegalSpecialist, IsApplPolicyReviewBySecondAttorney, IsApplTaxInConjucWithTrustWork, IsApplEmployAccountants, IsApplEmployTaxAttorney, IsFirmNotRequireTaxAdvice, IsApplObtainCertificate, ListOfAttWithNameServicesClient, LastUpdateUserID, LastUpdateTimeStamp, IsApplHaveControlOverFunds, IsCounterSignatureRequired, IsApplAuthorizeToWithdrawFromBank, IsApplCarryEmployeeDishonestyCoverage, VersionSequence, PolicyKey from WillsTrustsEstateSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, NumberOfEstateOver1Million, NumberOfEstateOver5Million, NumberOfEstateOver10Million, IsApplProvideInvestAdviceToClient, IsMemCertLegalSpecialist, IsApplPolicyReviewBySecondAttorney, IsApplTaxInConjucWithTrustWork, IsApplEmployAccountants, IsApplEmployTaxAttorney, IsFirmNotRequireTaxAdvice, IsApplObtainCertificate, ListOfAttWithNameServicesClient, LastUpdateUserID, LastUpdateTimeStamp, IsApplHaveControlOverFunds, IsCounterSignatureRequired, IsApplAuthorizeToWithdrawFromBank, IsApplCarryEmployeeDishonestyCoverage from WillsTrustsEstateSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <parameterMap id="InsertUpdateWillsTrustProbationSupplmentData_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsAttorneyServeAsExecutorTrustee" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="inPurchaseSaleSecurities" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="willEstatesHandledPastYear" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ActingAsTrustee" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="beneficiaryInterestWillsTrust" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CertifiedInvestmentDecisions" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdateWillsTrustProbationSupplmentData_p" parameterMap="InsertUpdateWillsTrustProbationSupplmentData_pMap">{ call InsertUpdateWillsTrustProbationSupplmentData_p(?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

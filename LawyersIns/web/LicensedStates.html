@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tell us a little more about your firm?</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js"/>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+<body onload="loadAttorneyLicensedStates();">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<form>
+<!-- Bootstrap Core JavaScript -->
+  <div id="LicensedStates">
+            <div id="isPopupAttorneyStates">
+				<div id="eval:FirmRule.isPopupAttorneyStates">
+<div class="modal">
+  <div class="modal-dialog" style="width: 800px" >
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+		<a class="close" onclick="closePopUp('LicensedStates');"
+									href="javascript:ajaxsubmitform('Attorneys.html','LicensedStates.closePopupStates','','','attorneyGrid');"><i class="fa fa-close">&nbsp;</i></a>
+        <h4 class="modal-title">Select States</h4>
+	</div>
+      <div class="modal-body">
+        <table cellspacing="0" cellpadding="1" width="100%"
+				border="0" id="attorney_states_list_mom_01">
+				<tr valign="top" id="attorney_states_list_header_01">
+					<td colspan="3">
+						<table width="100%" border="0" align="left"
+							cellpadding="2" cellspacing="0" class="tableinfo">
+							<tr>
+
+								<td class="tableinfoheader" id="block_field_StateDesc"><b>
+										 </b></td>
+								<td class="tableinfoheader" id="block_field_StateDesc"
+									width="69"></td>
+
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3">
+						<div
+							style="xheight:180px; overflow-x:hidden; overflow-y:auto; ">
+							<table cellpadding="1" cellspacing="0" width="100%">
+								<tr id="attorney_states_list_mom_data_01">
+									<td class="paddingRightLicense" style="border-bottom:solid 1px #f3f3f3;">
+										<table id="mom_child_data" width="100%" border="0"
+											align="left" cellpadding="2" cellspacing="0"
+											class="borderMom">
+											<tr>
+
+												<td width="1%" id="block_field_StateDesc"><input
+													type="checkbox" id="StateDesc" name="StateDesc" />
+												</td>
+												<td><div class="blockWidth" id="block_field_StateDesc"></div></td>
+												
+
+											</tr>
+										</table>
+									</td>
+									<td class="paddingRightLicense"
+										style="border-bottom:solid 1px #f3f3f3;
+                                                      border-left:solid 1px #f3f3f3;
+                                                      border-right:solid 1px #f3f3f3;">
+										<table id="mom_child_data" width="100%" border="0"
+											align="left" cellpadding="2" cellspacing="0"
+											class="borderMom">
+											<tr>
+												<td width="1%" id="block_field_StateDesc"><input
+													type="checkbox" id="StateDesc" name="StateDesc" />
+												</td>
+												<td><div class="blockWidth" id="block_field_StateDesc"></div></td>
+												
+
+											</tr>
+										</table>
+									</td>
+									<td class="paddingRightLicense"
+											style="border-bottom:solid 1px #f3f3f3;
+                                            									  border-right:solid 1px #f3f3f3;">
+										<table id="mom_child_data" width="100%" border="0"
+											align="left" cellpadding="2" cellspacing="0"
+											class="borderMom">
+											<tr>
+
+												<td width="1%" id="block_field_StateDesc"><input
+													type="checkbox" id="StateDesc" name="StateDesc" />
+												</td>
+												<td><div class="blockWidth" id="block_field_StateDesc"></div></td>
+												
+
+											</tr>
+										</table>
+									</td>
+									<td style="border-bottom:solid 1px #f3f3f3;">
+										<table id="mom_child_data" width="100%" border="0"
+											align="left" cellpadding="2" cellspacing="0"
+											class="borderMom">
+											<tr>
+
+												<td width="1%" id="block_field_StateDesc"><input
+													type="checkbox" id="StateDesc" name="StateDesc" />
+												</td>
+												<td><div class="blockWidth" id="block_field_StateDesc"></div></td>
+												
+
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+      </div>
+      <div class="modal-footer">
+		<div class="buttonwrapper">
+			<!-- //<a class="ovalbutton">Save</a> -->
+			<a onclick="javascript:setAttorneyLicensedStates();closePopUp('LicensedStates');" class="ovalbutton"
+																href="javascript:ajaxsubmitform('Attorneys.html','LicensedStates.closePopupStates','','','attorneyGrid');">
+																SAVE & CLOSE </a>
+		</div>
+      </div>
+    </div>
+
+  </div>
+   <table id="LicensedStates_freeform_contextdata_999">
+				<tr>
+					<td>
+						<input type="hidden" name="LicensedStates" id="LicensedStates"/>
+						<input type="hidden" name="rownum" id="rownum"/> 
+						<input type="hidden"  id="ajax_field_newLicensedStates" name="newLicensedStates"/>
+					</td>
+				</tr>
+			</table>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+	
+
+</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

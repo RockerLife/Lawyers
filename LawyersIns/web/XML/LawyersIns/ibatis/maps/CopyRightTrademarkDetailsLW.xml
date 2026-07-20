@@ -1,0 +1,61 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="CopyRightTrademarkDetailsLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from CopyRightTrademarkDetailsLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from CopyRightTrademarkDetailsLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into CopyRightTrademarkDetailsLW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="otherServices" prepend=",">otherServices</isNotEmpty>
+               <isNotEmpty property="otherServicesDesc" prepend=",">otherServicesDesc</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="otherServices" prepend=",">#otherServices#</isNotEmpty>
+               <isNotEmpty property="otherServicesDesc" prepend=",">#otherServicesDesc#</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">#VersionSequence#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select otherServices, otherServicesDesc, PolicyKey, VersionSequence, LastUpdateUserID, LastUpdateTimeStamp from CopyRightTrademarkDetailsLW</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update CopyRightTrademarkDetailsLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="otherServices" prepend=",">otherServices = #otherServices#</isNotEmpty>
+               <isEmpty property="otherServices" prepend=",">otherServices = null</isEmpty>
+               <isNotEmpty property="otherServicesDesc" prepend=",">otherServicesDesc = #otherServicesDesc#</isNotEmpty>
+               <isEmpty property="otherServicesDesc" prepend=",">otherServicesDesc = null</isEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence = #VersionSequence#</isNotEmpty>
+               <isEmpty property="VersionSequence" prepend=",">VersionSequence = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from CopyRightTrademarkDetailsLW</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from CopyRightTrademarkDetailsLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from CopyRightTrademarkDetailsLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select otherServices, otherServicesDesc, PolicyKey, VersionSequence, LastUpdateUserID, LastUpdateTimeStamp from CopyRightTrademarkDetailsLW</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select otherServices, otherServicesDesc, PolicyKey, VersionSequence, LastUpdateUserID, LastUpdateTimeStamp from CopyRightTrademarkDetailsLW</select>
+     <parameterMap id="InsertUpdatecopyRightTrademarkSupplement_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="otherServices" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="otherServicesDesc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdatecopyRightTrademarkSupplement_p" parameterMap="InsertUpdatecopyRightTrademarkSupplement_pMap">{ call InsertUpdatecopyRightTrademarkSupplement_p(?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

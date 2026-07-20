@@ -1,0 +1,126 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ProfileFilter">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ProfileFilter</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ProfileFilter</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ProfileFilter(
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyStatusDesc" prepend=",">PolicyStatusDesc</isNotEmpty>
+               <isNotEmpty property="ProducerCode1" prepend=",">ProducerCode1</isNotEmpty>
+               <isNotEmpty property="FirstReviewerfilter" prepend=",">FirstReviewerfilter</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="BrokerID" prepend=",">BrokerID</isNotEmpty>
+               <isNotEmpty property="CarrierID" prepend=",">CarrierID</isNotEmpty>
+               <isNotEmpty property="isBrokered" prepend=",">isBrokered</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyStatusDesc" prepend=",">#PolicyStatusDesc#</isNotEmpty>
+               <isNotEmpty property="ProducerCode1" prepend=",">#ProducerCode1#</isNotEmpty>
+               <isNotEmpty property="FirstReviewerfilter" prepend=",">#FirstReviewerfilter#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="BrokerID" prepend=",">#BrokerID#</isNotEmpty>
+               <isNotEmpty property="CarrierID" prepend=",">#CarrierID#</isNotEmpty>
+               <isNotEmpty property="isBrokered" prepend=",">#isBrokered#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PolicyStatusDesc, ProducerCode1, FirstReviewerfilter, LastUpdateUserID, BrokerID, CarrierID, isBrokered from ProfileFilter</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ProfileFilter set
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyStatusDesc" prepend=",">PolicyStatusDesc = #PolicyStatusDesc#</isNotEmpty>
+               <isEmpty property="PolicyStatusDesc" prepend=",">PolicyStatusDesc = null</isEmpty>
+               <isNotEmpty property="ProducerCode1" prepend=",">ProducerCode1 = #ProducerCode1#</isNotEmpty>
+               <isEmpty property="ProducerCode1" prepend=",">ProducerCode1 = null</isEmpty>
+               <isNotEmpty property="FirstReviewerfilter" prepend=",">FirstReviewerfilter = #FirstReviewerfilter#</isNotEmpty>
+               <isEmpty property="FirstReviewerfilter" prepend=",">FirstReviewerfilter = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="BrokerID" prepend=",">BrokerID = #BrokerID#</isNotEmpty>
+               <isEmpty property="BrokerID" prepend=",">BrokerID = null</isEmpty>
+               <isNotEmpty property="CarrierID" prepend=",">CarrierID = #CarrierID#</isNotEmpty>
+               <isEmpty property="CarrierID" prepend=",">CarrierID = null</isEmpty>
+               <isNotEmpty property="isBrokered" prepend=",">isBrokered = #isBrokered#</isNotEmpty>
+               <isEmpty property="isBrokered" prepend=",">isBrokered = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ProfileFilter</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ProfileFilter</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ProfileFilter</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PolicyStatusDesc, ProducerCode1, FirstReviewerfilter, LastUpdateUserID, BrokerID, CarrierID, isBrokered from ProfileFilter</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PolicyStatusDesc, ProducerCode1, FirstReviewerfilter, LastUpdateUserID, BrokerID, CarrierID, isBrokered from ProfileFilter</select>
+     <parameterMap id="SearchCountForListLawyers_ProcMap" class="java.util.HashMap">
+          <parameter property="StateCode_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyEffectiveDate_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyEffectiveDate_searchTo" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyStatusDesc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProducerCodefilter" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProducerCode1" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="EligibleFirstReviewerfilter" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BucketListAction" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="SearchAppCreatedDateFrom" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="SearchAppCreatedDateTo" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isBrokered" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CompanyKey_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="role_id" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="SearchCountForListLawyers_Proc" parameterMap="SearchCountForListLawyers_ProcMap" resultClass="java.util.HashMap">{ call SearchCountForListLawyers_Proc(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="SearchCountForListLawyersLostWorkque_ProcMap" class="java.util.HashMap">
+          <parameter property="LostWQPolicyEffectiveDate_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LostWQPolicyEffectiveDate_searchTo" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BucketListAction" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="SearchCountForListLawyersLostWorkque_Proc" parameterMap="SearchCountForListLawyersLostWorkque_ProcMap" resultClass="java.util.HashMap">{ call SearchCountForListLawyersLostWorkque_Proc(?,?,?,?)}</procedure>
+     <parameterMap id="SearchCountForLawyers_ProcMap" class="java.util.HashMap">
+          <parameter property="StateCode_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyEffectiveDate_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyEffectiveDate_searchTo" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyStatusDesc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProducerCodefilter" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProducerCode1" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="EligibleFirstReviewerfilter" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="SearchAppCreatedDateFrom" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="SearchAppCreatedDateTo" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BrokerID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CarrierID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isBrokered" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CoverageKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="CompanyKey_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="role_id" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="SearchCountForLawyers_Proc" parameterMap="SearchCountForLawyers_ProcMap" resultClass="java.util.HashMap">{ call SearchCountForLawyers_Proc(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="SetProfileDetailsForWorkq_pMap" class="java.util.HashMap">
+          <parameter property="PolicyStatusDesc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StateCodefilter" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProducerCode1" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="EligibleFirstReviewerfilter" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isComingFromProfile" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BrokerID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CarrierID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="SetProfileDetailsForWorkq_p" parameterMap="SetProfileDetailsForWorkq_pMap" resultClass="java.util.HashMap">{ call SetProfileDetailsForWorkq_p(?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="SearchCountForLawyersCleaner_ProcMap" class="java.util.HashMap">
+          <parameter property="LostWQPolicyEffectiveDate_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LostWQPolicyEffectiveDate_searchTo" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="SearchCountForLawyersCleaner_Proc" parameterMap="SearchCountForLawyersCleaner_ProcMap" resultClass="java.util.HashMap">{ call SearchCountForLawyersCleaner_Proc(?,?,?)}</procedure>
+     <parameterMap id="Filter_pMap" class="java.util.HashMap">
+          <parameter property="PolicyStatusDesc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProducerCode1" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="EligibleFirstReviewerfilter" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BrokerID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CarrierID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isBrokered" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="Filter_p" parameterMap="Filter_pMap">{ call Filter_p(?,?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

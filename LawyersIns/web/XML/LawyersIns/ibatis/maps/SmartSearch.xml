@@ -1,0 +1,41 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="SmartSearch">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SmartSearch</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SmartSearch</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into SmartSearch(
+          <dynamic prepend=" ">
+               <isNotEmpty property="Keyword" prepend=",">Keyword</isNotEmpty>
+               <isNotEmpty property="AOPKey" prepend=",">AOPKey</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="Keyword" prepend=",">#Keyword#</isNotEmpty>
+               <isNotEmpty property="AOPKey" prepend=",">#AOPKey#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select Keyword, AOPKey from SmartSearch</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update SmartSearch set
+          <dynamic prepend=" ">
+               <isNotEmpty property="Keyword" prepend=",">Keyword = #Keyword#</isNotEmpty>
+               <isEmpty property="Keyword" prepend=",">Keyword = null</isEmpty>
+               <isNotEmpty property="AOPKey" prepend=",">AOPKey = #AOPKey#</isNotEmpty>
+               <isEmpty property="AOPKey" prepend=",">AOPKey = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from SmartSearch</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from SmartSearch</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from SmartSearch</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select Keyword, AOPKey from SmartSearch</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select Keyword, AOPKey from SmartSearch</select>
+     <parameterMap id="SmartSearchData_pMap" class="java.util.HashMap">
+          <parameter property="AopSearch" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="litigationNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />
+     </parameterMap>
+     <procedure id="SmartSearchData_p" parameterMap="SmartSearchData_pMap" resultClass="java.util.HashMap">{ call SmartSearchData_p(?,?,?)}</procedure>
+</sqlMap>
+

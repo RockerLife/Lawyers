@@ -1,0 +1,35 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="indexcol">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from indexcol</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from indexcol where metaindexno = #metaindexno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into indexcol(metaindexno, metaobjectno, structureno, property
+          <isNotEmpty property="indexorder" prepend=",">indexorder</isNotEmpty>
+          <isNotEmpty property="seq" prepend=",">seq</isNotEmpty>
+          ) values (#metaindexno:NUMERIC#, #metaobjectno:NUMERIC#, #structureno:NUMERIC#, #property#
+          <isNotEmpty property="indexorder" prepend=",">#indexorder#</isNotEmpty>
+          <isNotEmpty property="seq" prepend=",">#seq#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="indexcolno">SELECT IDENT_CURRENT('indexcol') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select indexcolno, property, indexorder, seq, metaindexno, metaobjectno, structureno from indexcol where indexcolno = #indexcolno# and metaindexno = #metaindexno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update indexcol set
+          <dynamic prepend=" ">
+               <isNotEmpty property="property" prepend=",">property = #property#</isNotEmpty>
+               <isEmpty property="property" prepend=",">property = null</isEmpty>
+               <isNotEmpty property="indexorder" prepend=",">indexorder = #indexorder#</isNotEmpty>
+               <isEmpty property="indexorder" prepend=",">indexorder = null</isEmpty>
+               <isNotEmpty property="seq" prepend=",">seq = #seq#</isNotEmpty>
+               <isEmpty property="seq" prepend=",">seq = null</isEmpty>
+          </dynamic>
+          where indexcolno = #indexcolno# and metaindexno = #metaindexno# and metaobjectno = #metaobjectno# and structureno = #structureno#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from indexcol where indexcolno = #indexcolno# and metaindexno = #metaindexno# and metaobjectno = #metaobjectno# and structureno = #structureno#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from indexcol</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from indexcol where metaindexno = #metaindexno# and metaobjectno = #metaobjectno# and structureno = #structureno#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select indexcolno, property, indexorder, seq, metaindexno, metaobjectno, structureno from indexcol where indexcolno = #indexcolno# and metaindexno = #metaindexno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select indexcolno, metaindexno, metaobjectno, structureno, property, indexorder, seq from indexcol where metaindexno = #metaindexno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+</sqlMap>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="NonPubliceAuditClientIndustry">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from NonPubliceAuditClientIndustry</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from NonPubliceAuditClientIndustry</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into NonPubliceAuditClientIndustry(
+          <dynamic prepend=" " />
+          ) values (
+          <dynamic prepend=" " />
+          )
+          <selectKey resultClass="int" keyProperty="NonPublicAuditClientIndustryKey">SELECT IDENT_CURRENT('NonPubliceAuditClientIndustry') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select NonPublicAuditClientIndustryKey from NonPubliceAuditClientIndustry where NonPublicAuditClientIndustryKey = #NonPublicAuditClientIndustryKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update NonPubliceAuditClientIndustry set
+          <dynamic prepend=" " />
+          where NonPublicAuditClientIndustryKey = #NonPublicAuditClientIndustryKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from NonPubliceAuditClientIndustry where NonPublicAuditClientIndustryKey = #NonPublicAuditClientIndustryKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from NonPubliceAuditClientIndustry</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from NonPubliceAuditClientIndustry</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select NonPublicAuditClientIndustryKey from NonPubliceAuditClientIndustry where NonPublicAuditClientIndustryKey = #NonPublicAuditClientIndustryKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select NonPublicAuditClientIndustryKey from NonPubliceAuditClientIndustry</select>
+</sqlMap>
+

@@ -1,0 +1,45 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="CountyLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from CountyLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from CountyLW where StateCode = #StateCode#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into CountyLW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="CountyDesc" prepend=",">CountyDesc</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="StateCode" prepend=",">StateCode</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="CountyDesc" prepend=",">#CountyDesc#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="StateCode" prepend=",">#StateCode#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="CountyKey">SELECT IDENT_CURRENT('CountyLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CountyKey, CountyDesc, LastUpdateUserID, LastUpdateTimeStamp, StateCode from CountyLW where CountyKey = #CountyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update CountyLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="CountyDesc" prepend=",">CountyDesc = #CountyDesc#</isNotEmpty>
+               <isEmpty property="CountyDesc" prepend=",">CountyDesc = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="StateCode" prepend=",">StateCode = #StateCode#</isNotEmpty>
+               <isEmpty property="StateCode" prepend=",">StateCode = null</isEmpty>
+          </dynamic>
+          where CountyKey = #CountyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from CountyLW where CountyKey = #CountyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from CountyLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from CountyLW where StateCode = #StateCode#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CountyKey, CountyDesc, LastUpdateUserID, LastUpdateTimeStamp, StateCode from CountyLW where CountyKey = #CountyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CountyKey, CountyDesc, LastUpdateUserID, LastUpdateTimeStamp from CountyLW where StateCode = #StateCode#</select>
+</sqlMap>
+

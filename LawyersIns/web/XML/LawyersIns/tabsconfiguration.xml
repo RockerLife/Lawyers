@@ -1,0 +1,10 @@
+<tabsconfiguration project="LawyersIns">
+	<tabsconfigurationresource name="actionsToSkipErrorDiv"  value="deletePrimaryLocation,deleteAttorneys,deleteERP,deleteRevenue,deletePersonnel,deleteFeesSued,deleteClaim,refreshCity"/>
+	<tabsconfigurationresource name="poBoxNamePatterns" value="P.O. Box,P. o. Box,p. O. Box,p. o. box,p. O. box,P. o. box,PO Box,po Box,PO box,po box,PO. Box,po. box,PO. box,po.box,p.o.box,"/>
+	<tabsconfigurationresource name="litigationRules" value="validateAreaOfLitigation_Lawyers,validateOtherPlantiff_Lawyers,plaintiffLitigationAOP_Lawyers,validateAuthorizationsForSettlement_Lawyers,massTortOrClassActionNewApp_Lawyers,numberOfInjuryCasesIn12MonthNewApp_Lawyers,validateAreaOfLitigationNew_Lawyers,validateOtherPlantiff_Lawyers,validateAuthorizationsForSettlementRenew_Lawyers,massTortOrClassActionNewAppRenew_Lawyers,numberOfInjuryCasesIn12MonthNewApp_Lawyers"/>
+	<tabsconfigurationresource name="willsStateTrustRules" value="checkAssetProtectionNewApp_Lawyers,otherWillsEstateNewApp_Lawyers,inPurchaseSaleSecuritiesNewApp_Lawyers,checkAssetProtectionRenew_Lawyers,othersWillsValueRenew_Lawyers,inPurchaseSaleSecuritiesNewApp_Lawyers"/>
+	<tabsconfigurationresource name="residentialSupplementRules" value="checkTitleOpinionsNewApp_Lawyers,eminentDomainNewApp_Lawyers,checkOtherResidentialAop_Lawyers,checkForeclosuresAndLoanWorkoutsAOPResidential_Lawyers,checkCommercialCombineAop_Lawyers,checkSpeculativeAop_Lawyers,checkForeclosuresAndLoanWorkoutsAOPCommercial_Lawyers,transactionsHandled12MonthsResiNewApp_Lawyers,checkForeclosuresRenewal_Lawyers,checkSpeculativeRenew_Lawyers,checkRealEstateRenew_Lawyers,checkEminentDomainRenew_Lawyers,otherRealEstateRenew_Lawyers,transactionsHandled12MonthsRenewNewApp_Lawyers"/>
+	<tabsconfigurationresource name="taxSupplementRules" value="checkinvestmentCounselorServices_Lawyers,checksubchapterSElections_Lawyers,checkliquidationofCorporations_Lawyers,opinonsTax_Lawyers,checkprivatePlacementMemoranda_Lawyers,checkotherTax_Lawyers"/>
+	<tabsconfigurationresource name="familyLawRules" value="validateFamilyLaw_Lawyers,validateFamilyLawRenew_Lawyers"/>
+	
+</tabsconfiguration>

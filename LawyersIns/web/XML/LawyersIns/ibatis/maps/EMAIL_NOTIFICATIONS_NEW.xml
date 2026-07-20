@@ -1,0 +1,113 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="EMAIL_NOTIFICATIONS_NEW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from EMAIL_NOTIFICATIONS_NEW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from EMAIL_NOTIFICATIONS_NEW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into EMAIL_NOTIFICATIONS_NEW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="event_name" prepend=",">event_name</isNotEmpty>
+               <isNotEmpty property="Description" prepend=",">Description</isNotEmpty>
+               <isNotEmpty property="subject" prepend=",">subject</isNotEmpty>
+               <isNotEmpty property="body" prepend=",">body</isNotEmpty>
+               <isNotEmpty property="last_updated_by" prepend=",">last_updated_by</isNotEmpty>
+               <isNotEmpty property="last_updated_ts" prepend=",">last_updated_ts</isNotEmpty>
+               <isNotEmpty property="EffectiveDate" prepend=",">EffectiveDate</isNotEmpty>
+               <isNotEmpty property="IsCyber" prepend=",">IsCyber</isNotEmpty>
+               <isNotEmpty property="IsSubProduced" prepend=",">IsSubProduced</isNotEmpty>
+               <isNotEmpty property="Period" prepend=",">Period</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="isDeleted" prepend=",">isDeleted</isNotEmpty>
+               <isNotEmpty property="email_template" prepend=",">email_template</isNotEmpty>
+               <isNotEmpty property="StateCode" prepend=",">StateCode</isNotEmpty>
+               <isNotEmpty property="from_role_desc" prepend=",">from_role_desc</isNotEmpty>
+               <isNotEmpty property="subject_dynamicvalues" prepend=",">subject_dynamicvalues</isNotEmpty>
+               <isNotEmpty property="body_dynamicvalues" prepend=",">body_dynamicvalues</isNotEmpty>
+               <isNotEmpty property="cc_role_desc" prepend=",">cc_role_desc</isNotEmpty>
+               <isNotEmpty property="attachment_content" prepend=",">attachment_content</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="event_name" prepend=",">#event_name#</isNotEmpty>
+               <isNotEmpty property="Description" prepend=",">#Description#</isNotEmpty>
+               <isNotEmpty property="subject" prepend=",">#subject#</isNotEmpty>
+               <isNotEmpty property="body" prepend=",">#body#</isNotEmpty>
+               <isNotEmpty property="last_updated_by" prepend=",">#last_updated_by#</isNotEmpty>
+               <isNotEmpty property="last_updated_ts" prepend=",">#last_updated_ts#</isNotEmpty>
+               <isNotEmpty property="EffectiveDate" prepend=",">#EffectiveDate#</isNotEmpty>
+               <isNotEmpty property="IsCyber" prepend=",">#IsCyber#</isNotEmpty>
+               <isNotEmpty property="IsSubProduced" prepend=",">#IsSubProduced#</isNotEmpty>
+               <isNotEmpty property="Period" prepend=",">#Period#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="isDeleted" prepend=",">#isDeleted#</isNotEmpty>
+               <isNotEmpty property="email_template" prepend=",">#email_template#</isNotEmpty>
+               <isNotEmpty property="StateCode" prepend=",">#StateCode#</isNotEmpty>
+               <isNotEmpty property="from_role_desc" prepend=",">#from_role_desc#</isNotEmpty>
+               <isNotEmpty property="subject_dynamicvalues" prepend=",">#subject_dynamicvalues#</isNotEmpty>
+               <isNotEmpty property="body_dynamicvalues" prepend=",">#body_dynamicvalues#</isNotEmpty>
+               <isNotEmpty property="cc_role_desc" prepend=",">#cc_role_desc#</isNotEmpty>
+               <isNotEmpty property="attachment_content" prepend=",">#attachment_content#</isNotEmpty>
+               <isNotEmpty property="RecordType" prepend=",">#RecordType#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="email_notification_id">SELECT IDENT_CURRENT('EMAIL_NOTIFICATIONS_NEW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select email_notification_id, event_name, Description, subject, body, last_updated_by, last_updated_ts, EffectiveDate, IsCyber, IsSubProduced, Period, LastUpdateUserID, LastUpdateTimeStamp, isDeleted, email_template, StateCode, from_role_desc, subject_dynamicvalues, body_dynamicvalues, cc_role_desc, attachment_content, RecordType from EMAIL_NOTIFICATIONS_NEW where email_notification_id = #email_notification_id#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update EMAIL_NOTIFICATIONS_NEW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="event_name" prepend=",">event_name = #event_name#</isNotEmpty>
+               <isEmpty property="event_name" prepend=",">event_name = null</isEmpty>
+               <isNotEmpty property="Description" prepend=",">Description = #Description#</isNotEmpty>
+               <isEmpty property="Description" prepend=",">Description = null</isEmpty>
+               <isNotEmpty property="subject" prepend=",">subject = #subject#</isNotEmpty>
+               <isEmpty property="subject" prepend=",">subject = null</isEmpty>
+               <isNotEmpty property="body" prepend=",">body = #body#</isNotEmpty>
+               <isEmpty property="body" prepend=",">body = null</isEmpty>
+               <isNotEmpty property="last_updated_by" prepend=",">last_updated_by = #last_updated_by#</isNotEmpty>
+               <isEmpty property="last_updated_by" prepend=",">last_updated_by = null</isEmpty>
+               <isNotEmpty property="last_updated_ts" prepend=",">last_updated_ts = #last_updated_ts#</isNotEmpty>
+               <isEmpty property="last_updated_ts" prepend=",">last_updated_ts = null</isEmpty>
+               <isNotEmpty property="EffectiveDate" prepend=",">EffectiveDate = #EffectiveDate#</isNotEmpty>
+               <isEmpty property="EffectiveDate" prepend=",">EffectiveDate = null</isEmpty>
+               <isNotEmpty property="IsCyber" prepend=",">IsCyber = #IsCyber#</isNotEmpty>
+               <isEmpty property="IsCyber" prepend=",">IsCyber = null</isEmpty>
+               <isNotEmpty property="IsSubProduced" prepend=",">IsSubProduced = #IsSubProduced#</isNotEmpty>
+               <isEmpty property="IsSubProduced" prepend=",">IsSubProduced = null</isEmpty>
+               <isNotEmpty property="Period" prepend=",">Period = #Period#</isNotEmpty>
+               <isEmpty property="Period" prepend=",">Period = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="isDeleted" prepend=",">isDeleted = #isDeleted#</isNotEmpty>
+               <isEmpty property="isDeleted" prepend=",">isDeleted = null</isEmpty>
+               <isNotEmpty property="email_template" prepend=",">email_template = #email_template#</isNotEmpty>
+               <isEmpty property="email_template" prepend=",">email_template = null</isEmpty>
+               <isNotEmpty property="StateCode" prepend=",">StateCode = #StateCode#</isNotEmpty>
+               <isEmpty property="StateCode" prepend=",">StateCode = null</isEmpty>
+               <isNotEmpty property="from_role_desc" prepend=",">from_role_desc = #from_role_desc#</isNotEmpty>
+               <isEmpty property="from_role_desc" prepend=",">from_role_desc = null</isEmpty>
+               <isNotEmpty property="subject_dynamicvalues" prepend=",">subject_dynamicvalues = #subject_dynamicvalues#</isNotEmpty>
+               <isEmpty property="subject_dynamicvalues" prepend=",">subject_dynamicvalues = null</isEmpty>
+               <isNotEmpty property="body_dynamicvalues" prepend=",">body_dynamicvalues = #body_dynamicvalues#</isNotEmpty>
+               <isEmpty property="body_dynamicvalues" prepend=",">body_dynamicvalues = null</isEmpty>
+               <isNotEmpty property="cc_role_desc" prepend=",">cc_role_desc = #cc_role_desc#</isNotEmpty>
+               <isEmpty property="cc_role_desc" prepend=",">cc_role_desc = null</isEmpty>
+               <isNotEmpty property="attachment_content" prepend=",">attachment_content = #attachment_content#</isNotEmpty>
+               <isEmpty property="attachment_content" prepend=",">attachment_content = null</isEmpty>
+               <isNotEmpty property="RecordType" prepend=",">RecordType = #RecordType#</isNotEmpty>
+               <isEmpty property="RecordType" prepend=",">RecordType = null</isEmpty>
+          </dynamic>
+          where email_notification_id = #email_notification_id#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from EMAIL_NOTIFICATIONS_NEW where email_notification_id = #email_notification_id#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from EMAIL_NOTIFICATIONS_NEW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from EMAIL_NOTIFICATIONS_NEW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select email_notification_id, event_name, Description, subject, body, last_updated_by, last_updated_ts, EffectiveDate, IsCyber, IsSubProduced, Period, LastUpdateUserID, LastUpdateTimeStamp, isDeleted, email_template, StateCode, from_role_desc, subject_dynamicvalues, body_dynamicvalues, cc_role_desc, attachment_content, RecordType from EMAIL_NOTIFICATIONS_NEW where email_notification_id = #email_notification_id#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select email_notification_id, event_name, Description, subject, body, last_updated_by, last_updated_ts, EffectiveDate, IsCyber, IsSubProduced, Period, LastUpdateUserID, LastUpdateTimeStamp, isDeleted, email_template, StateCode, from_role_desc, subject_dynamicvalues, body_dynamicvalues, cc_role_desc, attachment_content, RecordType from EMAIL_NOTIFICATIONS_NEW</select>
+</sqlMap>
+

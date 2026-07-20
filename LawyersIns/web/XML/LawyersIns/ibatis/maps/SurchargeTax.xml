@@ -1,0 +1,40 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="SurchargeTax">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SurchargeTax</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SurchargeTax where CoverageSequence = #CoverageSequence# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey# and SurchargeTaxTypeKey = #SurchargeTaxTypeKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into SurchargeTax(SurchargeTaxSequence, CoverageSequence, TransactionSequence, PolicyKey
+          <isNotEmpty property="Amount" prepend=",">Amount</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="SurchargeTaxTypeKey" prepend=",">SurchargeTaxTypeKey</isNotEmpty>
+          ) values (#SurchargeTaxSequence:NUMERIC#, #CoverageSequence:NUMERIC#, #TransactionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="Amount" prepend=",">#Amount#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="SurchargeTaxTypeKey" prepend=",">#SurchargeTaxTypeKey#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select SurchargeTaxSequence, Amount, LastUpdateUserID, LastUpdateTimeStamp, CoverageSequence, TransactionSequence, PolicyKey, SurchargeTaxTypeKey from SurchargeTax where SurchargeTaxSequence = #SurchargeTaxSequence# and CoverageSequence = #CoverageSequence# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update SurchargeTax set
+          <dynamic prepend=" ">
+               <isNotEmpty property="Amount" prepend=",">Amount = #Amount#</isNotEmpty>
+               <isEmpty property="Amount" prepend=",">Amount = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="SurchargeTaxTypeKey" prepend=",">SurchargeTaxTypeKey = #SurchargeTaxTypeKey#</isNotEmpty>
+               <isEmpty property="SurchargeTaxTypeKey" prepend=",">SurchargeTaxTypeKey = null</isEmpty>
+          </dynamic>
+          where SurchargeTaxSequence = #SurchargeTaxSequence# and CoverageSequence = #CoverageSequence# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from SurchargeTax where SurchargeTaxSequence = #SurchargeTaxSequence# and CoverageSequence = #CoverageSequence# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from SurchargeTax</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from SurchargeTax where CoverageSequence = #CoverageSequence# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey# and SurchargeTaxTypeKey = #SurchargeTaxTypeKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select SurchargeTaxSequence, Amount, LastUpdateUserID, LastUpdateTimeStamp, CoverageSequence, TransactionSequence, PolicyKey, SurchargeTaxTypeKey from SurchargeTax where SurchargeTaxSequence = #SurchargeTaxSequence# and CoverageSequence = #CoverageSequence# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select SurchargeTaxSequence, CoverageSequence, TransactionSequence, PolicyKey, Amount, LastUpdateUserID, LastUpdateTimeStamp from SurchargeTax where CoverageSequence = #CoverageSequence# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey# and SurchargeTaxTypeKey = #SurchargeTaxTypeKey#</select>
+</sqlMap>
+

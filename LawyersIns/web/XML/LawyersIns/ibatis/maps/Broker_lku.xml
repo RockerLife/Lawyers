@@ -1,0 +1,42 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Broker_lku">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Broker_lku</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Broker_lku</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into Broker_lku(
+          <dynamic prepend=" ">
+               <isNotEmpty property="BrokerDesc" prepend=",">BrokerDesc</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="BrokerDesc" prepend=",">#BrokerDesc#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="BrokerKey">SELECT IDENT_CURRENT('Broker_lku') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select BrokerKey, BrokerDesc, LastUpdateUserID, LastUpdateTimeStamp from Broker_lku where BrokerKey = #BrokerKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update Broker_lku set
+          <dynamic prepend=" ">
+               <isNotEmpty property="BrokerDesc" prepend=",">BrokerDesc = #BrokerDesc#</isNotEmpty>
+               <isEmpty property="BrokerDesc" prepend=",">BrokerDesc = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where BrokerKey = #BrokerKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from Broker_lku where BrokerKey = #BrokerKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from Broker_lku</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from Broker_lku</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select BrokerKey, BrokerDesc, LastUpdateUserID, LastUpdateTimeStamp from Broker_lku where BrokerKey = #BrokerKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select BrokerKey, BrokerDesc, LastUpdateUserID, LastUpdateTimeStamp from Broker_lku</select>
+     <select id="getBrokerLkuDetails" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select BrokerKey, BrokerDesc from Broker_lku where isArchived='False' order by BrokerDesc</select>
+</sqlMap>
+

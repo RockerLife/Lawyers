@@ -1,0 +1,36 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="BreakdownOfIntellPropLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from BreakdownOfIntellPropLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from BreakdownOfIntellPropLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and BOIPKey = #BOIPKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into BreakdownOfIntellPropLW(VersionSequence, PolicyKey, BOIPKey
+          <isNotEmpty property="PercentageValue" prepend=",">PercentageValue</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#, #BOIPKey:NUMERIC#
+          <isNotEmpty property="PercentageValue" prepend=",">#PercentageValue#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PercentageValue, LastUpdateUserID, LastUpdateTimeStamp, VersionSequence, PolicyKey, BOIPKey from BreakdownOfIntellPropLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and BOIPKey = #BOIPKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update BreakdownOfIntellPropLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="PercentageValue" prepend=",">PercentageValue = #PercentageValue#</isNotEmpty>
+               <isEmpty property="PercentageValue" prepend=",">PercentageValue = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and BOIPKey = #BOIPKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from BreakdownOfIntellPropLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and BOIPKey = #BOIPKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from BreakdownOfIntellPropLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from BreakdownOfIntellPropLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and BOIPKey = #BOIPKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PercentageValue, LastUpdateUserID, LastUpdateTimeStamp, VersionSequence, PolicyKey, BOIPKey from BreakdownOfIntellPropLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and BOIPKey = #BOIPKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, BOIPKey, PercentageValue, LastUpdateUserID, LastUpdateTimeStamp from BreakdownOfIntellPropLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and BOIPKey = #BOIPKey#</select>
+</sqlMap>
+

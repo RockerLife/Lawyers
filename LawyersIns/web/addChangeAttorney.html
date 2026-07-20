@@ -1,0 +1,444 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Attorneys Endorsement</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"/>
+<script src="js/bootstrap-datepicker.js"/>
+<script type="text/javascript" src="script/common.js"/>
+<script language="javascript" src="script/lawyers.js"/>
+<script type="text/javascript" src="script/manage.js"/>
+<script type="text/javascript" src="script/date-picker.js"/>
+<script type="text/javascript" src="script/masks.js"/>
+<script type="text/javascript" src="script/popup.js"/>
+<script type="text/javascript" src="script/capitalizeSentences.js"/>
+<link href="css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<script src="js/producerOne.js"/>
+<script src="js/bootstrap.js"/>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+<body onload="loadChangeAttorney();loadAttorneyEndortsement('isFinancialEndorsement');">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<form>
+<div id="cover"></div>
+<div id="popupsave2">
+	<div id="myModal" class="modal fade" role="dialog">
+	  <div class="modal-dialog" style="width: 450px;">
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"/>
+			<h4 class="modal-title">Process Endorsement</h4>
+		  </div>
+		  <div class="modal-body" style="height: 64px;">
+			<p style="text-align: center; line-height: 25px;">Are you sure you want to process the endorsement </p>
+		  </div>
+		  <div class="modal-footer">
+			<div class="floatRight">
+				<a class="ovalbutton" 
+				href="javascript:submitform('Endorsement.html','addChangeAttorney.processEndorsement','','');"
+				onclick="closePopUp('popupsave2');">Process Endorsement</a>
+				
+				<a class="ovalbutton" onclick="closePopUp('popupsave2');">Cancel</a>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+</div>
+<!-- Bootstrap Core JavaScript -->
+
+<div class="container-fluid bootstrap-node-1">
+  <div class="tableWidth"> 
+    <div class="tableWidth"> 
+	   
+	      <div id="header">
+			<span id="#Include:headerEndorsement.html#"></span>
+	      </div>
+	  
+   <div id="contentSection">
+		
+		<div>
+			<h2 class="questionHeading">Add/Change Attorney</h2>
+		</div>
+		<div class="form row">
+			<div class="block-form">
+			<div id="errorDivision" style="text-align: center;display:none;" class="error11Bold">The premium is manual and must be endorsed manually.</div>
+				<div class="freeFormDiv form-inline" id="addChangeAttorney_freeform_contextdata_10">
+					<ul class="inlineBlock">
+						<li class="inlineBlock_1_fix paddingTop10">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_endorsementEffectiveDate" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth txtbold">
+											Endorsement Effective Date :
+										</div>
+									</div>
+									<div class="freeFormListTd mendatoryInput iconsStyle2">
+										<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+										<input type="text" class="form-control datepicker"
+											id="ajax_field_endorsementEffectiveDate" 
+											name="endorsementEffectiveDate" onkeyup="applyDateFormat(this,event);"/> 
+									</div>
+								</div>
+							</div>
+						</li>
+						
+						<li class="inlineBlock_1_fix paddingTop10">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth">
+											&nbsp;
+										</div>
+									</div>
+									<div class="freeFormListTd tdInput">
+											&nbsp;<input type="checkbox" checked name="premiumChange" id="ajax_field_premiumChange"  onclick="loadAddChangeAttorney('ajax_field_premiumChange');"/> No Premium Change 
+									</div>
+								</div>
+							</div>
+							
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="" class="error"> </span> 
+									</div>
+								</div>
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										
+									</div>
+									<div class="freeFormListTd tdInput">
+											&nbsp;<input type="checkbox"  checked name="endorsementActivity" id="ajax_field_endorsementActivity" onclick="setEndorsementActivity('ajax_field_endorsementActivity');"/> No Endorsement
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_1_fix paddingTop10">
+							<div class="freeFormList form-group">
+								<div class="freeFormListTr">
+									<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+									<div class="freeFormListTdError paddingLeft3">
+										<span id="error_premiumCalculationError" class="error"> </span> 
+									</div>
+								</div>
+								
+							</div>
+							</li>
+						<li class="inlineBlock_1_fix paddingTop10">
+							<div class="freeFormList form-group" id="addAttorneysDiv">
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="txtbold">
+											Attorneys work in your Firm? :  
+										</div>
+									</div>
+									<div class="freeFormListTd mendatoryInput">
+										<select name="addAttorneys" style="width: 100px" id="ajax_field_addAttorneys" class="form-control"  onchange="loadLicensedStates();javascript:submitform('addChangeAttorney.html','addChangeAttorney.refreshGrid','','','attorneyGrid');">
+										  <option value="0">Select</option>
+										  <option value="1">1</option>
+										  <option value="2">2</option>
+										  <option value="3">3</option>
+										  <option value="4">4</option>
+										  <option value="5">5</option>
+										  <option value="6">6</option>
+										  <option value="7">7</option>
+										  <option value="8">8</option>
+										  <option value="9">9</option>
+										  <option value="10">10</option>
+										  <option value="11">11</option>
+										  <option value="12">12</option>
+										  <option value="13">13</option>
+										  <option value="14">14</option>
+										  <option value="15">15</option>
+										  <option value="16">16</option>
+											<option value="17">17</option>
+											<option value="18">18</option>
+											<option value="19">19</option>
+											<option value="20">20</option>
+											<option value="21">21</option>
+											<option value="22">22</option>
+											<option value="23">23</option>
+											<option value="24">24</option>
+											<option value="25">25</option>
+																					  
+										</select>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="paddingTop10">
+					<table  class="gridTable sectionPadding" cellpadding="0" cellspacing="0" style="width: 100%;" id="AttorneysDetailsList_list_01">
+						<thead id="rowMake">
+							<tr>
+								<th>Attorney Name</th>
+								<th width="12%">Attorney Designation</th>
+								<th width="15%">States Licensed to Practice Law</th>
+								<th width="10%">Annual Hours Worked</th>
+								<th width="13%">Date Joined the Firm</th>
+								<th width="8%"># of Years in Practice</th>
+								<th width="2%" /> 
+								
+								
+							</tr>
+						</thead>
+					<tbody id="rowMake">
+					<tr id="AttorneysDetailsList_list_header_01" class="no-padding">
+						
+						<td>
+						<span id="block_field_rownum"></span>
+						
+						<span id="block_field_AttorneyName"></span>
+						</td>
+						<td id="block_field_DesignationId"/>
+						<td id="block_field_LicensedStates"/>
+						<td><span id="block_field_AnnualWorkedHours"></span></td>
+						<td id="block_field_AttorneyPriorActDate"/>
+						
+						<td id="block_field_NumberOfYearsInPractice"/>
+						<td id="block_field_combinedStates"/>
+						 
+						
+						
+					</tr>
+					<tr id="AttorneysDetailsList_list_mom_data_01"> 
+						<td nowrap>
+						<span id="block_field_rownum">
+							<input name="rownum" type="hidden"  id="rownum"/></span>
+						
+						
+						<span  id="block_field_AttorneyName">
+							<input name="AttorneyName" type="text" class="inputbox" id="AttorneyName" style="width: 340px;" /></span>
+						</td>
+						
+						<td nowrap >
+							<span id="block_field_DesignationId">
+								<select name="DesignationId" id="ajax_field_DesignationId" style="width: 150px;"
+												class="inputbox">
+												<option value="">- Select -</option>
+								</select>
+											
+							</span>
+						</td>
+					<td nowrap  class="attorneys_dropdown">
+						<span id="block_field_LicensedStates" >
+							<select class="selectpicker" multiple  width="60px" name="LicensedStates" id="ajax_field_LicensedStates"  tabindex="14">
+										<option value="">Select</option>
+										
+							</select>
+							</span>
+						</td>
+						
+						<td nowrap id="block_field_AnnualWorkedHours">
+							<input name="AnnualWorkedHours" type="text" class="inputbox" id="ajax_field_AnnualWorkedHours" onclick="loadLawPractice();" onblur="validateAnualHours(this);"  />
+						</td>
+						
+						<td nowrap >
+							<div class="iconsStyle2">
+								<span id="block_field_AttorneyPriorActDate">
+								<input type="text"  style="width: 88px !important"
+									id="ajax_field_AttorneyPriorActDate" 
+									name="AttorneyPriorActDate" onkeyup="applyDateFormat(this,event);loadAttorneyPriorActDate();" onclick="loadAttorneyPriorActDate();"
+										placeholder="MM/DD/YYYY" onselect="loadAttorneyPriorActDate();" onchange="loadAttorneyPriorActDate();" /> 
+								</span>	
+								<span id="error_PolicyExpirationDatePross" class="error"> </span>
+							</div>
+						</td>
+						
+						<td id="block_field_NumberOfYearsInPractice" >
+							<input name="NumberOfYearsInPractice" style="width: 50px;" id="ajax_field_NumberOfYearsInPractice" type="text" class="inputbox" onclick="loadLicensedStates();loadLawPractice();" 
+								onselect="loadAttorneyPriorActDate();" onfocus="loadAttorneyPriorActDate();"/>
+						</td>
+						 <td id="block_field_combinedStates" >
+							<input  name="combinedStates" style="width: 50px;" id="ajax_field_combinedStates" type="hidden" class="inputbox"/>
+						</td> 
+						 <td id="block_field_combinedStates" >
+							<input  name="combinedStates" style="width: 50px;" id="ajax_field_combinedStates" type="hidden" class="inputbox"/>
+						</td> 
+						
+						
+						
+					</tr>
+					</tbody>
+				</table>
+					
+				</div>
+				<div class="freeFormDiv row form-inline paddingTop10" id="addChangeAttorney_freeform_contextdata_20">
+					
+					<ul class="inlineBlock totalPremium">
+						<li class="inlineBlock_3_fix">
+							<div class="freeFormList form-group">
+								
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="freeFormLabelWidth">
+											Premium : $
+										</div>
+									</div>
+									<div class="freeFormListTd tdInput">
+										<input  readonly type="text" class="form-control" style="width: 100px;"
+										name="endorsementPremium" id="ajax_field_endorsementPremium" />
+										
+										
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_3_fix">
+							<div class="freeFormList form-group">
+								
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="">
+											Taxes : $
+										</div>
+									</div>
+									<div class="freeFormListTd tdInput">
+										 
+										 
+										 <input readonly  type="text" class="form-control" style="width: 100px;" 
+										 name="endorsementTaxes" id="ajax_field_endorsementTaxes"/>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_3_fix">
+							<div class="freeFormList form-group">
+								
+								<div class="freeFormListTr">
+									<div class="freeFormListTd labelAlign">
+										<div class="txtbold">
+											Total : $
+										</div>
+									</div>
+									<div class="freeFormListTd tdInput">
+										
+										  
+										  <input readonly type="text" class="form-control" style="width: 100px;"
+										  name="endorsementTotalPremium" id="ajax_field_endorsementTotalPremium"/>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="inlineBlock_3_fix">
+						
+								<div id="endorsementPdfDiv">
+									&nbsp;&nbsp;<a href="javascript:submitform('addChangeAttorney.html','addChangeAttorney.downloadPremiumCalculationPdf','','');"
+										class="Link_blue"><img
+											src="img/icon_location.gif"
+											title="Download Premium Calculation"
+											alt="Download Calculation" width="30"
+											height="22" border="0" /> </a> 
+																			
+									</div>
+								
+											
+						</li>
+					</ul>
+					<div class="row" id="calculteButtonDiv">
+					
+						<div class="floatLeft">
+						
+						<a class="ovalbutton" onclick="loadLicensedStates();"
+						href="javascript:submitform('addChangeAttorney.html','addChangeAttorney.calculatePremium','','');"
+						 title="Calculate Premium"> <i class="fa-calculator fa"></i> Calculate Premium</a>
+						</div>
+					</div>
+				</div>
+				<div id="ratingOutputID">
+				<ul class="inlineBlock paddingTop10 totalPremium">
+						<li class="inlineBlock_3_fix">
+			<div class="freeFormListTr" id="limitDeuctibleEndorsement_freeform_contextdata_002">
+												<div
+													class="freeFormListTd labelAlign valignTop freeFormLabelWidth">
+													<span align="left"
+														id="">Rating
+														Output :</span> 
+
+												</div>
+												<div class="freeFormListTd tdInput">
+													<textarea name="XmlOutputDatafromRating" disabled
+														class="form-control" id="XmlOutputDatafromRating"
+														cols="10" rows="4" style="width: 744px; height: 80px"></textarea>
+												</div>
+											</div>
+											</li></ul>
+											</div>
+			</div>
+			
+		</div>
+		<div class="buttons borderTop row">
+			<a class="btn back floatLeft" href="javascript:submitform('Endorsement.html','addChangeAttorney.back','','');"> Back </a>
+			<div class="floatRight">
+				<a class="btn button1" onclick="loadLicensedStates();"
+				href="javascript:submitform('Endorsement.html','addChangeAttorney.downloadReviewEndorsement','','');">Review Endorsement</a>
+				
+					<a class="btn button1 btnVal1"
+				onclick="loadLicensedStates();showPopUp('popupsave2','500','400');">Process  Endorsement</a>
+			</div>
+		</div>
+		
+	</div>
+    <div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				
+			
+			
+			<table id="addChangeAttorney_freeform_contextdata_30">
+				<tr>
+					<td><input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />
+						<input type="hidden" name="newLicensedStates" id="ajax_field_newLicensedStates"/>
+						<input type="hidden" name="isNonFinancialEndorsement" id="isNonFinancialEndorsement"/>
+						<input type="hidden" name="isFinancialEndorsement" id="isFinancialEndorsement"/>
+						<input type="hidden" name="generateEndorsementDocuments" id="generateEndorsementDocuments"/>
+						<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+						<input type="hidden" name="EndorsementType" id="EndorsementType"/>
+						<input type="hidden" name="isEnforcedPolicy" id="isEnforcedPolicy" />
+						<input type="hidden" name="anyDecendentPolicy" id="anyDecendentPolicy" />
+						<input type="hidden" name="isExceptionalCase" id="isExceptionalCase" />
+						<input type="hidden" name="isShowPemiumCalculation" id="isShowPemiumCalculation" />
+						<input type="hidden" name="endorsementDataList" id="endorsementDataList" />
+						<input type="hidden" name="isManualPremiumPolicy" id="isManualPremiumPolicy" />
+						<input type="hidden" name="FYEndorsementPremium" id="FYEndorsementPremium" />
+						<input type="hidden" name="FYEndorsementTax" id="FYEndorsementTax" />
+					</td>
+				</tr>
+			</table>
+	</div>
+    
+  </div>
+</div>
+</div>
+</form>
+<script>
+	loadChangeAttorney();
+</script>
+<script src="js/bootstrap-select.js"></script>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

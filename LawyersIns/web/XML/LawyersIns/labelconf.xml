@@ -1,0 +1,27 @@
+<labelconf  project="LawyersIns">
+	<label labelkey="insuranceCarrierFirstAttoryneyInsurance" labeldesc="insurance Carrier"/> 
+	<label labelkey="limitDeductibleFirstAttoryneyInsurance" labeldesc="limit/deductible"/> 
+	<label labelkey="numberOfAttorneysFirstAttoryneyInsurance" labeldesc="number of attorneys"/>
+	<label labelkey="premiumFirstAttoryneyInsurance" labeldesc="premium"/> 
+	<label labelkey="policyPeriodFirstAttoryneyInsurance" labeldesc="policy period"/> 
+	<label labelkey="PriorActDateAttorney" labeldesc="Attorney Prior act date"/>
+	<label labelkey="transactionsHandled12MonthsResi" labeldesc="Transactions Handled in last 12 Months"/> 
+	<label labelkey="transactionsHandled12MonthsComm" labeldesc="Transactions Handled in last 12 Months"/>
+	<label labelkey="largestTransaction12MonthsResi" labeldesc="Largest real estate transaction."/>
+	<label labelkey="largestTransaction12MonthsComm" labeldesc="Largest real estate transaction."/>
+	<label labelkey="attendClosings" labeldesc="Staff members ever attend closings"/>
+	<label labelkey="includeSecuringFinancing" labeldesc="Practice include securing financing"/>
+	<label labelkey="useDisclosureForm" labeldesc="Signed disclosure form."/> 
+	<label labelkey="TrustName" labeldesc="Name of Trus.t"/>
+	<label labelkey="TrustsType" labeldesc="Trust Type."/>
+	<label labelkey="AssetsValue" labeldesc="Value of Assets."/>
+	<label labelkey="BeneficiaryInterest" labeldesc="Beneficiary Interest"/>
+	<!-- <label labelkey="WorkPhone" labeldesc="Work phone number."/> -->
+	<!-- <label labelkey="ContactPerson" labeldesc="Contact Person."/> -->
+	<label labelkey="personalBankrupties" labeldesc="Personal Bankrupties."/>
+	<label labelkey="commercialBankruptcies" labeldesc="Commercial Bankruptcies."/>
+	<label labelkey="representedDebtors" labeldesc="Represented Debtors."/>
+	
+	<label labelkey="State" labeldesc="State"/>
+	
+</labelconf>

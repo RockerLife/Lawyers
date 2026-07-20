@@ -1,0 +1,44 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ClaimAgeLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ClaimAgeLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ClaimAgeLW where PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ClaimAgeLW(PolicyKey
+          <isNotEmpty property="Year" prepend=",">Year</isNotEmpty>
+          <isNotEmpty property="PartTime" prepend=",">PartTime</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="AttorneyKey" prepend=",">AttorneyKey</isNotEmpty>
+          ) values (#PolicyKey:NUMERIC#
+          <isNotEmpty property="Year" prepend=",">#Year#</isNotEmpty>
+          <isNotEmpty property="PartTime" prepend=",">#PartTime#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="AttorneyKey" prepend=",">#AttorneyKey#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select Year, PartTime, LastUpdateUserID, LastUpdateTimeStamp, AttorneyKey, PolicyKey from ClaimAgeLW where PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ClaimAgeLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="Year" prepend=",">Year = #Year#</isNotEmpty>
+               <isEmpty property="Year" prepend=",">Year = null</isEmpty>
+               <isNotEmpty property="PartTime" prepend=",">PartTime = #PartTime#</isNotEmpty>
+               <isEmpty property="PartTime" prepend=",">PartTime = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="AttorneyKey" prepend=",">AttorneyKey = #AttorneyKey#</isNotEmpty>
+               <isEmpty property="AttorneyKey" prepend=",">AttorneyKey = null</isEmpty>
+          </dynamic>
+          where PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ClaimAgeLW where PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ClaimAgeLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ClaimAgeLW where PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select Year, PartTime, LastUpdateUserID, LastUpdateTimeStamp, AttorneyKey, PolicyKey from ClaimAgeLW where PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PolicyKey, Year, PartTime, LastUpdateUserID, LastUpdateTimeStamp from ClaimAgeLW where PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

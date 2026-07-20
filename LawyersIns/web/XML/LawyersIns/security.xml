@@ -1,0 +1,900 @@
+<security project="LawyersIns">
+<!-- <protectedresource uniquename="off_risk_Security" description="Disable fields"  defaultaccesstype="0">
+         <businessrole roleid="3" >
+			<roleaccesslevel accesstype="1">
+			</roleaccesslevel>
+		 </businessrole>
+		 <appuser userid="38" >
+			<useraccesslevel accesstype="1">
+			</useraccesslevel>
+		 </appuser>
+		 <appuser userid="56" >
+			<useraccesslevel accesstype="1">
+			</useraccesslevel>
+		 </appuser>
+		 <appuser userid="1066" >
+			<useraccesslevel accesstype="1">
+			</useraccesslevel>
+		 </appuser>
+		 Changes
+		 <appuser userid="40" >
+			<useraccesslevel accesstype="1">
+			</useraccesslevel>
+		 </appuser>
+		  for trey.dimonduw
+		 <appuser userid="1098" >
+			<useraccesslevel accesstype="1">
+			</useraccesslevel>
+		 </appuser>
+		 for gweissu
+		 <appuser userid="1092" >
+			<useraccesslevel accesstype="1">
+			</useraccesslevel>
+		 </appuser>
+		 for mcarteru
+		  <appuser userid="1097" >
+			<useraccesslevel accesstype="1">
+			</useraccesslevel>
+		 </appuser>
+		  Sara Gleason
+		 <appuser userid="56" >
+			<useraccesslevel accesstype="1">
+			</useraccesslevel>
+		 </appuser>
+		  Ryan Holley
+		  <appuser userid="111111111" >
+			<useraccesslevel accesstype="1">
+			</useraccesslevel>
+		 </appuser>
+ </protectedresource>
+
+ -->
+
+
+
+	<protectedresource uniquename="readOnlySecurity" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.isFirmPageReadOnly">
+	     	<userdefinedaccesslevel accesstype="2" />
+	    </userdefined>
+  </protectedresource>	
+  <protectedresource uniquename="AopReadOnlySecurity" description="Disable fields" >
+	    <userdefined ruleid="LawyersRule.isAopPageReadOnly">
+	     	<userdefinedaccesslevel accesstype="2" />
+	    </userdefined>
+  </protectedresource>
+  <protectedresource uniquename="PracticeManagementReadOnlySecurity" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.isPracticePageReadOnly">
+	     	<userdefinedaccesslevel accesstype="2" />
+	    </userdefined>
+  </protectedresource>
+  <protectedresource uniquename="CoveragePageReadOnlySecurity" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.isCoveragePageReadOnly">
+	     	<userdefinedaccesslevel accesstype="2" />
+	    </userdefined>
+  </protectedresource>
+    <protectedresource uniquename="CoveragePageReadOnlySecurity" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.isCoveragePageReadOnly">
+	     	<userdefinedaccesslevel accesstype="2" />
+	    </userdefined>
+  </protectedresource>
+    <protectedresource uniquename="AppCompleted" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.isInsuredAndAppCompleted">
+	     	<userdefinedaccesslevel accesstype="2" />
+	    </userdefined>
+  </protectedresource>
+  <protectedresource uniquename="AppIncomplete" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.isInsuredAndAppNotCompleted">
+	     	<userdefinedaccesslevel accesstype="2" />
+	    </userdefined>
+  </protectedresource>
+   <protectedresource uniquename="showPageSave" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.isInsuredAndAppNotCompleted">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined ruleid="LawyersRule.isInsuredAndAppCompleted">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+  </protectedresource>
+  <protectedresource uniquename="showContinue" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.isInsuredAndAppNotCompleted">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    <userdefined ruleid="LawyersRule.isInsuredAndAppCompleted">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+  </protectedresource>
+  <protectedresource uniquename="NewBusiness" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.IsRenewalPolicy">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    <userdefined ruleid="LawyersRule.IsNotRenewalPolicy">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+  </protectedresource>
+   <protectedresource uniquename="RenewBusiness" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.IsRenewalPolicy">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined ruleid="LawyersRule.IsNotRenewalPolicy">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+  </protectedresource>
+  <protectedresource uniquename="hideIcon" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.isInsuredAndAppCompleted">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    
+  </protectedresource>
+  <protectedresource uniquename="showAgentOnly" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.isAgent">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined ruleid="LawyersRule.isNotAgent">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    
+	   <!--  <userdefined ruleid="LawyersRule.isInsuredSubProducer">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined ruleid="LawyersRule.isNotInsuredSubProducer">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined> -->
+  </protectedresource>
+  <protectedresource uniquename="showInsuredOnly" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.isInsured">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined ruleid="LawyersRule.isNotInsured">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+  </protectedresource>
+  <protectedresource uniquename="ShowNonRatedAttorney" defaultaccesstype="1" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.isShowNonRatedAttorney">
+	     	<userdefinedaccesslevel accesstype="2" />
+	    </userdefined>
+	    <!-- <userdefined ruleid="LawyersRule.isNotShowNonRatedAttorney">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined> -->
+	</protectedresource>
+	 <protectedresource uniquename="showHideShowAttorneysInsuranceInfo" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.isShowAttorneysInsuranceInfo">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined ruleid="LawyersRule.isNotShowAttorneysInsuranceInfo">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+
+	<protectedresource uniquename="showHideListNoRecordFound" defaultaccesstype="0" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.hideNoRecordFound">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="hideForSpecificStates" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.hideForMissouri">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="showHideQuotePageForInsured" description="Disable fields" >
+	    <userdefined ruleid="LawyersRule.showQuoteOptionTab">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined ruleid="LawyersRule.showNotQuoteOptionTab">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    <!--  <userdefined executionsequence="1" ruleid="LawyersRule.isShowQuoteForSubproducer" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined> -->
+	    
+	</protectedresource>
+	
+	<protectedresource uniquename="showHideAttorneysData" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.showAttorneysData">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined ruleid="LawyersRule.hideAttorneysData">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="enableDisablePageContent">
+		<userdefined ruleid="LawyersRule.showDisabled" >
+			<userdefinedaccesslevel accesstype="2" />
+		</userdefined>
+	</protectedresource>
+	
+	<protectedresource uniquename="showHideLitigationAop" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.beforeLitigationImplementationDate">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined ruleid="LawyersRule.litigationImplementationDate">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="showHideLitigationLargestCaseAop" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.beforeLitigationImplementationDate">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    <userdefined ruleid="LawyersRule.litigationImplementationDate">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="visibleForCancellation">
+		<userdefined ruleid="LawyersRule.Issued_Status" >
+			<userdefinedaccesslevel accesstype="1" />
+		</userdefined>
+		<userdefined ruleid="LawyersRule.Cancelled_Status" >
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	
+	<protectedresource uniquename="visibleForReinstatement">
+		<userdefined ruleid="LawyersRule.Cancelled_Status" >
+			<userdefinedaccesslevel accesstype="1" />
+		</userdefined>
+		<userdefined ruleid="LawyersRule.Issued_Status" >
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+	</protectedresource>
+	<protectedresource uniquename="showHideLitigationAop" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.beforeLitigationImplementationDate">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined ruleid="LawyersRule.litigationImplementationDate">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="showHideLitigationLargestCaseAop" description="Disable fields" >
+	    <userdefined ruleid="LawyersRule.beforeLitigationImplementationDate" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    <userdefined ruleid="LawyersRule.litigationImplementationDate">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="headerPageDownloadBar_security" description="Disable fields" defaultaccesstype="1">
+	    <userdefined executionsequence="0" ruleid="LawyersRule.isNotShowHeaderForProfile">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    <userdefined executionsequence="1" ruleid="LawyersRule.showUWLink" >
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined executionsequence="2" ruleid="LawyersRule.isShowLinksForSubprodcer" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    <userdefined executionsequence="3" ruleid="LawyersRule.isNotShowDownloadHeaderForFilter">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	     <userdefined executionsequence="4" ruleid="LawyersRule.isNotShowDownloadHeaderForRequote">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	     <userdefined executionsequence="5" ruleid="LawyersRule.isNotShowDownloadHeaderForClaimsSummary">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    <userdefined executionsequence="5" ruleid="LawyersRule.isNotShowDownloadHeaderForBroker">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    <userdefined executionsequence="6" ruleid="LawyersRule.isNotShowDownloadHeaderForCarrier">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	     <userdefined executionsequence="7" ruleid="LawyersRule.isNotShowDownloadHeaderForQQ">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	     <userdefined executionsequence="8" ruleid="LawyersRule.isNotShowDownloadHeaderForQQOptions">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	
+	
+	<protectedresource uniquename="hidePortal123" description="Disable fields" defaultaccesstype="1"  >
+	    <userdefined executionsequence="0" ruleid="LawyersRule.IsManagementRoleTest">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    
+	    
+	</protectedresource>
+		<protectedresource uniquename="hideisLiabilityInsuranceNo" description="Disable fields" defaultaccesstype="0"  >
+	    <userdefined executionsequence="0" ruleid="LawyersRule.isLiabilityInsuranceNo">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    
+	    
+	</protectedresource>
+	
+	    
+	
+	
+	
+<protectedresource uniquename="showCommercial" description="Disable fields" defaultaccesstype="0"  >
+	    <userdefined executionsequence="0" ruleid="LawyersRule.isShowCommercial">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    
+	</protectedresource>
+	
+	<protectedresource uniquename="showResidential" description="Disable fields" defaultaccesstype="0"  >
+	    <userdefined executionsequence="0" ruleid="LawyersRule.isShowResidential">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    
+	</protectedresource>
+	
+	
+	
+		<protectedresource uniquename="hideShowCommentsonFirm_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	     <userdefined executionsequence="1" ruleid="LawyersRule.isBrokeragePage">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+	</protectedresource>
+	
+	<protectedresource uniquename="makeReadonlyWhenSubproducerLoggedIn_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	</protectedresource>
+	
+	<protectedresource uniquename="nonRatedAttorney_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	
+	<protectedresource uniquename="viewQuoteLetterButton_security" description="Disable fields244" defaultaccesstype="0">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="DownloadRatingSubproducer_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	
+	<protectedresource uniquename="totalModifiersSubproducer_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+<protectedresource uniquename="showPageSaveForSubproducer" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	
+	<protectedresource uniquename="viewUWReviewButton_security" description="Disable fields244" defaultaccesstype="0">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="showCommentasReasonlyForSubproducer_security" description="Disable fields244" defaultaccesstype="0">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="showCommentOthenThanSubproducer_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="pricingCommentListDiv" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="SubproducerOnWorkqHideShow_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="quoteCommentOnQuoteHideShow_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="2" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="quoteCommentOnQuote_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="hideIssuedStatusforSub_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.HideStatusForSubproducer" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="hideIssuedRenewalforSub_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>	
+	
+	<protectedresource uniquename="UWCompleteButtonForSubproducer_security" description="Disable fields244" defaultaccesstype="0">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isShowUWCompletedButtonForSubproducer" >
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="hideUWCompleteForSubproducer_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="showUnderwriterButtonsForSubproducer_security" description="Disable fields244" defaultaccesstype="0">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="showSaveButtonsForSubproducerOnHosekeeping_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="hideShowQuotePageOnTabForSub_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isShowQuoteForSubproducer" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="showContinueForSubproducer" description="Disable fields244" defaultaccesstype="0">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isShowContinueForSubproducer" >
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	</protectedresource>
+	
+	<protectedresource uniquename="hideQuestionForSubproducer_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedInsured" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	
+	<protectedresource uniquename="hideUWbtnForSubproducer_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isNotShowUWBtnForSubprodcer" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="specialIssuance_security" description="Disable fields244" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.checkSpecailIssuance" >
+	     	<userdefinedaccesslevel accesstype="2" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="indication_security" description="Disable fields" defaultaccesstype="0"  >
+	    <userdefined executionsequence="0" ruleid="LawyersRule.showHideIndication">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined executionsequence="0" ruleid="LawyersRule.showHideIndicationNot">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	
+	<protectedresource uniquename="ReadOnlyClaimSupply" description="Disable fields" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.ReadOnlyClaimModify" >
+	     	<userdefinedaccesslevel accesstype="2" />
+	    </userdefined>
+	</protectedresource>
+	
+	<protectedresource uniquename="readOnlymodifierforSP" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.SPModifier">
+	     	<userdefinedaccesslevel accesstype="2" />
+	    </userdefined>
+  </protectedresource>
+	
+	<protectedresource uniquename="aoprenewalNew_security" description="Disable fields" defaultaccesstype="0"  >
+	    <userdefined executionsequence="0" ruleid="LawyersRule.showAOPRenewalNewFlow">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined executionsequence="0" ruleid="LawyersRule.showAOPRenewalOldFlow">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="aoprenewalOld_security" description="Disable fields" defaultaccesstype="0"  >
+	    <userdefined executionsequence="0" ruleid="LawyersRule.showAOPRenewalNewFlow">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    <userdefined executionsequence="0" ruleid="LawyersRule.showAOPRenewalOldFlow">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="HideForIssuedPolicies_security" description="Disable fields" defaultaccesstype="0"  >
+	    <userdefined executionsequence="0" ruleid="LawyersRule.Issued_Status">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    <userdefined executionsequence="1" ruleid="LawyersRule.IsNotIssued">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="accountManagementVisibility_security" description="Disable fields" defaultaccesstype="0"  >
+	    <userdefined executionsequence="0" ruleid="LawyersRule.showAccountManagementFacility">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined executionsequence="1" ruleid="LawyersRule.hideAccountManagementFacility">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="requotePolicy_security" description="Disable fields" defaultaccesstype="0"  >
+	    <userdefined executionsequence="0" ruleid="LawyersRule.showRequotePolicy">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined executionsequence="1" ruleid="LawyersRule.showRequotePolicyNot">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	   
+	</protectedresource>
+	<protectedresource uniquename="endorsement_options_Security" description="show fileds"  defaultaccesstype="0">
+        <userdefined executionsequence="0" ruleid="LawyersRule.showEndorsementOptions">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined executionsequence="0" ruleid="LawyersRule.isNotShowEndorsementOptions">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	 </protectedresource>
+	 <protectedresource uniquename="BackToList_security" description="Disable fields" defaultaccesstype="1">
+			
+		    <userdefined executionsequence="1" ruleid="LawyersRule.isNotShowHeaderForProfile">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		    
+		    <userdefined executionsequence="2" ruleid="LawyersRule.showUWLink" >
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		    <userdefined executionsequence="3" ruleid="LawyersRule.isNotShowDownloadHeaderForFilter">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		     <userdefined executionsequence="4" ruleid="LawyersRule.isNotShowDownloadHeaderForRequote">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		     <userdefined executionsequence="5" ruleid="LawyersRule.isNotShowDownloadHeaderForClaimsSummary">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+			 <userdefined executionsequence="10" ruleid="LawyersRule.isInsured" >
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+	    </protectedresource>
+		<protectedresource uniquename="enforcedPolicy_options_Security" description="show fileds"  defaultaccesstype="0">
+	        <userdefined executionsequence="0" ruleid="LawyersRule.showOptionsForEnforcedPolicy">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		    <userdefined executionsequence="1" ruleid="LawyersRule.hideOptionsOfrEnforcedPolicy">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		 </protectedresource>
+		 
+		 <protectedresource uniquename="ReadOnlyClaimsSummary" description="Disable fields" defaultaccesstype="1">
+	   <userdefined executionsequence="1" ruleid="LawyersRule.isNotShowEditClaimIcon" >
+	     	<userdefinedaccesslevel accesstype="2" />
+	    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="quickQuote_Security" description="show fileds"  defaultaccesstype="0">
+	        <userdefined executionsequence="0" ruleid="LawyersRule.showQuickQuoteWorkq">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		    <userdefined executionsequence="1" ruleid="LawyersRule.hideQuickQuoteWorkq">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		 </protectedresource>
+	<protectedresource uniquename="off_risk_Security" description="show fileds"  defaultaccesstype="0">
+	        <userdefined executionsequence="0" ruleid="LawyersRule.isShowOffRiskLink">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		    <userdefined executionsequence="1" ruleid="LawyersRule.isNotShowOffRisk">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		 </protectedresource>
+		 
+	<protectedresource uniquename="readOnlySecurityQQ" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.IsQuickQuotePageReadOnly">
+	     	<userdefinedaccesslevel accesstype="2" />
+	    </userdefined>
+  </protectedresource>
+  
+  
+  <protectedresource uniquename="readOnlySecurityAsignPage" description="Disable fields">
+	    <userdefined ruleid="form.isReadOnly">
+	     	<userdefinedaccesslevel accesstype="2" />
+	    </userdefined>
+  </protectedresource>
+  <protectedresource uniquename="adminRights_security" description="show fileds"  defaultaccesstype="0">
+	        <userdefined executionsequence="0" ruleid="LawyersRule.isAdminUser">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		    <userdefined executionsequence="1" ruleid="LawyersRule.isNotAdminUser">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		 </protectedresource>
+	<protectedresource uniquename="brokerScreenHeader_security" description="show fileds"  defaultaccesstype="0">
+	        <userdefined executionsequence="0" ruleid="LawyersRule.isBrokeragePage">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		    <userdefined executionsequence="1" ruleid="LawyersRule.isNotBrokeragePage">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		   
+		     
+		 </protectedresource>
+  	<protectedresource uniquename="endorsementTransactionVisbility_security" description="show fileds"  defaultaccesstype="0">
+	        <userdefined executionsequence="0" ruleid="LawyersRule.isNotInternalUser">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		    <userdefined executionsequence="1" ruleid="LawyersRule.isInternalUser">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		       <userdefined executionsequence="2" ruleid="LawyersRule.isEmptyEndorsementTransactionDetails">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		 </protectedresource>
+		 
+		  <protectedresource uniquename="brokerScreenHeader2_security" description="show fileds"  defaultaccesstype="0">
+	        <userdefined executionsequence="0" ruleid="LawyersRule.isBackPageNotList">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		    <userdefined executionsequence="1" ruleid="LawyersRule.isBackPageList">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		      
+		 </protectedresource> 
+		  <protectedresource uniquename="BrokerAppIssued_Security" description="Disable fields">
+		    <userdefined ruleid="LawyersRule.isBrokeragePolicyIssued">
+		     	<userdefinedaccesslevel accesstype="2" />
+		    </userdefined>
+  		</protectedresource>
+  		<protectedresource uniquename="BrokerAppIssuedSave_Security" description="Disable fields">
+		    <userdefined ruleid="LawyersRule.isBrokeragePolicyIssued">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		    <userdefined ruleid="LawyersRule.isBrokeragePolicyNotIssued">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+  		</protectedresource>
+  		
+  		<protectedresource uniquename="copyPolicyData_security" description="Disable fields" defaultaccesstype="0"  >
+		  	<userdefined executionsequence="0" ruleid="LawyersRule.isNotInternalUser">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		    <userdefined executionsequence="1" ruleid="LawyersRule.showRequotePolicyNot">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+	    	<userdefined executionsequence="2" ruleid="LawyersRule.showRequotePolicy">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		     <userdefined executionsequence="3" ruleid="LawyersRule.ShowlostWorkqButton">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		    <userdefined executionsequence="4" ruleid="LawyersRule.isShowCopyLinkForListPage">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		     <userdefined executionsequence="5" ruleid="LawyersRule.isNotShowCopyLinkForListPage">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		    <userdefined executionsequence="6" ruleid="LawyersRule.isBrokeragePolicy">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+	</protectedresource>
+	
+	<protectedresource uniquename="downloadAppListPage_security" description="Disable fields" defaultaccesstype="0"  >
+		   
+		    <userdefined executionsequence="0" ruleid="LawyersRule.isShowPDFDownloadLink">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+	    	<userdefined executionsequence="1" ruleid="LawyersRule.isHidePDFDownloadLink">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		     
+	</protectedresource>
+	<protectedresource uniquename="showCommentListPage_security" description="Disable fields" defaultaccesstype="0"  >
+		   
+		    <userdefined executionsequence="0" ruleid="LawyersRule.isAgentNotSubproducer">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		    <userdefined executionsequence="1" ruleid="LawyersRule.isSubproducerLoggedIn">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+	    	
+		     <userdefined executionsequence="3" ruleid="LawyersRule.isBrokeragePolicy">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+	</protectedresource>
+	
+	<protectedresource uniquename="underwriterLinkListPage_security" description="Disable fields" defaultaccesstype="0"  >
+		   
+		    
+	    	<userdefined executionsequence="1" ruleid="LawyersRule.isBrokeragePolicy">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		     <userdefined executionsequence="1" ruleid="LawyersRule.showUWLink">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="NewBrokerageLinkListPage_security" description="Disable fields" defaultaccesstype="0"  >
+		   
+		   
+	    	<userdefined executionsequence="0" ruleid="LawyersRule.isShowNewBrokerageLink">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		    
+		     <userdefined executionsequence="1" ruleid="LawyersRule.isNotShowNewBrokerageLink">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="RenewBrokerageLinkListPage_security" description="Disable fields" defaultaccesstype="0"  >
+		   
+		   
+	    	<userdefined executionsequence="0" ruleid="LawyersRule.isShowRenewAsBrokerage">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		     <userdefined executionsequence="1" ruleid="LawyersRule.isNotShowRenewAsBrokerage">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="BrokerageLinkWorkqPage_security" description="Disable fields" defaultaccesstype="0"  >
+		   
+		   
+	    	<userdefined executionsequence="0" ruleid="LawyersRule.isInternalUser">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		    <userdefined executionsequence="1" ruleid="LawyersRule.isPartnerUser">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		     <userdefined executionsequence="2" ruleid="LawyersRule.isNotInternalUser">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		   
+	</protectedresource>
+	
+	<protectedresource uniquename="MeasurementReportRights_security" description="show fileds"  defaultaccesstype="0">
+	        <userdefined executionsequence="0" ruleid="LawyersRule.isMeasurementAccessUser">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		    <userdefined executionsequence="1" ruleid="LawyersRule.isNotMeasurementAccessUser">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		 </protectedresource>
+	<protectedresource uniquename="completeAppLink_security" description="Disable fields" defaultaccesstype="0"  >
+		   
+		   
+	    	<userdefined executionsequence="0" ruleid="LawyersRule.isInternalOrPartenerUser">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		    
+		     <userdefined executionsequence="1" ruleid="LawyersRule.isNotInternalOrPartenerUser">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		    
+		   
+	</protectedresource>
+	<protectedresource uniquename="internalUsers_security" description="Disable fields" defaultaccesstype="0"  >
+		   
+		   
+	    	<userdefined executionsequence="0" ruleid="LawyersRule.isInternalUser">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		    
+		     <userdefined executionsequence="1" ruleid="LawyersRule.isNotInternalUser">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		   
+	</protectedresource>
+	
+		<protectedresource uniquename="actionLinkListPage_security"
+		description="show fileds" defaultaccesstype="0">
+		<userdefined executionsequence="3"
+			ruleid="LawyersRule.isInternalOrPartenerUser">
+			<userdefinedaccesslevel accesstype="1" />
+		</userdefined>
+		<userdefined executionsequence="4"
+			ruleid="LawyersRule.isNotInternalOrPartenerUser">
+			<userdefinedaccesslevel accesstype="0" />
+		</userdefined>
+
+	</protectedresource>
+	
+	<protectedresource uniquename="lostWorkqLinkListPage_security" description="Disable fields" defaultaccesstype="0"  >
+		  	<userdefined executionsequence="0" ruleid="LawyersRule.isNotInternalUser">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		  
+		     <userdefined executionsequence="3" ruleid="LawyersRule.ShowlostWorkqButton">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="CannibsSuppImpl_security" description="Disable fields" defaultaccesstype="0"  >
+		  	<userdefined executionsequence="0" ruleid="LawyersRule.isShowCannibsSupp">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+		  
+		     <userdefined executionsequence="3" ruleid="LawyersRule.isNotShowCannibsSupp">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+	</protectedresource>
+	<protectedresource uniquename="PriorToCannibsSuppImpl_security" description="Disable fields" defaultaccesstype="0"  >
+		  	<userdefined executionsequence="0" ruleid="LawyersRule.isShowCannibsSupp">
+		     	<userdefinedaccesslevel accesstype="0" />
+		    </userdefined>
+		  
+		     <userdefined executionsequence="3" ruleid="LawyersRule.isNotShowCannibsSupp">
+		     	<userdefinedaccesslevel accesstype="1" />
+		    </userdefined>
+	</protectedresource>
+	 <protectedresource uniquename="CompanyCodeEdit_Security" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.isCompanyKeyEditable">
+	     	<userdefinedaccesslevel accesstype="2" />
+	    </userdefined>
+  </protectedresource>
+   <protectedresource uniquename="CompanyCodeVisibility_Security" description="Disable fields">
+	    <userdefined executionsequence="0" ruleid="LawyersRule.isNotPricingCompany">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	     <userdefined executionsequence="1" ruleid="LawyersRule.isPricingCompany">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+  </protectedresource>
+  <protectedresource uniquename="ManualPolicyIssuance_Security" description="Disable fields">
+	    <userdefined ruleid="LawyersRule.isManualPolicyIssuance">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined ruleid="LawyersRule.isManualNotPolicyIssuance">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+  </protectedresource>
+    <protectedresource uniquename="WQCompany_Security" description="Disable fields">
+	    <userdefined executionsequence="0" ruleid="LawyersRule.isNotInternalUser">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    <userdefined executionsequence="1" ruleid="LawyersRule.isPartnerUser">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	     <userdefined executionsequence="2" ruleid="LawyersRule.isInternalUser">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+  </protectedresource>
+   <protectedresource uniquename="QuoteTab_Security" description="Disable fields">
+	    
+	     <userdefined executionsequence="0" ruleid="LawyersRule.isShowQuoteForSubproducer" >
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	    <userdefined executionsequence="1" ruleid="LawyersRule.isPricingCompany">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	    <userdefined executionsequence="2" ruleid="LawyersRule.isNotPricingCompany">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	   
+  </protectedresource>
+  <protectedresource uniquename="PricingCompany_Security" description="Disable fields">
+  
+  		 <userdefined executionsequence="0" ruleid="LawyersRule.isNotPricingCompany">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	     <userdefined executionsequence="1" ruleid="LawyersRule.isPricingCompany">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	     
+  </protectedresource>
+    <protectedresource uniquename="CFPolicyIssuance_Security" description="Disable fields">
+  
+  		 <userdefined executionsequence="0" ruleid="LawyersRule.isCFNotAllowedToIssuePolicy">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	     <userdefined executionsequence="1" ruleid="LawyersRule.isCFAllowedToIssuePolicy">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	     
+  </protectedresource>
+   <protectedresource uniquename="BridgeApp_Security" description="Disable fields">
+  
+  		 <userdefined executionsequence="0" ruleid="LawyersRule.isNotBridgeApp">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	     <userdefined executionsequence="1" ruleid="LawyersRule.isBridgeApp">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	     
+  </protectedresource>
+  <protectedresource uniquename="NonBridgeApp_Security" description="Disable fields">
+  
+  		 <userdefined executionsequence="0" ruleid="LawyersRule.isBridgeApp">
+	     	<userdefinedaccesslevel accesstype="0" />
+	    </userdefined>
+	     <userdefined executionsequence="1" ruleid="LawyersRule.isNotBridgeApp">
+	     	<userdefinedaccesslevel accesstype="1" />
+	    </userdefined>
+	     
+  </protectedresource>
+</security>

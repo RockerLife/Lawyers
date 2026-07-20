@@ -1,0 +1,28 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="PersonnelAffiliation">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PersonnelAffiliation</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PersonnelAffiliation where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and PersonnelTypeKey = #PersonnelTypeKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into PersonnelAffiliation(VersionSequence, PolicyKey, PersonnelTypeKey
+          <isNotEmpty property="NumberOfPersonnel" prepend=",">NumberOfPersonnel</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#, #PersonnelTypeKey:NUMERIC#
+          <isNotEmpty property="NumberOfPersonnel" prepend=",">#NumberOfPersonnel#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select NumberOfPersonnel, VersionSequence, PolicyKey, PersonnelTypeKey from PersonnelAffiliation where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and PersonnelTypeKey = #PersonnelTypeKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update PersonnelAffiliation set
+          <dynamic prepend=" ">
+               <isNotEmpty property="NumberOfPersonnel" prepend=",">NumberOfPersonnel = #NumberOfPersonnel#</isNotEmpty>
+               <isEmpty property="NumberOfPersonnel" prepend=",">NumberOfPersonnel = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and PersonnelTypeKey = #PersonnelTypeKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from PersonnelAffiliation where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and PersonnelTypeKey = #PersonnelTypeKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from PersonnelAffiliation</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from PersonnelAffiliation where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and PersonnelTypeKey = #PersonnelTypeKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select NumberOfPersonnel, VersionSequence, PolicyKey, PersonnelTypeKey from PersonnelAffiliation where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and PersonnelTypeKey = #PersonnelTypeKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, PersonnelTypeKey, NumberOfPersonnel from PersonnelAffiliation where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and PersonnelTypeKey = #PersonnelTypeKey#</select>
+</sqlMap>
+

@@ -1,0 +1,33 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ITServiceCategory">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ITServiceCategory</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ITServiceCategory</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ITServiceCategory(
+          <dynamic prepend=" ">
+               <isNotEmpty property="ITServiceCategoryDesc" prepend=",">ITServiceCategoryDesc</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="ITServiceCategoryDesc" prepend=",">#ITServiceCategoryDesc#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="ITServiceCategoryKey">SELECT IDENT_CURRENT('ITServiceCategory') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ITServiceCategoryKey, ITServiceCategoryDesc from ITServiceCategory where ITServiceCategoryKey = #ITServiceCategoryKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ITServiceCategory set
+          <dynamic prepend=" ">
+               <isNotEmpty property="ITServiceCategoryDesc" prepend=",">ITServiceCategoryDesc = #ITServiceCategoryDesc#</isNotEmpty>
+               <isEmpty property="ITServiceCategoryDesc" prepend=",">ITServiceCategoryDesc = null</isEmpty>
+          </dynamic>
+          where ITServiceCategoryKey = #ITServiceCategoryKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ITServiceCategory where ITServiceCategoryKey = #ITServiceCategoryKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ITServiceCategory</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ITServiceCategory</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ITServiceCategoryKey, ITServiceCategoryDesc from ITServiceCategory where ITServiceCategoryKey = #ITServiceCategoryKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ITServiceCategoryKey, ITServiceCategoryDesc from ITServiceCategory</select>
+</sqlMap>
+

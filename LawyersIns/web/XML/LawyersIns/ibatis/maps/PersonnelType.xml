@@ -1,0 +1,37 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="PersonnelType">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PersonnelType</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PersonnelType</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into PersonnelType(
+          <dynamic prepend=" ">
+               <isNotEmpty property="PersonnelTypeDesc" prepend=",">PersonnelTypeDesc</isNotEmpty>
+               <isNotEmpty property="PersonnelTypeNumbering" prepend=",">PersonnelTypeNumbering</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="PersonnelTypeDesc" prepend=",">#PersonnelTypeDesc#</isNotEmpty>
+               <isNotEmpty property="PersonnelTypeNumbering" prepend=",">#PersonnelTypeNumbering#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="PersonnelTypeKey">SELECT IDENT_CURRENT('PersonnelType') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PersonnelTypeKey, PersonnelTypeDesc, PersonnelTypeNumbering from PersonnelType where PersonnelTypeKey = #PersonnelTypeKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update PersonnelType set
+          <dynamic prepend=" ">
+               <isNotEmpty property="PersonnelTypeDesc" prepend=",">PersonnelTypeDesc = #PersonnelTypeDesc#</isNotEmpty>
+               <isEmpty property="PersonnelTypeDesc" prepend=",">PersonnelTypeDesc = null</isEmpty>
+               <isNotEmpty property="PersonnelTypeNumbering" prepend=",">PersonnelTypeNumbering = #PersonnelTypeNumbering#</isNotEmpty>
+               <isEmpty property="PersonnelTypeNumbering" prepend=",">PersonnelTypeNumbering = null</isEmpty>
+          </dynamic>
+          where PersonnelTypeKey = #PersonnelTypeKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from PersonnelType where PersonnelTypeKey = #PersonnelTypeKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from PersonnelType</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from PersonnelType</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PersonnelTypeKey, PersonnelTypeDesc, PersonnelTypeNumbering from PersonnelType where PersonnelTypeKey = #PersonnelTypeKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PersonnelTypeKey, PersonnelTypeDesc, PersonnelTypeNumbering from PersonnelType</select>
+</sqlMap>
+

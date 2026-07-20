@@ -1,0 +1,100 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="CannabisSupplement">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from CannabisSupplement</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from CannabisSupplement</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into CannabisSupplement(
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="distributionWareinghouseCases" prepend=",">distributionWareinghouseCases</isNotEmpty>
+               <isNotEmpty property="cannibsLicensing" prepend=",">cannibsLicensing</isNotEmpty>
+               <isNotEmpty property="canniabisInvestmentServices" prepend=",">canniabisInvestmentServices</isNotEmpty>
+               <isNotEmpty property="StateOrLocalCompliance" prepend=",">StateOrLocalCompliance</isNotEmpty>
+               <isNotEmpty property="IntellectualProperty" prepend=",">IntellectualProperty</isNotEmpty>
+               <isNotEmpty property="NegotiatePurchaseContracts" prepend=",">NegotiatePurchaseContracts</isNotEmpty>
+               <isNotEmpty property="RepresentClientLitigation" prepend=",">RepresentClientLitigation</isNotEmpty>
+               <isNotEmpty property="CannibsOther" prepend=",">CannibsOther</isNotEmpty>
+               <isNotEmpty property="CannibsOtherDesc" prepend=",">CannibsOtherDesc</isNotEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">#VersionSequence#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="distributionWareinghouseCases" prepend=",">#distributionWareinghouseCases#</isNotEmpty>
+               <isNotEmpty property="cannibsLicensing" prepend=",">#cannibsLicensing#</isNotEmpty>
+               <isNotEmpty property="canniabisInvestmentServices" prepend=",">#canniabisInvestmentServices#</isNotEmpty>
+               <isNotEmpty property="StateOrLocalCompliance" prepend=",">#StateOrLocalCompliance#</isNotEmpty>
+               <isNotEmpty property="IntellectualProperty" prepend=",">#IntellectualProperty#</isNotEmpty>
+               <isNotEmpty property="NegotiatePurchaseContracts" prepend=",">#NegotiatePurchaseContracts#</isNotEmpty>
+               <isNotEmpty property="RepresentClientLitigation" prepend=",">#RepresentClientLitigation#</isNotEmpty>
+               <isNotEmpty property="CannibsOther" prepend=",">#CannibsOther#</isNotEmpty>
+               <isNotEmpty property="CannibsOtherDesc" prepend=",">#CannibsOtherDesc#</isNotEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">#VersionKey#</isNotEmpty>
+          </dynamic>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PolicyKey, VersionSequence, LastUpdateUserID, LastUpdateTimeStamp, distributionWareinghouseCases, cannibsLicensing, canniabisInvestmentServices, StateOrLocalCompliance, IntellectualProperty, NegotiatePurchaseContracts, RepresentClientLitigation, CannibsOther, CannibsOtherDesc, VersionKey from CannabisSupplement</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update CannabisSupplement set
+          <dynamic prepend=" ">
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence = #VersionSequence#</isNotEmpty>
+               <isEmpty property="VersionSequence" prepend=",">VersionSequence = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="distributionWareinghouseCases" prepend=",">distributionWareinghouseCases = #distributionWareinghouseCases#</isNotEmpty>
+               <isEmpty property="distributionWareinghouseCases" prepend=",">distributionWareinghouseCases = null</isEmpty>
+               <isNotEmpty property="cannibsLicensing" prepend=",">cannibsLicensing = #cannibsLicensing#</isNotEmpty>
+               <isEmpty property="cannibsLicensing" prepend=",">cannibsLicensing = null</isEmpty>
+               <isNotEmpty property="canniabisInvestmentServices" prepend=",">canniabisInvestmentServices = #canniabisInvestmentServices#</isNotEmpty>
+               <isEmpty property="canniabisInvestmentServices" prepend=",">canniabisInvestmentServices = null</isEmpty>
+               <isNotEmpty property="StateOrLocalCompliance" prepend=",">StateOrLocalCompliance = #StateOrLocalCompliance#</isNotEmpty>
+               <isEmpty property="StateOrLocalCompliance" prepend=",">StateOrLocalCompliance = null</isEmpty>
+               <isNotEmpty property="IntellectualProperty" prepend=",">IntellectualProperty = #IntellectualProperty#</isNotEmpty>
+               <isEmpty property="IntellectualProperty" prepend=",">IntellectualProperty = null</isEmpty>
+               <isNotEmpty property="NegotiatePurchaseContracts" prepend=",">NegotiatePurchaseContracts = #NegotiatePurchaseContracts#</isNotEmpty>
+               <isEmpty property="NegotiatePurchaseContracts" prepend=",">NegotiatePurchaseContracts = null</isEmpty>
+               <isNotEmpty property="RepresentClientLitigation" prepend=",">RepresentClientLitigation = #RepresentClientLitigation#</isNotEmpty>
+               <isEmpty property="RepresentClientLitigation" prepend=",">RepresentClientLitigation = null</isEmpty>
+               <isNotEmpty property="CannibsOther" prepend=",">CannibsOther = #CannibsOther#</isNotEmpty>
+               <isEmpty property="CannibsOther" prepend=",">CannibsOther = null</isEmpty>
+               <isNotEmpty property="CannibsOtherDesc" prepend=",">CannibsOtherDesc = #CannibsOtherDesc#</isNotEmpty>
+               <isEmpty property="CannibsOtherDesc" prepend=",">CannibsOtherDesc = null</isEmpty>
+               <isNotEmpty property="VersionKey" prepend=",">VersionKey = #VersionKey#</isNotEmpty>
+               <isEmpty property="VersionKey" prepend=",">VersionKey = null</isEmpty>
+          </dynamic>
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from CannabisSupplement</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from CannabisSupplement</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from CannabisSupplement</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PolicyKey, VersionSequence, LastUpdateUserID, LastUpdateTimeStamp, distributionWareinghouseCases, cannibsLicensing, canniabisInvestmentServices, StateOrLocalCompliance, IntellectualProperty, NegotiatePurchaseContracts, RepresentClientLitigation, CannibsOther, CannibsOtherDesc, VersionKey from CannabisSupplement</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PolicyKey, VersionSequence, LastUpdateUserID, LastUpdateTimeStamp, distributionWareinghouseCases, cannibsLicensing, canniabisInvestmentServices, StateOrLocalCompliance, IntellectualProperty, NegotiatePurchaseContracts, RepresentClientLitigation, CannibsOther, CannibsOtherDesc, VersionKey from CannabisSupplement</select>
+     <parameterMap id="InsertUpdateCannabisSupplementLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="distributionWareinghouseCases" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="cannibsLicensing" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="canniabisInvestmentServices" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StateOrLocalCompliance" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IntellectualProperty" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="NegotiatePurchaseContracts" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="RepresentClientLitigation" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CannibsOther" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="CannibsOtherDesc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdateCannabisSupplementLW_p" parameterMap="InsertUpdateCannabisSupplementLW_pMap">{ call InsertUpdateCannabisSupplementLW_p(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

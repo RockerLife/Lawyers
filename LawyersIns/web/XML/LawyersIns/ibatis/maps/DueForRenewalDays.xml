@@ -1,0 +1,30 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="DueForRenewalDays">
+     <select id="NumberOfDays_searchdropdown" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select distinct NumberOfDays from DueForRenewalDays order by NumberOfDays</select>
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from DueForRenewalDays</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from DueForRenewalDays</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into DueForRenewalDays(DueDaysId
+          <isNotEmpty property="NumberOfDays" prepend=",">NumberOfDays</isNotEmpty>
+          ) values (#DueDaysId:NUMERIC#
+          <isNotEmpty property="NumberOfDays" prepend=",">#NumberOfDays#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select DueDaysId, NumberOfDays from DueForRenewalDays where DueDaysId = #DueDaysId#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update DueForRenewalDays set
+          <dynamic prepend=" ">
+               <isNotEmpty property="NumberOfDays" prepend=",">NumberOfDays = #NumberOfDays#</isNotEmpty>
+               <isEmpty property="NumberOfDays" prepend=",">NumberOfDays = null</isEmpty>
+          </dynamic>
+          where DueDaysId = #DueDaysId#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from DueForRenewalDays where DueDaysId = #DueDaysId#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from DueForRenewalDays</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from DueForRenewalDays</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select DueDaysId, NumberOfDays from DueForRenewalDays where DueDaysId = #DueDaysId#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select DueDaysId, NumberOfDays from DueForRenewalDays</select>
+     <select id="getDueForRenewalDaysList" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select DueDaysId,NumberOfDays from DueForRenewalDays order by NumberOfDays</select>
+</sqlMap>
+

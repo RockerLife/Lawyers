@@ -1,0 +1,498 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Profile</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js"/>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<link href="css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<script src="js/producerOne.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+<body onload="loadProfile(); showHideBrokerSetion();">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<form class="form-horizontal row">
+
+
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth" >
+			
+				 <div id="header">
+					<span id="#Include:header.html#"></span>
+				</div> 
+				 
+				
+				<div id="contentSection">
+					<div class="confirmationMsgAlign" id="FirmNewApp_freeform_contextdata_100">
+						<!-- <label class="Confirmation" name="pageMsg" id="pageMsg" /> -->
+						<!-- <div id="error_ApplicationNotCompleted" class="error11Bold"> </div> -->
+					</div>
+					<div class="Confirmation" id="filter_freeform_contextdata_01"
+						align="center">
+						<label name="pageMsg" id="pageMsg" />
+					</div>
+					
+					<div id="FirmNewApp_freeform_contextdata_0">
+						<div>
+							<h2 class="questionHeading">Filter</h2>
+						</div>
+						<div class="form row" style="padding: 0px 30px">
+							<div class="block-form">
+								<div class="freeFormDiv form-inline">
+									<ul class="inlineBlock">
+										<li class="inlineBlock_2_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="error_EffectiveDateFrom" class="error"> </div>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															Effective Date From :
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput iconsStyle2">
+														<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+														<input type="text" class="form-control datepicker"
+															id="EffectiveDateFrom" 
+															name="EffectiveDateFrom" onkeyup="applyDateFormat(this,event);"/> 
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="inlineBlock_2_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="error_EffectiveDateTo" class="error"> </div>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															Effective Date To :
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput iconsStyle2">
+														<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+														<input type="text" class="form-control datepicker"
+															id="EffectiveDateTo" 
+															name="EffectiveDateTo" onkeyup="applyDateFormat(this,event);"/> 
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="inlineBlock_2_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="error_SearchAppCreatedDateFrom" class="error"> </div>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															Created Date From :
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput iconsStyle2">
+														<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+														<input type="text" class="form-control datepicker"
+															id="SearchAppCreatedDateFrom" 
+															name="SearchAppCreatedDateFrom" onkeyup="applyDateFormat(this,event);"/> 
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="inlineBlock_2_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="error_SearchAppCreatedDateTo" class="error"> </div>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															Created Date To :
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput iconsStyle2">
+														<span class="input-group-addon"><i class="fa fa-calendar">&nbsp;</i></span>
+														<input type="text" class="form-control datepicker"
+															id="SearchAppCreatedDateTo" 
+															name="SearchAppCreatedDateTo" onkeyup="applyDateFormat(this,event);"/> 
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="inlineBlock_2_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="" class="error"> </div>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															New Business vs Renewal :
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput">
+														<select name="PolicyStatusDesc" class="form-control"
+															 id="PolicyStatusDesc">
+																<option value="">ALL</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="inlineBlock_2_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="" class="error"> </div>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															State :
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput multiSelectSingle">
+														<select name="StateCode_search"	  class="selectpicker" 
+															multiple id="StateCode_search">
+																<option value="">ALL</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li id="" class="inlineBlock_2_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="" class="error"> </div>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															Company :
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput multiSelectSingle">
+														<select name="CompanyKey_search"	  class="selectpicker" 
+															multiple id="CompanyKey_search">
+																<option value="">ALL</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</li>
+										<li id="SubproducerOnWorkqHideShow_security" class="inlineBlock_2_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="" class="error"> </div>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															Sub-producer :
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput multiSelectSingle">
+														<select name="ProducerCode_search"	  class="selectpicker" 
+															multiple id="ProducerCode_search">
+																<option value="">ALL</option>
+														</select>
+													</div>
+													<!--<div class="freeFormListTd tdInput">
+														<select name="ProducerCode" class="selectpicker"
+															multiple id="ajax_field_ProducerCode" >
+																<option value="">ALL</option>
+														</select>
+													</div>  -->
+												</div>
+											</div>
+										</li>
+										
+										<li id="eval:LawyersRule.isSubproducerLoggedIn" class="inlineBlock_2_fix">
+										<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="" class="error"> </div>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															Sub-producer :
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput">
+														<input class="form-control" tabindex="23" type="text" id="ProducerCode_search" disabled name="ProducerCode_search"  maxlength="8"/>
+													</div>
+													<!--<div class="freeFormListTd tdInput">
+														<select name="ProducerCode" class="selectpicker"
+															multiple id="ajax_field_ProducerCode" >
+																<option value="">ALL</option>
+														</select>
+													</div>  -->
+												</div>
+											</div>
+										</li>
+										<li class="inlineBlock_2_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="" class="error"> </div>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															Direct or Sub-produced :
+														</div>
+														
+													</div>
+													<div class="freeFormListTd tdInput">
+														<span id="eval:LawyersRule.isSubproducerLoggedIn">
+															<select name="ProducerCode1" class="form-control"
+																 id="ProducerCode1" >
+																	<option value="SubProduced">Sub-produced</option>
+															</select>
+														</span>
+														<span id="eval:LawyersRule.isNotSubproducerLoggedIn">
+															<select name="ProducerCode1" class="form-control"
+																 id="ProducerCode1" >
+																	<option value="">ALL</option>
+																	<option value="Direct">Direct</option>
+																	<option value="SubProduced">Sub-produced</option>
+															</select>
+														</span>
+														
+													</div>
+												</div>
+											</div>
+										</li>
+										<li class="inlineBlock_2_fix">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="" class="error"> </div>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															First Reviewer :
+														</div>														
+													</div>
+													<div class="freeFormListTd tdInput multiSelectSingle">
+														<select name="EligibleFirstReviewer_search"	  class="selectpicker" 
+															multiple id="EligibleFirstReviewer_search">
+																<option value="">ALL</option>
+														</select>
+													</div>
+													<!--<div class="freeFormListTd tdInput">
+														<select name="EligibleFirstReviewer"
+															id="ajax_field_EligibleFirstReviewer" class="selectpicker"
+															multiple>
+															<option value="">ALL</option>
+														</select>
+													</div>  -->
+												</div>
+											</div>
+										</li>
+										
+											<li class="inlineBlock_2_fix" id="BrokerageLinkWorkqPage_security">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="" class="error"> </div>
+													</div>
+												</div>
+												
+													<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															Brokered :
+														</div>
+														
+													</div>
+														<input type="radio"
+																id="ajax_field_isBrokeredY" value="Y" name="isBrokered" onclick="showHideBrokerSetion()" /> Yes
+														<input type="radio" 
+																id="ajax_field_isBrokeredN" value="N"  name="isBrokered" onclick="showHideBrokerSetion()" /> No
+														 <div id="error_isBrokered" class="error"> </div>
+													
+											</div>
+											</div>
+										</li>
+										<li class="inlineBlock_2_fix">
+											<div class="freeFormList form-group">&nbsp;</div>
+										</li>
+										
+										<li class="inlineBlock_2_fix Brokerage_security" id="BrokerageLinkWorkqPage_security">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="" class="error"> </div>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															Broker :
+														</div>														
+													</div>
+													<div class="freeFormListTd tdInput multiSelectSingle">
+														<select name="BrokerKey"	  class="selectpicker" 
+															multiple id="BrokerKey">
+																<option value="">ALL</option>
+														</select>
+													</div>
+													
+												</div>
+											</div>
+										</li>
+										
+										<li class="inlineBlock_2_fix Brokerage_security" id="BrokerageLinkWorkqPage_security">
+											<div class="freeFormList form-group">
+												<div class="freeFormListTr">
+													<div class="freeFormListTdError"><h6>&nbsp;</h6></div>
+													<div class="freeFormListTdError paddingLeft3">
+														<div id="" class="error"> </div>
+													</div>
+												</div>
+												<div class="freeFormListTr">
+													<div class="freeFormListTd labelAlign">
+														<div class="freeFormLabelWidth" >
+															Carrier :
+														</div>														
+													</div>
+													<div class="freeFormListTd tdInput multiSelectSingle">
+														<select name="CarrierKey"	  class="selectpicker" 
+															multiple id="CarrierKey">
+																<option value="">ALL</option>
+														</select>
+													</div>
+													
+												</div>
+											</div>
+										</li>
+										
+										
+										<!-- <li>
+											<input onclick="setProfileDropdownData();" type="button" name="test" id="test" value="Set Values"  />
+										
+										</li> -->
+									</ul>
+								</div>
+							</div>
+						</div>
+		
+					</div>
+
+
+					<div class="buttons borderTop row marginsBtn">
+						<a class="btn back floatLeft"
+							href="javascript:submitform('workq.html','filter.back','','');"
+						>Back</a>
+							
+						<div class="floatRight">
+						<span > <a class="btn save" onClick="setProfileDropdownData();"
+							href="javascript:submitform('workq.html','filter.filter','','');"> Save&nbsp;</a> </span>
+							
+							 <span ><a class="btn save"
+							href="javascript:submitform('filter.html','filter.reset','','');"> Clear&nbsp;</a></span>
+						</div>
+						
+					</div>
+					
+				</div>
+				<!---------Footer Start---------->
+				<div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<!---------Footer End---------->
+			</div>
+			<table id="firm_freeform_contextdata_999">
+				<tr>
+					<td><input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />
+						<input type="hidden" name="AppCreatedDate" id="AppCreatedDate" />
+						<input type="hidden" name="ajax_field_newStateCode_search" id="ajax_field_newStateCode_search" />
+						<input type="hidden" name="StateCodefilter" id="StateCodefilter" />
+						<input type="hidden" name="ProducerCodefilter" id="ProducerCodefilter" />
+						<input type="hidden" name="EligibleFirstReviewerfilter" id="EligibleFirstReviewerfilter" />
+						<input type="hidden" name="CompanyKeyfilter" id="CompanyKeyfilter" />
+						<!-- <input type="hidden" name="ProducerCodefilter" id="ProducerCodefilter" /> -->
+						<input type="hidden" name="PolicyStatusDesc" id="PolicyStatusDesc" /> 
+						<input type="hidden" name="ProducerCode_search" id="ProducerCode_search" /> 	
+						<input type="hidden" name="BrokerID" id="BrokerID" /> 	
+						<input type="hidden" name="CarrierID" id="CarrierID" /> 	
+						<input type="hidden" name="BrokerKey" id="BrokerKey" /> 	
+						<input type="hidden" name="CarrierKey" id="CarrierKey" /> 	
+						
+					
+					</td>
+				</tr>
+			</table>
+		</div>
+
+	</form>
+<script>
+loadProfile();
+
+</script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script src="js/bootstrap-select.js"></script>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

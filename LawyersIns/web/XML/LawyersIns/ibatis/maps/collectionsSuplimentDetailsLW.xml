@@ -1,0 +1,56 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="collectionsSuplimentDetailsLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from collectionsSuplimentDetailsLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from collectionsSuplimentDetailsLW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into collectionsSuplimentDetailsLW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="CollectionsID">SELECT IDENT_CURRENT('collectionsSuplimentDetailsLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CollectionsID, LastUpdateUserID, LastUpdateTimeStamp from collectionsSuplimentDetailsLW where CollectionsID = #CollectionsID#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update collectionsSuplimentDetailsLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where CollectionsID = #CollectionsID#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from collectionsSuplimentDetailsLW where CollectionsID = #CollectionsID#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from collectionsSuplimentDetailsLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from collectionsSuplimentDetailsLW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CollectionsID, LastUpdateUserID, LastUpdateTimeStamp from collectionsSuplimentDetailsLW where CollectionsID = #CollectionsID#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CollectionsID, LastUpdateUserID, LastUpdateTimeStamp from collectionsSuplimentDetailsLW</select>
+     <parameterMap id="SaveUpdateCollectionsSupliment_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="averageCases" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="consumerCollections" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="commercialollections" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="individualCollections" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="personnelToCollectDebts" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="servicesToPurchasers" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="claimsOrSuitsFDCPA" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="SaveUpdateCollectionsSupliment_p" parameterMap="SaveUpdateCollectionsSupliment_pMap">{ call SaveUpdateCollectionsSupliment_p(?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="DisplayCollectionAmountForPDF_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="DisplayCollectionAmountForPDF_p" parameterMap="DisplayCollectionAmountForPDF_pMap" resultClass="java.util.HashMap">{ call DisplayCollectionAmountForPDF_p(?)}</procedure>
+</sqlMap>
+

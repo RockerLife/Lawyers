@@ -1,0 +1,78 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ProdecessorFirmLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ProdecessorFirmLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ProdecessorFirmLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ProdecessorFirmLW(VersionSequence, PolicyKey
+          <isNotEmpty property="IsERPPurchased" prepend=",">IsERPPurchased</isNotEmpty>
+          <isNotEmpty property="FirmName" prepend=",">FirmName</isNotEmpty>
+          <isNotEmpty property="TypeOfEntity" prepend=",">TypeOfEntity</isNotEmpty>
+          <isNotEmpty property="DissolutionDate" prepend=",">DissolutionDate</isNotEmpty>
+          <isNotEmpty property="NumberOfAttorneyAtDiss" prepend=",">NumberOfAttorneyAtDiss</isNotEmpty>
+          <isNotEmpty property="NumberOfAttorneyAtApplFirm" prepend=",">NumberOfAttorneyAtApplFirm</isNotEmpty>
+          <isNotEmpty property="InsurerAtDissolution" prepend=",">InsurerAtDissolution</isNotEmpty>
+          <isNotEmpty property="ERPExpDate" prepend=",">ERPExpDate</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="DateOfAcquisation" prepend=",">DateOfAcquisation</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="IsERPPurchased" prepend=",">#IsERPPurchased#</isNotEmpty>
+          <isNotEmpty property="FirmName" prepend=",">#FirmName#</isNotEmpty>
+          <isNotEmpty property="TypeOfEntity" prepend=",">#TypeOfEntity#</isNotEmpty>
+          <isNotEmpty property="DissolutionDate" prepend=",">#DissolutionDate#</isNotEmpty>
+          <isNotEmpty property="NumberOfAttorneyAtDiss" prepend=",">#NumberOfAttorneyAtDiss#</isNotEmpty>
+          <isNotEmpty property="NumberOfAttorneyAtApplFirm" prepend=",">#NumberOfAttorneyAtApplFirm#</isNotEmpty>
+          <isNotEmpty property="InsurerAtDissolution" prepend=",">#InsurerAtDissolution#</isNotEmpty>
+          <isNotEmpty property="ERPExpDate" prepend=",">#ERPExpDate#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="DateOfAcquisation" prepend=",">#DateOfAcquisation#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="ProdecessorFirmKey">SELECT IDENT_CURRENT('ProdecessorFirmLW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ProdecessorFirmKey, IsERPPurchased, FirmName, TypeOfEntity, DissolutionDate, NumberOfAttorneyAtDiss, NumberOfAttorneyAtApplFirm, InsurerAtDissolution, ERPExpDate, LastUpdateUserID, LastUpdateTimeStamp, DateOfAcquisation, VersionSequence, PolicyKey from ProdecessorFirmLW where ProdecessorFirmKey = #ProdecessorFirmKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ProdecessorFirmLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="IsERPPurchased" prepend=",">IsERPPurchased = #IsERPPurchased#</isNotEmpty>
+               <isEmpty property="IsERPPurchased" prepend=",">IsERPPurchased = null</isEmpty>
+               <isNotEmpty property="FirmName" prepend=",">FirmName = #FirmName#</isNotEmpty>
+               <isEmpty property="FirmName" prepend=",">FirmName = null</isEmpty>
+               <isNotEmpty property="TypeOfEntity" prepend=",">TypeOfEntity = #TypeOfEntity#</isNotEmpty>
+               <isEmpty property="TypeOfEntity" prepend=",">TypeOfEntity = null</isEmpty>
+               <isNotEmpty property="DissolutionDate" prepend=",">DissolutionDate = #DissolutionDate#</isNotEmpty>
+               <isEmpty property="DissolutionDate" prepend=",">DissolutionDate = null</isEmpty>
+               <isNotEmpty property="NumberOfAttorneyAtDiss" prepend=",">NumberOfAttorneyAtDiss = #NumberOfAttorneyAtDiss#</isNotEmpty>
+               <isEmpty property="NumberOfAttorneyAtDiss" prepend=",">NumberOfAttorneyAtDiss = null</isEmpty>
+               <isNotEmpty property="NumberOfAttorneyAtApplFirm" prepend=",">NumberOfAttorneyAtApplFirm = #NumberOfAttorneyAtApplFirm#</isNotEmpty>
+               <isEmpty property="NumberOfAttorneyAtApplFirm" prepend=",">NumberOfAttorneyAtApplFirm = null</isEmpty>
+               <isNotEmpty property="InsurerAtDissolution" prepend=",">InsurerAtDissolution = #InsurerAtDissolution#</isNotEmpty>
+               <isEmpty property="InsurerAtDissolution" prepend=",">InsurerAtDissolution = null</isEmpty>
+               <isNotEmpty property="ERPExpDate" prepend=",">ERPExpDate = #ERPExpDate#</isNotEmpty>
+               <isEmpty property="ERPExpDate" prepend=",">ERPExpDate = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="DateOfAcquisation" prepend=",">DateOfAcquisation = #DateOfAcquisation#</isNotEmpty>
+               <isEmpty property="DateOfAcquisation" prepend=",">DateOfAcquisation = null</isEmpty>
+          </dynamic>
+          where ProdecessorFirmKey = #ProdecessorFirmKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ProdecessorFirmLW where ProdecessorFirmKey = #ProdecessorFirmKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ProdecessorFirmLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ProdecessorFirmLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ProdecessorFirmKey, IsERPPurchased, FirmName, TypeOfEntity, DissolutionDate, NumberOfAttorneyAtDiss, NumberOfAttorneyAtApplFirm, InsurerAtDissolution, ERPExpDate, LastUpdateUserID, LastUpdateTimeStamp, DateOfAcquisation, VersionSequence, PolicyKey from ProdecessorFirmLW where ProdecessorFirmKey = #ProdecessorFirmKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ProdecessorFirmKey, VersionSequence, PolicyKey, IsERPPurchased, FirmName, TypeOfEntity, DissolutionDate, NumberOfAttorneyAtDiss, NumberOfAttorneyAtApplFirm, InsurerAtDissolution, ERPExpDate, LastUpdateUserID, LastUpdateTimeStamp, DateOfAcquisation from ProdecessorFirmLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <parameterMap id="InsertUpdatePredecessorFirmSupplement_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="outputList" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="InsertUpdatePredecessorFirmSupplement_p" parameterMap="InsertUpdatePredecessorFirmSupplement_pMap">{ call InsertUpdatePredecessorFirmSupplement_p(?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

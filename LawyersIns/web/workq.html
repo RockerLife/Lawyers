@@ -1,0 +1,968 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Workq</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<link rel="STYLESHEET" type="text/css" href="calendar/rich_calendar.css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js">
+	
+</script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/managetestharness.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript">
+	function checks() {
+		document.getElementById("EffectiveDate").disabled = true;
+		//alert(document.getElementById("EffectiveDate").style.readOnly);
+	}
+</script>
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+<body onload="loadWorkq();"
+	onclick="toggleDivDisplay('ajaxxmlAccountNamesearch_AccountNamesearch');toggleDivDisplay('ajaxxmlWQEmailSearch_WQEmailSearch');toggleDivDisplay('ajaxxmlWQQuoteNumberSearch_WQQuoteNumberSearch');toggleDivDisplay('ajaxxmlWQPolicyNumberSearch_WQPolicyNumberSearch');">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+	<form name="myForm">
+	<div id="cover"></div>
+		<input type="hidden" name="divHideShow" value="" /> <input
+			type="hidden" name="ctxmenuparam" value="" />
+		<DIV class="popup" id="policystart">Review effective date for: 6
+			months future date, within 5 days of current date, or backdated.</DIV>
+			
+			<!-- Dialog Box for public insured start -->
+
+		<div id="popupsave2" style="width: 510px;">
+			<table width="100%" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td valign="top" class="popupBg">
+						<table cellpadding="0" cellspacing="0" width="100%" border="0">
+							<tr>
+								<td class="popupHeader" nowrap="nowrap"><span
+									id="entitybuttonlabel">Public Link Insured</span></td>
+							</tr>
+							<tr>
+								<td valign="top" class="popupContentS">
+									<table cellpadding="0" cellspacing="0" width="100%">
+										<tr>
+											<td>
+												<table cellpadding="0" cellspacing="0" align="center">
+													<tr>
+														<td colspan="2">
+															<div id="error_PublicinsuredEmail"
+																class="defult_tr_errors"></div>
+															<div id="success_PublicinsuredEmail"
+																class="Confirmation"></div>
+														</td>
+													</tr>
+													<tr>
+														<td colspan="2">&nbsp;</td>
+													</tr>
+													<tr id="sendEmailTextBox">
+														<td class="labelAlign">Email :</td>
+														<td class="mendatoryInput">
+															<input style="height:24px;width:156px" id="PublicinsuredEmail"
+															class="validateEmail" name="PublicinsuredEmail" type="text">
+														</td>
+													</tr>
+													<tr>
+														<td colspan="2">&nbsp;</td>
+													</tr>
+													<tr>
+														<td colspan="2">&nbsp;</td>
+													</tr>
+													<tr>
+														<td colspan="2">&nbsp;</td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							<tr>
+								<td class="popupFooter">
+									<table cellpadding="0" cellspacing="0" align="right">
+										<tr>
+											<td>
+												<div id="sendEmailOkButton" class="buttonwrapper">
+													<a onClick="closePopUp2('popupsave2');" class="ovalbutton"><span>Ok</span>
+													</a>
+												</div>
+												<div id="sendEmailSendButton" class="buttonwrapper">
+													<a href="javascript:submitform('workq.html','workq.publicLinktoInsured','','');"
+														class="ovalbutton" style="margin-left: 5px"><span>Send</span>
+													</a> <a onClick="$('#error_PublicinsuredEmail').text('');closePopUp2('popupsave2');" class="ovalbutton"><span>Cancel</span>
+													</a>
+												</div>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td width="27px" valign="top" style="background-color: none;"><a
+						href="#" onClick="$('#error_PublicinsuredEmail').text('');closePopUp2('popupsave2');"><img
+							src="image/close.png" /> </a></td>
+				</tr>
+			</table>
+
+		</div>
+		<!-- end -->
+			
+		<table width="99%" border="0" align="center" cellspacing="0"
+			cellpadding="0">
+			<tr>
+				<td>
+					<table width="100%" border="0" align="center" cellpadding="0"
+						cellspacing="0">
+						<tr>
+							<td>
+								<table width="98%" border="0" align="center" cellpadding="0"
+									cellspacing="0">
+									<tr>
+										<td valign="middle"><img
+											src="image/logo_protexureaccountants1.png" width="325"
+											height="64" /></td>
+										<td align="right">
+											<table border="0" cellspacing="0" cellpadding="0">
+
+												<tr>
+													<td  align="center" valign="bottom" id="eval:LawyersRule.isShowUserLoginDetails">
+																		 	<table  id="workq_freeform_contextdata_555" Border="0" cellpadding="5" cellspacing="5">
+																			 <tr>
+														<td><label class="txt11BoldBlack" nowrap
+															style="font-size: 11px">Welcome&nbsp;&nbsp;</label></td>
+														<td align="right" style="font-size: 11px" nowrap><label name="AgentName"
+															style="font-size: 10px" id="AgentName"
+															class="txt11BoldBlack"></label> (<label
+															name="UserRoleName" style="font-size: 10px"
+															id="UserRoleName" class="txt11BoldBlack"></label>)&nbsp;&nbsp;</td>
+
+													</tr>
+																		 </table>
+																	</td>
+													<td align="center" valign="bottom">
+														<table width="100%" border="0" cellspacing="0"
+															cellpadding="0">
+															<tr>
+																<td colspan="2" align="center"><img
+																	src="img/backPortal1.jpg" width="20" height="22" /></td>
+															</tr>
+															<tr>
+																<td class="topLink"><a
+																	href="javascript:submitform('changepassword.html','workq.changepassword','','');"
+																	class="topLink">Change Password</a></td>
+															</tr>
+														</table>
+													</td>
+													<td align="center" valign="bottom" class="txtBold11Maroon">
+														&nbsp; |&nbsp;</td>
+													<td align="center">
+														<table width="100%" border="0" cellspacing="0"
+															cellpadding="0">
+															<tr id="eval:LawyersRule.isAgent">
+																<td align="center"><img src="img/backPortal1.jpg"
+																	width="20" height="22" /></td>
+															</tr>
+															<tr id="eval:LawyersRule.isAgent">
+																<td class="topLink"><a
+																	href="javascript:submitform('workq.html|indexagent.html','workq.homepage','forwardeval','LawyersRule.isInsured|LawyersRule.isAgent');"
+																	class="topLink">Back to Portal</a></td>
+																
+															</tr>
+															
+														</table>
+													</td>
+													<td align="center" valign="bottom" class="txtBold11Maroon">
+														<span id="eval:LawyersRule.isShowSessionIcon">&nbsp; &nbsp;</span></td>
+													<td align="center">
+													<div id="eval:LawyersRule.isShowSessionIcon">
+														<table width="100%" border="0" cellspacing="0"
+															cellpadding="0">
+															<tr id="eval:LawyersRule.isAgent">
+																<td align="center"></td>
+															</tr>
+															<tr id="eval:LawyersRule.isAgent">
+																<td class="topLink"><a
+																	href="javascript:managetestharness('','','INET_SHOW_SESSION_TESTHARNESS_PAGE','MANAGE_TESTHARNESS');"
+																	class="topLink"></a></td>
+																
+															</tr>
+														</table>
+														</div>
+													</td>
+													
+													<td align="center" valign="bottom" class="txtBold11Maroon" id="adminRights_security">
+														|&nbsp;</td>
+													<td align="center" id="adminRights_security">
+														<table width="100%" border="0" cellspacing="0"
+															cellpadding="0">
+															<tr id="eval:LawyersRule.isAgent">
+																<td align="center"><img src="img/backPortal1.jpg"
+																	width="20" height="22" /></td>
+															</tr>
+																<tr id="adminRights_security">
+																		<td class="topLink"><a
+																			href="javascript:submitform('Lookup.html','workq.Lookup','','');"
+																			class="topLink">Admin</a></td>
+																</tr>
+														</table>
+													</td>
+													
+													<td align="center" valign="bottom" class="txtBold11Maroon" id="MeasurementReportRights_security">
+														|&nbsp;</td>
+													<td align="center" id="MeasurementReportRights_security">
+														<table width="100%" border="0" cellspacing="0" cellpadding="0">
+															<tr>
+																<td align="center">
+																	<img src="img/backPortal1.jpg" width="20" height="22" />
+																</td>
+															</tr>
+															<tr>
+																<td class="topLink">
+																	<a target="_blank" href="https://portal.protexurelawyers.com/MeasurementReportServices/views/index.jsp" class="topLink">Report</a>
+																</td>
+															</tr>
+														</table>
+													</td>
+														<!-- <td align="center" valign="bottom" class="txtBold11Maroon">
+														&nbsp; |&nbsp;</td>
+													<td align="center">
+														<table width="100%" border="0" cellspacing="0"
+															cellpadding="0">
+															<tr id="eval:LawyersRule.isAgent">
+																<td align="center"><img src="img/backPortal1.jpg"
+																	width="20" height="22" /></td>
+															</tr>
+															<tr id="eval:LawyersRule.isAgent">
+																<td class="topLink"><a
+																	href="javascript:submitform('indexagent.html','workq.logout','','');"
+																	class="topLink">Log out</a></td>
+															</tr>
+														</table>
+													</td> -->
+												</tr>
+
+												<tr>
+													<td colspan="2" align="center" class="topLink"><img
+														src="img/space.gif" width="1" height="5" /></td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="15" class="redLeft"></td>
+										<td align="right" class="redCenter">
+											<table width="100%" border="0" cellspacing="0"
+												cellpadding="0">
+												<tr>
+													<td align="left"><img src="img/getting_coverage.jpg"
+														width="597" height="33" /></td>
+													<td align="right"><img src="img/call.jpg" width="289"
+														height="24" /></td>
+												</tr>
+											</table>
+										</td>
+										<td width="15" class="redRight"></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="15" class="grayLeft"></td>
+										<td class="grayCenter">&nbsp;</td>
+										<td width="15" class="grayRight"></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="15" class="grayRoundLeft"></td>
+										<td align="right" class="grayRepeat"><span
+											class="grayRoundRight">&nbsp;</span></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+						
+					</table>
+				</td>
+			</tr>
+			<tr>
+							<td ><h2 class="questionHeading">Workq</h2></td>
+						</tr>
+						<tr><td>&nbsp;</td></tr>
+			<tr id="1eval:LawyersRule.disableToSubproducer">
+				<td>
+					<table width="100%" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td>
+								<table width="100%" border="0" align="center" cellpadding="0"
+									cellspacing="0">
+									<tr>
+										<td valign="top">
+											<table width="100%" border="0" cellpadding="5"
+												cellspacing="0" class="border1">
+												<tr>
+													<td height="35" style="height: 28px;" align="left" class="tableheading">
+														Search</td>
+													<td align="right" class="tableheading">&nbsp;</td>
+												</tr>
+												<tr>
+
+													<td colspan="2" align="right" nowrap="nowrap" class="bglightGray breadcrumbValue"
+														id="eval:LawyersRule.showNewAppLink" height="22px">
+														<ul class="warqLinks">
+															<!-- <li id="indication_security">
+																<a
+																	href="javascript:submitform('workq.html','workq.getApp','','');"
+																	class="txtBold13Maroon">Get App Data</a> 
+															</li> -->
+															<li>
+																<a href="javascript:submitform('filter.html','workq.filter','','');"
+																	class="txtBold13Maroon">Profile</a>
+															</li>
+															<li id="eval:LawyersRule.IsManagementRole" >
+																<a id="adminPAnelOnWorkqHideShow_security"
+																	href="javascript:submitform('adminPanel.html','workq.adminPanel','','');"
+																	class="txtBold13Maroon">Admin Panel </a>	
+															</li>
+															<li id="eval:LawyersRule.isShowLostWorkq">
+																<a
+																	href="javascript:submitform('lostWorkq.html','workq.lostWorkq','','');"
+																	class="txtBold13Maroon">Lost Workq</a>
+															</li>
+															
+															<li id="quickQuote_Security">
+																<a  id="quickQuote_Workq"
+																	href="javascript:submitform('quickquoteinsured.html','workq.quickQuoteOption','','');"
+																	class="txtBold13Maroon">Quick Quote</a>
+															</li>
+															<li id="indication_security">
+																<a onclick="javascript:setAccountType2('aop_search');"
+																	href="javascript:submitform('indicationinjack.html','workq.indicationinjack','','');"
+																	class="txtBold13Maroon">Indication In Jack </a>
+															</li>
+															<li id="indication_security">
+																<a
+																	href="javascript:submitform('FirmNewApp.html','workq.newApp','','');"
+																	class="txtBold13Maroon">Create New Application</a> 
+															</li>
+															<li id="eval:LawyersRule.bridgeAppAccess">
+															<span id="indication_security" >
+																<a
+																	href="javascript:submitform('FirmNewApp.html','workq.newBridgeApp','','');"
+																	class="txtBold13Maroon">Create Bridge Application</a> </span>
+															</li>
+																													
+															<li class="dropdown">
+																<a class="txtBold13Maroon">More<i class="fa fa-fw fa-caret-down">&nbsp;</i></a>
+																<ul class="dropdown-content">
+																	<li id="off_risk_Security">
+																		<a 
+																			href="javascript:submitform('OffRiskEmailList.html','workq.goToOffRisk','','');"
+																			class="txtBold13Maroon">Off Risk </a>
+																	</li>
+																	<li id="off_risk_Security">
+																		<a 
+																			href="javascript:submitform('BulkAppsPdf.html','workq.bulkApps','','');"
+																			class="txtBold13Maroon">Bulk App Download </a>
+																	</li>
+																	<li id="eval:LawyersRule.isShowSubproducerFormLink">
+																		<a
+																			href="javascript:submitform('SubproducerFormList.html','workq.subproducerForm','','');"
+																			class="txtBold13Maroon">SubProducer Form</a>
+																	</li>
+																	<li id="eval:LawyersRule.isSubproducer">
+																		<a id="publicinsured" href="#" class="txtBold13Maroon" 
+																		onClick="$('#success_PublicinsuredEmail').text('');$('#sendEmailOkButton').hide();$('#sendEmailSendButton').show();$('#sendEmailTextBox').show();showPopUp2('popupsave2','500','400');">Public link to insured</a>
+																	</li>
+																	<li id="eval:LawyersRule.IsManagementRole">
+																		<a
+																			href="javascript:submitform('LawyersBatch.html','workq.lawyerbatch','','');"
+																			class="txtBold13Maroon">Re-rate</a>
+																	</li>
+																	<li id="accountManagementVisibility_security">
+																	
+																		<a
+																			href="javascript:submitform('ManageAccounts.html','workq.accountManagement','','');"
+																			class="txtBold13Maroon">Accounts Management</a>
+																	
+																	</li>
+																	<li id="requotePolicy_security">
+																		<a
+																			href="javascript:submitform('requote.html','workq.requote','','');"
+																			class="txtBold13Maroon">Requote</a>
+																	</li>
+																	<li id="requotePolicy_security">
+																		<a
+																			href="javascript:submitform('claimsSummary.html','workq.claims','','');"
+																			class="txtBold13Maroon">Claim Summary</a>
+																	</li>
+																	<!-- <li id="requotePolicy_security">
+																		<a
+																			href="javascript:submitform('emailTemplates.html','workq.emailTemplates','','');"
+																			class="txtBold13Maroon">Email Templates</a>
+																	</li> -->
+																	<li id="BrokerageLinkWorkqPage_security">
+																		<a href="javascript:submitform('addEditBrokeragePolicyList.html','workq.BrokeragePolicy','','');" class="txtBold13Maroon">Brokerage Policy</a>
+																	</li>
+																	<li id="eval:LawyersRule.IsManagementRole">
+																		<a
+																			href="javascript:submitform('SubProducedIsnuredLink.html','workq.SubProducedIsnuredLink','','');"
+																			class="txtBold13Maroon">Public link to Sub-produced insured</a>
+																	</li>
+																	<li id="">
+																		<a
+																			href="javascript:submitform('ProtexureEstimateForm.html','workq.protexureForm','','');"
+																			class="txtBold13Maroon">Protexure Estimate Form</a>
+																			
+																	</li>
+																	<li id="">
+																		<a
+																			href="javascript:submitform('ProtexureEstimateForm.html','workq.protexureFJSP','','');"
+																			class="txtBold13Maroon"></a>
+																			
+																	</li>
+																</ul>
+															</li>
+														</ul>
+														
+													</td>
+												</tr>
+												
+												<tr>
+													<td height="200" colspan="2" valign="top">
+														<table width="100%" border="0" cellspacing="0"
+															cellpadding="5">
+															<tr><td>&nbsp;</td></tr>
+															
+															<tr>
+																<td>
+																	<table width="100%" border="0" cellspacing="0"
+																		cellpadding="2" id="workq_freeform_contextdata_01" class="workq">
+<tr>
+															<td style="padding-top: 10px;"></td>
+															<td valign="top" style="padding: 0px;">
+																<div id="error_SearchCriteria_error"
+																	class="defult_tr_errors"></div>
+															</td>
+														</tr>
+																		<tr>
+																			<td align="right" width="260px">Firm Name :</td>
+																			<td>
+																				<!--<input name="AccountName_search" type="text"
+																				class="inputbox" id="AccountName_search" /> --> <input
+																				name="AccountNamesearch" class="inputbox" style="height:24px;width:156px"
+																				id="AccountNamesearch" type="text"
+																				autocomplete="OFF"
+																				onkeyup="javascript:ajaxpageblocklink('workq.html','workq.getAccountNameList','','','ajaxxmlAccountNamesearch_AccountNamesearch');"
+																				onclick="nottoggleDivDisplay(this,'AccountNamesearch','ajaxxmlAccountNamesearch_AccountNamesearch');" />
+																				<div id="ajaxxmlAccountNamesearch_AccountNamesearch"
+																					class="transparent fixcolumnHeaderSearch"
+																					style="display: none; border: solid 1px #cccccc; width: 215px;"></div>
+
+																			</td>
+																		</tr>
+																		<tr>
+																			<td align="right">Email :</td>
+																			<td>
+																				<input name="WQEmailSearch" type="text" 
+																				class="form-control" style="height:24px;width:156px" id="WQEmailSearch" autocomplete="OFF"
+																				onkeyup="javascript:ajaxpageblocklink('workq.html','workq.getEmailList','','','ajaxxmlWQEmailSearch_WQEmailSearch');"
+																				onclick="nottoggleDivDisplay(this,'WQEmailSearch','ajaxxmlWQEmailSearch_WQEmailSearch');" />
+																				<div id="ajaxxmlWQEmailSearch_WQEmailSearch"
+																					class="transparent fixcolumnHeaderSearch"
+																					style="display: none; border: solid 1px #cccccc; width: 215px;"></div>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td style="padding: 0px;"></td>
+																			<td valign="top" style="padding: 0px;">
+																				<div id="error_PolicyEffectiveDate_search"
+																					class="defult_tr_errors"></div>
+																			</td>
+																		</tr>
+
+																		<tr>
+																			<td align="right" nowrap="nowrap">Effective Date
+																				From :</td>
+																			<td>
+																			<div class="iconsStyle2">
+																				<span class="input-group-addon "><i
+																					class="fa fa-calendar">&nbsp;</i></span> 
+																				<input
+																					name="WQPolicyEffectiveDate_search" type="text"
+																					class="form-control datepicker " id="WQPolicyEffectiveDate_search"
+																					size="13" maxlength="10" style="width: 127px !important; height:24px"
+																					onkeyup="applyDateFormat(this,event);"
+																					placeholder="(MM/DD/YYYY)" />
+																			</div>
+																				
+																			</td>
+																		</tr>
+																		
+																		<tr>
+																			<td style="padding: 0px;"></td>
+																			<td style="padding: 0px;" valign="top">
+																				<div id="error_PolicyEffectiveDate_searchTo"
+																					class="defult_tr_errors"></div>
+																			</td>
+																		</tr>
+																		
+																		<tr>
+																			<td align="right" nowrap="nowrap">Effective Date To :</td>
+																			<td>
+																				<div class="iconsStyle2">
+																					<span class="input-group-addon "><i
+																						class="fa fa-calendar">&nbsp;</i></span> 
+																					<input
+																						name="WQPolicyEffectiveDate_searchTo" type="text"
+																						class="form-control datepicker " id="WQPolicyEffectiveDate_searchTo"
+																						size="13" maxlength="10" style="width: 127px !important; height:24px"
+																						onkeyup="applyDateFormat(this,event);"
+																						placeholder="(MM/DD/YYYY)" />
+																				</div>
+																			</td>
+																		</tr>
+																		
+																		
+																		<tr>
+																			<td align="right">State :</td>
+																			<td><select name="WQStateCode_search"
+																				style="height:24px;width:156px" id="WQStateCode_search">
+																					<option value="">-Select-</option>
+																			</select></td>
+																		</tr>
+																		<tr id="WQCompany_Security">
+																			<td align="right">Company :</td>
+																			<td><select name="WQCompany_search"
+																				style="height:24px;width:156px" id="WQCompany_search">
+																					<option value="">-Select-</option>
+																			</select></td>
+																		</tr>
+																		<tr>
+																			<td align="right">Status :</td>
+																			<td><select name="WQStatusKey_search"
+																				style="height:24px;width:156px" id="WQStatusKey_search">
+																					<option value="">-Select-</option>
+																					<!-- <option value="4">InComplete</option> -->
+																					
+																			</select></td>
+																		</tr>
+																		<tr>
+																			<td align="right">Quote Number :</td>
+																			<td>
+																				<input name="WQQuoteNumberSearch" type="text"
+																				class="form-control" style="height:24px;width:156px" id="WQQuoteNumberSearch" autocomplete="OFF"
+																				onkeyup="javascript:ajaxpageblocklink('workq.html','workq.getQuoteNumberList','','','ajaxxmlWQQuoteNumberSearch_WQQuoteNumberSearch');"
+																				onclick="nottoggleDivDisplay(this,'WQQuoteNumberSearch','ajaxxmlWQQuoteNumberSearch_WQQuoteNumberSearch');" />
+																				<div id="ajaxxmlWQQuoteNumberSearch_WQQuoteNumberSearch"
+																					class="transparent fixcolumnHeaderSearch"
+																					style="display: none; border: solid 1px #cccccc; width: 215px;"></div>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td align="right">Policy Number :</td>
+																			<td>
+																				<input name="WQPolicyNumberSearch" type="text" 
+																				class="form-control" style="height:24px;width:156px" id="WQPolicyNumberSearch" autocomplete="OFF"
+																				onkeyup="javascript:ajaxpageblocklink('workq.html','workq.getPolicyNumberList','','','ajaxxmlWQPolicyNumberSearch_WQPolicyNumberSearch');"
+																				onclick="nottoggleDivDisplay(this,'WQPolicyNumberSearch','ajaxxmlWQPolicyNumberSearch_WQPolicyNumberSearch');" />
+																				<div id="ajaxxmlWQPolicyNumberSearch_WQPolicyNumberSearch"
+																					class="transparent fixcolumnHeaderSearch"
+																					style="display: none; border: solid 1px #cccccc; width: 215px;"></div>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td align="right">Due For Renewal :</td>
+																			<td><select name="WQNumberOfDays_search"
+																				class="form-control" style="height:24px;width:156px" id="WQNumberOfDays_search">
+																					<option value="">Select</option>
+																			</select></td>
+																		</tr>
+
+																		<tr>
+																			<td align="right"></td>
+																			<td>
+																				<span>
+																					<input name="WQIsRenewed_search" type="checkbox" style="width: 5%;" class="form-control"  id="WQIsRenewed_search" />Already Renewed &nbsp; 
+																				</span>
+																			</td>
+																		</tr>
+																		<tr id="BrokerageLinkWorkqPage_security">
+																			<td align="right"></td>
+																			<td>
+																				<span>
+																					<input name="setBrokerSearch" type="checkbox" style="width: 5%;" class="form-control" 
+																						id="setBrokerSearch" onchange="setworkq();" />Include Brokered &nbsp; 
+																				</span>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td align="right"></td>
+																			<td>
+																				<span>
+																					<input name="WQIsLostWorkQPolicy_search" type="checkbox" checked="checked" style="width: 5%;" class="form-control"  id="WQIsLostWorkQPolicy_search" />Include Lost Workq &nbsp; 
+																				</span>
+																			</td>
+																		</tr>
+																		<tr>
+																			<td>&nbsp;</td>
+																			<td>
+																			
+																				<div class="row" style="text-align:left;">																					
+																					<span><a class="btn button1" id="submitForm" href="javascript:submitform('list.html','workq.search','','');">Search</a></span>
+																					<span><a class="btn button1" href="#" onClick="resetSerachFormWorkQ();">Reset</a></span> 																					
+																				</div>
+																			
+																				
+																			</td>
+																		</tr>
+																		<tr>
+																			<td style="line-height: 10px;">&nbsp;</td>
+																		</tr>
+																	</table>
+																</td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</table>
+										</td>
+										<td>&nbsp;&nbsp;</td>
+										<td width="49%" valign="top" class="border1">
+											<table width="100%" border="0" align="center" cellpadding="5"
+												cellspacing="0" 
+												id="workq_freeform_contextdata_02">
+												<tr>
+													<td height="35" style="height: 28px;" class="tableheading">Total Submissions
+														( <label name="totalsubmissions" id="totalsubmissions" />
+														)
+													</td>
+													<td align="right" class="tableheading">&nbsp;</td>
+												</tr>
+												<tr  class="bglightGray" >
+													<td colspan="2" valign="top"class="breadcrumbValue">
+														<table cellpadding="0" cellspacing="0" width="100%" style="padding: 2px 5px;">
+															<tr>
+																<td width="210px" nowrap="nowrap">New Business / Renewal : <label name="ProfilePolicyStatus" id="ProfilePolicyStatus"></label></td>
+																<td>State : <label name="ProfileStates" id="ProfileStates"></label></td>
+															</tr>
+															<tr id="eval:LawyersRule.isBrokerage">
+																<td>Broker : <label name="ProfileBrokerKey" id="ProfileBrokerKey"> </label></td>
+																<td>Carrier : <label name="ProfileCarrierKey" id="ProfileCarrierKey"></label></td>
+															</tr>
+															<tr>
+																<td id="eval:LawyersRule.isNotBrokerage"> Direct / Sub-produced : <label name="SubProducedOrDirect" id="SubProducedOrDirect"> </label></td>
+																<td>First Reviewer : <label name="ProfileFirstReviewer" id="ProfileFirstReviewer"></label></td>
+															</tr>
+															
+															
+														</table>
+													
+													
+													 </td>
+												</tr>
+												<tr><td>&nbsp;</td></tr>
+												<tr>
+													<td colspan="2" valign="top" height="200">
+														<table width="96%" border="0" align="center"
+															cellpadding="2" cellspacing="2" class="workq">
+															<tr>
+
+																<td width="8" class="txtBold11Maroon"><img
+																	src="img/arrow-o.gif" width="5" height="9"></td>
+
+																<td width="412" class="txtBold11Maroon"><a
+																	href="javascript:submitform('list.html','workq.indicationList','','');"
+																	class="txtBold13Maroon">Indication ( <label
+																		name="indicationCount" id="indicationCount" class="txtBlack13Bold" />
+																		)
+																</a></td>
+
+															</tr>
+															<tr>
+
+																<td width="8" class="txtBold11Maroon"><img
+																	src="img/arrow-o.gif" width="5" height="9"></td>
+
+																<td width="412" class="txtBold11Maroon"><a
+																	href="javascript:submitform('list.html','workq.quickQuoteList','','');"
+																	class="txtBold13Maroon">Quick Quote ( <label
+																		name="quickquote" id="pending" class="txtBlack13Bold" />
+																		)
+																</a></td>
+
+															</tr>
+															<tr>
+
+																<td width="8" class="txtBold11Maroon"><img
+																	src="img/arrow-o.gif" width="5" height="9"></td>
+
+																<td width="412" class="txtBold11Maroon"><a
+																	href="javascript:submitform('list.html','workq.pendinglist','','');"
+																	class="txtBold13Maroon">New ( <label name="pending"
+																		id="pending" class="txtBlack13Bold" /> )
+																</a></td>
+
+															</tr>
+
+															<tr>
+																<td class="txtBold11Maroon"><img
+																	src="img/arrow-o.gif" width="5" height="9"></td>
+																<td class="txtBold11Maroon"><a
+																	href="javascript:submitform('list.html','workq.bookedlist','','');"
+																	class="txtBold13Maroon">UnderReview ( <label
+																		name="booked" id="booked" class="txtBlack13Bold" /> )
+																</a></td>
+															</tr>
+															
+															<tr>
+																<td class="txtBold11Maroon"><img
+																	src="img/arrow-o.gif" width="5" height="9"></td>
+																<td class="txtBold11Maroon"><a
+																	href="javascript:submitform('list.html','workq.uwreview','','');"
+																	class="txtBold13Maroon">UW Review ( <label
+																		name="uwreview" id="uwreview" class="txtBlack13Bold" /> )
+																</a></td>
+															</tr>
+															
+															<tr>
+																<td class="txtBold11Maroon"><img
+																	src="img/arrow-o.gif" width="5" height="9"></td>
+																<td class="txtBold11Maroon"><a
+																	href="javascript:submitform('list.html','workq.uwcompleted','','');"
+																	class="txtBold13Maroon">UW Completed ( <label
+																		name="uwcompleted" id="uwcompleted" class="txtBlack13Bold" /> )
+																		
+																</a></td>
+															</tr>
+															
+															
+															<tr>
+																<td class="txtBold11Maroon"><img
+																	src="img/arrow-o.gif" width="5" height="9"></td>
+																<td class="txtBold11Maroon"><a
+																	href="javascript:submitform('list.html','workq.acceptedlist','','');"
+																	class="txtBold13Maroon">Accepted ( <label
+																		name="accepted" id="accepted" class="txtBlack13Bold" />
+																		)
+																</a></td>
+															</tr>
+
+															<tr>
+																<td class="txtBold11Maroon"><img
+																	src="img/arrow-o.gif" width="5" height="9"></td>
+																<td class="txtBold11Maroon"><a
+																	href="javascript:submitform('list.html','workq.abandonedlist','','');"
+																	class="txtBold13Maroon">Quoted( <label
+																		name="abandoned" id="abandoned" class="txtBlack13Bold" />
+																		)
+																</a></td>
+															</tr>
+
+															<tr>
+																<td class="txtBold11Maroon"><img
+																	src="img/arrow-o.gif" width="5" height="9"></td>
+																<td class="txtBold11Maroon"><a
+																	href="javascript:submitform('list.html','workq.declinedlist','','');"
+																	class="txtBold13Maroon">Declined ( <label
+																		name="declined" id="declined" class="txtBlack13Bold" />
+																		)
+																</a></td>
+															</tr>
+															<tr>
+																<td class="txtBold11Maroon"><img
+																	src="img/arrow-o.gif" width="5" height="9"></td>
+																<td class="txtBold11Maroon"><a
+																	href="javascript:submitform('list.html','workq.rejectlist','','');"
+																	class="txtBold13Maroon">Not Accepted ( <label
+																		name="reject" id="reject" class="txtBlack13Bold" /> )
+																</a></td>
+															</tr>
+															<tr>
+																<td class="txtBold11Maroon"><img
+																	src="img/arrow-o.gif" width="5" height="9"></td>
+																<td class="txtBold11Maroon"><a
+																	href="javascript:submitform('list.html','workq.issuedlist','','');"
+																	class="txtBold13Maroon">Issued ( <label
+																		name="issued" id="issued" class="txtBlack13Bold" /> )
+																</a></td>
+															</tr>
+															<tr>
+																<td class="txtBold11Maroon"><img
+																	src="img/arrow-o.gif" width="5" height="9"></td>
+																<td class="txtBold11Maroon"><a
+																	href="javascript:submitform('list.html','workq.cancellist','','');"
+																	class="txtBold13Maroon">Cancelled ( <label
+																		name="cancelled" id="cancelled" class="txtBlack13Bold" />
+																		)
+																</a></td>
+															</tr>
+															
+															<!-- <tr id="eval:LawyersRule.isShowUserBrokerageDetails">
+																<td class="txtBold11Maroon"><img
+																	src="img/arrow-o.gif" width="5" height="9"></td>
+																<td class="txtBold11Maroon"><a
+																	href="javascript:submitform('list.html','workq.submission','','');"
+																	class="txtBold13Maroon">Submission ( <label
+																		name="submission" id="submission" class="txtBlack13Bold" />
+																		)
+																</a></td>
+															</tr>
+															
+															<tr id="eval:LawyersRule.isShowUserBrokerageDetails">
+																<td class="txtBold11Maroon"><img
+																	src="img/arrow-o.gif" width="5" height="9"></td>
+																<td class="txtBold11Maroon"><a
+																	href="javascript:submitform('list.html','workq.nonRenewed','','');"
+																	class="txtBold13Maroon">Non Renewed ( <label
+																		name="nonRenewed" id="nonRenewed" class="txtBlack13Bold" />
+																		)
+																</a></td>
+															</tr> -->
+															
+															<!-- <tr>
+																<td class="txtBold11Maroon"><img
+																	src="img/arrow-o.gif" width="5" height="9"></td>
+																<td class="txtBold11Maroon"><a
+																	href="javascript:submitform('list.html','workq.declinedlistCleaner','','');"
+																	class="txtBold13Maroon">InComplete ( <label
+																		name="declinedInComplete" id="declinedInComplete" class="txtBlack13Bold" />
+																		)
+																</a></td>
+															</tr> -->
+															
+														</table>
+													</td>
+												</tr>
+
+
+											</table>
+										</td>
+									</tr>
+									<tr><td>&nbsp;</td></tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+
+				</td>
+			</tr>
+			<tr>
+				<td>
+				<table id="firm_freeform_contextdata_999">
+				<tr>
+					<td>
+					<!-- <input type="text" name="PolicyEffectiveDate_search" id="PolicyEffectiveDate_search" />
+					<input type="text" name="PolicyEffectiveDate_searchTo" id="PolicyEffectiveDate_searchTo" />
+					<input type="text" name="StateCode_search" id="StateCode_search" />
+					<input type="text" name="IsRenewed_search" id="IsRenewed_search" />
+					<input type="text" name="ProducerCodefilter" id="ProducerCodefilter" />
+					<input type="text" name="FirstReviewerfilter" id="PolicyStatusDesc" /> -->
+					
+					</td>
+				</tr>
+			</table>
+								
+				</td>
+			</tr>
+		</table>
+		<!---------Footer Start---------->
+				<div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<!---------Footer End---------->
+		<table id="workq_freeform_contextdata_92">
+			<tr>
+				<td><input type="hidden" name="jsessionid" id="ajax_field_jsessionid" />
+				<input type="hidden" name="ProducerCode" id="ProducerCode" />
+				<input type="hidden" name="SendMailToSubproducerInsured" id="SendMailToSubproducerInsured" />
+				<input type="hidden" name="IndicationAccess" id="IndicationAccess" />
+				<input type="hidden" name="role_id" id="role_id" />
+				<input type="hidden" name="issued" id="issued" />
+				<input type="hidden" name="indicationCount" id="indicationCount" />
+				<input type="hidden" name="quickquote" id="quickquote" />
+				<input type="hidden" name="pending" id="pending" />
+				<input type="hidden" name="booked" id="booked" />
+				<input type="hidden" name="uwreview" id="uwreview" />
+				<input type="hidden" name="uwcompleted" id="uwcompleted" />
+				<input type="hidden" name="accepted" id="accepted" />
+				<input type="hidden" name="abandoned" id="abandoned" />
+				<input type="hidden" name="declined" id="declined" />
+				<input type="hidden" name="reject" id="rejec" />
+				<input type="hidden" name="cancelled" id="cancelled" />
+				<input type="hidden" name="recordsperpage" id="recordsperpage" />
+				<input type="hidden" name="pagenumber" id="pagenumber" />
+				<input type="hidden" name="NeverQuoted" id="NeverQuoted" />
+		        <input type="hidden" name="isLostworkq" id="isLostworkq" />
+				<input type="hidden" name="workqSearch" id="workqSearch" />
+				<input type="hidden" name="WQIsBrokered_search" id="WQIsBrokered_search" />
+				
+				<!-- <input type="hidden" name="declinedInComplete" id="declinedInComplete" /> -->
+				</td>
+				<td style="display: none;"><a href="javascript:submitform('renewThanks.html','workq.showRenewThanks','','');"></a>
+				</td>
+			</tr>
+		</table>
+		<div class="calendar_widget" id="calendar_widget" style="width:auto;height:auto!important;">
+			<iframe id='calendar_widget_iframe' name='calendar_widget_iframe' src="calendar_widget.html" frameborder="0" style="height:139px!important" />
+		</div>
+	</form>
+
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+<script>
+	setCSSForAccountType2();
+</script>
+<script type="text/javascript">
+	//rearrange();
+	//loadList();
+</script>
+<!-- Script for public insured -->
+<script>
+$(document).ready(function(){
+	   if ($("#error_PublicinsuredEmail").text() != "") {
+		   if($.trim($("#error_PublicinsuredEmail").text()) == "Please enter the Email."){
+			   $("#SendMailToSubproducerInsured").val('');
+		   }
+		   $( "#publicinsured" ).trigger( "click" );
+	   }
+	   if ($.trim($("#SendMailToSubproducerInsured").val()) != "") {
+		   showPopUp2('popupsave2','500','400');
+		   $("#success_PublicinsuredEmail").text($.trim($("#SendMailToSubproducerInsured").val()));
+		   $('#sendEmailOkButton').show();
+		   $("#sendEmailSendButton").hide();
+		   $("#sendEmailTextBox").hide();
+	   }
+	 });
+</script>
+</html>

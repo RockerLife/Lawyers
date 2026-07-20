@@ -1,0 +1,12 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="deltalog">
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into delta_log(project_id, xml_template, node_name, keys, attributes, actioncode) 
+          values(#project_id#, #xml_template#, #node_name#, #keys#, #attributes#, #actioncode#)
+          <selectKey resultClass="int" keyProperty="id">SELECT @@IDENTITY as last_insert_id</selectKey>
+     </insert>
+     <select id="selectDeltaForApp" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">
+     	select * from delta_log where project_id = #project_id# and xml_template = #xml_template# order by logtime asc
+     </select>
+</sqlMap>

@@ -1,0 +1,46 @@
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN" "${ibatis.sqlMapConfig.dtd.url}">
+
+<sqlMapConfig>
+     <settings useStatementNamespaces="true" />
+     <transactionManager type="JDBC">
+          <dataSource type="SIMPLE">
+               <property name="JDBC.Driver" value="${appl.METAAPP.db.driver}" />
+               <property name="JDBC.ConnectionURL" value="${appl.METAAPP.db.url}" />
+               <property name="JDBC.Username" value="${appl.METAAPP.db.username}" />
+               <property name="JDBC.Password" value="${appl.METAAPP.db.password}" />
+               <property name="JDBC.DefaultAutoCommit" value="true" />
+               <property name="Pool.MaximumActiveConnections" value="10" />
+               <property name="Pool.MaximumIdleConnections" value="5" />
+               <property name="Pool.MaximumCheckoutTime" value="120000" />
+               <property name="Pool.TimeToWait" value="500" />
+               <property name="Pool.PingQuery" value="select 1 from metaobject" />
+               <property name="Pool.PingEnabled" value="false" />
+               <property name="Pool.PingConnectionsOlderThan" value="1" />
+               <property name="Pool.PingConnectionsNotUsedFor" value="1" />
+               <property name="Pool.QuietMode" value="true" />
+          </dataSource>
+     </transactionManager>
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/computerule.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/SqlStmts.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/depobject.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/property.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/structure.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/partialkey.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/dropdown.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/refdropdown.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/propertyversion.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/parentprop.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/propvalidation.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/valuefield.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/displayfield.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/metaobject.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/metaindex.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/field.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/indexcol.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/metatrigger.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/rangevalue.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/systemrule.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/reference.xml" />
+     <sqlMap url="file:///${xml.basedir}METAAPP/ibatis/maps/movalidationrule.xml" />
+</sqlMapConfig>
+

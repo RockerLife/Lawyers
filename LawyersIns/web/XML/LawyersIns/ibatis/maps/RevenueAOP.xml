@@ -1,0 +1,33 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="RevenueAOP">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from RevenueAOP</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from RevenueAOP</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into RevenueAOP(
+          <dynamic prepend=" ">
+               <isNotEmpty property="RevenueAOPDesc" prepend=",">RevenueAOPDesc</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="RevenueAOPDesc" prepend=",">#RevenueAOPDesc#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="RevenueAOPKey">SELECT IDENT_CURRENT('RevenueAOP') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select RevenueAOPKey, RevenueAOPDesc from RevenueAOP where RevenueAOPKey = #RevenueAOPKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update RevenueAOP set
+          <dynamic prepend=" ">
+               <isNotEmpty property="RevenueAOPDesc" prepend=",">RevenueAOPDesc = #RevenueAOPDesc#</isNotEmpty>
+               <isEmpty property="RevenueAOPDesc" prepend=",">RevenueAOPDesc = null</isEmpty>
+          </dynamic>
+          where RevenueAOPKey = #RevenueAOPKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from RevenueAOP where RevenueAOPKey = #RevenueAOPKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from RevenueAOP</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from RevenueAOP</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select RevenueAOPKey, RevenueAOPDesc from RevenueAOP where RevenueAOPKey = #RevenueAOPKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select RevenueAOPKey, RevenueAOPDesc from RevenueAOP</select>
+</sqlMap>
+

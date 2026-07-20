@@ -1,0 +1,35 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="valuefield">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from valuefield</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from valuefield where dropdownno = #dropdownno# and propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into valuefield(dropdownno, propertyno, propertyversionno, metaobjectno, structureno, field
+          <isNotEmpty property="delimiter" prepend=",">delimiter</isNotEmpty>
+          <isNotEmpty property="seq" prepend=",">seq</isNotEmpty>
+          ) values (#dropdownno:NUMERIC#, #propertyno:NUMERIC#, #propertyversionno:NUMERIC#, #metaobjectno:NUMERIC#, #structureno:NUMERIC#, #field#
+          <isNotEmpty property="delimiter" prepend=",">#delimiter#</isNotEmpty>
+          <isNotEmpty property="seq" prepend=",">#seq#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="valuefieldno">SELECT IDENT_CURRENT('valuefield') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select valuefieldno, field, delimiter, seq, dropdownno, propertyno, propertyversionno, metaobjectno, structureno from valuefield where valuefieldno = #valuefieldno# and dropdownno = #dropdownno# and propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update valuefield set
+          <dynamic prepend=" ">
+               <isNotEmpty property="field" prepend=",">field = #field#</isNotEmpty>
+               <isEmpty property="field" prepend=",">field = null</isEmpty>
+               <isNotEmpty property="delimiter" prepend=",">delimiter = #delimiter#</isNotEmpty>
+               <isEmpty property="delimiter" prepend=",">delimiter = null</isEmpty>
+               <isNotEmpty property="seq" prepend=",">seq = #seq#</isNotEmpty>
+               <isEmpty property="seq" prepend=",">seq = null</isEmpty>
+          </dynamic>
+          where valuefieldno = #valuefieldno# and dropdownno = #dropdownno# and propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from valuefield where valuefieldno = #valuefieldno# and dropdownno = #dropdownno# and propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from valuefield</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from valuefield where dropdownno = #dropdownno# and propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select valuefieldno, field, delimiter, seq, dropdownno, propertyno, propertyversionno, metaobjectno, structureno from valuefield where valuefieldno = #valuefieldno# and dropdownno = #dropdownno# and propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select valuefieldno, dropdownno, propertyno, propertyversionno, metaobjectno, structureno, field, delimiter from valuefield where dropdownno = #dropdownno# and propertyno = #propertyno# and propertyversionno = #propertyversionno# and metaobjectno = #metaobjectno# and structureno = #structureno#</select>
+</sqlMap>
+

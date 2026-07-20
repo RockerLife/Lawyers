@@ -1,0 +1,68 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="SeperateEntitySupp">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SeperateEntitySupp</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from SeperateEntitySupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into SeperateEntitySupp(VersionSequence, PolicyKey
+          <isNotEmpty property="EntityNameSe" prepend=",">EntityNameSe</isNotEmpty>
+          <isNotEmpty property="EstablisedSeDate" prepend=",">EstablisedSeDate</isNotEmpty>
+          <isNotEmpty property="ServiceIndustrySeID" prepend=",">ServiceIndustrySeID</isNotEmpty>
+          <isNotEmpty property="PercentOfOwnershipSe" prepend=",">PercentOfOwnershipSe</isNotEmpty>
+          <isNotEmpty property="TotalProfessionalStaffSe" prepend=",">TotalProfessionalStaffSe</isNotEmpty>
+          <isNotEmpty property="TotalSupportStaffSe" prepend=",">TotalSupportStaffSe</isNotEmpty>
+          <isNotEmpty property="DetailedDescSe" prepend=",">DetailedDescSe</isNotEmpty>
+          <isNotEmpty property="LastFiscalYearGrossRevenueSe" prepend=",">LastFiscalYearGrossRevenueSe</isNotEmpty>
+          <isNotEmpty property="EstimateCurrentYearGrossRevenueSe" prepend=",">EstimateCurrentYearGrossRevenueSe</isNotEmpty>
+          <isNotEmpty property="LastFiscalYearSeEndDate" prepend=",">LastFiscalYearSeEndDate</isNotEmpty>
+          <isNotEmpty property="EstimateCurrentYearSeEndDate" prepend=",">EstimateCurrentYearSeEndDate</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="EntityNameSe" prepend=",">#EntityNameSe#</isNotEmpty>
+          <isNotEmpty property="EstablisedSeDate" prepend=",">#EstablisedSeDate#</isNotEmpty>
+          <isNotEmpty property="ServiceIndustrySeID" prepend=",">#ServiceIndustrySeID#</isNotEmpty>
+          <isNotEmpty property="PercentOfOwnershipSe" prepend=",">#PercentOfOwnershipSe#</isNotEmpty>
+          <isNotEmpty property="TotalProfessionalStaffSe" prepend=",">#TotalProfessionalStaffSe#</isNotEmpty>
+          <isNotEmpty property="TotalSupportStaffSe" prepend=",">#TotalSupportStaffSe#</isNotEmpty>
+          <isNotEmpty property="DetailedDescSe" prepend=",">#DetailedDescSe#</isNotEmpty>
+          <isNotEmpty property="LastFiscalYearGrossRevenueSe" prepend=",">#LastFiscalYearGrossRevenueSe#</isNotEmpty>
+          <isNotEmpty property="EstimateCurrentYearGrossRevenueSe" prepend=",">#EstimateCurrentYearGrossRevenueSe#</isNotEmpty>
+          <isNotEmpty property="LastFiscalYearSeEndDate" prepend=",">#LastFiscalYearSeEndDate#</isNotEmpty>
+          <isNotEmpty property="EstimateCurrentYearSeEndDate" prepend=",">#EstimateCurrentYearSeEndDate#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EntityNameSe, EstablisedSeDate, ServiceIndustrySeID, PercentOfOwnershipSe, TotalProfessionalStaffSe, TotalSupportStaffSe, DetailedDescSe, LastFiscalYearGrossRevenueSe, EstimateCurrentYearGrossRevenueSe, LastFiscalYearSeEndDate, EstimateCurrentYearSeEndDate, VersionSequence, PolicyKey from SeperateEntitySupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update SeperateEntitySupp set
+          <dynamic prepend=" ">
+               <isNotEmpty property="EntityNameSe" prepend=",">EntityNameSe = #EntityNameSe#</isNotEmpty>
+               <isEmpty property="EntityNameSe" prepend=",">EntityNameSe = null</isEmpty>
+               <isNotEmpty property="EstablisedSeDate" prepend=",">EstablisedSeDate = #EstablisedSeDate#</isNotEmpty>
+               <isEmpty property="EstablisedSeDate" prepend=",">EstablisedSeDate = null</isEmpty>
+               <isNotEmpty property="ServiceIndustrySeID" prepend=",">ServiceIndustrySeID = #ServiceIndustrySeID#</isNotEmpty>
+               <isEmpty property="ServiceIndustrySeID" prepend=",">ServiceIndustrySeID = null</isEmpty>
+               <isNotEmpty property="PercentOfOwnershipSe" prepend=",">PercentOfOwnershipSe = #PercentOfOwnershipSe#</isNotEmpty>
+               <isEmpty property="PercentOfOwnershipSe" prepend=",">PercentOfOwnershipSe = null</isEmpty>
+               <isNotEmpty property="TotalProfessionalStaffSe" prepend=",">TotalProfessionalStaffSe = #TotalProfessionalStaffSe#</isNotEmpty>
+               <isEmpty property="TotalProfessionalStaffSe" prepend=",">TotalProfessionalStaffSe = null</isEmpty>
+               <isNotEmpty property="TotalSupportStaffSe" prepend=",">TotalSupportStaffSe = #TotalSupportStaffSe#</isNotEmpty>
+               <isEmpty property="TotalSupportStaffSe" prepend=",">TotalSupportStaffSe = null</isEmpty>
+               <isNotEmpty property="DetailedDescSe" prepend=",">DetailedDescSe = #DetailedDescSe#</isNotEmpty>
+               <isEmpty property="DetailedDescSe" prepend=",">DetailedDescSe = null</isEmpty>
+               <isNotEmpty property="LastFiscalYearGrossRevenueSe" prepend=",">LastFiscalYearGrossRevenueSe = #LastFiscalYearGrossRevenueSe#</isNotEmpty>
+               <isEmpty property="LastFiscalYearGrossRevenueSe" prepend=",">LastFiscalYearGrossRevenueSe = null</isEmpty>
+               <isNotEmpty property="EstimateCurrentYearGrossRevenueSe" prepend=",">EstimateCurrentYearGrossRevenueSe = #EstimateCurrentYearGrossRevenueSe#</isNotEmpty>
+               <isEmpty property="EstimateCurrentYearGrossRevenueSe" prepend=",">EstimateCurrentYearGrossRevenueSe = null</isEmpty>
+               <isNotEmpty property="LastFiscalYearSeEndDate" prepend=",">LastFiscalYearSeEndDate = #LastFiscalYearSeEndDate#</isNotEmpty>
+               <isEmpty property="LastFiscalYearSeEndDate" prepend=",">LastFiscalYearSeEndDate = null</isEmpty>
+               <isNotEmpty property="EstimateCurrentYearSeEndDate" prepend=",">EstimateCurrentYearSeEndDate = #EstimateCurrentYearSeEndDate#</isNotEmpty>
+               <isEmpty property="EstimateCurrentYearSeEndDate" prepend=",">EstimateCurrentYearSeEndDate = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from SeperateEntitySupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from SeperateEntitySupp</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from SeperateEntitySupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EntityNameSe, EstablisedSeDate, ServiceIndustrySeID, PercentOfOwnershipSe, TotalProfessionalStaffSe, TotalSupportStaffSe, DetailedDescSe, LastFiscalYearGrossRevenueSe, EstimateCurrentYearGrossRevenueSe, LastFiscalYearSeEndDate, EstimateCurrentYearSeEndDate, VersionSequence, PolicyKey from SeperateEntitySupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, EntityNameSe, EstablisedSeDate, ServiceIndustrySeID, PercentOfOwnershipSe, TotalProfessionalStaffSe, TotalSupportStaffSe, DetailedDescSe, LastFiscalYearGrossRevenueSe, EstimateCurrentYearGrossRevenueSe, LastFiscalYearSeEndDate, EstimateCurrentYearSeEndDate from SeperateEntitySupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

@@ -1,0 +1,158 @@
+<processflow project="LawyersIns" seq="0">
+
+	<pagecomponent name="lawyersrep" seq="1" path="lawyersrep.jsp">
+          <formlink action="show" seq="0" name="startaccountrepapplication">
+               <formlinkforward eval="LawyersRule.showLogin" component="indexagent" action="view" seq="0" name="show" />
+               <formlinkforward eval="LawyersRule.showWorkQ" component="workq" action="view" seq="1" name="show" />                    
+          </formlink>
+     </pagecomponent>
+	<pagecomponent seq="2" path="login.jsp" name="login">
+          <formlink action="showlogin" seq="0" name="showlogin">
+              <formlinkforward component="registration" action="view"     seq="0" name="showlogin" />
+          </formlink>
+     </pagecomponent>
+     <pagecomponent seq="4" path="payment.jsp" name="showpayment">
+          <formlink action="showpayment" seq="0" name="showpayment">
+               <formlinkforward component="paymentmethod" action="view" seq="0" name="showpayment" />
+          </formlink>
+      </pagecomponent>
+      
+      <pagecomponent seq="5" path="authThanks.jsp" name="authThanks">
+          <formlink action="showpaypalthanks" seq="0" name="showpaypalthanks">
+               <formlinkforward component="indexThanks" action="view" seq="0" name="indexThanks" />
+          </formlink>         
+      </pagecomponent>
+      
+      <pagecomponent seq="6" path="renew.jsp" name="indexrenew">
+		<block blocktype="freeform" seq="32" id="renewthanks_freeform_contextdata_99">
+               <blockfieldset seq="0" id="0">
+                    <blockfield fieldname="PolicyKey" seq="1" id="1" fieldtype="text" />
+                    <blockfield fieldname="IsRegistrationPage" seq="2" id="2" fieldtype="text" />
+                    
+               </blockfieldset>
+          </block>
+		<formlink action="insuredRenewedByMail" name="renew_insuredRenewedByMail" >
+			
+			
+			<formlinkforward  eval="LawyersRule.isShowOldApp" component="RenewFirm" action="view" seq="1" name="insuredRenewedByMail"></formlinkforward>
+			<formlinkforward  eval="LawyersRule.isShowNewApp" component="FirmNewApp" action="view" seq="2" name="insuredRenewedByMail"></formlinkforward>
+			<formlinkforward eval="LawyersRule.RenewedAppstatusquotedandacceptance"  component="quoteOption" action="view" seq="3" name="insuredRenewedByMail"></formlinkforward>
+		    <formlinkforward eval="LawyersRule.isRenewedAlready"  component="renewThanks" action="view" seq="4" name="insuredRenewedByMail"></formlinkforward>
+		    
+		
+		</formlink>
+	</pagecomponent>
+   
+     
+     <pagecomponent seq="7" path="signandpay.jsp" name="indexsignandpay">
+		<block blocktype="freeform" seq="32" id="renewthanks_freeform_contextdata_99">
+               <blockfieldset seq="0" id="0">
+               </blockfieldset>
+          </block>
+		<formlink action="signandpay" name="renew_signandpay" >
+			<formlinkforward eval="LawyersRule.IsNewPolicyOldApp"  component="firm" action="view" seq="0" name="renew_signandpay"></formlinkforward>
+			<formlinkforward eval="LawyersRule.IsNBPolicyNewApp" component="FirmNewApp" action="view" seq="1" name="renew_signandpay"></formlinkforward>
+			<formlinkforward eval="LawyersRule.IsRenewalPolicyOldApp"  component="RenewFirm" action="view" seq="2" name="renew_signandpay"></formlinkforward>
+			<formlinkforward eval="LawyersRule.showQuotePageForsignPay"  component="quoteOption" action="view" seq="3" name="renew_signandpay"></formlinkforward>	
+			
+			
+		</formlink>
+	</pagecomponent>
+	
+	<pagecomponent seq="8" path="qqinsured.jsp" name="qqinsured">
+		<formlink action="showqq" seq="0"	name="startinsuredapplication">
+			<formlinkforward component="quickquoteinsured" action="view"	seq="0" name="showqq" />
+		</formlink>
+	</pagecomponent>
+	
+		<pagecomponent seq="9" path="paypalThanks.jsp" name="showpaypalthanks">
+          <formlink action="showpaypalthanks" seq="0" name="showpaypalthanks">
+               <formlinkforward component="indexThanks" action="view" seq="0" name="indexThanks" />
+          </formlink>
+          <formlink action="errorbluefin" seq="1" name="showpaypalthanks1">
+               <formlinkforward component="paymentmethod" action="view" seq="0" name="indexThanks1" />
+          </formlink>
+      </pagecomponent> 
+      
+      <pagecomponent seq="10" path="completeapplink.jsp" name="completeapplink">
+		<block blocktype="freeform" seq="32" id="renewthanks_freeform_contextdata_99">
+               <blockfieldset seq="0" id="0">
+               </blockfieldset>
+        </block>
+		<formlink action="showApp" name="showApp" >
+			<formlinkforward eval="LawyersRule.isOldAppFlowForCompleteApplink"  component="firm" action="view" seq="0" name="oldAppFlow"></formlinkforward>
+			<formlinkforward  eval="LawyersRule.isNewAppFlowForCompleteAppLink" component="FirmNewApp" action="view" seq="1" name="newAppFlow"></formlinkforward>
+			<formlinkforward  eval="LawyersRule.isShowQuotePageForCompleteAppLink" component="quoteOption" action="view" seq="2" name="showQuotePage"></formlinkforward>
+		</formlink>
+	 </pagecomponent>
+		
+	 <pagecomponent seq="4" path="payment.jsp" name="formshowpayment">
+          <formlink action="formshowpayment" seq="0" name="formshowpayment">
+               <formlinkforward component="paymentmethod" action="view" seq="0" name="formshowpayment" />
+          </formlink>
+      </pagecomponent>	
+      
+<!--  <pagecomponent seq="20" path="completeapplink.jsp" name="completeapplink">
+		<block blocktype="freeform" seq="32" id="renewthanks_freeform_contextdata_99">
+               <blockfieldset seq="0" id="0">
+               </blockfieldset>
+        </block>
+		<formlink action="showApp" name="showApp" >
+			<formlinkforward eval="LawyersRule.isOldAppFlowForCompleteApplink"  component="firm" action="view" seq="0" name="oldAppFlow"></formlinkforward>
+			<formlinkforward  eval="LawyersRule.isNewAppFlowForCompleteAppLink" component="FirmNewApp" action="view" seq="1" name="newAppFlow"></formlinkforward>
+			<formlinkforward  eval="LawyersRule.isShowQuotePageForCompleteAppLink" component="quoteOption" action="view" seq="2" name="showQuotePage"></formlinkforward>
+	</formlink>
+	 </pagecomponent> -->
+	 
+	 <pagecomponent seq="25" path="IPFSThankYouPage.jsp" name="IPFSThankYouPage">
+          <formlink action="showApp" seq="0" name="showApp">
+            	<formlinkforward component="indexThanksPayment" action="view" seq="0" name="indexThanksPayment" />
+          </formlink>
+      </pagecomponent>
+      <pagecomponent seq="2" path="qqlogin.jsp" name="qqlogin">
+          <formlink action="showlogin" seq="0" name="showlogin">
+              <formlinkforward component="quickquoteinsured" action="view" seq="0" name="showlogin" />
+          </formlink>
+     </pagecomponent>
+     <pagecomponent seq="25" path="IPFSCancelPage.jsp" name="IPFSCancelPage">
+          <formlink action="showApp" seq="0" name="showApp">
+            	<formlinkforward component="paymentmethod" action="view" seq="0" name="showApp" />
+          </formlink>
+      </pagecomponent>
+      
+      <pagecomponent seq="28" path="indicationInsured.jsp" name="indicationInsured">
+          <formlink action="showindication" seq="0" name="showindication">
+              <formlinkforward component="FirmNewApp" action="view" seq="0" name="showindication" />
+          </formlink>
+     </pagecomponent>
+     <!--Requote Policy Link  -->
+     <pagecomponent seq="30" path="RequotePolicy.jsp" name="RequotePolicy">
+		<block blocktype="freeform" seq="32" id="renewthanks_freeform_contextdata_99">
+               <blockfieldset seq="0" id="0">
+               </blockfieldset>
+        </block>
+		<formlink action="copyPolicy" name="copyPolicy" >
+			<!-- <formlinkforward eval="LawyersRule.isOldAppFlow"  component="firm" action="view" seq="0" name="oldAppFlow"></formlinkforward> -->
+			<formlinkforward  eval="" component="FirmNewApp" action="view" seq="1" name="newAppFlow"></formlinkforward>
+			<!-- <formlinkforward  eval="LawyersRule.isShowQuotePageForCompleteAppLink" component="quoteOption" action="view" seq="2" name="showQuotePage"></formlinkforward> -->
+		</formlink>
+	 </pagecomponent>
+       <pagecomponent seq="35" path="brokerageConversion.jsp" name="brokerageConversion">
+		<block blocktype="freeform" seq="35" id="brokerageConversion_freeform_contextdata_99">
+               <blockfieldset seq="0" id="0">
+               </blockfieldset>
+        </block>
+		<formlink action="showApp" name="showApp" >
+		<formlinkforward   component="FirmNewApp" action="view" seq="1" name="newAppFlow"></formlinkforward>
+			<!-- <formlinkforward eval="LawyersRule.isOldAppFlowForCompleteApplink"  component="firm" action="view" seq="0" name="oldAppFlow"></formlinkforward>
+			
+			<formlinkforward  eval="LawyersRule.isShowQuotePageForCompleteAppLink" component="quoteOption" action="view" seq="2" name="showQuotePage"></formlinkforward> -->
+		</formlink>
+	 </pagecomponent>
+	
+	 <pagecomponent seq="36" path="protexureEstimate.jsp" name="protexureEstimate">
+          <formlink action="showApp" seq="0" name="showApp">
+              <formlinkforward component="ProtexureEstimateForm" action="view" seq="1" name="showApp" />
+          </formlink>
+     </pagecomponent>
+</processflow>

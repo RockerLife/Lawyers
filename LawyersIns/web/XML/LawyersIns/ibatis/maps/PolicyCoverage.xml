@@ -1,0 +1,141 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="PolicyCoverage">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PolicyCoverage</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PolicyCoverage where AggregateDeductible = #AggregateDeductible# and OccuranceDeductible = #OccuranceDeductible# and CoverageKey = #CoverageKey# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey# and SOISequence = #SOISequence# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey# and AggregateLimit = #AggregateLimit# and OccuranceLimit = #OccuranceLimit# and CoverageKey = #CoverageKey# and CoverageKey = #CoverageKey# and MarketableProductKey = #MarketableProductKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into PolicyCoverage(TransactionSequence, PolicyKey
+          <isNotEmpty property="Premium" prepend=",">Premium</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="RetroActiveDate" prepend=",">RetroActiveDate</isNotEmpty>
+          <isNotEmpty property="IsClaimOptionType" prepend=",">IsClaimOptionType</isNotEmpty>
+          <isNotEmpty property="IsClaimExpensesType" prepend=",">IsClaimExpensesType</isNotEmpty>
+          <isNotEmpty property="TotalCovModifierPercentage" prepend=",">TotalCovModifierPercentage</isNotEmpty>
+          <isNotEmpty property="TotalCoverageTaxAmount" prepend=",">TotalCoverageTaxAmount</isNotEmpty>
+          <isNotEmpty property="InitialCovPremium" prepend=",">InitialCovPremium</isNotEmpty>
+          <isNotEmpty property="Exposure" prepend=",">Exposure</isNotEmpty>
+          <isNotEmpty property="RiskState" prepend=",">RiskState</isNotEmpty>
+          <isNotEmpty property="RiskZip" prepend=",">RiskZip</isNotEmpty>
+          <isNotEmpty property="ERPDate" prepend=",">ERPDate</isNotEmpty>
+          <isNotEmpty property="Commission" prepend=",">Commission</isNotEmpty>
+          <isNotEmpty property="AttachmentPoint" prepend=",">AttachmentPoint</isNotEmpty>
+          <isNotEmpty property="PrimaryAccess" prepend=",">PrimaryAccess</isNotEmpty>
+          <isNotEmpty property="ClassCode" prepend=",">ClassCode</isNotEmpty>
+          <isNotEmpty property="IsDollarDefense" prepend=",">IsDollarDefense</isNotEmpty>
+          <isNotEmpty property="ManualPremium" prepend=",">ManualPremium</isNotEmpty>
+          <isNotEmpty property="IsManualPremium" prepend=",">IsManualPremium</isNotEmpty>
+          <isNotEmpty property="CreatedDate" prepend=",">CreatedDate</isNotEmpty>
+          <isNotEmpty property="CreatedBy" prepend=",">CreatedBy</isNotEmpty>
+          <isNotEmpty property="SOISequence" prepend=",">SOISequence</isNotEmpty>
+          <isNotEmpty property="AggregateDeductible" prepend=",">AggregateDeductible</isNotEmpty>
+          <isNotEmpty property="OccuranceDeductible" prepend=",">OccuranceDeductible</isNotEmpty>
+          <isNotEmpty property="CoverageKey" prepend=",">CoverageKey</isNotEmpty>
+          <isNotEmpty property="AggregateLimit" prepend=",">AggregateLimit</isNotEmpty>
+          <isNotEmpty property="OccuranceLimit" prepend=",">OccuranceLimit</isNotEmpty>
+          <isNotEmpty property="MarketableProductKey" prepend=",">MarketableProductKey</isNotEmpty>
+          ) values (#TransactionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="Premium" prepend=",">#Premium#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="RetroActiveDate" prepend=",">#RetroActiveDate#</isNotEmpty>
+          <isNotEmpty property="IsClaimOptionType" prepend=",">#IsClaimOptionType#</isNotEmpty>
+          <isNotEmpty property="IsClaimExpensesType" prepend=",">#IsClaimExpensesType#</isNotEmpty>
+          <isNotEmpty property="TotalCovModifierPercentage" prepend=",">#TotalCovModifierPercentage#</isNotEmpty>
+          <isNotEmpty property="TotalCoverageTaxAmount" prepend=",">#TotalCoverageTaxAmount#</isNotEmpty>
+          <isNotEmpty property="InitialCovPremium" prepend=",">#InitialCovPremium#</isNotEmpty>
+          <isNotEmpty property="Exposure" prepend=",">#Exposure#</isNotEmpty>
+          <isNotEmpty property="RiskState" prepend=",">#RiskState#</isNotEmpty>
+          <isNotEmpty property="RiskZip" prepend=",">#RiskZip#</isNotEmpty>
+          <isNotEmpty property="ERPDate" prepend=",">#ERPDate#</isNotEmpty>
+          <isNotEmpty property="Commission" prepend=",">#Commission#</isNotEmpty>
+          <isNotEmpty property="AttachmentPoint" prepend=",">#AttachmentPoint#</isNotEmpty>
+          <isNotEmpty property="PrimaryAccess" prepend=",">#PrimaryAccess#</isNotEmpty>
+          <isNotEmpty property="ClassCode" prepend=",">#ClassCode#</isNotEmpty>
+          <isNotEmpty property="IsDollarDefense" prepend=",">#IsDollarDefense#</isNotEmpty>
+          <isNotEmpty property="ManualPremium" prepend=",">#ManualPremium#</isNotEmpty>
+          <isNotEmpty property="IsManualPremium" prepend=",">#IsManualPremium#</isNotEmpty>
+          <isNotEmpty property="CreatedDate" prepend=",">#CreatedDate#</isNotEmpty>
+          <isNotEmpty property="CreatedBy" prepend=",">#CreatedBy#</isNotEmpty>
+          <isNotEmpty property="SOISequence" prepend=",">#SOISequence#</isNotEmpty>
+          <isNotEmpty property="AggregateDeductible" prepend=",">#AggregateDeductible#</isNotEmpty>
+          <isNotEmpty property="OccuranceDeductible" prepend=",">#OccuranceDeductible#</isNotEmpty>
+          <isNotEmpty property="CoverageKey" prepend=",">#CoverageKey#</isNotEmpty>
+          <isNotEmpty property="AggregateLimit" prepend=",">#AggregateLimit#</isNotEmpty>
+          <isNotEmpty property="OccuranceLimit" prepend=",">#OccuranceLimit#</isNotEmpty>
+          <isNotEmpty property="MarketableProductKey" prepend=",">#MarketableProductKey#</isNotEmpty>
+          )
+          <selectKey resultClass="int" keyProperty="CoverageSequence">SELECT IDENT_CURRENT('PolicyCoverage') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CoverageSequence, Premium, LastUpdateUserID, LastUpdateTimeStamp, RetroActiveDate, IsClaimOptionType, IsClaimExpensesType, TotalCovModifierPercentage, TotalCoverageTaxAmount, InitialCovPremium, Exposure, RiskState, RiskZip, ERPDate, Commission, AttachmentPoint, PrimaryAccess, ClassCode, IsDollarDefense, ManualPremium, IsManualPremium, CreatedDate, CreatedBy, TransactionSequence, SOISequence, AggregateDeductible, OccuranceDeductible, CoverageKey, AggregateLimit, OccuranceLimit, PolicyKey, MarketableProductKey from PolicyCoverage where CoverageSequence = #CoverageSequence# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update PolicyCoverage set
+          <dynamic prepend=" ">
+               <isNotEmpty property="Premium" prepend=",">Premium = #Premium#</isNotEmpty>
+               <isEmpty property="Premium" prepend=",">Premium = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="RetroActiveDate" prepend=",">RetroActiveDate = #RetroActiveDate#</isNotEmpty>
+               <isEmpty property="RetroActiveDate" prepend=",">RetroActiveDate = null</isEmpty>
+               <isNotEmpty property="IsClaimOptionType" prepend=",">IsClaimOptionType = #IsClaimOptionType#</isNotEmpty>
+               <isEmpty property="IsClaimOptionType" prepend=",">IsClaimOptionType = null</isEmpty>
+               <isNotEmpty property="IsClaimExpensesType" prepend=",">IsClaimExpensesType = #IsClaimExpensesType#</isNotEmpty>
+               <isEmpty property="IsClaimExpensesType" prepend=",">IsClaimExpensesType = null</isEmpty>
+               <isNotEmpty property="TotalCovModifierPercentage" prepend=",">TotalCovModifierPercentage = #TotalCovModifierPercentage#</isNotEmpty>
+               <isEmpty property="TotalCovModifierPercentage" prepend=",">TotalCovModifierPercentage = null</isEmpty>
+               <isNotEmpty property="TotalCoverageTaxAmount" prepend=",">TotalCoverageTaxAmount = #TotalCoverageTaxAmount#</isNotEmpty>
+               <isEmpty property="TotalCoverageTaxAmount" prepend=",">TotalCoverageTaxAmount = null</isEmpty>
+               <isNotEmpty property="InitialCovPremium" prepend=",">InitialCovPremium = #InitialCovPremium#</isNotEmpty>
+               <isEmpty property="InitialCovPremium" prepend=",">InitialCovPremium = null</isEmpty>
+               <isNotEmpty property="Exposure" prepend=",">Exposure = #Exposure#</isNotEmpty>
+               <isEmpty property="Exposure" prepend=",">Exposure = null</isEmpty>
+               <isNotEmpty property="RiskState" prepend=",">RiskState = #RiskState#</isNotEmpty>
+               <isEmpty property="RiskState" prepend=",">RiskState = null</isEmpty>
+               <isNotEmpty property="RiskZip" prepend=",">RiskZip = #RiskZip#</isNotEmpty>
+               <isEmpty property="RiskZip" prepend=",">RiskZip = null</isEmpty>
+               <isNotEmpty property="ERPDate" prepend=",">ERPDate = #ERPDate#</isNotEmpty>
+               <isEmpty property="ERPDate" prepend=",">ERPDate = null</isEmpty>
+               <isNotEmpty property="Commission" prepend=",">Commission = #Commission#</isNotEmpty>
+               <isEmpty property="Commission" prepend=",">Commission = null</isEmpty>
+               <isNotEmpty property="AttachmentPoint" prepend=",">AttachmentPoint = #AttachmentPoint#</isNotEmpty>
+               <isEmpty property="AttachmentPoint" prepend=",">AttachmentPoint = null</isEmpty>
+               <isNotEmpty property="PrimaryAccess" prepend=",">PrimaryAccess = #PrimaryAccess#</isNotEmpty>
+               <isEmpty property="PrimaryAccess" prepend=",">PrimaryAccess = null</isEmpty>
+               <isNotEmpty property="ClassCode" prepend=",">ClassCode = #ClassCode#</isNotEmpty>
+               <isEmpty property="ClassCode" prepend=",">ClassCode = null</isEmpty>
+               <isNotEmpty property="IsDollarDefense" prepend=",">IsDollarDefense = #IsDollarDefense#</isNotEmpty>
+               <isEmpty property="IsDollarDefense" prepend=",">IsDollarDefense = null</isEmpty>
+               <isNotEmpty property="ManualPremium" prepend=",">ManualPremium = #ManualPremium#</isNotEmpty>
+               <isEmpty property="ManualPremium" prepend=",">ManualPremium = null</isEmpty>
+               <isNotEmpty property="IsManualPremium" prepend=",">IsManualPremium = #IsManualPremium#</isNotEmpty>
+               <isEmpty property="IsManualPremium" prepend=",">IsManualPremium = null</isEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate = #CreatedDate#</isNotEmpty>
+               <isEmpty property="CreatedDate" prepend=",">CreatedDate = null</isEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy = #CreatedBy#</isNotEmpty>
+               <isEmpty property="CreatedBy" prepend=",">CreatedBy = null</isEmpty>
+               <isNotEmpty property="SOISequence" prepend=",">SOISequence = #SOISequence#</isNotEmpty>
+               <isEmpty property="SOISequence" prepend=",">SOISequence = null</isEmpty>
+               <isNotEmpty property="AggregateDeductible" prepend=",">AggregateDeductible = #AggregateDeductible#</isNotEmpty>
+               <isEmpty property="AggregateDeductible" prepend=",">AggregateDeductible = null</isEmpty>
+               <isNotEmpty property="OccuranceDeductible" prepend=",">OccuranceDeductible = #OccuranceDeductible#</isNotEmpty>
+               <isEmpty property="OccuranceDeductible" prepend=",">OccuranceDeductible = null</isEmpty>
+               <isNotEmpty property="CoverageKey" prepend=",">CoverageKey = #CoverageKey#</isNotEmpty>
+               <isEmpty property="CoverageKey" prepend=",">CoverageKey = null</isEmpty>
+               <isNotEmpty property="AggregateLimit" prepend=",">AggregateLimit = #AggregateLimit#</isNotEmpty>
+               <isEmpty property="AggregateLimit" prepend=",">AggregateLimit = null</isEmpty>
+               <isNotEmpty property="OccuranceLimit" prepend=",">OccuranceLimit = #OccuranceLimit#</isNotEmpty>
+               <isEmpty property="OccuranceLimit" prepend=",">OccuranceLimit = null</isEmpty>
+               <isNotEmpty property="MarketableProductKey" prepend=",">MarketableProductKey = #MarketableProductKey#</isNotEmpty>
+               <isEmpty property="MarketableProductKey" prepend=",">MarketableProductKey = null</isEmpty>
+          </dynamic>
+          where CoverageSequence = #CoverageSequence# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from PolicyCoverage where CoverageSequence = #CoverageSequence# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from PolicyCoverage</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from PolicyCoverage where AggregateDeductible = #AggregateDeductible# and OccuranceDeductible = #OccuranceDeductible# and CoverageKey = #CoverageKey# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey# and SOISequence = #SOISequence# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey# and AggregateLimit = #AggregateLimit# and OccuranceLimit = #OccuranceLimit# and CoverageKey = #CoverageKey# and CoverageKey = #CoverageKey# and MarketableProductKey = #MarketableProductKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CoverageSequence, Premium, LastUpdateUserID, LastUpdateTimeStamp, RetroActiveDate, IsClaimOptionType, IsClaimExpensesType, TotalCovModifierPercentage, TotalCoverageTaxAmount, InitialCovPremium, Exposure, RiskState, RiskZip, ERPDate, Commission, AttachmentPoint, PrimaryAccess, ClassCode, IsDollarDefense, ManualPremium, IsManualPremium, CreatedDate, CreatedBy, TransactionSequence, SOISequence, AggregateDeductible, OccuranceDeductible, CoverageKey, AggregateLimit, OccuranceLimit, PolicyKey, MarketableProductKey from PolicyCoverage where CoverageSequence = #CoverageSequence# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select CoverageSequence, TransactionSequence, PolicyKey, Premium, LastUpdateUserID, LastUpdateTimeStamp, RetroActiveDate, IsClaimOptionType, IsClaimExpensesType, TotalCovModifierPercentage, TotalCoverageTaxAmount, InitialCovPremium, Exposure, RiskState, RiskZip, ERPDate, Commission, AttachmentPoint, PrimaryAccess, ClassCode, IsDollarDefense, ManualPremium, IsManualPremium, CreatedDate, CreatedBy from PolicyCoverage where AggregateDeductible = #AggregateDeductible# and OccuranceDeductible = #OccuranceDeductible# and CoverageKey = #CoverageKey# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey# and SOISequence = #SOISequence# and TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey# and AggregateLimit = #AggregateLimit# and OccuranceLimit = #OccuranceLimit# and CoverageKey = #CoverageKey# and CoverageKey = #CoverageKey# and MarketableProductKey = #MarketableProductKey#</select>
+</sqlMap>
+

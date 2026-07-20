@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Family Law Supplement</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js"/>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+<body onload="familyLawSupplement();">
+	<form autocomplete="chrome-off">
+		<!-- Bootstrap Core JavaScript -->
+
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth" id="AppCompleted">
+				<div id="header">
+					<span id="#Include:header.html#"></span>
+				</div>
+				<div class="menuTab">
+					<span id="#Include:tabs.html#"></span>
+				</div>
+				<div id="contentSection">
+				<div class="confirmationMsgAlign" id="familyLaw_freeform_contextdata_100">
+						<!-- <div id="error_ApplicationNotCompleted" class="error11Bold"> </div> -->
+					</div>
+					<div>
+						<h2 class="questionHeading">
+							<span></span>Family Law Supplement
+						</h2>
+					</div>
+					<div class="form" id="familySupplement_freeform_contextdata_01">
+						<div class="questionBlock" style="min-height: 275px;">
+							<table cellpadding="0" cellspacing="0" style="padding-top: 15px"
+								width="100%">
+								<tr>
+									<td>
+										<span id="error_Total_Percentage" class="error"/>
+									</td>
+								</tr>
+								<tr>
+									<td colspan="6">Please
+										complete the chart below for the past fiscal year for the
+										Family Law services that you provide:</td>
+								</tr>
+								
+								<tr>
+									<td colspan="2">
+										<table cellspacing="0" cellpadding="2" border="0"
+											class="gridTable sectionPadding " width="80%" align="center">
+
+											<thead>
+												<tr>
+													<th width="25%"></th>
+													<th width="25%">% of Revenue</th>
+													<th width="20%"></th>
+													<th width="30%">% of Revenue</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr class="listRow2CSS">
+													<td>Adoption</td>
+													<td><input type="text" autocomplete="chrome-off" class="form-control-100" id="ajax_field_FLAOP_Percentage_1"name="FLAOP_Percentage_1" placeholder="%" onblur="familyLawSupplement();"/></td>
+													<td>Divorce - assets under $5M</td>
+													<td><input type="text" autocomplete="chrome-off" class="form-control-100" id="ajax_field_FLAOP_Percentage_4" name="FLAOP_Percentage_4" placeholder="%" onblur="familyLawSupplement();"/></td>
+
+
+
+
+												</tr>
+												<tr class="listRow2CSS">
+													<td>Assisted Reproductive Technology</td>
+													<td><input type="text" autocomplete="chrome-off" class="form-control-100" id="ajax_field_FLAOP_Percentage_2" placeholder="%" name="FLAOP_Percentage_2" onblur="familyLawSupplement();"/></td>
+													<td>Divorce - assets over $5M</td>
+													<td><input type="text" autocomplete="chrome-off" class="form-control-100" id="ajax_field_FLAOP_Percentage_5" placeholder="%" name="FLAOP_Percentage_5" onblur="familyLawSupplement();"/></td>
+
+
+
+
+												</tr>
+												<tr class="listRow2CSS">
+													<td>Child Support</td>
+													<td><input type="text" autocomplete="chrome-off" class="form-control-100" id="ajax_field_FLAOP_Percentage_3"  placeholder="%" name="FLAOP_Percentage_3" onblur="familyLawSupplement();"/></td>
+													<td>Surrogacy</td>
+													<td><input type="text" autocomplete="chrome-off" class="form-control-100" id="ajax_field_FLAOP_Percentage_6"  placeholder="%" name="FLAOP_Percentage_6" onblur="familyLawSupplement();"/></td>
+
+
+												</tr>
+												<tr class="listRow2CSS">
+													<td>Custody</td>
+													<td><input type="text" autocomplete="chrome-off" class="form-control-100" id="ajax_field_FLAOP_Percentage_8" placeholder="%" name="FLAOP_Percentage_8" onblur="familyLawSupplement();"/></td>
+													<td>Other <i class="italic">(Please describe)</i></td>
+													<td><input type="text" autocomplete="chrome-off" class="form-control-100" id="ajax_field_FLAOP_Percentage_7" placeholder="%" name="FLAOP_Percentage_7" onblur="familyLawSupplement();"/></td>
+												</tr>
+												<tr id="otherDescDiv">
+													<td></td>
+													<td></td>
+													
+													<td >
+													<table>
+														<tr>
+														<td><div id="error_descRequired_error" class="error"/></td>
+														</tr>
+														<tr><td>Description :</td></tr>
+														<tr><td><textarea rows="5" cols="50" style="height: 50px; width: 300px;" name="FLAOPCommentDesc"  id="ajax_field_FLAOPCommentDesc" autocomplete="chrome-off"></textarea></td></tr>
+													</table>
+													</td>
+													
+													
+
+
+												</tr>
+												<tr class="listRow2CSS">
+													<td colspan="4" style="text-align:center;">TOTAL: <i class="italic">(must equal 100)</i>&nbsp;&nbsp;<label id="ajax_field_totalFLAOP" /></td>
+													
+												</tr>
+												
+												</tbody>
+										</table>
+
+
+									</td>
+								</tr>
+
+							</table>
+						</div>
+
+					</div>
+					<div class="buttons borderTop row" id="NewBusiness">
+						<a class="btn back floatLeft"
+						href="javascript:submitform('CorporateCommercialBusinessSupplement.html|copyRightTrademarkSupplement.html|collectionSupplement.html|bankruptcySupplement.html|lawPractice.html','familylawsupplement.back','forwardeval','LawyersRule.isShowCCBsupplement|LawyersRule.isShowCopyRightTrademarkSupplement|LawyersRule.isShowcollectionSupplement|LawyersRule.isShowBankruptcySupplement|LawyersRule.noSupplement');"
+						>Back</a>
+						<div class="floatRight">
+							<span id="showPageSave">
+								<a class="btn save"
+									href="javascript:submitform('FinancialInstitutionSupplement.html|GovernmentSupplement.html|litigationSupplement.html|RealEstateSupplement.html|WillsTrustProbationSupplment.html|taxSupplement.html|aboutFirm.html','familylawsupplement.save','forwardeval','LawyersRule.isShowFinancialInstitutionSupplement|LawyersRule.isShowGovernmentSupplement|LawyersRule.isShowLitigationSupplement|LawyersRule.isShowRealEstateSupplement|LawyersRule.isShowWillsEstateSupp|LawyersRule.isShowTaxSupplement|LawyersRule.noSupplement');"
+									>Save&nbsp;&&nbsp;Continue</a>
+							</span>
+							<span  id="showContinue">
+								<a class="btn next"
+									href="javascript:submitform('FinancialInstitutionSupplement.html|GovernmentSupplement.html|litigationSupplement.html|RealEstateSupplement.html|WillsTrustProbationSupplment.html|taxSupplement.html|aboutFirm.html','familylawsupplement.continue','forwardeval','LawyersRule.isShowFinancialInstitutionSupplement|LawyersRule.isShowGovernmentSupplement|LawyersRule.isShowLitigationSupplement|LawyersRule.isShowRealEstateSupplement|LawyersRule.isShowWillsEstateSupp|LawyersRule.isShowTaxSupplement|LawyersRule.noSupplement');"
+									>Continue</a>
+							</span>	
+						</div>
+
+					</div>
+					
+					<div class="buttons borderTop row" id="RenewBusiness">
+						<a class="btn back floatLeft"
+						href="javascript:submitform('CorporateCommercialBusinessSupplement.html|copyRightTrademarkSupplement.html|collectionSupplement.html|bankruptcySupplement.html|lawPractice.html','familylawsupplement.renewBack','forwardeval','LawyersRule.isCCB|LawyersRule.isCopyright|LawyersRule.isCollection|LawyersRule.isBankruptcy|LawyersRule.noSupplementVisibility');"
+						>Back</a>
+						<div class="floatRight">
+							<span id="showPageSave">
+								<a class="btn save"
+									href="javascript:submitform('FinancialInstitutionSupplement.html|GovernmentSupplement.html|litigationSupplement.html|RealEstateSupplement.html|WillsTrustProbationSupplment.html|taxSupplement.html|pastClaims.html','familylawsupplement.renewSave','forwardeval','LawyersRule.isFinancial|LawyersRule.isGoverment|LawyersRule.isLitigation|LawyersRule.isRealestate|LawyersRule.isWillsTrust|LawyersRule.isTax|LawyersRule.noSupplementVisibility');"
+									>Save&nbsp;&&nbsp;Continue</a>
+							</span>
+							<span  id="showContinue">
+								<a class="btn next"
+									href="javascript:submitform('FinancialInstitutionSupplement.html|GovernmentSupplement.html|litigationSupplement.html|RealEstateSupplement.html|WillsTrustProbationSupplment.html|taxSupplement.html|pastClaims.html','familylawsupplement.renewContinue','forwardeval','LawyersRule.isFinancial|LawyersRule.isGoverment|LawyersRule.isLitigation|LawyersRule.isRealestate|LawyersRule.isWillsTrust|LawyersRule.isTax|LawyersRule.noSupplementVisibility');"
+									>Continue</a>
+							</span>	
+						</div>
+
+					</div>
+				</div>
+				<!---------Footer Start---------->
+				<div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<!---------Footer End---------->
+			</div>
+			<table id="familySupplement_freeform_contextdata_02">
+				<tr>
+					<td><input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />
+						
+						<input type="hidden" name="firmNewAppPage" id="firmNewAppPage"/>
+						<input type="hidden" name="insuranceHistoryPage" id="insuranceHistoryPage" />						
+						
+						<input type="hidden" name="bankruptcySuppPage" id="bankruptcySuppPage" />
+						<input type="hidden" name="collectionSuppPage" id="collectionSuppPage" />
+						<input type="hidden" name="copyrightSuppPage" id="copyrightSuppPage" />
+						<input type="hidden" name="familyLawSuppPage" id="familyLawSuppPage" />
+						<input type="hidden" name="financialSuppPage" id="financialSuppPage" />
+						<input type="hidden" name="governmentSuppPage" id="governmentSuppPage" />
+						<input type="hidden" name="litigationSuppPage" id="litigationSuppPage" />
+						<input type="hidden" name="realEstateSuppPage" id="realEstateSuppPage" />
+						<input type="hidden" name="willStateSuppTrustPage" id="willStateSuppTrustPage"/>
+						<input type="hidden" name="taxSuppPage" id="taxSuppPage" />
+						<input type="hidden" name="ccbSuppPage" id="ccbSuppPage" />
+												
+						<input type="hidden" name="aboutFirmPage" id="aboutFirmPage" />
+						<input type="hidden" name="aboutFirmRenewalPage" id="aboutFirmRenewalPage" />
+						<input type="hidden" name="PolicyStatusKey" id="PolicyStatusKey" />
+						<input type="hidden" name="practiceManagementPage" id="practiceManagementPage" />
+						<input type="hidden" name="morePracticeManagementPage" id="morePracticeManagementPage"/>
+						<input type="hidden" name="underWritingInfoPage" id="underWritingInfoPage" />
+						<input type="hidden" name="pastClaimsPage" id="pastClaimsPage" />
+						<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+						<input type="hidden" name="isElectronicInsurancePage" id="isElectronicInsurancePage" />
+						<script type="text/javascript" src="script/manageTab.js"></script>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+	</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

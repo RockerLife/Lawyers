@@ -1,0 +1,139 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="BrokeragePolicy">
+     <select id="BrokerageStatusDetails" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StatusKey,StatusDesc from Status where StatusKey not in(9,10) order by sequence</select>
+     <select id="getStatesList" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select StateCode,StateDesc from State order by statedesc</select>
+     <select id="getBrokerTransactionList" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select TransactionTypeKey,TransactionTypeDesc from TransactionType where TransactionTypeKey in(1,2) order by TransactionTypeKey</select>
+     <select id="getBrokerPaymentTypeDetails" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select BPaymentTypeKey,BPayementTypeDesc from BrokeragePaymentTypeLKU order by BPaymentTypeKey</select>
+     <parameterMap id="FetchBrokeragePoliciesCountLW_pMap" class="java.util.HashMap">
+          <parameter property="PageSize" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PageNumber" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="BRAccountNameSearch" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BRPolicyNumberSearch" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BRPolicyEffectiveDate_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BRPolicyEffectiveDate_searchTo" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BRStateCode_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BRStatusKey_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="FetchBrokeragePoliciesCountLW_p" parameterMap="FetchBrokeragePoliciesCountLW_pMap" resultClass="java.util.HashMap">{ call FetchBrokeragePoliciesCountLW_p(?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="GetBrokerPolicyDetailsLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="BrokeragePolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="isNewBrokerPolicy" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="TransactionTypeKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="RenewAsBrokerage" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="isConvertedPolicy" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="MarketableProductKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="GetBrokerPolicyDetailsLW_p" parameterMap="GetBrokerPolicyDetailsLW_pMap" resultClass="java.util.HashMap">{ call GetBrokerPolicyDetailsLW_p(?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="GetBrokeragePolicyData_pMap" class="java.util.HashMap">
+          <parameter property="CarrierKey" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BrokerPolicyEffectiveDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="BrokerPolicyExpirationDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="AccountName" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Address" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="State" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="City" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Zip" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Phone" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Email" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LOBKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="BrokerKey" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Commission" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ExpiringPolicyNumber" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="Premium" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="PremiumTax" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="TransactionTypeKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="Fees" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="Address2" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="GetBrokeragePolicyData_p" parameterMap="GetBrokeragePolicyData_pMap" resultClass="java.util.HashMap">{ call GetBrokeragePolicyData_p(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="BrokeragePolicyDetailsLW_pMap" class="java.util.HashMap">
+          <parameter property="BrokeragePolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="CarrierKey" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BrokerPolicyEffectiveDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="AccountName" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Address" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="State" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="City" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Zip" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Phone" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Email" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LOBKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="haveProfessionalLiabilityInsurance" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PLEffectiveDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="PLExpirationDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="PLPolicyNumber" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ContractComments" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ExpiringCarrier" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BrokerKey" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="Commission" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ExpiringPolicyNumber" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="StatusKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="Premium" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="PremiumTax" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BrokeredPolicyNumber" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BrokerPolicyExpirationDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="AccountID" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="ExpiringPremium" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="ExpiringPolicyEffectiveDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="ExpiringPolicyExpirationDate" jdbcType="DATE" javaType="java.util.Date" mode="IN" />
+          <parameter property="TransactionTypeKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="Fees" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="TotalCalculatedPremium" jdbcType="NUMERIC" javaType="java.lang.Double" mode="IN" />
+          <parameter property="BrokeragePaymentType" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="Address2" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="RenewAsBrokerage" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="isConvertedPolicy" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProducerCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LimitSequence" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="DeductibleSequence" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsClaimExpensesType" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsClaimOptionType" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsDollarDefense" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="BrokeragePolicyDetailsLW_p" parameterMap="BrokeragePolicyDetailsLW_pMap">{ call BrokeragePolicyDetailsLW_p(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="ValidatePLPolicyNumberForBrokerage_pMap" class="java.util.HashMap">
+          <parameter property="PLPolicyNumber" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="ValidatePLPolicyNumberForBrokerage_p" parameterMap="ValidatePLPolicyNumberForBrokerage_pMap" resultClass="java.util.HashMap">{ call ValidatePLPolicyNumberForBrokerage_p(?)}</procedure>
+     <parameterMap id="ValidateBrokeragePolicyNumberPrefix_pMap" class="java.util.HashMap">
+          <parameter property="CarrierKey" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LOBKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="BrokeredPolicyNumber" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="ValidateBrokeragePolicyNumberPrefix_p" parameterMap="ValidateBrokeragePolicyNumberPrefix_pMap" resultClass="java.util.HashMap">{ call ValidateBrokeragePolicyNumberPrefix_p(?,?,?)}</procedure>
+     <parameterMap id="FetchBrokeragePoliciesLW_pMap" class="java.util.HashMap">
+          <parameter property="PageSize" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PageNumber" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="PageSort" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="page_sort_type" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BRAccountNameSearch" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BRPolicyNumberSearch" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BRPolicyEffectiveDate_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BRPolicyEffectiveDate_searchTo" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BRStateCode_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="BRStatusKey_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="FetchBrokeragePoliciesLW_p" parameterMap="FetchBrokeragePoliciesLW_pMap" resultClass="java.util.HashMap">{ call FetchBrokeragePoliciesLW_p(?,?,?,?,?,?,?,?,?,?)}</procedure>
+     <parameterMap id="SearchCountForBrokersLW_ProcMap" class="java.util.HashMap">
+          <parameter property="StateCode_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyEffectiveDate_search" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyEffectiveDate_searchTo" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="PolicyStatusDesc" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProducerCodefilter" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="ProducerCode1" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="EligibleFirstReviewerfilter" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="SearchAppCreatedDateFrom" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="SearchAppCreatedDateTo" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="SearchCountForBrokersLW_Proc" parameterMap="SearchCountForBrokersLW_ProcMap" resultClass="java.util.HashMap">{ call SearchCountForBrokersLW_Proc(?,?,?,?,?,?,?,?,?,?)}</procedure>
+</sqlMap>
+

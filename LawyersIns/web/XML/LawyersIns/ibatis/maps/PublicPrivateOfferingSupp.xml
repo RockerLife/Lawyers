@@ -1,0 +1,73 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="PublicPrivateOfferingSupp">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PublicPrivateOfferingSupp</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from PublicPrivateOfferingSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into PublicPrivateOfferingSupp(
+          <dynamic prepend=" ">
+               <isNotEmpty property="ClientNamePpo" prepend=",">ClientNamePpo</isNotEmpty>
+               <isNotEmpty property="ClientIndustryPpoKey" prepend=",">ClientIndustryPpoKey</isNotEmpty>
+               <isNotEmpty property="ServiceIndustryPpoKey" prepend=",">ServiceIndustryPpoKey</isNotEmpty>
+               <isNotEmpty property="YearServiceRenderedPpo" prepend=",">YearServiceRenderedPpo</isNotEmpty>
+               <isNotEmpty property="SizeOfOfferingPpo" prepend=",">SizeOfOfferingPpo</isNotEmpty>
+               <isNotEmpty property="FeesChargedPpo" prepend=",">FeesChargedPpo</isNotEmpty>
+               <isNotEmpty property="TypeOfOfferingPpo" prepend=",">TypeOfOfferingPpo</isNotEmpty>
+               <isNotEmpty property="ClientIndustryPpoKeyOthers" prepend=",">ClientIndustryPpoKeyOthers</isNotEmpty>
+               <isNotEmpty property="ServiceIndustryPpoKeyOthers" prepend=",">ServiceIndustryPpoKeyOthers</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="ClientNamePpo" prepend=",">#ClientNamePpo#</isNotEmpty>
+               <isNotEmpty property="ClientIndustryPpoKey" prepend=",">#ClientIndustryPpoKey#</isNotEmpty>
+               <isNotEmpty property="ServiceIndustryPpoKey" prepend=",">#ServiceIndustryPpoKey#</isNotEmpty>
+               <isNotEmpty property="YearServiceRenderedPpo" prepend=",">#YearServiceRenderedPpo#</isNotEmpty>
+               <isNotEmpty property="SizeOfOfferingPpo" prepend=",">#SizeOfOfferingPpo#</isNotEmpty>
+               <isNotEmpty property="FeesChargedPpo" prepend=",">#FeesChargedPpo#</isNotEmpty>
+               <isNotEmpty property="TypeOfOfferingPpo" prepend=",">#TypeOfOfferingPpo#</isNotEmpty>
+               <isNotEmpty property="ClientIndustryPpoKeyOthers" prepend=",">#ClientIndustryPpoKeyOthers#</isNotEmpty>
+               <isNotEmpty property="ServiceIndustryPpoKeyOthers" prepend=",">#ServiceIndustryPpoKeyOthers#</isNotEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">#VersionSequence#</isNotEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">#PolicyKey#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="PublicPrivateOfferingsSuppKey">SELECT IDENT_CURRENT('PublicPrivateOfferingSupp') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PublicPrivateOfferingsSuppKey, ClientNamePpo, ClientIndustryPpoKey, ServiceIndustryPpoKey, YearServiceRenderedPpo, SizeOfOfferingPpo, FeesChargedPpo, TypeOfOfferingPpo, ClientIndustryPpoKeyOthers, ServiceIndustryPpoKeyOthers, VersionSequence, PolicyKey from PublicPrivateOfferingSupp where PublicPrivateOfferingsSuppKey = #PublicPrivateOfferingsSuppKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update PublicPrivateOfferingSupp set
+          <dynamic prepend=" ">
+               <isNotEmpty property="ClientNamePpo" prepend=",">ClientNamePpo = #ClientNamePpo#</isNotEmpty>
+               <isEmpty property="ClientNamePpo" prepend=",">ClientNamePpo = null</isEmpty>
+               <isNotEmpty property="ClientIndustryPpoKey" prepend=",">ClientIndustryPpoKey = #ClientIndustryPpoKey#</isNotEmpty>
+               <isEmpty property="ClientIndustryPpoKey" prepend=",">ClientIndustryPpoKey = null</isEmpty>
+               <isNotEmpty property="ServiceIndustryPpoKey" prepend=",">ServiceIndustryPpoKey = #ServiceIndustryPpoKey#</isNotEmpty>
+               <isEmpty property="ServiceIndustryPpoKey" prepend=",">ServiceIndustryPpoKey = null</isEmpty>
+               <isNotEmpty property="YearServiceRenderedPpo" prepend=",">YearServiceRenderedPpo = #YearServiceRenderedPpo#</isNotEmpty>
+               <isEmpty property="YearServiceRenderedPpo" prepend=",">YearServiceRenderedPpo = null</isEmpty>
+               <isNotEmpty property="SizeOfOfferingPpo" prepend=",">SizeOfOfferingPpo = #SizeOfOfferingPpo#</isNotEmpty>
+               <isEmpty property="SizeOfOfferingPpo" prepend=",">SizeOfOfferingPpo = null</isEmpty>
+               <isNotEmpty property="FeesChargedPpo" prepend=",">FeesChargedPpo = #FeesChargedPpo#</isNotEmpty>
+               <isEmpty property="FeesChargedPpo" prepend=",">FeesChargedPpo = null</isEmpty>
+               <isNotEmpty property="TypeOfOfferingPpo" prepend=",">TypeOfOfferingPpo = #TypeOfOfferingPpo#</isNotEmpty>
+               <isEmpty property="TypeOfOfferingPpo" prepend=",">TypeOfOfferingPpo = null</isEmpty>
+               <isNotEmpty property="ClientIndustryPpoKeyOthers" prepend=",">ClientIndustryPpoKeyOthers = #ClientIndustryPpoKeyOthers#</isNotEmpty>
+               <isEmpty property="ClientIndustryPpoKeyOthers" prepend=",">ClientIndustryPpoKeyOthers = null</isEmpty>
+               <isNotEmpty property="ServiceIndustryPpoKeyOthers" prepend=",">ServiceIndustryPpoKeyOthers = #ServiceIndustryPpoKeyOthers#</isNotEmpty>
+               <isEmpty property="ServiceIndustryPpoKeyOthers" prepend=",">ServiceIndustryPpoKeyOthers = null</isEmpty>
+               <isNotEmpty property="VersionSequence" prepend=",">VersionSequence = #VersionSequence#</isNotEmpty>
+               <isEmpty property="VersionSequence" prepend=",">VersionSequence = null</isEmpty>
+               <isNotEmpty property="PolicyKey" prepend=",">PolicyKey = #PolicyKey#</isNotEmpty>
+               <isEmpty property="PolicyKey" prepend=",">PolicyKey = null</isEmpty>
+          </dynamic>
+          where PublicPrivateOfferingsSuppKey = #PublicPrivateOfferingsSuppKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from PublicPrivateOfferingSupp where PublicPrivateOfferingsSuppKey = #PublicPrivateOfferingsSuppKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from PublicPrivateOfferingSupp</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from PublicPrivateOfferingSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PublicPrivateOfferingsSuppKey, ClientNamePpo, ClientIndustryPpoKey, ServiceIndustryPpoKey, YearServiceRenderedPpo, SizeOfOfferingPpo, FeesChargedPpo, TypeOfOfferingPpo, ClientIndustryPpoKeyOthers, ServiceIndustryPpoKeyOthers, VersionSequence, PolicyKey from PublicPrivateOfferingSupp where PublicPrivateOfferingsSuppKey = #PublicPrivateOfferingsSuppKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select PublicPrivateOfferingsSuppKey, ClientNamePpo, ClientIndustryPpoKey, ServiceIndustryPpoKey, YearServiceRenderedPpo, SizeOfOfferingPpo, FeesChargedPpo, TypeOfOfferingPpo, ClientIndustryPpoKeyOthers, ServiceIndustryPpoKeyOthers from PublicPrivateOfferingSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

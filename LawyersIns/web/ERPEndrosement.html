@@ -1,0 +1,581 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ERP Endorsement</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js" />
+<script src="js/bootstrap-datepicker.js" />
+<script type="text/javascript" src="script/common.js" />
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js" />
+<script type="text/javascript" src="script/date-picker.js" />
+<script type="text/javascript" src="script/masks.js" />
+<script type="text/javascript" src="script/popup.js" />
+<script type="text/javascript" src="script/capitalizeSentences.js" />
+<script src="js/bootstrap-select.js" />
+<link href="css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<script src="js/producerOne.js" />
+<script src="js/bootstrap.js" />
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+<style>
+.ERP_endorsements .freeFormLabelWidth {
+	width: 285px;
+}
+</style>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+<body onload="isAttoryneyWithUsFromPast();setERPEndorsement();loadDeathDiabilityERP();showHideERPYears();">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<form>
+		<div id="cover"></div>
+		<div id="popupsave2">
+			<div id="myModal" class="modal fade" role="dialog">
+				<div class="modal-dialog" style="width: 450px;">
+					Modal content
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" />
+							<h4 class="modal-title">Process Endorsement</h4>
+						</div>
+						<div class="modal-body" style="height: 64px;">
+							<p style="text-align: center; line-height: 25px;">Are you
+								sure you want to process the endorsement</p>
+						</div>
+						<div class="modal-footer">
+							<div class="floatRight">
+								<a class="ovalbutton"
+									href="javascript:submitform('Endorsement.html','ERPEndrosement.processEndorsement','','');"
+									onclick="closePopUp('popupsave2');">Process Endorsement</a> <a
+									class="ovalbutton" onclick="closePopUp('popupsave2');">Cancel</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="container-fluid bootstrap-node-1">
+			<div class="tableWidth">
+				<div id="header">
+					<span id="#Include:headerEndorsement.html#"></span>
+				</div>
+
+
+				<div id="contentSection">
+
+					<div>
+						<h2 class="questionHeading">ERP Endorsements</h2>
+					</div>
+					<div class="box1">
+						<div class="form row">
+							<div class="block-form ERP_endorsements">
+
+
+								<div id="div1">
+									<div class="freeFormDiv form-inline"
+										id="ERPEndorsement_freeform_contextdata_001">
+										<ul class="inlineBlock paddingLeft10">
+											<li class="inlineBlock_1_fix">
+												<div class="freeFormList form-group">
+													<div class="freeFormListTr">
+														<div class="freeFormListTdError">
+															<h6>&nbsp;</h6>
+														</div>
+														<div class="freeFormListTdError paddingLeft3">
+															<span id="error_endorsementEffectiveDate" class="error">
+															</span>
+														</div>
+													</div>
+													<div class="freeFormListTr">
+														<div class="freeFormListTd labelAlign">
+															<div class="freeFormLabelWidth txtbold">Endorsement
+																Effective Date :</div>
+														</div>
+														<div class="freeFormListTd mendatoryInput iconsStyle2">
+															<span class="input-group-addon"><i
+																class="fa fa-calendar">&nbsp;</i></span> <input type="text"
+																class="form-control datepicker"
+																id="ajax_field_endorsementEffectiveDate"
+																name="endorsementEffectiveDate"
+																onkeyup="applyDateFormat(this,event);" />
+														</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+
+										<div class="row paddingTop20">
+											<div class="col-sm-6">
+												<div class="border1 padding10"
+													style="margin-right: 15px; height: 202px;">
+													<ul class="inlineBlock">
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError">
+																		<h6>&nbsp;</h6>
+																	</div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<span id="error_isAttorneyRetiring" class="error">
+																		</span>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">Is attorney
+																			retiring:</div>
+																	</div>
+
+																	<div class="freeFormListTd tdInput">
+																		&nbsp;<input type="radio" name="isAttorneyRetiring"
+																			id="ajax_field_isAttorneyRetiring1" value="Y"
+																			onclick="setERPEndorsement();" /> Yes &nbsp;&nbsp; <input
+																			type="radio" name="isAttorneyRetiring"
+																			id="ajax_field_isAttorneyRetiring2" value="N"
+																			onclick="setERPEndorsement();" /> No &nbsp;&nbsp;
+
+																	</div>
+
+																</div>
+															</div>
+														</li>
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError">
+																		<h6>&nbsp;</h6>
+																	</div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<span id="error_nameOfAttorney" class="error">
+																		</span>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">Attorney name:</div>
+																	</div>
+																	<div class="freeFormListTd mendatoryInput">
+																		<select name="nameOfAttorney"
+																			id="ajax_field_nameOfAttorney" class="form-control">
+																			<option""></option>
+																		</select>
+																	</div>
+																</div>
+
+															</div>
+														</li>
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError">
+																		<h6>&nbsp;</h6>
+																	</div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<span id="error_ceasedDate" class="error"> </span>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">Date ceased the
+																			practice of law:</div>
+																	</div>
+																	<div class="freeFormListTd mendatoryInput iconsStyle2">
+																		<span class="input-group-addon"><i
+																			class="fa fa-calendar">&nbsp;</i></span> <input type="text"
+																			class="form-control datepicker"
+																			id="ajax_field_ceasedDate" name="ceasedDate"
+																			onkeyup="applyDateFormat(this,event);" />
+																	</div>
+																</div>
+															</div>
+														</li>
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError">
+																		<h6>&nbsp;</h6>
+																	</div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<span id="error_isInsuredWithUsFromPast" class="error">
+																		</span>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">If,Yes have they
+																			been insured with us for 3 or more years:</div>
+																	</div>
+
+																	<div class="freeFormListTd tdInput">
+																		&nbsp;<input type="radio"
+																			name="isInsuredWithUsFromPast"
+																			id="ajax_field_isInsuredWithUsFromPast1" value="Y"
+																			onclick="isAttoryneyWithUsFromPast();" /> Yes
+																		&nbsp;&nbsp; <input type="radio"
+																			name="isInsuredWithUsFromPast"
+																			id="ajax_field_isInsuredWithUsFromPast2" value="N"
+																			onclick="isAttoryneyWithUsFromPast();" /> No
+																		&nbsp;&nbsp;
+
+																	</div>
+
+																</div>
+															</div>
+														</li>
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError">
+																		<h6>&nbsp;</h6>
+																	</div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<span id="error_practicePortitonOfAttorney"
+																			class="error"> </span>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">If no please
+																			indicate the attorney's portion of the practice:</div>
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<input type="text" class="form-control pt"
+																			style="width: 55px;"
+																			name="practicePortitonOfAttorney"
+																			id="ajax_field_practicePortitonOfAttorney" /> <span>%</span>
+																	</div>
+																</div>
+															</div>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="border1 padding10">
+													<ul class="inlineBlock">
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError">
+																		<h6>&nbsp;</h6>
+																	</div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<span id="error_isDeathDisabilityERP" class="error">
+																		</span>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">Are they
+																			requesting the death disability ERP:</div>
+																	</div>
+
+																	<div class="freeFormListTd tdInput">
+																		&nbsp;<input type="radio" name="isDeathDisabilityERP"
+																			id="ajax_field_isDeathDisabilityERP1" value="Y"
+																			onclick="loadDeathDiabilityERP();" /> Yes
+																		&nbsp;&nbsp; <input type="radio"
+																			name="isDeathDisabilityERP"
+																			id="ajax_field_isDeathDisabilityERP2" value="N"
+																			onclick="loadDeathDiabilityERP();" /> No
+																		&nbsp;&nbsp;
+
+																	</div>
+
+																</div>
+															</div>
+														</li>
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError">
+																		<h6>&nbsp;</h6>
+																	</div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<span id="error_deathDisabilityFirmOrAttorneyName"
+																			class="error"> </span>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">Attorney / Firm
+																			name:</div>
+																	</div>
+																	<div class="freeFormListTd tdInput">
+																		<textarea class="form-control"
+																			name="deathDisabilityFirmOrAttorneyName"
+																			id="ajax_field_deathDisabilityFirmOrAttorneyName"></textarea>
+
+																	</div>
+																</div>
+															</div>
+														</li>
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError">
+																		<h6>&nbsp;</h6>
+																	</div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<span id="error_deathDiablityCeasedDate" class="error">
+																		</span>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">Date ceased the
+																			practice of law:</div>
+																	</div>
+																	<div class="freeFormListTd  iconsStyle2 paddingLeft6">
+																		<span class="input-group-addon "><i
+																			class="fa fa-calendar">&nbsp;</i></span> <input type="text"
+																			class="form-control datepicker"
+																			id="ajax_field_deathDiablityCeasedDate"
+																			placeholder="MM/DD/YYYY"
+																			name="deathDiablityCeasedDate"
+																			onkeyup="applyDateFormat(this,event);" />
+																	</div>
+																</div>
+
+															</div>
+														</li>
+													</ul>
+												</div>
+
+												<div class="border1 padding10" style="margin-top: 15px;height:64px">
+													<ul class="inlineBlock">
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group">
+																<div class="freeFormListTr">
+																	<div class="freeFormListTdError">
+																		<h6>&nbsp;</h6>
+																	</div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<span id="error_isFirmERP" class="error"> </span>
+																	</div>
+																</div>
+																<div class="freeFormListTr">
+																	<div class="freeFormListTd labelAlign">
+																		<div class="freeFormLabelWidth">Are they
+																			requesting an ERP for the firm:</div>
+																	</div>
+
+																	<div class="freeFormListTd tdInput">
+																		&nbsp;<input type="radio" name="isFirmERP"
+																			id="ajax_field_isFirmERP1" value="Y"
+																			style="margin-top: 10px;"
+																			onclick="showHideERPYears();loadfirmERP();" /> Yes
+																		&nbsp;&nbsp; <input type="radio" name="isFirmERP"
+																			id="ajax_field_isFirmERP2" value="N"
+																			onclick="showHideERPYears();loadfirmERP();" /> No
+																		&nbsp;&nbsp;
+
+																	</div>
+
+																</div>
+															</div>
+														</li>
+
+														<li class="inlineBlock_1">
+															<div class="freeFormList form-group" id="yearsDiv">
+																<div id="eval:LawyersRule.isStateOtherThanAlaska">
+																	<div class="freeFormListTr">
+																		<div class="freeFormListTdError">
+																			<h6>&nbsp;</h6>
+																		</div>
+																		<div class="freeFormListTdError paddingLeft3">
+																			<span id="error_yearsOfERP" class="error"> </span>
+																		</div>
+																	</div>
+																	<div class="freeFormListTr">
+																		<div class="freeFormListTd labelAlign">
+																			<div class="freeFormLabelWidth">Number of
+																				years:</div>
+																		</div>
+																		<div class="freeFormListTd mendatoryInput">
+																			<select id="ajax_field_yearsOfERP" name="yearsOfERP"
+																				class="form-control">
+																				<option value=""></option>
+																				<option value="1">One year</option>
+																				<option value="3">Three Years</option>
+																				<option value="5">Five Years</option>
+																				<option value="6">Six Years</option>
+																				<option value="10">Unlimited</option>
+																			</select>
+																		</div>
+																	</div>
+																</div>
+																<div id="eval:LawyersRule.isStateAlaska">
+																	<div class="freeFormListTr">
+																		<div class="freeFormListTdError">
+																			<h6>&nbsp;</h6>
+																		</div>
+																		<div class="freeFormListTdError paddingLeft3">
+																			<span id="error_yearsOfERP" class="error"> </span>
+																		</div>
+																	</div>
+																	<div class="freeFormListTr">
+																		<div class="freeFormListTd labelAlign">
+																			<div class="freeFormLabelWidth">Number of
+																				years:</div>
+																		</div>
+																		<div class="freeFormListTd mendatoryInput">
+																			<select id="ajax_field_yearsOfERP" name="yearsOfERP"
+																				class="form-control">
+																				<option value=""></option>
+																				<option value="1">One year</option>
+																				<option value="3">Three Years</option>
+																				<option value="5">Five Years</option>
+																			</select>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</li>
+													</ul>
+												</div>
+
+												<ul class="inlineBlock paddingLeft10">
+													<li class="inlineBlock_1">
+														<div class="freeFormList form-group" id="yearsDiv">
+															<div class="freeFormListTr">
+																	<div class="freeFormListTdError">
+																		<h6>&nbsp;</h6>
+																	</div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<span id="error_ceasedDate" class="error"> </span>
+																	</div>
+																</div>
+
+															<div class="freeFormListTr">
+																<div class="freeFormListTd labelAlign">
+																	<div class="freeFormLabelWidth">Premium:</div>
+																</div>
+																<div class="freeFormListTd mendatoryInput">
+																	<input type="text"
+																		id="ajax_field_endorsementPremiumExcludeTax"
+																		name="endorsementPremiumExcludeTax"
+																		class="form-control" readonly>
+																</div>
+															</div>
+															<div class="freeFormListTr">
+																	<div class="freeFormListTdError">
+																		<h6>&nbsp;</h6>
+																	</div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<span id="error_ceasedDate" class="error"> </span>
+																	</div>
+																</div>
+
+															<div class="freeFormListTr">
+																<div class="freeFormListTd labelAlign">
+																	<div class="freeFormLabelWidth">Tax:</div>
+																</div>
+																<div class="freeFormListTd mendatoryInput">
+																	<input type="text" id="ajax_field_endorsementTax"
+																		name="endorsementTax" class="form-control" readonly>
+																</div>
+															</div>
+															<div class="freeFormListTr">
+																	<div class="freeFormListTdError">
+																		<h6>&nbsp;</h6>
+																	</div>
+																	<div class="freeFormListTdError paddingLeft3">
+																		<span id="error_ceasedDate" class="error"> </span>
+																	</div>
+																</div>
+
+															<div class="freeFormListTr">
+																<div class="freeFormListTd labelAlign">
+																	<div class="freeFormLabelWidth">Total Premium:</div>
+																</div>
+																<div class="freeFormListTd mendatoryInput">
+																	<input type="text" id="ajax_field_endorsementPremium"
+																		name="endorsementPremium" class="form-control"
+																		readonly>
+																</div>
+															</div>
+
+														</div>
+													</li>
+
+
+
+												</ul>
+
+											</div>
+										</div>
+
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+
+
+
+					<div class="buttons borderTop row">
+
+						<a class="btn back floatLeft"
+							href="javascript:submitform('Endorsement.html','ERPEndrosement.back','','');">
+							Back </a>
+						<div class="floatRight">
+							<a class="btn button1"
+								href="javascript:submitform('ERPEndrosement.html','ERPEndrosement.calculatepremium','','');">
+								Calculate Premium </a>
+						</div>
+						<div class="floatRight" id="eval:LawyersRule.isErpCalculate">
+							<a class="btn button1"
+								href="javascript:submitform('ERPEndrosement.html','ERPEndrosement.downloadreviewEndorsement','','');">Review
+								Endorsement</a> <a class="btn button1 btnVal1"
+								onclick="showPopUp('popupsave2','500','400');">Process
+								Endorsement</a>
+
+						</div>
+
+
+					</div>
+					<!---------Footer Start---------->
+					<div id="footer" class="footer">
+						<span id="#Include:footer.html#"></span>
+
+						<table id="ERPEndrosement_freeform_contextdata_30">
+							<tr>
+								<td><input type="hidden" name="jsessionid" id="jsessionid" />
+									<input type="hidden" name="divHideShow" id="divHideShow" /> <input
+									type="hidden" name="ERPPremium" id="ERPPremium" /> <input
+									type="hidden" name="ERPTax" id="ERPTax" /> <input
+									type="hidden" name="ERPTotalPremium" id="ERPTotalPremium" />
+									
+									<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+									<input type="hidden" name="isEnforcedPolicy" id="isEnforcedPolicy" />
+									<input type="hidden" name="anyDecendentPolicy" id="anyDecendentPolicy" />
+									<input type="hidden" name="isExceptionalCase" id="isExceptionalCase" />
+									<input type="hidden" name="isShowPemiumCalculation" id="isShowPemiumCalculation" />
+									</td>
+									
+							</tr>
+						</table>
+					</div>
+					<!---------Footer End---------->
+				</div>
+			</div>
+		</div>
+	</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

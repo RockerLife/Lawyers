@@ -1,0 +1,49 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="EstimateFormAttorneyDetails_LW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from EstimateFormAttorneyDetails_LW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from EstimateFormAttorneyDetails_LW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into EstimateFormAttorneyDetails_LW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="AttorneyName" prepend=",">AttorneyName</isNotEmpty>
+               <isNotEmpty property="AnnualHours" prepend=",">AnnualHours</isNotEmpty>
+               <isNotEmpty property="AttorneyPriorActDate" prepend=",">AttorneyPriorActDate</isNotEmpty>
+               <isNotEmpty property="EstimateFormPolicyKey" prepend=",">EstimateFormPolicyKey</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="AttorneyName" prepend=",">#AttorneyName#</isNotEmpty>
+               <isNotEmpty property="AnnualHours" prepend=",">#AnnualHours#</isNotEmpty>
+               <isNotEmpty property="AttorneyPriorActDate" prepend=",">#AttorneyPriorActDate#</isNotEmpty>
+               <isNotEmpty property="EstimateFormPolicyKey" prepend=",">#EstimateFormPolicyKey#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="EstimateFormAttorneyKey">SELECT IDENT_CURRENT('EstimateFormAttorneyDetails_LW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EstimateFormAttorneyKey, AttorneyName, AnnualHours, AttorneyPriorActDate, EstimateFormPolicyKey from EstimateFormAttorneyDetails_LW where EstimateFormAttorneyKey = #EstimateFormAttorneyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update EstimateFormAttorneyDetails_LW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="AttorneyName" prepend=",">AttorneyName = #AttorneyName#</isNotEmpty>
+               <isEmpty property="AttorneyName" prepend=",">AttorneyName = null</isEmpty>
+               <isNotEmpty property="AnnualHours" prepend=",">AnnualHours = #AnnualHours#</isNotEmpty>
+               <isEmpty property="AnnualHours" prepend=",">AnnualHours = null</isEmpty>
+               <isNotEmpty property="AttorneyPriorActDate" prepend=",">AttorneyPriorActDate = #AttorneyPriorActDate#</isNotEmpty>
+               <isEmpty property="AttorneyPriorActDate" prepend=",">AttorneyPriorActDate = null</isEmpty>
+               <isNotEmpty property="EstimateFormPolicyKey" prepend=",">EstimateFormPolicyKey = #EstimateFormPolicyKey#</isNotEmpty>
+               <isEmpty property="EstimateFormPolicyKey" prepend=",">EstimateFormPolicyKey = null</isEmpty>
+          </dynamic>
+          where EstimateFormAttorneyKey = #EstimateFormAttorneyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from EstimateFormAttorneyDetails_LW where EstimateFormAttorneyKey = #EstimateFormAttorneyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from EstimateFormAttorneyDetails_LW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from EstimateFormAttorneyDetails_LW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EstimateFormAttorneyKey, AttorneyName, AnnualHours, AttorneyPriorActDate, EstimateFormPolicyKey from EstimateFormAttorneyDetails_LW where EstimateFormAttorneyKey = #EstimateFormAttorneyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select EstimateFormAttorneyKey, AttorneyName, AnnualHours, AttorneyPriorActDate, EstimateFormPolicyKey from EstimateFormAttorneyDetails_LW</select>
+     <parameterMap id="GetProtexureFormAttorneyData_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="GetProtexureFormAttorneyData_p" parameterMap="GetProtexureFormAttorneyData_pMap" resultClass="java.util.HashMap">{ call GetProtexureFormAttorneyData_p(?)}</procedure>
+</sqlMap>
+

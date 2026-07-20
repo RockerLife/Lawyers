@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>Endorsement</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/jquery.treeview.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js" />
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+<body onload="manageEndorsementTypes()">
+<form>
+<!-- Bootstrap Core JavaScript -->
+
+<div class="container-fluid bootstrap-node-1">
+  <div class="tableWidth"> 
+    <div id="header">
+			
+			<table width="100%" border="0" align="center" cellpadding="0"
+				cellspacing="0">
+				<tr>
+					<td height="50">
+						<table width="98%" border="0" align="center" cellpadding="0"
+							cellspacing="0">
+							<tr>
+								<td valign="bottom" width="300px"><a
+									href="http://www.protexurelawyers.com"><img
+										src="image/logo_protexureaccountants1.png" width="325"
+										height="64" /></a></td>
+								<td valign="bottom" align="left"
+									id="producerlogo_freeform_contextdata_image"><span
+									id="eval:LawyersRule.IsSubProducerFlow"><a
+										href="context_SPWebsite"><img id="contexturl"
+											src="LogoImagePath" /></a></span></td>
+								<td align="right">
+									<table border="0" cellspacing="1" cellpadding="1">
+										<tr>
+											<td align="center"
+												id="eval:LawyersRule.isInsuredandRegistered">
+												<table width="100%" border="0" cellspacing="0"
+													cellpadding="0">
+													<tr>
+														<td align="center"><img src="img/backPortal1.jpg"
+															width="20" height="22" /></td>
+
+													</tr>
+													<tr>
+
+														<td class="topLink"><span><a
+																href="javascript:submitform('changepassword.html','firm.changepassword','','');"
+																class="topLink">Change Password</a> </span> <span
+															id="eval:LawyersRule.showBackToInsuredOnlyPortal">
+																| <a
+																href="https://www.protexurelawyers.com"
+																class="topLink">Back to Insured Only Portal</a>
+														</span></td>
+													</tr>
+												</table>
+											</td>
+											<td align="center" valign="bottom"
+												id="eval:LawyersRule.isShowUserLoginDetails">
+												<table id="workq_freeform_contextdata_555" Border="0"
+													cellpadding="0" cellspacing="0">
+													<tr>
+														<td><label class="txt11BoldBlack" nowrap
+															style="font-size: 11px">Welcome&nbsp;&nbsp;</label></td>
+														<td align="right" style="font-size: 11px" nowrap><label name="AgentName"
+															style="font-size: 10px" id="AgentName"
+															class="txt11BoldBlack"></label> (<label
+															name="UserRoleName" style="font-size: 10px"
+															id="UserRoleName" class="txt11BoldBlack"></label>)&nbsp;&nbsp;</td>
+
+													</tr>
+												</table>
+											</td>
+											<td align="center">
+												<table width="100%" border="0" cellspacing="0"
+													cellpadding="0">
+													<tr>
+														<td align="center">
+															<div id="eval:LawyersRule.isAgent">
+																<img src="img/backPortal1.jpg" width="20" height="22" />
+															</div>
+														</td>
+													</tr>
+													<tr>
+														<td class="topLink">
+															<div id="eval:LawyersRule.isAgent">
+																<a
+																	href="javascript:submitform('indexinsured.html|indexagent.html','header.homepage','forwardeval','LawyersRule.isInsured|LawyersRule.isAgent');"
+																	class="topLink">Back to Portal</a>
+															</div>
+														</td>
+													</tr>
+												</table>
+											</td>
+											<td align="center" valign="bottom" class="txtBold11Maroon"
+												id="eval:LawyersRule.isAgentState">|</td>
+											<td align="center" id="eval:LawyersRule.isAgentState">
+												<table width="100%" border="0" cellspacing="0"
+													cellpadding="0">
+													<tr>
+														<td align="center"><img src="img/backList1.jpg"
+															width="20" height="22" /></td>
+													</tr>
+													<tr>
+														<td class="topLink"><a
+															href="javascript:submitform('list.html','header.backtolist','','');"
+															class="topLink">Back to List</a></td>
+													</tr>
+												</table>
+											</td>
+											<td width="5" align="center" valign="bottom"
+												class="txtBold11Maroon" id="eval:LawyersRule.isAgentState">												&nbsp;|&nbsp;</td>
+											<td align="center" id="eval:LawyersRule.isAgentState">
+												<table width="100%" border="0" cellspacing="0"
+													cellpadding="0">
+													<tr>
+														<td align="center"><img src="img/backWorkq1.jpg"
+															width="20" height="22" /></td>
+													</tr>
+													<tr>
+														<td class="topLink"><a
+															href="javascript:submitform('workq.html','header.backtoworkq','','');"
+															class="topLink">Back to workq</a></td>
+													</tr>
+												</table>
+											</td>
+											<td id="eval:LawyersRule.isAgent" align="center"
+												valign="bottom" class="txtBold11Maroon">&nbsp; |&nbsp;</td>
+											<td align="center">
+												<table width="100%" border="0" cellspacing="0"
+													cellpadding="0">
+													<tr id="eval:LawyersRule.isAgent">
+														<td align="center"><img src="img/backPortal1.jpg"
+															width="20" height="22" /></td>
+													</tr>
+													<tr id="eval:LawyersRule.isAgent">
+														<td class="topLink"><a
+															href="javascript:submitform('sessionList.html','header.showSessionList','','');"
+															class="topLink">Session</a></td>
+
+													</tr>
+												</table>
+											</td>
+
+										</tr>
+									</table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="15" class="redLeft"></td>
+								<td align="right" class="redCenter"
+									id="quickquoteoption_freeform_contextdata_callimage">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td align="left"><img src="img/getting_coverage.jpg"
+												width="597" height="33" /></td>
+											<td align="right" id="eval:LawyersRule.IsNotSubProducerFlow"><img
+												src="img/call.jpg" width="289" height="24" /></td>
+											<td align="right" id="eval:LawyersRule.IsSubProducerFlow"><img
+												id="contexturl" src="CallImagePath" width="289" height="24" /></td>
+										</tr>
+									</table>
+								</td>
+								<td width="15" class="redRight"></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr id="1showAgentOnly">
+					<td>
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="15" class="grayLeft"></td>
+								<td class="grayCenter">
+									<table width="100%" border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<td align="right">
+												<table border="0" cellspacing="2" cellpadding="2"
+													id="labels_freeform_contextdata_99" class="new_head_info">
+													<tr>
+														<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+															id="eval:LawyersRule.isAccountNameNotEmpty">Firm
+															Name :</td>
+														<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+															id="eval:LawyersRule.isAccountNameNotEmpty"><label
+															name="AccountName" id="AccountName"
+															class="txt11BoldBlack"> </label></td>
+														<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+															id="eval:LawyersRule.isQuoteNumberNotEmpty">Quote# :</td>
+														<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+															id="eval:LawyersRule.isQuoteNumberNotEmpty"><label
+															name="QuoteNumber" id="QuoteNumber"
+															class="txt11BoldBlack"> </label></td>
+														<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+															id="eval:LawyersRule.isStatusNotEmpty">Status :</td>
+														<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+															id="eval:LawyersRule.isStatusNotEmpty"><label
+															id="headerStatusDesc" name="headerStatusDesc" class="txt11BoldBlack">
+														</label> </td>
+														<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+															id="eval:LawyersRule.isPolicyNumberNotEmpty">
+															Policy# :</td>
+														<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+															id="eval:LawyersRule.isPolicyNumberNotEmpty"><label
+															id="PolicyNumber" name="PolicyNumber"
+															class="txt11BoldBlack"> </label></td>
+														<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+															id="eval:LawyersRule.isEffectiveDateNotEmpty">
+															Effective Date :</td>
+														<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+															id="eval:LawyersRule.isEffectiveDateNotEmpty"><label
+															name="PolicyEffectiveDate" id="PolicyEffectiveDate"
+															class="txt11BoldBlack"> </label></td>
+														<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+															id="eval:LawyersRule.isStateCodeNotEmpty">State :</td>
+														<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+															id="eval:LawyersRule.isStateCodeNotEmpty"><label
+															id="StateDesc" name="StateDesc" class="txt11BoldBlack">
+														</label></td>
+														<td align="right" nowrap="nowrap" class="txtBold11Maroon"
+															id="eval:LawyersRule.isContextPremiumNotEmpty">
+															Premium :</td>
+														<td align="left" nowrap="nowrap" class="txt11BoldBlack"
+															id="eval:LawyersRule.isContextPremiumNotEmpty"><label
+															id="ContextPremium" name="ContextPremium"
+															class="txt11BoldBlack"> </label></td>
+													</tr>
+												</table>
+											</td>
+										</tr>
+									</table>
+									<table align="right" class="downloadDocuments" cellpadding="1" cellspacing="0" id="eval:LawyersRule.isAgent">
+							<tr>
+								<td><a
+									href="javascript:submitform('firm.html','firm.downloadpdf','','');">Download
+										PDF</a>&nbsp;<!-- | <a
+									href="javascript:submitform('firm.html','firm.downloadexcel','','');">Download
+										Excel</a>&nbsp; -->| <a
+									href="javascript:submitform('uploadexcelpopup.html','firm.uploadexcel','','');">Documents
+								</a> &nbsp;| <a
+									href="javascript:submitform('comment.html','firm.comment','','');">Comments
+								</a>
+										
+										</td>
+							</tr>
+						</table>
+								</td>
+								<td width="15" class="grayRight"></td>
+							</tr>
+
+						</table>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+						<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td width="15" class="grayRoundLeft"></td>
+								<td align="right" class="grayRepeat"><span
+									class="grayRoundRight">&nbsp;</span></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+			</table>
+		
+	</div>
+	 <div id="contentSection">
+		
+	<div>
+		<h2 class="questionHeading"><span>1.</span> Endorsement Type</h2>
+	</div>
+		<div class="form row" >
+		
+			<div class="block-form firmNewApp">
+			<div id="errorDivision" style="text-align: center;display:none;" class="error11Bold">The issued premium selected was a manual premium. Some but not all endorsements will need to be created manually. </div>
+				<div class="freeFormDiv form-inline radiobtn" id="Endorsement_freeform_contextdata_001">
+					<ul class="inlineBlock" id="endorsement_options_Security">
+						<li class="inlineBlock_1" id="eval:LawyersRule.isNotShowLimitEndorsementRule">
+							
+							<span class="error">In order to cancel this policy all descending policies need to cancel first.</span>
+						</li>
+						<li class="inlineBlock_1" id="eval:LawyersRule.isShowCancelltionEndorsementRule">
+							<input type="radio" id="ajax_field_endorsementType" name="endorsementType" value="CancelReinstateEndorsement" />
+							Cancel / Reinstate
+						</li>
+						
+						<li class="inlineBlock_1" id="eval:LawyersRule.isShowLimitEndorsementRule">
+						<div id="limitDiv">
+							<input type="radio" id="ajax_field_endorsementType2" name="endorsementType" value="changeLimitsEndorsement" />
+							Change Limits / Deductible / Options
+							</div>
+						</li>
+						</ul>
+						<ul class="inlineBlock" >
+					<li class="inlineBlock_1" id="eval:LawyersRule.isShowInsuranceCertificateRule">
+							<input type="radio" id="ajax_field_endorsementType3" name="endorsementType" value="certificateInsurance" />
+							Certificate of Insurance
+						</li> 
+						</ul>
+						<ul class="inlineBlock" id="eval:LawyersRule.isShowNameAddressExtensionEndorsementRule">
+						 <li class="inlineBlock_1" id="1eval:LawyersRule.Issued_Status">
+							<input type="radio" id="ajax_field_endorsementType4" name="endorsementType" value="addressChangeEndorsement" />
+							Change Name / Address / Prior Acts / Policy Extension
+						</li> 
+						 
+						<li class="inlineBlock_1" id="eval:LawyersRule.isShowAddChangeAttorneyEndorsementRule">
+							<input type="radio" id="ajax_field_endorsementType5" name="endorsementType" value="addChangeAttorneyEndorsement" />
+							Add / Change Attorney
+						</li>
+								<li class="inlineBlock_1" id="eval:LawyersRule.isShowDeleteAttorneyEndorsementRule">
+							<input type="radio" id="ajax_field_endorsementType6" name="endorsementType" value="deleteAttorneyEndorsement" />
+							Delete Attorney
+						</li>
+						
+						<li class="inlineBlock_1" id="eval:LawyersRule.isShowERPEndorsementRule" >
+							<input type="radio" id="ajax_field_endorsementType7" name="endorsementType" value="extendReportingEndorsement" />
+							Extended Reporting Period
+						</li>
+						<li class="inlineBlock_1" id="eval:LawyersRule.isShowERPQuoteLetterRule">
+							<input type="radio" id="ajax_field_endorsementType8" name="endorsementType" value="ERPQuoteLetter" />
+							ERP Quote Letter 
+						</li> 
+					
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+		<div class="buttons borderTop row">
+			<a class="btn back floatLeft" href="javascript:submitform('list.html','Endorsement.back','','');"> Back </a>
+			<div class="floatRight"   id="eval:LawyersRule.HideEndorsemnetContinueButton">
+			<span id="eval:LawyersRule.HideEndorsemnetContinueButton">
+				<!-- <a class="btn next val1" href="javascript:submitform('CancellationReinstatementEndorsement.html|addChangeAttorney.html|deleteAttorney.html|nameAddressPriorActsExtension.html|limitsDeductibleOptions.html|extendedReportingPeriod.html|certificateInsurance.html','Endorsement.continue','forwardeval','LawyersRule.isCancellationReinstatementEndorsement|LawyersRule.isAddChangeAttorneyEndorsement|LawyersRule.isDeleteAttorneyEndorsement|LawyersRule.isAddressChangeEndorsement|LawyersRule.isChangeLimitsEndorsement|LawyersRule.isExtendReportingEndorsement|LawyersRule.iscertificateInsurance');" > -->
+				<a class="btn next val1" href="javascript:submitform('CancellationReinstatementEndorsement.html|limitsDeductibleOptions.html|nameAddressPriorActsExtension.html|certificateInsurance.html|addChangeAttorney.html|deleteAttorneyEndorsement.html|ERPEndrosement.html|ERPQuoteLetter.html|certificateInsurance.html|Endorsement.html','Endorsement.continue','forwardeval','LawyersRule.isCancellationReinstatementEndorsement|LawyersRule.isChangeLimitsEndorsement|LawyersRule.isNameAddressPriorActExtension|LawyersRule.isCertificateOfInsurence|LawyersRule.isAttorneyChangeEndorsement|LawyersRule.isDeleteAttorneyEndorsement|LawyersRule.isExtendReportingEndorsement|LawyersRule.isERPQuoteLetter|LawyersRule.iscertificateInsurance|LawyersRule.isShowEndorsementPage');" >
+				Continue
+				</a>
+				</span>
+			</div>
+		</div>
+		
+	</div>
+   <div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				
+	</div>
+			<table id="Endorsement_freeform_contextdata_999">
+				<tr>
+					<td><input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />
+						<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+						<input type="hidden" name="isShowCancelltionEndorsement" id="isShowCancelltionEndorsement" />
+						<input type="hidden" name="isEnforcedPolicy" id="isEnforcedPolicy" />
+						<input type="hidden" name="isManualPremiumPolicy" id="isManualPremiumPolicy" />
+											
+					</td>
+				</tr>
+			</table>
+  </div>
+</div>
+</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

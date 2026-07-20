@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Housekeeping</title>
+<link href="css/newappstyle.css" rel="stylesheet" type="text/css" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="css/datepicker.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap_3-3-6.js"></script>
+<script type="text/javascript" src="script/common.js"></script>
+<script language="javascript" src="script/lawyers.js"/>
+<script type="text/javascript" src="script/manage.js"></script>
+<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/masks.js"></script>
+<script type="text/javascript" src="script/popup.js"></script>
+<script type="text/javascript" src="script/capitalizeSentences.js"></script>
+<script src="js/producerOne.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+
+
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+
+
+<body onload="loadHouseKeeping();">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<form autocomplete="chrome-off">
+<!-- Bootstrap Core JavaScript -->
+
+<div class="container-fluid bootstrap-node-1">
+  <div class="tableWidth" id="AppCompleted"> 
+   	 <div id="header">
+	        	<span id="#Include:header.html#"></span>
+	      </div>
+	     <div class="menuTab">
+					<span id="#Include:tabs.html#"></span>
+				</div>
+   <div id="contentSection">
+       	<div class="confirmationMsgAlign" id="houseKeeping_freeform_contextdata_1100">
+						
+							<div  id="eval:LawyersRule.showForNY"> <label class="error"> We don't allow quote generation for NewYork state.</label></div>
+							</div>
+		<div>
+			<h2 class="questionHeading"><span>9.</span> A Little Housekeeping</h2>
+		</div>
+		
+		<div id="eval:LawyersRule.isShowMessageToSubProducer">
+		<span class="Confirmation"	id="UWReview_freeform_contextdata_100">
+										<label  style="padding-left:5px;font-weight:bold;line-height:20px;color:green;">  
+										<p><center>Please clear additional Info flag.</center> </p></label>
+								</span>
+								</div>
+								
+		
+		<div class="form">
+			<div class="row newFreeForm_UI" id="housekeeping_freeform_contextdata_0">
+				
+				<div class="block-form firmNewApp">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label class="asterisk">Primary Contact Name :</label> 
+								<input class="form-control" type="text" id="ajax_field_ContactPerson" name="ContactPerson" autocomplete="chrome-off"/>
+								<div id="error_ContactPerson" class="error"> </div>																
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="form-group">
+								<label class="">Contact Phone Number : </label> 
+								<input placeholder="(If different than primary number)" class="form-control" type="text" id="ajax_field_otherPhone" name="otherPhone" onclick="loadHouseKeeping();" autocomplete="chrome-off"/>
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="form-group form-group-last">
+								<label class="">Secondary Email :</label> 
+								<input class="form-control" type="text" id="ajax_field_secondaryEmail" name="secondaryEmail" onblur="validateEmail(this.value,this);" autocomplete="chrome-off"/>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label class="">Secondary Contact Name :</label> 
+								<input class="form-control" type="text" id="ajax_field_secondayContactPerson" name="secondayContactPerson" autocomplete="chrome-off"/>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group form-group-last">
+								<label class="">Website Address :</label> 
+								<input class="form-control" type="text" id="ajax_field_Website" name="Website" autocomplete="chrome-off"/>
+							</div>
+						</div>
+					</div>
+					<div class="row" style="display: none;">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label class="">How would you like to be contacted? :</label> 
+								<span style="padding-left: 4px;">
+								<input type="checkbox" id="ajax_field_isQuoteByEmail" name="isQuoteByEmail" value="Y"> Email &nbsp;&nbsp;&nbsp;</span>
+								<span >
+								<input type="checkbox" id="ajax_field_isQuoteByEmail" name="isQuoteByEmail" value="N"/> Phone</span>
+							</div>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>		
+							
+		<div class="row" id="">
+			
+		<div class="buttons borderTop row">
+			<a class="btn back floatLeft"
+				href="javascript:submitform('pastClaims.html','housekeeping.back','','');" >Back</a>
+			<div id="showSaveButtonsForSubproducerOnHosekeeping_security" class="floatRight">
+				
+				<span id="showPageSave">
+					<a class="btn save"
+						href="javascript:submitform('completedPage.html|quoteOption.html|indexThanks.html','housekeeping.save','forwardeval','LawyersRule.isShowCompletePage|LawyersRule.showQuoteOptionPageForNY|LawyersRule.isShowIndexThanksPageNew');" >Save&nbsp;&&nbsp;Continue</a>
+				</span>
+				<span  id="showContinue">
+				<a class="btn next" 
+					href="javascript:submitform('completedPage.html|quoteOption.html|indexThanks.html','housekeeping.continue','forwardeval','LawyersRule.isShowCompletePage|LawyersRule.showQuoteOptionPageForNY|LawyersRule.isShowIndexThanksPageNew');" >Continue</a>
+				</span>
+				</div>
+			<div id="eval:LawyersRule.isSubproducerLoggedIn" class="floatRight" >
+				<span id="eval:LawyersRule.isShowSaveandContinueForSubproducer">
+			<!-- 	<span id="showPageSave"> -->
+				<a class="btn next"
+					
+					href="javascript:submitform('SubproducerUWReview.html','housekeeping.saveForSubProducer','','');">Save&nbsp;&&nbsp;Continue</a>
+			<!-- 	</span> -->
+				</span>
+				<span  id="eval:LawyersRule.isShowContinueForSubproducer">
+				
+				<a class="btn next" 
+					href="javascript:submitform('housekeeping.html|quoteOption.html','housekeeping.continueForSub','forwardeval','LawyersRule.isNotShowQuoteToSubProducer|LawyersRule.isShowQuoteToSubProducer');" >Continue</a>
+					
+				</span>
+			</div>
+		</div>
+	</div>
+   <div id="footer">
+	    	 <span id="#Include:footer.html#"></span>
+		 </div>
+	      
+	    <table id="housekeeping_freeform_contextdata_999">
+				<tr>
+					<td><input type="hidden" name="jsessionid" id="jsessionid" />
+						<input type="hidden" name="divHideShow" id="divHideShow" />
+						
+					</td>
+				</tr>
+		</table>
+	  </div>
+	</div>	
+	<div id="StatusValidation_freeform_contextdata_9990">
+			<input type="hidden" name="headerStatusDescUpdated" id="headerStatusDescUpdated" />
+		</div>
+	</form>
+</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+</html>

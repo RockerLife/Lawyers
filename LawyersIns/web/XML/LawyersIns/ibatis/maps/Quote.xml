@@ -1,0 +1,109 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Quote">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Quote</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from Quote where TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into Quote(TransactionSequence, PolicyKey
+          <isNotEmpty property="QuoteEffectiveDate" prepend=",">QuoteEffectiveDate</isNotEmpty>
+          <isNotEmpty property="QuoteExpiryDate" prepend=",">QuoteExpiryDate</isNotEmpty>
+          <isNotEmpty property="IsThisOptionFinalised" prepend=",">IsThisOptionFinalised</isNotEmpty>
+          <isNotEmpty property="AcceptanceDate" prepend=",">AcceptanceDate</isNotEmpty>
+          <isNotEmpty property="Comment" prepend=",">Comment</isNotEmpty>
+          <isNotEmpty property="IsQuoteSelected" prepend=",">IsQuoteSelected</isNotEmpty>
+          <isNotEmpty property="IsFirstQuote" prepend=",">IsFirstQuote</isNotEmpty>
+          <isNotEmpty property="ClaimsMadeYearDesc" prepend=",">ClaimsMadeYearDesc</isNotEmpty>
+          <isNotEmpty property="TotalPremiumFirstRange" prepend=",">TotalPremiumFirstRange</isNotEmpty>
+          <isNotEmpty property="IsMinimumPremium" prepend=",">IsMinimumPremium</isNotEmpty>
+          <isNotEmpty property="isShowQuote" prepend=",">isShowQuote</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          <isNotEmpty property="CreatedDate" prepend=",">CreatedDate</isNotEmpty>
+          <isNotEmpty property="CreatedBy" prepend=",">CreatedBy</isNotEmpty>
+          ) values (#TransactionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="QuoteEffectiveDate" prepend=",">#QuoteEffectiveDate#</isNotEmpty>
+          <isNotEmpty property="QuoteExpiryDate" prepend=",">#QuoteExpiryDate#</isNotEmpty>
+          <isNotEmpty property="IsThisOptionFinalised" prepend=",">#IsThisOptionFinalised#</isNotEmpty>
+          <isNotEmpty property="AcceptanceDate" prepend=",">#AcceptanceDate#</isNotEmpty>
+          <isNotEmpty property="Comment" prepend=",">#Comment#</isNotEmpty>
+          <isNotEmpty property="IsQuoteSelected" prepend=",">#IsQuoteSelected#</isNotEmpty>
+          <isNotEmpty property="IsFirstQuote" prepend=",">#IsFirstQuote#</isNotEmpty>
+          <isNotEmpty property="ClaimsMadeYearDesc" prepend=",">#ClaimsMadeYearDesc#</isNotEmpty>
+          <isNotEmpty property="TotalPremiumFirstRange" prepend=",">#TotalPremiumFirstRange#</isNotEmpty>
+          <isNotEmpty property="IsMinimumPremium" prepend=",">#IsMinimumPremium#</isNotEmpty>
+          <isNotEmpty property="isShowQuote" prepend=",">#isShowQuote#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          <isNotEmpty property="CreatedDate" prepend=",">#CreatedDate#</isNotEmpty>
+          <isNotEmpty property="CreatedBy" prepend=",">#CreatedBy#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select QuoteEffectiveDate, QuoteExpiryDate, IsThisOptionFinalised, AcceptanceDate, Comment, IsQuoteSelected, IsFirstQuote, ClaimsMadeYearDesc, TotalPremiumFirstRange, IsMinimumPremium, isShowQuote, LastUpdateUserID, LastUpdateTimeStamp, CreatedDate, CreatedBy, TransactionSequence, PolicyKey from Quote where TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update Quote set
+          <dynamic prepend=" ">
+               <isNotEmpty property="QuoteEffectiveDate" prepend=",">QuoteEffectiveDate = #QuoteEffectiveDate#</isNotEmpty>
+               <isEmpty property="QuoteEffectiveDate" prepend=",">QuoteEffectiveDate = null</isEmpty>
+               <isNotEmpty property="QuoteExpiryDate" prepend=",">QuoteExpiryDate = #QuoteExpiryDate#</isNotEmpty>
+               <isEmpty property="QuoteExpiryDate" prepend=",">QuoteExpiryDate = null</isEmpty>
+               <isNotEmpty property="IsThisOptionFinalised" prepend=",">IsThisOptionFinalised = #IsThisOptionFinalised#</isNotEmpty>
+               <isEmpty property="IsThisOptionFinalised" prepend=",">IsThisOptionFinalised = null</isEmpty>
+               <isNotEmpty property="AcceptanceDate" prepend=",">AcceptanceDate = #AcceptanceDate#</isNotEmpty>
+               <isEmpty property="AcceptanceDate" prepend=",">AcceptanceDate = null</isEmpty>
+               <isNotEmpty property="Comment" prepend=",">Comment = #Comment#</isNotEmpty>
+               <isEmpty property="Comment" prepend=",">Comment = null</isEmpty>
+               <isNotEmpty property="IsQuoteSelected" prepend=",">IsQuoteSelected = #IsQuoteSelected#</isNotEmpty>
+               <isEmpty property="IsQuoteSelected" prepend=",">IsQuoteSelected = null</isEmpty>
+               <isNotEmpty property="IsFirstQuote" prepend=",">IsFirstQuote = #IsFirstQuote#</isNotEmpty>
+               <isEmpty property="IsFirstQuote" prepend=",">IsFirstQuote = null</isEmpty>
+               <isNotEmpty property="ClaimsMadeYearDesc" prepend=",">ClaimsMadeYearDesc = #ClaimsMadeYearDesc#</isNotEmpty>
+               <isEmpty property="ClaimsMadeYearDesc" prepend=",">ClaimsMadeYearDesc = null</isEmpty>
+               <isNotEmpty property="TotalPremiumFirstRange" prepend=",">TotalPremiumFirstRange = #TotalPremiumFirstRange#</isNotEmpty>
+               <isEmpty property="TotalPremiumFirstRange" prepend=",">TotalPremiumFirstRange = null</isEmpty>
+               <isNotEmpty property="IsMinimumPremium" prepend=",">IsMinimumPremium = #IsMinimumPremium#</isNotEmpty>
+               <isEmpty property="IsMinimumPremium" prepend=",">IsMinimumPremium = null</isEmpty>
+               <isNotEmpty property="isShowQuote" prepend=",">isShowQuote = #isShowQuote#</isNotEmpty>
+               <isEmpty property="isShowQuote" prepend=",">isShowQuote = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate = #CreatedDate#</isNotEmpty>
+               <isEmpty property="CreatedDate" prepend=",">CreatedDate = null</isEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy = #CreatedBy#</isNotEmpty>
+               <isEmpty property="CreatedBy" prepend=",">CreatedBy = null</isEmpty>
+          </dynamic>
+          where TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from Quote where TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from Quote</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from Quote where TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select QuoteEffectiveDate, QuoteExpiryDate, IsThisOptionFinalised, AcceptanceDate, Comment, IsQuoteSelected, IsFirstQuote, ClaimsMadeYearDesc, TotalPremiumFirstRange, IsMinimumPremium, isShowQuote, LastUpdateUserID, LastUpdateTimeStamp, CreatedDate, CreatedBy, TransactionSequence, PolicyKey from Quote where TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select TransactionSequence, PolicyKey, QuoteEffectiveDate, QuoteExpiryDate, IsThisOptionFinalised, AcceptanceDate, Comment, IsQuoteSelected, IsFirstQuote, ClaimsMadeYearDesc, TotalPremiumFirstRange, IsMinimumPremium, isShowQuote, LastUpdateUserID, LastUpdateTimeStamp, CreatedDate, CreatedBy from Quote where TransactionSequence = #TransactionSequence# and PolicyKey = #PolicyKey#</select>
+     <parameterMap id="GetQuoteListLaw_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="User" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="IsNonRatingState" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="GetQuoteListLaw_p" parameterMap="GetQuoteListLaw_pMap" resultClass="java.util.HashMap,java.util.HashMap">{ call GetQuoteListLaw_p(?,?,?)}</procedure>
+     <parameterMap id="UpdateQuoteSelection_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="TransactionSequence" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="LastUpdateUserID" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+          <parameter property="LastUpdateTimeStamp" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN" />
+     </parameterMap>
+     <procedure id="UpdateQuoteSelection_p" parameterMap="UpdateQuoteSelection_pMap">{ call UpdateQuoteSelection_p(?,?,?,?)}</procedure>
+     <parameterMap id="UpdateFinalisedQuoteLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="UpdateFinalisedQuoteLW_p" parameterMap="UpdateFinalisedQuoteLW_pMap">{ call UpdateFinalisedQuoteLW_p(?)}</procedure>
+     <parameterMap id="GetZohoPremiumLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="GetZohoPremiumLW_p" parameterMap="GetZohoPremiumLW_pMap" resultClass="java.util.HashMap">{ call GetZohoPremiumLW_p(?)}</procedure>
+     <parameterMap id="FillQuoteExpiryDateLW_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="FillQuoteExpiryDateLW_p" parameterMap="FillQuoteExpiryDateLW_pMap" resultClass="java.util.HashMap">{ call FillQuoteExpiryDateLW_p(?)}</procedure>
+</sqlMap>
+

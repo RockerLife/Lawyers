@@ -1,0 +1,19 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ITServices">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ITServices</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ITServices where ITServiceCategoryKey = #ITServiceCategoryKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">insert into ITServices(ITServiceKey, ITServiceCategoryKey) values (#ITServiceKey:NUMERIC#, #ITServiceCategoryKey:NUMERIC# )</insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ITServiceKey, ITServiceCategoryKey from ITServices where ITServiceKey = #ITServiceKey# and ITServiceCategoryKey = #ITServiceCategoryKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ITServices set
+          <dynamic prepend=" " />
+          where ITServiceKey = #ITServiceKey# and ITServiceCategoryKey = #ITServiceCategoryKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ITServices where ITServiceKey = #ITServiceKey# and ITServiceCategoryKey = #ITServiceCategoryKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ITServices</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ITServices where ITServiceCategoryKey = #ITServiceCategoryKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ITServiceKey, ITServiceCategoryKey from ITServices where ITServiceKey = #ITServiceKey# and ITServiceCategoryKey = #ITServiceCategoryKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ITServiceKey, ITServiceCategoryKey from ITServices where ITServiceCategoryKey = #ITServiceCategoryKey#</select>
+</sqlMap>
+

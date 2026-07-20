@@ -1,0 +1,230 @@
+<evalrules>
+	<conditionset seq="2" name="Paging">
+       <condition id="NextPageId" operator="eq" datatype="C">
+             <lvalue seq="0" value="next_page" valuetype="bindvar"/>
+             <rvalue seq="0" value="Y" valuetype="constant"/>
+       </condition>
+       <condition id="PreviousPageId" operator="eq" datatype="C">
+             <lvalue seq="0" value="previous_page" valuetype="bindvar"/>
+             <rvalue seq="0" value="Y" valuetype="constant" />
+		</condition>
+	</conditionset>
+	
+	<conditionset seq="0" name="events">
+		<condition id="addEvent" operator="eq" datatype="C">
+			<lvalue seq="0" value="inet_eventid" valuetype="bindvar" />
+			<rvalue seq="0" valuetype="constant" value="add" />
+		</condition>
+		<condition id="addmoreEvent" operator="eq" datatype="C">
+			<lvalue seq="0" value="inet_eventid" valuetype="bindvar" />
+			<rvalue seq="0" valuetype="constant" value="addmore" />
+		</condition>
+		<condition id="saveEvent" operator="ne" datatype="C">
+			<lvalue seq="0" value="inet_eventid" valuetype="bindvar" />
+			<rvalue seq="0" valuetype="constant" value="edit" />
+		</condition>
+		<condition id="editEvent" operator="eq" datatype="C">
+			<lvalue seq="0" value="inet_eventid" valuetype="bindvar" />
+			<rvalue seq="0" valuetype="constant" value="edit" />
+		</condition>
+		<condition id="upload" operator="eq" datatype="C">
+			<lvalue seq="0" value="inet_eventid" valuetype="bindvar" />
+			<rvalue seq="0" valuetype="constant" value="upload" />
+		</condition>
+		<condition id="deletefile" operator="eq" datatype="C">
+			<lvalue seq="0" value="inet_eventid" valuetype="bindvar" />
+			<rvalue seq="0" valuetype="constant" value="deletefile" />
+		</condition>
+		<condition id="cancelEvent" operator="eq" datatype="C">
+			<lvalue seq="0" value="inet_eventid" valuetype="bindvar" />
+			<rvalue seq="0" valuetype="constant" value="cancel" />
+		</condition>
+		<condition id="deleteEvent" operator="eq" datatype="C">
+			<lvalue seq="0" value="inet_eventid" valuetype="bindvar" />
+			<rvalue seq="0" valuetype="constant" value="delete" />
+		</condition>
+		<condition id="modifyEvent" operator="eq" datatype="C">
+			<lvalue seq="0" value="inet_eventid" valuetype="bindvar" />
+			<rvalue seq="0" valuetype="constant" value="modify" />
+		</condition>
+		<condition id="nullEvent">
+			<lvalue seq="0" value="inet_eventid" valuetype="null" />
+		</condition>
+		<condition id="searchEvent" operator="eq" datatype="C">
+			<lvalue seq="0" value="inet_eventid" valuetype="bindvar" />
+			<rvalue seq="0" valuetype="constant" value="search" />
+		</condition>
+		<condition id="sortEvent" operator="eq" datatype="C">
+			<lvalue seq="0" value="inet_eventid" valuetype="bindvar" />
+			<rvalue seq="0" valuetype="constant" value="sort" />
+		</condition>
+		<condition id="paginationEvent" operator="eq" datatype="C">
+			<lvalue seq="0" value="inet_eventid" valuetype="bindvar" />
+			<rvalue seq="0" valuetype="constant" value="pagination" />
+		</condition>
+		<condition id="deleteevent" operator="eq" datatype="C">
+			<lvalue seq="0" value="inet_eventid" valuetype="bindvar" />
+			<rvalue seq="0" valuetype="constant" value="delete" />
+		</condition>
+		<condition id="runfindByKey" operator="eq" datatype="C">
+			<lvalue seq="0" value="runfindByKey" valuetype="bindvar" />
+			<rvalue seq="0" valuetype="constant" value="N" />
+		</condition>
+
+	</conditionset>
+	
+
+	<conditionset seq="1" name="form">
+		<condition id="isDirty" operator="eq" datatype="C">
+			<lvalue seq="0" value="inet_form_dirty" valuetype="bindvar"/>
+			<rvalue seq="0" valuetype="constant" value="Y" />
+		</condition>
+		<condition id="isReadOnly" operator="eq" datatype="C">
+			<lvalue seq="0" value="inet_readonly_mode" valuetype="bindvar" />
+			<rvalue seq="0" valuetype="constant" value="Y" />
+		</condition>
+		<condition id="sortClicked">
+			<lvalue seq="0" value="inet_sort_field" valuetype="null" />
+		</condition>
+	</conditionset>
+
+
+	<!--madhuv 1 Aug 2006 -->
+		<conditionset seq="1" name="link">
+				
+				<condition id="UploadLinkempty" operator="eq" datatype="C">
+					<lvalue seq="0" value="filename" valuetype="bindvar" />
+					<rvalue seq="0" valuetype="constant" value="" />
+				</condition>
+				<condition id="UploadLinknull">
+					<lvalue seq="0" value="filename" valuetype="bindvar" />
+					<rvalue seq="0" valuetype="constant" value="null" />
+				</condition>
+				<condition id="DownloadLinkempty" operator="eq" datatype="C">
+					<lvalue seq="0" value="filename" valuetype="bindvar" />
+					<rvalue seq="0" valuetype="constant" value="" />
+				</condition>
+				<condition id="DownloadLinknull">
+					<lvalue seq="0" value="filename" valuetype="bindvar" />
+					<rvalue seq="0" valuetype="constant" value="null" />
+				</condition>
+				<condition id="DeleteLinkempty" operator="eq" datatype="C">
+					<lvalue seq="0" value="filename" valuetype="bindvar" />
+					<rvalue seq="0" valuetype="constant" value="" />
+				</condition>
+				<condition id="DeleteLinknull">
+					<lvalue seq="0" value="filename" valuetype="bindvar" />
+					<rvalue seq="0" valuetype="constant" value="null" />
+				</condition>
+			</conditionset>
+			
+	<!--  ***************************************************-->
+
+	<expressionset seq="0" name="links">
+        <expression seq="10" id="executeFindbykey" evaluate="events.editEvent&!events.runfindByKey" />
+		<expression seq="0" id="showSaveLink" evaluate="(!form.isReadOnly)&(events.nullEvent|events.addEvent|events.deleteEvent|events.saveEvent|events.addmoreEvent|events.upload|(form.isDirty&(events.saveEvent|events.addmoreEvent)))" />
+		<!--  do not check for deleteEvent in modify otherwise modify starts showing up when a delete is clicked in combined page. -->
+		<expression seq="1" id="showModifyLink" evaluate="(!form.isReadOnly)&(events.editEvent|events.deletefile|(events.modifyEvent&(common.show_child_qstns|form.isDirty)))" />
+		<expression seq="2" id="showEditLink" evaluate="!form.isReadOnly" />
+		<expression seq="3" id="showDeleteLink" evaluate="!form.isReadOnly" />
+		<!-- Add link shows up with Modify link....  Satyendra
+				<expression seq="4" id="showAddLink" evaluate="!form.isReadOnly" />
+		-->
+		<expression seq="4" id="showAddLink" evaluate="(!form.isReadOnly) & (!(events.editEvent|(events.modifyEvent&(common.show_child_qstns|form.isDirty))))" />
+		<expression seq="5" id="showViewLink" evaluate="form.isReadOnly" />
+		<!-- madhu Aug 20 2006 -->
+		<expression seq="0" id="showUploadLink" evaluate="link.UploadLinkempty|link.UploadLinknull" />
+		<expression seq="0" id="showDownLoadLink" evaluate="link.DownloadLinkempty|!(link.DownloadLinknull)"  />
+		<expression seq="0" id="showdeletelink" evaluate="link.DeleteLinkempty|!(link.DeleteLinknull)" /> 
+	</expressionset>
+
+	<expressionset seq="1" name="form">
+		<expression seq="0" id="notReadOnly" evaluate="!form.isReadOnly" />
+	</expressionset>
+
+	<conditionset seq="2" name="common">
+		<condition id="true" operator="eq" datatype="C">
+			<lvalue seq="0" value="Y" valuetype="constant"/>
+			<rvalue seq="0" valuetype="constant" value="Y" />
+		</condition>
+		
+		<condition id="isChecked" operator="eq" datatype="C">
+			<lvalue seq="0" value="%arg1.%arg2" valuetype="beanfield"/>
+			<rvalue seq="0" valuetype="constant" value="Y" />
+		</condition>
+		
+		<condition id="isCheckedTrue" operator="eq" datatype="C">
+			<lvalue seq="0" value="%arg1.%arg2" valuetype="beanfield"/>
+			<rvalue seq="0" valuetype="constant" value="true" />
+		</condition>
+	
+		<condition seq="0" id="present" operator="eq" datatype="N">
+			<lvalue seq="0" value="%arg1.%arg2" valuetype="beanfield" />
+			<rvalue seq="0" valuetype="constant" value="1" />
+		</condition>
+		
+		<condition seq="1" id="field_was_checked" operator="eq" datatype="C">
+			<lvalue seq="0" value="%arg1.oldchecked" valuetype="beanfield" />
+			<rvalue seq="0" valuetype="constant" value="true" />
+		</condition>
+
+		<condition seq="2" id="field_was_not_checked" operator="eq" datatype="C">
+			<lvalue seq="0" value="%arg1.oldchecked" valuetype="beanfield" />
+			<rvalue seq="0" valuetype="constant" value="false" />
+		</condition>
+
+		<condition seq="3" id="field_is_checked" operator="eq" datatype="C">
+			<lvalue seq="0" value="%arg1.checked" valuetype="beanfield" />
+			<rvalue seq="0" valuetype="constant" value="true" />
+		</condition>
+
+		<condition seq="4" id="field_is_not_checked" operator="eq" datatype="C">
+			<lvalue seq="0" value="%arg1.checked" valuetype="beanfield" />
+			<rvalue seq="0" valuetype="constant" value="false" />
+		</condition>
+
+		<condition seq="5" id="show_child_qstns" operator="eq" datatype="C">
+			<lvalue seq="0" value="inet_childqstns_present" valuetype="bindvar"/>
+			<rvalue seq="0" valuetype="constant" value="Y" />
+		</condition>
+		
+		<condition id="empty_list" operator="listsize_eq" datatype="N">
+			<lvalue seq="0" value="%arg1" valuetype="bindvar" />
+			<rvalue seq="0" valuetype="constant" value="0" />
+		</condition>
+		
+		<condition id="isnull">
+			<lvalue seq="0" value="%arg1" valuetype="null" />
+		</condition>
+	</conditionset>
+	
+	<expressionset seq="2" name="common">
+		<expression seq="0" id="new_mom_record" evaluate="(common.field_was_not_checked)&(common.field_is_checked)" />
+		<expression seq="1" id="existing_mom_record" evaluate="(common.field_was_checked)&(common.field_is_checked)" />
+		<expression seq="2" id="remove_mom_record" evaluate="(common.field_was_checked)&(common.field_is_not_checked)" />
+		<expression seq="3" id="emptylist" evaluate="(!events.deleteEvent)&(!events.cancelEvent)&(common.isnull|common.empty_list)" />
+		<expression seq="4" id="performSearch" evaluate="events.cancelEvent|events.modifyEvent|events.sortEvent|events.paginationEvent|events.searchEvent|events.deleteEvent|events.saveEvent" />
+		<expression seq="5" id="isnotnull" evaluate="(!common.isnull)" />
+		
+		<!-- delete 'coz the searchlist page can have a delete button.
+			 save 'coz momsearchlist page has save btn and search qry should again be called.
+			 
+			 original condition
+			 <expression seq="4" id="performSearch" evaluate="(!(form.sortClicked))|events.cancelEvent|events.modifyEvent|Paging.NextPageId|Paging.PreviousPageId|events.searchEvent|events.deleteEvent|events.saveEvent" />
+			
+			 work only with pagination and sorting
+			 <expression seq="4" id="performSearch" evaluate="events.sortEvent|events.paginationEvent|events.searchEvent" />
+		-->
+	</expressionset>
+	
+	<conditionset seq="0" name="security-rules">
+          <condition seq="0" datatype="I" operator="eq" id="isAdmin">
+               <lvalue value="containsObject(:inet_business_roles, Administrator)" seq="0" valuetype="expression" />
+               <rvalue value="0" seq="0" valuetype="constant" />
+          </condition>
+     </conditionset>
+	
+	
+	
+	
+</evalrules>

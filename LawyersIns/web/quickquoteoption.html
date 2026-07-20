@@ -1,0 +1,1814 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Quick Quote Option List</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/styleQQ.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="script/common.js"></script>
+		<script type="text/javascript" src="script/account.js"></script>
+		<script language="javascript" src="script/lawyers.js"> </script>
+		<script type="text/javascript" src="script/tabber.js"></script>
+		<script type="text/javascript" src="script/test_new.js"></script>
+<script type="text/javascript" src="script/manage.js"></script>
+		<script type="text/javascript" src="script/masks.js"></script>
+		<script type="text/javascript" src="script/popup.js"></script>
+		<script type="text/javascript" src="script/utility.js"></script>
+		<script type="text/javascript" src="script/date-picker.js"></script>
+<script type="text/javascript" src="script/googleanalytics.js"></script>
+		
+		<script type="text/javascript">
+
+function checks(){
+ document.getElementById("EffectiveDate").disabled=true;
+ alert(document.getElementById("EffectiveDate").style.readOnly);
+}
+</script>
+	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script> </head>
+	<body onload="setSelectionOfQuotes();loadQuoteOption();setEffectiveDate();	">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5VZNM7Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+		<form>
+			<div id="cover" style="width: 100%; height: 1000px"></div>
+			<div id="contextLinks"></div>
+			<table width="100%" border="0" align="center" cellspacing="0"
+				cellpadding="0">
+				<tr>
+					<td>
+						<table width="98%" border="0" align="center" cellspacing="0"
+							cellpadding="0">
+							<tr>
+								<td>
+									<div id="topheader" style="float: left;">
+										<table width="100%" border="0" align="center" cellpadding="0"
+											cellspacing="0">
+											<tr>
+												<td height="50">
+													<table width="98%" border="0" align="center"
+														cellpadding="0" cellspacing="0">
+														<tr>
+															<td valign="bottom" width="300px">
+																
+																<img src="image/logo_protexureaccountants1.png" border="0" width="325" height="64" />																
+															</td>
+															<td  valign="bottom" align="left" id="producerlogo_freeform_contextdata_image">
+																<span id="eval:LawyersRule.IsSubProducerFlow"><a href="context_SPWebsite"><img id="contexturl" src="LogoImagePath"/></a></span>
+															</td>
+															<td align="right">
+																<table border="0" cellspacing="0" cellpadding="0">
+																	<tr>
+																		<td align="center" id="eval:LawyersRule.isAgentState">
+																			<table width="100%" border="0" cellspacing="0"
+																				cellpadding="0">
+																				<tr>
+																					<td align="center">
+																						<img src="img/backPortal1.jpg" width="20"
+																							height="22" />
+																					</td>
+																				</tr>
+																				<tr>
+																					<td nowrap="nowrap" class="topLink">
+																						<a
+																							href="javascript:submitform('indexinsured.html|indexagent.html','quickquoteoption.homepage','forwardeval','LawyersRule.isInsured|LawyersRule.isAgent');"
+																							class="topLink">Back to Portal</a>
+																					</td>
+																				</tr>
+																			</table>
+																		</td>
+																		<td width="5" align="center" valign="bottom"
+																			class="txtBold11Maroon"
+																			id="eval:LawyersRule.isAgentState">
+																			&nbsp;|&nbsp;
+																		</td>
+																		<td align="center" id="eval:LawyersRule.isAgentState">
+																			<table width="100%" border="0" cellspacing="0"
+																				cellpadding="0">
+																				<tr>
+																					<td align="center">
+																						<img src="img/backList1.jpg" width="20"
+																							height="22" />
+																					</td>
+																				</tr>
+																				<tr>
+																					<td nowrap="nowrap" class="topLink">
+																						<a
+																							href="javascript:submitform('list.html','quickquoteoption.backtolist','','');"
+																							class="topLink">Back to List </a>
+																					</td>
+																				</tr>
+																			</table>
+																		</td>
+																		<td width="5" align="center" valign="bottom"
+																			class="txtBold11Maroon"
+																			id="eval:LawyersRule.isAgentState">
+																			&nbsp;|&nbsp;
+																		</td>
+																		<td align="center" id="eval:LawyersRule.isAgentState">
+																			<table width="100%" border="0" cellspacing="0"
+																				cellpadding="0">
+																				<tr>
+																					<td align="center">
+																						<img src="img/backWorkq1.jpg" width="20"
+																							height="22" />
+																					</td>
+																				</tr>
+																				<tr>
+																					<td nowrap="nowrap" class="topLink">
+																						<a
+																							href="javascript:submitform('workq.html','quickquoteoption.backtowrokq','','');"
+																							class="topLink">Back to workq</a>
+																					</td>
+																				</tr>
+																			</table>
+																		</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<table width="100%" border="0" cellspacing="0"
+														cellpadding="0">
+														<tr>
+															<td class="redLeft">
+																&nbsp;
+															</td>
+															<td align="right" class="redCenter" id="quickquoteoption_freeform_contextdata_callimage">
+																<table width="100%" border="0" cellspacing="0"
+																	cellpadding="0">
+																	<tr>
+																		<td align="left">
+																			<img src="img/getting_coverage.jpg" width="597"
+																				height="33" />
+																		</td>
+																		<td align="right" id="eval:LawyersRule.IsNotSubProducerFlow">
+																			<img src="img/call.jpg" width="289" height="24" />
+																		</td>
+																		<td align="right" id="eval:LawyersRule.IsSubProducerFlow">
+																			<img id="contexturl"  src="CallImagePath" width="289" height="24" />
+																		</td>
+																	</tr>
+																</table>
+															</td>
+															<td width="15" class="redRight"></td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<table width="100%" border="0" cellspacing="0"
+														cellpadding="0">
+														<tr>
+															<td width="15" class="grayLeft"></td>
+															<td class="grayCenter">
+																<table width="100%" border="0" cellspacing="0"
+																	cellpadding="0">
+																	<tr>
+																		<td align="right">
+																			<table border="0" cellspacing="2" cellpadding="2"
+																				id="labels_freeform_contextdata_99">
+																				<tr>
+																					<td align="right" nowrap="nowrap"
+																						class="txtBold11Maroon"
+																						id="eval:LawyersRule.isContextAccountNameNotEmpty">
+																						Firm:
+																					</td>
+																					<td align="left" nowrap="nowrap"
+																						class="txt11BoldBlack"
+																						id="eval:LawyersRule.isContextAccountNameNotEmpty">
+																						<label name="ContextAccountName"
+																							id="ContextAccountName" class="txt11BoldBlack"></label>
+																					</td>
+																					<td id="eval:LawyersRule.isQuoteNumberNotEmpty"
+																						align="right" nowrap="nowrap"
+																						class="txtBold11Maroon">
+																						Quote #:
+																					</td>
+																					<td align="left" nowrap="nowrap"
+																						class="txt11BoldBlack"
+																						id="eval:LawyersRule.isQuoteNumberNotEmpty">
+																						<label name="QuoteNumber" id="QuoteNumber"
+																							class="txt11BoldBlack"></label>
+																					</td>
+																					<td id="eval:LawyersRule.isStatusNotEmpty"
+																						align="right" nowrap="nowrap"
+																						class="txtBold11Maroon">
+																						Status:
+																					</td>
+																					<td align="left" nowrap="nowrap"
+																						class="txt11BoldBlack"
+																						id="eval:LawyersRule.isStatusNotEmpty">
+																						<label id="StatusDesc" name="StatusDesc"
+																							class="txt11BoldBlack"></label>
+																					</td>
+																					<td align="right"
+																						id="eval:LawyersRule.showPolicyNumber"
+																						class="txtBold11Maroon">
+																						Policy #:
+																					</td>
+																					<td align="left" nowrap="nowrap"
+																						class="txt11BoldBlack"
+																						id="eval:LawyersRule.showPolicyNumber">
+																						<label id="PolicyNumber" name="PolicyNumber"
+																							class="txt11BoldBlack"></label>
+																					</td>
+																					<td align="right" nowrap="nowrap"
+																						id="eval:LawyersRule.isEffectiveDateNotEmpty"
+																						class="txtBold11Maroon">
+																						Effective Date:
+																					</td>
+																					<td align="left" nowrap="nowrap"
+																						class="txt11BoldBlack"
+																						id="eval:LawyersRule.isEffectiveDateNotEmpty">
+																						<label name="PolicyEffectiveDate"
+																							id="PolicyEffectiveDate" class="txt11BoldBlack"></label>
+																					</td>
+																					<td id="eval:LawyersRule.isStateCodeNotEmpty"
+																						align="right" nowrap="nowrap"
+																						class="txtBold11Maroon">
+																						State:
+																					</td>
+																					<td align="left" nowrap="nowrap"
+																						class="txt11BoldBlack"
+																						id="eval:LawyersRule.isStateCodeNotEmpty">
+																						<label id="StateDesc" name="StateDesc"
+																							class="txt11BoldBlack"></label>
+																					</td>
+																					<td align="right" nowrap="nowrap"
+																						class="txtBold11Maroon">
+																						<span id="eval:LawyersRule.Issued_Status"><span
+																							id="eval:LawyersRule.isContextPremiumNotEmpty">Premium
+																								:</span> </span>
+																					</td>
+																					<td align="left" nowrap="nowrap"
+																						class="txt11BoldBlack">
+																						<span id="eval:LawyersRule.Issued_Status"><span
+																							id="eval:LawyersRule.isContextPremiumNotEmpty">
+																								<label id="ContextPremium" name="ContextPremium"
+																									class="txt11BoldBlack"></label> </span> </span>
+																					</td>
+																					<td align="right" nowrap="nowrap"
+																						class="txtBold11Maroon"
+																						id="eval:LawyersRule.isClaimsMadeYearDescNotEmpty">
+																						CM Year:
+																					</td>
+																					<td align="left" nowrap="nowrap"
+																						class="txt11BoldBlack"
+																						id="eval:LawyersRule.isClaimsMadeYearDescNotEmpty">
+																						<label name="ClaimsMadeYearDesc"
+																							id="ClaimsMadeYearDesc" class="txt11BoldBlack"></label>
+																					</td>
+																				</tr>
+																			</table>
+																		</td>
+																	</tr>
+																</table>
+															</td>
+															<td width="15" class="grayRight"></td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<table width="100%" border="0" cellspacing="0"
+														cellpadding="0">
+														<tr>
+															<td width="15" class="grayRoundLeft"></td>
+															<td align="right" class="grayRepeat">
+																<span class="grayRoundRight">&nbsp;</span>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													&nbsp;
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<table width="100%" border="0" align="center"
+														cellpadding="0" cellspacing="0">
+														<tr>
+															<td>
+																<table width="100%" border="0" cellspacing="0"
+																	cellpadding="0" class="border1">
+																	<tr>
+																		<td class="heading1">
+																			Quick Quote Option List
+																		</td>
+																		<td align="right" class="heading1"></td>
+																	</tr>
+																	<tr>
+																		<td>
+																			<table width="100%" border="0" cellspacing="0"
+																				cellpadding="0">
+																				<tr class="defult_tr_errors"
+																					id="tr_error_indication_div">
+																					<td align="left">
+																						<div id="error_indication_div" class="error11Bold"></div>
+																					</td>
+																				</tr>
+																			</table>
+																		</td>
+																		<!--  
+																		<td align="right">
+																			<span class="error11Bold">Note :</span>
+																			<span class="error11">All fields are required
+																			</span>
+																		</td>
+																		-->
+																	</tr>
+																</table>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<table cellpadding="0" cellspacing="0" width="100%"
+										class="border1">
+										<tr>
+											<td>
+												<div id="content"
+													style="margin-top: 190px; padding-left: left; clear: both;">
+													<!--<div id="eval:LawyersRule.isInsured"
+														style="float: left; width: 99.7%;">
+														<table width="80%" border="0" align="center"
+															cellpadding="4" cellspacing="0"
+															style="background-color: #fae5ac; line-height: 18px; text-align: justify; color: #990033; border: 1px solid #c8a43c">
+															<tr>
+																<td>
+																	<b>Congratulations You are now approved for
+																		professional liability insurance through your
+																		successful completion of our on-line application. If
+																		you would like to explore other pricing options,
+																		please use the drop down boxes below. If there are any
+																		additional pricing limits you would like to explore
+																		that are not available in the drop down boxes, please
+																		contact us at 1-877-569-4111. Thank you for your
+																		business. </b>
+																</td>
+															</tr>
+														</table>
+														<div style="float: left;">
+															&nbsp;
+														</div>
+													</div>
+													
+													<div id="eval:LawyersRule.isAgentAndReferred"
+														style="float: left; width: 99.7%;">
+														<table width="80%" border="0" align="center"
+															cellpadding="4" cellspacing="0"
+															style="background-color: #fae5ac; line-height: 18px; text-align: justify; color: #990033; border: 1px solid #c8a43c">
+															<tr>
+																<td>
+																	<b>Congratulations You are now approved for
+																		professional liability insurance through your
+																		successful completion of our on-line application. If
+																		you would like to explore other pricing options,
+																		please use the drop down boxes below. If there are any
+																		additional pricing limits you would like to explore
+																		that are not available in the drop down boxes, please
+																		contact us at 1-877-569-4111. Thank you for your
+																		business. </b>
+																</td>
+															</tr>
+														</table>
+														<div style="float: left;">
+															&nbsp;
+														</div>
+													</div>-->
+													<table cellpadding="0" cellspacing="0" width="100%">
+														<tr>
+															<td align="center" class="headingBold">
+																You are half way there, it takes just a few more minutes
+																to convert your estimate to a quote.
+															</td>
+														</tr>
+														<tr>
+															<td>
+																<div id="roleEditOnly"
+																	style="float: left; width: 99.7%;">
+																	<table width="100%" border="0" align="center"
+																		cellpadding="0" cellspacing="0">
+																		<tr>
+																			<td>
+																				<table width="100%" border="0" cellspacing="0"
+																					cellpadding="0">
+																					<tr>
+																						<td>
+																							<table width="100%" border="0" cellspacing="0"
+																								cellpadding="0">
+																								<tr>
+																									<td id="eval:LawyersRule.isFirmNotReferred">
+																										<table width="96%" border="0" align="center"
+																											cellpadding="0" cellspacing="0">
+																											<tr>
+																												<td id="Modifiers_freeform_01" valign="top"
+																													colspan="3" style="padding: 0px 10px;">
+																													<table cellpadding="0" cellspacing="2"
+																														width="100%">
+																														<tr>
+																															<td valign="top"
+																																id="eval:LawyersRule.ShowModifiersBlock"
+																																class="bgLight cell" style="width: 46%;">
+																																<table cellpadding="0" cellspacing="0"
+																																	width="100%"
+																																	id="eval:LawyersRule.QuotedIssuedAcceptNot_Status"
+																																	class="bgLight">
+																																	<tr>
+																																		<td
+																																			id="eval:LawyersRule.IsModifierState">
+																																			<table width="100%" border="0"
+																																				align="center" cellpadding="0"
+																																				cellspacing="3">
+																																				<tr>
+																																					<td></td>
+																																					<td>
+																																						<div
+																																							id="error_SchduleRatingModifier1"
+																																							class="defult_tr_errors"></div>
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td align="right" class="txt1">
+																																						Claims:
+																																					</td>
+																																					<td align="left">
+																																						<input
+																																							name="SchduleRatingModifier1"
+																																							id="SchduleRatingModifier1"
+																																							type="text" class="inputbox"
+																																							size="3" maxlength="3"
+																																							tabindex="1" />
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td></td>
+																																					<td>
+																																						<div
+																																							id="error_SchduleRatingModifier2"
+																																							class="defult_tr_errors"></div>
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td align="right" class="txt1">
+																																						Firm Practice:
+																																					</td>
+																																					<td align="left">
+																																						<input
+																																							name="SchduleRatingModifier2"
+																																							id="SchduleRatingModifier2"
+																																							type="text" class="inputbox"
+																																							size="3" maxlength="3"
+																																							tabindex="2" />
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td></td>
+																																					<td>
+																																						<div
+																																							id="error_SchduleRatingModifier3"
+																																							class="defult_tr_errors"></div>
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td align="right" class="txt1"
+																																						nowrap="nowrap">
+																																						Firm Ed. and Training:
+																																					</td>
+																																					<td align="left">
+																																						<input
+																																							name="SchduleRatingModifier3"
+																																							id="SchduleRatingModifier3"
+																																							type="text" class="inputbox"
+																																							size="3" maxlength="3"
+																																							tabindex="3" />
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td></td>
+																																					<td>
+																																						<div id="error_ModifierComment"
+																																							class="defult_tr_errors"></div>
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td align="right">
+																																						Underwriting Justification:
+																																					</td>
+																																					<td align="left">
+																																						<textarea name="ModifierComment"
+																																							id="ModifierComment"
+																																							class="inputbox" cols="35"
+																																							rows="3"
+																																							onkeyup="limitText(this,1,1000);"
+																																							tabindex="4" />
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td align="right" class="txt1">
+																																						&nbsp;
+																																					</td>
+																																					<td align="left" valign="bottom">
+																																						<table width="60" border="0"
+																																							cellpadding="0" cellspacing="0">
+																																							<tr>
+																																								<td>
+																																									<div class="button4"
+																																										style="width: 100px">
+																																										<a
+																																											href="javascript:submitform('quickquoteoption.html','quickquoteoption.saveModifier','','');"
+																																											tabindex="5">Update </a>
+																																									</div>
+																																								</td>
+																																							</tr>
+																																						</table>
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td colspan="2"></td>
+																																				</tr>
+																																			</table>
+																																		</td>
+																																	</tr>
+																																	<tr>
+																																		<td
+																																			id="eval:LawyersRule.IsNonModifierState">
+																																			<table width="100%" border="0"
+																																				align="center" cellpadding="0"
+																																				cellspacing="3">
+																																				<tr>
+																																					<td colspan="2">
+																																						&nbsp;
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td colspan="2">
+																																						&nbsp;
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td colspan="2" class="error11"
+																																						align="center">
+																																						Note: Schedule modifiers are not
+																																						allowed for this state.
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td colspan="2">
+																																						&nbsp;
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td colspan="2">
+																																						&nbsp;
+																																					</td>
+																																				</tr>
+																																			</table>
+																																		</td>
+																																	</tr>
+																																</table>
+																															</td>
+																															<td valign="top"
+																																id="eval:LawyersRule.ShowGetAnotherOptionBlock"
+																																class="bgLight cell" style="width: 53%;">
+																																<table
+																																	id="eval:LawyersRule.QuotedIssuedAcceptNot_Status"
+																																	cellpadding="0" cellspacing="0"
+																																	width="100%">
+																																	<tr>
+																																		<td>
+																																			<table id="QuoteOption_freeform_01"
+																																				width="100%" border="0"
+																																				align="center" cellpadding="0"
+																																				cellspacing="3">
+																																				<tr>
+																																					<td colspan="2" align="left"></td>
+																																					<td align="left">
+																																						<div id="error_LimitSequence"
+																																							class="defult_tr_errors"></div>
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td width="30%" align="right"
+																																						nowrap="nowrap">
+																																						Limits of Liability
+																																					</td>
+																																					<td align="right">
+																																						$:
+																																					</td>
+																																					<td align="left">
+																																						<select name="LimitSequence"
+																																							id="LimitSequence"
+																																							class="inputbox" tabindex="6"
+																																							onchange="showHideRatingLink();">
+																																							<option value="">
+																																								Select
+																																							</option>
+																																						</select>
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td colspan="2" align="right"></td>
+																																					<td nowrap="nowrap"
+																																						id="eval:LawyersRule.showClaimExpenseType">
+																																						<input type="checkbox"
+																																							name="IsClaimExpensesType"
+																																							id="IsClaimExpensesType"
+																																							tabindex="7" value="Y" />
+																																						Defense expenses paid in addition
+																																						to the limits of liability
+																																					</td>
+																																				</tr>
+																																				<!--  
+                                                                                                                                                <tr>
+                                                                                                                                                    <td colspan="2" align="right"></td>
+                                                                                                                                                    <td nowrap="nowrap">
+                                                                                                                                                        <input type="checkbox"
+                                                                                                                                                            name="IsDollarDefense"
+                                                                                                                                                            id="IsDollarDefense" tabindex="97"
+                                                                                                                                                            value="Y"
+                                                                                                                                                            onclick="showDivAreaManualPremium('IsDollarDefense','ManualPremium');" />
+                                                                                                                                                        Calculate manual premium
+                                                                                                                                                    </td>
+                                                                                                                                                </tr>
+                                                                                                                                                -->
+																																				<tr>
+																																					<td colspan="2" align="left"></td>
+																																					<td align="left">
+																																						<div id="error_DeductibleSequence"
+																																							class="defult_tr_errors"></div>
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td align="right">
+																																						Deductible
+																																					</td>
+																																					<td align="right">
+																																						$:
+																																					</td>
+																																					<td align="left">
+																																						<select name="DeductibleSequence"
+																																							id="DeductibleSequence"
+																																							class="inputbox" tabindex="8"
+																																							onchange="showHideRatingLink();">
+																																							<option value="">
+																																								Select
+																																							</option>
+																																						</select>
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td colspan="2" align="right">
+																																						&nbsp;
+																																					</td>
+																																					<td align="left">
+																																						<input type="checkbox"
+																																							name="IsClaimOptionType"
+																																							id="IsClaimOptionType"
+																																							tabindex="9" value="Y" />
+																																						Annual Aggregate
+																																					</td>
+																																				</tr>
+																																				<tr>
+																																					<td colspan="2" align="right">
+																																						&nbsp;
+																																					</td>
+																																					<td height="50" align="left"
+																																						valign="bottom">
+																																						<table width="200" border="0"
+																																							cellpadding="0" cellspacing="5">
+																																							<tr>
+																																								<td>
+																																									<div id="getLink"
+																																										class="button4"
+																																										style="width: 200px">
+																																										<a
+																																											href="javascript:submitform('quickquoteoption.html','quickquoteoption.saveQuote','','');"
+																																											tabindex="10">Get Another
+																																											Quote Option</a>
+																																									</div>
+																																								</td>
+																																							</tr>
+																																						</table>
+																																					</td>
+																																				</tr>
+																																			</table>
+																																		</td>
+																																	</tr>
+																																</table>
+																															</td>
+																														</tr>
+																													</table>
+																												</td>
+																											</tr>
+																										</table>
+																									</td>
+																								</tr>
+																								<tr>
+																									<td class="bgTable">
+																										<div id="eval:LawyersRule.isInsured">
+																											<div id="eval:LawyersRule.isFirmNotReferred">
+																												<fieldset>
+																													<legend>
+																														Quote Option
+																													</legend>
+																													<div id="divAy">
+																														<table width="96%" border="0"
+																															align="center" cellpadding="0"
+																															cellspacing="0">
+																															<tr>
+																																<td>
+																																	<table width="100%" border="0"
+																																		cellspacing="5" cellpadding="5">
+																																		<tr>
+																																			<td colspan="2">
+																																				<div id="error_FinalisedQuote"
+																																					class="defult_tr_errors"></div>
+																																			</td>
+																																		</tr>
+																																		<tr>
+																																			<!-- This td is rendered when the Rating is Based on Modifier -->
+																																			<td
+																																				id="eval:LawyersRule.IsModifierState">
+																																				<div id="FinalDiv">
+																																					<table id="QuoteOption_list_01"
+																																						width="100%" border="0"
+																																						cellpadding="0" cellspacing="0"
+																																						class="border1">
+																																						<tr
+																																							id="QuoteOption_list_header_01">
+																																							<td>
+																																								<table width="100%" border="0"
+																																									align="left" cellpadding="0"
+																																									cellspacing="0">
+																																									<tr class="tableheading1">
+																																										<td width="120"
+																																											class="tableheading1"
+																																											style="border-right: 1px solid #ffffff;"
+																																											id="block_field_LimitAmount">
+																																											Limits
+																																										</td>
+																																										<td width="80"
+																																											class="tableheading1"
+																																											style="border-right: 1px solid #ffffff;"
+																																											id="block_field_IsClaimExpensesType">
+																																											Defense expenses paid in
+																																											addition to the limits of
+																																											liability
+																																										</td>
+																																										<td width="80"
+																																											class="tableheading1"
+																																											style="border-right: 1px solid #ffffff;"
+																																											id="block_field_DeductibleAmount">
+																																											Deductible
+																																										</td>
+																																										<td width="80"
+																																											class="tableheading1"
+																																											style="border-right: 1px solid #ffffff;"
+																																											id="block_field_IsClaimOptionType">
+																																											Annual Aggregate
+																																										</td>
+																																										<td width="80"
+																																											class="tableheading1"
+																																											style="border-right: 1px solid #ffffff;"
+																																											id="block_field_TotalPremiumFirstRange">
+																																											Premium Range
+																																										</td>
+																																										<td width="20"
+																																								class="tableheading1">
+																																								<span
+																																									id="block_field_delete_row_link">
+																																									&nbsp;</span>
+																																							</td>
+																																										<!--  																																			
+                                                                                                                                                            <td width="60px"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                style="border-right: 1px solid #ffffff;"
+                                                                                                                                                                id="block_field_TotalPolicyTaxAmount">
+                                                                                                                                                                Tax amount
+                                                                                                                                                            </td>
+            
+                                                                                                                                                            <td width="80px"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                style="border-right: 1px solid #ffffff;"
+                                                                                                                                                                id="block_field_TotalPremium">
+                                                                                                                                                                Total Premium
+                                                                                                                                                            </td>
+                                                                                                                                                            <td width="85px"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                style="border-right: 1px solid #ffffff;"
+                                                                                                                                                                id="block_field_InvoicedPremium">
+                                                                                                                                                                Invoiced Premium
+                                                                                                                                                            </td>	
+                                                                                                                                                            -->
+																																									</tr>
+																																									<tbody
+																																										id="QuoteOption_list_mom_data_01">
+																																										<tr id="mom_child_data">
+																																											<td width="120"
+																																												style="border-right: 1px solid #cccccc;"
+																																												id="block_field_LimitAmount"></td>
+																																											<td width="80"
+																																												style="border-right: 1px solid #cccccc;"
+																																												id="block_field_IsClaimExpensesType"></td>
+																																											<td width="80"
+																																												style="border-right: 1px solid #cccccc;"
+																																												id="block_field_DeductibleAmount"></td>
+																																											<td width="80"
+																																												style="border-right: 1px solid #cccccc;"
+																																												id="block_field_IsClaimOptionType"></td>
+																																											<td width="80"
+																																												style="border-right: 1px solid #cccccc;"
+																																												id="block_field_TotalPremiumFirstRange"></td>
+																																											<td width="20" align="center">
+																																												<span
+																																													id="eval:LawyersRule.ShowDeleteSaveConvertToFullQuote">
+																																													<span
+																																													id="eval:LawyersRule.IsNotFirstQuote">
+																																														<span
+																																														id="block_field_delete_row_link"><a
+																																															href="javascript:submitform('quickquoteoption.html','quickquoteoption.deleteQuote','','');"
+																																															class="Link_blue"><img
+																																																	src="img/cross.gif"
+																																																	width="16" height="17"
+																																																	border="0" title="Delete" />
+																																														</a> </span> </span> </span>
+																																											</td>
+																																										</tr>
+																																									</tbody>
+																																								</table>
+																																							</td>
+																																						</tr>
+
+																																					</table>
+																																				</div>
+																																			</td>
+																																			<!-- Modifier td ends -->
+																																			<!-- ------------------------   -->
+																																			<!-- This td is used when rating is not based on Modifers -->
+																																			<td
+																																				id="eval:LawyersRule.IsNonModifierState">
+																																				<div id="FinalDiv">
+																																					<table id="QuoteOption_list_01"
+																																						width="100%" border="0"
+																																						cellpadding="0" cellspacing="0"
+																																						class="border1">
+																																						<tr
+																																							id="QuoteOption_list_header_01">
+																																							<td>
+																																								<table width="100%" border="0"
+																																									align="left" cellpadding="0"
+																																									cellspacing="0">
+																																									<tr class="tableheading1">
+																																										<td width="120"
+																																											class="tableheading1"
+																																											style="border-right: 1px solid #ffffff;"
+																																											id="block_field_LimitAmount">
+																																											Limits
+																																										</td>
+																																										<!--  
+                                                                                                                                                            <td width="100px"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                style="border-right: 1px solid #ffffff;"
+                                                                                                                                                                id="block_field_TotalPremiumFirstRange">
+                                                                                                                                                                Premium Range
+                                                                                                                                                            </td>
+                                                                                                                                                            -->
+																																										<td width="80"
+																																											class="tableheading1"
+																																											style="border-right: 1px solid #ffffff;"
+																																											id="block_field_IsClaimExpensesType">
+																																											Defense expenses paid in
+																																											addition to the limits of
+																																											liability
+																																										</td>
+																																										<td width="80"
+																																											class="tableheading1"
+																																											style="border-right: 1px solid #ffffff;"
+																																											id="block_field_DeductibleAmount">
+																																											Deductible
+																																										</td>
+																																										<td width="80"
+																																											class="tableheading1"
+																																											style="border-right: 1px solid #ffffff;"
+																																											id="block_field_IsClaimOptionType">
+																																											Annual Aggregate
+																																										</td>
+																																										<!--  																																			
+                                                                                                                                                            <td width="60px"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                style="border-right: 1px solid #ffffff;"
+                                                                                                                                                                id="block_field_TotalPolicyTaxAmount">
+                                                                                                                                                                Tax amount
+                                                                                                                                                            </td>
+                                                                                                                                                            -->
+																																										<td width="80"
+																																											class="tableheading1"
+																																											style="border-right: 1px solid #ffffff;"
+																																											id="block_field_TotalPremium">
+																																											Total Premium
+																																										</td>
+																																										<td width="20"
+																																								class="tableheading1">
+																																								<span
+																																									id="block_field_delete_row_link">
+																																									&nbsp;</span>
+																																							</td>
+																																										<!--  
+                                                                                                                                                            <td width="85px"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                style="border-right: 1px solid #ffffff;"
+                                                                                                                                                                id="block_field_InvoicedPremium">
+                                                                                                                                                                Invoiced Premium
+                                                                                                                                                            </td>	
+                                                                                                                                                            -->
+																																									</tr>
+																																									<tbody
+																																										id="QuoteOption_list_mom_data_01">
+																																										<tr id="mom_child_data">
+																																											<td width="120"
+																																												style="border-right: 1px solid #cccccc;"
+																																												id="block_field_LimitAmount"></td>
+																																											<!--  																																				
+                                                                                                                                                            <td width="60px"
+                                                                                                                                                                style="border-right: 1px solid #cccccc;"
+                                                                                                                                                                id="block_field_TotalPremiumFirstRange"></td>
+                                                                                                                                                                -->
+																																											<td width="80"
+																																												style="border-right: 1px solid #cccccc;"
+																																												id="block_field_IsClaimExpensesType"></td>
+																																											<td width="80"
+																																												style="border-right: 1px solid #cccccc;"
+																																												id="block_field_DeductibleAmount"></td>
+																																											<td width="80"
+																																												style="border-right: 1px solid #cccccc;"
+																																												id="block_field_IsClaimOptionType"></td>
+																																											<td width="80"
+																																												style="border-right: 1px solid #cccccc;"
+																																												id="block_field_TotalPremium"></td>
+																																											<td width="20" align="center">
+																																													<span
+																																														id="eval:LawyersRule.ShowDeleteSaveConvertToFullQuote">
+																																														<span
+																																														id="eval:LawyersRule.IsNotFirstQuote">
+																																															<span
+																																															id="block_field_delete_row_link"><a
+																																																href="javascript:submitform('quickquoteoption.html','quickquoteoption.deleteQuote','','');"
+																																																class="Link_blue"><img
+																																																		src="img/cross.gif"
+																																																		width="16" height="17"
+																																																		border="0" title="Delete" />
+																																															</a> </span> </span> </span>
+																																												</td>
+																																										</tr>
+																																									</tbody>
+
+																																								</table>
+																																							</td>
+																																						</tr>
+
+																																					</table>
+																																				</div>
+																																			</td>
+																																			<!-- Non Modifier td ends -->
+																																		</tr>
+																																	</table>
+																																</td>
+																															</tr>
+																														</table>
+																													</div>
+																												</fieldset>
+																											</div>
+																										</div>
+
+																										<!-- This code is for Agent -->
+
+																										<div id="eval:LawyersRule.isAgent">
+																											<div id="eval:LawyersRule.isFirmNotReferred">
+																												<fieldset>
+																													<legend>
+																														Quote Option
+																													</legend>
+																													<div id="divAy">
+																														<table width="96%" border="0"
+																															align="center" cellpadding="0"
+																															cellspacing="0">
+																															<tr>
+																																<td>
+																																	<table width="100%" border="0"
+																																		cellspacing="5" cellpadding="5">
+																																		<tr>
+																																			<td>
+																																				<div id="error_FinalisedQuote"
+																																					class="defult_tr_errors"></div>
+																																			</td>
+																																		</tr>
+																																		<tr>
+																																			<!-- Agent Code Modifier State -->
+																																			<td
+																																				id="eval:LawyersRule.IsModifierState">
+																																				<div id="FinalDiv">
+																																					<table id="QuoteOption_list_01"
+																																						width="100%" border="0"
+																																						cellpadding="0" cellspacing="0"
+																																						class="border1">
+
+																																						<tr>
+																																							<td>
+																																								<table cellpadding="0"
+																																									cellspacing="0" width="100%">
+
+																																								</table>
+																																							</td>
+																																						</tr>
+																																						<tr
+																																							id="QuoteOption_list_header_01"
+																																							class="tableheading1">
+																																							<!--  
+                                                                                                                                                            <td width="60px" align="left"
+                                                                                                                                                                style="border-right: 1px solid #ffffff;"
+                                                                                                                                                                class="left-link">
+                                                                                                                                                                <span
+                                                                                                                                                                    id="block_field_IsThisOptionFinalised">Select
+                                                                                                                                                                    a Quote</span>
+                                                                                                                                                            </td>
+                                                                                                                                                                -->
+																																							<td width="80"
+																																								class="tableheading1"
+																																								style="border-right: 1px solid #ffffff; padding-left: 2px">
+																																								<span
+																																									id="block_field_IsQuoteSelected">Is
+																																									Quote Selected</span>
+																																							</td>
+																																							<td width="130"
+																																								class="tableheading1"
+																																								style="border-right: 1px solid #ffffff; padding-left: 2px"
+																																								id="block_field_LimitAmount">
+																																								Limits
+																																							</td>
+																																							<td width="80"
+																																								class="tableheading1"
+																																								id="block_field_IsClaimExpensesType"
+																																								style="border-right: 1px solid #ffffff; padding-left: 2px">
+																																								Defense expenses paid in
+																																								addition to the limits of
+																																								liability
+																																							</td>
+																																							<td width="80"
+																																								class="tableheading1"
+																																								style="border-right: 1px solid #ffffff; padding-left: 2px"
+																																								id="block_field_DeductibleAmount">
+																																								Deductible
+																																							</td>
+																																							<td width="80"
+																																								class="tableheading1"
+																																								style="border-right: 1px solid #ffffff; padding-left: 2px"
+																																								id="block_field_IsClaimOptionType">
+																																								Annual Aggregate
+																																							</td>
+																																							<!--  
+                                                                                                                                                            <td width="70px"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                style="border-right: 1px solid #ffffff; padding-left:2px"
+                                                                                                                                                                >
+                                                                                                                                                                <span
+                                                                                                                                                                    id="block_field_TotalPolicyModifierPercentage">Total
+                                                                                                                                                                    Modifiers</span>
+                                                                                                                                                            </td>
+                                                                                                                                                            <td width="60px"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                style="border-right: 1px solid #ffffff; padding-left:2px"
+                                                                                                                                                                id="block_field_TotalPolicyTaxAmount">
+                                                                                                                                                                Tax amount
+                                                                                                                                                            </td>
+                                                                                                                                                            
+                                                                                                                                                            
+                                                                                                                                                            <td width="80px"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                style="border-right: 1px solid #ffffff; padding-left:2px"
+                                                                                                                                                                id="block_field_TotalPremium">
+                                                                                                                                                                Total Premium
+                                                                                                                                                            </td>
+                                                                                                                                                            -->
+																																							<td width="100"
+																																								class="tableheading1"
+																																								style="border-right: 1px solid #ffffff; padding-left: 2px"
+																																								id="block_field_TotalPremiumFirstRange">
+																																								Premium Range
+																																							</td>
+																																							<!--  
+                                                                                                                                                            <td width="85px"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                style="border-right: 1px solid #ffffff; padding-left:2px"
+                                                                                                                                                                id="block_field_InvoicedPremium">
+                                                                                                                                                                Invoiced Premium
+                                                                                                                                                            </td>
+                                                                                                                                                            
+                                                                                                                                                            <td width="55px"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                style="border-right: 1px solid #ffffff; padding-left:2px"
+                                                                                                                                                                >
+                                                                                                                                                                <span
+                                                                                                                                                                    id="block_field_IsDollarDefenseText">Type</span>
+                                                                                                                                                            </td>
+                                                                                                                                                            -->
+																																							<td width="20"
+																																								class="tableheading1">
+																																								<span
+																																									id="block_field_delete_row_link">
+																																									&nbsp;</span>
+																																							</td>
+																																							<!-- 
+                                                                                                                                                            <td width="21px" align="left"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                >
+                                                                                                                                                                <span
+                                                                                                                                                                    id="block_field_downloadrating_row_link">
+                                                                                                                                                                    &nbsp;</span>
+                                                                                                                                                            </td>
+                                                                                                                                                             -->
+																																						</tr>
+																																						<tbody
+																																							id="QuoteOption_list_mom_data_01">
+
+																																							<tr id="mom_child_data">
+																																								<!--  
+                                                                                                                                                            <td width="60px" align="left"
+                                                                                                                                                                style="border-right: 1px solid #cccccc;">
+                                                                                                                                                                  
+                                                                                                                                                                
+                                                                                                                                                                    <span
+                                                                                                                                                                    id="block_field_IsThisOptionFinalised"><input
+                                                                                                                                                                            type="radio"
+                                                                                                                                                                            name="IsThisOptionFinalised"
+                                                                                                                                                                            id="IsThisOptionFinalised"
+                                                                                                                                                                            value="Y"
+                                                                                                                                                                            onclick="javascript:ajaxpageblocklink('quickquoteoption.html','quickquoteoption.finaliseQuote','','','FinalDiv');setScroll()" />
+                                                                                                                                                                </span> 																																	  
+                                                                                                                                                                
+                                                                                                                                                                
+                                                                                                                                                            </td>
+                                                                                                                                                            -->
+																																								<td width="80"
+																																									style="border-right: 1px solid #cccccc; padding-left: 2px">
+																																									<span
+																																										id="eval:LawyersRule.isManagementorAccountRep">
+																																										<span
+																																										id="block_field_IsQuoteSelected">
+																																											<input name="IsQuoteSelected"
+																																												type="checkbox"
+																																												id="IsQuoteSelected"
+																																												size="10" maxlength="3"
+																																												tabindex="1" /> </span> <span
+																																										id="eval:LawyersRule.isCrumFosterorOtherManagement">
+																																											<span
+																																											id="block_field_IsQuoteSelected">
+																																												<input
+																																													name="IsQuoteSelected"
+																																													type="checkbox"
+																																													id="IsQuoteSelected"
+																																													size="10" maxlength="3"
+																																													tabindex="1"
+																																													disabled="disabled" /> </span> </span> </span>
+																																								</td>
+																																								<td width="130"
+																																									style="border-right: 1px solid #cccccc; padding-left: 2px"
+																																									id="block_field_LimitAmount"></td>
+																																								<td width="80"
+																																									style="border-right: 1px solid #cccccc; padding-left: 2px"
+																																									id="block_field_IsClaimExpensesType"></td>
+																																								<td width="80"
+																																									style="border-right: 1px solid #cccccc; padding-left: 2px"
+																																									id="block_field_DeductibleAmount"></td>
+																																								<td width="80"
+																																									style="border-right: 1px solid #cccccc; padding-left: 2px"
+																																									id="block_field_IsClaimOptionType"></td>
+																																								<!-- 
+                                                                                                                                                            <td width="70px"
+                                                                                                                                                                style="border-right: 1px solid #cccccc; padding-left:2px"
+                                                                                                                                                                >
+                                                                                                                                                                <span
+                                                                                                                                                                    id="block_field_TotalPolicyModifierPercentage"></span>
+                                                                                                                                                            </td>
+                                                                                                                                                            <td width="60px"
+                                                                                                                                                                style="border-right: 1px solid #cccccc; padding-left:2px"
+                                                                                                                                                                id="block_field_TotalPolicyTaxAmount"></td>
+                                                                                                                                                                 
+            
+                                                                                                                                                            <td width="80px"
+                                                                                                                                                                style="border-right: 1px solid #cccccc; padding-left:2px"
+                                                                                                                                                                id="block_field_TotalPremium"></td>
+                                                                                                                                                                -->
+																																								<td width="100"
+																																									style="border-right: 1px solid #cccccc; padding-left: 2px"
+																																									id="block_field_TotalPremiumFirstRange"></td>
+																																								<!--  
+                                                                                                                                                            <td width="85px"
+                                                                                                                                                                style="border-right: 1px solid #cccccc;"
+                                                                                                                                                                id="block_field_InvoicedPremium"></td>
+                                                                                                                                                            <td width="55px"
+                                                                                                                                                                style="border-right: 1px solid #cccccc;"
+                                                                                                                                                                >
+                                                                                                                                                                <span
+                                                                                                                                                                    id="block_field_IsDollarDefenseText"></span>
+                                                                                                                                                            </td>
+                                                                                                                                                            -->
+																																								<td width="20" align="center">
+																																									<span
+																																										id="eval:LawyersRule.ShowDeleteSaveConvertToFullQuote">
+																																										<span
+																																										id="eval:LawyersRule.IsNotFirstQuote">
+																																											<span
+																																											id="block_field_delete_row_link"><a
+																																												href="javascript:submitform('quickquoteoption.html','quickquoteoption.deleteQuote','','');"
+																																												class="Link_blue"><img
+																																														src="img/cross.gif"
+																																														width="16" height="17"
+																																														border="0" title="Delete" />
+																																											</a> </span> </span> </span>
+																																								</td>
+																																								<!--  
+                                                                                                                                                            <td width="21px" align="center"
+                                                                                                                                                                >
+                                                                                                                                                                <span>
+                                                                                                                                                                    <span
+                                                                                                                                                                    id="block_field_downloadrating_row_link"><a
+                                                                                                                                                                        href="javascript:submitform('quickquoteoption.html','quickquoteoption.downloadpdfrating','','');"
+                                                                                                                                                                        class="Link_blue"><img
+                                                                                                                                                                                src="img/icon_location.gif"
+                                                                                                                                                                                title="Download Rating"
+                                                                                                                                                                                alt="Download Rating"
+                                                                                                                                                                                width="15" height="17"
+                                                                                                                                                                                border="0" />
+                                                                                                                                                                    </a>
+                                                                                                                                                                </span> </span>
+                                                                                                                                                            </td>
+                                                                                                                                                            -->
+																																							</tr>
+																																					</table>
+																																				</div>
+																																			</td>
+																																			<!-- Agent Code Modifier State ends -->
+																																			<!-- ------------------ -->
+																																			<!-- Agent Code Non Modifier State Starts -->
+																																			<td
+																																				id="eval:LawyersRule.IsNonModifierState">
+																																				<div id="FinalDiv">
+																																					<table id="QuoteOption_list_01"
+																																						width="100%" border="0"
+																																						cellpadding="0" cellspacing="0"
+																																						class="border1">
+																																						<tr
+																																							id="QuoteOption_list_header_01">
+																																							<td>
+																																								<table width="100%" border="0"
+																																									align="left" cellpadding="0"
+																																									cellspacing="0">
+																																									<tr class="tableheading1">
+																																										<!--  
+                                                                                                                                                            <td width="60px" align="left"
+                                                                                                                                                                style="border-right: 1px solid #ffffff;"
+                                                                                                                                                                class="left-link">
+                                                                                                                                                                <span
+                                                                                                                                                                    id="block_field_IsThisOptionFinalised">Select
+                                                                                                                                                                    a Quote</span>
+                                                                                                                                                            </td>
+                                                                                                                                                                -->
+																																										<td width="80"
+																																											class="tableheading1"
+																																											style="border-right: 1px solid #ffffff; padding-left: 2px">
+																																											<span
+																																												id="block_field_IsQuoteSelected">Is
+																																												Quote Selected@@@</span>
+																																										</td>
+																																										<td width="140"
+																																											class="tableheading1"
+																																											style="border-right: 1px solid #ffffff; padding-left: 2px"
+																																											id="block_field_LimitAmount">
+																																											Limits
+																																										</td>
+																																										<td width="70"
+																																											class="tableheading1"
+																																											style="border-right: 1px solid #ffffff; padding-left: 2px"
+																																											id="block_field_IsClaimExpensesType">
+																																											Defense expenses paid in
+																																											addition to the limits of
+																																											liability
+																																										</td>
+																																										<td width="70"
+																																											class="tableheading1"
+																																											style="border-right: 1px solid #ffffff; padding-left: 2px"
+																																											id="block_field_DeductibleAmount">
+																																											Deductible
+																																										</td>
+																																										<td width="70"
+																																											class="tableheading1"
+																																											style="border-right: 1px solid #ffffff; padding-left: 2px"
+																																											id="block_field_IsClaimOptionType">
+																																											Annual Aggregate
+																																										</td>
+																																										<!--  
+                                                                                                                                                            <td width="70px"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                style="border-right: 1px solid #ffffff; padding-left:2px"
+                                                                                                                                                                >
+                                                                                                                                                                <span
+                                                                                                                                                                    id="block_field_TotalPolicyModifierPercentage">Total
+                                                                                                                                                                    Modifiers</span>
+                                                                                                                                                            </td>
+                                                                                                                                                            
+                                                                                                                                                            <td width="60px"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                style="border-right: 1px solid #ffffff; padding-left:2px"
+                                                                                                                                                                id="block_field_TotalPolicyTaxAmount">
+                                                                                                                                                                Tax amount
+                                                                                                                                                            </td>
+                                                                                                                                                            -->
+																																										<td width="20"
+																																											class="tableheading1"
+																																											style="border-right: 1px solid #ffffff; padding-left: 2px"
+																																											id="block_field_TotalPremium">
+																																											Total Premium
+																																										</td>
+																																										<!--  
+                                                                                                                                                            <td width="85px"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                style="border-right: 1px solid #ffffff; padding-left:2px"
+                                                                                                                                                                id="block_field_InvoicedPremium">
+                                                                                                                                                                Invoiced Premium
+                                                                                                                                                            </td>
+                                                                                                                                                            <td width="55px"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                style="border-right: 1px solid #ffffff; padding-left:2px"
+                                                                                                                                                                >
+                                                                                                                                                                <span
+                                                                                                                                                                    id="block_field_IsDollarDefenseText">Type</span>
+                                                                                                                                                            </td>
+                                                                                                                                                            -->
+																																										<td width="26" align="left"
+																																											class="tableheading1">
+																																											<span
+																																												id="block_field_delete_row_link">
+																																											</span>
+																																										</td>
+																																										<!-- 
+                                                                                                                                                            <td width="21px" align="left"
+                                                                                                                                                                class="tableheading1"
+                                                                                                                                                                >
+                                                                                                                                                                <span
+                                                                                                                                                                    id="block_field_downloadrating_row_link">
+                                                                                                                                                                    &nbsp;</span>
+                                                                                                                                                            </td>
+                                                                                                                                                             -->
+																																									</tr>
+																																									<tbody
+																																										id="QuoteOption_list_mom_data_01">
+																																										<tr id="mom_child_data">
+																																											<!--  
+                                                                                                                                                            <td width="60px" align="left"
+                                                                                                                                                                style="border-right: 1px solid #cccccc;">
+                                                                                                                                                                  
+                                                                                                                                                                
+                                                                                                                                                                    <span
+                                                                                                                                                                    id="block_field_IsThisOptionFinalised"><input
+                                                                                                                                                                            type="radio"
+                                                                                                                                                                            name="IsThisOptionFinalised"
+                                                                                                                                                                            id="IsThisOptionFinalised"
+                                                                                                                                                                            value="Y"
+                                                                                                                                                                            onclick="javascript:ajaxpageblocklink('quickquoteoption.html','quickquoteoption.finaliseQuote','','','FinalDiv');setScroll()" />
+                                                                                                                                                                </span> 																																	  
+                                                                                                                                                                
+                                                                                                                                                                
+                                                                                                                                                            </td>
+                                                                                                                                                            -->
+																																											<td width="80" align="left"
+																																												style="border-right: 1px solid #cccccc; padding-left: 2px">
+																																												<span
+																																													id="eval:LawyersRule.isManagementorAccountRep">
+																																													<span
+																																													id="block_field_IsQuoteSelected">
+																																														<input
+																																															name="IsQuoteSelected"
+																																															type="checkbox"
+																																															id="IsQuoteSelected"
+																																															size="10" maxlength="3"
+																																															tabindex="1" /> </span> </span>
+																																												<span
+																																													id="eval:LawyersRule.isCrumFosterorOtherManagement">
+																																													<span
+																																													id="block_field_IsQuoteSelected">
+																																														<input
+																																															name="IsQuoteSelected"
+																																															type="checkbox"
+																																															id="IsQuoteSelected"
+																																															size="10" maxlength="3"
+																																															tabindex="1"
+																																															disabled="disabled" /> </span>
+																																												</span>
+																																											</td>
+																																											<td width="140"
+																																												style="border-right: 1px solid #cccccc; padding-left: 2px"
+																																												id="block_field_LimitAmount"></td>
+																																											<td width="70"
+																																												style="border-right: 1px solid #cccccc; padding-left: 2px"
+																																												id="block_field_IsClaimExpensesType"></td>
+																																											<td width="70"
+																																												style="border-right: 1px solid #cccccc; padding-left: 2px"
+																																												id="block_field_DeductibleAmount"></td>
+																																											<td width="70"
+																																												style="border-right: 1px solid #cccccc; padding-left: 2px"
+																																												id="block_field_IsClaimOptionType"></td>
+																																											<!--  
+                                                                                                                                                            <td width="70px"
+                                                                                                                                                                style="border-right: 1px solid #cccccc; padding-left:2px"
+                                                                                                                                                                >
+                                                                                                                                                                <span
+                                                                                                                                                                    id="block_field_TotalPolicyModifierPercentage"></span>
+                                                                                                                                                            </td>
+                                                                                                                                                            <td width="60px"
+                                                                                                                                                                style="border-right: 1px solid #cccccc; padding-left:2px"
+                                                                                                                                                                id="block_field_TotalPolicyTaxAmount"></td>
+                                                                                                                                                                -->
+																																											<td width="56"
+																																												style="border-right: 1px solid #cccccc; padding-left: 2px"
+																																												id="block_field_TotalPremium"></td>
+																																											<!--  
+                                                                                                                                                            <td width="85px"
+                                                                                                                                                                style="border-right: 1px solid #cccccc; padding-left:2px"
+                                                                                                                                                                id="block_field_InvoicedPremium"></td>
+                                                                                                                                                            <td width="55px"
+                                                                                                                                                                style="border-right: 1px solid #cccccc; padding-left:2px"
+                                                                                                                                                                >
+                                                                                                                                                                <span
+                                                                                                                                                                    id="block_field_IsDollarDefenseText"></span>
+                                                                                                                                                            </td>
+                                                                                                                                                            -->
+																																											<td width="26" align="center">
+																																												<span
+																																													id="eval:LawyersRule.ShowDeleteSaveConvertToFullQuote">
+																																													<span
+																																													id="eval:LawyersRule.IsNotFirstQuote">
+																																														<span
+																																														id="block_field_delete_row_link"><a
+																																															href="javascript:submitform('quickquoteoption.html','quickquoteoption.deleteQuote','','');"
+																																															class="Link_blue"><img
+																																																	src="img/cross.gif"
+																																																	width="16" height="17"
+																																																	border="0"
+																																																	title="Delete" /> </a> </span> </span> </span>
+																																											</td>
+																																											<!--  
+                                                                                                                                                            <td width="21px" align="center"
+                                                                                                                                                                >
+                                                                                                                                                                <span>
+                                                                                                                                                                    <span
+                                                                                                                                                                    id="block_field_downloadrating_row_link"><a
+                                                                                                                                                                        href="javascript:submitform('quickquoteoption.html','quickquoteoption.downloadpdfrating','','');"
+                                                                                                                                                                        class="Link_blue"><img
+                                                                                                                                                                                src="img/icon_location.gif"
+                                                                                                                                                                                title="Download Rating"
+                                                                                                                                                                                alt="Download Rating"
+                                                                                                                                                                                width="15" height="17"
+                                                                                                                                                                                border="0" />
+                                                                                                                                                                    </a>
+                                                                                                                                                                </span> </span>
+                                                                                                                                                            </td>
+                                                                                                                                                            -->
+																																										</tr>
+																																									</tbody>
+																																								</table>
+																																							</td>
+																																						</tr>
+
+																																					</table>
+																																				</div>
+																																			</td>
+																																			<!-- Agent Code Non Modifier State Ends -->
+																																		</tr>
+																																	</table>
+																																</td>
+																															</tr>
+																														</table>
+																													</div>
+																												</fieldset>
+																											</div>
+																										</div>
+
+																										<!-- The code for agent ends here -->
+																									</td>
+																								</tr>
+																								<tr>
+																									<!--  
+                                                                                                    <td>
+                                                                                                        <div id="eval:LawyersRule.isAgent">
+                                                                                                            <table border="0" align="center" cellpadding="0"
+                                                                                                                cellspacing="0"
+                                                                                                                id="Comment_freeform_contextdata_99">
+                                                                                                                <tr>
+                                                                                                                    <td nowrap>
+                                                                                                                        This quotation is subject to the following
+                                                                                                                        conditions:&nbsp;
+                                                                                                                    </td>
+                                                                                                                    <td id="eval:LawyersRule.enableComment">
+                                                                                                                        <textarea name="Comment" id="Comment"
+                                                                                                                            class="inputbox" cols="90" rows="3"
+                                                                                                                            onKeyUp="limitText(this,1,1000);" />
+                                                                                                                    </td>
+                                                                                                                    <td id="eval:LawyersRule.disableComment">
+                                                                                                                        <textarea name="Comment" id="Comment"
+                                                                                                                            class="inputbox" cols="90" rows="3"
+                                                                                                                            readonly="readonly" />
+                                                                                                                    </td>
+                                                                                                                </tr>
+                                                                                                            </table>
+                                                                                                        </div>
+                                                                                                    </td>
+                                                                                                    -->
+																								</tr>
+																								<tr>
+																									<td height="50">
+																										<table border="0" align="center"
+																											cellpadding="0" cellspacing="0">
+																											<tr>
+																												<td>
+																													&nbsp;
+																												</td>
+																												<td>
+																													&nbsp;
+																												</td>
+																											</tr>
+																											<tr>
+																												<td colspan="2" align="center">
+																													<div id="QuoteDiv">
+																													</div>
+																													<div id="eval:LawyersRule.isAgent">
+																														<table>
+																															<tr>
+																																<!--  
+																															<td>
+																																	<div class="button4"
+																																		style="width: 150px">
+																																		<a
+																																			href="javascript:submitform('quickquoteinsured.html','quickquoteoption.testMail','','');"
+																																			tabindex="212">Test Quote</a>
+																																	</div>
+																																</td>
+																															-->
+
+																																<td>
+																																	<div class="button4"
+																																		style="width: 150px">
+																																		<a
+																																			href="javascript:submitform('quickquoteinsured.html','quickquoteoption.back','','');"
+																																			tabindex="11">Back</a>
+																																	</div>
+																																</td>
+																																<td
+																																	id="eval:LawyersRule.IssuedAcceptNot_Status">
+																																	<div
+																																	id="eval:LawyersRule.IsNotSubProducerFlow">
+																																	<div class="button4"
+																																		style="width: 150px"
+																																		id="eval:LawyersRule.isQAEnvironment">
+																																		<a href="../index.html" tabindex="42">Exit</a>
+																																	</div>
+																																	<div class="button4"
+																																		style="width: 150px"
+																																		id="eval:LawyersRule.isUATEnvironment">
+																																		<a href="http://lawyer.rscube.com:8080" tabindex="42">Exit</a>
+																																	</div>
+																																	<div class="button4"
+																																		style="width: 150px"
+																																		id="eval:LawyersRule.isProdEnvironment">
+																																		<a
+																																			href="http://www.protexurelawyers.com"
+																																			tabindex="42">Exit</a>
+																																	</div>
+																																</div>
+																																	<div id="eval:LawyersRule.IsSubProducerFlow" class="button4" style="width: 150px">
+																																			<div id="weblink_freeform_contextdata_001"><a href="context_SPWebsite" tabindex="42">Exit</a>																							
+																																	</div></div>
+																																</td>
+																																<td
+																																	id="eval:LawyersRule.IssuedAcceptNot_Status">
+																																	<div
+																																		id="eval:LawyersRule.ShowDeleteSaveConvertToFullQuote">
+																																		<div class="button4"
+																																			style="width: 150px">
+																																			<a
+																																				href="javascript:submitform('firm.html|FirmNewApp.html','quickquoteoption.converttofullquote','forwardeval','LawyersRule.isOldAppFlow|LawyersRule.isNewAppFlow');"
+																																				tabindex="13">Convert to full
+																																				Quote</a>
+																																		</div>
+																																	</div>
+																																</td>
+																																<td
+																																	id="eval:LawyersRule.IssuedAcceptNot_Status">
+																																	<div
+																																		id="eval:LawyersRule.ShowDeleteSaveConvertToFullQuote">
+																																		<div class="button4"
+																																			style="width: 150px"
+																																			id="eval:LawyersRule.isFirmNotReferred">
+																																			<a
+																																				href="javascript:submitform('quickquoteoption.html','quickquoteoption.saveQuoteList','','');"
+																																				tabindex="14">Save</a>
+																																		</div>
+																																	</div>
+																																</td>
+																															</tr>
+																														</table>
+																													</div>
+																													<div id="eval:LawyersRule.isInsured">
+																														<table>
+																															<tr>
+																																<!--  
+																																<td>
+																																	<div class="button4"
+																																		style="width: 150px">
+																																		<a
+																																			href="javascript:submitform('quickquoteinsured.html','quickquoteoption.testMail','','');"
+																																			tabindex="212">Test Quote</a>
+																																	</div>
+																																</td>
+																																-->
+																																<td>
+																																	<div class="button4"
+																																		style="width: 150px">
+																																		<a
+																																			href="javascript:submitform('quickquoteinsured.html','quickquoteoption.back','','');"
+																																			tabindex="212">Back</a>
+																																	</div>
+																																</td>
+																																<td>
+																																	<div
+																																	id="eval:LawyersRule.IsNotSubProducerFlow">
+																																	<div class="button4"
+																																		style="width: 150px"
+																																		id="eval:LawyersRule.isQAEnvironment">
+																																		<a href="../index.html" tabindex="42">Exit</a>
+																																	</div>
+																																	<div class="button4"
+																																		style="width: 150px"
+																																		id="eval:LawyersRule.isUATEnvironment">
+																																		<a href="http://lawyer.rscube.com:8080" tabindex="42">Exit</a>
+																																	</div>
+																																	<div class="button4"
+																																		style="width: 150px"
+																																		id="eval:LawyersRule.isProdEnvironment">
+																																		<a
+																																			href="http://www.protexurelawyers.com"
+																																			tabindex="42">Exit</a>
+																																	</div>
+																																</div>
+																																	<div id="eval:LawyersRule.IsSubProducerFlow" class="button4" style="width: 150px">
+																																			<div id="weblink_freeform_contextdata_001"><a href="context_SPWebsite" tabindex="42">Exit</a></div>																							
+																																	</div>
+																																</td>
+																																<td>
+																																	<div id="getLink" class="button4"
+																																		style="width: 200px">
+																																		<a
+																																			href="javascript:submitform('firm.html','quickquoteoption.converttofullquote','','');"
+																																			tabindex="210">Convert to full
+																																			Quote</a>
+																																	</div>
+																																</td>
+
+																																<!--  <td  id="eval:LawyersRule.IsRegistrationPageNotSaved"><div id="getLink" class="button4" style="width: 200px"> <a	href="javascript:submitform('registration.html','quickquoteoption.register','','');"
+                                                                                                                                            tabindex="210">Click Here to Register</a> </div></td>-->
+																															</tr>
+																														</table>
+																													</div>
+																												</td>
+																											</tr>
+																											<tr>
+																												<td>
+																													&nbsp;
+																												</td>
+																												<td>
+																													&nbsp;
+																												</td>
+																											</tr>
+																										</table>
+																									</td>
+																								</tr>
+																								<tr>
+																									<td align="center">
+																										<table cellpadding="0" cellspacing="0"
+																											width="55%">
+																											<tr>
+																												<td class="heading3" align="left"
+																													style="padding: 10px 20px 0px; border: solid 1px #cccccc;">
+																													Thank you for your interest in our
+																													competitively priced professional liability
+																													insurance program. The above premium
+																													indication includes continuous prior acts
+																													coverage based on the number of years
+																													requested.
+																													<p>
+																														This indication does not obligate you to
+																														purchase the policy and does not obligate
+																														us to provide a policy at the quick
+																														premium estimate amount.
+																													</p>
+																												</td>
+																											</tr>
+																										</table>
+																									</td>
+																								</tr>
+																								<tr>
+																									<td>
+																										&nbsp;
+																									</td>
+																								</tr>
+																								<tr>
+																									<td
+																										id="eval:LawyersRule.IsRegistrationPageNotSaved"
+																										class="headingBold"
+																										style="font-size: 14px; text-align: center">
+																										<div id="eval:LawyersRule.isInsured"
+																											class="quoteoption">
+																											<p>
+																												If you must exit, take a second and
+																												<a
+																													href="javascript:submitform('registration.html','quickquoteoption.register','','');">register
+																													with us</a>. It will allow you to
+																											</p>
+																											<p>
+																												come back at anytime to review your estimate
+																												or continue on to a full quote.
+																											</p>
+																										</div>
+																									</td>
+																								</tr>
+																								<tr>
+																									<td>
+																										&nbsp;
+																									</td>
+																								</tr>
+																							</table>
+																						</td>
+																					</tr>
+																				</table>
+																			</td>
+																		</tr>
+																	</table>
+																</div>
+															</td>
+														</tr>
+													</table>
+												</div>
+											</td>
+										</tr>
+									</table>
+								</td>
+							</tr>
+							
+						</table>
+						<div class="calendar_widget" id="calendar_widget">
+							<iframe id="calendar_widget_iframe" name="calendar_widget_iframe"
+								src="calendar_widget.html" frameborder="0" />
+						</div>
+						<input type="hidden" name="divHideShow" value="" />
+						<input type="hidden" name="ctxmenuparam" value="" />
+					</td>
+				</tr>
+			</table>
+			<!---------Footer Start---------->
+				<div id="footer" class="footer">
+					<span id="#Include:footer.html#"></span>
+				</div>
+				<!---------Footer End---------->
+		</form>
+	</body>       <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/3334505.js"></script>
+	<script>
+	
+	//populateTotalFieldValue('AOP_Percentage_','TotalAOP_Percentage');
+	//populateTotalFieldValue('NumberOfPersonnel_','TotalFirmPersonnel');
+</script>
+</html>

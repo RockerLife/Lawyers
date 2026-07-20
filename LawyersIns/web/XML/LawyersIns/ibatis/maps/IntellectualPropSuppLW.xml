@@ -1,0 +1,112 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="IntellectualPropSuppLW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from IntellectualPropSuppLW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from IntellectualPropSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into IntellectualPropSuppLW(VersionSequence, PolicyKey
+          <isNotEmpty property="IsApplLitigatedForPropMatter" prepend=",">IsApplLitigatedForPropMatter</isNotEmpty>
+          <isNotEmpty property="IsApplHaveProcForIntPropApproval" prepend=",">IsApplHaveProcForIntPropApproval</isNotEmpty>
+          <isNotEmpty property="IsApplAcceptClientReqWith90Days" prepend=",">IsApplAcceptClientReqWith90Days</isNotEmpty>
+          <isNotEmpty property="IsApplHaveProcToWarnClient" prepend=",">IsApplHaveProcToWarnClient</isNotEmpty>
+          <isNotEmpty property="IsApplHaveReviewForIntProperty" prepend=",">IsApplHaveReviewForIntProperty</isNotEmpty>
+          <isNotEmpty property="IsWorkSuperviseBySeniorAttorney" prepend=",">IsWorkSuperviseBySeniorAttorney</isNotEmpty>
+          <isNotEmpty property="IsApplAllowRepOfInventorClients" prepend=",">IsApplAllowRepOfInventorClients</isNotEmpty>
+          <isNotEmpty property="NumberOfAttorneys" prepend=",">NumberOfAttorneys</isNotEmpty>
+          <isNotEmpty property="NumberOfPatentAgents" prepend=",">NumberOfPatentAgents</isNotEmpty>
+          <isNotEmpty property="IsApplRequireEngLetterForPatentSearch" prepend=",">IsApplRequireEngLetterForPatentSearch</isNotEmpty>
+          <isNotEmpty property="IsClientAwareOfDeadlines" prepend=",">IsClientAwareOfDeadlines</isNotEmpty>
+          <isNotEmpty property="IsApplicantReferMatterToForeignFirm" prepend=",">IsApplicantReferMatterToForeignFirm</isNotEmpty>
+          <isNotEmpty property="ApplicantReferMatterToForeignFirmDesc" prepend=",">ApplicantReferMatterToForeignFirmDesc</isNotEmpty>
+          <isNotEmpty property="IsApplResponsibleForPaymentsOfTaxes" prepend=",">IsApplResponsibleForPaymentsOfTaxes</isNotEmpty>
+          <isNotEmpty property="IsApplEngageServiceOfThirdParty" prepend=",">IsApplEngageServiceOfThirdParty</isNotEmpty>
+          <isNotEmpty property="ApplEngageServiceOfThirdPartyDesc" prepend=",">ApplEngageServiceOfThirdPartyDesc</isNotEmpty>
+          <isNotEmpty property="IsApplQualifyOpinionToScopeOfSearch" prepend=",">IsApplQualifyOpinionToScopeOfSearch</isNotEmpty>
+          <isNotEmpty property="IsApplEmployContractAttorneys" prepend=",">IsApplEmployContractAttorneys</isNotEmpty>
+          <isNotEmpty property="IsAttorneyRevBySeniorAttorney" prepend=",">IsAttorneyRevBySeniorAttorney</isNotEmpty>
+          <isNotEmpty property="IsAttorneyHaveExpInIntelProp" prepend=",">IsAttorneyHaveExpInIntelProp</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+          ) values (#VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="IsApplLitigatedForPropMatter" prepend=",">#IsApplLitigatedForPropMatter#</isNotEmpty>
+          <isNotEmpty property="IsApplHaveProcForIntPropApproval" prepend=",">#IsApplHaveProcForIntPropApproval#</isNotEmpty>
+          <isNotEmpty property="IsApplAcceptClientReqWith90Days" prepend=",">#IsApplAcceptClientReqWith90Days#</isNotEmpty>
+          <isNotEmpty property="IsApplHaveProcToWarnClient" prepend=",">#IsApplHaveProcToWarnClient#</isNotEmpty>
+          <isNotEmpty property="IsApplHaveReviewForIntProperty" prepend=",">#IsApplHaveReviewForIntProperty#</isNotEmpty>
+          <isNotEmpty property="IsWorkSuperviseBySeniorAttorney" prepend=",">#IsWorkSuperviseBySeniorAttorney#</isNotEmpty>
+          <isNotEmpty property="IsApplAllowRepOfInventorClients" prepend=",">#IsApplAllowRepOfInventorClients#</isNotEmpty>
+          <isNotEmpty property="NumberOfAttorneys" prepend=",">#NumberOfAttorneys#</isNotEmpty>
+          <isNotEmpty property="NumberOfPatentAgents" prepend=",">#NumberOfPatentAgents#</isNotEmpty>
+          <isNotEmpty property="IsApplRequireEngLetterForPatentSearch" prepend=",">#IsApplRequireEngLetterForPatentSearch#</isNotEmpty>
+          <isNotEmpty property="IsClientAwareOfDeadlines" prepend=",">#IsClientAwareOfDeadlines#</isNotEmpty>
+          <isNotEmpty property="IsApplicantReferMatterToForeignFirm" prepend=",">#IsApplicantReferMatterToForeignFirm#</isNotEmpty>
+          <isNotEmpty property="ApplicantReferMatterToForeignFirmDesc" prepend=",">#ApplicantReferMatterToForeignFirmDesc#</isNotEmpty>
+          <isNotEmpty property="IsApplResponsibleForPaymentsOfTaxes" prepend=",">#IsApplResponsibleForPaymentsOfTaxes#</isNotEmpty>
+          <isNotEmpty property="IsApplEngageServiceOfThirdParty" prepend=",">#IsApplEngageServiceOfThirdParty#</isNotEmpty>
+          <isNotEmpty property="ApplEngageServiceOfThirdPartyDesc" prepend=",">#ApplEngageServiceOfThirdPartyDesc#</isNotEmpty>
+          <isNotEmpty property="IsApplQualifyOpinionToScopeOfSearch" prepend=",">#IsApplQualifyOpinionToScopeOfSearch#</isNotEmpty>
+          <isNotEmpty property="IsApplEmployContractAttorneys" prepend=",">#IsApplEmployContractAttorneys#</isNotEmpty>
+          <isNotEmpty property="IsAttorneyRevBySeniorAttorney" prepend=",">#IsAttorneyRevBySeniorAttorney#</isNotEmpty>
+          <isNotEmpty property="IsAttorneyHaveExpInIntelProp" prepend=",">#IsAttorneyHaveExpInIntelProp#</isNotEmpty>
+          <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+          <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select IsApplLitigatedForPropMatter, IsApplHaveProcForIntPropApproval, IsApplAcceptClientReqWith90Days, IsApplHaveProcToWarnClient, IsApplHaveReviewForIntProperty, IsWorkSuperviseBySeniorAttorney, IsApplAllowRepOfInventorClients, NumberOfAttorneys, NumberOfPatentAgents, IsApplRequireEngLetterForPatentSearch, IsClientAwareOfDeadlines, IsApplicantReferMatterToForeignFirm, ApplicantReferMatterToForeignFirmDesc, IsApplResponsibleForPaymentsOfTaxes, IsApplEngageServiceOfThirdParty, ApplEngageServiceOfThirdPartyDesc, IsApplQualifyOpinionToScopeOfSearch, IsApplEmployContractAttorneys, IsAttorneyRevBySeniorAttorney, IsAttorneyHaveExpInIntelProp, LastUpdateUserID, LastUpdateTimeStamp, VersionSequence, PolicyKey from IntellectualPropSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update IntellectualPropSuppLW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="IsApplLitigatedForPropMatter" prepend=",">IsApplLitigatedForPropMatter = #IsApplLitigatedForPropMatter#</isNotEmpty>
+               <isEmpty property="IsApplLitigatedForPropMatter" prepend=",">IsApplLitigatedForPropMatter = null</isEmpty>
+               <isNotEmpty property="IsApplHaveProcForIntPropApproval" prepend=",">IsApplHaveProcForIntPropApproval = #IsApplHaveProcForIntPropApproval#</isNotEmpty>
+               <isEmpty property="IsApplHaveProcForIntPropApproval" prepend=",">IsApplHaveProcForIntPropApproval = null</isEmpty>
+               <isNotEmpty property="IsApplAcceptClientReqWith90Days" prepend=",">IsApplAcceptClientReqWith90Days = #IsApplAcceptClientReqWith90Days#</isNotEmpty>
+               <isEmpty property="IsApplAcceptClientReqWith90Days" prepend=",">IsApplAcceptClientReqWith90Days = null</isEmpty>
+               <isNotEmpty property="IsApplHaveProcToWarnClient" prepend=",">IsApplHaveProcToWarnClient = #IsApplHaveProcToWarnClient#</isNotEmpty>
+               <isEmpty property="IsApplHaveProcToWarnClient" prepend=",">IsApplHaveProcToWarnClient = null</isEmpty>
+               <isNotEmpty property="IsApplHaveReviewForIntProperty" prepend=",">IsApplHaveReviewForIntProperty = #IsApplHaveReviewForIntProperty#</isNotEmpty>
+               <isEmpty property="IsApplHaveReviewForIntProperty" prepend=",">IsApplHaveReviewForIntProperty = null</isEmpty>
+               <isNotEmpty property="IsWorkSuperviseBySeniorAttorney" prepend=",">IsWorkSuperviseBySeniorAttorney = #IsWorkSuperviseBySeniorAttorney#</isNotEmpty>
+               <isEmpty property="IsWorkSuperviseBySeniorAttorney" prepend=",">IsWorkSuperviseBySeniorAttorney = null</isEmpty>
+               <isNotEmpty property="IsApplAllowRepOfInventorClients" prepend=",">IsApplAllowRepOfInventorClients = #IsApplAllowRepOfInventorClients#</isNotEmpty>
+               <isEmpty property="IsApplAllowRepOfInventorClients" prepend=",">IsApplAllowRepOfInventorClients = null</isEmpty>
+               <isNotEmpty property="NumberOfAttorneys" prepend=",">NumberOfAttorneys = #NumberOfAttorneys#</isNotEmpty>
+               <isEmpty property="NumberOfAttorneys" prepend=",">NumberOfAttorneys = null</isEmpty>
+               <isNotEmpty property="NumberOfPatentAgents" prepend=",">NumberOfPatentAgents = #NumberOfPatentAgents#</isNotEmpty>
+               <isEmpty property="NumberOfPatentAgents" prepend=",">NumberOfPatentAgents = null</isEmpty>
+               <isNotEmpty property="IsApplRequireEngLetterForPatentSearch" prepend=",">IsApplRequireEngLetterForPatentSearch = #IsApplRequireEngLetterForPatentSearch#</isNotEmpty>
+               <isEmpty property="IsApplRequireEngLetterForPatentSearch" prepend=",">IsApplRequireEngLetterForPatentSearch = null</isEmpty>
+               <isNotEmpty property="IsClientAwareOfDeadlines" prepend=",">IsClientAwareOfDeadlines = #IsClientAwareOfDeadlines#</isNotEmpty>
+               <isEmpty property="IsClientAwareOfDeadlines" prepend=",">IsClientAwareOfDeadlines = null</isEmpty>
+               <isNotEmpty property="IsApplicantReferMatterToForeignFirm" prepend=",">IsApplicantReferMatterToForeignFirm = #IsApplicantReferMatterToForeignFirm#</isNotEmpty>
+               <isEmpty property="IsApplicantReferMatterToForeignFirm" prepend=",">IsApplicantReferMatterToForeignFirm = null</isEmpty>
+               <isNotEmpty property="ApplicantReferMatterToForeignFirmDesc" prepend=",">ApplicantReferMatterToForeignFirmDesc = #ApplicantReferMatterToForeignFirmDesc#</isNotEmpty>
+               <isEmpty property="ApplicantReferMatterToForeignFirmDesc" prepend=",">ApplicantReferMatterToForeignFirmDesc = null</isEmpty>
+               <isNotEmpty property="IsApplResponsibleForPaymentsOfTaxes" prepend=",">IsApplResponsibleForPaymentsOfTaxes = #IsApplResponsibleForPaymentsOfTaxes#</isNotEmpty>
+               <isEmpty property="IsApplResponsibleForPaymentsOfTaxes" prepend=",">IsApplResponsibleForPaymentsOfTaxes = null</isEmpty>
+               <isNotEmpty property="IsApplEngageServiceOfThirdParty" prepend=",">IsApplEngageServiceOfThirdParty = #IsApplEngageServiceOfThirdParty#</isNotEmpty>
+               <isEmpty property="IsApplEngageServiceOfThirdParty" prepend=",">IsApplEngageServiceOfThirdParty = null</isEmpty>
+               <isNotEmpty property="ApplEngageServiceOfThirdPartyDesc" prepend=",">ApplEngageServiceOfThirdPartyDesc = #ApplEngageServiceOfThirdPartyDesc#</isNotEmpty>
+               <isEmpty property="ApplEngageServiceOfThirdPartyDesc" prepend=",">ApplEngageServiceOfThirdPartyDesc = null</isEmpty>
+               <isNotEmpty property="IsApplQualifyOpinionToScopeOfSearch" prepend=",">IsApplQualifyOpinionToScopeOfSearch = #IsApplQualifyOpinionToScopeOfSearch#</isNotEmpty>
+               <isEmpty property="IsApplQualifyOpinionToScopeOfSearch" prepend=",">IsApplQualifyOpinionToScopeOfSearch = null</isEmpty>
+               <isNotEmpty property="IsApplEmployContractAttorneys" prepend=",">IsApplEmployContractAttorneys = #IsApplEmployContractAttorneys#</isNotEmpty>
+               <isEmpty property="IsApplEmployContractAttorneys" prepend=",">IsApplEmployContractAttorneys = null</isEmpty>
+               <isNotEmpty property="IsAttorneyRevBySeniorAttorney" prepend=",">IsAttorneyRevBySeniorAttorney = #IsAttorneyRevBySeniorAttorney#</isNotEmpty>
+               <isEmpty property="IsAttorneyRevBySeniorAttorney" prepend=",">IsAttorneyRevBySeniorAttorney = null</isEmpty>
+               <isNotEmpty property="IsAttorneyHaveExpInIntelProp" prepend=",">IsAttorneyHaveExpInIntelProp = #IsAttorneyHaveExpInIntelProp#</isNotEmpty>
+               <isEmpty property="IsAttorneyHaveExpInIntelProp" prepend=",">IsAttorneyHaveExpInIntelProp = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+          </dynamic>
+          where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from IntellectualPropSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from IntellectualPropSuppLW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from IntellectualPropSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select IsApplLitigatedForPropMatter, IsApplHaveProcForIntPropApproval, IsApplAcceptClientReqWith90Days, IsApplHaveProcToWarnClient, IsApplHaveReviewForIntProperty, IsWorkSuperviseBySeniorAttorney, IsApplAllowRepOfInventorClients, NumberOfAttorneys, NumberOfPatentAgents, IsApplRequireEngLetterForPatentSearch, IsClientAwareOfDeadlines, IsApplicantReferMatterToForeignFirm, ApplicantReferMatterToForeignFirmDesc, IsApplResponsibleForPaymentsOfTaxes, IsApplEngageServiceOfThirdParty, ApplEngageServiceOfThirdPartyDesc, IsApplQualifyOpinionToScopeOfSearch, IsApplEmployContractAttorneys, IsAttorneyRevBySeniorAttorney, IsAttorneyHaveExpInIntelProp, LastUpdateUserID, LastUpdateTimeStamp, VersionSequence, PolicyKey from IntellectualPropSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select VersionSequence, PolicyKey, IsApplLitigatedForPropMatter, IsApplHaveProcForIntPropApproval, IsApplAcceptClientReqWith90Days, IsApplHaveProcToWarnClient, IsApplHaveReviewForIntProperty, IsWorkSuperviseBySeniorAttorney, IsApplAllowRepOfInventorClients, NumberOfAttorneys, NumberOfPatentAgents, IsApplRequireEngLetterForPatentSearch, IsClientAwareOfDeadlines, IsApplicantReferMatterToForeignFirm, ApplicantReferMatterToForeignFirmDesc, IsApplResponsibleForPaymentsOfTaxes, IsApplEngageServiceOfThirdParty, ApplEngageServiceOfThirdPartyDesc, IsApplQualifyOpinionToScopeOfSearch, IsApplEmployContractAttorneys, IsAttorneyRevBySeniorAttorney, IsAttorneyHaveExpInIntelProp, LastUpdateUserID, LastUpdateTimeStamp from IntellectualPropSuppLW where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+</sqlMap>
+

@@ -1,0 +1,61 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="EstimateFormAOPDetails_LW">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from EstimateFormAOPDetails_LW</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from EstimateFormAOPDetails_LW</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into EstimateFormAOPDetails_LW(
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPKey" prepend=",">AOPKey</isNotEmpty>
+               <isNotEmpty property="PercentageValue" prepend=",">PercentageValue</isNotEmpty>
+               <isNotEmpty property="AOPCommentDesc" prepend=",">AOPCommentDesc</isNotEmpty>
+               <isNotEmpty property="FormKey" prepend=",">FormKey</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy</isNotEmpty>
+          </dynamic>
+          ) values (
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPKey" prepend=",">#AOPKey#</isNotEmpty>
+               <isNotEmpty property="PercentageValue" prepend=",">#PercentageValue#</isNotEmpty>
+               <isNotEmpty property="AOPCommentDesc" prepend=",">#AOPCommentDesc#</isNotEmpty>
+               <isNotEmpty property="FormKey" prepend=",">#FormKey#</isNotEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">#LastUpdateUserID#</isNotEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">#LastUpdateTimeStamp#</isNotEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">#CreatedDate#</isNotEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">#CreatedBy#</isNotEmpty>
+          </dynamic>
+          )
+          <selectKey resultClass="int" keyProperty="FormAOPKey">SELECT IDENT_CURRENT('EstimateFormAOPDetails_LW') as last_insert_id</selectKey>
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FormAOPKey, AOPKey, PercentageValue, AOPCommentDesc, FormKey, LastUpdateUserID, LastUpdateTimeStamp, CreatedDate, CreatedBy from EstimateFormAOPDetails_LW where FormAOPKey = #FormAOPKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update EstimateFormAOPDetails_LW set
+          <dynamic prepend=" ">
+               <isNotEmpty property="AOPKey" prepend=",">AOPKey = #AOPKey#</isNotEmpty>
+               <isEmpty property="AOPKey" prepend=",">AOPKey = null</isEmpty>
+               <isNotEmpty property="PercentageValue" prepend=",">PercentageValue = #PercentageValue#</isNotEmpty>
+               <isEmpty property="PercentageValue" prepend=",">PercentageValue = null</isEmpty>
+               <isNotEmpty property="AOPCommentDesc" prepend=",">AOPCommentDesc = #AOPCommentDesc#</isNotEmpty>
+               <isEmpty property="AOPCommentDesc" prepend=",">AOPCommentDesc = null</isEmpty>
+               <isNotEmpty property="FormKey" prepend=",">FormKey = #FormKey#</isNotEmpty>
+               <isEmpty property="FormKey" prepend=",">FormKey = null</isEmpty>
+               <isNotEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = #LastUpdateUserID#</isNotEmpty>
+               <isEmpty property="LastUpdateUserID" prepend=",">LastUpdateUserID = null</isEmpty>
+               <isNotEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = #LastUpdateTimeStamp#</isNotEmpty>
+               <isEmpty property="LastUpdateTimeStamp" prepend=",">LastUpdateTimeStamp = null</isEmpty>
+               <isNotEmpty property="CreatedDate" prepend=",">CreatedDate = #CreatedDate#</isNotEmpty>
+               <isEmpty property="CreatedDate" prepend=",">CreatedDate = null</isEmpty>
+               <isNotEmpty property="CreatedBy" prepend=",">CreatedBy = #CreatedBy#</isNotEmpty>
+               <isEmpty property="CreatedBy" prepend=",">CreatedBy = null</isEmpty>
+          </dynamic>
+          where FormAOPKey = #FormAOPKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from EstimateFormAOPDetails_LW where FormAOPKey = #FormAOPKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from EstimateFormAOPDetails_LW</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from EstimateFormAOPDetails_LW</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FormAOPKey, AOPKey, PercentageValue, AOPCommentDesc, FormKey, LastUpdateUserID, LastUpdateTimeStamp, CreatedDate, CreatedBy from EstimateFormAOPDetails_LW where FormAOPKey = #FormAOPKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select FormAOPKey, AOPKey, PercentageValue, AOPCommentDesc, FormKey, LastUpdateUserID, LastUpdateTimeStamp, CreatedDate, CreatedBy from EstimateFormAOPDetails_LW</select>
+</sqlMap>
+

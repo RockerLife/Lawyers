@@ -1,0 +1,36 @@
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="ITServicesSupp">
+     <select id="findAll" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ITServicesSupp</select>
+     <select id="findAllByPartialKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select  *  from ITServicesSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and ITServiceCategoryKey = #ITServiceCategoryKey#</select>
+     <insert id="insert" parameterClass="java.util.HashMap">
+          insert into ITServicesSupp(ITServiceCategoryKey, VersionSequence, PolicyKey
+          <isNotEmpty property="RevenuesFromLastYear" prepend=",">RevenuesFromLastYear</isNotEmpty>
+          <isNotEmpty property="EstimatedRevenue" prepend=",">EstimatedRevenue</isNotEmpty>
+          <isNotEmpty property="IsAnnually" prepend=",">IsAnnually</isNotEmpty>
+          ) values (#ITServiceCategoryKey:NUMERIC#, #VersionSequence:NUMERIC#, #PolicyKey:NUMERIC#
+          <isNotEmpty property="RevenuesFromLastYear" prepend=",">#RevenuesFromLastYear#</isNotEmpty>
+          <isNotEmpty property="EstimatedRevenue" prepend=",">#EstimatedRevenue#</isNotEmpty>
+          <isNotEmpty property="IsAnnually" prepend=",">#IsAnnually#</isNotEmpty>
+          )
+     </insert>
+     <select id="updateFindByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select RevenuesFromLastYear, EstimatedRevenue, IsAnnually, ITServiceCategoryKey, VersionSequence, PolicyKey from ITServicesSupp where ITServiceCategoryKey = #ITServiceCategoryKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <update id="update" parameterClass="java.util.HashMap">
+          update ITServicesSupp set
+          <dynamic prepend=" ">
+               <isNotEmpty property="RevenuesFromLastYear" prepend=",">RevenuesFromLastYear = #RevenuesFromLastYear#</isNotEmpty>
+               <isEmpty property="RevenuesFromLastYear" prepend=",">RevenuesFromLastYear = null</isEmpty>
+               <isNotEmpty property="EstimatedRevenue" prepend=",">EstimatedRevenue = #EstimatedRevenue#</isNotEmpty>
+               <isEmpty property="EstimatedRevenue" prepend=",">EstimatedRevenue = null</isEmpty>
+               <isNotEmpty property="IsAnnually" prepend=",">IsAnnually = #IsAnnually#</isNotEmpty>
+               <isEmpty property="IsAnnually" prepend=",">IsAnnually = null</isEmpty>
+          </dynamic>
+          where ITServiceCategoryKey = #ITServiceCategoryKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#
+     </update>
+     <delete id="delete" parameterClass="java.util.HashMap">delete from ITServicesSupp where ITServiceCategoryKey = #ITServiceCategoryKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</delete>
+     <delete id="deleteAll" parameterClass="java.util.HashMap">delete from ITServicesSupp</delete>
+     <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from ITServicesSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and ITServiceCategoryKey = #ITServiceCategoryKey#</delete>
+     <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select RevenuesFromLastYear, EstimatedRevenue, IsAnnually, ITServiceCategoryKey, VersionSequence, PolicyKey from ITServicesSupp where ITServiceCategoryKey = #ITServiceCategoryKey# and VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey#</select>
+     <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select ITServiceCategoryKey, VersionSequence, PolicyKey, RevenuesFromLastYear, EstimatedRevenue, IsAnnually from ITServicesSupp where VersionSequence = #VersionSequence# and PolicyKey = #PolicyKey# and ITServiceCategoryKey = #ITServiceCategoryKey#</select>
+</sqlMap>
+
