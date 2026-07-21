@@ -194,24 +194,16 @@ public class Coverage {
 	
 	public void populateCoverage(Context ctx, Sheet sheet) throws Exception{
 	    Object objFirm = ctx.get(Constants.FIRM_FREEFORM_01);
-		Map firmMap = null;
-		if (objFirm != null)
-			firmMap = (HashMap) objFirm;
+		Map firmMap = objFirm instanceof Map ? (Map) objFirm : new HashMap();
 
 		Object objProfLiab = ctx.get(Constants.PROFESSIONALLIABILITYINS_FREEFORM_01);
-		Map profLiabMap = null;
-		if (objProfLiab != null)
-			profLiabMap = (HashMap) objProfLiab;
+		Map profLiabMap = objProfLiab instanceof Map ? (Map) objProfLiab : new HashMap();
 		
 		Object objPolicyCov = ctx.get(Constants.POLICYCOVERAGE_FREEFORM_01);
-		Map policyCovMap = null;
-		if (objPolicyCov != null)
-			policyCovMap = (HashMap) objPolicyCov;
+		Map policyCovMap = objPolicyCov instanceof Map ? (Map) objPolicyCov : new HashMap();
 		
 		Object objPolicy = ctx.get(Constants.POLICY_FREEFORM_01);
-		Map policyMap = null;
-		if(objPolicy != null)
-			policyMap = (Map)objPolicy;	
+		Map policyMap = objPolicy instanceof Map ? (Map) objPolicy : new HashMap();
 		
 		Map excelFieldMapping = ExcelContextUtils.getMapIfPresent(ctx, "EXCEL_FIELD_MAPPING");
 		

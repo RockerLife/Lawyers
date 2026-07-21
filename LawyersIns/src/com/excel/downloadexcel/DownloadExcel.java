@@ -221,7 +221,6 @@ public class DownloadExcel implements Constants {
 	                	try{
 	                		evaluator.evaluateFormulaCell(c);
 	                	}catch(Exception e){
-	                		logger.debug("## ERROR IN CELL ## "+ new CellReference(r.getRowNum(),c.getColumnIndex()).formatAsString());
 	                		logger.error("Unexpected error", e);
 	                	}
 	                }

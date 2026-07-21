@@ -738,7 +738,7 @@
 	<functiondefinition name="validateAndSetLoginSecurityForUser" classname="com.userbo.LawyersUtils" method="validateAndSetLoginSecurityForUser" returntype="B">
 		<argument seq="0" name="data" datatype="com.util.Context"/>	
 	</functiondefinition>
-	<functiondefinition name="setCompanyForPolicy" classname="com.userbo.LawyersUtils" method="setCompanyForPolicy" returntype="B">
+	<functiondefinition name="setCompanyForPolicy" classname="com.userbo.LawyersUtils" method="setCompanyForPolicy" returntype="V">
 		<argument seq="0" name="data" datatype="com.util.Context"/>	
 	</functiondefinition>
 	<functiondefinition name="executeUnderwritingRules" classname="com.userbo.LawyersUtils" method="executeUnderwritingRules" returntype="B">

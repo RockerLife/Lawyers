@@ -194,9 +194,7 @@ public class BuildProcess {
 	
 	private static void decryptXML(String xmlFile) throws Exception {
 		String path = xmlFile.substring(xmlFile.lastIndexOf("XML\\")+4,xmlFile.length());
-		logger.debug(path);
 		String data = new XmlEncryptor().decrypt(xmlFile);
-		logger.debug(data);
 		
 		SAXBuilder builder = new SAXBuilder("org.apache.xerces.parsers.SAXParser", false);
 		builder.build(new StringReader(data));

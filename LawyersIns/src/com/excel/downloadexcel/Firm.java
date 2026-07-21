@@ -50,24 +50,16 @@ public class Firm {
 	
 	public void populateFirm(Context ctx, Sheet sheet) throws Exception{
 		Object objFirm = ctx.get(Constants.FIRM_FREEFORM_01);
-		Map firmMap = null;
-		if(objFirm != null)
-			firmMap = (Map)objFirm;
+		Map firmMap = objFirm instanceof Map ? (Map) objFirm : new HashMap();
 		
 		Object objAccount = ctx.get(Constants.ACCOUNT_FREEFORM_01);
-		Map accountMap = null;
-		if(objAccount != null)
-			accountMap = (Map)objAccount;
+		Map accountMap = objAccount instanceof Map ? (Map) objAccount : new HashMap();
 		
 		Object objAddress = ctx.get(Constants.ADDRESS_FREEFORM_01);
-		Map addressMap = null;
-		if(objAddress != null)
-			addressMap = (Map)objAddress;
+		Map addressMap = objAddress instanceof Map ? (Map) objAddress : new HashMap();
 		
 		Object objPolicy = ctx.get(Constants.POLICY_FREEFORM_01);
-		Map policyMap = null;
-		if(objPolicy != null)
-			policyMap = (Map)objPolicy;	
+		Map policyMap = objPolicy instanceof Map ? (Map) objPolicy : new HashMap();
 		
 		Map excelFieldMapping = ExcelContextUtils.getMapIfPresent(ctx, "EXCEL_FIELD_MAPPING");
 		

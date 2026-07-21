@@ -194,7 +194,7 @@ public class ExcelUtility {
 							.parse(getFormattedDateFromObject(value));
 					cell.setCellValue(date);
 				} catch (Exception e) {
-					logger.debug("Exception :" + e);
+					logger.error("Unable to format Excel date", e);
 				}
 				// DateUtil.isValidExcelDate(Double.parseDouble(getFormattedDateFromObject(value)));
 			} else
@@ -213,7 +213,7 @@ public class ExcelUtility {
 							.parse(getFormattedDateFromObject(value));
 					cell.setCellValue(date);
 				} catch (Exception e) {
-					logger.debug("Exception :" + e);
+					logger.error("Unable to format Excel date", e);
 				}
 				// DateUtil.isValidExcelDate(Double.parseDouble(value.toString()));
 			} else
@@ -365,7 +365,7 @@ public class ExcelUtility {
 							.parse(getFormattedDateFromObject(value));
 					cell.setCellValue(date);
 				} catch (Exception e) {
-					logger.debug("Exception :" + e);
+					logger.error("Unable to format Excel date", e);
 				}
 				// DateUtil.isValidExcelDate(Double.parseDouble(getFormattedDateFromObject(value)));
 			} else
@@ -384,7 +384,7 @@ public class ExcelUtility {
 							.parse(getFormattedDateFromObject(value));
 					cell.setCellValue(date);
 				} catch (Exception e) {
-					logger.debug("Exception :" + e);
+					logger.error("Unable to format Excel date", e);
 				}
 				// DateUtil.isValidExcelDate(Double.parseDouble(value.toString()));
 			} else
