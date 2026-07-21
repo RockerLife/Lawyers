@@ -36,7 +36,6 @@ public class GenerateReportImpl {
 			ResourceLoader.load(xmlPath + "/LawyersIns/metadata/metadata.xml", "metadata", project);
 		} catch (Exception e1) {
 			logger.error("Unexpected error", e1);
-			logger.debug("Error in loading XML Files " + e1.getMessage() + " " + new Timestamp(new Date().getTime()));
 		}
 		logger.debug("XML Files Loaded...." + new Timestamp(new Date().getTime()));
 		

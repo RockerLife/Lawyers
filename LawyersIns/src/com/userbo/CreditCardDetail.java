@@ -159,20 +159,17 @@ public class CreditCardDetail {
 			
 			if(approvalStatus == 2){
 
-				logger.debug("Credit Card WS capture Request : " + captureRequest);
 	        	subFolder = "capture";				
 	        	JSONObject captureResponse = authorizeTransaction(captureRequest, webServiceURI, username, password, subFolder);
 	        	if(captureResponse == null){
 					LawyersUtils.populateError(ctx, "authorizationFailed", "Authorization failed");
 					return;
 				}
-	        	logger.debug("Credit Card WS capture Response..." + captureResponse);
 	        	
 	        	Iterator<String> captureKeys = captureResponse.keys();
 				while (captureKeys.hasNext()) {
 					String captureKeyValue = (String)captureKeys.next();
 			        String captureValueString = captureResponse.getString(captureKeyValue);
-			        logger.debug(captureKeyValue + "   :    " + captureValueString);
 			        if("setlstat".equals(captureKeyValue)){
 			        	if("Queued for Capture".equals(captureValueString) || "Accepted".equals(captureValueString)){
 							ctx.put("creditcardrespstat", "A");
@@ -319,20 +316,17 @@ public class CreditCardDetail {
 			}
 			
 			if(approvalStatus == 2){
-	        	logger.debug("Credit Card Connect WS captureRequest..." + captureRequest);
 	        	subFolder = "capture";				
 	        	JSONObject captureResponse = authorizeTransaction(captureRequest, webServiceURI, username, password, subFolder);
 	        	if(captureResponse == null){
 					LawyersUtils.populateError(ctx, "authorizationFailedACH", "ACH Authorization has been failed");
 					return;
 				}
-	        	logger.debug("Credit Card Connect WS captureResponse..." + captureResponse);
 	        	
 	        	Iterator<String> captureKeys= captureResponse.keys();
 				while (captureKeys.hasNext()) {
 					String captureKeyValue = (String)captureKeys.next();
 			        String captureValueString = captureResponse.getString(captureKeyValue);
-			        logger.debug(captureKeyValue + "   :    " + captureValueString);
 			        if("setlstat".equals(captureKeyValue)){
 			        	if("Queued for Capture".equals(captureValueString) || "Accepted".equals(captureValueString)){
 							ctx.put("achrespstat", "A");

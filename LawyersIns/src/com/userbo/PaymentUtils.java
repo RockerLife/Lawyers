@@ -168,7 +168,6 @@ public class PaymentUtils {
 
 		} catch (Exception e) {
 
-			logger.debug("Paypal credential have not been generated---- ");
 			logger.error("Unexpected error", e);
 			throw e;
 		}

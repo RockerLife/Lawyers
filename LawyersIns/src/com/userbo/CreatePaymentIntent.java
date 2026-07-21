@@ -236,7 +236,7 @@ public class CreatePaymentIntent {
 			}
 			logger.debug("Processing CC payment response is completed.");
 		}catch(Exception e){
-			logger.debug("There was an error processing the transaction response " + e.getMessage());
+			logger.error("Unable to process payment response", e);
 		}
 	}
 }

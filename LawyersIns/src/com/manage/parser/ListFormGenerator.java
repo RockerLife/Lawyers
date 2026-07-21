@@ -431,10 +431,12 @@ public class ListFormGenerator
                       int index = sibling.indexOf(dynaTdElement);
                       if (index == -1)
                       {
-                        Element childElementTemp = (Element)sibling.getChildren().get(0);
-                        if (childElementTemp != null) {
-                          index = childElementTemp.indexOf(dynaTdElement);
-                        }
+						List siblingChildren = sibling.getChildren();
+						Element childElementTemp = siblingChildren != null && !siblingChildren.isEmpty()
+								? (Element) siblingChildren.get(0) : null;
+						if (childElementTemp == null)
+							return;
+						index = childElementTemp.indexOf(dynaTdElement);
                         isSiblingTbody = true;
                         childElementTemp.removeContent(dynaTdElement);
                         childElementTemp.removeContent(index);

@@ -56,7 +56,6 @@ public class PolicyIssueOption {
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				logger.error("Unexpected error", e);
-				logger.debug("Problem in ACHAgreementOption " + e.getMessage());
 				return ERROR_MESSAGE + e.getMessage();
 			}
 		}
@@ -352,7 +351,6 @@ public class PolicyIssueOption {
 			}
 		}catch(Exception e){
 			logger.error("Unexpected error", e);
-			logger.debug("Error in checkACHStatus " + e.getMessage() + " " + new Timestamp(new Date().getTime()));
 		}
 		return SUCCESS_MESSAGE;
 	}
@@ -384,7 +382,6 @@ public class PolicyIssueOption {
 			return new JSONObject(result);
 		} catch (Exception e) {
 			logger.error("Unexpected error", e);
-			logger.debug("Error in authorizeTransaction " + e.getMessage() + " " + new Timestamp(new Date().getTime()));
 		}
 		return null;
 	}
@@ -400,7 +397,6 @@ public class PolicyIssueOption {
 			mailSender.sendMail();
 		}catch(Exception e){
 			logger.error("Unexpected error", e);
-			logger.debug("Error in sendStatusMail " + e.getMessage() + " " + new Timestamp(new Date().getTime()));
 		}
 	}
 	

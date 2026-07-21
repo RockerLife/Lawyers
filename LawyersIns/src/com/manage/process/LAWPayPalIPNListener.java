@@ -176,7 +176,7 @@ public class LAWPayPalIPNListener extends HttpServlet {
 			
 		}
 		catch (Exception e){			
-			logger.debug("AssignLastUpdateTimeStamp------"+e.getMessage());
+			logger.error("Unable to assign payment timestamp", e);
 		}
 		
 		logger.debug("Before verify-------");
@@ -309,7 +309,7 @@ public class LAWPayPalIPNListener extends HttpServlet {
 											
 					
 				}catch (Exception e) {
-					logger.debug("Error in processing IPNListener");
+					logger.error("Unable to process payment notification", e);
 				}
 			}
 			
@@ -343,7 +343,7 @@ public class LAWPayPalIPNListener extends HttpServlet {
 //				}
 				
 			}catch (Exception e) {
-				logger.debug("Error in processing IPNListener");
+				logger.error("Unable to process payment notification", e);
 			}
 			
 			
@@ -375,7 +375,7 @@ public class LAWPayPalIPNListener extends HttpServlet {
 //				}
 				
 			}catch (Exception e) {
-				logger.debug("Error in processing IPNListener");
+				logger.error("Unable to process payment notification", e);
 			}
 		}
 

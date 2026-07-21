@@ -377,7 +377,7 @@ public class MetaobjectImpl extends Metaobject
                 
             }catch(ValidationException e)
             {
-               
+                logger.error("Unable to resolve metadata dropdown value", e);
             }
         }
         

@@ -303,7 +303,7 @@ public class IPFSServiceClient {
 			logger.debug("IPFS SubmitQuote for Policy  " + policyKey + " has been called.");
 
 			json = json.getJSONObject("item");
-		    logger.debug("IPFS SubmitQuote for Policy  " + policyKey + " Response..." + json);
+		    logger.debug("IPFS SubmitQuote response received");
 		    
 			Iterator<String> keys= json.keys();
 			while (keys.hasNext()) {
@@ -417,7 +417,7 @@ public class IPFSServiceClient {
 			JSONObject json = authorizeTransaction(authRequest, webServiceURL,  subURL, userAgentKey);
 			
 			logger.debug("IPFS StartESign for Policy  " + policyKey + " has been called.");
-		    logger.debug("IPFS StartESign for Policy  " + policyKey + " Response..." + json);
+		    logger.debug("IPFS StartESign response received");
 		    
 		    if(json.getBoolean("success") == true) {
 		    	JSONArray jsonArray = json.getJSONArray("results");

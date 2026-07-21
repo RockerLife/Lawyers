@@ -13,16 +13,20 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.naming.InitialContext;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.sql.DataSource;
 
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.fop.servlet.ServletContextURIResolver;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.jcs.engine.control.CompositeCacheManager;
 
@@ -47,7 +51,6 @@ import com.util.SystemProperties;
 
 public abstract class ComponentProcessServlet extends HttpServlet{
 	private static InetLogger logger = InetLogger.getInetLogger(ComponentProcessServlet.class);
-	private static int requestCount = 0;
 	protected ServletContextURIResolver uriResolver;
 	protected ServletContext servletContext;
 	protected PIMAjaxProcessorInterface ajaxProcessorInterface;
@@ -70,6 +73,13 @@ public abstract class ComponentProcessServlet extends HttpServlet{
 			PropertyConfigurator.configure(getServletConfig().getInitParameter(Constants.APP_PROPERTIES));
 			String realPath = this.getServletContext().getRealPath("/");
 			Configuration conf = SystemProperties.getInstance(getServletContext());
+			// Deployment properties may default to DEBUG; enforce the environment policy here.
+			String environment = conf.getString("appl." + project_resource + ".environment", "");
+			String production = conf.getString("appl." + project_resource + ".environment.production", "");
+			if ("Y".equalsIgnoreCase(production) || "PD".equalsIgnoreCase(environment))
+				Logger.getRootLogger().setLevel(Level.ERROR);
+			else if ("UAT".equalsIgnoreCase(environment))
+				Logger.getRootLogger().setLevel(Level.INFO);
 			
 			logger.debug("At the Startup set the Application Path to : "+ realPath);
 			
@@ -128,8 +138,12 @@ public abstract class ComponentProcessServlet extends HttpServlet{
 					}
 				}
 				
-				CacheManager.put(pcImpl.getName(), map);
-				logger.debug("Done Caching of Html - " + pcImpl.getName());
+				if (map != null && map.get("XMLDocument") != null) {
+					CacheManager.put(pcImpl.getName(), map);
+					logger.debug("Done Caching of Html - " + pcImpl.getName());
+				} else {
+					logger.error("Unable to cache HTML page - " + pcImpl.getName());
+				}
 			}
 		}
 	}
@@ -283,18 +297,7 @@ public abstract class ComponentProcessServlet extends HttpServlet{
 			ctx.put("isZohoAccessToken", context.getAttribute("ZohoAccessToken"));
 		}
 		try{
-			if (requestCount == 2000){
-				requestCount = 0;
-				System.gc();
-			}
-
-			requestCount = requestCount + 1;
-
 			HttpSession session = request.getSession();
-
-			logger.info("Session is New :" + session.isNew());
-			logger.info("Request Session Id : " + request.getRequestedSessionId());
-			logger.info("Session Id : " + session.getId());
 
 			if(session.getAttribute("UserNo") != null && !"".equals(session.getAttribute("UserNo"))){
 				ctx.put("LastUpdateUserID", session.getAttribute("UserNo"));
@@ -550,13 +553,34 @@ public abstract class ComponentProcessServlet extends HttpServlet{
 
 			int errorId = 0;
 			//errorId =logger.ineterror(errorMsg, stackTrace, projectName, session);
-			errorId = new ErrorUtils().logError(errorMsg, stackTrace, projectName, session);
+			errorId = logErrorToDatabase(errorMsg, stackTrace, projectName, session);
 			
 			request.setAttribute("errorId", errorId);
 			request.setAttribute("errorMessage", e.getMessage());
 			request.setAttribute("loginPage", getErrorForwardUrl(ctx, false));
 			if(!forwardErrorPage(request, response))
 				logger.error("Error page not forwarded because the response was already committed.");
+		}
+	}
+
+	private int logErrorToDatabase(String errorMessage, String stackTrace,
+			String projectName, String session) {
+		try {
+			String datasourceName = SystemProperties.getInstance().getProperty("log4j.jdbc.datasource");
+			if (datasourceName == null || datasourceName.trim().length() == 0) {
+				logger.error("Error log datasource is not configured");
+				return 0;
+			}
+
+			Object resource = new InitialContext().lookup(datasourceName);
+			if (!(resource instanceof DataSource)) {
+				logger.error("Error log JNDI resource is not a DataSource: " + datasourceName);
+				return 0;
+			}
+			return new ErrorUtils().logError(errorMessage, stackTrace, projectName, session);
+		} catch (Exception e) {
+			logger.error("Unable to log application error into the database", e);
+			return 0;
 		}
 	}
 

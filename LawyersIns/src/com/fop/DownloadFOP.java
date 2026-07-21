@@ -459,7 +459,6 @@ public class DownloadFOP {
 			ctx.put("stateform_list_01", listStateForm);
 			
 			Object objsubproducerFormData = SqlResources.getSqlMapProcessor(ctx).select("SqlStmts.UserStatementpdfquotelettergetSubproducerFormData", ctx);
-			logger.debug("sukhi"+ctx.get("subproducerFormData_freeform_01"));
 			List li=(List) objsubproducerFormData;
 			for(int i=0;i<li.size();i++){
 				Map<String,String> mp=(Map) li.get(i);
@@ -467,11 +466,9 @@ public class DownloadFOP {
 				for (Iterator i2 = keys.iterator(); i2.hasNext(); ) {
 				       String key = (String) i2.next();
 				       String value = (String) mp.get(key);
-				       logger.debug("mp "+key+":"+value);
 				       if(key.equalsIgnoreCase("SPZip") || key.equalsIgnoreCase("CompleteAddress")){
 				    	   if(value.length()<7){
 				    		   String spZip=value.replace("-","");
-				    		   logger.debug("SPZip==="+spZip);
 				    		   ((Map)((List)objsubproducerFormData).get(0)).put(key,spZip);
 				    		   ctx.put(key,spZip);
 				    	   }

@@ -210,7 +210,7 @@ public class QuoteLetter {
 				}
 				documentUploaded = true;
 			} catch (Exception e) {
-				logger.debug("Exception in upload QuoteLetter . . " + e);
+				logger.error("Unable to upload quote letter", e);
 				ctx.put("QuoteLetterSent", "N");
 				throw e;
 
@@ -243,6 +243,7 @@ public class QuoteLetter {
 //							dstId = ctx.get("Producer_email").toString();
 //						}
 					} catch (Exception e) {
+						logger.error("Unable to resolve quote recipient", e);
 					}
 				} else {
 					dstId = LawyersUtils.getEmailID(ctx);
@@ -310,7 +311,6 @@ public class QuoteLetter {
 		        			toAddress = SystemProperties.getInstance().getString("mail.adminsub.to.address");
 						}
 		        		
-		        		logger.debug("TOAddress==="+toAddress+"=====ccAddress====="+ccAddress);
 		        		
 						ctx.put("toAddress",toAddress);
 		        		ctx.put("bccAddress",bccAddress);
@@ -962,7 +962,6 @@ public class QuoteLetter {
 					new DocumentManagment().uploadQuickQuoteLetter(ctx);
 				}
 			} catch (Exception e) {
-				logger.debug("Error in uploading QuickQuoteLetter");
 				logger.error("Unexpected error", e);
 			}
 
@@ -981,7 +980,6 @@ public class QuoteLetter {
 			mailSender.setIsSentToCC("Y");
 			mailSender.setContentType("text/html");
 			String insuredEmail = LawyersUtils.getInsuredEmail(ctx); 
-			logger.debug("Going to send mail to " + insuredEmail);
 			mailSender.setToAdd(insuredEmail);
 			mailSender.setBody(new LawyersUtils().generateLinkBody(ctx));
 			mailSender.setAttachments(attachments);
@@ -1002,7 +1000,6 @@ public class QuoteLetter {
 
 		} catch (Exception e) {
 			logger.error("Unexpected error", e);
-			logger.debug("");
 
 		} finally {
 			/*code by sukhi 26/09/2018*/

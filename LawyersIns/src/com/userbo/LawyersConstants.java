@@ -53,7 +53,7 @@ public class LawyersConstants {
 	public static String END_DATE_CF_POLICYISSUANCE = "03/31/2022";
 	public static String ELECTRONIC_INSURANCE_IMPL_DATE = "05/24/2022";
 	public static String BANKRUPTCY_INSURANCE_IMPL_DATE = "01/24/2022";
-	public static String NEVADA_DOUBLEQUOTE_IMPL_DATE = "20/11/2023";
+	public static String NEVADA_DOUBLEQUOTE_IMPL_DATE = "11/20/2023";
 	public static String AZ_IN_MI_MN_TX_UT_QUOTELETTER_UPDATEDATE = "10/01/2024";
 	public static String NC_QUOTELETTER_UPDATEDATE = "10/25/2024";
 	public static String NJ_QUOTELETTER_UPDATEDATE ="11/01/2024";
@@ -66,7 +66,7 @@ public class LawyersConstants {
 			FACTROR1000 = Double.parseDouble(SystemProperties.getInstance().getString("appl.LawyersIns.factor1000"));
 			FACTRORFULL = Double.parseDouble(SystemProperties.getInstance().getString("appl.LawyersIns.factorfull"));
 		} catch (Exception e) {
-			logger.debug("Full Time Equivalent could not be loaded." + e.getMessage());
+			logger.error("Unable to load full-time equivalent factors", e);
 		}
 		
 		try {
@@ -92,7 +92,7 @@ public class LawyersConstants {
 			MO_VA_QUOTELETTER_UPDATEDATE= SystemProperties.getInstance().getString("appl.LawyersIns.ISMIE.MO_VA.quoteLetter.updateDate");
 			CO_OH_QUOTELETTER_UPDATEDATE= SystemProperties.getInstance().getString("appl.LawyersIns.ISMIE.CO_OH.quoteLetter.updateDate");
 		} catch (Exception e) {
-			logger.debug("CutOff dates are not defined for rating/new app flow");
+			logger.error("Unable to load rating cut-off dates", e);
 		}
 	}
 	

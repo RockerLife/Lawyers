@@ -46,7 +46,6 @@ public class FinanceAgreementOption {
 			}
 		}catch(Throwable t){
 			logger.error("Unexpected error", t);
-			logger.debug("Problem in FinanceAgreementOption " + t.getMessage());
 			return ERROR_MESSAGE + t.getMessage();
 		}
 	}
@@ -72,7 +71,7 @@ public class FinanceAgreementOption {
 			}
 		}
 		catch (Exception e){			
-			logger.debug("AssignLastUpdateTimeStamp------"+e.getMessage());
+			logger.error("Unable to assign finance timestamp", e);
 		}		
 		
 		try{
@@ -118,7 +117,6 @@ public class FinanceAgreementOption {
 					
 				} catch(Exception e){
 					logger.error("Unexpected error", e);
-					logger.debug("Problem in FinanceAgreementOption " + e.getMessage());
 					return ERROR_MESSAGE + e.getMessage();
 				}
 				logger.debug("Called the document Management.");
@@ -129,7 +127,6 @@ public class FinanceAgreementOption {
 						
 		}catch(Throwable t){
 			logger.error("Unexpected error", t);
-			logger.debug("Problem in FinanceAgreementOption " + t.getMessage());
 			return ERROR_MESSAGE + t.getMessage();
 		}		
 		return SUCCESS_MESSAGE;
@@ -148,7 +145,6 @@ public class FinanceAgreementOption {
 			return financeAgreementOptionDelegate.receiveAgreementQuoteNumber(ipfsQuoteNumber,paymentType);
 		}catch(Throwable t){
 			logger.error("Unexpected error", t);
-			logger.debug("Problem in FinanceAgreementOption " + t.getMessage());
 			return ERROR_MESSAGE + t.getMessage();
 		}
 	}

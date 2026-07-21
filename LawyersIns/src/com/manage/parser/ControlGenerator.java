@@ -215,7 +215,7 @@ public class ControlGenerator {
 					FieldImpl fldImpl = (FieldImpl)fieldsList.get(j);
 					
 					String fieldname = fldImpl.getName() != null ? fldImpl.getName() : null;
-					if(fieldname.equals(text.getAttributeValue(HtmlConstants.NAME))){
+					if(fieldname != null && fieldname.equals(text.getAttributeValue(HtmlConstants.NAME))){
 						String isrequired = fldImpl.getIsrequired() != null ? fldImpl.getIsrequired() : null;
 						String requiredeval = fldImpl.getRequiredeval() != null ? fldImpl.getRequiredeval() : null;
 						
@@ -741,7 +741,7 @@ public class ControlGenerator {
 					FieldImpl fldImpl = (FieldImpl)fieldsList.get(j);
 					
 					String fieldname = fldImpl.getName() != null ? fldImpl.getName() : null;
-					if(fieldname.equals(textarea.getAttributeValue(HtmlConstants.NAME))){
+					if(fieldname != null && fieldname.equals(textarea.getAttributeValue(HtmlConstants.NAME))){
 						String isrequired = fldImpl.getIsrequired() != null ? fldImpl.getIsrequired() : null;
 						String requiredeval = fldImpl.getRequiredeval() != null ? fldImpl.getRequiredeval() : null;
 						
@@ -963,7 +963,7 @@ public class ControlGenerator {
 					FieldImpl fldImpl = (FieldImpl)fieldsList.get(j);
 					
 					String fieldname = fldImpl.getName() != null ? fldImpl.getName() : null;
-					if(fieldname.equals(checkbox.getAttributeValue(HtmlConstants.NAME))){
+					if(fieldname != null && fieldname.equals(checkbox.getAttributeValue(HtmlConstants.NAME))){
 						String isrequired = fldImpl.getIsrequired() != null ? fldImpl.getIsrequired() : null;
 						String requiredeval = fldImpl.getRequiredeval() != null ? fldImpl.getRequiredeval() : null;
 						
@@ -1184,7 +1184,7 @@ public class ControlGenerator {
 					FieldImpl fldImpl = (FieldImpl)fieldsList.get(j);
 					
 					String fieldname = fldImpl.getName() != null ? fldImpl.getName() : null;
-					if(fieldname.equals(radio.getAttributeValue(HtmlConstants.NAME))){
+					if(fieldname != null && fieldname.equals(radio.getAttributeValue(HtmlConstants.NAME))){
 						String isrequired = fldImpl.getIsrequired() != null ? fldImpl.getIsrequired() : null;
 						String requiredeval = fldImpl.getRequiredeval() != null ? fldImpl.getRequiredeval() : null;
 						
@@ -1420,7 +1420,7 @@ public class ControlGenerator {
 					FieldImpl fldImpl = (FieldImpl)fieldsList.get(j);
 					
 					String fieldname = fldImpl.getName() != null ? fldImpl.getName() : null;
-					if(fieldname.equals(select.getAttributeValue(HtmlConstants.NAME))){
+					if(fieldname != null && fieldname.equals(select.getAttributeValue(HtmlConstants.NAME))){
 						String isrequired = fldImpl.getIsrequired() != null ? fldImpl.getIsrequired() : null;
 						String requiredeval = fldImpl.getRequiredeval() != null ? fldImpl.getRequiredeval() : null;
 						
@@ -2031,9 +2031,9 @@ public class ControlGenerator {
 					return true;
 				}
 			}
-    	}catch(Exception e1){
-    		
-    	}
+			}catch(Exception e1){
+				logger.error("Unable to update sibling control", e1);
+			}
     	
         Map map = null;
         map = CacheManager.get("Tabs_Conf")==null?null:(HashMap)CacheManager.get("Tabs_Conf");
@@ -3104,7 +3104,7 @@ public class ControlGenerator {
 				field = field.substring(field.indexOf(HtmlConstants.BLOCK_FIELD)+12, field.length());
 
 		}catch(Exception e) {
-			logger.debug("Block field " +  field + " was not in correct fromat");
+			logger.error("Unable to parse block field", e);
 		}
 
 		return field;
@@ -3117,7 +3117,6 @@ public class ControlGenerator {
 			RuleImpl ruleImpl = RulesResources.getInstance(ctx).findRule(ruleName);
 	      	if(ruleImpl != null){
         		Object flag = ruleImpl.execute(ctx, null);
-        		logger.info(ctx, flag);
         		return flag.toString();
         	}
 		}catch (Exception e) {
@@ -3286,7 +3285,7 @@ public class ControlGenerator {
 				}
 			}
 		}catch(Exception e){
-			
+			logger.error("Unable to create control title", e);
 		}
 	}
 	

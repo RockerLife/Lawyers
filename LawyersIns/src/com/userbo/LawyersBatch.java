@@ -320,10 +320,10 @@ public class LawyersBatch {
 	  	        break;
 	  	    } 
 		} catch (FileNotFoundException e) {
-			logger.debug("Problem in reading file " + path + " " + e.getMessage());
+			logger.error("Unable to read batch file", e);
 		}
 		catch (IOException e) {
-			logger.debug("Problem in reading file " + path + " " + e.getMessage());
+			logger.error("Unable to read batch file", e);
 		}
 	   return valuesMap;
 	}
@@ -395,7 +395,7 @@ public class LawyersBatch {
 		        }
 		       
 		} catch (Exception e) {
-			logger.debug("Problem in writing in file " + path + " " + e.getMessage());
+			logger.error("Unable to write batch file", e);
 		}
 		
 	   
@@ -421,7 +421,6 @@ public class LawyersBatch {
 		try {
 			
 		      jsonObject = new JSONObject(data);
-		     logger.debug(jsonObject);
 		}catch (JSONException err){
 		     logger.error("Unexpected error", err);
 		}
@@ -771,7 +770,7 @@ public class LawyersBatch {
               }
               
         } catch (Exception e) {
-              logger.debug("Error in file process");
+              logger.error("Unable to write document to file", e);
               logger.error("Unexpected error", e);
               throw e;
         }
@@ -809,7 +808,7 @@ public class LawyersBatch {
               try {
                     uploadFile.write(new File(uploaddirectory, DocFileName));
               } catch (Exception e) {
-                    logger.debug("Exception " + e );
+                    logger.error("Unable to write document to file", e);
                     LawyersUtils.populateError(ctx, "DocUploadError",
                                 "Document could not be write to file" );
                     
@@ -823,7 +822,7 @@ public class LawyersBatch {
               
               
               }catch(Exception e){
-                    logger.debug("Exception in DocFileName" + e);
+                    logger.error("Unable to resolve document file name", e);
                     logger.error("Unexpected error", e);
               } finally {
             	  /*code by sukhi 26/09/2018*/
@@ -872,7 +871,7 @@ public class LawyersBatch {
             inputStream.close();
             }
 	}catch(Exception e){
-		logger.debug(e.toString());
+		logger.error("Unable to process batch request", e);
 		logger.error("Unexpected error", e);
 	} finally {
 		/*code by sukhi 26/09/2018*/

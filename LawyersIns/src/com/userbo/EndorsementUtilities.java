@@ -121,7 +121,7 @@ public class EndorsementUtilities {
 		}
 		catch(Exception e)
 		{
-			logger.debug("exception occured while validating Cancel Reinstate Endorsement  "+e);
+			logger.error("Unable to validate cancel/reinstate endorsement", e);
 			
 		}
 	}
@@ -769,7 +769,7 @@ try
 						to_role_desc = LawyersUtils.getEmailID(ctx);
 				} 
 				catch (Exception e) 
-				{}
+				{ logger.error("Unable to resolve endorsement recipient", e); }
 			} 
 			else 
 				to_role_desc = LawyersUtils.getEmailID(ctx);
@@ -825,7 +825,6 @@ try
 						  toAddress = LawyersUtils.getProducerEmail(ctx);
 					}
 	
-				logger.debug("TOAddress==="+toAddress+"=====ccAddress====="+ccAddress);
 	
 					ctx.put("toAddress",toAddress);
 				ctx.put("ccAddress",ccAddress);
@@ -847,7 +846,7 @@ try
 		}
 }	
 catch(Exception e)
-{}
+{ logger.error("Unable to send endorsement mail", e); }
 		
 		
 	}
@@ -991,7 +990,7 @@ public static void getDaysDifference(Context ctx)
 	}
 	catch(Exception e)
 	{
-			logger.debug("exception occured while getting days difference" );
+			logger.error("Unable to calculate endorsement day difference", e);
 			logger.error("Unexpected error", e);
 			
 	}

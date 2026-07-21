@@ -129,7 +129,6 @@ public class DocumentManagment {
 				// break;
 			}
 		} catch (Exception e) {
-			logger.debug("Error in file process");
 			logger.error("Unexpected error", e);
 			throw e;
 		}
@@ -249,7 +248,7 @@ public class DocumentManagment {
 		try {
 			uploadFile.write(new File(uploaddirectory, DocFileName));
 		} catch (Exception e) {
-			logger.debug("Exception " + e );
+			logger.error("Unable to write document to file", e);
 			LawyersUtils.populateError(ctx, "DocUploadError",
 					"Document could not be write to file" );
 			
@@ -267,7 +266,7 @@ public class DocumentManagment {
 			logger.debug("Result from uploadDocument(ctx, uploaddirectory + docName)" + result);
 			
 		} catch (Exception e) {
-			logger.debug("Exception --->" + e);
+			logger.error("Unable to upload document", e);
 			LawyersUtils.populateError(ctx, "DocUploadError",
 					"Document could not be uploaded");
 			return;
@@ -334,7 +333,7 @@ public class DocumentManagment {
 		tempFile=null;
 		file=null;
 		}catch(Exception e){
-			logger.debug("Exception in DocFileName" + e);
+			logger.error("Unable to resolve document file name", e);
 		}
 	}
 
@@ -774,8 +773,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 				try{
 					LawyersUtils.updateZOHORecords((Context) ctx);
 				} catch(Exception e) {
-					logger.debug("Exception occured during ZOHO update "+e);
-					logger.debug("Exception occured during ZOHO update Issue "+e);
+					logger.error("Unable to update ZOHO record", e);
 				}
 				
 				List getPolicyNumber=SqlResources.getSqlMapProcessor(ctx).select("SqlStmts.UserStatementManualBoQueriesgetPolicyNumber",ctx);
@@ -951,7 +949,6 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 			logger.error("Unexpected error", e);
 			issuePolicy=false;
 			ctx.put("IsDocumentProcessed", "N");
-			logger.debug("processDocumentManagment failed  ........" + e);
 			throw e;
 		}finally {
 			/*code by sukhi 26/09/2018*/
@@ -970,7 +967,6 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 				} 
 				catch (Exception e1){
 					issuePolicy=false;
-					logger.debug("Exception occured during rollback all database changes for issuing policy ");
 					logger.error("Unexpected error", e1);
 				}
 			}
@@ -979,8 +975,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 			try{
 				LawyersUtils.updateZOHORecords((Context) ctx);
 			} catch(Exception e) {
-				logger.debug("Exception occured during ZOHO update "+e);
-				logger.debug("Exception occured during ZOHO update Issue "+e);
+				logger.error("Unable to update ZOHO record", e);
 			}
 		}
 		if(issuePolicy){
@@ -1044,7 +1039,6 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 				if("".equals(insuredEmail))
 					insuredEmail = adminEmail;			
 				
-				logger.debug("Going to send mail to " + insuredEmail);
 				String policy ="Issued Policy Number  " + policyNumber;
 				
 				if("".equals(adminEmail))
@@ -1082,7 +1076,6 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 					if ("N".equals(productionEnv)){
 						//ccAddress = SystemProperties.getInstance().getString("mail.admin.cc.address");
 						bccAddress = SystemProperties.getInstance().getString("mail.admin.cc.address");
-						logger.debug("email id------->"+ccAddress);
 					}
 					/*
 					 * if("".equals(ccAddress))
@@ -1142,7 +1135,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 			catch(Exception e)
 			{
 				logger.error("Unexpected error", e);
-				logger.debug("Exception occured during sending policy to insured "+e);
+				logger.error("Unable to send policy to insured", e);
 				return ERROR_MESSAGE + "MailSendingError";
 			}finally {
 				/*code by sukhi 26/09/2018*/
@@ -1152,7 +1145,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 					LawyersUtils.updateZOHORecords((Context) ctx);
 					EPICDataUpdate.insertEPICData((Context) ctx);
 				}catch(Exception e){
-					logger.debug("Exception occured during ZOHO update "+e);
+					logger.error("Unable to update ZOHO record", e);
 				}
 			}
 		}
@@ -1348,7 +1341,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 		catch (Exception e){
 			issuePolicy=false;
 			ctx.put("IsDocumentProcessed", "N");
-			logger.debug("processDocumentManagment failed  ........" + e);
+			logger.error("Document processing failed", e);
 		}
 				
 		if(!issuePolicy){
@@ -1362,8 +1355,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 			} 
 			catch (Exception e1){
 				issuePolicy=false;
-				logger.debug("Exception occured during rollback all database changes for issuing policy ");
-				e1.printStackTrace();
+				logger.error("Unable to rollback policy issuance", e1);
 			}
 		}
 		logger.debug("issuing policy :  "+issuePolicy+" for policynumber :"+policyNumber+" having quote number"+ctx.get("QuoteNumber"));
@@ -1408,7 +1400,6 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 				if("".equals(insuredEmail))
 					insuredEmail = adminEmail;			
 				
-				logger.debug("Going to send mail to " + insuredEmail);
 				String policy ="Issued PolicyNumber  " + policyNumber;
 				
 				if("".equals(adminEmail))
@@ -1440,7 +1431,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 		
 			}
 			catch(Exception e){
-			logger.debug("Exception occured during sending policy to insured ");
+			logger.error("Unable to send policy to insured", e);
 			}
 		}
 		else
@@ -1579,7 +1570,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 		catch (Exception e){
 			issuePolicy=false;
 			ctx.put("IsDocumentProcessed", "N");
-			logger.debug("processSignedDocumentManagment failed  ........" + e);
+			logger.error("Signed document processing failed", e);
 		}
 				
 		logger.debug("processSignedDocumentManagment end  ........");
@@ -1708,7 +1699,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 		catch (Exception e){
 			issuePolicy=false;
 			ctx.put("IsDocumentProcessed", "N");
-			logger.debug("processDocumentManagment failed  ........" + e);
+			logger.error("Document processing failed", e);
 		}
 				
 		if(!issuePolicy){
@@ -1720,7 +1711,6 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 			} 
 			catch (Exception e1){
 				issuePolicy=false;
-				logger.debug("Exception occured during rollback all database changes for issuing policy ");
 				logger.error("Unexpected error", e1);
 			}
 		}
@@ -1765,7 +1755,6 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 				if("".equals(insuredEmail))
 					insuredEmail = adminEmail;			
 				
-				logger.debug("Going to send mail to " + insuredEmail);
 				String policy ="Issued PolicyNumber  " + policyNumber;
 				
 				if("".equals(adminEmail))
@@ -1797,7 +1786,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 		
 			}
 			catch(Exception e){
-			logger.debug("Exception occured during sending policy to insured ");
+				logger.error("Unable to send policy to insured", e);
 			}
 		}
 		else
@@ -1812,7 +1801,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 		
 		boolean dollarDefenseFlag = false;	
 		
-		Map mapDollarDefense = null;
+		Map mapDollarDefense = new HashMap();
 		int dollarDefenceSize=0;
 		Object objDollarDefense = SqlResources.getSqlMapProcessor(ctx).findByKey("SqlStmts.UserStatementManualBoQueriesgetManualFinalised", ctx);
 		
@@ -2206,7 +2195,6 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 		try { 
 	        logger.debug("ES Value: " + ctx.get("ESMode").toString());
 	        logger.debug("AccountName: " + ctx.get("AccountName").toString());
-	        logger.debug("AccountEmail: " + ctx.get("AccountEmail").toString());
 	        logger.debug("PolicyEffectiveDate: "
 	                 + ctx.get("PolicyEffectiveDate").toString());
 	        ServletContext servletContext = (ServletContext) ctx.get("DocumentServletContext");
@@ -2293,8 +2281,6 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
             
         } catch (Exception e) {      
             logger.error("Unexpected error", e);
-            logger.debug(e.getMessage());
-            logger.debug("Problem in signing document");
         } finally {
         	/*code by sukhi 26/09/2018*/
         	if(out != null){
@@ -2313,7 +2299,6 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 	private static  String processFormSign(Context ctx, HttpServletRequest request, HttpServletResponse response, byte[] pdfBytes, int pageNo, Map<String, Double> xyMap) throws Exception {
 
         logger.debug("AccountName: " + ctx.get("AccountName").toString());
-        logger.debug("AccountEmail: " + ctx.get("AccountEmail").toString());
         logger.debug("PolicyEffectiveDate: "+ ctx.get("PolicyEffectiveDate").toString());
         
         ServletContext servletContext = (ServletContext) ctx.get("DocumentServletContext");
@@ -2341,8 +2326,6 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
             
         } catch (Exception e) {      
             logger.error("Unexpected error", e);
-            logger.debug(e.getMessage());
-            logger.debug("Problem in signing document");
         }        
         return assuresignurl;
 	}
@@ -3157,7 +3140,6 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 			}
 			logger.debug(signature_path+"\t"+spLogo_Path);	
 		} catch (Exception e) {
-			logger.debug("Error in file process");
 			logger.error("Unexpected error", e);
 		}
 		if(ctx.get("s_path") != null && !"".equals(ctx.get("s_path"))){
@@ -3230,7 +3212,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 								uploadFile_logo.write(new File(uploaddirectory, DocFileName));
 							}
 						} catch (Exception e) {
-							logger.debug("Exception " + e );
+							logger.error("Unable to write document to file", e);
 							LawyersUtils.populateError(ctx, "DocUploadError",
 									"Document could not be write to file" );
 							return;
@@ -3242,7 +3224,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 							//result = "File added successfully!";
 							logger.debug("Result from uploadDocument(ctx, uploaddirectory + docName)" + result);
 						} catch (Exception e) {
-							logger.debug("Exception --->" + e);
+							logger.error("Unable to upload document", e);
 							LawyersUtils.populateError(ctx, "DocUploadError",
 									"Document could not be uploaded");
 							return;
@@ -3277,7 +3259,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 						}
 						file=null;
 					}catch(Exception e){
-						logger.debug("Exception in DocFileName" + e);
+						logger.error("Unable to resolve document file name", e);
 					}
 				}
 				tempFile = new File(uploaddirectory + docNameTemp);
@@ -3287,7 +3269,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 				
 			}
 		}catch(Exception e){
-			logger.debug("Exception in DocFileName" + e);
+			logger.error("Unable to resolve document file name", e);
 		} finally {
 			/*code by sukhi 26/09/2018*/
 			tempFile = null;
@@ -3584,7 +3566,6 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 				// break;
 			}
 		} catch (Exception e) {
-			logger.debug("Error in file process");
 			logger.error("Unexpected error", e);
 			throw e;
 		}
@@ -3616,7 +3597,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 		try {
 			uploadFile.write(new File(uploaddirectory, DocFileName));
 		} catch (Exception e) {
-			logger.debug("Exception " + e );
+			logger.error("Unable to write document to file", e);
 			LawyersUtils.populateError(ctx, "DocUploadError",
 					"Document could not be write to file" );
 			
@@ -3624,7 +3605,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 			return;
 		}
 		}catch(Exception e){
-			logger.debug("Exception in DocFileName" + e);
+			logger.error("Unable to resolve document file name", e);
 		}
 	}
 	
@@ -3725,7 +3706,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 				logger.debug("execution ended");
 				con.disconnect();
 				}catch(Exception e){
-					logger.debug("Exception " + e );
+					logger.error("Unable to close document connection", e);
 				}
 	}
 
@@ -3807,7 +3788,6 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 				}
 			}
 		} catch (Exception e) {
-			logger.debug("Error in file process");
 			logger.error("Unexpected error", e);
 		}
 		
@@ -3823,7 +3803,6 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 		try {
 			uploadFile.write(new File(uploaddirectory, fileName));
 		} catch (Exception e) {
-			logger.debug("Exception " + e );
 			logger.error("Unexpected error", e);
 		}
 	}
@@ -3853,7 +3832,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 			}
 		
 		} catch (Exception e) {
-			logger.debug("Exception --->" + e);
+			logger.error("Unable to upload document", e);
 			LawyersUtils.populateError(ctx, "DocUploadError",
 					"Document could not be uploaded");
 			return;
@@ -3909,7 +3888,6 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 					// break;
 				}
 			} catch (Exception e) {
-				logger.debug("Error in file process");
 				logger.error("Unexpected error", e);
 				throw e;
 			}
@@ -3964,7 +3942,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 				try {
 					uploadFile.write(new File(uploaddirectory, docFileName));
 				} catch (Exception e) {
-					logger.debug("Exception " + e );
+					logger.error("Unable to write document to file", e);
 					LawyersUtils.populateError(ctx, "DocUploadError", "Document could not be write to file" );
 					ctx.put("DocumentID", 0);
 					return;
@@ -3981,7 +3959,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 					logger.debug("Result from uploadDocument(ctx, uploaddirectory + docName)" + result);
 					
 				} catch (Exception e) {
-					logger.debug("Exception --->" + e);
+					logger.error("Unable to upload document", e);
 					LawyersUtils.populateError(ctx, "DocUploadError", "Document could not be uploaded");
 					ctx.put("DocumentID", 0);
 					return;

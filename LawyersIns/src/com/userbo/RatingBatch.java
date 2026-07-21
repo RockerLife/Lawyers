@@ -68,7 +68,7 @@ public class RatingBatch {
 			url = SystemProperties.getInstance().getString("appl.LawyersIns.webserviceurl");
 		} 
 		catch (Exception e) {
-
+			logger.error("Unable to read rating service URL", e);
 		}
 
 		if (url == null)
@@ -481,7 +481,7 @@ public class RatingBatch {
 			url = SystemProperties.getInstance().getString("appl.LawyersIns.webserviceurl");
 		} 
 		catch (Exception e) {
-
+			logger.error("Unable to read rating service URL", e);
 		}
 
 		if (url == null)

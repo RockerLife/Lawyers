@@ -46,14 +46,12 @@ public class RuleEngineUtilityNewApp {
 		/* Rule no:-2Firm Name and Address common rule for NB and RB */
 
 		ruleid = "validateFirmState";
-		logger.debug("going to debug : " + ruleid);
 		Firm f1 = (Firm) initlizePOJO(ctx, new Firm());
 		ctx.put("RuleObject", f1);
 		insertRulesToDatabase(callRuleEngine(ctx, ruleid), f1, ruleid, f1.getDescription(), f1.getTooltip());
 
 		ruleid = "validateFirmAddress_Lawyers";
 		boolean containsPOBOX = false;
-		logger.debug("going to debug : " + ruleid);
 		String address1 = "";
 		if (ctx.get("PolicyStatusKey") != null && ctx.get("PolicyStatusKey").toString().equals("1")) {
 			address1 = ctx.get("Street") != null ? ctx.get("Street").toString().trim().toLowerCase() : "";
@@ -94,7 +92,6 @@ public class RuleEngineUtilityNewApp {
 			String effectiveDateOfPolicyString = new SimpleDateFormat("MM/dd/yyyy")
 					.format(new Date(ctx.get("PolicyEffectiveDate").toString()));
 			ruleid = "validateEffectiveDateWithCurrentDateNewBusiness_Lawyers";
-			logger.debug("going to debug : " + ruleid);
 			ctx.put("isCurrentDateAterEfectiveDate",
 					DateUtils.isDateBefore(ctx.get("PolicyEffectiveDate"), ctx.get("currentDate")));
 			Coverage coverage = (Coverage) initlizePOJO(ctx, new Coverage());
@@ -107,7 +104,6 @@ public class RuleEngineUtilityNewApp {
 			ctx.put("daysDifferenceForEfectiveDate", daysDifferenceForEfectiveDate);
 			logger.debug("daysDifferenceForEfectiveDate: " + daysDifferenceForEfectiveDate);
 			ruleid = "validateEffectiveDateWithDaysNewBusiness_Lawyers";
-			logger.debug("going to debug : " + ruleid);
 			Coverage coverage1 = (Coverage) initlizePOJO(ctx, new Coverage());
 			ctx.put("RuleObject", coverage1);
 
@@ -139,7 +135,6 @@ public class RuleEngineUtilityNewApp {
 					new Date(ctx.get("currentDate").toString())));
 
 			ruleid = "validateEffectiveDateWithDaysReNewBusiness_Lawyers";
-			logger.debug("going to debug : " + ruleid);
 			ctx.put("daysDifferenceForEfectiveDate", daysDifferenceForEfectiveDate);
 			Firm firm1 = (Firm) initlizePOJO(ctx, new Firm());
 			ctx.put("RuleObject", firm1);
@@ -165,7 +160,6 @@ public class RuleEngineUtilityNewApp {
 
 				if (dataMap.get("AOPKey").toString().equals("15")) {
 					ruleid = "investmentCounselingMoneyMgtAOP_Lawyers";
-					logger.debug("going to debug" + ruleid);
 					ctx.put("investmentCounselingMoneyMgtPercentage", dataMap.get("PercentageValue"));
 					AOP areaOfPractice = (AOP) initlizePOJO(ctx, new AOP());
 					ctx.put("RuleObject", areaOfPractice);
@@ -174,7 +168,6 @@ public class RuleEngineUtilityNewApp {
 				}
 				if (dataMap.get("AOPKey").toString().equals("21")) {
 					ruleid = "securitiesBonds_Lawyers";
-					logger.debug("going to debug" + ruleid);
 					ctx.put("securitiesBondsAOPPercentage", dataMap.get("PercentageValue"));
 					AOP areaOfPractice = (AOP) initlizePOJO(ctx, new AOP());
 					ctx.put("RuleObject", areaOfPractice);
@@ -183,7 +176,6 @@ public class RuleEngineUtilityNewApp {
 				}
 				if (dataMap.get("AOPKey").toString().equals("38")) {
 					ruleid = "EntertainmentSports_Lawyers";
-					logger.debug("going to debug" + ruleid);
 					ctx.put("entertainmentSportsAOPPercentage", dataMap.get("PercentageValue"));
 					AopNew areaOfPractice = (AopNew) initlizePOJO(ctx, new AopNew());
 					ctx.put("RuleObject", areaOfPractice);
@@ -194,7 +186,6 @@ public class RuleEngineUtilityNewApp {
 				}
 				if (dataMap.get("AOPKey").toString().equals("42")) {
 					ruleid = "InternationalAOP_Lawyers";
-					logger.debug("going to debug" + ruleid);
 
 					ctx.put("patentAOPPercentage", dataMap.get("PercentageValue"));
 					AopNew areaOfPractice = (AopNew) initlizePOJO(ctx, new AopNew());
@@ -206,7 +197,6 @@ public class RuleEngineUtilityNewApp {
 				}
 				if (dataMap.get("AOPKey").toString().equals("46")) {
 					ruleid = "MergersAcquisitions_Lawyers";
-					logger.debug("going to debug" + ruleid);
 					ctx.put("mergersAcquisitionsAOPPercentage", dataMap.get("PercentageValue"));
 					AopNew areaOfPractice = (AopNew) initlizePOJO(ctx, new AopNew());
 					ctx.put("RuleObject", areaOfPractice);
@@ -217,7 +207,6 @@ public class RuleEngineUtilityNewApp {
 
 				if (dataMap.get("AOPKey").toString().equals("67")) {
 					ruleid = "LitigationOtherPlaintiff_Lawyers";
-					logger.debug("going to debug" + ruleid);
 					ctx.put("litigationOtherPlaintiffAOPPercentage", dataMap.get("PercentageValue"));
 					AopNew areaOfPractice = (AopNew) initlizePOJO(ctx, new AopNew());
 					ctx.put("RuleObject", areaOfPractice);
@@ -228,7 +217,6 @@ public class RuleEngineUtilityNewApp {
 
 				if (dataMap.get("AOPKey").toString().equals("59")) {
 					ruleid = "MassTortLitigationPlaintiff_Lawyers";
-					logger.debug("going to debug" + ruleid);
 					ctx.put("massTortLitigationPlaintiffAOPPercentage", dataMap.get("PercentageValue"));
 					AopNew areaOfPractice = (AopNew) initlizePOJO(ctx, new AopNew());
 					ctx.put("RuleObject", areaOfPractice);
@@ -239,7 +227,6 @@ public class RuleEngineUtilityNewApp {
 
 				if (dataMap.get("AOPKey").toString().equals("60")) {
 					ruleid = "MedicalMalpracticePlaintiff_Lawyers";
-					logger.debug("going to debug" + ruleid);
 					ctx.put("medicalMalpracticePlaintiffAOPPercentage", dataMap.get("PercentageValue"));
 					AopNew areaOfPractice = (AopNew) initlizePOJO(ctx, new AopNew());
 					ctx.put("RuleObject", areaOfPractice);
@@ -250,7 +237,6 @@ public class RuleEngineUtilityNewApp {
 
 				if (dataMap.get("AOPKey").toString().equals("63")) {
 					ruleid = "ProductLiabilityPlaintiff_Lawyers";
-					logger.debug("going to debug" + ruleid);
 					ctx.put("productLiabilityPlaintiffAOPPercentage", dataMap.get("PercentageValue"));
 					AopNew areaOfPractice = (AopNew) initlizePOJO(ctx, new AopNew());
 					ctx.put("RuleObject", areaOfPractice);
@@ -261,7 +247,6 @@ public class RuleEngineUtilityNewApp {
 
 				if (dataMap.get("AOPKey").toString().equals("48")) {
 					ruleid = "Patent_Lawyers";
-					logger.debug("going to debug" + ruleid);
 					ctx.put("patentAOPPercentage", dataMap.get("PercentageValue"));
 					AopNew areaOfPractice = (AopNew) initlizePOJO(ctx, new AopNew());
 					ctx.put("RuleObject", areaOfPractice);
@@ -271,7 +256,6 @@ public class RuleEngineUtilityNewApp {
 				}
 				if (dataMap.get("AOPKey").toString().equals("68")) {
 					ruleid = "MassTortLitigationDefense_Lawyers";
-					logger.debug("going to debug" + ruleid);
 					int patentAOPPercentage = dataMap.get("PercentageValue") != null
 							? Integer.parseInt(dataMap.get("PercentageValue").toString())
 							: 0;
@@ -323,7 +307,6 @@ public class RuleEngineUtilityNewApp {
 
 					if (dataMap.get("AOPKey").toString().equals("6")) {
 						ruleid = "copyrightTrademarkPatentAOP_Lawyers";
-						logger.debug("going to debug" + ruleid);
 						ctx.put("ctpPercentage", dataMap.get("PercentageValue"));
 						AOP areaOfPractice = (AOP) initlizePOJO(ctx, new AOP());
 						ctx.put("RuleObject", areaOfPractice);
@@ -332,7 +315,6 @@ public class RuleEngineUtilityNewApp {
 					}
 					if (dataMap.get("AOPKey").toString().equals("10")) {
 						ruleid = "environmentalAOP_Lawyers";
-						logger.debug("going to debug" + ruleid);
 						ctx.put("environmentalAOPPercentage", dataMap.get("PercentageValue"));
 						AOP areaOfPractice = (AOP) initlizePOJO(ctx, new AOP());
 						ctx.put("RuleObject", areaOfPractice);
@@ -342,7 +324,6 @@ public class RuleEngineUtilityNewApp {
 
 					if (dataMap.get("AOPKey").toString().equals("25")) {
 						ruleid = "otherAop_Lawyers";
-						logger.debug("going to debug" + ruleid);
 						ctx.put("otherAOPPercentage", dataMap.get("PercentageValue"));
 						AOP areaOfPractice = (AOP) initlizePOJO(ctx, new AOP());
 						ctx.put("RuleObject", areaOfPractice);
@@ -352,7 +333,6 @@ public class RuleEngineUtilityNewApp {
 
 					if (dataMap.get("AOPKey").toString().equals("13")) {
 						ruleid = "governmentNBAOP_Lawyers";
-						logger.debug("going to debug" + ruleid);
 						ctx.put("governmentAOPPercentage", dataMap.get("PercentageValue"));
 						AOP areaOfPractice = (AOP) initlizePOJO(ctx, new AOP());
 						ctx.put("RuleObject", areaOfPractice);
@@ -392,7 +372,6 @@ public class RuleEngineUtilityNewApp {
 
 						if (aopKey.equals("6") && aopKey.equals(dataMapOld.get("AOPKey").toString())) {
 							ruleid = "copyrightAOPRenew_Lawyers";
-							logger.debug("going to debug" + ruleid);
 							ctx.put("currentPercentage", dataMap.get("PercentageValue"));
 							ctx.put("ctpPercentage", dataMapOld.get("PercentageValue"));
 							AOP aop = (AOP) initlizePOJO(ctx, new AOP());
@@ -403,7 +382,6 @@ public class RuleEngineUtilityNewApp {
 
 						if (aopKey.equals("10") && aopKey.equals(dataMapOld.get("AOPKey").toString())) {
 							ruleid = "environmentalAOPNewApp_Lawyers";
-							logger.debug("going to debug" + ruleid);
 							ctx.put("currentPercentage", dataMap.get("PercentageValue"));
 							ctx.put("environmentalAOPPercentage", dataMapOld.get("PercentageValue"));
 							AOP aop = (AOP) initlizePOJO(ctx, new AOP());
@@ -432,7 +410,6 @@ public class RuleEngineUtilityNewApp {
 												.valueOf(dataMap.get("PercentageValue").toString()))) {
 
 									ruleid = "otherAOPRenew_Lawyers";
-									logger.debug("going to debug" + ruleid);
 									ctx.put("otherDescPrior", ctx.get("AOPCommentDescOld").toString());
 									ctx.put("otherDescNew", ctx.get("AOPCommentDescNew").toString());
 									ctx.put("otherAopNew", dataMap.get("PercentageValue"));
@@ -531,9 +508,7 @@ public class RuleEngineUtilityNewApp {
 
 		if (ctx.get("isCannibSuppPage") != null && ctx.get("isCannibSuppPage").toString().equals("Y")) {
 			ruleid = "IsCannibSuppPage_Lawyers";
-			logger.debug("going to debug : " + ruleid);
 			ruleid = "ValidateCannibSuppPage_Lawyers";
-			logger.debug("going to debug : " + ruleid);
 			RuleEngineUtilityNewApp.insertRulesToDatabaseTemp(ctx, ruleid,
 					"Cannabis question is answered Yes and is outside of C & F authority.",
 					"Cannabis work is outside of C & F authority.");
@@ -550,7 +525,6 @@ public class RuleEngineUtilityNewApp {
 			if (ctx.get("IsApplicantProvidesLegalServices") != null
 					&& ctx.get("IsApplicantProvidesLegalServices").toString().equals("Y")) {
 				ruleid = "isApplicantProvidesLegalServices_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("isApplicantProvidesLegalServices", ctx.get("IsApplicantProvidesLegalServices"));
 				Firm firm1 = (Firm) initlizePOJO(ctx, new Firm());
 				ctx.put("RuleObject", firm1);
@@ -584,7 +558,6 @@ public class RuleEngineUtilityNewApp {
 			if (allAttornieslist != null && allAttornieslist instanceof List) {
 				int count = allAttornieslist.size();
 				ruleid = "attorneySupportStaffRatio_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("totalAttornyes", count * 3);
 				ctx.put("totalNumOfNonAttorneyStaff", ctx.get("TotalNumOfNonAttorneyStaff"));
 				Firm firm = (Firm) initlizePOJO(ctx, new Firm());
@@ -616,7 +589,6 @@ public class RuleEngineUtilityNewApp {
 					&& !ctx.get("IsFirmCoverageForPreceedorFirms").equals(HtmlConstants.EMPTY)) {
 				// AboutFirm Rule 7B
 				ruleid = "DoesFirmCoverageForPreceedorFirms_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("doesFirmCoverageForPreceedorFirms", ctx.get("IsFirmCoverageForPreceedorFirms"));
 				Firm firm = (Firm) initlizePOJO(ctx, new Firm());
 				ctx.put("RuleObject", firm);
@@ -633,7 +605,6 @@ public class RuleEngineUtilityNewApp {
 		if (ctx.get("PolicyStatusKey") != null && ctx.get("PolicyStatusKey").toString().equals("2")) {
 			if (ctx.get("IsFirmMergedWithOtherFirm") != null) {
 				ruleid = "checkIsFirmMergedWithOtherFirmRenewNew_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("isFirmMergedWithOtherFirm", ctx.get("IsFirmMergedWithOtherFirm"));
 				Coverage coverage = (Coverage) initlizePOJO(ctx, new Coverage());
 				ctx.put("RuleObject", coverage);
@@ -656,7 +627,6 @@ public class RuleEngineUtilityNewApp {
 					&& ctx.get("IsFirmHaveLawyersLiabilityInsurance").toString().equals("Y")) {
 
 				ruleid = "ValidateForPriorCopyofPolicy_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				RuleEngineUtilityNewApp.insertRulesToDatabaseTemp(ctx, ruleid,
 						"Confirm that copy of current policy is received", " ");
 
@@ -672,7 +642,6 @@ public class RuleEngineUtilityNewApp {
 						ctx.put("effectiveDateOfPolicy", new Date(ctx.get("PolicyEffectiveDate").toString()).getTime());
 						logger.debug("ccc...." + ctx.get("policyExpiryDate"));
 						ruleid = "validateExpirationDateNewBusiness_Lawyers";
-						logger.debug("going to debug : " + ruleid);
 						Coverage coverage = (Coverage) initlizePOJO(ctx, new Coverage());
 						ctx.put("RuleObject", coverage);
 						insertRulesToDatabase(callRuleEngine(ctx, ruleid), coverage, ruleid, coverage.getDescription(),
@@ -731,7 +700,6 @@ public class RuleEngineUtilityNewApp {
 					}
 
 					ruleid = "CheckLimits_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					Coverage coverage = (Coverage) initlizePOJO(ctx, new Coverage());
 					ctx.put("RuleObject", coverage);
 					insertRulesToDatabase(callRuleEngine(ctx, ruleid), coverage, ruleid, coverage.getDescription(),
@@ -763,7 +731,6 @@ public class RuleEngineUtilityNewApp {
 				}
 				if (LimitSequence < LimitSequencePross) {
 					ruleid = "ValidateReductionOfLimit_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					RuleEngineUtilityNewApp.insertRulesToDatabaseTemp(ctx, ruleid,
 							"Requesting limit below expiring limit", "Requires reduction in limit advisory signature");
 				} else {
@@ -827,7 +794,6 @@ public class RuleEngineUtilityNewApp {
 					&& ctx.get("IsFirmProvideInvestmentAdvice").toString().equalsIgnoreCase("Y")) {
 				ctx.put("isFirmProvideInvestmentAdvice", ctx.get("IsFirmProvideInvestmentAdvice"));
 				ruleid = "IsFirmProvideInvestmentAdvice_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				PracticeManagement practiceManagement = (PracticeManagement) initlizePOJO(ctx,
 						new PracticeManagement());
 				ctx.put("RuleObject", practiceManagement);
@@ -841,7 +807,6 @@ public class RuleEngineUtilityNewApp {
 			if (ctx.get("IsFirmProvidedLegalService") != null) {
 				ctx.put("isFirmProvidedLegalService", ctx.get("IsFirmProvidedLegalService"));
 				ruleid = "IsFirmProvidedLegalServiceNewApp_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				MorePracticeManagementNewApp morePracticeManagement = (MorePracticeManagementNewApp) initlizePOJO(ctx,
 						new MorePracticeManagementNewApp());
 				ctx.put("RuleObject", morePracticeManagement);
@@ -856,7 +821,6 @@ public class RuleEngineUtilityNewApp {
 					&& ctx.get("isServedAsCEOChairmanPresident").toString().equalsIgnoreCase("Y")) {
 				ctx.put("isFirmServedCEO", ctx.get("isServedAsCEOChairmanPresident"));
 				ruleid = "IsFirmServedCEO_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				MorePracticeManagementNewApp morePracticeManagement = (MorePracticeManagementNewApp) initlizePOJO(ctx,
 						new MorePracticeManagementNewApp());
 				ctx.put("RuleObject", morePracticeManagement);
@@ -890,7 +854,6 @@ public class RuleEngineUtilityNewApp {
 			if ((ctx.get("firstLargestRevenueClientNew") != null)
 					|| (ctx.get("secondLargestRevenueClientNew") != null)) {
 				ruleid = "TopTwoRevenueClientsNB_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				MorePracticeManagementNewApp morePracticeManagement = (MorePracticeManagementNewApp) initlizePOJO(ctx,
 						new MorePracticeManagementNewApp());
 				ctx.put("RuleObject", morePracticeManagement);
@@ -952,7 +915,6 @@ public class RuleEngineUtilityNewApp {
 				if (!ctx.get("isServedAsCEOChairmanPresident").toString().equals(isServedAsCEOChairmanPresidentOld)) {
 					ctx.put("isFirmServedCEO", "Y");
 					ruleid = "IsFirmServedCEORenewNew_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					MorePracticeManagementNewApp morePracticeManagement = (MorePracticeManagementNewApp) initlizePOJO(
 							ctx, new MorePracticeManagementNewApp());
 					ctx.put("RuleObject", morePracticeManagement);
@@ -1008,7 +970,6 @@ public class RuleEngineUtilityNewApp {
 								&& (Integer.valueOf(ctx.get("secondLargestRevenueClientNew").toString()) > Integer
 										.valueOf(ctx.get("secondLargestRevenueClientOld").toString() + 5)))) {
 					ruleid = "TopTwoRevenueClients_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					MorePracticeManagementNewApp morePracticeManagement = (MorePracticeManagementNewApp) initlizePOJO(
 							ctx, new MorePracticeManagementNewApp());
 					ctx.put("RuleObject", morePracticeManagement);
@@ -1035,7 +996,6 @@ public class RuleEngineUtilityNewApp {
 
 			if (ctx.get("IsPersonnelBeSubOfAnyInvest") != null) {
 				ruleid = "validateRegulatroyIssues_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("isPersonnelBeSubOfAnyInvest", ctx.get("IsPersonnelBeSubOfAnyInvest").toString().trim());
 				Coverage coverage = (Coverage) initlizePOJO(ctx, new Coverage());
 				ctx.put("RuleObject", coverage);
@@ -1047,7 +1007,6 @@ public class RuleEngineUtilityNewApp {
 			}
 			if (ctx.get("IsLawyerProfLiabClaimAgntAppl") != null) {
 				ruleid = "validateClaimAgainstFirm_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("isLawyerProfLiabClaimAgntAppl", ctx.get("IsLawyerProfLiabClaimAgntAppl").toString().trim());
 				Coverage coverage = (Coverage) initlizePOJO(ctx, new Coverage());
 				ctx.put("RuleObject", coverage);
@@ -1059,7 +1018,6 @@ public class RuleEngineUtilityNewApp {
 			}
 			if (ctx.get("IsAnyActOmmBecomeClaimAgntFirm") != null) {
 				ruleid = "validateActOmmissionFeeDispute_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("isAnyActOmmBecomeClaimAgntFirm", ctx.get("IsAnyActOmmBecomeClaimAgntFirm").toString().trim());
 				Coverage coverage = (Coverage) initlizePOJO(ctx, new Coverage());
 				ctx.put("RuleObject", coverage);
@@ -1073,7 +1031,6 @@ public class RuleEngineUtilityNewApp {
 					&& ctx.get("IsAttorneyDeclineForProfLiability").toString().equals("Y"))
 					&& !ctx.get("StateCode").toString().equals("MO")) {
 				ruleid = "checkAttorneyDeclineForProfLiability_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("isAttorneyDeclineForProfLiability", ctx.get("IsAttorneyDeclineForProfLiability"));
 				ctx.put("stateCode", ctx.get("StateCode"));
 				Coverage coverage = (Coverage) initlizePOJO(ctx, new Coverage());
@@ -1089,7 +1046,6 @@ public class RuleEngineUtilityNewApp {
 		if (ctx.get("PolicyStatusKey") != null && ctx.get("PolicyStatusKey").toString().equals("2")) {
 			if (ctx.get("IsPersonnelBeSubOfAnyInvest") != null) {
 				ruleid = "IsPersonnelBeSubOfAnyInvestRenewalNew_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("isPersonnelBeSubOfAnyInvest", ctx.get("IsPersonnelBeSubOfAnyInvest").toString().trim());
 				Coverage coverage = (Coverage) initlizePOJO(ctx, new Coverage());
 				ctx.put("RuleObject", coverage);
@@ -1101,7 +1057,6 @@ public class RuleEngineUtilityNewApp {
 			}
 			if (ctx.get("IsLawyerProfLiabClaimAgntAppl") != null) {
 				ruleid = "IsLawyerProfLiabClaimAgntApplRenewalNew_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("isLawyerProfLiabClaimAgntAppl", ctx.get("IsLawyerProfLiabClaimAgntAppl").toString().trim());
 				Coverage coverage = (Coverage) initlizePOJO(ctx, new Coverage());
 				ctx.put("RuleObject", coverage);
@@ -1113,7 +1068,6 @@ public class RuleEngineUtilityNewApp {
 			}
 			if (ctx.get("IsAnyActOmmBecomeClaimAgntFirm") != null) {
 				ruleid = "IsAnyActOmmBecomeClaimAgntFirmRenewalNew_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("isAnyActOmmBecomeClaimAgntFirm", ctx.get("IsAnyActOmmBecomeClaimAgntFirm").toString().trim());
 				Coverage coverage = (Coverage) initlizePOJO(ctx, new Coverage());
 				ctx.put("RuleObject", coverage);
@@ -1139,7 +1093,6 @@ public class RuleEngineUtilityNewApp {
 
 		if (allAttornieslist != null && allAttornieslist instanceof List && allAttornieslist.size() > 0) {
 			ruleid = "attorneysNotLicensedIndomicile_Lawyers";
-			logger.debug("going to debug : " + ruleid);
 			for (int i = 0; i < allAttornieslist.size(); i++) {
 				Map dataMap = (Map) allAttornieslist.get(i);
 				Context newCtx = new Context();
@@ -1169,7 +1122,6 @@ public class RuleEngineUtilityNewApp {
 		if (ctx.get("PolicyStatusKey") != null && ctx.get("PolicyStatusKey").toString().equals("1")) {
 			if (allAttornieslist != null && allAttornieslist instanceof List && allAttornieslist.size() > 1) {
 				ruleid = "multipleAttorneyAtleastHaveThousandHours_Lawyers";
-				logger.debug("going to debug" + ruleid);
 				int count = 0;
 				for (int i = 0; i < allAttornieslist.size(); i++) {
 					Map dataMap = (Map) allAttornieslist.get(i);
@@ -1195,7 +1147,6 @@ public class RuleEngineUtilityNewApp {
 				attorniesctx.putAll((Map) attornieslistsolo.get(0));
 
 				ruleid = "soloAtorneyHoursLessThanFiveHundred_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("annualWorkedHours", attorniesctx.get("AnnualWorkedHours"));
 				Firm firm = (Firm) initlizePOJO(ctx, new Firm());
 				ctx.put("RuleObject", firm);
@@ -1207,7 +1158,6 @@ public class RuleEngineUtilityNewApp {
 						: 0;
 				if (limitSequence == 36) {
 					ruleid = "ValidateLimitFor2M_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					insertRulesToDatabaseTemp(ctx, ruleid, "Requesting 2M in limit.", "Requesting 2M in limit.");
 				}
 
@@ -1225,7 +1175,6 @@ public class RuleEngineUtilityNewApp {
 			if (allAttornieslist != null && allAttornieslist instanceof List && allAttornieslist.size() > 1) {
 				int count = 0;
 				ruleid = "moreThanFiveRateableAttorneys_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				for (int i = 0; i < allAttornieslist.size(); i++) {
 					Map dataMap = (Map) allAttornieslist.get(i);
 					if (dataMap.get("IsNonRatedAttorney") == null
@@ -1296,7 +1245,6 @@ public class RuleEngineUtilityNewApp {
 					 * "AnnualWorkedHours").toString())) {
 					 */
 					ruleid = "soloAttorneyAndHoursChange_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					ctx.put("annualWorkedHours", dataMap.get("AnnualWorkedHours"));
 					Firm firm2 = (Firm) initlizePOJO(ctx, new Firm());
 					ctx.put("RuleObject", firm2);
@@ -1338,7 +1286,6 @@ public class RuleEngineUtilityNewApp {
 			}
 			if (hiringDAteChnageCount > 0) {
 				ruleid = "ValidateAttorneyPriorActDate_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				insertRulesToDatabaseTemp(ctx, ruleid, " Change in Date of hire, review reason",
 						" Change in Date of hire, review reason.");
 			} else {
@@ -1455,7 +1402,6 @@ public class RuleEngineUtilityNewApp {
 					}
 				}
 				ruleid = "ratedAttorneysRenew_Lawyers";
-				logger.debug("going to debug " + ruleid);
 				ctx.put("currentRatedAttorneyCount", currentRatedAttorneyCount);
 				Firm firm2 = (Firm) initlizePOJO(ctx, new Firm());
 				ctx.put("RuleObject", firm2);
@@ -1482,7 +1428,6 @@ public class RuleEngineUtilityNewApp {
 					&& ctx.get("IsAttorneyAddedDeleted").toString().equals("Y")) {
 				if (isNewAttorney > 0 || annualWorkedHoursModified > 0) {
 					ruleid = "attorneyHoursChange_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					ctx.put("attorneyCount", attorneyCount);
 					Firm firm2 = (Firm) initlizePOJO(ctx, new Firm());
 					ctx.put("RuleObject", firm2);
@@ -1499,7 +1444,6 @@ public class RuleEngineUtilityNewApp {
 			}
 
 			ruleid = "averageRevenuePerAttorney_Lawyers";
-			logger.debug("going to debug : " + ruleid);
 			double grossRevenue = Long.valueOf(ctx.get("GrossFeesPaidRenew").toString());
 			double totalAttornyes = allAttornieslist.size();
 			double averageRevenuePerAttorney = grossRevenue / totalAttornyes;
@@ -1515,7 +1459,6 @@ public class RuleEngineUtilityNewApp {
 			boolean isMOdified = false;
 			if (allAttornieslist != null && allAttornieslist instanceof List && allAttornieslist.size() > 1) {
 				ruleid = "multipleAttorneyAtleastHaveThousandHours_Lawyers";
-				logger.debug("going to debug" + ruleid);
 				int count = 0;
 				for (int i = 0; i < allAttornieslist.size(); i++) {
 					Map dataMap = (Map) allAttornieslist.get(i);
@@ -1550,7 +1493,6 @@ public class RuleEngineUtilityNewApp {
 		int medicalMalpractice = 0, productsLiability = 0, toxicTort = 0, other = 0, property = 0, professional = 0,
 				totalRevenuePercentage = 0;
 
-		logger.debug("going to debug : " + ruleid);
 		int largetCaseSize = 0;
 		boolean largestcaseFlag = false;
 		for (int i = 0; i < areaOfLitigationList.size(); i++) {
@@ -1564,7 +1506,6 @@ public class RuleEngineUtilityNewApp {
 		}
 		if (largestcaseFlag) {
 			ruleid = "validatePlaintiffLargestCase_Lawyers";
-			logger.debug("going to debug : " + ruleid);
 			insertRulesToDatabaseTemp(ctx, ruleid, "Largest plaintiff case size above 3M, outside of C & F authority",
 					"Large plaintiff case size – needs to be referred to C & F. Provide the next 3 largest case sizes.");
 		}
@@ -1685,7 +1626,6 @@ public class RuleEngineUtilityNewApp {
 
 				if (toxicTort > 0) {
 					ruleid = "validateAreaOfLitigation_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					ctx.put("otherAol", other);
 					ctx.put("medicalMalpracticeAol", medicalMalpractice);
 					ctx.put("productsLiabilityAol", productsLiability);
@@ -1700,7 +1640,6 @@ public class RuleEngineUtilityNewApp {
 				}
 				if (other > 0) {
 					ruleid = "validateOtherPlantiff_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					ctx.put("otherAol", other);
 					PlaintiffSupp plaintiffSupp = (PlaintiffSupp) initlizePOJO(ctx, new PlaintiffSupp());
 					ctx.put("RuleObject", plaintiffSupp);
@@ -1721,7 +1660,6 @@ public class RuleEngineUtilityNewApp {
 				int toxic = Integer.valueOf(ctx.get("toxicTortAOLRevPercentage").toString().trim());
 				int difference = property + medicalMalpractice + productsLiability + professional + toxic + other;
 				ruleid = "plaintiffLitigationAOP_Lawyers";
-				logger.debug("going to debug" + ruleid);
 				ctx.put("difference", difference);
 				ctx.put("stateCode", ctx.get("StateCode"));
 				PlaintiffSupp plaintiffSupp = (PlaintiffSupp) initlizePOJO(ctx, new PlaintiffSupp());
@@ -1730,7 +1668,6 @@ public class RuleEngineUtilityNewApp {
 						plaintiffSupp.getDescription(), plaintiffSupp.getTooltip());
 
 				ruleid = "validatePlaintiffLargestCase_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				for (int i = 0; i < areaOfLitigationList.size(); i++) {
 					Map dataMap = (Map) areaOfLitigationList.get(i);
 					Context newCtx = new Context();
@@ -1764,7 +1701,6 @@ public class RuleEngineUtilityNewApp {
 			if (ctx.get("IsSettlementAggrementsUsed") != null
 					&& ctx.get("IsSettlementAggrementsUsed").toString().equals("N")) {
 				ruleid = "validateAuthorizationsForSettlement_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("isSettlementAggrementsUsed", ctx.get("IsSettlementAggrementsUsed"));
 				PlaintiffSupp plaintiffSupp = (PlaintiffSupp) initlizePOJO(ctx, new PlaintiffSupp());
 				ctx.put("RuleObject", plaintiffSupp);
@@ -1777,7 +1713,6 @@ public class RuleEngineUtilityNewApp {
 			/* rule no:-106 in the past 5 years */
 			if (ctx.get("massTortOrClassAction") != null && !ctx.get("massTortOrClassAction").toString().equals("")) {
 				ruleid = "massTortOrClassActionNewApp_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("massTortOrClassAction", ctx.get("massTortOrClassAction"));
 				LitigationSupplement litigationSup = (LitigationSupplement) initlizePOJO(ctx,
 						new LitigationSupplement());
@@ -1809,7 +1744,6 @@ public class RuleEngineUtilityNewApp {
 					&& !ctx.get("NumberOfInjuryCasesIn12Month").toString().equals("")) {
 				int noOfInjurycases = 0, count = 0;
 				ruleid = "numberOfInjuryCasesIn12MonthNewApp_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				if (Integer.valueOf(ctx.get("NumberOfInjuryCasesIn12Month").toString()) != null) {
 					noOfInjurycases = Integer.valueOf(ctx.get("NumberOfInjuryCasesIn12Month").toString());
 				}
@@ -1834,7 +1768,6 @@ public class RuleEngineUtilityNewApp {
 			if (ctx.get("PerOfCasesSettledBeforeTrail") != null
 					&& !ctx.get("PerOfCasesSettledBeforeTrail").equals(HtmlConstants.EMPTY)) {
 				ruleid = "CasesSettledBeforeTrail_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("perOfCasesSettledBeforeTrail", ctx.get("PerOfCasesSettledBeforeTrail"));
 				LitigationSupplement plaintiffSupp = (LitigationSupplement) initlizePOJO(ctx,
 						new LitigationSupplement());
@@ -1873,7 +1806,6 @@ public class RuleEngineUtilityNewApp {
 
 				if (toxicTort > 0) {
 					ruleid = "validateAreaOfLitigationNew_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					ctx.put("toxicTortAol", toxicTort);
 					PlaintiffSupp plaintiffSupp = (PlaintiffSupp) initlizePOJO(ctx, new PlaintiffSupp());
 					ctx.put("RuleObject", plaintiffSupp);
@@ -1885,7 +1817,6 @@ public class RuleEngineUtilityNewApp {
 				}
 				if (other > 0) {
 					ruleid = "validateOtherPlantiff_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					ctx.put("otherAol", other);
 					PlaintiffSupp plaintiffSupp = (PlaintiffSupp) initlizePOJO(ctx, new PlaintiffSupp());
 					ctx.put("RuleObject", plaintiffSupp);
@@ -1944,7 +1875,6 @@ public class RuleEngineUtilityNewApp {
 							&& ctx.get("IsSettlementAggrementsUsed").toString().equals("Y"))
 							&& (ctx.get("IsSettlementAggrementsUsedold").toString().equals("")))) {
 				ruleid = "validateAuthorizationsForSettlementRenew_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("isSettlementAggrementsUsed", ctx.get("IsSettlementAggrementsUsed"));
 				PlaintiffSupp plaintiffSupp = (PlaintiffSupp) initlizePOJO(ctx, new PlaintiffSupp());
 				ctx.put("RuleObject", plaintiffSupp);
@@ -1958,7 +1888,6 @@ public class RuleEngineUtilityNewApp {
 			if ((ctx.get("massTortOrClassAction") != null && !ctx.get("massTortOrClassAction").toString().equals(""))
 					&& !ctx.get("massTortOrClassAction").toString().equals("N")) {
 				ruleid = "massTortOrClassActionNewAppRenew_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("massTortOrClassAction", ctx.get("massTortOrClassAction"));
 				LitigationSupplement litigationSup = (LitigationSupplement) initlizePOJO(ctx,
 						new LitigationSupplement());
@@ -1976,7 +1905,6 @@ public class RuleEngineUtilityNewApp {
 					: 0;
 			if (numberOfInjuryCasesIn12Month > 100) {
 				ruleid = "numberOfInjuryCasesIn12MonthNewApp_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				// Integer.valueOf(dataMap.get("PercentageOfRevenue").toString().trim())
 				/*
 				 * ctx.put("numberOfInjuryCasesIn", ctx.get("NumberOfInjuryCasesIn12Month"));
@@ -2014,7 +1942,6 @@ public class RuleEngineUtilityNewApp {
 				&& !ctx.get("IsAttorneyServeAsExecutorTrustee").equals(HtmlConstants.EMPTY)
 				&& "Y".equals(ctx.get("IsAttorneyServeAsExecutorTrustee").toString())) {
 			ruleid = "IsAttorneyServeAsExecutorTrusteeRule_Lawyers";
-			logger.debug("going to debug : " + ruleid);
 
 			insertRulesToDatabaseTemp(ctx, ruleid,
 					"Attorney acting as as Personal Representative/Administrator or Trustee.  Review question a and b to determine if they are involved in investment decisions and if a financial advisor is used.",
@@ -2029,7 +1956,6 @@ public class RuleEngineUtilityNewApp {
 		if (ctx.get("ActingAsTrustee") != null && !ctx.get("ActingAsTrustee").equals(HtmlConstants.EMPTY)
 				&& "Y".equals(ctx.get("ActingAsTrustee").toString())) {
 			ruleid = "inPurchaseSaleSecuritiesRule_Lawyers";
-			logger.debug("going to debug : " + ruleid);
 
 			insertRulesToDatabaseTemp(ctx, ruleid, "Trustee authority to sell investment vehicles - Decline",
 					"Trustee responsibilities include selling investment vehicles is outside of C & F authority – Decline.");
@@ -2044,7 +1970,6 @@ public class RuleEngineUtilityNewApp {
 				&& !ctx.get("CertifiedInvestmentDecisions").equals(HtmlConstants.EMPTY)
 				&& "N".equals(ctx.get("CertifiedInvestmentDecisions").toString())) {
 			ruleid = "CertifiedInvestmentDecisionsRule_Lawyers";
-			logger.debug("going to debug : " + ruleid);
 
 			insertRulesToDatabaseTemp(ctx, ruleid,
 					"Wills/Estates and Trusts investment decisions made without certified professional.  Outside of C & F authority. ",
@@ -2060,7 +1985,6 @@ public class RuleEngineUtilityNewApp {
 				&& !ctx.get("beneficiaryInterestWillsTrust").equals(HtmlConstants.EMPTY)
 				&& "Y".equals(ctx.get("beneficiaryInterestWillsTrust").toString())) {
 			ruleid = "BeneficiaryInterestWillsTrustRule_Lawyers";
-			logger.debug("going to debug : " + ruleid);
 
 			insertRulesToDatabaseTemp(ctx, ruleid,
 					"Firm has a beneficiary interest in wills/estates/trusts for which they are providing services.",
@@ -2086,7 +2010,6 @@ public class RuleEngineUtilityNewApp {
 						: 0;
 		if (numberOfMattersValued_1 > 10) {
 			ruleid = "numberOfMatters1M5M_Lawyers";
-			logger.debug("going to debug : " + ruleid);
 			RuleEngineUtilityNewApp.insertRulesToDatabaseTemp(ctx, ruleid,
 					"Number of will / trusts / estates with value between 1M and 5M greater than 10.",
 					"More than 10 will/trusts/estates between 1M – 5M is outside of C & F authority.");
@@ -2097,7 +2020,6 @@ public class RuleEngineUtilityNewApp {
 		}
 		if (numberOfMattersValued_2 > 5) {
 			ruleid = "numberOfMatters5M10M_Lawyers";
-			logger.debug("going to debug : " + ruleid);
 			RuleEngineUtilityNewApp.insertRulesToDatabaseTemp(ctx, ruleid,
 					"Number of will / trusts / estates with value between 5M and 10M greater than 5",
 					"More than 5 will/trusts/estates between 5M – 10M is outside of C & F authority.");
@@ -2108,7 +2030,6 @@ public class RuleEngineUtilityNewApp {
 		}
 		if (numberOfMattersValued_3 > 0) {
 			ruleid = "numberOfMatters10MAndOver_Lawyers";
-			logger.debug("going to debug : " + ruleid);
 			RuleEngineUtilityNewApp.insertRulesToDatabaseTemp(ctx, ruleid,
 					"Will / trusts / estates with value greater than 10M",
 					"Will/trusts/estates with value greater than 10M is outside of C & F authority.");
@@ -2124,7 +2045,6 @@ public class RuleEngineUtilityNewApp {
 			int attorneyCount = Integer.parseInt(ctx.get("attorneyCount").toString());
 			int result = (willTrustAopPercentage * 150 * attorneyCount) / 100;
 			ruleid = "EstatesHandledInYearNewApp_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			ctx.put("willTrustPercentageCount", result);
 			willsEstateNewApp willsEstate = (willsEstateNewApp) initlizePOJO(ctx, new willsEstateNewApp());
 			ctx.put("RuleObject", willsEstate);
@@ -2139,7 +2059,6 @@ public class RuleEngineUtilityNewApp {
 
 						if (dataMap.get("WESKey").toString().equals("8")) {
 							ruleid = "checkAssetProtectionNewApp_Lawyers";
-							logger.debug("going to debug" + ruleid);
 							ctx.put("assetProtectionValue", dataMap.get("PercentageValue"));
 							WillsTrustsEstates willsTrustsEstates3 = (WillsTrustsEstates) initlizePOJO(ctx,
 									new WillsTrustsEstates());
@@ -2150,7 +2069,6 @@ public class RuleEngineUtilityNewApp {
 
 						if (dataMap.get("WESKey").toString().equals("12")) {
 							ruleid = "othersWillsEstateNewApp_Lawyers";
-							logger.debug("going to debug" + ruleid);
 							ctx.put("otherWillsEstate", dataMap.get("PercentageValue"));
 							willsEstate = (willsEstateNewApp) initlizePOJO(ctx, new willsEstateNewApp());
 							ctx.put("RuleObject", willsEstate);
@@ -2159,7 +2077,6 @@ public class RuleEngineUtilityNewApp {
 						}
 						if (dataMap.get("WESKey").toString().equals("6")) {
 							ruleid = "TaxOpinionsWillsEstate_Lawyers";
-							logger.debug("going to debug" + ruleid);
 							ctx.put("taxOpinionsPercentage", dataMap.get("PercentageValue"));
 							willsEstate = (willsEstateNewApp) initlizePOJO(ctx, new willsEstateNewApp());
 							ctx.put("RuleObject", willsEstate);
@@ -2184,7 +2101,6 @@ public class RuleEngineUtilityNewApp {
 					&& ctx.get("IsAttorneyServeAsExecutorTrustee") != null
 					&& ctx.get("IsAttorneyServeAsExecutorTrustee").toString().equals("Y")) {
 				ruleid = "inPurchaseSaleSecuritiesNewApp_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("inPurchaseSaleSecurities", ctx.get("inPurchaseSaleSecurities"));
 				willsEstate = (willsEstateNewApp) initlizePOJO(ctx, new willsEstateNewApp());
 				ctx.put("RuleObject", willsEstate);
@@ -2250,7 +2166,6 @@ public class RuleEngineUtilityNewApp {
 
 						if (ctx.get("assetProtectionNewValue") != null) {
 							ruleid = "checkAssetProtectionRenew_Lawyers";
-							logger.debug("going to debug : " + ruleid);
 							ctx.put("assetProtectionNew",
 									Integer.valueOf(ctx.get("assetProtectionNewValue").toString()));
 							ctx.put("assetProtectionPrior",
@@ -2274,7 +2189,6 @@ public class RuleEngineUtilityNewApp {
 						}
 						if (ctx.get("otherWillsNewValue") != null) {
 							ruleid = "othersWillsValueRenew_Lawyers";
-							logger.debug("going to debug : " + ruleid);
 							ctx.put("otherWillsEstate", Integer.valueOf(ctx.get("otherWillsNewValue").toString()));
 							ctx.put("otherWillsEstatePrior", Integer.valueOf(ctx.get("otharWillsOldValue").toString()));
 							ctx.put("otherDescPrior", ctx.get("otharWillsDescOldValue"));
@@ -2307,7 +2221,6 @@ public class RuleEngineUtilityNewApp {
 						&& inPurchaseSaleSecuritiesOld.equals("N")) {
 
 					ruleid = "inPurchaseSaleSecuritiesNewApp_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					ctx.put("inPurchaseSaleSecurities", ctx.get("inPurchaseSaleSecurities"));
 					willsEstateNewApp willsEstate = (willsEstateNewApp) initlizePOJO(ctx, new willsEstateNewApp());
 					ctx.put("RuleObject", willsEstate);
@@ -2347,7 +2260,6 @@ public class RuleEngineUtilityNewApp {
 					/ totalAttorneyCount;
 			if (casePerAttorney > 100) {
 				ruleid = "ValidateCasesPerAttorneyRule_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				RuleEngineUtilityNewApp.insertRulesToDatabaseTemp(ctx, ruleid, "Large Real Estate Volume",
 						"No explanation needed.");
 			} else
@@ -2366,7 +2278,6 @@ public class RuleEngineUtilityNewApp {
 				: 0;
 		if (largestTransaction12MonthsResi > 2000000 || largestTransaction12MonthsComm > 2000000) {
 			ruleid = "ValidateTransactionAbove2MRule_Lawyers";
-			logger.debug("going to debug : " + ruleid);
 			RuleEngineUtilityNewApp.insertRulesToDatabaseTemp(ctx, ruleid,
 					"Largest real estate transaction above 2M - Refer to C & F",
 					"Largest real estate transaction above 2M - Refer to C & F");
@@ -2386,7 +2297,6 @@ public class RuleEngineUtilityNewApp {
 						? Integer.parseInt(ctx.get("aopResiPercentage_11").toString())
 						: 0;
 		ruleid = "checkLandDevploment_Lawyers";
-		logger.debug("going to debug" + ruleid);
 		if (aopCommPercentage_11 > 0 || aopResiPercentage_19 > 0)
 			insertRulesToDatabaseTemp(ctx, ruleid,
 					"Real Estate practice includes Land Development and is outside of C & F authority",
@@ -2404,7 +2314,6 @@ public class RuleEngineUtilityNewApp {
 		if (ctx.get("PolicyStatusKey") != null && ctx.get("PolicyStatusKey").toString().equals("1")) {
 			com.userbo.AOP.getAopsValues(ctx);
 			ruleid = "checkTitleOpinionsNewApp_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			// Integer.valueOf((String)
 			// (dataMapCo.get("PercentageValue")!=null?dataMapCo.get("PercentageValue"):0));
 			if (Integer.parseInt(ctx.get("aopCommPercentage_22").toString()) > Integer
@@ -2419,7 +2328,6 @@ public class RuleEngineUtilityNewApp {
 					residentialSupplementNew.getDescription(), residentialSupplementNew.getTooltip());
 
 			ruleid = "checkOtherResidentialAop_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			if (Integer.parseInt(ctx.get("aopCommPercentage_20").toString()) > 0)
 				ctx.put("otherAopResidentialPercentage", Integer.valueOf(ctx.get("aopResiPercentage_20").toString()));
 			if (Integer.parseInt(ctx.get("aopResiPercentage_20").toString()) > 0)
@@ -2431,7 +2339,6 @@ public class RuleEngineUtilityNewApp {
 					residentialSupplement.getDescription(), residentialSupplement.getTooltip());
 
 			ruleid = "checkForeclosuresAndLoanWorkoutsAOPResidential_Lawyers";
-			logger.debug("going to debug" + ruleid);
 
 			ctx.put("loanResidentialPercentage", ctx.get("aopResiPercentage_19"));
 			ctx.put("loanCommPercentage", ctx.get("aopCommPercentage_19"));
@@ -2451,7 +2358,6 @@ public class RuleEngineUtilityNewApp {
 			ctx.put("foreclosuresResidentialPercentage", ctx.get("aopResiPercentage_19"));
 
 			ruleid = "TitleOpinionsIndivisual_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			double realEstateResi = ctx.get("aopPercentage_27") != null
 					? Double.parseDouble(ctx.get("aopPercentage_27").toString())
 					: 0.0;
@@ -2476,7 +2382,6 @@ public class RuleEngineUtilityNewApp {
 
 			if (Integer.parseInt(ctx.get("aopResiPercentage_1").toString()) > 0) {
 				ruleid = "TitleOpinionsSalePurchaseRule_Lawyers";
-				logger.debug("going to debug" + ruleid);
 				ctx.put("salePurchaseResiAop", ctx.get("aopResiPercentage_1"));
 				ctx.put("salePurchaseCommAop", ctx.get("aopCommPercentage_1"));
 				residentialSupplementNewApp = (RealEstateSupplementsNewApp) initlizePOJO(ctx,
@@ -2486,14 +2391,12 @@ public class RuleEngineUtilityNewApp {
 						residentialSupplementNewApp.getDescription(), residentialSupplementNewApp.getTooltip());
 			}
 			ruleid = "ForeClosuresRule_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			residentialSupplement = (ResidentialSupplement) initlizePOJO(ctx, new ResidentialSupplement());
 			ctx.put("RuleObject", residentialSupplement);
 			insertRulesToDatabase(callRuleEngine(ctx, ruleid), residentialSupplement, ruleid,
 					residentialSupplement.getDescription(), residentialSupplement.getTooltip());
 
 			ruleid = "AttendclosingsRule_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			residentialSupplementNewApp = (RealEstateSupplementsNewApp) initlizePOJO(ctx,
 					new RealEstateSupplementsNewApp());
 			ctx.put("RuleObject", residentialSupplementNewApp);
@@ -2501,7 +2404,6 @@ public class RuleEngineUtilityNewApp {
 					residentialSupplementNewApp.getDescription(), residentialSupplementNewApp.getTooltip());
 
 			ruleid = "SecuringFinancingRule_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			residentialSupplementNewApp = (RealEstateSupplementsNewApp) initlizePOJO(ctx,
 					new RealEstateSupplementsNewApp());
 			ctx.put("RuleObject", residentialSupplementNewApp);
@@ -2509,7 +2411,6 @@ public class RuleEngineUtilityNewApp {
 					residentialSupplementNewApp.getDescription(), residentialSupplementNewApp.getTooltip());
 
 			ruleid = "DisclosureFormRule_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			residentialSupplementNewApp = (RealEstateSupplementsNewApp) initlizePOJO(ctx,
 					new RealEstateSupplementsNewApp());
 			ctx.put("RuleObject", residentialSupplementNewApp);
@@ -2517,7 +2418,6 @@ public class RuleEngineUtilityNewApp {
 					residentialSupplementNewApp.getDescription(), residentialSupplementNewApp.getTooltip());
 
 			ruleid = "checkTitleOpinionsNewApp_Lawyers";
-			logger.debug("going to debug" + ruleid);
 
 			Context oldPolicyContext = null;
 			List<Context> ruleSetContextList = new ArrayList<Context>();
@@ -2597,7 +2497,6 @@ public class RuleEngineUtilityNewApp {
 						|| (ctx.get("estateSyndicationsAopCommercialPercentage") != null && Integer
 								.valueOf(ctx.get("estateSyndicationsAopCommercialPercentage").toString()) > 0)) {
 					ruleid = "checkCommercialCombineAop_Lawyers";
-					logger.debug("going to debug" + ruleid);
 					ctx.put("speculativeAopCommercialPercentage", ctx.get("SpeculativeAopCommercialPercentage"));
 					residentialSupplement = (ResidentialSupplement) initlizePOJO(ctx, new ResidentialSupplement());
 					ctx.put("RuleObject", residentialSupplement);
@@ -2611,7 +2510,6 @@ public class RuleEngineUtilityNewApp {
 				if (ctx.get("SpeculativeAopCommercialPercentage") != null
 						&& Integer.valueOf(ctx.get("SpeculativeAopCommercialPercentage").toString()) > 0) {
 					ruleid = "checkSpeculativeAop_Lawyers";
-					logger.debug("going to debug" + ruleid);
 					ctx.put("speculativeAopCommercialPercentage", ctx.get("SpeculativeAopCommercialPercentage"));
 					residentialSupplement = (ResidentialSupplement) initlizePOJO(ctx, new ResidentialSupplement());
 					ctx.put("RuleObject", residentialSupplement);
@@ -2642,7 +2540,6 @@ public class RuleEngineUtilityNewApp {
 
 				{
 					ruleid = "checkForeclosuresAndLoanWorkoutsAOPCommercial_Lawyers";
-					logger.debug("going to debug" + ruleid);
 					residentialSupplement = (ResidentialSupplement) initlizePOJO(ctx, new ResidentialSupplement());
 					ctx.put("RuleObject", residentialSupplement);
 					insertRulesToDatabase(callRuleEngine(ctx, ruleid), residentialSupplement, ruleid,
@@ -2659,7 +2556,6 @@ public class RuleEngineUtilityNewApp {
 			if (ctx.get("transactionsHandled12MonthsResi") != null
 					&& Integer.valueOf(ctx.get("transactionsHandled12MonthsResi").toString()) > 0) {
 				ruleid = "transactionsHandled12MonthsResiNewApp_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("transactionsHandled12Months",
 						Long.parseLong(ctx.get("transactionsHandled12MonthsResi").toString()));
 				residentialSupplementNew = (RealEstateSupplementsNewApp) initlizePOJO(ctx,
@@ -2702,7 +2598,6 @@ public class RuleEngineUtilityNewApp {
 					if (dataMapCo.get("AOPREKey").toString().equals("19")) {
 
 						ruleid = "checkForeclosuresRenewal_Lawyers";
-						logger.debug("going to debug" + ruleid);
 
 						ctx.put("loanResidentialPercentage",
 								dataMapCo.get("PercentageValue") != null ? dataMapCo.get("PercentageValue") : 0);
@@ -2724,7 +2619,6 @@ public class RuleEngineUtilityNewApp {
 					if (dataMapCo.get("AOPREKey").toString().equals("13")) {
 
 						ruleid = "checkSpeculativeRenew_Lawyers";
-						logger.debug("going to debug" + ruleid);
 
 						ctx.put("SpeculativeResidePercentage",
 								dataMapCo.get("PercentageValue") != null ? dataMapCo.get("PercentageValue") : 0);
@@ -2758,7 +2652,6 @@ public class RuleEngineUtilityNewApp {
 					if (dataMapCo.get("AOPREKey").toString().equals("16")) {
 
 						ruleid = "checkRealEstateRenew_Lawyers";
-						logger.debug("going to debug" + ruleid);
 						ctx.put("estateResPercentage",
 								dataMapCo.get("PercentageValue") != null ? dataMapCo.get("PercentageValue") : 0);
 						ctx.put("estateCommPercentage",
@@ -2851,7 +2744,6 @@ public class RuleEngineUtilityNewApp {
 							}
 							if (dataMapOld.get("AOPREKey").toString().equals("22")) {
 								ruleid = "TitleOpinionsIndivisual_Lawyers";
-								logger.debug("going to debug" + ruleid);
 								double realEstateResi = ctx.get("aopPercentage_27") != null
 										? Double.parseDouble(ctx.get("aopPercentage_27").toString())
 										: 0.0;
@@ -2985,7 +2877,6 @@ public class RuleEngineUtilityNewApp {
 												.valueOf(ctx.get("otherCommOldPercentage").toString()))))
 								|| (ctx.get("otherCommNewDesc") != ctx.get("otherCommOldDesc"))) {
 							ruleid = "otherRealEstateRenew_Lawyers";
-							logger.debug("going to debug" + ruleid);
 
 							if (ctx.get("otherResNewPercentage") != null
 									&& Integer.valueOf(ctx.get("otherResNewPercentage").toString()) > 0) {
@@ -3027,7 +2918,6 @@ public class RuleEngineUtilityNewApp {
 						.select("SqlStmts.UserStatementdroolQueriesgetAllAttorneys", ctx);
 				int count = allAttornieslist.size();
 				ruleid = "transactionsHandled12MonthsRenewNewApp_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("transactionsHandled12Months", 0);
 				if (ctx.get("transactionsHandled12MonthsResi") != null
 						&& Integer.valueOf(ctx.get("transactionsHandled12MonthsResi").toString()) > 200) {
@@ -3062,7 +2952,6 @@ public class RuleEngineUtilityNewApp {
 			if (ctx.get("IsPolicyIncludeLateralHireCov") != null
 					&& !ctx.get("IsPolicyIncludeLateralHireCov").toString().equals("")) {
 				ruleid = "checkPolicyIncludeLateralHireCoverage_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("isPolicyIncludeLateralHireCov", ctx.get("IsPolicyIncludeLateralHireCov"));
 				Coverage coverage = (Coverage) initlizePOJO(ctx, new Coverage());
 				ctx.put("RuleObject", coverage);
@@ -3077,7 +2966,6 @@ public class RuleEngineUtilityNewApp {
 			if (ctx.get("isPolicyExcludeCoverage") != null
 					&& !ctx.get("isPolicyExcludeCoverage").toString().equals("")) {
 				ruleid = "isFirmCoverageForPreceedorFirmsNewApp_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("isFirmCoverageForPreceedorFirms", ctx.get("isPolicyExcludeCoverage"));
 				/* ctx.put("isFirmCoverageForPreceedorFirms", "Y"); */
 				UnderwritingInformation underwritingInfo = (UnderwritingInformation) initlizePOJO(ctx,
@@ -3108,7 +2996,6 @@ public class RuleEngineUtilityNewApp {
 						: 0;
 		if (policyStatusKey == 1) {
 			ruleid = "checkinvestmentCounselorServices_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			ctx.put("investmentCounselorServices", ctx.get("taxNewAopPercentage_4"));
 			Tax taxSupplement = (Tax) initlizePOJO(ctx, new Tax());
 			ctx.put("RuleObject", taxSupplement);
@@ -3116,7 +3003,6 @@ public class RuleEngineUtilityNewApp {
 					taxSupplement.getTooltip());
 
 			ruleid = "checksubchapterSElections_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			ctx.put("subchapterSElections", ctx.get("taxNewAopPercentage_5"));
 			taxSupplement = (Tax) initlizePOJO(ctx, new Tax());
 			ctx.put("RuleObject", taxSupplement);
@@ -3124,7 +3010,6 @@ public class RuleEngineUtilityNewApp {
 					taxSupplement.getTooltip());
 
 			ruleid = "checkliquidationofCorporations_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			ctx.put("liquidationofCorporations", ctx.get("taxNewAopPercentage_6"));
 			taxSupplement = (Tax) initlizePOJO(ctx, new Tax());
 			ctx.put("RuleObject", taxSupplement);
@@ -3132,7 +3017,6 @@ public class RuleEngineUtilityNewApp {
 					taxSupplement.getTooltip());
 
 			ruleid = "opinonTax_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			ctx.put("opinionsTaxShelters", ctx.get("taxNewAopPercentage_7"));
 			taxSupplement = (Tax) initlizePOJO(ctx, new Tax());
 			ctx.put("RuleObject", taxSupplement);
@@ -3140,7 +3024,6 @@ public class RuleEngineUtilityNewApp {
 					taxSupplement.getTooltip());
 
 			ruleid = "checkprivatePlacementMemoranda_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			ctx.put("privatePlacementMemoranda", ctx.get("taxNewAopPercentage_8"));
 			taxSupplement = (Tax) initlizePOJO(ctx, new Tax());
 			ctx.put("RuleObject", taxSupplement);
@@ -3148,7 +3031,6 @@ public class RuleEngineUtilityNewApp {
 					taxSupplement.getTooltip());
 
 			ruleid = "checkotherTax_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			ctx.put("otherTax", ctx.get("taxNewAopPercentage_9"));
 			taxSupplement = (Tax) initlizePOJO(ctx, new Tax());
 			ctx.put("RuleObject", taxSupplement);
@@ -3169,7 +3051,6 @@ public class RuleEngineUtilityNewApp {
 			ctx.putAll(oldPolicyContext);
 
 			ruleid = "checkinvestmentCounselorServicesRenew_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			ctx.put("investmentCounselorServices", ctx.get("taxNewAopPercentage_4"));
 			ctx.put("investmentCounselorServicesOld", ctx.get("taxOldAopPercentage_4"));
 			Tax taxSupplement = (Tax) initlizePOJO(ctx, new Tax());
@@ -3178,7 +3059,6 @@ public class RuleEngineUtilityNewApp {
 					taxSupplement.getTooltip());
 
 			ruleid = "checksubchapterSElectionsRenew_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			ctx.put("subchapterSElections", ctx.get("taxNewAopPercentage_5"));
 			ctx.put("subchapterSElectionsOld", ctx.get("taxOldAopPercentage_5"));
 			taxSupplement = (Tax) initlizePOJO(ctx, new Tax());
@@ -3187,7 +3067,6 @@ public class RuleEngineUtilityNewApp {
 					taxSupplement.getTooltip());
 
 			ruleid = "checkliquidationofCorporationsRenew_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			ctx.put("liquidationofCorporations", ctx.get("taxNewAopPercentage_6"));
 			ctx.put("liquidationofCorporationsOld", ctx.get("taxOldAopPercentage_6"));
 			taxSupplement = (Tax) initlizePOJO(ctx, new Tax());
@@ -3196,7 +3075,6 @@ public class RuleEngineUtilityNewApp {
 					taxSupplement.getTooltip());
 
 			ruleid = "opinonTaxRenew_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			ctx.put("opinionsTaxShelters", ctx.get("taxNewAopPercentage_7"));
 			ctx.put("opinionsTaxSheltersOld", ctx.get("taxOldAopPercentage_7"));
 			taxSupplement = (Tax) initlizePOJO(ctx, new Tax());
@@ -3205,7 +3083,6 @@ public class RuleEngineUtilityNewApp {
 					taxSupplement.getTooltip());
 
 			ruleid = "checkprivatePlacementMemorandaRenew_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			ctx.put("privatePlacementMemoranda", ctx.get("taxNewAopPercentage_8"));
 			ctx.put("privatePlacementMemorandaOld", ctx.get("taxOldAopPercentage_8"));
 			taxSupplement = (Tax) initlizePOJO(ctx, new Tax());
@@ -3214,7 +3091,6 @@ public class RuleEngineUtilityNewApp {
 					taxSupplement.getTooltip());
 
 			ruleid = "checkotherTaxRenew_Lawyers";
-			logger.debug("going to debug" + ruleid);
 			ctx.put("otherTax", ctx.get("taxNewAopPercentage_9"));
 			ctx.put("otherTaxOld", ctx.get("taxOldAopPercentage_9"));
 			taxSupplement = (Tax) initlizePOJO(ctx, new Tax());
@@ -3233,7 +3109,6 @@ public class RuleEngineUtilityNewApp {
 				if (ctx.get("actAgentForPublicFigures") != null
 						&& !ctx.get("actAgentForPublicFigures").toString().equals("")) {
 					ruleid = "actAgentForPublicFigures_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					ctx.put("actAgentForPublicFigures", ctx.get("actAgentForPublicFigures"));
 					PublicFiguresAjaxExpansions publicFig = (PublicFiguresAjaxExpansions) initlizePOJO(ctx,
 							new PublicFiguresAjaxExpansions());
@@ -3247,7 +3122,6 @@ public class RuleEngineUtilityNewApp {
 				if (ctx.get("provideProfessionalContract") != null
 						&& !ctx.get("provideProfessionalContract").toString().equals("")) {
 					ruleid = "provideProfessionalContract_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					ctx.put("provideProfessionalContract", ctx.get("provideProfessionalContract"));
 					PublicFiguresAjaxExpansions publicFig = (PublicFiguresAjaxExpansions) initlizePOJO(ctx,
 							new PublicFiguresAjaxExpansions());
@@ -3261,7 +3135,6 @@ public class RuleEngineUtilityNewApp {
 				if (ctx.get("provideMoneyManagementServices") != null
 						&& !ctx.get("provideMoneyManagementServices").toString().equals("")) {
 					ruleid = "provideMoneyManagementServices_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					ctx.put("provideMoneyManagementServices", ctx.get("provideMoneyManagementServices"));
 					PublicFiguresAjaxExpansions publicFig = (PublicFiguresAjaxExpansions) initlizePOJO(ctx,
 							new PublicFiguresAjaxExpansions());
@@ -3321,7 +3194,6 @@ public class RuleEngineUtilityNewApp {
 
 				if (assisted > 0 || surrogacy > 0 || divorce > 0) {
 					ruleid = "validateFamilyLaw_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					ctx.put("assistedReproductive", assisted);
 					ctx.put("surrogacy", surrogacy);
 					ctx.put("divorceAssetsOver", divorce);
@@ -3389,7 +3261,6 @@ public class RuleEngineUtilityNewApp {
 			if ((assisted > 0 && assistedold == 0) || (surrogacy > 0 && surrogacyold == 0)
 					|| (divorce > 0 && divorceold == 0)) {
 				ruleid = "validateFamilyLawRenew_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("assistedReproductive", assisted);
 				ctx.put("surrogacy", surrogacy);
 				ctx.put("divorceAssetsOver", divorce);
@@ -3458,7 +3329,6 @@ public class RuleEngineUtilityNewApp {
 				// amountOfFeesSuedTotal > 25000 || coutOfFeeSuit > 9
 				if (sum > 25000 || count > 3) {
 					ruleid = "checkCountAndAmountOfFeeSuitNB_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 
 					insertRulesToDatabaseTemp(ctx, ruleid,
 							"More than 1 fee suit per year in the past 3 years or fee suit amount great than $25,000 in any one year",
@@ -3472,7 +3342,6 @@ public class RuleEngineUtilityNewApp {
 			if ("2".equals(ctx.get("PolicyStatusKey").toString())) {
 				if (sum > 25000 || count > 1) {
 					ruleid = "checkCountAndAmountOfFeeSuitRB_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 
 					insertRulesToDatabaseTemp(ctx, ruleid, "More than 1 fee suit in the past year",
 							"More than 1 fee suit in the past year.  Refer to C & F");
@@ -3511,7 +3380,6 @@ public class RuleEngineUtilityNewApp {
 		try {
 			if (ctx.get("representedDebtors") != null && !ctx.get("representedDebtors").equals(HtmlConstants.EMPTY)) {
 				ruleid = "RepresentedDebtors_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("representedDebtors", ctx.get("representedDebtors"));
 				BankruptcySupplement bankRuptcy = (BankruptcySupplement) initlizePOJO(ctx, new BankruptcySupplement());
 				ctx.put("RuleObject", bankRuptcy);
@@ -3526,7 +3394,6 @@ public class RuleEngineUtilityNewApp {
 			if (ctx.get("preBankruptcyServices") != null
 					&& !ctx.get("preBankruptcyServices").equals(HtmlConstants.EMPTY)) {
 				ruleid = "PreBankruptcyServices_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("preBankruptcyServices", ctx.get("preBankruptcyServices"));
 				BankruptcySupplement bankRuptcy = (BankruptcySupplement) initlizePOJO(ctx, new BankruptcySupplement());
 				ctx.put("RuleObject", bankRuptcy);
@@ -3541,7 +3408,6 @@ public class RuleEngineUtilityNewApp {
 			if (ctx.get("disclosureStatementExplaining") != null
 					&& !ctx.get("disclosureStatementExplaining").equals(HtmlConstants.EMPTY)) {
 				ruleid = "DisclosureStatementExplaining_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("disclosureStatementExplaining", ctx.get("disclosureStatementExplaining"));
 				BankruptcySupplement bankRuptcy = (BankruptcySupplement) initlizePOJO(ctx, new BankruptcySupplement());
 				ctx.put("RuleObject", bankRuptcy);
@@ -3556,7 +3422,6 @@ public class RuleEngineUtilityNewApp {
 			if (ctx.get("conspicuousStatement") != null
 					&& !ctx.get("conspicuousStatement").equals(HtmlConstants.EMPTY)) {
 				ruleid = "ConspicuousStatement_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				ctx.put("conspicuousStatement", ctx.get("conspicuousStatement"));
 				BankruptcySupplement bankRuptcy = (BankruptcySupplement) initlizePOJO(ctx, new BankruptcySupplement());
 				ctx.put("RuleObject", bankRuptcy);
@@ -3590,7 +3455,6 @@ public class RuleEngineUtilityNewApp {
 			if (ctx.get("individualCollections") != null
 					&& !ctx.get("individualCollections").equals(HtmlConstants.EMPTY)) {
 				ruleid = "IndividualCollectionsRule_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				// ctx.put("otherServicesSup", ctx.get("otherServices"));
 				CollectionSupplement cpSupplement = (CollectionSupplement) initlizePOJO(ctx,
 						new CollectionSupplement());
@@ -3607,7 +3471,6 @@ public class RuleEngineUtilityNewApp {
 			if (ctx.get("servicesToPurchasers") != null
 					&& !ctx.get("servicesToPurchasers").equals(HtmlConstants.EMPTY)) {
 				ruleid = "ServicesToPurchasersRule_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				CollectionSupplement cpSupplement = (CollectionSupplement) initlizePOJO(ctx,
 						new CollectionSupplement());
 				ctx.put("RuleObject", cpSupplement);
@@ -3633,7 +3496,6 @@ public class RuleEngineUtilityNewApp {
 			if (ctx.get("PolicyStatusKey") != null && ctx.get("PolicyStatusKey").toString().equals("1")) {
 				if (ctx.get("otherServices") != null && !ctx.get("otherServices").equals(HtmlConstants.EMPTY)) {
 					ruleid = "OtherServices_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					ctx.put("otherServicesSup", ctx.get("otherServices"));
 					CopyRightTrademarkSupplement cpSupplement = (CopyRightTrademarkSupplement) initlizePOJO(ctx,
 							new CopyRightTrademarkSupplement());
@@ -3670,7 +3532,6 @@ public class RuleEngineUtilityNewApp {
 								: "S";
 				if ("N".equalsIgnoreCase(oldOtherServices) && "Y".equalsIgnoreCase(otherServices)) {
 					ruleid = "OtherServices_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					ctx.put("otherServicesSup", ctx.get("otherServices"));
 					CopyRightTrademarkSupplement cpSupplement = (CopyRightTrademarkSupplement) initlizePOJO(ctx,
 							new CopyRightTrademarkSupplement());
@@ -3695,14 +3556,12 @@ public class RuleEngineUtilityNewApp {
 				? Integer.parseInt(ctx.get("PolicyStatusKey").toString())
 				: 0;
 
-		logger.debug("Going to debug Financial Supplement");
 		String ruleid = "";
 		try {
 
 			if (policyStatusKey == 1) {
 				if (ctx.get("equityInterest") != null && !ctx.get("equityInterest").equals(HtmlConstants.EMPTY)) {
 					ruleid = "EquityInterestRule_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					// ctx.put("equityInterest", ctx.get("equityInterest"));
 					FinancialSupplement financialSupp = (FinancialSupplement) initlizePOJO(ctx,
 							new FinancialSupplement());
@@ -3719,7 +3578,6 @@ public class RuleEngineUtilityNewApp {
 				if (ctx.get("servicesRelatedRegulatory") != null
 						&& !ctx.get("servicesRelatedRegulatory").equals(HtmlConstants.EMPTY)) {
 					ruleid = "ServicesRelatedRegulatoryRule_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					// ctx.put("servicesRelatedRegulatory", ctx.get("servicesRelatedRegulatory"));
 					FinancialSupplement financialSupp = (FinancialSupplement) initlizePOJO(ctx,
 							new FinancialSupplement());
@@ -3736,7 +3594,6 @@ public class RuleEngineUtilityNewApp {
 				if (ctx.get("underRegulatoryReview") != null
 						&& !ctx.get("underRegulatoryReview").equals(HtmlConstants.EMPTY)) {
 					ruleid = "UnderRegulatoryReviewRule_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					// ctx.put("equityInterest", ctx.get("equityInterest"));
 					FinancialSupplement financialSupp = (FinancialSupplement) initlizePOJO(ctx,
 							new FinancialSupplement());
@@ -3753,7 +3610,6 @@ public class RuleEngineUtilityNewApp {
 				if (ctx.get("haveBecomeBankruptInsolvent") != null
 						&& !ctx.get("haveBecomeBankruptInsolvent").equals(HtmlConstants.EMPTY)) {
 					ruleid = "BankruptInsolventRule_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					// ctx.put("equityInterest", ctx.get("equityInterest"));
 					FinancialSupplement financialSupp = (FinancialSupplement) initlizePOJO(ctx,
 							new FinancialSupplement());
@@ -3809,7 +3665,6 @@ public class RuleEngineUtilityNewApp {
 				if (ctx.get("equityInterest") != null && !ctx.get("equityInterest").equals(HtmlConstants.EMPTY)) {
 					if ("Y".equals(ctx.get("equityInterest").toString()) && equityInterestOld.equals("N")) {
 						ruleid = "EquityInterestRule_Lawyers";
-						logger.debug("going to debug : " + ruleid);
 						// ctx.put("equityInterest", ctx.get("equityInterest"));
 						FinancialSupplement financialSupp = (FinancialSupplement) initlizePOJO(ctx,
 								new FinancialSupplement());
@@ -3832,7 +3687,6 @@ public class RuleEngineUtilityNewApp {
 					if ("Y".equals(ctx.get("servicesRelatedRegulatory").toString())
 							&& servicesRelatedRegulatoryOld.equals("N")) {
 						ruleid = "ServicesRelatedRegulatoryRule_Lawyers";
-						logger.debug("going to debug : " + ruleid);
 						// ctx.put("servicesRelatedRegulatory", ctx.get("servicesRelatedRegulatory"));
 						FinancialSupplement financialSupp = (FinancialSupplement) initlizePOJO(ctx,
 								new FinancialSupplement());
@@ -3856,7 +3710,6 @@ public class RuleEngineUtilityNewApp {
 					if ("Y".equals(ctx.get("underRegulatoryReview").toString())
 							&& underRegulatoryReviewOld.equals("N")) {
 						ruleid = "UnderRegulatoryReviewRule_Lawyers";
-						logger.debug("going to debug : " + ruleid);
 						// ctx.put("equityInterest", ctx.get("equityInterest"));
 						FinancialSupplement financialSupp = (FinancialSupplement) initlizePOJO(ctx,
 								new FinancialSupplement());
@@ -3879,7 +3732,6 @@ public class RuleEngineUtilityNewApp {
 					if ("Y".equals(ctx.get("haveBecomeBankruptInsolvent").toString())
 							&& haveBecomeBankruptInsolventOld.equals("N")) {
 						ruleid = "BankruptInsolventRule_Lawyers";
-						logger.debug("going to debug : " + ruleid);
 						// ctx.put("equityInterest", ctx.get("equityInterest"));
 						FinancialSupplement financialSupp = (FinancialSupplement) initlizePOJO(ctx,
 								new FinancialSupplement());
@@ -3908,14 +3760,12 @@ public class RuleEngineUtilityNewApp {
 	}
 
 	public static void evaluateGovernmentSupplement(Context ctx) {
-		logger.debug("Going to debug Government Supplement");
 		String ruleid = "";
 		try {
 
 			if (ctx.get("PolicyStatusKey") != null && ctx.get("PolicyStatusKey").toString().equals("1")) {
 				if (ctx.get("providingBondWork") != null && !ctx.get("providingBondWork").equals(HtmlConstants.EMPTY)) {
 					ruleid = "ProvidingBondWorkRule_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					// ctx.put("equityInterest", ctx.get("equityInterest"));
 					GovernmentSupplement governmentSupp = (GovernmentSupplement) initlizePOJO(ctx,
 							new GovernmentSupplement());
@@ -3932,7 +3782,6 @@ public class RuleEngineUtilityNewApp {
 				if (ctx.get("eminentDomainServices") != null
 						&& !ctx.get("eminentDomainServices").equals(HtmlConstants.EMPTY)) {
 					ruleid = "EminentDomainServicesRule_Lawyers";
-					logger.debug("going to debug : " + ruleid);
 					// ctx.put("equityInterest", ctx.get("equityInterest"));
 					GovernmentSupplement governmentSupp = (GovernmentSupplement) initlizePOJO(ctx,
 							new GovernmentSupplement());
@@ -3978,7 +3827,6 @@ public class RuleEngineUtilityNewApp {
 					if ("Y".equals(ctx.get("providingBondWork").toString()) && providingBondWorkOld.equals("N")) {
 
 						ruleid = "ProvidingBondWorkRule_Lawyers";
-						logger.debug("going to debug : " + ruleid);
 						// ctx.put("equityInterest", ctx.get("equityInterest"));
 						GovernmentSupplement governmentSupp = (GovernmentSupplement) initlizePOJO(ctx,
 								new GovernmentSupplement());
@@ -4002,7 +3850,6 @@ public class RuleEngineUtilityNewApp {
 							&& eminentDomainServicesOld.equals("N")) {
 
 						ruleid = "EminentDomainServicesRule_Lawyers";
-						logger.debug("going to debug : " + ruleid);
 						// ctx.put("equityInterest", ctx.get("equityInterest"));
 						GovernmentSupplement governmentSupp = (GovernmentSupplement) initlizePOJO(ctx,
 								new GovernmentSupplement());
@@ -4197,7 +4044,6 @@ public class RuleEngineUtilityNewApp {
 				ruleSetContextList.clear();
 
 		} catch (Exception e) {
-			logger.debug("Rule Id: '" + ruleId + "' is not found on drool rule file.");
 			logger.error("Unexpected error", e);
 		}
 	}
@@ -4305,7 +4151,6 @@ public class RuleEngineUtilityNewApp {
 					&& !ctx.get("IsFirmProvidedLegalServiceCCB").equals(HtmlConstants.EMPTY)
 					&& "Y".equals(ctx.get("IsFirmProvidedLegalServiceCCB").toString())) {
 				ruleid = "IsFirmProvidedLegalServiceCCB_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 
 				insertRulesToDatabaseTemp(ctx, ruleid, "Cannabis exposure, review services provided",
 						"Cannabis exposure");
@@ -4345,7 +4190,6 @@ public class RuleEngineUtilityNewApp {
 			if (ctx.get("OtherLegalCorporateServices") != null
 					&& ctx.get("OtherLegalCorporateServices").toString().equals("Y")) {
 				ruleid = "OtherLegalCorporateServicesRule_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				RuleEngineUtilityNewApp.insertRulesToDatabaseTemp(ctx, ruleid,
 						"Review corporate services that are being provided",
 						"Review corporate services that are being provided");
@@ -4358,7 +4202,6 @@ public class RuleEngineUtilityNewApp {
 			if (ctx.get("PubliclyRenderedServices") != null
 					&& ctx.get("PubliclyRenderedServices").toString().equals("Y")) {
 				ruleid = "PubliclyRenderedServicesRule_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				RuleEngineUtilityNewApp.insertRulesToDatabaseTemp(ctx, ruleid,
 						"Providing services to publicly traded companies - Decline",
 						"Firms providing services to publicly traded companies are outside of C & F underwriting authority.");
@@ -4378,7 +4221,6 @@ public class RuleEngineUtilityNewApp {
 					|| ctx.get("PerformDueDiligence") != null
 							&& ctx.get("PerformDueDiligence").toString().equals("Y")) {
 				ruleid = "RegardToCorporateClientsRule_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				RuleEngineUtilityNewApp.insertRulesToDatabaseTemp(ctx, ruleid,
 						"Firm Corporate commercial practices outside of the common compensation or relationship practices.",
 						"Ask for additional information on the items where they answered yes, when it happened, how often and with what client.");
@@ -4391,7 +4233,6 @@ public class RuleEngineUtilityNewApp {
 			if (ctx.get("LegalServicesBankruptLiquidation") != null
 					&& ctx.get("LegalServicesBankruptLiquidation").toString().equals("Y")) {
 				ruleid = "LegalServicesBankruptLiquidationRule_Lawyers";
-				logger.debug("going to debug : " + ruleid);
 				RuleEngineUtilityNewApp.insertRulesToDatabaseTemp(ctx, ruleid, "Insolvent client in the past 2 years. ",
 						"Ask for additional information on client, name, amount, and current status.");
 

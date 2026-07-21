@@ -49,7 +49,7 @@ public class AuthorizePaymentResponse {
 					}
 				}
 				catch (Exception e){			
-					logger.debug("AssignLastUpdateTimeStamp------"+e.getMessage());
+					logger.error("Unable to assign payment timestamp", e);
 				}
 			Object obj = SqlResources.getSqlMapProcessor(nctx).findByKey("PaymentDetail.findByKey", nctx);
 			Map paymentDetailMap = null;
@@ -98,7 +98,7 @@ public class AuthorizePaymentResponse {
 				logger.debug("Payment did not processed");
 			}
 		}catch(Exception e){
-			logger.debug("There was an error processing the transaction response " + e.getMessage());
+			logger.error("Unable to process transaction response", e);
 		}
 		
 	}
@@ -128,7 +128,7 @@ public class AuthorizePaymentResponse {
 				}
 			}
 			catch (Exception e){			
-				logger.debug("AssignLastUpdateTimeStamp------"+e.getMessage());
+				logger.error("Unable to assign payment timestamp", e);
 			}
 			
 			List paymentDetailList = SqlResources.getSqlMapProcessor(ctx).select("SqlStmts.UserStatementManualBoQueriesgetPaymentDetail", ctx);
@@ -156,7 +156,7 @@ public class AuthorizePaymentResponse {
 			}			
 			logger.debug("Processing CC payment response is completed.");
 		}catch(Exception e){
-			logger.debug("There was an error processing the transaction response " + e.getMessage());
+			logger.error("Unable to process transaction response", e);
 		}
 	}
 
@@ -185,7 +185,7 @@ public class AuthorizePaymentResponse {
 				}
 			}
 			catch (Exception e){			
-				logger.debug("AssignLastUpdateTimeStamp------"+e.getMessage());
+				logger.error("Unable to assign payment timestamp", e);
 			}
 			
 			List paymentDetailList = SqlResources.getSqlMapProcessor(ctx).select("SqlStmts.UserStatementManualBoQueriesgetPaymentDetail", ctx);
@@ -213,7 +213,7 @@ public class AuthorizePaymentResponse {
 			}			
 			logger.debug("Processing ACH payment response is completed.");
 		}catch(Exception e){
-			logger.debug("There was an error processing the transaction response " + e.getMessage());
+			logger.error("Unable to process transaction response", e);
 		}
 	}
 }

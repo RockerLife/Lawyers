@@ -11,10 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.userbo.CreatePaymentIntent;
-import com.util.InetLogger;
 
 public class AndDoneResponse extends HttpServlet {
-	private static InetLogger logger = InetLogger.getInetLogger(AndDoneResponse.class);
 	private static final long serialVersionUID = 1L;
 	Timer timer;
        
@@ -45,12 +43,6 @@ public class AndDoneResponse extends HttpServlet {
 	protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
 		HttpSession session = request.getSession();
-		
-		if(session != null) {
-			logger.info("Session is New :" + session.isNew());
-			logger.info("Request Session Id : " + request.getRequestedSessionId());
-			logger.info("Session Id : " + session.getId());
-		}
 		
 		CreatePaymentIntent createPaymentIntent = new CreatePaymentIntent();
 		

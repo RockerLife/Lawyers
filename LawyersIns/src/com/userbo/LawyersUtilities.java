@@ -592,7 +592,7 @@ public class LawyersUtilities {
 				sess.setAttribute("AttorneysDetailsList_list_01", finalList);
 			}
 		} catch (Exception e) {
-
+			logger.error("Unable to populate attorney details", e);
 		}
 	}
 
@@ -699,7 +699,7 @@ public class LawyersUtilities {
 			}
 			logger.debug(filePath);	
 		} catch (Exception e) {
-			logger.debug("Error in file process");
+			logger.error("Unable to write document to file", e);
 			logger.error("Unexpected error", e);
 		}
 		
@@ -712,7 +712,7 @@ public class LawyersUtilities {
 		try {
 			uploadFile.write(new File(uploaddirectory, filePath));
 		} catch (Exception e) {
-			logger.debug("Exception " + e );
+			logger.error("Unable to write document to file", e);
 			LawyersUtils.populateError(ctx, "DocUploadError","Document could not be write to file" );
 			
 		}

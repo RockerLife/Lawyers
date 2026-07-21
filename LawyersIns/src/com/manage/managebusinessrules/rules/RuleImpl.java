@@ -95,7 +95,7 @@ public class RuleImpl extends Rule
 		}
 		catch (Exception e)
 		{
-			logger.debug(getExpression() + " could not validated");
+			logger.error("Rule validation failed", e);
 			populateLoggerBuffer(data).append(getExpression() + " could not validated \n");
 			return false;
 		}
@@ -289,7 +289,7 @@ public class RuleImpl extends Rule
 		}
 		catch (Exception e)
 		{
-			logger.debug(getExpression() + " could not evaluated");
+			logger.error("Rule evaluation failed", e);
 			//populateLoggerBuffer(data).append(getExpression() + " could not evaluated \n");
 			
 			return null;
@@ -377,7 +377,7 @@ public class RuleImpl extends Rule
 		}
 		catch (Exception e)
 		{
-			logger.debug(getExpression() + " could not evaluated");
+			logger.error("Rule evaluation failed", e);
 			//populateLoggerBuffer(data).append(getExpression() + " could not evaluated \n");
 			
 			return null;

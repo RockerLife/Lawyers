@@ -279,7 +279,7 @@ public class IPFSServiceClient {
 			logger.debug("IPFS SubmitQuote for Policy  " + policyKey + " has been called.");
 			
 			JSONObject json = new JSONObject(submitQuote);
-		    logger.debug("IPFS SubmitQuote for Policy  " + policyKey + " Response..." + json);
+		    logger.debug("IPFS SubmitQuote response received");
 		    
 			Iterator<String> keys= json.keys();
 			while (keys.hasNext()) {

@@ -1858,14 +1858,12 @@ public static Object downloadUpcomingEvents(Context ctx) throws Exception {
 	                logger.debug("Could not convert image1.");
 	            }
 	        } catch (IOException ex) {
-	            logger.debug("Error during converting image.");
 	            logger.error("Error during converting image1."	+ ex.getMessage());
 	            logger.error("Unexpected error", ex);
 	        }
 	        
 	       
 		}catch(Exception e){
-			logger.debug("Error in ImageDownload For QuoteLetter");
 			logger.error("Error in ImageDownload For QuoteLetter1"	+ e.getMessage());
 			logger.error("Unexpected error", e);
 		}finally{
@@ -1918,7 +1916,6 @@ public static Object downloadUpcomingEvents(Context ctx) throws Exception {
 			logger.debug("certificate data successfully fetched from database and populated in context");
 			/*LawyersUtils.downloadInsurenceCertificate((IContext)ctx);*/
 		} catch(Exception e) {
-			logger.debug("exception in generating Insurance certificate");
 			logger.error("Unexpected error", e);
 		}
 	}
@@ -1969,12 +1966,10 @@ public static Object downloadUpcomingEvents(Context ctx) throws Exception {
 	                logger.debug("Could not convert image.");
 	            }
 	        } catch (IOException ex) {
-	            logger.debug("Error during converting image.");
 	            logger.error("Error during converting image."+ex.getMessage());
 	            logger.error("Unexpected error", ex);
 	      }
 		}catch(Exception e){
-			logger.debug("Error in ImageDownload For QuoteLetter");
 			logger.error("Error in ImageDownload For QuoteLetter"	+ e.getMessage());
 			logger.error("Unexpected error", e);
 		}finally{

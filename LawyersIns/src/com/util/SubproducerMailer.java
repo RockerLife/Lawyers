@@ -98,7 +98,6 @@ public class SubproducerMailer {
     		} catch (Exception e)  {
     			logger.error("error in geeting production environment");
     		}
-    		logger.debug("toAddress:::"+toAddress+"::::ccAdd::::"+bccAdd+":::displayID:::"+displayID+"::::displayName:::"+displayName);
           	Session session = Session.getInstance(props,  new javax.mail.Authenticator() {    
                   protected PasswordAuthentication getPasswordAuthentication() {    
                   return new PasswordAuthentication(MAIL_ADMIN_USERID, MAIL_ADMIN_PASSWORD);  

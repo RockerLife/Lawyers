@@ -33,7 +33,6 @@ public class AchProcessorImpl {
 			SystemProperties.setPropertyFileName(propertyPathMain);
 		} catch (Exception e1) {
 			logger.error("Unexpected error", e1);
-			logger.debug("Error in loading XML Files " + e1.getMessage() + " " + new Timestamp(new Date().getTime()));
 		}
 		
 		String out = SUCCESS_MESSAGE;
@@ -58,7 +57,6 @@ public class AchProcessorImpl {
 			return policyIssueOptionDelegate.receiveIssuePolicy(context,paymentType);
 		}catch(Throwable t){
 			logger.error("Unexpected error", t);
-			logger.debug("Problem in AchProcessorImpl " + t.getMessage());
 			return ERROR_MESSAGE + t.getMessage();
 		}
 	}

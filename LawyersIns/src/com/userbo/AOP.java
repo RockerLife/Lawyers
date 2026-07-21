@@ -1899,30 +1899,30 @@ public class AOP {
 	    		
 	    		if(total>100 || total<100)
 	    			populateError(ctx, "Total_Percentage","The total of percentage is required to equal 100%, current total is "+ total + "%");
-	    		if(wills3>0 || wills12>0)
-	    		{
-	    			if(ctx.get("LargestTrust_list_01") != null &&   ctx.get("LargestTrust_list_01") instanceof List)
-			        {
-				            finalList = (List)ctx.get("LargestTrust_list_01");
-				       
-				        Map map = new HashMap();
-						for (int i = 0; i < finalList.size(); i++) 
-						{
-							if(i==0)
-							{
-								if( ctx.get("TrustName_"+i)==null || ctx.get("TrustName_"+i).equals(HtmlConstants.EMPTY) ||
-										ctx.get("TrustsType_"+i)==null || ctx.get("TrustsType_"+i).equals(HtmlConstants.EMPTY)	||
-										ctx.get("AssetsValue_"+i)==null || ctx.get("AssetsValue_"+i).equals(HtmlConstants.EMPTY)	||
-										ctx.get("BeneficiaryInterest_"+i)==null || ctx.get("BeneficiaryInterest_"+i).equals(HtmlConstants.EMPTY))
-									{
-										new LawyersUtils().populateError(ctx, "needFirstRow","You need to fill first row completely.");
-										return;
-									}
-							
-							}
-						}
-			        }
-	    		}
+//	    		if(wills3>0 || wills12>0)
+//	    		{
+//	    			if(ctx.get("LargestTrust_list_01") != null &&   ctx.get("LargestTrust_list_01") instanceof List)
+//			        {
+//				            finalList = (List)ctx.get("LargestTrust_list_01");
+//				       
+//				        Map map = new HashMap();
+//						for (int i = 0; i < finalList.size(); i++) 
+//						{
+//							if(i==0)
+//							{
+//								if( ctx.get("TrustName_"+i)==null || ctx.get("TrustName_"+i).equals(HtmlConstants.EMPTY) ||
+//										ctx.get("TrustsType_"+i)==null || ctx.get("TrustsType_"+i).equals(HtmlConstants.EMPTY)	||
+//										ctx.get("AssetsValue_"+i)==null || ctx.get("AssetsValue_"+i).equals(HtmlConstants.EMPTY)	||
+//										ctx.get("BeneficiaryInterest_"+i)==null || ctx.get("BeneficiaryInterest_"+i).equals(HtmlConstants.EMPTY))
+//									{
+//										new LawyersUtils().populateError(ctx, "needFirstRow","You need to fill first row completely.");
+//										return;
+//									}
+//							
+//							}
+//						}
+//			        }
+//	    		}
         }
         catch(Exception exception)
         { logger.error("Unexpected error", exception);}

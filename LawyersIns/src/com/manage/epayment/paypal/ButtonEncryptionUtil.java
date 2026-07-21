@@ -132,7 +132,6 @@ public class ButtonEncryptionUtil
 		
 		
 		
-		logger.debug(getEncryptedButton(cert_id, certPath, keyPath, paypalCertPath, keyPass, business_id, item_name, amount, currency_code, cancel_url, return_url,notify_URL,customVar,""));
 	
 	}
 }

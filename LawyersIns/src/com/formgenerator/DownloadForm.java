@@ -632,7 +632,7 @@ public class DownloadForm {
 			}			
 					
 		} catch (Exception e) {
-			
+			logger.error("Unable to load coverage data", e);
 		}
 	}
 	
@@ -716,7 +716,7 @@ public class DownloadForm {
 			}
 			
 		} catch (Exception e) {
-			
+			logger.error("Unable to load indication data", e);
 		}
 	}
 	

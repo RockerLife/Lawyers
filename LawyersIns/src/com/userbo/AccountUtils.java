@@ -861,7 +861,7 @@ public class AccountUtils {
 			mailingOnOFF = SystemProperties.getInstance().getString(
 					"Insured.sendmail");
 		} catch (Exception e) {
-
+			logger.error("Unable to read insured mail setting", e);
 		}
 
 		if (mailingOnOFF != null && "Y".equals(mailingOnOFF)

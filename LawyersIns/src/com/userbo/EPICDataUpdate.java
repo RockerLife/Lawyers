@@ -264,12 +264,10 @@ public class EPICDataUpdate {
 			JSONObject messageBodyJsonObject = new JSONObject();
 			String subURL = new EPICDataUpdate().setClientData(messageBodyJsonObject, insertData);
 			
-			logger.debug("EPIC Insert " + epicType + " Data for Policy " + policyKey + " is going to call. Request.. " + messageBodyJsonObject);
 			
 			epicData = messageBodyJsonObject.toString();
 			String result = authorizeTransaction(messageBodyJsonObject, webServiceURL,  subURL, userAgentKey);
 			
-			logger.debug("EPIC Insert " + epicType + " Data for Policy " + policyKey + " has been called. Response... " + result);
 
 			if(result.startsWith("#Sucesss#")) {
 				result = result.replace("#Sucesss#", "");
@@ -289,12 +287,10 @@ public class EPICDataUpdate {
 					messageBodyJsonObject = new JSONObject();
 					subURL = new EPICDataUpdate().setPolicyData(messageBodyJsonObject, insertData);
 		
-					logger.debug("EPIC Insert " + epicType + " Data for Policy " + policyKey + " is going to call. Request.. " + messageBodyJsonObject);
 					
 					epicData = messageBodyJsonObject.toString();
 					result = authorizeTransaction(messageBodyJsonObject, webServiceURL,  subURL, userAgentKey);
 					
-					logger.debug("EPIC Insert " + epicType + " Data for Policy " + policyKey + " has been called. Response... " + result);
 				} else {
 					result = "#Sucesss#";
 				}
@@ -316,12 +312,10 @@ public class EPICDataUpdate {
 						messageBodyJsonObject = new JSONObject();
 						subURL = new EPICDataUpdate().setTransactionData(messageBodyJsonObject, insertData);
 			
-						logger.debug("EPIC Insert " + epicType + " Data for Policy " + policyKey + " is going to call. Request.. " + messageBodyJsonObject);
 						
 						epicData = messageBodyJsonObject.toString();
 						result = authorizeTransaction(messageBodyJsonObject, webServiceURL,  subURL, userAgentKey);
 						
-						logger.debug("EPIC Insert " + epicType + " Data for Policy " + policyKey + " has been called. Response... " + result);
 						
 						if(result.startsWith("#Sucesss#")) {
 							result = result.replace("#Sucesss#", "").replace("[", "").replace("]", "");
@@ -649,7 +643,6 @@ public class EPICDataUpdate {
 			error = result;
     	}
     	
-	    logger.debug("EPIC Insert " + epicType + " Data for Policy " + policyKey + " has been called. Error Response... " + error);
 
 	    newCtx.put("CreatedBy", (newCtx.get("LastUpdateUserID") == null ? 0 : newCtx.get("LastUpdateUserID")));
 		newCtx.put("EPICType", epicType);

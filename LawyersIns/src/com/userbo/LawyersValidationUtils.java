@@ -1891,7 +1891,7 @@ public class LawyersValidationUtils {
 		try {
 			email = SystemProperties.getInstance().getString("appl." +ctx.getProject()+ ".specialissue.emailid");
 		} catch (Exception e) {
-			logger.debug("Exception in getting special issuance email id " + e);
+			logger.error("Unable to resolve special-issuance email", e);
 		}
 		return email ;
 		
@@ -2094,7 +2094,7 @@ public class LawyersValidationUtils {
 			}
 		catch(Exception e)
 		{
-			logger.debug("Error occured while validate Premium Calulation For Financial Endorsement");
+			logger.error("Unable to validate financial endorsement premium", e);
 		}
 	}
 	
@@ -2113,10 +2113,15 @@ public class LawyersValidationUtils {
 				}
 				catch(NumberFormatException nfe)
 				{
-					
-						String policyKey= new LawyersValidationUtils().decrypt(policyKeyString);
-						ctx.put("PolicyKey",policyKey);
-					
+					try {
+						String policyKey = new LawyersValidationUtils().decrypt(policyKeyString);
+						Integer.parseInt(policyKey);
+						ctx.put("PolicyKey", policyKey);
+					} catch (Exception decryptException) {
+						logger.error("Unable to validate policy status: invalid encrypted PolicyKey", decryptException);
+						ctx.remove("PolicyKey");
+						return;
+					}
 				}
 				Object obj = SqlResources.getSqlMapProcessor(ctx).findByKey("SqlStmts.UserStatementManualBoQueriesgetStatusOfPolicy", ctx);
 				Map statusDetails = (Map)obj;
@@ -2132,7 +2137,7 @@ public class LawyersValidationUtils {
 				}
 			}
 		} catch(Exception e) {
-			logger.debug("error occured while validating status :"+e);
+		logger.error("Unable to validate policy status", e);
 		}
 	}
 
@@ -2170,7 +2175,7 @@ public class LawyersValidationUtils {
 				}
 			}
 		} catch(Exception e) {
-			logger.debug("error occured while validating status :"+e);
+			logger.error("Unable to validate policy status", e);
 		}
 		return false;
 	}
@@ -2235,7 +2240,6 @@ public class LawyersValidationUtils {
 			}
 		} catch(Exception e) {
 			logger.error("Unexpected error", e);
-			logger.debug("error occured while validating status :"+e);
 		}
 	}
 	public static boolean validateFileNameForSpecialChar(String inputString) {
@@ -2381,7 +2385,6 @@ public class LawyersValidationUtils {
 			
 			if ("N".equals(productionEnv)){
 				emailID = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".admin.email");
-				logger.debug("email id------->"+emailID);
 			}
 			
 			Context newCtx = new Context();
@@ -2445,7 +2448,6 @@ public class LawyersValidationUtils {
 			
 			if ("N".equals(productionEnv)){
 				emailID = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".admin.email");
-				logger.debug("email id------->"+emailID);
 			}
 			
 			Context newCtx = new Context();
@@ -2520,16 +2522,10 @@ public class LawyersValidationUtils {
 	public static boolean isCFAllowedToIssuePolicy(Context ctx) throws Exception 
 	{
 		try {
-			new SetParametersForStoredProcedures().setParametersInContext(ctx, "StateCode,MarketableProductKey,PolicyEffectiveDate");
-			Object obj = SqlResources.getSqlMapProcessor(ctx).findByKey("Policy.GetCompanyList_p", ctx);
-			if (obj != null && obj instanceof Map) {
-				Map objMap = (Map) obj;
-				if("3".equals(objMap.get("CompanyKey").toString())) {
-					return true;
-				}
-			}
+			LawyersUtils.setCompanyForPolicy(ctx);
+			return "3".equals(String.valueOf(ctx.get("CompanyKey")));
 		} catch(Exception e) {
-			logger.debug("error occured while validating status :"+e);
+			logger.error("Unable to validate policy status", e);
 		}
 		return false;
 	}

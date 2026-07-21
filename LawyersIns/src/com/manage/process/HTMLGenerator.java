@@ -250,7 +250,7 @@ public class HTMLGenerator {
 			//reader.close();
 		}
 		catch(Exception e){
-			logger.debug("Unable to parse the html "+pageName);
+			logger.error("Unable to parse HTML " + pageName, e);
 		}
 		finally{
 			if(reader != null)
@@ -839,18 +839,18 @@ public class HTMLGenerator {
 		ParseUtil.addAttribute(form, HtmlConstants.ACTION, next_page+".do;jsessionid="+ctx.get("jsessionid"));
 		ParseUtil.addAttribute(form, HtmlConstants.METHOD, "post");
 		
-		form.addContent(ParseUtil.createInputElement(HtmlConstants.INET_METHOD, HtmlConstants.HIDDEN, "", HtmlConstants.INET_METHOD));
-		form.addContent(ParseUtil.createInputElement(Constants.INET_PAGE, HtmlConstants.HIDDEN, "", Constants.INET_PAGE));
-		form.addContent(ParseUtil.createInputElement(Constants.DYNAKEYS, HtmlConstants.HIDDEN, "", Constants.DYNAKEYS));
-		form.addContent(ParseUtil.createInputElement(Constants.DYNAVALUES, HtmlConstants.HIDDEN, "", Constants.DYNAVALUES));
-		form.addContent(ParseUtil.createInputElement(Constants.INET_CONTEXT, HtmlConstants.HIDDEN, "", Constants.INET_CONTEXT));
-		form.addContent(ParseUtil.createInputElement(HtmlConstants.CTXMENUPARAM, HtmlConstants.HIDDEN, "", ""));
-		form.addContent(ParseUtil.createInputElement(HtmlConstants.DATE_FORMAT, HtmlConstants.HIDDEN, (ctx.get(HtmlConstants.DATE_FORMAT) != null ? ctx.get(HtmlConstants.DATE_FORMAT).toString() : HtmlConstants.EMPTY), "ajax_field_"+HtmlConstants.DATE_FORMAT));
-		form.addContent(ParseUtil.createInputElement(HtmlConstants.DATE_FORMAT_TS, HtmlConstants.HIDDEN, (ctx.get(HtmlConstants.DATE_FORMAT_TS) != null ? ctx.get(HtmlConstants.DATE_FORMAT_TS).toString() : HtmlConstants.EMPTY), "ajax_field_"+HtmlConstants.DATE_FORMAT_TS));
-		form.addContent(ParseUtil.createInputElement(HtmlConstants.PAGE_DISABLED_FIELDS, HtmlConstants.HIDDEN, (ctx.get(HtmlConstants.PAGE_DISABLED_FIELDS) != null ? ctx.get(HtmlConstants.PAGE_DISABLED_FIELDS).toString() : HtmlConstants.EMPTY), "ajax_field_"+HtmlConstants.PAGE_DISABLED_FIELDS));
+		setHiddenField(form, HtmlConstants.INET_METHOD, value(ctx, HtmlConstants.INET_METHOD), HtmlConstants.INET_METHOD);
+		setHiddenField(form, Constants.INET_PAGE, value(ctx, Constants.INET_PAGE), Constants.INET_PAGE);
+		setHiddenField(form, Constants.DYNAKEYS, value(ctx, Constants.DYNAKEYS), Constants.DYNAKEYS);
+		setHiddenField(form, Constants.DYNAVALUES, value(ctx, Constants.DYNAVALUES), Constants.DYNAVALUES);
+		setHiddenField(form, Constants.INET_CONTEXT, value(ctx, Constants.INET_CONTEXT), Constants.INET_CONTEXT);
+		setHiddenField(form, HtmlConstants.CTXMENUPARAM, null, "");
+		setHiddenField(form, HtmlConstants.DATE_FORMAT, value(ctx, HtmlConstants.DATE_FORMAT), "ajax_field_"+HtmlConstants.DATE_FORMAT);
+		setHiddenField(form, HtmlConstants.DATE_FORMAT_TS, value(ctx, HtmlConstants.DATE_FORMAT_TS), "ajax_field_"+HtmlConstants.DATE_FORMAT_TS);
+		setHiddenField(form, HtmlConstants.PAGE_DISABLED_FIELDS, value(ctx, HtmlConstants.PAGE_DISABLED_FIELDS), "ajax_field_"+HtmlConstants.PAGE_DISABLED_FIELDS);
 
 		if(ctx.get("REQUEST_AUTH_TOKEN") != null)
-			form.addContent(ParseUtil.createInputElement(HtmlConstants.REQUEST_AUTH_TOKEN, HtmlConstants.HIDDEN, ctx.get("REQUEST_AUTH_TOKEN").toString(), "REQUEST_AUTH_TOKEN"));
+			setHiddenField(form, HtmlConstants.REQUEST_AUTH_TOKEN, ctx.get("REQUEST_AUTH_TOKEN").toString(), "REQUEST_AUTH_TOKEN");
 		
 		//going to add hidden fields for SSO token handling
 		try{
@@ -863,15 +863,35 @@ public class HTMLGenerator {
 					logger.error("Unable to get sso.token.key property due to error : " + e.getMessage());
 				}
 				
-				form.addContent(ParseUtil.createInputElement(HtmlConstants.SSOTOKENKEY, HtmlConstants.HIDDEN, ssoTokenKey, "ajax_field_ssoTokenKey"));
-				form.addContent(ParseUtil.createInputElement(ssoTokenKey, HtmlConstants.HIDDEN, (ctx.get(ssoTokenKey) != null ? ctx.get(ssoTokenKey).toString() : HtmlConstants.EMPTY), "ajax_field_"+ssoTokenKey));
+				setHiddenField(form, HtmlConstants.SSOTOKENKEY, ssoTokenKey, "ajax_field_ssoTokenKey");
+				setHiddenField(form, ssoTokenKey, value(ctx, ssoTokenKey), "ajax_field_"+ssoTokenKey);
 			}
 		}catch (Exception e) {
 			// TODO: handle exception
 		}
 		
 		if(ctx.get("NEXT_PAGE_COMPONENT") != null)
-			form.addContent(ParseUtil.createInputElement("from_page", HtmlConstants.HIDDEN, ctx.get("NEXT_PAGE_COMPONENT").toString(), "from_page"));
+			setHiddenField(form, "from_page", ctx.get("NEXT_PAGE_COMPONENT").toString(), "from_page");
+	}
+
+	private String value(Context ctx, String name) {
+		Object value = ctx.get(name);
+		return value == null ? null : value.toString();
+	}
+
+	private void setHiddenField(Element form, String name, String value, String id) {
+		List children = form.getChildren();
+		for (int i = 0; i < children.size(); i++) {
+			Element child = (Element) children.get(i);
+			if (HtmlConstants.INPUT.equalsIgnoreCase(child.getName())
+					&& name.equals(child.getAttributeValue(HtmlConstants.NAME))) {
+				if (value != null)
+					child.setAttribute(HtmlConstants.VALUE, value);
+				return;
+			}
+		}
+		form.addContent(ParseUtil.createInputElement(name, HtmlConstants.HIDDEN,
+				value == null ? HtmlConstants.EMPTY : value, id));
 	}
 	
 	protected void rectifyErrorList(Context ctx, Element body)throws Exception{
@@ -1248,7 +1268,7 @@ public class HTMLGenerator {
 				obj = root.getChild(field) != null ? root.getChild(field).getText() : HtmlConstants.EMPTY;
 			}
 		}catch (Exception e) {
-			logger.debug(e.getMessage());
+			logger.error("Unable to read XML field", e);
 		}
 		
 		return obj;

@@ -39,7 +39,7 @@ public class SecurityResources extends Resources{
                 USER_ID = SystemProperties.getInstance().getString("USER_ID_FIELD_NAME");
                 ROLE_ID = SystemProperties.getInstance().getString("ROLE_ID_FIELD_NAME");
             }catch(Exception e){
-               
+                logger.error("Unable to load security field configuration", e);
             }
         }
 	

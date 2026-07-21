@@ -136,7 +136,7 @@ public class PrintPDF  {
             logger.error(de.getMessage());
 		}
 		catch (Exception e2) {
-			logger.debug("Error in " + getClass().getName() + "\n" + e2);
+			logger.error("Unable to generate PDF", e2);
 			logger.error("Unexpected error", e2);
 		}
 		finally{

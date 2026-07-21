@@ -55,7 +55,7 @@ public class QuestionDropdown implements IDropDown
 		}catch (Exception e) {
 					
 			LawyersUtils.populateError(ctx, "AccountEmail", "Please contact 1-877-569-4111 for assistance");
-			logger.debug("Questions has been got---");
+			logger.error("Unable to load questions", e);
 		}
 			
 		return questionsList;

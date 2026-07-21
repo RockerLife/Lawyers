@@ -507,7 +507,7 @@ public class SecureUtils {
 
 			LawyersUtils.populateError(ctx, "old_pwd",
 					"Please contact 1-877-569-4111 for assistance");
-			logger.debug("Password has not been changed---");
+			logger.error("Unable to change password", e);
 		}
 
 	}
@@ -545,7 +545,7 @@ public class SecureUtils {
 
 			LawyersUtils.populateError(ctx, "old_pwd",
 					"Please contact 1-877-569-4111 for assistance");
-			logger.debug("Security data has not been got---");
+			logger.error("Unable to load security data", e);
 		}
 
 	}
@@ -606,7 +606,7 @@ public class SecureUtils {
 
 			LawyersUtils.populateError(ctx, "AccountEmail",
 					"Please contact 1-877-569-4111 for assistance");
-			logger.debug("AccountEmail has not been validated---");
+			logger.error("Unable to validate account email", e);
 		}
 	}
 
@@ -671,7 +671,7 @@ public class SecureUtils {
 
 			LawyersUtils.populateError(ctx, "old_pwd",
 					"Please contact 1-877-569-4111 for assistance");
-			logger.debug("Password has not been reset---");
+			logger.error("Unable to reset password", e);
 		}
 
 	}
@@ -731,7 +731,7 @@ public class SecureUtils {
 		} catch (Exception e) {
 			LawyersUtils.populateError(ctx, "AccountEmail",
 					"Please contact 1-877-569-4111 for assistance");
-			logger.debug("User cannot be updated due to exception");
+			logger.error("Unable to update user", e);
 
 		}
 
@@ -778,7 +778,6 @@ public class SecureUtils {
 			if (!"".equals(ctx.get("LoginID").toString())) {
 				
 				boolean resetPassword= bindingStub.resetPassword(loginID);
-				logger.debug("Reset Password --- > " + resetPassword);
 				if(resetPassword){
 					 logger.debug("Going to get User Details");
 					 UserDetails ud= bindingStub.getUserDetail(loginID);

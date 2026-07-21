@@ -143,7 +143,7 @@ public class ResourceLoader
 			*/
 			return root;
 		}catch(Exception e)	{
-			logger.debug("Problem in loading file " + fileName + " because of error : " + e.getMessage());
+			logger.error("Problem loading resource " + fileName, e);
 			return null;
 		}
 	}
@@ -290,7 +290,7 @@ public class ResourceLoader
 			*/
 			return root;
 		}catch(Exception e)	{
-			logger.debug("Problem in loading file " + fileName + " because of error : " + e.getMessage());
+			logger.error("Problem loading resource " + fileName, e);
 			return null;
 		}
 	}

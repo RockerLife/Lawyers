@@ -20,7 +20,7 @@ public class MaillingObj {
 		try {
 			mailingOnOFF = SystemProperties.getInstance().getString("Insured.sendmail");
 		} catch (Exception e) {
-			
+			logger.error("Unable to read insured mail setting", e);
 		}
 		
 		if(mailingOnOFF==null || !"N".equals(mailingOnOFF))

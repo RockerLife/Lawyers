@@ -24,6 +24,5 @@ public class ConvertWord {
 		html = html.replace("{Renew Here}", "<a href=\"{AppURL}\">RENEW HERE</a>");
 		html = html.replaceAll("<p>\\s+Social\\s+Engineering\\s+losses", "<p style=\"color:#ff0000\">Social Engineering losses");
 		html = html.replaceAll("<p>Social\\s+Engineering\\s+losses", "<p style=\"color:#ff0000\">Social Engineering losses");
-		logger.debug(html);
 	}
 }

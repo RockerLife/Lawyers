@@ -670,7 +670,6 @@ public class XML2PDF {
 				transformer.transform(src, res);
 				
 			} catch (Exception e) {
-				logger.debug("FOP Transformer Failed.." + e.getMessage());	
 				logger.error("Unexpected error", e);	
 			} finally {			 
 				out.close();

@@ -532,6 +532,8 @@ public class PIMRequestProcessorImpl implements PIMRequestProcessorInterface{
 			return;
 		
 		String action = ctx.get(HtmlConstants.INET_METHOD) != null ? ctx.get(HtmlConstants.INET_METHOD).toString() : null;
+		if (action == null)
+			return;
 		
 		String htmlcontent = null;
 		
@@ -614,6 +616,11 @@ public class PIMRequestProcessorImpl implements PIMRequestProcessorInterface{
 			htmlcontent = parseManageTestHarness(ctx, "authxml.html", "authxml", request);
 		}*/
 		
+		if (htmlcontent == null) {
+			logger.error("No test harness page was generated for action: " + action);
+			return;
+		}
+
 		htmlcontent = htmlcontent.replace("#dynamicContent#", ctx.get("#dynamicContent#") != null ? ctx.get("#dynamicContent#").toString() : HtmlConstants.EMPTY);
 		
 		htmlcontent = htmlcontent.replace("#dynamicContent_pageListStackString#", ctx.get("#dynamicContent_pageListStackString#") != null ? ctx.get("#dynamicContent_pageListStackString#").toString() : HtmlConstants.EMPTY);

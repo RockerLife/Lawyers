@@ -633,15 +633,15 @@ public class WorkflowImpl extends Workflow
                             }
 
                         } catch (SQLException ex) {
-                            logger.debug("Problem in converting the Clob DataType of Field " +pairs.getKey() + " Error Msg is : "+ ex.getMessage());
+	                            logger.error("Unable to convert CLOB field", ex);
                         } catch (IOException iex) {
-                            logger.debug("Problem in converting the Clob DataType of Field " +pairs.getKey() + " Error Msg is : "+ iex.getMessage());
+	                            logger.error("Unable to convert CLOB field", iex);
                         } finally {
                             if (reader != null) {
                                 try {
                                     reader.close();
                                 } catch (IOException ex) {
-                                    logger.debug("Problem in converting the Clob DataType of Field "+pairs.getKey() + " Error Msg is : "+ ex.getMessage());
+	                                    logger.error("Unable to close CLOB reader", ex);
                                 }
                             }
                         }

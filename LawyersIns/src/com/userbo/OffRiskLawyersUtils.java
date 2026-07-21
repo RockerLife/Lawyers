@@ -78,8 +78,6 @@ public class OffRiskLawyersUtils {
 			}
 		} catch (Exception e) {
 			logger.error("Unexpected error", e);
-			logger.debug("Problem in Uploading the Off Risk Letters "
-					+ e.getMessage());
 			offRiskContext.remove("VersionSequence");
 			offRiskContext.remove("PolicyKey");
 			offRiskContext.remove("QuoteNumber");
@@ -135,8 +133,7 @@ public class OffRiskLawyersUtils {
 				logger.debug("Off Risk Letter uploaded for "
 						+ ctx.get("QuoteNumber"));
 			} catch (Exception e) {
-				logger.debug("Exception in upload OffRiskLetters . . " + e);
-				logger.debug("Exception Occured " + ctx.get("QuoteNumber"));
+				logger.error("Unable to upload off-risk letter", e);
 			}
 			if (documentUploaded) {
 				ctx.put("IsOffRiskLetterUploaded", "Yes");
@@ -182,8 +179,6 @@ public class OffRiskLawyersUtils {
 
 		} catch (Exception e) {
 			logger.error("Unexpected error", e);
-			logger.debug("Problem in Download Off Risk Letters "
-					+ e.getMessage());
 		}
 
 	}
@@ -209,7 +204,6 @@ public class OffRiskLawyersUtils {
 			deleteDownloadDirectory(ctx);
 		} catch (Exception e) {
 			logger.error("Unexpected error", e);
-			logger.debug("Download Failed " + e.getMessage());
 		}
 
 	}
@@ -314,7 +308,7 @@ public class OffRiskLawyersUtils {
 			
 			return uploaddirectorypath;
 		} catch (Exception e) {
-			logger.debug("Not able to create directory " + e.getMessage());
+			logger.error("Unable to create directory", e);
 		} finally {
 			/*code by sukhi 26/09/2018*/
 			file=null;
@@ -352,7 +346,7 @@ public class OffRiskLawyersUtils {
 			logger.debug("Directory Deleted");
 
 		} catch (Exception e) {
-			logger.debug("Not able to delete directory " + e.getMessage());
+			logger.error("Unable to delete directory", e);
 		} finally {
 			/*code by sukhi 26/09/2018*/
 			directory=null;
@@ -432,8 +426,6 @@ public class OffRiskLawyersUtils {
 			
 		} catch (Exception e) {
 			logger.error("Unexpected error", e);
-			logger.debug("Problem in Uploading the Off Risk Letters "
-				+ e.getMessage());
 			
 		}
 	}
@@ -481,8 +473,6 @@ public class OffRiskLawyersUtils {
 
 		} catch (Exception e) {
 			logger.error("Unexpected error", e);
-			logger.debug("Problem in Download Off Risk Letters "
-					+ e.getMessage());
 		}
 
 	}
@@ -549,13 +539,12 @@ public class OffRiskLawyersUtils {
 					logger.debug("Directory Deleted");
 
 				} catch (Exception e) {
-					logger.debug("Not able to delete directory " + e.getMessage());
+					logger.error("Unable to delete directory", e);
 				} 
 			}
 		
 		} catch (Exception e) {
 			logger.error("Unexpected error", e);
-			logger.debug("Download Failed " + e.getMessage());
 		}
 
 	}

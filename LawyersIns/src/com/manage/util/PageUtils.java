@@ -1,6 +1,8 @@
 package com.manage.util;
 
 import java.io.IOException;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.PrintWriter;
 import java.io.StringReader;
 import java.util.ArrayList;
@@ -21,9 +23,11 @@ import org.apache.commons.lang.StringUtils;
 import org.jdom.Attribute;
 import org.jdom.Document;
 import org.jdom.Element;
+import org.jdom.input.DOMBuilder;
 import org.jdom.input.SAXBuilder;
 import org.jdom.output.Format;
 import org.jdom.output.XMLOutputter;
+import org.w3c.tidy.Tidy;
 
 import com.manage.framework.ProcessAction;
 import com.manage.managebusinessrules.rules.RuleImpl;
@@ -65,11 +69,14 @@ public class PageUtils {
 			FormUtils.populateMultipartFormData(request, ctx);
 		}
 		
-		FormUtils.populateDynaKeys(request, ctx);
+		populateDynaKeysSafely(request, ctx);
 		
 		String event = (String) ctx.get(HtmlConstants.INET_METHOD);
 		if(!"cancel".equals(event)){
-			FormUtils.populateRequestData(request, ctx);
+			populateRequestDataSafely(request, ctx);
+			// The legacy method reparses dynaKeys/dynaValues internally and can
+			// index past the shorter value list. Reapply the guarded parser last.
+			populateDynaKeysSafely(request, ctx);
 			FormUtils.populateServerInfo(request, ctx);
 			//FormUtils.populateMultipartFormData(request, ctx);
 		}
@@ -114,6 +121,92 @@ public class PageUtils {
 			}
 		}
 		//Ended code 
+	}
+
+	private void populateDynaKeysSafely(HttpServletRequest request, Context ctx) throws Exception {
+		String keys = getDynaParameter(request, Constants.DYNAKEYS);
+		String values = getDynaParameter(request, Constants.DYNAVALUES);
+		String[] keyParts = splitDynaParameter(keys);
+		String[] valueParts = splitDynaParameter(values);
+
+		if (keys != null && values != null && keyParts.length != valueParts.length) {
+			populateDynaKeysFallback(ctx, keyParts, valueParts, null);
+			return;
+		}
+
+		try {
+			FormUtils.populateDynaKeys(request, ctx);
+		} catch (ArrayIndexOutOfBoundsException e) {
+			if (keys == null || values == null)
+				throw e;
+			populateDynaKeysFallback(ctx, keyParts, valueParts, e);
+		}
+	}
+
+	private void populateRequestDataSafely(HttpServletRequest request, Context ctx) throws Exception {
+		Enumeration parameterNames = request.getParameterNames();
+		while (parameterNames.hasMoreElements()) {
+			String name = (String) parameterNames.nextElement();
+			String[] values = request.getParameterValues(name);
+			if (values != null && values.length > 0)
+				ctx.put(name, resolveRequestParameterValue(values[0]));
+		}
+
+		Enumeration attributeNames = request.getAttributeNames();
+		while (attributeNames.hasMoreElements()) {
+			String name = (String) attributeNames.nextElement();
+			Object value = request.getAttribute(name);
+			if (value != null)
+				ctx.put(name, resolveRequestParameterValue(value.toString()));
+		}
+	}
+
+	private String resolveRequestParameterValue(String value) {
+		if (value == null || value.length() == 0)
+			return value;
+		return value.replace("$AND$", "&").replace("$PER$", "%").replace("$APH$", "'")
+				.replace("#AMP#", "&").replace("$AMP$", "&").replace("$HYPHEN$", "|");
+	}
+
+	private String getDynaParameter(HttpServletRequest request, String name) {
+		String value = request.getParameter(name);
+		if (StringUtils.isBlank(value) && request.getAttribute(name) != null)
+			value = request.getAttribute(name).toString();
+		return value;
+	}
+
+	private String[] splitDynaParameter(String value) {
+		if (StringUtils.isBlank(value))
+			return new String[0];
+		int start = value.startsWith("|") ? 1 : 0;
+		int end = value.endsWith("|") ? value.length() - 1 : value.length();
+		if (end <= start)
+			return new String[0];
+		return value.substring(start, end).split("\\|", -1);
+	}
+
+	private void populateDynaKeysFallback(Context ctx, String[] keys, String[] values, Throwable cause) {
+		String message = "Mismatched dynaKeys/dynaValues; keys=" + keys.length + ", values=" + values.length;
+		if (cause == null)
+			logger.error(message);
+		else
+			logger.error(message + "; parsed safely after legacy FormUtils failure", cause);
+
+		for (int i = 0; i < keys.length; i++) {
+			String key = keys[i] == null ? HtmlConstants.EMPTY : keys[i].trim();
+			if (key.length() == 0)
+				continue;
+			String value = i < values.length ? values[i] : HtmlConstants.EMPTY;
+			ctx.put(key, resolveDynaValue(value == null ? HtmlConstants.EMPTY : value.trim()));
+		}
+	}
+
+	private String resolveDynaValue(String value) {
+		if ("$".equals(value))
+			return HtmlConstants.EMPTY;
+		return value.replace("_HASH_", "#").replace("$AND$", "&").replace("$PER$", "%")
+				.replace("$APH$", "'").replace("#AMP#", "&").replace("$AMP$", "&")
+				.replace("$HYPHEN$", "|");
 	}
 
 	public String validateAjaxComponent(Context ctx, HttpServletRequest request) throws Exception{
@@ -297,19 +390,13 @@ public class PageUtils {
 	public Document parseHtmlDocument(Context ctx, String next_page,String ajaxpage,HttpServletRequest request) throws Exception
 	{
 		String isLoadHTMLS = SystemProperties.getInstance().getString("appl."+ctx.getProject()+".LoadHTMLS");
-        Map nextPageDoc = null;
-        if(isLoadHTMLS != null && "Y".equalsIgnoreCase(isLoadHTMLS))
-              nextPageDoc = CacheManager.get(next_page)==null?new HashMap():(HashMap)CacheManager.get(next_page);
-        else
-              nextPageDoc = getHtmlDocMap(ctx, next_page);
+        Map nextPageDoc = getPageDocumentMap(ctx, next_page, isLoadHTMLS != null && "Y".equalsIgnoreCase(isLoadHTMLS));
 
 		Document document1 =nextPageDoc.get("XMLDocument")==null?null:(Document)nextPageDoc.get("XMLDocument");
 		HTMLGenerator htmlGenerator = new HTMLGenerator(ctx.get(Constants.INET_PROJECT_ID).toString(), next_page);
-		if(document1 == null)
-			logger.error("Page not Found in the Cache for Page - " + next_page);
 		Document document = (Document)ObjectCloner.deepCopy(document1);
 		if(document == null)
-			logger.error("Error in clonning of cached html doc for Page - " + next_page);
+			throw new IllegalStateException("Unable to clone cached HTML page - " + next_page);
 		document = htmlGenerator.parseDocument(ctx, document, next_page,request);
 
 		return document;
@@ -318,21 +405,15 @@ public class PageUtils {
 	public String parseHtmlDocument(Context ctx, String next_page, HttpServletRequest request) throws Exception
 	{
 		String isLoadHTMLS = SystemProperties.getInstance().getString("appl."+ctx.getProject()+".LoadHTMLS");
-        Map nextPageDoc = null;
-        if(isLoadHTMLS != null && "Y".equalsIgnoreCase(isLoadHTMLS))
-              nextPageDoc = CacheManager.get(next_page)==null?new HashMap():(HashMap)CacheManager.get(next_page);
-        else
-              nextPageDoc = getHtmlDocMap(ctx, next_page);
+        Map nextPageDoc = getPageDocumentMap(ctx, next_page, isLoadHTMLS != null && "Y".equalsIgnoreCase(isLoadHTMLS));
 
 		String nextPagDocType = nextPageDoc.get("DOCType")==null?"":nextPageDoc.get("DOCType").toString();
 		Document document1 =nextPageDoc.get("XMLDocument")==null?null:(Document)nextPageDoc.get("XMLDocument");
 		HTMLGenerator htmlGenerator = new HTMLGenerator(ctx.get(Constants.INET_PROJECT_ID).toString(), next_page);
-		if(document1 == null)
-			logger.error("Page not Found in the Cache for Page - " + next_page);
 		
 		Document document = (Document)ObjectCloner.deepCopy(document1);
 		if(document == null)
-			logger.error("Error in clonning of cached html doc for Page - " + next_page);
+			throw new IllegalStateException("Unable to clone cached HTML page - " + next_page);
 
 		//going to revise accordian data list based on showAccordianPageList variable in context
 		checkForShowAccordianPageList(ctx);
@@ -364,6 +445,10 @@ public class PageUtils {
 	public Map getHtmlDocMap(Context ctx, String next_page) throws Exception{
 	    PagecomponentImpl pcImpl = ProcessFlowResources.getInstance(ctx).getPagecomponent(next_page);
         Map map = new HashMap();
+        if (pcImpl == null) {
+            logger.error("Page component not found - " + next_page);
+            return map;
+        }
         try {
             map = new PageUtils().convertHTMLToXMl(pcImpl, ctx);
         } catch (Exception e) {
@@ -372,6 +457,27 @@ public class PageUtils {
             return new HashMap();
         }
         return map;
+	}
+
+	private Map getPageDocumentMap(Context ctx, String next_page, boolean loadFromCache) throws Exception {
+		Map pageDoc = null;
+		if (loadFromCache) {
+			Object cached = CacheManager.get(next_page);
+			if (cached instanceof Map)
+				pageDoc = (Map) cached;
+		}
+
+		if (pageDoc == null || !(pageDoc.get("XMLDocument") instanceof Document)) {
+			if (loadFromCache)
+				logger.error("Page not Found in the Cache for Page - " + next_page + "; loading it from the page source");
+			pageDoc = getHtmlDocMap(ctx, next_page);
+			if (loadFromCache && pageDoc != null && pageDoc.get("XMLDocument") instanceof Document)
+				CacheManager.put(next_page, pageDoc);
+		}
+
+		if (pageDoc == null || !(pageDoc.get("XMLDocument") instanceof Document))
+			throw new IllegalStateException("Unable to load HTML page - " + next_page);
+		return pageDoc;
 	}
 
 	public String getDocType(String htmlContent){
@@ -421,7 +527,7 @@ public class PageUtils {
 		}
 		catch (IOException e)
 		{
-			logger.debug("unable to parse the HTML Document"+ e );
+			logger.error("Unable to parse the HTML document", e);
 		}
 		finally{
 			if(out != null)
@@ -500,7 +606,7 @@ public class PageUtils {
 	     			
 	     			xml = new XMLOutputter(Format.getPrettyFormat()).outputString(xmlroot);
          		}catch (Exception e) {
-         			logger.debug("Unable to get data for " + replayid + " in " + ctx.get(Constants.INET_PAGE).toString()+".html" + " due to error : " + e.getMessage());
+				logger.error("Unable to get page data", e);
 				}
      		}
          	
@@ -546,7 +652,7 @@ public class PageUtils {
 		if(null!=stack1)
 		{
 			//ctx.putAll( stack1.getContext());
-			FormUtils.populateDynaKeys(request, ctx);
+			populateDynaKeysSafely(request, ctx);
 			FormUtils.populatePagination(request, ctx);
 			ctx.put(Constants.INET_PAGE, inetpage);
 		}
@@ -557,6 +663,7 @@ public class PageUtils {
 		Document document = null;
 		StringReader reader = null;
 		SAXBuilder builder = new SAXBuilder();
+		String sourceHtml = html;
 		try {
 			html = cleanContent(html);
 			reader = new StringReader(html);
@@ -564,10 +671,25 @@ public class PageUtils {
 			//reader.close();
 		}
 		catch(Exception e){
-			logger.debug("Unable to parse the html "+pageName);
+			logger.error("Strict XML parsing failed for " + pageName + "; using tolerant HTML parsing");
+			try {
+				Tidy tidy = new Tidy();
+				tidy.setQuiet(true);
+				tidy.setShowWarnings(false);
+				tidy.setXmlOut(false);
+				org.w3c.dom.Document dom = tidy.parseDOM(
+						new ByteArrayInputStream(sourceHtml.getBytes("UTF-8")),
+						new ByteArrayOutputStream());
+				if (dom != null && dom.getDoctype() != null)
+					dom.removeChild(dom.getDoctype());
+				document = dom == null ? null : new DOMBuilder().build(dom);
+			} catch(Exception fallbackException) {
+				logger.error("Unable to parse HTML " + pageName, fallbackException);
+			}
 		}
 		finally{
-			reader.close();
+			if(reader != null)
+				reader.close();
 		}
 		return document;
 	}
@@ -846,7 +968,7 @@ public class PageUtils {
 	    Context newCtx = new Context();
 	    try {
 	    	FormUtils.populateMultipartDynaKeysForBreadCrumb(req, newCtx);
-	  		FormUtils.populateDynaKeys(req, newCtx);
+			populateDynaKeysSafely(req, newCtx);
 		} catch (Exception e) {
 			logger.error("Unexpected error", e);
 		}
@@ -1273,7 +1395,7 @@ public class PageUtils {
 	    Context newCtx = new Context();
 	    try {
 	    	FormUtils.populateMultipartDynaKeysForBreadCrumb(req, newCtx);
-	  		FormUtils.populateDynaKeys(req, newCtx);
+			populateDynaKeysSafely(req, newCtx);
 		} catch (Exception e) {
 			logger.error("Unexpected error", e);
 		}

@@ -49,7 +49,7 @@ public class HttpClientFactory {
 
 		String restfulresponse = EntityUtils.toString(response.getEntity(), "UTF-8");
 
-		logger.debug(restfulresponse);
+		logger.debug("SharePoint folder response received");
 		//System.out.println(restfulresponse);		
 		//System.out.println("RequestLine " + httppost.getRequestLine());
 		//System.out.println("ProtocolVersion " +  response.getProtocolVersion());

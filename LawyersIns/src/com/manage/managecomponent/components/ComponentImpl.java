@@ -270,7 +270,7 @@ public class ComponentImpl extends Component {
 	            
 	    		logger.info("Bo execution done for ..... com.userbo.BeforeMetaObjectBO");
 	        }catch (Exception e) {
-				logger.debug("Problem in execution of BeforeMetaObject.BO bcoz of error : " + e.getMessage());
+				logger.error("Unable to execute BeforeMetaObject BO", e);
 				ctx.put(HtmlConstants.ISMETAOBJECTBOEXECUTED, "Y");
 			}
         }
@@ -672,7 +672,7 @@ public class ComponentImpl extends Component {
 				actionImpl.processRequest(ctx);
 			}
 		} catch (Exception e){
-			logger.debug("error occured processing the Multisave List "+e);
+			logger.error("Unable to process multisave list", e);
 		}
 	}
     

@@ -96,7 +96,7 @@ public class Rating {
 		try {
 			url = SystemProperties.getInstance().getString("appl.LawyersIns.webserviceurl");
 		} catch (Exception e) {
-
+			logger.error("Unable to read rating service URL", e);
 		}
 
 		if (url == null)
@@ -181,7 +181,7 @@ public class Rating {
 			url = SystemProperties.getInstance().getString(
 					"appl.LawyersIns.webserviceurl");
 		} catch (Exception e) {
-
+			logger.error("Unable to read rating service URL", e);
 		}
 
 		if (url == null)
@@ -1030,7 +1030,7 @@ public class Rating {
 			url = SystemProperties.getInstance().getString(
 					"appl.LawyersIns.webserviceurl");
 		} catch (Exception e) {
-
+			logger.error("Unable to read rating service URL", e);
 		}
 
 		if (url == null)
@@ -1417,7 +1417,6 @@ public class Rating {
 			logger.debug("Data Prepared for PolicyKey - " + ctx.get("PolicyKey"));
 			newCtx.clear();
 		} catch (Exception e) {
-			logger.debug("Exception in Method prepareDataForRatingEngine" + e.getMessage());
 			logger.error("Unexpected error", e);
 		}
 	}

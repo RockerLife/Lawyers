@@ -64,7 +64,7 @@ public class InetLogger extends Logger {
 	}
 
 	public void trace(Throwable e) {
-		logger1.error(e == null ? "Unexpected error" : e.getMessage(), e);
+		error(e == null ? "Unexpected error" : e.getMessage(), e);
 	}
 
 	public void writeToLog(String msg) {
@@ -99,9 +99,10 @@ public class InetLogger extends Logger {
 	public int ineterror(Object obj, String stackTrace, String projectName,
 			String session) {
 		int id = 0;
+		DataSourceAppender jdbc = null;
 
 		try {
-			DataSourceAppender jdbc = new DataSourceAppender(projectName);
+			jdbc = new DataSourceAppender(projectName);
 			jdbc.setThreshold(Priority.ERROR);
 			String sql = "%d{MM-dd-yyyy HH:mm:ss.sss}";
 
@@ -118,11 +119,15 @@ public class InetLogger extends Logger {
 			jdbc.setSql(sql);
 			addAppender(jdbc);
 			super.error(obj);
-			jdbc.close();
 
 			id = getLatestId(projectName);
 		} catch (Exception e) {
 			super.error("Unable to write application log", e);
+		} finally {
+			if (jdbc != null) {
+				removeAppender(jdbc);
+				jdbc.close();
+			}
 		}
 		return id;
 	}

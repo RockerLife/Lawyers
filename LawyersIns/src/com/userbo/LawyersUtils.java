@@ -110,6 +110,8 @@ public class LawyersUtils {
 	private static final String PROTEXURE_ESTIMATE_REVIEWER_RS_STATES = "CT#GA#FL#IL";
 	private static final String PROTEXURE_ESTIMATE_REVIEWER_QB_STATES = "CA#CO#IN#TX#WA#ID#AZ#MA#NJ#MN#WI#NV#PA#AK#KY#MT#ND#NM#SD#WY#MD#ME#NY#NH#VT#KS#VA#TN#UT#NC#SC#OH#MO#MI#AL#AR#HI#IA#MS#NE#OK#DE#DC#LA#WV#RI";
 	private static final String UNDERWRITING_RULE_PARAMS = "PolicyKey,AccountKey,AccountID,AddressKey,VersionSequence,PolicyStatusKey,LastUpdateUserID";
+	private static final String COMPANY_LOOKUP_CACHE_KEY = "__CompanyLookupCacheKey";
+	private static final String COMPANY_LOOKUP_CACHE_RESULT = "__CompanyLookupCacheResult";
 	private static final String[] UNDERWRITING_RULE_STATEMENTS = {
 			"rulepolicytransaction.UWRules_AboutYou_LW",
 			"rulepolicytransaction.UWRules_InsuranceHistory_LW",
@@ -1055,7 +1057,7 @@ public class LawyersUtils {
 			mailingOnOFF = SystemProperties.getInstance().getString(
 					"Insured.sendmail");
 		} catch (Exception e) {
-
+			logger.error("Unable to read insured mail setting", e);
 		}
 		if (mailingOnOFF != null && "Y".equals(mailingOnOFF)) {
 			String emailID = getEmailID(ctx);
@@ -2206,7 +2208,6 @@ public class LawyersUtils {
 					"Attorney list is empty, atleast one record is required.");
 		}
 
-		logger.debug(ctx.get(Constants.INET_ERRORS_LIST));
 	}
 
 	public static boolean validateFinancialInst(Context ctx) throws Exception {
@@ -2980,7 +2981,6 @@ public class LawyersUtils {
 		
 		if ("N".equals(productionEnv)){
 			emailID = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".admin.email");
-			logger.debug("email id------->"+emailID);
 		} else { 
 			if (ctx.get("AccountEmail") != null)
 			emailID = ctx.get("AccountEmail").toString();
@@ -3449,7 +3449,7 @@ public class LawyersUtils {
 			if (objFirm instanceof List) {
 				objFirmList = (List) objFirm;
 			}
-			if (!objFirmList.isEmpty() && objFirmList != null) {
+			if (objFirmList != null && !objFirmList.isEmpty()) {
 				for (int i = 0; i < objFirmList.size(); i++) {
 					Map objAttorney = (Map) objFirmList.get(i);
 					String state = (String) objAttorney.get("LicensedStates");
@@ -3521,7 +3521,7 @@ public class LawyersUtils {
 				objPrimaryLocList = (List) objPriLoc;
 			}
 
-			if (!objPrimaryLocList.isEmpty() && objPrimaryLocList != null) {
+			if (objPrimaryLocList != null && !objPrimaryLocList.isEmpty()) {
 
 				for (int i = 0; i < objPrimaryLocList.size(); i++) {
 
@@ -3648,6 +3648,11 @@ public class LawyersUtils {
 					&& attorneyDetailListMap instanceof List) {
 
 				attorneyList = (List) attorneyDetailListMap;
+			}
+
+			if (attorneyList == null || attorneyList.isEmpty()) {
+				ctx.put("isRatioGreater", "N");
+				return;
 			}
 
 			int size = attorneyList.size();
@@ -4676,7 +4681,7 @@ public class LawyersUtils {
 			SimpleDateFormat sdf = new SimpleDateFormat(format);
 		    strDate = sdf.format(cal.getTime());
 		} catch (Exception e){
-			logger.debug("Exception in date format");
+			logger.error("Unable to format date", e);
 		}
 	    return strDate;    
 
@@ -6446,7 +6451,7 @@ public class LawyersUtils {
 							"appl." + ctx.getProject()
 									+ ".Insured.SendIssuedEmail");
 		} catch (Exception e) {
-
+			logger.error("Unable to read issued-policy mail setting", e);
 		}
 		if ("Y".equals(isIssuedMailSendToInsured)) {
 
@@ -6535,7 +6540,6 @@ public class LawyersUtils {
 		
 		boolean oldFlow = false,newFlow=false;
 		Object obj=null;
-		logger.debug("renew policy----" + ctx.get("RenewPolicy_Data"));
 		try
 		{
 	/*	Object oldObj = RuleUtils.executeRule(ctx, "LawyersRule.isOldAppFlowRenewal");			
@@ -6677,7 +6681,7 @@ public class LawyersUtils {
 			mailingOnOFF = SystemProperties.getInstance().getString(
 					"Insured.sendmail");
 		} catch (Exception e) {
-
+			logger.error("Unable to read insured mail setting", e);
 		}
 		if (mailingOnOFF != null && "Y".equals(mailingOnOFF)) {
 			// String emailID = LawyersUtils.getEmailID(ctx);
@@ -6721,7 +6725,7 @@ public class LawyersUtils {
 						"mail.subproducer.address");
 			}
 		} catch (Exception e) {
-			logger.debug("Exception in getProducerEmailID " + e);
+			logger.error("Unable to resolve producer email", e);
 		}
 
 		return producerEmailId;
@@ -6952,7 +6956,6 @@ public class LawyersUtils {
 		if ("".equals(emailID))
 			return;
 		
-		logger.debug(" - - - Sending Sign and Pay Email to - - - " + emailID);
 		MailSender mail = new MailSender();
 		mail.setToAdd(emailID);
 		mail.setCcAdd(getFirstReviewerAgentEmailID(ctx));
@@ -6976,7 +6979,7 @@ public class LawyersUtils {
 			mailingOnOFF = SystemProperties.getInstance().getString(
 					"Insured.sendmail");
 		} catch (Exception e) {
-
+			logger.error("Unable to read insured mail setting", e);
 		}
 		if (mailingOnOFF != null && "Y".equals(mailingOnOFF)) {
 			String emailID = getSubProducerEmailID(ctx);
@@ -7198,10 +7201,6 @@ public String generateSignAndPayMailBodyforSubProducer(IContext ctx) throws Exce
 	
 	public static void testval(IContext ctx) throws Exception{
 		
-		logger.debug(ctx.get("QuoteNumber_admin"));
-		logger.debug(ctx.get("StateCode"));
-		logger.debug(ctx.get("CountyDesc"));
-		logger.debug(ctx.get("City"));
 		
 				
 		boolean isValidQN = false;        
@@ -7441,7 +7440,6 @@ public String generateSignAndPayMailBodyforSubProducer(IContext ctx) throws Exce
 				} 
 				else
 					to_role_desc=getInsuredAccountEmail(ctx);
-				logger.debug("going to send Cyber email to insured at following email id: "+to_role_desc);
 				
 			}
 			else
@@ -7482,7 +7480,6 @@ public String generateSignAndPayMailBodyforSubProducer(IContext ctx) throws Exce
 					if(attachments!=null && attachments.size()>0)
 					mailSender.setAttachments(attachments);
 					mailSender.sendMail(ctx);
-					logger.debug(ctx.get("email_notification_event_name")+"\tMail Sent for Policy----> "+ ctx.get("PolicyKey"));
 					ctx.remove("email_notification_event_name");
 				}
 		}catch(Exception e)
@@ -7631,7 +7628,6 @@ public String generateSignAndPayMailBodyforSubProducer(IContext ctx) throws Exce
     }
     }
     public static void fetchFirstReviewer(Context ctx) {
-    	logger.debug(ctx.get("LastUpdateUserID")+"..."+ctx.get("FirstReviewUserID")+"..."+ctx.get("UserNo"));
     	try {
 			SqlResources.getSqlMapProcessor(ctx).update("SqlStmts.UserStatementManualBoQueriesupdateModiferRenewFirm", ctx);
 		} catch (Exception e) {
@@ -7711,7 +7707,7 @@ public String generateSignAndPayMailBodyforSubProducer(IContext ctx) throws Exce
 				ctx.put("IsNewFiling", "N");
 			
 		    }catch(Exception e){
-		    	
+				logger.error("Unable to determine rating flow", e);
 		    }    	
     }
     public static void removeAttorneys(Context ctx)
@@ -7976,7 +7972,7 @@ public String generateSignAndPayMailBodyforSubProducer(IContext ctx) throws Exce
     	}
     	}
         catch(Exception e){
-        	logger.debug("Error in converting list to xml");
+		logger.error("Unable to convert list to XML", e);
         	ctx.put("skipSave","Y");
         }
     }
@@ -8197,7 +8193,7 @@ public static Object convertListDataToXML(Context ctx,String inputListName,Strin
 		        }
 	    	}
 	        catch(Exception e)
-	        {logger.debug("Error in converting list to xml");}
+	        {logger.error("Unable to convert list to XML", e);}
 	    }
 	 
 	 public static void validateBankruptcySupplement(Context ctx)
@@ -8349,7 +8345,7 @@ public static Object convertListDataToXML(Context ctx,String inputListName,Strin
 	    	}
 	        catch(Exception e)
 	        {
-	        	logger.debug("Error in converting list to xml");
+			logger.error("Unable to convert list to XML", e);
 	        	
 	        }
 	   }
@@ -8390,7 +8386,7 @@ public static Object convertListDataToXML(Context ctx,String inputListName,Strin
 	    	}
 	        catch(Exception e)
 	        {
-	        	logger.debug("Error in converting list to xml");
+			logger.error("Unable to convert list to XML", e);
 	        	
 	        }
 	   }
@@ -8464,7 +8460,7 @@ public static Object convertListDataToXML(Context ctx,String inputListName,Strin
 		 }
 		 catch(Exception e)
 		 {
-			 
+			 logger.error("Unable to validate page completion", e);
 		 }
 	 }
 	 
@@ -8659,6 +8655,7 @@ public static Object convertListDataToXML(Context ctx,String inputListName,Strin
 							dstId = LawyersUtils.getEmailID(ctx);
 						}
 					} catch (Exception e) {
+						logger.error("Unable to resolve notification recipient", e);
 					}
 				} else {
 					dstId = LawyersUtils.getEmailID(ctx);
@@ -9166,7 +9163,7 @@ public static Object convertListDataToXML(Context ctx,String inputListName,Strin
 	    	}
 	        catch(Exception e)
 	        {
-	        	logger.debug("Error in converting list to xml");
+			logger.error("Unable to convert list to XML", e);
 	        	
 	        }
 	 }
@@ -9406,29 +9403,19 @@ public static Object convertListDataToXML(Context ctx,String inputListName,Strin
 			if(newCtx.get("IsPolicyCreatedNew") == null || (newCtx.get("IsPolicyCreatedNew") != null && "N".equals(newCtx.get("IsPolicyCreatedNew").toString()))){
 				
 				Object objPolicy = SqlResources.getSqlMapProcessor(newCtx).findByKey("Policy.findByKey", newCtx);
-				 Map  mapPolicy = null;
-				 if(objPolicy != null)
-					 mapPolicy = (Map) objPolicy;
+				 Map  mapPolicy = objPolicy instanceof Map ? (Map) objPolicy : new HashMap();
 				 
 				 Object objFirmLW = SqlResources.getSqlMapProcessor(newCtx).findByKey("FirmLW.findByKey", newCtx);
-				 Map  mapFirmLW = null;
-				 if(objFirmLW != null)
-					 mapFirmLW = (Map) objFirmLW;
+				 Map  mapFirmLW = objFirmLW instanceof Map ? (Map) objFirmLW : new HashMap();
 				 
 				 Object objAccount = SqlResources.getSqlMapProcessor(newCtx).findByKey("SqlStmts.indicationinjackviewgetAccountData", newCtx);
-				 Map  mapAccount = null;
-				 if(objAccount != null)
-					 mapAccount = (Map) objAccount;
+				 Map  mapAccount = objAccount instanceof Map ? (Map) objAccount : new HashMap();
 				 
 				 Object objAddress = SqlResources.getSqlMapProcessor(newCtx).findByKey("SqlStmts.indicationinjackviewgetAddressdetails", newCtx);
-				 Map  mapAddress = null;
-				 if(objAddress != null)
-					 mapAddress = (Map) objAddress;
+				 Map  mapAddress = objAddress instanceof Map ? (Map) objAddress : new HashMap();
 				 
 				 Object objPriorActDateProssDetails = SqlResources.getSqlMapProcessor(newCtx).findByKey("SqlStmts.indicationinjackviewgetPriorActDateProssDetails", newCtx);
-				 Map  mapPriorActDateProssDetails = null;
-				 if(objPriorActDateProssDetails != null)
-					 mapPriorActDateProssDetails = (Map) objPriorActDateProssDetails;
+				 Map  mapPriorActDateProssDetails = objPriorActDateProssDetails instanceof Map ? (Map) objPriorActDateProssDetails : new HashMap();
 				 
 				 //To check Account changes
 				 if(!mapAccount.isEmpty()){	
@@ -10110,6 +10097,7 @@ public static Object convertListDataToXML(Context ctx,String inputListName,Strin
 			try {
 				url = SystemProperties.getInstance().getString("appl.LawyersIns.webserviceurl");
 			} catch (Exception e) {
+				logger.error("Unable to read rating service URL", e);
 			}
 
 			if (url == null)
@@ -10152,6 +10140,7 @@ public static Object convertListDataToXML(Context ctx,String inputListName,Strin
 					
 				} 
 				catch (Exception e) {
+					logger.error("Unable to resolve notification recipient", e);
 				}
 			} else {
 				dstId = LawyersUtils.getEmailID(ctx);
@@ -10747,7 +10736,6 @@ public static Object convertListDataToXML(Context ctx,String inputListName,Strin
 						ctx.put("Account_Name", "");
 			        	xmlDataString = createZohoUpdateJsonObjectOfPotentials(ctx, keyList, keyValue, ownerMap);
 			        	if(!xmlDataString.isEmpty()){
-			    	        logger.debug("update   " + xmlDataString);
 			    	        updateRecordsIntoZOHODataOfPotentials(ctx, xmlDataString, zohoPotentialsID, "NO");
 			    	    }
 			        	flag = false;
@@ -10762,7 +10750,6 @@ public static Object convertListDataToXML(Context ctx,String inputListName,Strin
 				ctx.put("AccountZohoID", zohoAccountID);
 		    	xmlDataString = createZohoUpdateJsonObjectOfPotentials(ctx, keyList, keyValue, ownerMap);
 	        	if(!xmlDataString.isEmpty()){
-			        logger.debug("Insert   " + xmlDataString);
 			        insertRecordsIntoZOHODataOfPotentials(ctx,xmlDataString); 
 	        	}
 	        }
@@ -11242,7 +11229,6 @@ public static Object convertListDataToXML(Context ctx,String inputListName,Strin
 			ctx.put("id",zohoAccountID);
 			xmlDataString = createZohoUpdateXML(ctx, keyList, keyValue);
 			if(!xmlDataString.isEmpty()){
-		        logger.debug("update   " + xmlDataString);
 		    	boolean result = updateRecordsIntoZOHOData(ctx, xmlDataString,zohoAccountID, "NO", isZohoInsert);
 		    	if(!result){
 		    		zohoAccountID = "";
@@ -11265,7 +11251,6 @@ public static Object convertListDataToXML(Context ctx,String inputListName,Strin
 						ctx.put("id",zohoAccountID);
 						xmlDataString = createZohoUpdateXML(ctx, keyList, keyValue);
 		    			if(!xmlDataString.isEmpty()){
-		    		        logger.debug("update   " + xmlDataString);
 		    		    	updateRecordsIntoZOHOData(ctx, xmlDataString,zohoAccountID, "YES", isZohoInsert);
 		    		    }
     		        	flag = false;
@@ -11277,7 +11262,6 @@ public static Object convertListDataToXML(Context ctx,String inputListName,Strin
 		    	ctx.put("id",zohoAccountID);
 				xmlDataString = createZohoUpdateXML(ctx, keyList, keyValue);
 				if(!xmlDataString.isEmpty()){
-			        logger.debug("Insert   " + xmlDataString);
 			        zohoAccountID = insertRecordsIntoZOHOData(ctx,xmlDataString);
 			        ctx.put("isNameClearanceRequired", "N"); 
 				}
@@ -11551,8 +11535,9 @@ public static Object convertListDataToXML(Context ctx,String inputListName,Strin
 			        	        try {
 			        	            Date date = inSDF.parse(effectiveDate);
 			        	            outDate = outSDF.format(date);
-			        	        } catch (Exception ex){ 
-			        	        }
+			        } catch (Exception ex){
+								logger.error("Unable to parse Zoho effective date", ex);
+			        }
 				        	    
 				        		ctx.put("PolicyEffectiveDate",outDate);
 //				        	} else {
@@ -11852,8 +11837,9 @@ public static Object convertListDataToXML(Context ctx,String inputListName,Strin
 			        	        try {
 			        	            Date date = inSDF.parse(effectiveDate);
 			        	            outDate = outSDF.format(date);
-			        	        } catch (Exception ex){ 
-			        	        }
+			        } catch (Exception ex){
+								logger.error("Unable to parse Zoho effective date", ex);
+			        }
 				        	    
 				        		ctx.put("PolicyEffectiveDate",outDate);
 				        	}
@@ -11989,7 +11975,7 @@ public static void reatinAddedAops(Context ctx)
 	}
 	catch(Exception e)
 	{
-		logger.debug("problem occured in retainingAop method");
+		logger.error("Unable to retain AOP data", e);
 	}
 }
 
@@ -12000,7 +11986,7 @@ public void sendMailForSubproducerFlow(IContext ctx) throws Exception {
 		mailingOnOFF = SystemProperties.getInstance().getString(
 				"Insured.sendmail");
 	} catch (Exception e) {
-
+		logger.error("Unable to read insured mail setting", e);
 	}
 	if (mailingOnOFF != null && "Y".equals(mailingOnOFF)) {
 		String emailID = getSubProducerEmailID(ctx);
@@ -12164,7 +12150,7 @@ public  String generateThanksLetterBodySubProducerFlow(IContext ctx) throws Exce
 	                logger.debug("Could not convert image.");
 	            }
 	        } catch (IOException ex) {
-	            logger.debug("Error during converting image.");
+	            logger.error("Unable to convert image", ex);
 	            logger.error("Unexpected error", ex);
 	        }
 	        filedlt=new File(fileName);
@@ -12172,7 +12158,7 @@ public  String generateThanksLetterBodySubProducerFlow(IContext ctx) throws Exce
 			}
 			
 		}catch(Exception e){
-			logger.debug("Error in ImageDownload For QuoteLetter");
+			logger.error("Unable to download quote letter image", e);
 			logger.error("Error in ImageDownload For QuoteLetter"	+ e.getMessage());
 			logger.error("Unexpected error", e);
 		} finally {
@@ -12329,8 +12315,8 @@ public  String generateThanksLetterBodySubProducerFlow(IContext ctx) throws Exce
 	{
 		try
 		{
-			String pNumber=ctx.get("SubProducer")!=null && !ctx.get("SubProducer").equals(HtmlConstants.EMPTY) ?ctx.get("SubProducer").toString():"";
-		if(!"".equals(pNumber))
+			String pNumber=ctx.get("SubProducer")!=null && !ctx.get("SubProducer").equals(HtmlConstants.EMPTY) ?ctx.get("SubProducer").toString().trim():"";
+		if(!"".equals(pNumber) && !"SPACE".equalsIgnoreCase(pNumber))
 		{
 			HttpServletRequest req = (HttpServletRequest)ctx.get("DocumentRequest");
 	        HttpSession sess = req.getSession();
@@ -12341,7 +12327,7 @@ public  String generateThanksLetterBodySubProducerFlow(IContext ctx) throws Exce
 		}
 		catch(Exception e)
 		{
-			
+			logger.error("Unable to decrypt policy number", e);
 		}
 	}
 	public  void decryptPolicyNumber(IContext ctx)
@@ -12369,7 +12355,8 @@ public  String generateThanksLetterBodySubProducerFlow(IContext ctx) throws Exce
 				
 			}
 			String pNumber=ctx.get("SubProducer")!=null && !ctx.get("SubProducer").equals(HtmlConstants.EMPTY) ?ctx.get("SubProducer").toString():"";
-			if(!"".equals(pNumber))
+			pNumber = pNumber.trim();
+			if(!"".equals(pNumber) && !"SPACE".equalsIgnoreCase(pNumber))
 			{
 				HttpServletRequest req = (HttpServletRequest)ctx.get("DocumentRequest");
 		        HttpSession sess = req.getSession();
@@ -12377,6 +12364,12 @@ public  String generateThanksLetterBodySubProducerFlow(IContext ctx) throws Exce
 		        String decryptPnumber=new LawyersValidationUtils().decrypt(pNumber);
 				ctx.put("SubProducer",decryptPnumber );
 					}
+			else
+			{
+				// Direct application links do not include a sub-producer.  The JSP
+				// uses SPACE as its placeholder; do not try to decrypt that marker.
+				ctx.put("SubProducer", "");
+			}
 		}
 		catch(IllegalArgumentException e)
 		{
@@ -13145,7 +13138,7 @@ public  String generateThanksLetterBodySubProducerFlow(IContext ctx) throws Exce
 		}
 		catch(Exception e)
 		{
-			logger.debug("execption occured in validatePolicyExtensionDate method :"+e);
+			logger.error("Unable to validate policy extension date", e);
 		}
 	}
 	
@@ -13233,7 +13226,7 @@ public  String generateThanksLetterBodySubProducerFlow(IContext ctx) throws Exce
 			
 			}
 		}catch (Exception e) {
-			logger.debug("Error in validate Subproducer Form Completion" + e.getMessage());
+			logger.error("Unable to validate subproducer form completion", e);
 			logger.error("Unexpected error", e);
 		}
 		
@@ -13269,7 +13262,7 @@ public  String generateThanksLetterBodySubProducerFlow(IContext ctx) throws Exce
 				}
 			}
 		} catch (Exception e) {
-			logger.debug("Error in validate Subproducer Form Completion file process" + e.getMessage());
+			logger.error("Unable to process subproducer form completion", e);
 			logger.error("Unexpected error", e);
 		}
 	}
@@ -13317,7 +13310,7 @@ public  String generateThanksLetterBodySubProducerFlow(IContext ctx) throws Exce
 			mailingOnOFF = SystemProperties.getInstance().getString(
 					"Insured.sendmail");
 		} catch (Exception e) {
-
+			logger.error("Unable to read insured mail setting", e);
 		}
 		if (mailingOnOFF != null && "Y".equals(mailingOnOFF)) {
 			String emailID = getSubProducerEmailID(ctx);
@@ -13642,7 +13635,7 @@ public  String generateThanksLetterBodySubProducerFlow(IContext ctx) throws Exce
 				}
 	    	}
 	        catch(Exception e){
-	        	logger.debug("Error in converting list to xml");
+			logger.error("Unable to convert list to XML", e);
 	        	ctx.put("skipSave","Y");
 	        }
 	    }
@@ -13801,7 +13794,7 @@ public static void saveEndorsedAttornies(Context ctx)
         }
 	}
     catch(Exception e){
-    	logger.debug("Error in converting list to xml");
+		logger.error("Unable to convert list to XML", e);
     	ctx.put("skipSave","Y");
     }
 }
@@ -13815,7 +13808,7 @@ public static void setAttorniesForDeleteEndorsement(Context ctx)
 		
 	}
     catch(Exception e){
-    	logger.debug("Error in converting list to xml");
+		logger.error("Unable to convert list to XML", e);
     	ctx.put("skipSave","Y");
     }
 }
@@ -13870,7 +13863,7 @@ public static void saveAttorniesForDeleteEndorsement(Context ctx)
 		        }
 		}
 	    catch(Exception e){
-	    	logger.debug("Error in converting list to xml");
+		logger.error("Unable to convert list to XML", e);
 	    	ctx.put("skipSave","Y");
 	    }
 	}	
@@ -14012,7 +14005,6 @@ public static void sendSubProducerCodeandAccess(IContext ctx) {
 //			ctx.put("pagenumber",pagenumberI);
 		}catch(Exception e){
 			logger.error("Unexpected error", e);
-			logger.debug("In setRecordsListPre method logging erorr " + e.getMessage());
 		}
 	}
 	public static void setRecordsListPost(IContext ctx){//recordsperpage  pagenumber
@@ -14057,7 +14049,6 @@ public static void sendSubProducerCodeandAccess(IContext ctx) {
 		}
 		
 		ctx.put("Search_firm_list_01",attorneyListNew);
-		System.gc();
 	}
 	
 	public static void lawyerLoggingStart(IContext ctx){
@@ -14071,7 +14062,6 @@ public static void sendSubProducerCodeandAccess(IContext ctx) {
 	    Date date = new Date();  
 	    logger.debug(formatter.format(date));
 		logger.debug("In " + ctx.get("loggingMethod") + " component logging end " + formatter.format(date));
-		System.gc();
 	}
 	
 	public static void validateAOPPercentageQucikQuote(Context ctx) throws Exception {
@@ -14140,7 +14130,6 @@ public static void sendSubProducerCodeandAccess(IContext ctx) {
 		catch (Exception e) 
 		{
 			logger.error("error in getting ProducerEmail method "+e.getMessage());
-			logger.debug("error in getting ProducerEmail method "+ e.toString());
 		}
 		return ccAddress;
 	}
@@ -14157,7 +14146,6 @@ public static void sendSubProducerCodeandAccess(IContext ctx) {
 		}
 		if ("N".equals(productionEnv)){
 			emailID = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".adminsub.email");
-		logger.debug("Subprodemail id------->"+emailID);
 		}
 		else{ 
 			if (ctx.get("AccountEmail") != null)
@@ -14195,7 +14183,6 @@ public static void sendSubProducerCodeandAccess(IContext ctx) {
 		catch (Exception e) 
 		{
 			logger.error("error in getting ProducerEmail method "+e.getMessage());
-			logger.debug("error in getting ProducerEmail method "+ e.toString());
 		}
 		return ccAddress;
 	}
@@ -14434,7 +14421,7 @@ public static void mergeAccounts(Context ctx)
 		    					new SetParametersForStoredProcedures().setParametersInContext(ctx, "PolicyKey,newAccountID,oldAccountID,UserNo");
 		    					SqlResources.getSqlMapProcessor(ctx).update("Policy.UpdateAccountIdLW_p",ctx);
 		    				} catch (Exception e) {
-		    					logger.debug("exception occured while updating account ids "+e);
+					logger.error("Unable to update account IDs", e);
 		    					logger.error("Unexpected error", e);
 		    				}
 		        		}
@@ -14444,7 +14431,7 @@ public static void mergeAccounts(Context ctx)
 	}
 	catch(Exception e)
 	{
-		logger.debug("exception occured while merging accounts :"+e);
+		logger.error("Unable to merge accounts", e);
 		logger.error("Unexpected error", e);
 	}
 }
@@ -14508,7 +14495,7 @@ public static void validateAccountManagement(Context ctx)
 		}
 		
 	} catch (Exception e) {
-		logger.debug("error occured while validating Account management data");
+		logger.error("Unable to validate account management data", e);
 		logger.error("Unexpected error", e);
 	}
 	
@@ -14565,7 +14552,7 @@ try
 }
 catch(Exception e)
 {
-logger.debug("error occured while population Accounts list data "+e);
+logger.error("Unable to populate account list data", e);
 }
 }
 
@@ -14633,7 +14620,7 @@ public static void processFinanceData(IContext ctx){
 		  }
 		  catch(Exception e)
 		  {
-			  logger.debug("error occued while comparing dates : "+e);
+			  logger.error("Unable to compare dates", e);
 			  logger.error("Unexpected error", e);
 			  return 5;
 		  }
@@ -14645,7 +14632,6 @@ public static void insertDataForCopiedPolicy(Context ctx) throws Exception {
 		
 		boolean oldFlow = false,newFlow=false;
 		Object obj=null;
-		logger.debug("Copied policy----" + ctx.get("CopyPolicyData_list"));
 	
 		 obj = ctx.get("CopyPolicyData_list");
 		
@@ -14787,7 +14773,7 @@ public static void generateReportSheet(Context ctx, String sheetName, List list,
 	        workbook.write(fileOut);
 	       
 	} catch (Exception e) {
-		logger.debug("Problem in writing in file " + path + " " + e.getMessage());
+		logger.error("Unable to write file", e);
 	}
 	
 }
@@ -14808,7 +14794,7 @@ public static void decrytPolicyKeyFromDB(Context context)
 			context.put("moduleName", "Requote");
 	}
 	catch(Exception e)
-	{}
+	{ logger.error("Unable to prepare requote policy", e); }
 
 }
 public static void displayEndorsementOptions(Context ctx)
@@ -14906,7 +14892,7 @@ public  void calculateClaimAgeRequote(Context ctx) throws Exception {
 		}
 		catch(Exception e)
 		{
-			logger.debug("Got exception while uploading report");
+			logger.error("Unable to upload report", e);
 		} finally{
 			if(!filePath.isEmpty())
 				LawyersUtilities.fileDelete(uploaddirectory, filePath);
@@ -15022,13 +15008,13 @@ public  void calculateClaimAgeRequote(Context ctx) throws Exception {
 		{
 			String producerCode=null;
 			List transactionDetails = SqlResources.getSqlMapProcessor(ctx).select("SqlStmts.UserStatementManualBoQueriesgetProducerCodeForPolicy",ctx);
-			if(transactionDetails!=null && transactionDetails instanceof List )
+			if(transactionDetails != null && !transactionDetails.isEmpty() && transactionDetails.get(0) instanceof Map)
 			{
 				dataMap=(Map) transactionDetails.get(0);
 				 producerCode=dataMap.get("ProducerCode")!=null?dataMap.get("ProducerCode").toString():"";
 			}
 			String onholdProducerCode=SystemProperties.getInstance().getString("appl.LawyersIns.onhold.ProducerCode");
-			if(producerCode.equals(onholdProducerCode))
+			if(onholdProducerCode != null && onholdProducerCode.equals(producerCode))
 			{
 			populateError(ctx, "policyInsuranceValidation","The Sub-Producer Number is not valid for policy issuance.");
 			errorFlag=true;
@@ -15036,7 +15022,7 @@ public  void calculateClaimAgeRequote(Context ctx) throws Exception {
 		}
 		catch(Exception e)
 		{
-			logger.error("Exception occured in validateProtexureHoldSubproducer method");
+			logger.error("Exception occured in validateProtexureHoldSubproducer method", e);
 		}
 		return errorFlag;
 	}
@@ -15164,7 +15150,7 @@ public  void calculateClaimAgeRequote(Context ctx) throws Exception {
 		}
 		catch(Exception e)
 		{
-			logger.debug("Got exception while uploading report");
+			logger.error("Unable to upload report", e);
 		} finally{
 			if(!filePath.isEmpty())
 				LawyersUtilities.fileDelete(uploaddirectory, filePath);
@@ -15703,7 +15689,7 @@ public static void getBrokerPolicyDetails(Context ctx)
 		
 		}
 		catch(Exception e)
-		{}
+		{ logger.error("Unable to evaluate brokerage policy display", e); }
 	}
 	
 	public static void setBrokerageRecordsListPre(IContext ctx){//recordsperpage  pagenumber
@@ -15756,7 +15742,6 @@ public static void getBrokerPolicyDetails(Context ctx)
 //			ctx.put("pagenumber",pagenumberI);
 		}catch(Exception e){
 			logger.error("Unexpected error", e);
-			logger.debug("In setBrokerageRecordsListPre method logging erorr " + e.getMessage());
 		}
 	}
 	public static void setBrokerageRecordsListPost(IContext ctx){//recordsperpage  pagenumber
@@ -15801,7 +15786,6 @@ public static void getBrokerPolicyDetails(Context ctx)
 		}
 		
 		ctx.put("BrokeragePolicyList_list_01",brokeragePolicyListNew);
-		System.gc();
 	}
 	
 	public static void saveUpdateBrokeragePolicyDetails(Context ctx)
@@ -16121,18 +16105,42 @@ public static boolean validateIfPolicynumberExists(Context ctx)
 public static void setCompanyForPolicy(Context ctx) throws Exception 
 {
 	try {
-			
-				
-		 new SetParametersForStoredProcedures().setParametersInContext(ctx, "StateCode,MarketableProductKey,PolicyEffectiveDate");
+		new SetParametersForStoredProcedures().setParametersInContext(ctx, "StateCode,MarketableProductKey,PolicyEffectiveDate");
+		String lookupKey = companyLookupKey(ctx);
+		if (restoreCompanyLookup(ctx, lookupKey))
+			return;
+
+		ctx.remove("CompanyKey");
+		ctx.remove("CompanyAsPerState");
 		Object obj = SqlResources.getSqlMapProcessor(ctx).findByKey("Policy.GetCompanyList_p", ctx);
 		if (obj != null && obj instanceof Map) {
 			Map objMap = (Map) obj;
 			ctx.putAll(objMap);
+			cacheCompanyLookup(ctx, lookupKey, objMap);
 		}
 	} catch(Exception e) {
 		logger.error("Unexpected error", e);
-		logger.debug("error occured while settong up company :"+e);
 	}
+}
+
+static String companyLookupKey(Context ctx) {
+	return String.valueOf(ctx.get("StateCode")) + "|"
+			+ String.valueOf(ctx.get("MarketableProductKey")) + "|"
+			+ String.valueOf(ctx.get("PolicyEffectiveDate"));
+}
+
+static boolean restoreCompanyLookup(Context ctx, String lookupKey) {
+	Object cachedResult = ctx.get(COMPANY_LOOKUP_CACHE_RESULT);
+	if (!lookupKey.equals(ctx.get(COMPANY_LOOKUP_CACHE_KEY)) || !(cachedResult instanceof Map))
+		return false;
+
+	ctx.putAll((Map) cachedResult);
+	return true;
+}
+
+static void cacheCompanyLookup(Context ctx, String lookupKey, Map result) {
+	ctx.put(COMPANY_LOOKUP_CACHE_KEY, lookupKey);
+	ctx.put(COMPANY_LOOKUP_CACHE_RESULT, new HashMap(result));
 }
 
 public static void executeUnderwritingRules(Context ctx)
@@ -16176,20 +16184,14 @@ public static boolean validatePolicyIssuanceForCompany(Context ctx) throws Excep
 				statusKey=11;
 			if(statusKey==9 || statusKey==10 || statusKey==3 || statusKey==7 || statusKey==11 )
 			{
-				int comapnyKey=0;	
-				 new SetParametersForStoredProcedures().setParametersInContext(ctx, "StateCode,MarketableProductKey,PolicyEffectiveDate");
-				Object obj = SqlResources.getSqlMapProcessor(ctx).findByKey("Policy.GetCompanyList_p", ctx);
-				if (obj != null && obj instanceof Map) {
-					Map objMap = (Map) obj;
-					comapnyKey=objMap.get("CompanyKey")!=null? Integer.parseInt(objMap.get("CompanyKey").toString()):0;
-				}
+				setCompanyForPolicy(ctx);
+				int companyKey=ctx.get("CompanyKey")!=null? Integer.parseInt(ctx.get("CompanyKey").toString()):0;
 			
-				if(comapnyKey==3)
+				if(companyKey==3)
 					result=true;
 			}
 	} catch(Exception e) {
 		logger.error("Unexpected error", e);
-		logger.debug("error occured while settong up company :"+e);
 	}
 	return result;
 }
@@ -16217,7 +16219,7 @@ public static String getInsuredAccountEmail(Context ctx)
 	
 	}
 	catch(Exception e)
-	{logger.debug("Error occured while  fetching insured AccountEmail");}
+	{logger.error("Unable to fetch insured account email", e);}
 	return emailID;
 }
 
@@ -16246,7 +16248,7 @@ public static boolean isApplicationNotCompletlyFilled(Context ctx)
 	 }
 	 catch(Exception e)
 	 {
-		 logger.debug("Error occured while validating application for completion in complete app link");
+		 logger.error("Unable to validate application completion", e);
 	 }
 	 
 	 return isAppNotCompleted;
@@ -16350,14 +16352,13 @@ public void sendAutoQuoteMail(IContext ctx) {
 		try{
 			LawyersUtils.updateZOHORecords((Context) ctx);
 		} catch(Exception e) {
-			logger.debug("Exception occured during ZOHO update "+e);
-			logger.debug("Exception occured during ZOHO update Issue "+e);
+			logger.error("Unable to update ZOHO record", e);
 		}
 	
 	}
 	catch(Exception e)
 	{
-		logger.debug("exception occured while sending Auto quote email for "+ctx.get("PolicyKey")+"\t"+e.getMessage());
+		logger.error("Unable to send auto-quote email", e);
 	}
 
 }
@@ -16475,7 +16476,6 @@ public static void saveProtexureFormAttorneysData(Context ctx)
 			LawyersUtils.convertListDataToXML(newCtx, "inputList", "outputList");
 			ctx.put("outputList1", newCtx.get("outputList"));
 		}
-		logger.debug(ctx.get("outputList1"));
 	}
     catch(Exception e)
     {logger.error("exception occured while saving Estimate form attorneys" + e.getMessage());
@@ -16636,12 +16636,11 @@ public static void saveProtexureFormAOP(Context ctx)
 		newCtx.put("inputList", inputList);
 		LawyersUtils.convertListDataToXML(newCtx, "inputList", "outputList");
 		ctx.put("outputList", newCtx.get("outputList"));
-		logger.debug(ctx.get("outputList"));
 
 	}
 	catch(Exception e)
 	{
-		logger.debug("problem occured in retainingAop method" + e.getMessage());
+		logger.error("Unable to retain AOP data", e);
 	}
 }
 
@@ -16692,7 +16691,6 @@ private static void sendProtexureEstimateValidationErrorForm(Context ctx) {
 		}
 		if ("N".equals(productionEnv)){
 			emailID = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".admin.email");
-			logger.debug("email id------->"+emailID);
 		} else {
 			String forDirectFRRS = SystemProperties.getInstance().getString("appl.LawyersIns.zoho.fordirectrenew.firstreviewer.RS");
 			String forDirectFRQB = SystemProperties.getInstance().getString("appl.LawyersIns.zoho.fordirectnew.firstreviewer.QB");
@@ -16999,7 +16997,7 @@ public static void saveCarrearCoverageAttorneys(Context ctx)
 	    }
 	}
     catch(Exception e){
-    	logger.debug("Error in converting list to xml");
+		logger.error("Unable to convert list to XML", e);
     	ctx.put("skipSave","Y");
     }
 }
