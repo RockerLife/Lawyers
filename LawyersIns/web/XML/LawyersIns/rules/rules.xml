@@ -2694,7 +2694,7 @@
 		<rule id="isCertificateEmailNotSent" expression="isNot(isEqual(:isEmailSent,Y))"/>
 		<rule id="isDeleteAttorneyEndorsement" expression="isEqual(:endorsementType,deleteAttorneyEndorsement)"/>
 		<rule id="isEmptyEndorsementEffectiveDate" expression="if(isEmpty(:endorsementEffectiveDate)=>isEqual(1,2)->isEqual(1,1))"/>
-		<rule id="validateEndorsementEffectiveDate" expression="if(andCondition(isEqual(:isEnforcedPolicy,Y),isNot(andCondition(isLessThan(daysdiff(:PolicyEffectiveDate,:endorsementEffectiveDate),1),isGreaterThan(daysdiff(:PolicyExpirationDate,:endorsementEffectiveDate),-1))))=>isEqual(1,2)->isEqual(1,1))"/>
+		<rule id="validateEndorsementEffectiveDate" expression="if(isEqual(:isEnforcedPolicy,Y)=>andCondition(isGreaterThan(daysdiff(:endorsementEffectiveDate,:PolicyEffectiveDate),-1),isLessThan(daysdiff(:endorsementEffectiveDate,:PolicyExpirationDate),1))->isEqual(1,1))"/>
 		<rule id="isCalculatePremium" expression="isNot(isEqual(:isNonFinancialEndorsement,Y))"/>
 		<rule id="isNotCalculatePremium" expression="isEqual(:isNonFinancialEndorsement,Y)"/>
 

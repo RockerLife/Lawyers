@@ -19898,6 +19898,7 @@
 		<action name="view">
 		<workflow name="view" seq="0">
 			<databaseoperation eval="LawyersRule.deletePriorPremiumcalculation" name="deleteOlderPremium" metaobject="PremiumCalculationBuffer" operation="2" executionsequence="0" sqlstmt="delete from PremiumCalculationBuffer where PolicyKey=#PolicyKey#"/>
+			<databaseoperation name="getCurrentPolicyPeriod" metaobject="Policy" operation="3" executionsequence="1" sqlstmt="select p.PolicyEffectiveDate, (select max(pt.PolicyExpirationDate) from PolicyTransaction pt where pt.PolicyKey=p.PolicyKey) as PolicyExpirationDate from Policy p where p.PolicyKey=#PolicyKey#"/>
 		</workflow>
 		<actionparam post="Y" paramid="page" name="page" form="Y" val="ERPEndrosement"/>
 		</action>
@@ -19967,7 +19968,7 @@
 			
 			<workflow name="calculatepremium" seq="0">
 				<databaseoperation name="deleteOlderPremium" metaobject="PremiumCalculationBuffer" operation="2" executionsequence="0" sqlstmt="delete from PremiumCalculationBuffer where PolicyKey=#PolicyKey#"/>
-				<databaseoperation executionsequence="1" metaobject="PolicyTransaction" name="getTransactionDetails"  operation="3" sqlstmt="select TransactionSequence, TransactionEffectiveDate, TransactionTypeKey, PolicyExpirationDate, AccountKey, TransactionExpirationDate, ProducerCode, TotalPremium, StatusKey, TotalPolicyModifierPercentage, TotalPolicyTaxAmount, InvoicedPremium, SubInsuranceCarrier from PolicyTransaction where PolicyKey=#PolicyKey# and TransactionSequence=(select TransactionSequence from quote where PolicyKey=#PolicyKey# and IsThisOptionFinalised='Y')"/>
+				<databaseoperation executionsequence="1" metaobject="PolicyTransaction" name="getTransactionDetails"  operation="3" sqlstmt="select TransactionSequence, TransactionEffectiveDate, TransactionTypeKey, (select max(currentTransaction.PolicyExpirationDate) from PolicyTransaction currentTransaction where currentTransaction.PolicyKey=#PolicyKey#) as PolicyExpirationDate, AccountKey, TransactionExpirationDate, ProducerCode, TotalPremium, StatusKey, TotalPolicyModifierPercentage, TotalPolicyTaxAmount, InvoicedPremium, SubInsuranceCarrier from PolicyTransaction where PolicyKey=#PolicyKey# and TransactionSequence=(select TransactionSequence from quote where PolicyKey=#PolicyKey# and IsThisOptionFinalised='Y')"/>
 			    <function  executionsequence="15" functionid="calculateERPPremium" name="calculateERPPremium" id="calculateERPPremium" parameters="context"/>
 			    <databaseoperation metaobject="PremiumCalculationBuffer" name="insertPremiumCalculationBuffer" executionsequence="19" operation="1" sqlstmt="INSERT INTO PremiumCalculationBuffer(PolicyKey,totalUnearnedPremium,LastUpdateUserID,LastUpdateTimeStamp,PremiumVariation,TaxVariation,UnearnedPremium,UnearnedTax) values(#PolicyKey#,#InvoicedPremium#,#LastUpdateUserID#,#LastUpdateTimeStamp#,#returnPremium#,#returnTax#,#returnPremium#,#returnTax#)"  />
 			</workflow>
@@ -23673,4 +23674,4 @@
 		
 		</action>
 	</component>
-</projectcomponents>	
+</projectcomponents>
