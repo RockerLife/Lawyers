@@ -9262,10 +9262,10 @@
           <block id="ManageAccounts_freeform_contextdata_999" blocktype="freeform" seq="4">
                <blockfieldset id="0" seq="0">
                     <blockfield id="5" fieldtype="hidden" seq="5" fieldname="jsessionid" />
-                    <blockfield id="6" fieldtype="text" seq="6" fieldname="strPolicyKey" />
-                    <blockfield id="7" fieldtype="text" seq="7" fieldname="accountActivity" />
-                    <blockfield id="8" fieldtype="text" seq="8" fieldname="SearchlistSize" />
-                    <blockfield id="9" fieldtype="text" seq="9" fieldname="WQIsBrokered_search" />
+                    <blockfield id="6" fieldtype="hidden" seq="6" fieldname="strPolicyKey" />
+                    <blockfield id="7" fieldtype="hidden" seq="7" fieldname="accountActivity" />
+                    <blockfield id="8" fieldtype="hidden" seq="8" fieldname="SearchlistSize" />
+                    <blockfield id="9" fieldtype="hidden" seq="9" fieldname="WQIsBrokered_search" />
                </blockfieldset>
           </block>
           <formlink name="ManageAccounts" seq="0" action="save">
