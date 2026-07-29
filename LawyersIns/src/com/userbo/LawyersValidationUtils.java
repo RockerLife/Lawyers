@@ -2100,8 +2100,11 @@ public class LawyersValidationUtils {
 	
 	public static void ValidateStatus(Context ctx)
 	{String policyKeyString=null;
+		if ("RequotePolicy".equals(ctx.get("inet_page")))
+			return;
+
 		try {
-			if(ctx.get("PolicyKey")!=null) {
+			if(ctx.get("PolicyKey")!=null && ctx.get("PolicyKey").toString().trim().length() > 0) {
 				
 				try
 				{

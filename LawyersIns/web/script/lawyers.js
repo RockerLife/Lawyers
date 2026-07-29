@@ -9176,7 +9176,7 @@ function updateData()
 {
 	var activityType=document.getElementById('accountActivity').value.length;
 	
-	var activityAccountNames=document.getElementById('activityAccountNames').textContent.length;
+	var selectedAccounts=document.getElementById('strPolicyKey').value.length;
 	
 	
 	
@@ -9186,13 +9186,13 @@ function updateData()
 		showPopUp2('popupsave3','500','400');
 		return;
 		}
-	if(activityAccountNames==0)
+	if(selectedAccounts==0)
 		{
 		//alert('Please select accounts to perform activity');
 		showPopUp2('popupsave4','500','400');
 		return;
 		}
-	if(activityType>0 && activityAccountNames>0)
+	if(activityType>0 && selectedAccounts>0)
 		{
 		showPopUp2('popupsave2','500','400');
 		}
@@ -10465,7 +10465,7 @@ function loadAttorneyEstimateForm()
 		
 	  
   }
- loadProtexureForm()
+function loadProtexureForm()
 {
 
 try{

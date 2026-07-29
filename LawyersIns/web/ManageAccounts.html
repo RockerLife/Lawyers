@@ -239,11 +239,14 @@
 								</div>
 								<div class="gridActionBar choiceField">
 									<input type="checkbox" id="selectAllAccounts" onclick="selectAllAccountManagement(this.checked);"/> <label for="selectAllAccounts">Select All</label>
-									<input type="radio" name="linkAccounts" id="ajax_field_linkAccounts" value="linkAccounts" onchange="linkDelinkAccounts();"/> <label>Link</label>
-									<input type="radio" name="linkAccounts" id="ajax_field_deLinkAccounts" value="deLinkAccounts" onchange="linkDelinkAccounts();"/> <label>DeLink</label>
+									<span class="pull-right">
+										<input type="radio" name="linkAccounts" id="ajax_field_linkAccounts" value="linkAccounts" onchange="linkDelinkAccounts();"/> <label>Link</label>
+										<input type="radio" name="linkAccounts" id="ajax_field_deLinkAccounts" value="deLinkAccounts" onchange="linkDelinkAccounts();"/> <label>DeLink</label>
+									</span>
 									
 									
 								</div>
+								<div>
 									<table width="100%"  class="gridTable dataTables_grid modernGrid" id="AccountsSearch_list_01" border="0" 
 											cellpadding="0" cellspacing="0">
 											<thead  id="AccountsSearch_list_header_01">
@@ -260,7 +263,7 @@
 														id="block_field_WorkPhone">Phone Number</th>
 													<th width="10%"
 														id="block_field_PolicyEffectiveDate">
-														<div style="width: 100px">Policy Effective Date</div></th>
+														Policy Effective Date</th>
 													<th width="20%"
 														id="block_field_State">State</th>
 													<th width="2%" 
@@ -289,6 +292,7 @@
 													</tr>
 													</tbody>
 										</table>
+										</div>
 									</div>	
 								
 								<div class="buttons borderTop row" style="padding-top:10px;" >
@@ -314,10 +318,10 @@
 											<tr>
 												<td colspan="2">
 												<input type="hidden" name="jsessionid" id="jsessionid" />
-													<input type="text" name="strPolicyKey" id="strPolicyKey" />
-													<input type="text" name="accountActivity" id="accountActivity" />	
-													<input type="text" name="SearchlistSize" id="SearchlistSize" />	
-													<input type="text" name="WQIsBrokered_search" id="WQIsBrokered_search" />
+													<input type="hidden" name="strPolicyKey" id="strPolicyKey" />
+													<input type="hidden" name="accountActivity" id="accountActivity" />	
+													<input type="hidden" name="SearchlistSize" id="SearchlistSize" />	
+													<input type="hidden" name="WQIsBrokered_search" id="WQIsBrokered_search" />
 														
 												</td>
 											</tr>

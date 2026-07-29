@@ -7641,7 +7641,6 @@ input.ColumnSelected {
 
 /*---------------------------footer--------------------------------------*/
 #footer {
-	background: url(../images/footerLeft.png) no-repeat left;
 	height: 49px;
 	width: 100%;
 }
