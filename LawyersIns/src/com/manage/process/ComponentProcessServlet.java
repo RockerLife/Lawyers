@@ -22,11 +22,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
-import org.apache.commons.configuration.Configuration;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.fop.servlet.ServletContextURIResolver;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.jcs.engine.control.CompositeCacheManager;
 
@@ -48,6 +45,7 @@ import com.util.InetLogger;
 import com.util.LoadXML;
 import com.util.ResourceLoader;
 import com.util.SystemProperties;
+import com.util.SystemPropertiesConfiguration;
 
 public abstract class ComponentProcessServlet extends HttpServlet{
 	private static InetLogger logger = InetLogger.getInetLogger(ComponentProcessServlet.class);
@@ -68,22 +66,14 @@ public abstract class ComponentProcessServlet extends HttpServlet{
 			SystemProperties.setPropertyFileName(getServletConfig().getInitParameter(Constants.APP_PROPERTIES));
 			String encProps = initLocalResources();
 			SystemProperties.setEncryptedProperties(encProps);
-			
-			//Change log properties from server properties file instead of log4j.properties located at src folder
-			PropertyConfigurator.configure(getServletConfig().getInitParameter(Constants.APP_PROPERTIES));
+
 			String realPath = this.getServletContext().getRealPath("/");
-			Configuration conf = SystemProperties.getInstance(getServletContext());
-			// Deployment properties may default to DEBUG; enforce the environment policy here.
-			String environment = conf.getString("appl." + project_resource + ".environment", "");
-			String production = conf.getString("appl." + project_resource + ".environment.production", "");
-			if ("Y".equalsIgnoreCase(production) || "PD".equalsIgnoreCase(environment))
-				Logger.getRootLogger().setLevel(Level.ERROR);
-			else if ("UAT".equalsIgnoreCase(environment))
-				Logger.getRootLogger().setLevel(Level.INFO);
-			
+			SystemPropertiesConfiguration conf = SystemProperties.getInstance(getServletContext());
+			conf.setProperty("appl.home.dir", realPath);
+
+			// Configure Log4j from the same Lawyers.properties loaded by the application.
+			PropertyConfigurator.configure(conf.getAllProperties());
 			logger.debug("At the Startup set the Application Path to : "+ realPath);
-			
-			conf.setProperty("appl.home.dir", realPath);			
 			
 			loadProjects(project_resource);
 
@@ -312,7 +302,7 @@ public abstract class ComponentProcessServlet extends HttpServlet{
 					return;
 				}
 				
-//				  if("lawyersrep".equals(action)){ ctx.put("IS_SESSION_NEW", "Y"); }
+				  if("lawyersrep".equals(action)){ ctx.put("IS_SESSION_NEW", "Y"); }
 				 
 				/*if(action == null || (!"ManageIndex".equals(action) && !"userRoles".equals(action) && !"TestWebService".equals(action)
 						&& !"JitWSTestHarness".equals(action)  && !"payment".equals(action) && !"bgOneWSTestHarness".equals(action))){

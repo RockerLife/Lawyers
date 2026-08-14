@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.jdom.Element;
 
+import com.manage.managecomponent.components.SetParametersForStoredProcedures;
 import com.manage.managecomponent.components.WebservicecallImpl;
 import com.manage.managemetadata.functions.commonfunctions.DBUtils;
 import com.manage.managemetadata.functions.commonfunctions.Math;
@@ -644,6 +645,10 @@ public class Rating {
 		 * ctx.put("RealEstateResidentialPercentage", inputMap
 		 * .get("RealEstateResidentialPercentage"));
 		 */
+		new SetParametersForStoredProcedures().setParametersInContext(ctx, "PolicyKey,VersionKey");
+		Object objAOPGroupFactor = SqlResources.getSqlMapProcessor(ctx).findByKey("AOPLW.GetAOPLWSpecializationGroupFactor_p", ctx);
+		if (objAOPGroupFactor instanceof Map)
+			ctx.put("AOPGroupFactor", ((Map) objAOPGroupFactor).get("AOPSpecializationGroupFactor"));
 
 		ctx.put("LimitAmount", inputMap.get("LimitAmount"));
 		ctx.put("DeductibleAmount", inputMap.get("DeductibleAmount"));
@@ -749,6 +754,7 @@ public class Rating {
 			double mTCountyTax = 0.0;
 			// login to check if Tax is allowed
 			boolean doNotCalculateTax = false;
+			ctx.put("AOPSpecializationGroupFactor", responseMap.get("AOPSpecializationGroupFactor"));
 			Object obj = RuleUtils.executeRule(ctx,
 					"LawyersRule.doNotCalculateTax");
 			if (obj != null && obj instanceof Boolean)
@@ -1016,6 +1022,12 @@ public class Rating {
 		newCtx.put("CutOffDateGroup8", ctx.get("CutOffDateGroup8"));
 		newCtx.put("CutOffDateCCBSupp", ctx.get("CutOffDateCCBSupp"));
 		newCtx.put("CutOffDate2020", ctx.get("CutOffDate2020"));
+		
+		new SetParametersForStoredProcedures().setParametersInContext(newCtx, "PolicyKey,VersionKey");
+		Object objAOPGroupFactor = SqlResources.getSqlMapProcessor(newCtx).findByKey("AOPLW.GetAOPLWSpecializationGroupFactor_p", newCtx);
+		if (objAOPGroupFactor instanceof Map)
+			newCtx.put("AOPGroupFactor", ((Map) objAOPGroupFactor).get("AOPSpecializationGroupFactor"));
+		
 		populateInputRequestQuickQuote(newCtx);
 		webSer = new WebservicecallImpl();
 		if (ctx.get("inputMO") != null)
@@ -1218,7 +1230,7 @@ public class Rating {
 
 		if (responseMap != null) {
 			// For policy Transaction
-
+			ctx.put("AOPSpecializationGroupFactor", responseMap.get("AOPSpecializationGroupFactor"));
 			ctx.put("IsMinimumPremium", responseMap.get("IsMinimumPremium"));
 
 			if (responseMap.get("IsMinimumPremium") != null
@@ -1770,7 +1782,11 @@ public class Rating {
 		if(isRatingNew)
         	populateFTE(ctx);	
 		
-
+		new SetParametersForStoredProcedures().setParametersInContext(ctx, "PolicyKey,VersionKey");
+		Object objAOPGroupFactor = SqlResources.getSqlMapProcessor(ctx).findByKey("AOPLW.GetAOPLWSpecializationGroupFactor_p", ctx);
+		if (objAOPGroupFactor instanceof Map)
+			ctx.put("AOPGroupFactor", ((Map) objAOPGroupFactor).get("AOPSpecializationGroupFactor"));
+		
 		ctx.put("CompanyKey", "1");
 		String requestxml = new RequestProcessor().generateRequestXml((Context) ctx);
 		//System.out.println(requestxml);
@@ -1808,7 +1824,7 @@ public class Rating {
 		if (responseMap != null) {
 
 			double mTCountyTax = 0.0;
-						
+			ctx.put("AOPSpecializationGroupFactor", responseMap.get("AOPSpecializationGroupFactor"));			
 			if (responseMap.get("MTTaxAmmount") != null
 					&& !"".equals(responseMap.get("MTTaxAmmount")
 							.toString())) {

@@ -2343,6 +2343,7 @@
     	 <action name="policyEndorsement">
     		<actionparam viewparam="Y" paramid="PolicyKey" name="PolicyKey" form="Y" />
     	    <actionparam viewparam="Y" paramid="VersionSequence" name="VersionSequence" form="Y"    />
+			<actionparam viewparam="Y" paramid="VersionKey" name="VersionKey" form="Y" />
 			<actionparam viewparam="Y" paramid="CoverageSequence" name="CoverageSequence" form="Y"   />
 			<actionparam viewparam="Y" paramid="TransactionSequence" name="TransactionSequence" form="Y"    />
 			<actionparam viewparam="Y" paramid="AccountID" name="AccountID"   form="Y"   />
@@ -7397,6 +7398,11 @@
 	                	<parameteroperation property="outputList" mode="IN" indexno="26" seq="26"></parameteroperation>
 	                	<parameteroperation property="MarketableProductKey" mode="IN" indexno="27" seq="27"></parameteroperation>
 						 
+				</storedprocedureoperation>
+				<storedprocedureoperation id="GetAOPLWSpecializationGroupFactor_p" name="GetAOPLWSpecializationGroupFactor_p" dbspname="GetAOPLWSpecializationGroupFactor_p" executionsequence="545" metaobject="AOPLW" operation="5">
+					<parameteroperation property="PolicyKey" mode="IN" indexno="1" seq="1"></parameteroperation>
+					<parameteroperation property="VersionKey" mode="IN" indexno="2" seq="2"></parameteroperation>
+					<resultsetoperation indexno="1" mappingclass="java.util.HashMap" />
 				</storedprocedureoperation>
 				<!-- <storedprocedureoperation  eval="" id="InsertProtexureFormAttorniesData_p"  name="InsertProtexureFormAttorniesData_p" dbspname="InsertProtexureFormAttorniesData_p"  executionsequence="545" metaobject="EstimateFormGeneralInfo" operation="4">
                 	  <parameteroperation property="addAttorneys" mode="IN" indexno="1" seq="1"></parameteroperation>
@@ -19002,6 +19008,7 @@
      			<actionparam pre="Y" paramid="page" name="page" val="Endorsement" form="Y"/>
      			<actionparam post="Y" paramid="PolicyKey" name="PolicyKey" form="Y" session="Y"/>
 	    	    <actionparam post="Y" paramid="VersionSequence" name="VersionSequence" form="Y"    session="Y"/>
+				<actionparam post="Y" paramid="VersionKey" name="VersionKey" form="Y" session="Y"/>
 				<actionparam post="Y" paramid="CoverageSequence" name="CoverageSequence" form="Y"  session="Y" />
 				<actionparam post="Y" paramid="TransactionSequence" name="TransactionSequence" form="Y"   session="Y" />
 				<actionparam post="Y" paramid="AccountID" name="AccountID"   form="Y"   session="Y"/>

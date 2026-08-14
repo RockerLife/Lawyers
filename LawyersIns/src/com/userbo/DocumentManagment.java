@@ -13,6 +13,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletOutputStream;
@@ -51,6 +52,30 @@ public class DocumentManagment {
 	private static InetLogger logger = InetLogger.getInetLogger(DocumentManagment.class);
 	private static final String ERROR_MESSAGE = "ERROR : ";	
 	private static final String SUCCESS_MESSAGE = "SUCCESS";
+	private static final String DOCUMENT_STORAGE_REFERENCE = "DocumentStorageReference";
+	private static final String UPLOAD_SUCCESS = "File added successfully!";
+
+	private String uploadToDocumentStorage(IContext ctx, String docLibPathName,
+			String folderName, String baseDir, String docName, String sourceFile,
+			String userName, String password, String domain, String storageUrl) throws Exception {
+		ctx.remove(DOCUMENT_STORAGE_REFERENCE);
+		String reference = new DocManagementUtil().uploadDocToSharePoint(docLibPathName,
+				folderName, baseDir, docName, sourceFile, userName, password, domain, storageUrl);
+		ctx.put(DOCUMENT_STORAGE_REFERENCE, reference);
+		return UPLOAD_SUCCESS;
+	}
+
+	private String takeDocumentStorageReference(IContext ctx) throws Exception {
+		Object reference = ctx.get(DOCUMENT_STORAGE_REFERENCE);
+		ctx.remove(DOCUMENT_STORAGE_REFERENCE);
+		if (reference == null)
+			throw new Exception("Document storage reference is missing.");
+		try {
+			return UUID.fromString(reference.toString()).toString();
+		} catch (IllegalArgumentException ex) {
+			throw new Exception("Document storage reference is invalid.", ex);
+		}
+	}
 
 	public void processDocument(IContext ctx) throws Exception {
 		logger.debug("processDocument has started");
@@ -258,10 +283,7 @@ public class DocumentManagment {
 
 		String result = null;
 		try {
-			if(!"DEV".equals(ctx.get("environmentVar").toString()))
 			result = uploadDocument(ctx, uploaddirectory + docName);
-			else
-				result="File added successfully!";
 			//result = "File added successfully!";
 			logger.debug("Result from uploadDocument(ctx, uploaddirectory + docName)" + result);
 			
@@ -376,7 +398,7 @@ public class DocumentManagment {
 		//		folderName, baseDir, DocFileName, docContent, userName,
 		//		password, domain);
 		//Raghu
-		return new DocManagementUtil().uploadDocToSharePoint(docLibPathName,
+		return uploadToDocumentStorage(ctx, docLibPathName,
 		folderName, baseDir, DocFileName, url, userName,
 		password, domain, spUrl);
 		
@@ -518,13 +540,7 @@ public class DocumentManagment {
 
 		LawyersUtils.populateLastUpdateTimeStamp(ctx);
 		
-		String result = "";
-		String skipUpload = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".skipupload");
-		if(!"Y".equals(skipUpload)){
-			result = uploadSignedDocument(ctx);
-		}else{
-			result = "File added successfully!";
-		}
+		String result = uploadSignedDocument(ctx);
 
 		logger.debug("Result from uploadSignedDocument(ctx) " + result);
 
@@ -599,41 +615,20 @@ public class DocumentManagment {
 		domain);*/
 
 		//Raghu
-		return new DocManagementUtil().uploadDocToSharePoint(docLibPathName,
+		return uploadToDocumentStorage(ctx, docLibPathName,
 				folderName, baseDir, docName, outFile, userName,
 				password, domain, spUrl);
 
 	}
 	  
 	public void setSignedPDFUrl(IContext ctx, String field) throws Exception {
-
-		String docName = "Signed_Form_" + ctx.get("QuoteNumber").toString()
-				+ "_" + ctx.get("UploadedTime").toString() + ".pdf";
-		docName = docName.replace(" ", "").replace(":", "").replace("-", "");
-
-		String spUrl = getSharePointURL();
-		String baseDir = getSharePointBaseDirectory();
-		String docLibPathName = spUrl + baseDir;
-		String folderName = ctx.get("QuoteNumber").toString();
-		String url = docLibPathName + "/" + folderName + "/" + docName;
-		ctx.put(field, url);
+		ctx.put(field, takeDocumentStorageReference(ctx));
 	}
 	  
 	  
 
 	public void setFormUrl(IContext ctx, String field) throws Exception {
-
-		String docName = "Policy Form_" + ctx.get("QuoteNumber").toString()
-				+ "_" + ctx.get("UploadedTime").toString() + ".pdf";
-		docName = docName.replace(" ", "").replace(":", "").replace("-", "");
-
-		String spUrl = getSharePointURL();
-		String baseDir = getSharePointBaseDirectory();
-		String docLibPathName = spUrl + baseDir;
-		String folderName = ctx.get("QuoteNumber").toString();
-		String url = docLibPathName + "/" + folderName + "/" + docName;
-		ctx.put(field, url);
-
+		ctx.put(field, takeDocumentStorageReference(ctx));
 	}
 
 	public boolean validateFileName(String filePath) throws Exception {
@@ -666,14 +661,7 @@ public class DocumentManagment {
 
 	public void setUrl(IContext ctx, String docName, String field)
 			throws Exception {
-
-		String spUrl = getSharePointURL();
-		String baseDir = getSharePointBaseDirectory();
-		String docLibPathName = spUrl + baseDir;
-		String folderName = ctx.get("QuoteNumber").toString();
-		String url = docLibPathName + "/" + folderName + "/" + docName;
-		ctx.put(field, url);
-
+		ctx.put(field, takeDocumentStorageReference(ctx));
 	}
 
 	public void insertInDocumentArchive(IContext ctx) throws Exception {
@@ -686,31 +674,31 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 	}
 	public String getSharePointURL() throws Exception {
 
-		return SystemProperties.getInstance().getString("sharepoint.url");
+		return "/";
 	}
 
 	public String getUserName() throws Exception {
 
-		return SystemProperties.getInstance().getString("sharepoint.user.name");
+		return "";
 	}
 
 	public String getUserPassword() throws Exception {
 
-		return SystemProperties.getInstance().getString("sharepoint.password");
+		return "";
 	}
 
 	public String getDomainName() throws Exception {
 
-		return SystemProperties.getInstance().getString("sharepoint.domain");
+		return "";
 	}
 
 	public String getSharePointBaseDirectory() throws Exception {
 
-		return SystemProperties.getInstance().getString("sharepoint.basedir");
+		return SystemProperties.getInstance().getString("document.storage.directory");
 	}
 	public String getSharePointBaseDirectoryBrokerage() throws Exception {
 
-		return SystemProperties.getInstance().getString("sharepoint.brokeragebasedir");
+		return SystemProperties.getInstance().getString("document.storage.brokerage.directory");
 	}
 	/*
 	 * The code below is used in Polulation of PolicyForm
@@ -853,13 +841,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 				new DownloadForm().generateForm((Context)ctx, listFormID, out, baseUrl, uriResolver);			
 				
 				LawyersUtils.populateLastUpdateTimeStamp(ctx);
-				String result = "";
-				String skipUpload = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".skipupload");
-				if(!"Y".equals(skipUpload)){
-					result = uploadFormDocument(ctx);
-				}else{
-					result = "File added successfully!";
-				}
+				String result = uploadFormDocument(ctx);
 				logger.debug("Result from uploadFormDocument(ctx) in processDocumentManagment " + result);
 				
 				if(result == null || (result != null && !result.equals("File added successfully!"))){
@@ -1271,13 +1253,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 				new DownloadForm().generateForm((Context)ctx, listFormID, out, baseUrl, uriResolver);			
 				
 				LawyersUtils.populateLastUpdateTimeStamp(ctx);
-				String result = "";
-				String skipUpload = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".skipupload");
-				if(!"Y".equals(skipUpload)){
-					result = uploadFormDocument(ctx);
-				}else{
-					result = "File added successfully!";
-				}
+				String result = uploadFormDocument(ctx);
 				logger.debug("Result from uploadFormDocument(ctx) in processDocumentManagment " + result);
 				
 				if(result == null || (result != null && !result.equals("File added successfully!"))){
@@ -1839,7 +1815,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 		//byte[] docContent = DocManagementUtil.getBytesFromFile(new File(SystemProperties.getInstance().getString("html.basedir") + "data//Policy Form_" + ctx.get("QuoteNumber").toString() + ".pdf"));
 		//return new DocManagementUtil().uploadDocToSharePoint(docLibPathName, folderName, baseDir, docName, docContent, userName, password, domain);
 		//Raghu
-		return new DocManagementUtil().uploadDocToSharePoint(docLibPathName,
+		return uploadToDocumentStorage(ctx, docLibPathName,
 				folderName, baseDir, docName, outFile, userName,
 				password, domain, url);
 	}
@@ -1882,17 +1858,9 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 		String folderName = ctx.get("QuoteNumber").toString();		
 		String url = docLibPathName + "/" + folderName + "/" + docName;
 				
-		String result = "";
-		String skipUpload = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".skipupload");
-		if(!"Y".equals(skipUpload)){
-			//result = new DocManagementUtil().uploadDocToSharePoint(docLibPathName, folderName, baseDir, docName, docContent, userName, password, domain);
-			//Raghu
-			result = new DocManagementUtil().uploadDocToSharePoint(docLibPathName,
-					folderName, baseDir, docName, outFile, userName,
-					password, domain, spUrl);
-		}else{
-			result = "File added successfully!";
-		}
+		String result = uploadToDocumentStorage(ctx, docLibPathName,
+				folderName, baseDir, docName, outFile, userName,
+				password, domain, spUrl);
 		logger.debug("Result from uploadFormDocument(ctx) in processDocumentManagment " + result);
 		
 		if(result != null && result.equals("File added successfully!")){		
@@ -1903,7 +1871,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 			ctx.put("DocFileName", DocFileName);
 			ctx.put("DocType", "PF");
 			ctx.put("UploadedType", "Auto");
-			ctx.put("DocUrl", url);
+			ctx.put("DocUrl", takeDocumentStorageReference(ctx));
 			//setFormUrl(ctx, "DocUrl");			
 			insertInDocumentArchive(ctx);
 		}	
@@ -2367,10 +2335,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 				uriResolver = (ServletContextURIResolver)ctx.get(HtmlConstants.DOCUMENTURIRESOLVER);
 			
 			new DownloadForm().processIndicationForm((Context)ctx, out, baseUrl, uriResolver);			
-			String skipUpload = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".skipupload");
-			if(!"Y".equals(skipUpload)){
-				uploadIndication(ctx, outFile);
-			}
+			uploadIndication(ctx, outFile);
 			if(pdfFile.exists())
 				pdfFile.delete();
 					
@@ -2524,14 +2489,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 			//new DownloadForm().testForm((Context)ctx, listFormID, outFile);
 			
 			LawyersUtils.populateLastUpdateTimeStamp(ctx);
-			String result = "";
-			String skipUpload = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".skipupload");
-			if(!"Y".equals(skipUpload)){
-				//result = uploadEndorsementFormDocument(ctx,quoteNumber,formNumber);
-				result = uploadEndorsementFormDocument(ctx, pdfFile.getName());
-			}else{
-				result = "File added successfully!";
-			}
+			String result = uploadEndorsementFormDocument(ctx, pdfFile.getName());
 			
 						
 			if(result == null || (result != null && !result.equals("File added successfully!") )) {
@@ -2866,20 +2824,14 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 		
 		//return new DocManagementUtil().uploadDocToSharePoint(docLibPathName, folderName, baseDir, docName, docContent, userName, password, domain);
 		//Raghu
-		return new DocManagementUtil().uploadDocToSharePoint(docLibPathName,
+		return uploadToDocumentStorage(ctx, docLibPathName,
 				folderName, baseDir, docName, outFile, userName,
 				password, domain, url);
 		
 	}
 	
 	public void setEndorsementFormUrl(IContext ctx, String field, String docName) throws Exception {			
-		docName = docName.replace(" ", "").replace(":", "").replace("-", "");
-		String spUrl = getSharePointURL();
-		String baseDir = getSharePointBaseDirectory();
-		String docLibPathName = spUrl + baseDir;
-		String folderName = ctx.get("QuoteNumber").toString();
-		String url = docLibPathName + "/" + folderName + "/" + docName;
-		ctx.put(field, url);		
+		ctx.put(field, takeDocumentStorageReference(ctx));
 	}
 	
 	public static void main(String args[]){
@@ -3064,7 +3016,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 
 		String docLibPathName = spUrl + baseDir;
 
-		return new DocManagementUtil().uploadDocToSharePoint(docLibPathName,
+		return uploadToDocumentStorage(ctx, docLibPathName,
 				folderName, baseDir, docName, url, userName,
 				password, domain, spUrl);
 
@@ -3072,13 +3024,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 	
 	public void setUrlForDBSave(IContext ctx, String folderName, String docName, String field)
 			throws Exception {
-
-		String spUrl = getSharePointURL();
-		String baseDir = getSharePointBaseDirectory();
-		String docLibPathName = spUrl + baseDir;
-		String url = docLibPathName + "/" + folderName + "/" + docName;
-		ctx.put(field, url);
-
+		ctx.put(field, takeDocumentStorageReference(ctx));
 	}
 	
 	public void insertInSubproducerTable(IContext ctx) throws Exception {
@@ -3328,14 +3274,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 			//new DownloadForm().testForm((Context)ctx, listFormID, outFile);
 			
 			LawyersUtils.populateLastUpdateTimeStamp(ctx);
-			String result = "";
-			String skipUpload = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".skipupload");
-			if(!"Y".equals(skipUpload)){
-				//result = uploadEndorsementFormDocument(ctx,quoteNumber,formNumber);
-				result = docManage.uploadEndorsementFormDocument(ctx, pdfFile.getName());
-			}else{
-				result = "File added successfully!";
-			}
+			String result = docManage.uploadEndorsementFormDocument(ctx, pdfFile.getName());
 			
 			if(result == null || (result != null && !result.equals("File added successfully!") )) {
 				LawyersUtils.populateError(ctx, "DocUploadError", "Endorsement could not be uploaded");
@@ -3446,14 +3385,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 			//new DownloadForm().testForm((Context)ctx, listFormID, outFile);
 			
 			LawyersUtils.populateLastUpdateTimeStamp(ctx);
-			String result = "";
-			String skipUpload = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".skipupload");
-			if(!"Y".equals(skipUpload)){
-				//result = uploadEndorsementFormDocument(ctx,quoteNumber,formNumber);
-				result = docManage.uploadEndorsementFormDocument(ctx, pdfFile.getName());
-			}else{
-				result = "File added successfully!";
-			}
+			String result = docManage.uploadEndorsementFormDocument(ctx, pdfFile.getName());
 			
 						
 			if(result == null || (result != null && !result.equals("File added successfully!") )) {
@@ -3950,11 +3882,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 				
 				String result = null;
 				try {
-					String environmentVar  = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".environment");
-					if(!"DEV".equals(environmentVar))
-						result = uploadDocument(ctx, uploaddirectory + docName);
-					else
-						result="File added successfully!";
+					result = uploadDocument(ctx, uploaddirectory + docName);
 					//result = "File added successfully!";
 					logger.debug("Result from uploadDocument(ctx, uploaddirectory + docName)" + result);
 					
@@ -4057,16 +3985,7 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 			//new DownloadForm().generateEndorsement((Context)ctx, outFile);			
 			//new DownloadForm().testForm((Context)ctx, listFormID, outFile);
 			LawyersUtils.populateLastUpdateTimeStamp(ctx);
-			String result = "";
-			String skipUpload = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".skipupload");
-			if (!"Y".equals(skipUpload))
-			{
-				// result = uploadEndorsementFormDocument(ctx,quoteNumber,formNumber);
-				result = docManage.uploadEndorsementFormDocument(ctx, pdfFile.getName());
-			} else
-			{
-				result = "File added successfully!";
-			}
+			String result = docManage.uploadEndorsementFormDocument(ctx, pdfFile.getName());
 
 			if (result == null || (result != null && !result.equals("File added successfully!"))) {
 				LawyersUtils.populateError(ctx, "DocUploadError", pdfFile.getName()+" could not be uploaded");

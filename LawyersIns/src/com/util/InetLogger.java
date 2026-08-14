@@ -63,6 +63,14 @@ public class InetLogger extends Logger {
 		return super.isEnabledFor(Level.FATAL);
 	}
 
+	@Override
+	public void error(Object message, Throwable throwable) {
+		if (throwable != null) {
+			throwable.printStackTrace();
+		}
+		super.error(message, throwable);
+	}
+
 	public void trace(Throwable e) {
 		error(e == null ? "Unexpected error" : e.getMessage(), e);
 	}

@@ -3279,6 +3279,8 @@
 		<rule id="isPriorActDateProssEmptyEstimateForm"  expression="if(isEqual(:IsPriorActDateFull,N)=>isNot(isEmpty(:PriorActDatePross))->isEqual(1,1));" />
 		<rule id="isFirmYearEmptyEstimateForm" expression="if(isEqual(:IsPriorActDateFull,Y)=>isNot(isEmpty(:FirmYear))->isEqual(1,1));" />
 		
+		<rule id="isQuotationExpired5Days" expression="andCondition(isEqual(:QuoteExpiryDate,:PolicyEffectiveDate),isLessThan(daysdiff(:QuoteExpiryDate,getTodaysDate()),-5));"></rule>
+		<rule id="isQuotationExpired5DaysAndInsured" expression="andCondition(isNot(isEqual(:StatusKey,6)),andCondition(call_rule(LawyersRule.isInsured),call_rule(LawyersRule.isQuotationExpired5Days)));"></rule>
 	</ruleset>
 	<ruleset name="SecureRule">
 		<rule id="isSecurityAns1Matched" expression="isEqual(:chlng_ans1_matched,Y);" />

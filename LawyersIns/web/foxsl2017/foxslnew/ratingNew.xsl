@@ -113,14 +113,17 @@
 						           </fo:table-row>
 						           <fo:table-row>
 						             <fo:table-cell ><fo:block font-size="15pt" font-family="Arial" ></fo:block></fo:table-cell>
-						             <fo:table-cell ><fo:block font-size="15pt" font-family="Arial" ><fo:inline font-weight="bold">Interim Modification Factor </fo:inline>= Size_Factor * AOP_Factor * CM_Factor * CountyFactor</fo:block></fo:table-cell>
+						             <fo:table-cell ><fo:block font-size="15pt" font-family="Arial" ><fo:inline font-weight="bold">Interim Modification Factor </fo:inline>= Size_Factor * AOP_Factor<xsl:if test="normalize-space(response/PremiumInfo/data/AOPGroupFactor) != '' and number(response/PremiumInfo/data/AOPGroupFactor) != 0"><xsl:text> * AOPGroup_Factor</xsl:text></xsl:if> * CM_Factor * CountyFactor</fo:block></fo:table-cell>
 						           </fo:table-row>
 						           <fo:table-row>
 						             <fo:table-cell number-columns-spanned="2" empty-cells="show"><fo:block font-size="15pt" font-family="Arial" ><fo:external-graphic src="../LawyersIns/img/space.gif" content-height="0.3em" content-width="10em"/> </fo:block></fo:table-cell>
 						           </fo:table-row>
 						           <fo:table-row>
 						             <fo:table-cell ><fo:block font-size="15pt" font-family="Arial" ></fo:block></fo:table-cell>
-						             <fo:table-cell ><fo:block font-size="15pt" font-family="Arial" ><fo:inline font-weight="bold"><xsl:value-of select="response/PremiumInfo/data/InterimModificationFactor" /></fo:inline>= <xsl:value-of select="response/PremiumInfo/data/SizeFactor" /> * <xsl:value-of select="response/PremiumInfo/data/AOPFactor" /> * <xsl:value-of select="response/PremiumInfo/data/ClaimAgeFactor" /> * <xsl:value-of select="response/PremiumInfo/data/CountyFactor" /></fo:block></fo:table-cell>
+						             <fo:table-cell >
+						             <fo:block font-size="15pt" font-family="Arial" >
+						             <fo:inline font-weight="bold"><xsl:value-of select="response/PremiumInfo/data/InterimModificationFactor" /></fo:inline>= <xsl:value-of select="response/PremiumInfo/data/SizeFactor" /> * <xsl:value-of select="response/PremiumInfo/data/AOPFactor" /><xsl:if test="normalize-space(response/PremiumInfo/data/AOPGroupFactor) != '' and number(response/PremiumInfo/data/AOPGroupFactor) != 0"> * <xsl:value-of select="response/PremiumInfo/data/AOPGroupFactor" /></xsl:if> * <xsl:value-of select="response/PremiumInfo/data/ClaimAgeFactor" /> * <xsl:value-of select="response/PremiumInfo/data/CountyFactor" />
+						             </fo:block></fo:table-cell>
 						           </fo:table-row>
 							</fo:table-body>
 						</fo:table>

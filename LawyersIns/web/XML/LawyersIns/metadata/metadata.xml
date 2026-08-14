@@ -884,6 +884,7 @@
 	   <field type="N" decimallength="0" seq="237" displayname="StateFactor" dropdown="N" fieldlength="15" viewlength="0" name="StateFactor" />
 	   <field type="N" decimallength="0" seq="238" displayname="SizeFactor" dropdown="N" fieldlength="15" viewlength="0" name="SizeFactor" />
 	   <field type="N" decimallength="0" seq="239" displayname="AOPFactor" dropdown="N" fieldlength="15" viewlength="0" name="AOPFactor" />
+	   <field type="N" decimallength="2" seq="239" displayname="AOP Group Factor" dropdown="N" fieldlength="15" viewlength="0" name="AOPGroupFactor" />
 	    <field type="N" decimallength="0" seq="239" displayname="ERPFactor" dropdown="N" fieldlength="15" viewlength="0" name="ERPFactor" />
 	    <field type="N" decimallength="0" seq="240" displayname="CountyFactor" dropdown="N" fieldlength="15" viewlength="0" name="CountyFactor" />
 	    <field type="N" decimallength="0" seq="241" displayname="FirstDollarFactor" dropdown="N" fieldlength="15" viewlength="0" name="FirstDollarFactor" />
@@ -4792,7 +4793,7 @@
      <metaobject active="Y" seq="0" persistent="N" name="LawyersInfo">
           <propertyversion versionname="0" seq="0">
               <property searchrule="N" searchmodify="N" seq="1" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="Y" resolvedisplay="N" persistent="N" field="PolicyEffectiveDate" />
-               
+               <property searchrule="N" searchmodify="N" seq="2" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="N" resolvedisplay="N" persistent="N" field="AOPGroupFactor"/>
                <property searchrule="N" searchmodify="N" seq="3" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="N" resolvedisplay="N" persistent="N" field="TradeRegulationPercentage" />
                <property searchrule="N" searchmodify="N" seq="4" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="N" resolvedisplay="N" persistent="N" field="ImmigrationPercentage" />
                <property searchrule="N" searchmodify="N" seq="5" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="N" resolvedisplay="N" persistent="N" field="ArbitrationPercentage" />
@@ -4812,6 +4813,7 @@
                <property searchrule="N" searchmodify="N" seq="19" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="N" resolvedisplay="N" persistent="N" field="ElderLawPercentage" />
                <property searchrule="N" searchmodify="N" seq="20" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="N" resolvedisplay="N" persistent="N" field="TaxPercentage" />
                <property searchrule="N" searchmodify="N" seq="21" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="N" resolvedisplay="N" persistent="N" field="EnvironmentalPercentage" />
+               
               
                <property searchrule="N" searchmodify="N" seq="25" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="Y" resolvedisplay="N" persistent="N" field="LimitAmount" >
                		
@@ -4953,12 +4955,8 @@
                <property searchrule="N" searchmodify="N" seq="114" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="N" resolvedisplay="N" persistent="N" field="ClaimAge_23" />
                <property searchrule="N" searchmodify="N" seq="115" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="N" resolvedisplay="N" persistent="N" field="ClaimAge_24" />
                <property searchrule="N" searchmodify="N" seq="116" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="N" resolvedisplay="N" persistent="N" field="ClaimAge_25" />
-               
                <property searchrule="I" searchmodify="N" seq="117" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="N" resolvedisplay="N" persistent="N" field="NumberOfLawyers" />
-             
-               <property searchrule="V" searchmodify="N" seq="118" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="N" resolvedisplay="N" persistent="N" field="CountyDescTB">
-               		
-               </property>  
+               <property searchrule="V" searchmodify="N" seq="118" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="N" resolvedisplay="N" persistent="N" field="CountyDescTB"/>  
           </propertyversion>          
      </metaobject>
      
@@ -4979,7 +4977,7 @@
                
                	<property searchrule="N" searchmodify="N" seq="11" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="N" resolvedisplay="N" persistent="N" field="AOPFactor">               		
                </property>
-          		
+          		  <property searchrule="N" searchmodify="N" seq="12" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="N" resolvedisplay="N" persistent="N" field="AOPGroupFactor"/>
           		 <property searchrule="N" searchmodify="N" seq="14" propertylength="0" formdisplay="Y" deleteind="N" listdisplay="N" contextfield="N" viewlength="0" isEncrypt="N" searchfield="N" isrequired="N" resolvedisplay="N" persistent="N" field="ClaimAgeFactor">               		
                </property>	
           		
@@ -8107,4 +8105,3 @@
        	 </propertyversion>
      </metaobject>
    </structure>
-   
