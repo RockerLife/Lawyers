@@ -1,0 +1,15 @@
+<fields project="">
+	<nodeinfo uniqueid="project">
+		<implements interface="com.util.IResourceKeys"/>
+	</nodeinfo>
+	<field name="" screen="" objectcolumn="" labelkey="" isrequired="" lookupobjectname=""
+		lookupobjectsql="" valuefield="" labeldesc="" displayfield="" protectedresourceuniquename=""
+		lookupobjectprocedure="" lookupobjectprocedureparameters="" accesslevel="" maxlength=""
+		tabsconfigurationresourcename="" description="" displaytype="" datatype="" defaultvalue=""
+		position="" tooltip="" isextendedfield="" requiredeval="">
+		<nodeinfo uniqueid="name"/>
+		<rule id="" ruletype="" executionsequence="" rulesetname="">
+			<nodeinfo uniqueid="id"/>
+		</rule>
+	</field>
+</fields>
