@@ -1800,7 +1800,7 @@
 		<rule id="isManagementOrUnderwriter" expression="if(orCondition(isEqual(:role_id,3),isEqual(:role_id,6))=>isEqual(1,1)->isEqual(1,2));"/>
 		<rule id="isShowEditModifiers" expression="if(andCondition(isEqual(:StatusKey,2),isEqual(:isPricingApproved,Y))=>isEqual(1,1)->isEqual(1,2));"/>
 		<!-- rule id="isRenewAndCallSkipUWflow" expression="if(andCondition(call_rule(LawyersRule.underReviewStatus),call_rule(LawyersRule.IsRenewalPolicy))=>isEqual(1,1)->isEqual(1,2))"></rule> -->
-		<rule id="isRenewAndCallSkipUWflow" expression="if(call_rule(LawyersRule.IsRenewalPolicy)=>isEqual(1,1)->isEqual(1,2))"></rule>
+		<rule id="isRenewAndCallSkipUWflow" expression="if(isEqual(:PolicyStatusKey,2)=>isEqual(1,1)->isEqual(1,2))"></rule>
 		<!-- <rule id="isRenewAndNotCallSkipUWflow" expression="if(andCondition(call_rule(LawyersRule.underReviewStatus),call_rule(LawyersRule.IsRenewalPolicy))=>orCondition(isGreaterThan(:noClearedReferralCount,0),isNot(isEqual(:isPricingApproved,Y)))->isEqual(1,2))"></rule> -->
 		<rule id="isUWReviewPage" expression="isEqual(:page,UWReview)"></rule>
 		<rule id="isShowSaveModifier" expression="if(andCondition(isEqual(:StatusKey,2),isEqual(:role_id,2))=>isEqual(1,1)->andCondition(orCondition(isEqual(:StatusKey,2),orCondition(isEqual(:StatusKey,9),isEqual(:StatusKey,10)))orCondition(isEqual(:role_id,3),isEqual(:role_id,6))));"/>

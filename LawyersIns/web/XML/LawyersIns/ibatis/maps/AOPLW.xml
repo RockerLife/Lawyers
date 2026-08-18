@@ -46,6 +46,11 @@
      <delete id="deleteAllByPartialKey" parameterClass="java.util.HashMap">delete from AOPLW</delete>
      <select id="findByKey" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOPKey, AOPDesc, AOPDescNew, IndicationSequence, LastUpdateUserID, LastUpdateTimeStamp from AOPLW where AOPKey = #AOPKey#</select>
      <select id="search" parameterClass="java.util.HashMap" resultClass="java.util.HashMap">select AOPKey, AOPDesc, AOPDescNew, IndicationSequence, LastUpdateUserID, LastUpdateTimeStamp from AOPLW</select>
+     <parameterMap id="GetAOPLWSpecializationGroupFactor_pMap" class="java.util.HashMap">
+          <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+          <parameter property="VersionKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
+     </parameterMap>
+     <procedure id="GetAOPLWSpecializationGroupFactor_p" parameterMap="GetAOPLWSpecializationGroupFactor_pMap" resultClass="java.util.HashMap">{ call GetAOPLWSpecializationGroupFactor_p(?,?)}</procedure>
      <parameterMap id="ViewAopList_pMap" class="java.util.HashMap">
           <parameter property="PolicyKey" jdbcType="INTEGER" javaType="java.lang.Integer" mode="IN" />
           <parameter property="litigationNewImplDate" jdbcType="DATETIME" javaType="java.util.Date" mode="IN" />

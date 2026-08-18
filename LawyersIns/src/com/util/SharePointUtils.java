@@ -1,6 +1,8 @@
 package com.util;
 
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URLDecoder;
 import java.nio.file.AtomicMoveNotSupportedException;
 import java.nio.file.Files;
@@ -8,6 +10,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.Locale;
+import java.util.Properties;
 import java.util.UUID;
 
 /**
@@ -23,16 +26,24 @@ public class SharePointUtils {
 
     public byte[] downloadDocFromSharePoint(String docUrl, String baseDir, String userName,
             String password, String domain, String workStation, int port) throws Exception {
+        return downloadDocFromSharePoint(docUrl, baseDir, userName, password, domain,
+                workStation, port, null);
+    }
+
+    public byte[] downloadDocFromSharePoint(String docUrl, String baseDir, String userName,
+            String password, String domain, String workStation, int port, String folderName)
+            throws Exception {
         String alternateDir = SystemProperties.getInstance().getProperty("document.storage.alternate.directory");
-        return load(configuredRoot(), docUrl, baseDir, alternateDir);
+        return load(configuredRoot(), docUrl, baseDir, alternateDir, folderName);
     }
 
     /*
      * LEGACY SHAREPOINT REFERENCE ONLY
      *
      * This was the previous HTTP upload/download implementation. The active
-     * methods above use direct UUID storage. Restoring this code would also
-     * require the former Apache HttpClient and HttpClientFactory imports.
+     * methods above keep its directory convention on the local filesystem.
+     * Restoring HTTP would also require the former Apache HttpClient and
+     * HttpClientFactory imports.
      *
      * public String uploadDocToSharePoint(String docLibPathName, String folderName,
      *         String baseDir, String docName, String srcFileUrl, String userName,
@@ -140,41 +151,73 @@ public class SharePointUtils {
         if (source == null || !Files.isRegularFile(source)) {
             throw new IOException("Document upload source does not exist: " + source);
         }
-        safeSegment(folderName, "folder name");
-        safeSegment(docName, "document name");
+        String originalFolderName = safeSegment(folderName, "folder name");
+        String originalDocumentName = safeSegment(docName, "document name");
 
         Path root = secureRoot(configuredRoot);
         String documentId = UUID.randomUUID().toString();
-        Path target = safePath(root, storedRelativePath(baseDir, documentId));
+        String storageLocation = normalizeBaseDir(baseDir) + "/" + originalFolderName
+                + "/" + originalDocumentName;
+        Path target = safePath(root, storageLocation);
+        Path metadata = safePath(root, normalizeBaseDir(baseDir) + "/" + originalFolderName
+                + "/" + documentId + ".metadata.properties");
         Path parent = target.getParent();
         Files.createDirectories(parent);
         if (!parent.toRealPath().startsWith(root)) {
             throw new IOException("Document path resolves outside document.storage.root");
         }
-
         Path temporary = Files.createTempFile(parent, ".upload-", ".tmp");
+        Path temporaryMetadata = Files.createTempFile(parent, ".metadata-", ".tmp");
         try {
             Files.copy(source, temporary, StandardCopyOption.REPLACE_EXISTING);
+            Properties mapping = new Properties();
+            mapping.setProperty("document.storageLocation", storageLocation);
+            try (OutputStream output = Files.newOutputStream(temporaryMetadata)) {
+                mapping.store(output, "Document UUID mapping");
+            }
+            move(temporaryMetadata, metadata);
             try {
-                Files.move(temporary, target, StandardCopyOption.ATOMIC_MOVE,
-                        StandardCopyOption.REPLACE_EXISTING);
-            } catch (AtomicMoveNotSupportedException ex) {
-                Files.move(temporary, target, StandardCopyOption.REPLACE_EXISTING);
+                move(temporary, target);
+            } catch (IOException ex) {
+                try {
+                    Files.deleteIfExists(metadata);
+                } catch (IOException cleanupError) {
+                    ex.addSuppressed(cleanupError);
+                }
+                throw ex;
             }
         } finally {
             Files.deleteIfExists(temporary);
+            Files.deleteIfExists(temporaryMetadata);
         }
         return documentId;
     }
 
+    private static void move(Path source, Path target) throws IOException {
+        try {
+            Files.move(source, target, StandardCopyOption.ATOMIC_MOVE,
+                    StandardCopyOption.REPLACE_EXISTING);
+        } catch (AtomicMoveNotSupportedException ex) {
+            Files.move(source, target, StandardCopyOption.REPLACE_EXISTING);
+        }
+    }
+
     static byte[] load(Path configuredRoot, String docUrl, String baseDir,
             String alternateDir) throws IOException {
+        return load(configuredRoot, docUrl, baseDir, alternateDir, null);
+    }
+
+    static byte[] load(Path configuredRoot, String docUrl, String baseDir,
+            String alternateDir, String folderName) throws IOException {
         Path root = secureRoot(configuredRoot);
         String documentId = documentId(docUrl);
         if (documentId != null) {
-            Path file = safePath(root, storedRelativePath(baseDir, documentId));
-            if (!Files.isRegularFile(file) && normalizeOptionalBaseDir(alternateDir).length() > 0) {
-                file = safePath(root, storedRelativePath(alternateDir, documentId));
+            Path file = mappedDocument(root, baseDir, folderName, documentId);
+            if (file == null && normalizeOptionalBaseDir(alternateDir).length() > 0) {
+                file = mappedDocument(root, alternateDir, folderName, documentId);
+            }
+            if (file == null) {
+                file = safePath(root, storedRelativePath(baseDir, documentId));
             }
             return read(root, file, docUrl);
         }
@@ -195,11 +238,65 @@ public class SharePointUtils {
         return Files.readAllBytes(realFile);
     }
 
+    private static Path mappedDocument(Path root, String baseDir, String folderName,
+            String documentId)
+            throws IOException {
+        String normalizedFolder = folderName == null ? "" : folderName.trim();
+        if (normalizedFolder.length() > 0) {
+            Path metadata = safePath(root, normalizeBaseDir(baseDir) + "/"
+                    + safeSegment(normalizedFolder, "folder name") + "/" + documentId
+                    + ".metadata.properties");
+            if (Files.isRegularFile(metadata)) {
+                return mappedFile(root, baseDir, documentId, metadata);
+            }
+        }
+
+        String uuidLocation = storedRelativePath(baseDir, documentId);
+        Path uuidFile = safePath(root, uuidLocation);
+        if (Files.isRegularFile(uuidFile)) {
+            return uuidFile;
+        }
+
+        Path metadata = safePath(root, uuidLocation + ".metadata.properties");
+        if (!Files.isRegularFile(metadata)) {
+            return null;
+        }
+        return mappedFile(root, baseDir, documentId, metadata);
+    }
+
+    private static Path mappedFile(Path root, String baseDir, String documentId, Path metadata)
+            throws IOException {
+        Path realMetadata = metadata.toRealPath();
+        if (!realMetadata.startsWith(root)) {
+            throw new IOException("Document metadata resolves outside document.storage.root");
+        }
+
+        Properties mapping = new Properties();
+        try (InputStream input = Files.newInputStream(realMetadata)) {
+            mapping.load(input);
+        }
+        String storageLocation = mapping.getProperty("document.storageLocation");
+        if (storageLocation == null || storageLocation.trim().length() == 0) {
+            throw new IOException("Document UUID mapping is missing its storage location: "
+                    + documentId);
+        }
+        Path file = safePath(root, storageLocation);
+        Path basePath = safePath(root, normalizeBaseDir(baseDir));
+        if (!file.startsWith(basePath)) {
+            throw new IOException("Document UUID mapping is outside its storage directory: "
+                    + documentId);
+        }
+        return file;
+    }
+
     private static String documentId(String reference) {
         if (reference == null) {
             return null;
         }
         String value = reference.trim();
+        if (value.length() == 0) {
+            throw new IllegalArgumentException("Document URL is missing.");
+        }
         try {
             return UUID.fromString(value).toString();
         } catch (IllegalArgumentException ex) {

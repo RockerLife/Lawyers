@@ -10,8 +10,10 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 
 import javax.naming.InitialContext;
 import javax.servlet.ServletContext;
@@ -71,8 +73,8 @@ public abstract class ComponentProcessServlet extends HttpServlet{
 			SystemPropertiesConfiguration conf = SystemProperties.getInstance(getServletContext());
 			conf.setProperty("appl.home.dir", realPath);
 
-			// Configure Log4j from the same Lawyers.properties loaded by the application.
-			PropertyConfigurator.configure(conf.getAllProperties());
+			// Preserve comma-delimited appender names from Lawyers.properties.
+			configureLogging(conf);
 			logger.debug("At the Startup set the Application Path to : "+ realPath);
 			
 			loadProjects(project_resource);
@@ -106,6 +108,26 @@ public abstract class ComponentProcessServlet extends HttpServlet{
 			//e.printStackTrace();
 			logger.error("Project resources are not initialized properly due to exception : " + e.getMessage());
 		}
+	}
+
+	static void configureLogging(SystemPropertiesConfiguration configuration) {
+		Properties properties = new Properties();
+		Iterator keys = configuration.getKeys();
+		while (keys.hasNext()) {
+			String key = (String) keys.next();
+			if (!key.startsWith("log4j."))
+				continue;
+
+			List values = configuration.getList(key);
+			StringBuffer value = new StringBuffer();
+			for (int i = 0; i < values.size(); i++) {
+				if (i > 0)
+					value.append(',');
+				value.append(values.get(i));
+			}
+			properties.setProperty(key, value.toString());
+		}
+		PropertyConfigurator.configure(properties);
 	}
 
 	private void loadHtmls(String project_resource) throws Exception{
@@ -302,7 +324,7 @@ public abstract class ComponentProcessServlet extends HttpServlet{
 					return;
 				}
 				
-				  if("lawyersrep".equals(action)){ ctx.put("IS_SESSION_NEW", "Y"); }
+//				  if("lawyersrep".equals(action)){ ctx.put("IS_SESSION_NEW", "Y"); }
 				 
 				/*if(action == null || (!"ManageIndex".equals(action) && !"userRoles".equals(action) && !"TestWebService".equals(action)
 						&& !"JitWSTestHarness".equals(action)  && !"payment".equals(action) && !"bgOneWSTestHarness".equals(action))){

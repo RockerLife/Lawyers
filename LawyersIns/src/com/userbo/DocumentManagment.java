@@ -422,11 +422,13 @@ public class DocumentManagment {
 		if (ctx.get("DocUrl") != null)
 			docUrl = ctx.get("DocUrl").toString();
 
-		if (docUrl == null)
+		if (docUrl == null || docUrl.trim().length() == 0)
 			throw new Exception("Document URL is missing.");
 
+		String folderName = ctx.get("QuoteNumber") == null
+				? null : ctx.get("QuoteNumber").toString();
 		byte[] barr = new DocManagementUtil().downloadDocFromSharePoint(docUrl,
-				userName, password, domain);
+				userName, password, domain, baseDir, folderName);
 
 		if (barr == null || barr.length == 0)
 			throw new Exception("No document content returned from SharePoint for " + docUrl);
@@ -665,7 +667,12 @@ public class DocumentManagment {
 	}
 
 	public void insertInDocumentArchive(IContext ctx) throws Exception {
-		
+		if (ctx.get("DocFileName") == null
+				|| ctx.get("DocFileName").toString().trim().length() == 0
+				|| ctx.get("DocUrl") == null
+				|| ctx.get("DocUrl").toString().trim().length() == 0)
+			throw new Exception("Document archive requires DocFileName and DocUrl.");
+
 		SqlResources.getSqlMapProcessor(ctx).insert("DocumentArchiveLW.insert", ctx);
 	}
 public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
@@ -2073,8 +2080,10 @@ public void insertInBrokerageDocumentLW(IContext ctx) throws Exception {
 			if (docUrl == null)
 				return;
 	
+			String folderName = ctx.get("QuoteNumber") == null
+					? null : ctx.get("QuoteNumber").toString();
 			byte[] barr = new DocManagementUtil().downloadDocFromSharePoint(docUrl,
-					userName, password, domain);
+					userName, password, domain, baseDir, folderName);
 	
 			bout = new ByteArrayOutputStream();
 			bout.write(barr);

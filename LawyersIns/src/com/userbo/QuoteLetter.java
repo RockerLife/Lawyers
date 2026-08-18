@@ -204,10 +204,7 @@ public class QuoteLetter {
 			boolean documentUploaded = false;
 			try {
 				logger.debug("Going to upload QuoteLetter");
-				String skipUpload = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".skipupload");
-				if(!"Y".equals(skipUpload)){
-					new DocumentManagment().uploadQuoteLetter(ctx);
-				}
+				new DocumentManagment().uploadQuoteLetter(ctx);
 				documentUploaded = true;
 			} catch (Exception e) {
 				logger.error("Unable to upload quote letter", e);
@@ -957,12 +954,10 @@ public class QuoteLetter {
 			attachments.add(outFileQuickQuote);
 
 			try {
-				String skipUpload = SystemProperties.getInstance().getString("appl." + ctx.getProject() + ".skipupload");
-				if(!"Y".equals(skipUpload)){
-					new DocumentManagment().uploadQuickQuoteLetter(ctx);
-				}
+				new DocumentManagment().uploadQuickQuoteLetter(ctx);
 			} catch (Exception e) {
 				logger.error("Unexpected error", e);
+				throw e;
 			}
 
 			MailSender mailSender = new MailSender();

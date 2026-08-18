@@ -28,8 +28,13 @@ public class DocManagementUtil {
 
     public byte[] downloadDocFromSharePoint(String docUrl, String userName, String password,
             String domain, String baseDir) throws Exception {
+        return downloadDocFromSharePoint(docUrl, userName, password, domain, baseDir, null);
+    }
+
+    public byte[] downloadDocFromSharePoint(String docUrl, String userName, String password,
+            String domain, String baseDir, String folderName) throws Exception {
         return new SharePointUtils().downloadDocFromSharePoint(docUrl, baseDir,
-                null, null, null, null, 0);
+                null, null, null, null, 0, folderName);
     }
 
     /*
